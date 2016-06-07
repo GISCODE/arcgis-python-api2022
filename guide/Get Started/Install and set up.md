@@ -11,7 +11,7 @@ Install [Anaconda for Python 3.5](https://www.continuum.io/downloads), if you do
 ## Install arcgis package
 Download and install ArcGIS Python API in your conda environment:
 
-    conda install -c https://conda.anaconda.org/esri arcgis
+    conda install -c esri arcgis
 
 You can now start using the ArcGIS Python API in your Python IDE of choice, or the Jupyter Notebook environment.
 
