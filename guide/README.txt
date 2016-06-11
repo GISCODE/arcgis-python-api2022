@@ -3,6 +3,7 @@ The suggested order of viewing the docs is the following:
 Get started
 	- Install and set up
 	- Using the API
+	- System requirements
 
 Working with the API
 	- Overview
