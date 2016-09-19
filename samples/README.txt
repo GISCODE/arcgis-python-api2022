@@ -13,7 +13,6 @@ Power Users / Developers
 Org Administrators
 	- Faces of GIS
 	- Batch creation of Groups
-	- Usage statistics and credit consumption
 	- Clone Portal Users, Groups and Content
 
 GIS Analysts and Data Scientists
