@@ -10,6 +10,7 @@ Submodules
    arcgis.lyr
    arcgis.tools
    arcgis.viz
+   arcgis.geom
 
 Module contents
 ---------------
