@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head><meta charset="utf-8" />
-<title>Install and set up</title>
+<title>Authentication</title>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
@@ -11751,32 +11751,359 @@ div#notebook {
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Install-using-Conda">Install using Conda<a class="anchor-link" href="#Install-using-Conda">&#182;</a></h1><p>The ArcGIS Python API is distributed via conda.</p>
-<p>To learn more about conda, see the <a href="http://conda.pydata.org/docs/get-started.html">getting started guide</a> for conda.</p>
-<h2 id="Get-Conda">Get Conda<a class="anchor-link" href="#Get-Conda">&#182;</a></h2><p>Install the latest version of <a href="https://www.continuum.io/downloads">Anaconda for Python</a>(for Python 3.5), if you don't already have conda. The ArcGIS Python API requires Python 3.</p>
-<p>If you have installed ArcGIS Pro 1.3, you already  have conda.  Run “Python Command Prompt” shortcut within the ArcGIS Pro program group and continue with the subsequent steps.</p>
-<h2 id="Install-arcgis-package">Install arcgis package<a class="anchor-link" href="#Install-arcgis-package">&#182;</a></h2><p>Download and install ArcGIS Python API in your conda environment, using the following commands in cmd.exe or your shell:</p>
-
-<pre><code>conda install -c esri arcgis
-
-</code></pre>
-<p>You can now start using the ArcGIS Python API in your Python IDE of choice, or the Jupyter Notebook environment.</p>
-<h2 id="Start-jupyter-notebook">Start jupyter notebook<a class="anchor-link" href="#Start-jupyter-notebook">&#182;</a></h2><p>To use the API in the jupyter notebook environment, use the following command in  cmd.exe or your shell:</p>
-
-<pre><code>jupyter notebook
-
-</code></pre>
-<h2 id="Test-your-install">Test your install<a class="anchor-link" href="#Test-your-install">&#182;</a></h2><p>Create a Python 3 notebook with these lines of code:</p>
-
-<pre><code>from arcgis.gis import *
-gis = GIS()
-gis.map()
-
-</code></pre>
-<p>If the installation went through fine, you should see a map come up.</p>
+<h1 id="Authentication-schemes">Authentication schemes<a class="anchor-link" href="#Authentication-schemes">&#182;</a></h1><p>The GIS class in the ArcGIS Python API supports several classes of users with varied authentication schemes:</p>
+<ul>
+<li>anonymous users</li>
+<li>built-in users</li>
+<li>users using LDAP, via <ul>
+<li>Basic authentication </li>
+<li>Portal tier authentication</li>
+</ul>
+</li>
+<li>smart card users / PKI authentication using ceritificate and key files</li>
+<li>users connected to an ArcGIS Portal using ArcGIS Pro</li>
+</ul>
+<p>The GIS class supports constructing a GIS object given a url and user credentials to ArcGIS Online or an ArcGIS Portal. User credentials can be passed in using username/password pair, or key_file/cert_file pair (in case of PKI). Supports built-in users, LDAP, PKI and Anonymous access.</p>
+<p>If no url is provided, ArcGIS Online is used. If username/password or key/cert files are not provided, anonymous access is used. Additionally, the script can leverage the ArcGOS Pro app to login to the portal and their scripts can use whichever Portal is currently active.</p>
+<p>The examples below demonstrate how to connect using these different authentication schemes:</p>
 
 </div>
 </div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="ArcGIS-Online-as-anonymous-user">ArcGIS Online as anonymous user<a class="anchor-link" href="#ArcGIS-Online-as-anonymous-user">&#182;</a></h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[1]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;ArcGIS Online as anonymous user&quot;</span><span class="p">)</span>    
+<span class="n">gis</span> <span class="o">=</span> <span class="n">GIS</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Logged in as anonymous user to &quot;</span> <span class="o">+</span> <span class="n">gis</span><span class="o">.</span><span class="n">properties</span><span class="o">.</span><span class="n">portalName</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>ArcGIS Online as anonymous user
+Logged in as anonymous user to ArcGIS Online
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="ArcGIS-Online-using-an-Organization-account">ArcGIS Online using an Organization account<a class="anchor-link" href="#ArcGIS-Online-using-an-Organization-account">&#182;</a></h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[2]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;ArcGIS Online Org account&quot;</span><span class="p">)</span>    
+<span class="n">gis</span> <span class="o">=</span> <span class="n">GIS</span><span class="p">(</span><span class="s2">&quot;https://portalname.domain.com/webcontext&quot;</span><span class="p">,</span> <span class="s2">&quot;demo_deldev&quot;</span><span class="p">,</span> <span class="s2">&quot;password&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Logged in as &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">gis</span><span class="o">.</span><span class="n">properties</span><span class="o">.</span><span class="n">user</span><span class="o">.</span><span class="n">username</span><span class="p">))</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>ArcGIS Online Org account
+Logged in as demo_deldev
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Portal-for-ArcGIS-as-a-built-in-user">Portal for ArcGIS as a built in user<a class="anchor-link" href="#Portal-for-ArcGIS-as-a-built-in-user">&#182;</a></h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[3]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Portal for ArcGIS as a built in user&quot;</span><span class="p">)</span>
+<span class="n">gis</span> <span class="o">=</span> <span class="n">GIS</span><span class="p">(</span><span class="s2">&quot;https://portalname.domain.com/webcontext&quot;</span><span class="p">,</span> <span class="s2">&quot;sharinguser&quot;</span><span class="p">,</span> <span class="s2">&quot;password&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Logged in as: &quot;</span> <span class="o">+</span> <span class="n">gis</span><span class="o">.</span><span class="n">properties</span><span class="o">.</span><span class="n">user</span><span class="o">.</span><span class="n">username</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Portal for ArcGIS as a built in users
+Logged in as sharinguser
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Portal-using-LDAP-via-Basic-Authentication">Portal using LDAP via Basic Authentication<a class="anchor-link" href="#Portal-using-LDAP-via-Basic-Authentication">&#182;</a></h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[4]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n\n</span><span class="s2">Basic Authentication with LDAP&quot;</span><span class="p">)</span>    
+<span class="n">ldapbasic</span> <span class="o">=</span> <span class="n">GIS</span><span class="p">(</span><span class="s2">&quot;https://portalname.domain.com/webcontext&quot;</span><span class="p">,</span> <span class="s2">&quot;amy&quot;</span><span class="p">,</span> <span class="s2">&quot;password&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Logged in as: &quot;</span> <span class="o">+</span> <span class="n">ldapbasic</span><span class="o">.</span><span class="n">properties</span><span class="o">.</span><span class="n">user</span><span class="o">.</span><span class="n">username</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>
+
+Basic Authentication with LDAP
+Logged in as: amy
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Portal-tier-authentication-with-LDAP,-as-an-enterprise-user">Portal-tier authentication with LDAP, as an enterprise user<a class="anchor-link" href="#Portal-tier-authentication-with-LDAP,-as-an-enterprise-user">&#182;</a></h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[5]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n\n</span><span class="s2">Portal-tier Authentication with LDAP - enterprise user&quot;</span><span class="p">)</span>    
+<span class="n">gisldap</span> <span class="o">=</span> <span class="n">GIS</span><span class="p">(</span><span class="s2">&quot;https://portalname.domain.com/webcontext&quot;</span><span class="p">,</span> <span class="s2">&quot;avworld</span><span class="se">\\</span><span class="s2">publisher&quot;</span><span class="p">,</span> <span class="s2">&quot;password&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Logged in as: &quot;</span> <span class="o">+</span> <span class="n">gisldap</span><span class="o">.</span><span class="n">properties</span><span class="o">.</span><span class="n">user</span><span class="o">.</span><span class="n">username</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>
+
+Portal-tier Authentication with LDAP - enterprise user
+Logged in as: Publisher@AVWORLD
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Portal-tier-authentication-with-LDAP,-as-a-builtin-user">Portal-tier authentication with LDAP, as a builtin user<a class="anchor-link" href="#Portal-tier-authentication-with-LDAP,-as-a-builtin-user">&#182;</a></h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[6]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n\n</span><span class="s2">Portal-tier Authentication with LDAP - builtin user&quot;</span><span class="p">)</span>    
+<span class="n">gisldap</span> <span class="o">=</span> <span class="n">GIS</span><span class="p">(</span><span class="s2">&quot;https://portalname.domain.com/webcontext&quot;</span><span class="p">,</span> <span class="s2">&quot;sharing1&quot;</span><span class="p">,</span> <span class="s2">&quot;password&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Logged in as: &quot;</span> <span class="o">+</span> <span class="n">gisldap</span><span class="o">.</span><span class="n">properties</span><span class="o">.</span><span class="n">user</span><span class="o">.</span><span class="n">username</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>
+
+Portal-tier Authentication with LDAP - builtin user
+Logged in as: sharing1
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="PKI-with-key-and-cert-files">PKI with key and cert files<a class="anchor-link" href="#PKI-with-key-and-cert-files">&#182;</a></h2><p>You can also specify a local certificate and key file to use as client side certificate, when logging into your ArcGIS portal using PKI-based client certificate authentication.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[7]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n\n</span><span class="s2">PKI with key and cert files&quot;</span><span class="p">)</span>  
+<span class="n">gis</span> <span class="o">=</span> <span class="n">GIS</span><span class="p">(</span><span class="s2">&quot;https://portalname.domain.com/webcontext&quot;</span><span class="p">,</span> 
+          <span class="n">key_file</span><span class="o">=</span><span class="s2">&quot;C:</span><span class="se">\\</span><span class="s2">path</span><span class="se">\\</span><span class="s2">to</span><span class="se">\\</span><span class="s2">key.pem&quot;</span><span class="p">,</span>
+          <span class="n">cert_file</span><span class="o">=</span><span class="s2">&quot;C:</span><span class="se">\\</span><span class="s2">path</span><span class="se">\\</span><span class="s2">to</span><span class="se">\\</span><span class="s2">cert.pem&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Logged in as: &quot;</span> <span class="o">+</span> <span class="n">gis</span><span class="o">.</span><span class="n">properties</span><span class="o">.</span><span class="n">user</span><span class="o">.</span><span class="n">username</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>
+
+PKI with key and cert files
+Logged in as: rohi3999@AVWORLD
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="ArcGIS-Pro-user-connecting-to-the-active-portal-in-the-Pro-app">ArcGIS Pro user connecting to the active portal in the Pro app<a class="anchor-link" href="#ArcGIS-Pro-user-connecting-to-the-active-portal-in-the-Pro-app">&#182;</a></h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>It is often useful to write scripts that work against the active portal in the ArcGIS Pro app.</p>
+<p>Using the "pro" authentication scheme, scripts can get an instance of the GIS class representing the active portal in ArcGIS Pro without requiring the user to pass their credentials in a second time. In this mode, users can leverage the Pro app to login to the portal and their scripts can use whichever Portal is currently active. This mode can also serve as a bridge for users with advanced authentication scenarios like IWA using NTLM or Kerberos or Smart Card where signing in with credentials may not be possible or desirable.</p>
+<p>Please note that ArcGIS Pro should be installed and concurrently running when the script is executed, for this mode to work.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[8]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n\n</span><span class="s2">Active Portal in ArcGIS Pro&quot;</span><span class="p">)</span>  
+<span class="n">gis</span> <span class="o">=</span> <span class="n">GIS</span><span class="p">(</span><span class="s2">&quot;pro&quot;</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>
+
+Active Portal in ArcGIS Pro
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
 </div>
     </div>
   </div>

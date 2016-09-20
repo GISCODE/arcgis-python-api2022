@@ -11,6 +11,7 @@ Working with the API
 gis module
 	- gis module
 	- class gis.GIS
+	- Authentication
 	- class gis.Item
 	- class gis.User
 	- class gis.Group
