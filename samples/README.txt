@@ -17,11 +17,14 @@ Org Administrators
 
 GIS Analysts and Data Scientists
 	- Chennai Floods Analysis
-	- Creating Hurricane Tracks using BigData Analytics
+	- Fighting California forest fires using spatial analysis
+    - Creating Hurricane Tracks using BigData Analytics
+    - Analyze NewYork city taxi data
 	- Creating Raster Information Product using Raster GeoAnalytics
 
 Content Publishers
 	- HTML table to Pandas dataframe to Portal Item
-	- Creating Raster Information Product using Raster GeoAnalytics
 	- Publishing SDs, Shapefiles and CSVs
+    - Publishing web maps and web scenes
+    - Creating Raster Information Product using Raster GeoAnalytics
 	- Using and updating GIS content
