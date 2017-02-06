@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>arcgis.gis module &mdash; arcgis 1.0 documentation</title>
+  <title>arcgis.gis module &mdash; arcgis 1.0.1 documentation</title>
   
 
   
@@ -33,9 +33,9 @@
         <link rel="index" title="Index"
               href="genindex.html"/>
         <link rel="search" title="Search" href="search.html"/>
-    <link rel="top" title="arcgis 1.0 documentation" href="index.html"/>
+    <link rel="top" title="arcgis 1.0.1 documentation" href="index.html"/>
         <link rel="next" title="arcgis.env module" href="arcgis.env.html"/>
-        <link rel="prev" title="API Reference for the ArcGIS Python API" href="index.html"/> 
+        <link rel="prev" title="API Reference for the ArcGIS API for Python" href="index.html"/> 
 
   
   <script src="_static/js/modernizr.min.js"></script>
@@ -63,7 +63,7 @@
             
             
               <div class="version">
-                1.0
+                1.0.1
               </div>
             
           
@@ -371,7 +371,7 @@
 <span id="arcgis-gis-module"></span><h1>arcgis.gis module<a class="headerlink" href="#module-arcgis.gis" title="Permalink to this headline">¶</a></h1>
 <p>The <strong>gis</strong> module provides an information model for GIS hosted
 within ArcGIS Online or an ArcGIS Portal. This module provides functionality to manage
-(create, read, update and delete) GIS users, groups, content and datastores. This module
+(create, read, update and delete) GIS users, groups and content. This module
 is the most important and provides the entry point into the GIS.</p>
 <div class="section" id="gis">
 <h2>GIS<a class="headerlink" href="#gis" title="Permalink to this headline">¶</a></h2>
@@ -380,7 +380,7 @@ is the most important and provides the entry point into the GIS.</p>
 <em class="property">class </em><code class="descclassname">arcgis.gis.</code><code class="descname">GIS</code><span class="sig-paren">(</span><em>url=None</em>, <em>username=None</em>, <em>password=None</em>, <em>key_file=None</em>, <em>cert_file=None</em>, <em>verify_cert=True</em>, <em>set_active=True</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.GIS" title="Permalink to this definition">¶</a></dt>
 <dd><p id="id1">A GIS is representative of ArcGIS Online or an ArcGIS Portal
 site. The GIS object provides helper objects to manage (search, create, retrieve) GIS resources such as
-content, users and groups</p>
+content, users and groups.</p>
 <p>Additionally, the GIS object has properties to query it&#8217;s state, accessible using the properties attribute.</p>
 <p>The GIS provides a mapping widget that can be used in the Jupyter notebook environment for visualizing GIS content
 as well as the results of your analysis. To create a new map, call the map() method.</p>
@@ -397,7 +397,7 @@ as well as the results of your analysis. To create a new map, call the map() met
 <dl class="method">
 <dt id="arcgis.gis.GIS.map">
 <code class="descname">map</code><span class="sig-paren">(</span><em>location=None</em>, <em>zoomlevel=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.GIS.map" title="Permalink to this definition">¶</a></dt>
-<dd><p>Creates a map widget centered at the location (Address or (lat, long) tuple)
+<dd><p>Creates a MapView widget centered at the location (Address or (lat, long) tuple)
 with the specified zoom-level(integer). If an Address is provided, it is geocoded
 using the GIS&#8217;s configured geocoders and if a match is found, the geographic
 extent of the matched address is used as the map extent. If a zoomlevel is also
@@ -1698,7 +1698,7 @@ folder already exists. If owner is not specified, does so for the logged in user
 
 <dl class="method">
 <dt id="arcgis.gis.ContentManager.create_service">
-<code class="descname">create_service</code><span class="sig-paren">(</span><em>name</em>, <em>service_description=''</em>, <em>has_static_data=False</em>, <em>max_record_count=1000</em>, <em>supported_query_formats='JSON'</em>, <em>capabilities=None</em>, <em>description=''</em>, <em>copyright_text=''</em>, <em>wkid=102100</em>, <em>create_params=None</em>, <em>service_type='imageService'</em>, <em>owner=None</em>, <em>folder=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.ContentManager.create_service" title="Permalink to this definition">¶</a></dt>
+<code class="descname">create_service</code><span class="sig-paren">(</span><em>name</em>, <em>service_description=''</em>, <em>has_static_data=False</em>, <em>max_record_count=1000</em>, <em>supported_query_formats='JSON'</em>, <em>capabilities=None</em>, <em>description=''</em>, <em>copyright_text=''</em>, <em>wkid=102100</em>, <em>create_params=None</em>, <em>service_type='imageService'</em>, <em>owner=None</em>, <em>folder=None</em>, <em>item_properties=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.ContentManager.create_service" title="Permalink to this definition">¶</a></dt>
 <dd><p>Creates a service in the Portal</p>
 <dl class="docutils">
 <dt>Arguments</dt>
@@ -1720,7 +1720,65 @@ wkid                    optional int, the well known id of the spatial reference
 <p>create_params           optional dict, containing all create parameters. If this parameter is used, all the parameters above are ignored</p>
 <p>service_type            optional string, the type of service to be created, imageService, featureService</p>
 <p>owner                   optional string, the username of the owner
-folder                  optional string, name of folder in which to create the service</p>
+folder                  optional string, name of folder in which to create the service
+item_properties         optional dict, see below for the keys and values</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="18%" />
+<col width="82%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><strong>Key</strong></td>
+<td><strong>Value</strong></td>
+</tr>
+<tr class="row-even"><td>type</td>
+<td>optional string, indicates type of item.  See URL 1 below for valid values.</td>
+</tr>
+<tr class="row-odd"><td>typeKeywords</td>
+<td>optional string list.  Lists all sub-types.  See URL 1 for valid values.</td>
+</tr>
+<tr class="row-even"><td>description</td>
+<td>optional string.  Description of the item.</td>
+</tr>
+<tr class="row-odd"><td>title</td>
+<td>optional string.  Name of the item.</td>
+</tr>
+<tr class="row-even"><td>url</td>
+<td>optional string.  URL to item that are based on URLs.</td>
+</tr>
+<tr class="row-odd"><td>tags</td>
+<td>optional string of comma-separated values, or list of strings.
+Used for searches on items.</td>
+</tr>
+<tr class="row-even"><td>snippet</td>
+<td>optional string.  Provides a very short summary of the what the item is.</td>
+</tr>
+<tr class="row-odd"><td>extent</td>
+<td>optional string with comma separated values for min x, min y, max x, max y.</td>
+</tr>
+<tr class="row-even"><td>spatialReference</td>
+<td>optional string.  Coordinate system that the item is in.</td>
+</tr>
+<tr class="row-odd"><td>accessInformation</td>
+<td>optional string.  Information on the source of the content.</td>
+</tr>
+<tr class="row-even"><td>licenseInfo</td>
+<td>optinal string, any license information or restrictions regarding content.</td>
+</tr>
+<tr class="row-odd"><td>culture</td>
+<td>optional string.  Locale, country and language information.</td>
+</tr>
+<tr class="row-even"><td>access</td>
+<td>optional string.  Valid values: private, shared, org, or public.</td>
+</tr>
+<tr class="row-odd"><td>commentsEnabled</td>
+<td>optional boolean.  Default is true.  Controls whether comments are allowed.</td>
+</tr>
+<tr class="row-even"><td>culture</td>
+<td>optional string.  Language and country information.</td>
+</tr>
+</tbody>
+</table>
 <table class="last docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -1882,10 +1940,12 @@ An instance of this class, called &#8216;users&#8217;, is available as a propert
 Users call methods on this &#8216;users&#8217; object to manipulate (create, get, search...) users.</p>
 <dl class="method">
 <dt id="arcgis.gis.UserManager.create">
-<code class="descname">create</code><span class="sig-paren">(</span><em>username</em>, <em>password</em>, <em>firstname</em>, <em>lastname</em>, <em>email</em>, <em>description=None</em>, <em>role='org_user'</em>, <em>provider='arcgis'</em>, <em>idpUsername=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.UserManager.create" title="Permalink to this definition">¶</a></dt>
-<dd><p>This operation is used to pre-create built-in or enterprise accounts within the portal.
-The provider parameter is used to indicate the type of user account. Only an administrator
+<code class="descname">create</code><span class="sig-paren">(</span><em>username</em>, <em>password</em>, <em>firstname</em>, <em>lastname</em>, <em>email</em>, <em>description=None</em>, <em>role='org_user'</em>, <em>provider='arcgis'</em>, <em>idp_username=None</em>, <em>level=2</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.UserManager.create" title="Permalink to this definition">¶</a></dt>
+<dd><p>This operation is used to pre-create built-in or enterprise accounts within the portal,
+or built-in users in an ArcGIS Online organization account.</p>
+<p>The provider parameter is used to indicate the type of user account. Only an administrator
 can call this method.</p>
+<p>To create a viewer account, choose role=&#8217;org_viewer&#8217; and level=1</p>
 <table border="1" class="docutils">
 <colgroup>
 <col width="17%" />
@@ -1901,7 +1961,9 @@ can call this method.</p>
 </tr>
 <tr class="row-odd"><td>password</td>
 <td>required string, must be &gt;= 8 characters. This is a required parameter only if
-the provider is arcgis; otherwise, the password parameter is ignored.</td>
+the provider is arcgis; otherwise, the password parameter is ignored.
+If creating an account in an ArcGIS Online org, it can be set as None to let
+the user set their password by clicking on a link that is emailed to him/her.</td>
 </tr>
 <tr class="row-even"><td>firstname</td>
 <td>required string, the first name for the user</td>
@@ -1917,15 +1979,21 @@ the provider is arcgis; otherwise, the password parameter is ignored.</td>
 </tr>
 <tr class="row-even"><td>role</td>
 <td>The role for the user account. The default value is org_user.
-Values: org_user | org_publisher | org_admin</td>
+Values: org_user | org_publisher | org_admin | org_viewer</td>
 </tr>
 <tr class="row-odd"><td>provider</td>
 <td>The provider for the account. The default value is arcgis.
 Values: arcgis | enterprise</td>
 </tr>
-<tr class="row-even"><td>idpUsername</td>
-<td>The name of the user as stored by the enterprise user store. This parameter is
-only required if the provider parameter is enterprise.</td>
+<tr class="row-even"><td>idp_username</td>
+<td><blockquote class="first">
+<div>The name of the user as stored by the enterprise user store. This parameter is</div></blockquote>
+<p class="last">only required if the provider parameter is enterprise.</p>
+</td>
+</tr>
+<tr class="row-odd"><td>level</td>
+<td>The account level.
+See <a class="reference external" href="http://server.arcgis.com/en/portal/latest/administer/linux/roles.htm">http://server.arcgis.com/en/portal/latest/administer/linux/roles.htm</a></td>
 </tr>
 </tbody>
 </table>
@@ -2384,7 +2452,7 @@ GIS if a role_id is not specified
         <a href="arcgis.env.html" class="btn btn-neutral float-right" title="arcgis.env module" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="index.html" class="btn btn-neutral" title="API Reference for the ArcGIS Python API" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="index.html" class="btn btn-neutral" title="API Reference for the ArcGIS API for Python" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
@@ -2393,7 +2461,7 @@ GIS if a role_id is not specified
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 2016, Esri.
+        &copy; Copyright 2016-2017, Esri.
 
     </p>
   </div>
@@ -2415,7 +2483,7 @@ GIS if a role_id is not specified
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'./',
-            VERSION:'1.0',
+            VERSION:'1.0.1',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  true
