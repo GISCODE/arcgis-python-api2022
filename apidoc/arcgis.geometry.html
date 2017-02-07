@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>arcgis.geometry module &mdash; arcgis 1.0 documentation</title>
+  <title>arcgis.geometry module &mdash; arcgis 1.0.1 documentation</title>
   
 
   
@@ -33,7 +33,7 @@
         <link rel="index" title="Index"
               href="genindex.html"/>
         <link rel="search" title="Search" href="search.html"/>
-    <link rel="top" title="arcgis 1.0 documentation" href="index.html"/>
+    <link rel="top" title="arcgis 1.0.1 documentation" href="index.html"/>
         <link rel="next" title="arcgis.geoprocessing module" href="arcgis.geoprocessing.html"/>
         <link rel="prev" title="arcgis.geocoding module" href="arcgis.geocoding.html"/> 
 
@@ -63,7 +63,7 @@
             
             
               <div class="version">
-                1.0
+                1.0.1
               </div>
             
           
@@ -787,42 +787,6 @@ spatial_ref.</dd>
 </div>
 <div class="section" id="density">
 <h2>density<a class="headerlink" href="#density" title="Permalink to this headline">¶</a></h2>
-<dl class="method">
-<dt id="arcgis.geometry.density">
-<code class="descclassname">geometry.</code><code class="descname">density</code><span class="sig-paren">(</span><em>geometries</em>, <em>spatial_ref</em>, <em>max_segment_length</em>, <em>length_unit</em>, <em>geodesic=False</em>, <em>gis=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.geometry.density" title="Permalink to this definition">¶</a></dt>
-<dd><p>The densify function is performed using the GIS&#8217;s geometry engine.
-This function densifies geometries by plotting points between
-existing vertices.</p>
-<dl class="docutils">
-<dt>Inputs:</dt>
-<dd><dl class="first last docutils">
-<dt>geometries - The array of geometries to be densified. The</dt>
-<dd>structure of each geometry in the array is the same as the
-structure of the JSON geometry objects returned by the ArcGIS
-REST API.</dd>
-<dt>spatial_ref - The well-known ID or a spatial reference JSON object for</dt>
-<dd>the input polylines. For a list of valid WKID values, see
-Projected coordinate systems and Geographic coordinate systems.</dd>
-<dt>max_segment_length - All segments longer than maxSegmentLength are</dt>
-<dd>replaced with sequences of lines no longer than
-max_segment_length.</dd>
-<dt>length_unit - The length unit of max_segment_length. If geodesic is</dt>
-<dd>set to false, then the units are derived from spatial_ref, and
-length_unit is ignored. If geodesic is set to true, then
-length_unit must be a linear unit. In a case where length_unit is
-not specified and spatial_ref is a PCS, the units are derived from spatial_ref.
-In a case where length_unit is not specified and spatial_ref is a GCS,
-then the units are meters.</dd>
-<dt>geodesic - If geodesic is set to true, then geodesic distance is</dt>
-<dd>used to calculate max_segment_length. Geodesic distance is the
-shortest path between two points along the ellipsoid of the
-earth. If geodesic is set to false, then 2D Euclidean distance
-is used to calculate max_segment_length. The default is false.</dd>
-</dl>
-</dd>
-</dl>
-</dd></dl>
-
 </div>
 <div class="section" id="difference">
 <h2>difference<a class="headerlink" href="#difference" title="Permalink to this headline">¶</a></h2>
@@ -1229,9 +1193,9 @@ parameter must also be specified. The default value is false.</dd>
 <dl class="method">
 <dt id="arcgis.geometry.relation">
 <code class="descclassname">geometry.</code><code class="descname">relation</code><span class="sig-paren">(</span><em>geometries1</em>, <em>geometries2</em>, <em>spatial_ref</em>, <em>spatial_relation='esriGeometryRelationIntersection'</em>, <em>relation_param=''</em>, <em>gis=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.geometry.relation" title="Permalink to this definition">¶</a></dt>
-<dd><p>The spatial_relation function is performed on a geometry service resource.
+<dd><p>The relation function is performed on a geometry service resource.
 This function determines the pairs of geometries from the input
-geometry arrays that participate in the specified spatial spatial_relation.
+geometry arrays that participate in the specified spatial relation.
 Both arrays are assumed to be in the spatial reference specified by
 spatial_ref, which is a required parameter. Geometry types cannot be mixed
 within an array. The relations are evaluated in 2D. In other words,
@@ -1292,7 +1256,7 @@ reshaper - The single-part polyline that does the reshaping.</p>
 <dl class="method">
 <dt id="arcgis.geometry.to_geo_coordinate_string">
 <code class="descclassname">geometry.</code><code class="descname">to_geo_coordinate_string</code><span class="sig-paren">(</span><em>spatial_ref</em>, <em>coordinates</em>, <em>conversion_type</em>, <em>conversion_mode='mgrsDefault'</em>, <em>num_of_digits=None</em>, <em>rounding=True</em>, <em>add_spaces=True</em>, <em>gis=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.geometry.to_geo_coordinate_string" title="Permalink to this definition">¶</a></dt>
-<dd><p>The toGeoCoordinateString function is performed on a geometry
+<dd><p>The to_geo_coordinate_string function is performed on a geometry
 service resource. The function converts an array of
 xy-coordinates into well-known strings based on the conversion type
 and spatial reference supplied by the user. Optional parameters are
@@ -1451,7 +1415,7 @@ spatial_ref - The well-known ID of the spatial reference or a spatial</p>
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 2016, Esri.
+        &copy; Copyright 2016-2017, Esri.
 
     </p>
   </div>
@@ -1473,7 +1437,7 @@ spatial_ref - The well-known ID of the spatial reference or a spatial</p>
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'./',
-            VERSION:'1.0',
+            VERSION:'1.0.1',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  true
