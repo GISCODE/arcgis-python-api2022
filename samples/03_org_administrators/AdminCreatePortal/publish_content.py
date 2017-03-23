@@ -4,57 +4,87 @@
 from arcgis.gis import *
 import csv
 import json
+import argparse
 
-# Read the csv containing user accounts and their territory info
-csv_path = "users.csv"
+try:
+    #region read cmd line args
+    parser = argparse.ArgumentParser()
+    parser.add_argument('url', help='Portal url of the form: https://portalname.domain.com/webadaptor')
+    parser.add_argument('-u','--user', help='Administrator username', default='admin')
+    parser.add_argument('-p','--password', help='Administrator password', default='x]984<ngb3!')
+    parser.add_argument('-l','--log', help='Path to log file',default='python_process.log')
 
-# Read template web map
-template_webmap_dict = dict()
-with open('.\\user_content\\web_map.json', 'r') as webmap_file:
-            template_webmap_dict = json.load(webmap_file)
+    args = parser.parse_args()
+    #endregion
 
-# Connect to the GIS
-gis = GIS("https://dev003327.esri.com/portal", "admin", "esri.agp")
+    # Read the csv containing user accounts and their territory info
+    csv_path = "users.csv"
 
-# Loop through each user and publish the content
-with open(csv_path, 'r') as csv_handle:
-    reader = csv.DictReader(csv_handle)
-    for row in reader:
-        try:
-            data_to_publish = '.\\user_content\\' + row['assigned_state'] + ".csv"
+    # Read the log file in append mode
+    log_file = open(args.log, 'a')
+    log_file.write("\n")
+    log_file.write("=====================================================================\n")
+    log_file.write("PUBLISHING USER CONTENT")
 
-            print("Publishing ", data_to_publish, end = " # ")
-            added_item = gis.content.add({}, data = data_to_publish)
-            published_item = added_item.publish()
+    # Read template web map
+    template_webmap_dict = dict()
+    with open('user_content/web_map.json', 'r') as webmap_file:
+                template_webmap_dict = json.load(webmap_file)
 
-            if published_item is not None:
-                # publish web map
-                print('webmaps', end= " ## ")
-                user_webmap_dict = template_webmap_dict
-                user_webmap_dict['operationalLayers'][0].update({'itemId': published_item.itemid,
-                                                                 'layerType': "ArcGISFeatureLayer",
-                                                                 'title': published_item.title,
-                                                                 'url': published_item.url + r"/0"})
+    # Connect to the GIS
+    gis = GIS(args.url, args.user, args.password)
 
-                web_map_properties = {'title': '{0} {1} response locations'.format(row['Firstname'], row['Lastname']),
-                                      'type': 'Web Map',
-                                      'snippet': 'Areas affected by Hurricane Matthew under the supervision of' +\
-                                                 '{0} {1}'.format(row['Firstname'], row['Lastname']),
-                                      'tags': 'ArcGIS Python API',
-                                      'typeKeywords' : "Collector, Explorer Web Map, Web Map, Map, Online Map",
-                                      'text': json.dumps(user_webmap_dict)}
+    # Loop through each user and publish the content
+    with open(csv_path, 'r') as csv_handle:
+        reader = csv.DictReader(csv_handle)
+        for row in reader:
+            try:
+                data_to_publish = 'user_content/' + row['assigned_state'] + ".csv"
 
-                web_map_item = gis.content.add(web_map_properties)
+                log_file.write("\nPublishing " + data_to_publish + " # ")
+                added_item = gis.content.add({}, data = data_to_publish)
+                published_item = added_item.publish()
 
-                print("success. Assigning to: ", end="  #  ")
-                result1 = published_item.reassign_to(row['username'])
-                result2 = web_map_item.reassign_to(row['username'])
-                if (result1 and result2) is not None:
-                    print(row['username'])
+                if published_item is not None:
+                    # publish web map
+                    log_file.write('webmaps' + " ## ")
+                    user_webmap_dict = template_webmap_dict
+                    user_webmap_dict['operationalLayers'][0].update({'itemId': published_item.itemid,
+                                                                     'layerType': "ArcGISFeatureLayer",
+                                                                     'title': published_item.title,
+                                                                     'url': published_item.url + r"/0"})
+
+                    web_map_properties = {'title': '{0} {1} response locations'.format(row['Firstname'], row['Lastname']),
+                                          'type': 'Web Map',
+                                          'snippet': 'Regions under the supervision of' +\
+                                                     '{0} {1}'.format(row['Firstname'], row['Lastname']),
+                                          'tags': 'ArcGIS API for Python',
+                                          'typeKeywords': "Collector, Explorer Web Map, Web Map, Map, Online Map",
+                                          'text': json.dumps(user_webmap_dict)}
+
+                    web_map_item = gis.content.add(web_map_properties)
+
+                    #Reassign ownership of items to current user. Transfer webmaps in a new
+                    # folder with user's last name
+                    log_file.write("success. Assigning to: " + "  #  ")
+                    result1 = published_item.reassign_to(row['username'])
+                    new_folder_name = row['Lastname'] + "_webmaps"
+                    result2 = web_map_item.reassign_to(row['username'], target_folder=new_folder_name)
+
+                    #share webmap to user's groups
+                    groups_list1 = row['groups'].split(',')
+                    groups_list = [gname.lstrip() for gname in groups_list1] #remove white spaces in name
+                    result3 = web_map_item.share(groups=groups_list)
+                    if (result1 and result2 and result3) is not None:
+                        log_file.write(row['username'])
+                    else:
+                        log_file.write("error")
                 else:
-                    print("error")
-            else:
-                print(" error publishing csv")
+                    log_file.write(" error publishing csv")
 
-        except Exception as pub_ex:
-            print("Error : ", str(pub_ex))
+            except Exception as pub_ex:
+                log_file.write("Error : " + str(pub_ex))
+    log_file.close()
+    print("0")
+except Exception as global_ex:
+    print("1")

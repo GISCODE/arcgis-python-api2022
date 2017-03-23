@@ -1,61 +1,79 @@
 # Script to clean up the users, content and groups created for demo
 
 from arcgis.gis import *
-print("RUNNING CLEANUP")
-print("---------------")
+import argparse
 
-gis = GIS("https://dev003327.esri.com/portal", "admin", "esri.agp")
-
-# region remove groups
-group_list = gis.groups.search("owner:admin")
-print("")
-print("Deleting groups")
-print("---------------")
-
-for group in group_list:
-    try:
-        print("Deleting ", group.title, end= "  ##  ")
-        group.delete()
-        print("success")
-    except Exception as group_del_ex:
-        print("Error deleting : " , str(group_del_ex))
-# endregion
-
-#region remove content for each user
-print("")
-print("Deleting user content")
-print("---------------------")
-user_list = gis.users.search("")
 try:
+    #region read cmd line args
+    parser = argparse.ArgumentParser()
+    parser.add_argument('url', help='Portal url of the form: https://portalname.domain.com/webadaptor')
+    parser.add_argument('-u','--user', help='Administrator username', default='admin')
+    parser.add_argument('-p','--password', help='Administrator password', default='x]984<ngb3!')
+    parser.add_argument('-l', '--log', help='Path to log file', default='python_process.log')
+
+    args = parser.parse_args()
+    #endregion
+
+    # Read the log file in append mode
+    log_file = open(args.log, 'a')
+
+    log_file.write("\n")
+    log_file.write("=====================================================================\n")
+    log_file.write("RUNNING CLEANUP\n")
+
+    gis = GIS(args.url, args.user, args.password)
+
+    # region remove groups
+    group_list = gis.groups.search("owner:" + args.user)
+    log_file.write("Deleting groups\n")
+    log_file.write("---------------\n")
+
+    for group in group_list:
+        try:
+            log_file.write("\nDeleting " + group.title + "  ##  ")
+            group.delete()
+            log_file.write("success")
+        except Exception as group_del_ex:
+            log_file.write("Error deleting : " + str(group_del_ex))
+    # endregion
+
+    #region remove content for each user
+    log_file.write("\n\nDeleting user content\n")
+    log_file.write("---------------------\n")
+    user_list = gis.users.search("")
+    try:
+        for user in user_list:
+            log_file.write('\nUser : ' + user.username + " # ")
+            if user.fullName in ['Administrator', 'Esri', 'Esri Navigation']:
+                log_file.write('skipped')
+                continue
+
+            user_content = gis.content.search('owner:{0}'.format(user.username))
+            for item in user_content:
+                log_file.write('\nDeleting : '+ item.title + " # ")
+                delete_status = item.delete()
+                log_file.write(str(delete_status)+ " | ")
+            log_file.write('empty')
+
+    except Exception as content_del_ex:
+        log_file.write(str('content_del_ex'))
+    #endregion
+
+    # region remove users
+    user_list = gis.users.search()
+    log_file.write("\n\nDeleting users\n")
+    log_file.write("--------------\n")
+
     for user in user_list:
-        print('User : ', user.username, end=" # ")
-        if user.fullName in ['Administrator', 'Esri', 'Esri Navigation']:
-            print('skipped')
+        if user.username == "admin" or user.username.startswith("esri_") or user.username.startswith("AVWORLD"):
             continue
+        else:
+            log_file.write("\nDeleting " + user.username + "  ##  ")
+            user.delete()
+            log_file.write("success")
+    # endregion
+    log_file.write("\n All clean")
 
-        user_content = gis.content.search('owner:{0}'.format(user.username))
-        for item in user_content:
-            print('Deleting : ', item.title, end = " # ")
-            delete_status = item.delete()
-            print(str(delete_status), end = " | ")
-        print('empty')
-
-except Exception as content_del_ex:
-    print(str('content_del_ex'))
-#endregion
-
-# region remove users
-user_list = gis.users.search()
-print("")
-print("Deleting users")
-print("--------------")
-
-for user in user_list:
-    if user.username == "admin" or user.username.startswith("esri_") or user.username.startswith("AVWORLD"):
-        continue
-    else:
-        print("Deleting ", user.username, end = "  ##  ")
-        user.delete()
-        print("success")
-# endregion
-print("\n All clean")
+    print("0")
+except:
+    print("1")
