@@ -5,7 +5,7 @@ Documentation and samples for the ArcGIS Python API https://developers.arcgis.co
 
 [Join the conversation](https://geonet.esri.com/groups/arcgis-python-api/)
 
-##What's included
+## What's included
 
 * Documentation
 * Sample Notebooks
