@@ -21,3 +21,4 @@ Submodules
    :maxdepth: 3
 
    arcgis.raster.analytics
+   arcgis.raster.functions
