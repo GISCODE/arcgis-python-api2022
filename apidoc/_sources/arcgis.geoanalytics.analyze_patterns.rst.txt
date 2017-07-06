@@ -11,4 +11,8 @@ find_hot_spots
 --------------
 .. automethod:: arcgis.geoanalytics.analyze_patterns.find_hot_spots
 
+create_space_time_cube
+----------------------
+.. automethod:: arcgis.geoanalytics.analyze_patterns.create_space_time_cube
+
     

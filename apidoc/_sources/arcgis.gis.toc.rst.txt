@@ -86,4 +86,19 @@ RoleManager
     :undoc-members:
     :show-inheritance:
 
+ResourceManager
+---------------------------
+.. autoclass:: arcgis.gis.ResourceManager
+    :members:
+    :undoc-members:
+    :show-inheritance:
 
+
+Submodules
+--------------
+.. toctree::
+   :maxdepth: 3
+
+   arcgis.gis.admin
+   arcgis.gis.server
+   
