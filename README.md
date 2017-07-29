@@ -5,7 +5,7 @@ Documentation and samples for the ArcGIS Python API https://developers.arcgis.co
 
 [Join the conversation](https://geonet.esri.com/groups/arcgis-python-api/)
 
-##What's included
+## What's included
 
 * Documentation
 * Sample Notebooks
@@ -43,6 +43,3 @@ See the License for the specific language governing permissions and
 limitations under the License.
 
 A copy of the license is available in the repository's [license.txt](https://github.com/Esri/arcgis-python-api/blob/master/license.txt) file.
-
-[](Esri Tags: Python ArcGIS API Notebooks)
-[](Esri Language: Python)
