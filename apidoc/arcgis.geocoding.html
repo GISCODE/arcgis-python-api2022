@@ -8,11 +8,9 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>arcgis.geocoding module &mdash; arcgis 1.2.0 documentation</title>
+  <title>arcgis.geocoding module &mdash; arcgis 1.2.1 documentation</title>
   
 
-  
-  
   
   
 
@@ -30,12 +28,14 @@
   
 
   
+    <link rel="stylesheet" href="_static/theme_overrides.css" type="text/css" />
+  
 
   
         <link rel="index" title="Index"
               href="genindex.html"/>
         <link rel="search" title="Search" href="search.html"/>
-    <link rel="top" title="arcgis 1.2.0 documentation" href="index.html"/>
+    <link rel="top" title="arcgis 1.2.1 documentation" href="index.html"/>
         <link rel="next" title="arcgis.geometry module" href="arcgis.geometry.html"/>
         <link rel="prev" title="arcgis.geoanalytics.use_proximity module" href="arcgis.geoanalytics.use_proximity.html"/> 
 
@@ -46,7 +46,6 @@
 
 <body class="wy-body-for-nav" role="document">
 
-   
   <div class="wy-grid-for-nav">
 
     
@@ -66,7 +65,7 @@
             
             
               <div class="version">
-                1.2.0
+                1.2.1
               </div>
             
           
@@ -87,10 +86,7 @@
           
             
             
-              
-            
-            
-              <p class="caption"><span class="caption-text">arcgis</span></p>
+                <p class="caption"><span class="caption-text">arcgis</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="arcgis.gis.toc.html">arcgis.gis module</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.gis.toc.html#gis">GIS</a></li>
@@ -114,6 +110,7 @@
 <li class="toctree-l4"><a class="reference internal" href="arcgis.gis.admin.html#collaboration">Collaboration</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.gis.admin.html#creditmanager">CreditManager</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.gis.admin.html#passwordpolicy">PasswordPolicy</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.gis.admin.html#portalresourcemanager">PortalResourceManager</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.gis.admin.html#ux">UX</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.gis.admin.html#federation">Federation</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.gis.admin.html#logs">Logs</a></li>
@@ -546,10 +543,8 @@
 
       
       <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
-        
-          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-          <a href="index.html">arcgis</a>
-        
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="index.html">arcgis</a>
       </nav>
 
 
@@ -558,40 +553,23 @@
         <div class="rst-content">
           
 
-
-
-
-
-
-
-
-
-
-
-
+ 
 
 
 
 <div role="navigation" aria-label="breadcrumbs navigation">
-
   <ul class="wy-breadcrumbs">
-    
-      <li><a href="index.html">Docs</a> &raquo;</li>
-        
-      <li>arcgis.geocoding module</li>
-    
-    
+    <li><a href="index.html">Docs</a> &raquo;</li>
+      
+    <li>arcgis.geocoding module</li>
       <li class="wy-breadcrumbs-aside">
         
-            
-            <a href="_sources/arcgis.geocoding.rst.txt" rel="nofollow"> View page source</a>
+          
+            <a href="_sources/arcgis.geocoding.txt" rel="nofollow"> View page source</a>
           
         
       </li>
-    
   </ul>
-
-  
   <hr/>
 </div>
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
@@ -623,7 +601,7 @@ a url to a Geocoding Service.</p>
 <dt id="arcgis.geocoding.Geocoder.fromitem">
 <em class="property">classmethod </em><code class="descname">fromitem</code><span class="sig-paren">(</span><em>item</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.geocoding.Geocoder.fromitem" title="Permalink to this definition">¶</a></dt>
 <dd><p>Creates a Geocoder from an Item in the GIS
-:param item: an Item of type ‘Geocoding Service’
+:param item: an Item of type &#8216;Geocoding Service&#8217;
 :return: Geocoder</p>
 </dd></dl>
 
@@ -652,70 +630,108 @@ can be queried using get_geocoders.
 <h2>geocode<a class="headerlink" href="#geocode" title="Permalink to this headline">¶</a></h2>
 <dl class="method">
 <dt id="arcgis.geocoding.geocode">
-<code class="descclassname">geocoding.</code><code class="descname">geocode</code><span class="sig-paren">(</span><em>address</em>, <em>search_extent=None</em>, <em>location=None</em>, <em>distance=None</em>, <em>out_sr=None</em>, <em>category=None</em>, <em>out_fields=’*’</em>, <em>max_locations=20</em>, <em>magic_key=None</em>, <em>for_storage=False</em>, <em>geocoder=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.geocoding.geocode" title="Permalink to this definition">¶</a></dt>
+<code class="descclassname">geocoding.</code><code class="descname">geocode</code><span class="sig-paren">(</span><em>address</em>, <em>search_extent=None</em>, <em>location=None</em>, <em>distance=None</em>, <em>out_sr=None</em>, <em>category=None</em>, <em>out_fields='*'</em>, <em>max_locations=20</em>, <em>magic_key=None</em>, <em>for_storage=False</em>, <em>geocoder=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.geocoding.geocode" title="Permalink to this definition">¶</a></dt>
 <dd><p>The geocode function geocodes one location per request.</p>
-<p>Inputs:</p>
-<blockquote>
-<div><p>address - Specifies the location to be geocoded. This can be a string
-containing the street address, place name, postal code, or POI.</p>
-<blockquote>
-<div><p>Alternatively, this can be a dictionary containing the various address fields accepted
-by the corresponding geocoder. These fields are listed in the addressFields property of
-the associated geocoder. For example, if the address_fields of a geocoder includes fields
-with the following names: Street, City, State and Zone, then the
-address argument is of the form:
+<table border="1" class="docutils">
+<colgroup>
+<col width="22%" />
+<col width="78%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><strong>Argument</strong></td>
+<td><strong>Description</strong></td>
+</tr>
+<tr class="row-even"><td>address</td>
+<td><p class="first">required list of strings or dictionaries.
+Specifies the location to be geocoded. This can be
+a string containing the street address, place name,
+postal code, or POI.</p>
+<p>Alternatively, this can be a dictionary containing
+the various address fields accepted by the
+corresponding geocoder. These fields are listed in
+the addressFields property of the associated
+geocoder. For example, if the address_fields of a
+geocoder includes fields with the following names:
+Street, City, State and Zone, then the address
+argument is of the form:
 {</p>
 <blockquote>
-<div>Street: “1234 W Main St”,
-City: “Small Town”,
-State: “WA”,
-Zone: “99027”</div></blockquote>
-<p>}</p>
-</div></blockquote>
-<dl class="docutils">
-<dt>search_extent - A set of bounding box coordinates that limit the search</dt>
-<dd>area to a specific region. This is especially useful for
-applications in which a user will search for places and
-addresses only within the current map extent.</dd>
-<dt>location - Defines an origin point location that is used with</dt>
-<dd>the distance parameter to sort geocoding candidates based upon
-their proximity to the location. The distance parameter
-specifies the radial distance from the location in meters. The
-priority of candidates within this radius is boosted relative
-to those outside the radius.</dd>
-<dt>distance - Specifies the radius of an area around a point</dt>
-<dd>location which is used to boost the rank of geocoding
-candidates so that candidates closest to the location are
-returned first. The distance value is in meters.</dd>
-<dt>out_sr - The spatial reference of the x/y coordinates returned by</dt>
-<dd>a geocode request. This is useful for applications using a map
-with a spatial reference different than that of the geocode
-service.</dd>
-<dt>category - A place or address type which can be used to filter</dt>
-<dd>find results. The parameter supports input of single category
-values or multiple comma-separated values. The category
-parameter can be passed in a request with or without the text
-parameter.</dd>
-</dl>
-<p>out_fields - The list of fields to be returned in the response.</p>
-<dl class="docutils">
-<dt>maxLocation - The maximum number of locations to be returned by</dt>
-<dd>a search, up to the maximum number allowed by the service. If
-not specified, then one location will be returned.</dd>
-<dt>magic_key - The find operation retrieves results quicker when you</dt>
-<dd>pass in valid text and magicKey values than when you don’t pass
-in magicKey. However, to get these advantages, you need to make
-a prior request to suggest, which provides a magicKey. This may
-or may not be relevant to your workflow.</dd>
-<dt>for_storage - Specifies whether the results of the operation will</dt>
-<dd>be persisted. The default value is false, which indicates the
-results of the operation can’t be stored, but they can be
-temporarily displayed on a map for instance. If you store the
-results, in a database for example, you need to set this
-parameter to true.</dd>
-</dl>
-<p>geocoder - Optional, the geocoder to be used. If not specified, the active GIS’s first geocoder is used.</p>
-</div></blockquote>
+<div>Street: &#8220;1234 W Main St&#8221;,
+City: &#8220;Small Town&#8221;,
+State: &#8220;WA&#8221;,
+Zone: &#8220;99027&#8221;</div></blockquote>
+<p class="last">}</p>
+</td>
+</tr>
+<tr class="row-odd"><td>search_extent</td>
+<td>optional string, A set of bounding box coordinates
+that limit the search area to a specific region.
+This is especially useful for applications in which
+a user will search for places and addresses only
+within the current map extent.</td>
+</tr>
+<tr class="row-even"><td>location</td>
+<td>optionl [x,y], Defines an origin point location that
+is used with the distance parameter to sort
+geocoding candidates based upon their proximity to
+the location.</td>
+</tr>
+<tr class="row-odd"><td>distance</td>
+<td>optional float, Specifies the radius of an area
+around a point location which is used to boost the
+rank of geocoding candidates so that candidates
+closest to the location are returned first. The
+distance value is in meters.</td>
+</tr>
+<tr class="row-even"><td>out_sr</td>
+<td>optional dictionary, The spatial reference of the
+x/y coordinates returned by a geocode request. This
+is useful for applications using a map with a spatial
+reference different than that of the geocode service.</td>
+</tr>
+<tr class="row-odd"><td>category</td>
+<td>optional string, A place or address type which can
+be used to filter find results. The parameter
+supports input of single category values or multiple
+comma-separated values. The category parameter can be
+passed in a request with or without the text
+parameter.</td>
+</tr>
+<tr class="row-even"><td>out_fields</td>
+<td>optional string, name of all the fields to inlcude.
+The default is &#8220;*&#8221; which means all fields.</td>
+</tr>
+<tr class="row-odd"><td>max_location</td>
+<td>optional integer, The number of locations to be
+returned from the service. The default is 20.</td>
+</tr>
+<tr class="row-even"><td>magic_key</td>
+<td>The find operation retrieves results quicker when
+you pass a valid text and magickey value.</td>
+</tr>
+<tr class="row-odd"><td>for_storage</td>
+<td>Specifies whether the results of the operation will
+be persisted. The default value is false, which
+indicates the results of the operation can&#8217;t be
+stored, but they can be temporarily displayed on a
+map for instance. If you store the results, in a
+database for example, you need to set this parameter
+to true.</td>
+</tr>
+<tr class="row-even"><td>geocoder</td>
+<td>Optional, the geocoder to be used. If not specified,
+the active GIS&#8217;s first geocoder is used.</td>
+</tr>
+</tbody>
+</table>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">dictionary</td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
 </div>
@@ -727,23 +743,15 @@ parameter to true.</dd>
 <dd><p>The reverse_geocode operation determines the address at a particular
 x/y location. You pass the coordinates of a point location to the
 geocoding service, and the service returns the address that is
-closest to the location.
-Input:</p>
-<blockquote>
-<div><p>location - a list defined as [X,Y] or a Point Geometry object</p>
-<dl class="docutils">
-<dt>distance - allows you to specify a radial distance in meters to search for an address from the specified location.</dt>
-<dd>If no distance value is specified then the value is assumed to be 100 meters.</dd>
-</dl>
-<p>out_sr - spatial reference of the x/y coordinates returned.</p>
-<p>lang_code - sets the language in which reverse-geocoded addresses are returned.</p>
-<dl class="docutils">
-<dt>return_intersection - Boolean which specifies whether the service should return the nearest street intersection</dt>
-<dd>or the nearest address to the input location</dd>
-</dl>
-<p>for_storage - specifies whether the results of the operation will be persisted</p>
-<p>geocoder - Optional, the geocoder to be used. If not specified, the active GIS’s first geocoder is used.</p>
-</div></blockquote>
+closest to the location.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">dictionary</td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
 </div>
@@ -751,61 +759,17 @@ Input:</p>
 <h2>batch_geocode<a class="headerlink" href="#batch-geocode" title="Permalink to this headline">¶</a></h2>
 <dl class="method">
 <dt id="arcgis.geocoding.batch_geocode">
-<code class="descclassname">geocoding.</code><code class="descname">batch_geocode</code><span class="sig-paren">(</span><em>addresses</em>, <em>source_country=None</em>, <em>category=None</em>, <em>out_sr=None</em>, <em>geocoder=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.geocoding.batch_geocode" title="Permalink to this definition">¶</a></dt>
+<code class="descclassname">geocoding.</code><code class="descname">batch_geocode</code><span class="sig-paren">(</span><em>addresses</em>, <em>source_country=None</em>, <em>category=None</em>, <em>out_sr=None</em>, <em>geocoder=None</em>, <em>as_featureset=False</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.geocoding.batch_geocode" title="Permalink to this definition">¶</a></dt>
 <dd><p>The batch_geocode() function geocodes an entire list of addresses.
 Geocoding many addresses at once is also known as bulk geocoding.</p>
-<p>Inputs:</p>
-<blockquote>
-<div><p>addresses - A list of addresses to be geocoded.
-For passing in the location name as a single line of text -
-single field batch geocoding - use a string.
-For passing in the location name as multiple lines of text
-multifield batch geocoding - use the address fields described
-in the Geocoder documentation.</p>
-<blockquote>
-<div><p>The maximum number of addresses that can be geocoded in a
-single request is limited to the SuggestedBatchSize property of
-the locator.
-Syntax:</p>
-<blockquote>
-<div><p>addresses = [“380 New York St, Redlands, CA”,
-“1 World Way, Los Angeles, CA”,
-“1200 Getty Center Drive, Los Angeles, CA”,
-“5905 Wilshire Boulevard, Los Angeles, CA”,
-“100 Universal City Plaza, Universal City, CA 91608”,
-“4800 Oak Grove Dr, Pasadena, CA 91109”]</p>
-<p>OR</p>
-<dl class="docutils">
-<dt>addresses= [{</dt>
-<dd>“Address”: “380 New York St.”,
-“City”: “Redlands”,
-“Region”: “CA”,
-“Postal”: “92373”</dd>
-</dl>
-</div></blockquote>
-<dl class="docutils">
-<dt>},{</dt>
-<dd>“Address”: “1 World Way”,
-“City”: “Los Angeles”,
-“Region”: “CA”,
-“Postal”: “90045”</dd>
-</dl>
-<p>}]</p>
-</div></blockquote>
-<dl class="docutils">
-<dt>source_country - The source_country parameter is only supported by</dt>
-<dd>geocoders published using StreetMap Premium locators.
-Added at 10.3 and only supported by geocoders published
-with ArcGIS 10.3 for Server and later versions.</dd>
-<dt>category - The category parameter is only supported by geocode</dt>
-<dd>services published using StreetMap Premium locators.</dd>
-<dt>out_sr - The well-known ID of the spatial reference, or a spatial</dt>
-<dd>reference json object for the returned addresses. For a list of
-valid WKID values, see Projected coordinate systems and
-Geographic coordinate systems.</dd>
-</dl>
-<p>geocoder - Optional, the geocoder to be used. If not specified, the active GIS’s first geocoder is used.</p>
-</div></blockquote>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">dictionary or FeatureSet</td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
 </div>
@@ -835,43 +799,7 @@ This capability facilitates the interactive search user experience
 by reducing the number of characters that need to be typed before
 a suggested match is obtained. A client application can provide a
 list of suggestions that is updated with each character typed by a
-user until the address they are looking for appears in the list.
-Inputs:</p>
-<blockquote>
-<div><dl class="docutils">
-<dt>text - The input text provided by a user that is used by the</dt>
-<dd>suggest operation to generate a list of possible matches. This
-is a required parameter.</dd>
-<dt>location -  Defines an origin point location that is used with</dt>
-<dd>the distance parameter to sort suggested candidates based on
-their proximity to the location. The distance parameter
-specifies the radial distance from the location in meters. The
-priority of candidates within this radius is boosted relative
-to those outside the radius.
-This is useful in mobile applications where a user wants to
-search for places in the vicinity of their current GPS
-location. It is also useful for web mapping applications where
-a user wants to find places within or near the map extent.
-The location parameter can be specified without specifying a
-distance. If distance is not specified, it defaults to 2000
-meters.
-The object can be an common.geometry.Point or X/Y list object</dd>
-<dt>distance - Specifies the radius around the point defined in the</dt>
-<dd>location parameter to create an area, which is used to boost
-the rank of suggested candidates so that candidates closest to
-the location are returned first. The distance value is in
-meters.
-If the distance parameter is specified, the location parameter
-must be specified as well.
-It is important to note that the location and distance
-parameters allow searches to extend beyond the specified search
-radius. They are not used to filter results, but rather to rank
-resulting candidates based on their distance from a location.</dd>
-<dt>category - The category parameter is only supported by geocode</dt>
-<dd>services published using StreetMap Premium locators.</dd>
-</dl>
-<p>geocoder - Optional, the geocoder to be used. If not specified, the active GIS’s first geocoder is used.</p>
-</div></blockquote>
+user until the address they are looking for appears in the list.</p>
 </dd></dl>
 
 </div>
@@ -879,18 +807,15 @@ resulting candidates based on their distance from a location.</dd>
 
 
            </div>
-           <div class="articleComments">
-            
-           </div>
           </div>
           <footer>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="arcgis.geometry.html" class="btn btn-neutral float-right" title="arcgis.geometry module" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="arcgis.geometry.html" class="btn btn-neutral float-right" title="arcgis.geometry module" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="arcgis.geoanalytics.use_proximity.html" class="btn btn-neutral" title="arcgis.geoanalytics.use_proximity module" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="arcgis.geoanalytics.use_proximity.html" class="btn btn-neutral" title="arcgis.geoanalytics.use_proximity module" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
@@ -921,11 +846,10 @@ resulting candidates based on their distance from a location.</dd>
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'./',
-            VERSION:'1.2.0',
+            VERSION:'1.2.1',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
-            HAS_SOURCE:  true,
-            SOURCELINK_SUFFIX: '.txt'
+            HAS_SOURCE:  true
         };
     </script>
       <script type="text/javascript" src="_static/jquery.js"></script>

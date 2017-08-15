@@ -8,11 +8,9 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>arcgis.features.manage_data module &mdash; arcgis 1.2.0 documentation</title>
+  <title>arcgis.features.manage_data module &mdash; arcgis 1.2.1 documentation</title>
   
 
-  
-  
   
   
 
@@ -30,12 +28,14 @@
   
 
   
+    <link rel="stylesheet" href="_static/theme_overrides.css" type="text/css" />
+  
 
   
         <link rel="index" title="Index"
               href="genindex.html"/>
         <link rel="search" title="Search" href="search.html"/>
-    <link rel="top" title="arcgis 1.2.0 documentation" href="index.html"/>
+    <link rel="top" title="arcgis 1.2.1 documentation" href="index.html"/>
         <link rel="up" title="arcgis.features module" href="arcgis.features.toc.html"/>
         <link rel="next" title="arcgis.features.summarize_data module" href="arcgis.features.summarize_data.html"/>
         <link rel="prev" title="arcgis.features.find_locations module" href="arcgis.features.find_locations.html"/> 
@@ -47,7 +47,6 @@
 
 <body class="wy-body-for-nav" role="document">
 
-   
   <div class="wy-grid-for-nav">
 
     
@@ -67,7 +66,7 @@
             
             
               <div class="version">
-                1.2.0
+                1.2.1
               </div>
             
           
@@ -88,10 +87,7 @@
           
             
             
-              
-            
-            
-              <p class="caption"><span class="caption-text">arcgis</span></p>
+                <p class="caption"><span class="caption-text">arcgis</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="arcgis.gis.toc.html">arcgis.gis module</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.gis.toc.html#gis">GIS</a></li>
@@ -115,6 +111,7 @@
 <li class="toctree-l4"><a class="reference internal" href="arcgis.gis.admin.html#collaboration">Collaboration</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.gis.admin.html#creditmanager">CreditManager</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.gis.admin.html#passwordpolicy">PasswordPolicy</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.gis.admin.html#portalresourcemanager">PortalResourceManager</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.gis.admin.html#ux">UX</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.gis.admin.html#federation">Federation</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.gis.admin.html#logs">Logs</a></li>
@@ -547,10 +544,8 @@
 
       
       <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
-        
-          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-          <a href="index.html">arcgis</a>
-        
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="index.html">arcgis</a>
       </nav>
 
 
@@ -559,42 +554,25 @@
         <div class="rst-content">
           
 
-
-
-
-
-
-
-
-
-
-
-
+ 
 
 
 
 <div role="navigation" aria-label="breadcrumbs navigation">
-
   <ul class="wy-breadcrumbs">
-    
-      <li><a href="index.html">Docs</a> &raquo;</li>
-        
+    <li><a href="index.html">Docs</a> &raquo;</li>
+      
           <li><a href="arcgis.features.toc.html">arcgis.features module</a> &raquo;</li>
-        
-      <li>arcgis.features.manage_data module</li>
-    
-    
+      
+    <li>arcgis.features.manage_data module</li>
       <li class="wy-breadcrumbs-aside">
         
-            
-            <a href="_sources/arcgis.features.manage_data.rst.txt" rel="nofollow"> View page source</a>
+          
+            <a href="_sources/arcgis.features.manage_data.txt" rel="nofollow"> View page source</a>
           
         
       </li>
-    
   </ul>
-
-  
   <hr/>
 </div>
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
@@ -615,18 +593,18 @@ maps and creating a single map containing all the information found in the stack
 <code class="descclassname">manage_data.</code><code class="descname">dissolve_boundaries</code><span class="sig-paren">(</span><em>input_layer</em>, <em>dissolve_fields=[]</em>, <em>summary_fields=[]</em>, <em>output_name=None</em>, <em>context=None</em>, <em>gis=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.features.manage_data.dissolve_boundaries" title="Permalink to this definition">¶</a></dt>
 <dd><p>Dissolve features based on specified fields.</p>
 <dl class="docutils">
-<dt>input_layer <span class="classifier-delimiter">:</span> <span class="classifier">Required layer (see Feature Input in documentation)</span></dt>
-<dd>The layer containing polygon features that will be dissolved.</dd>
-<dt>dissolve_fields <span class="classifier-delimiter">:</span> <span class="classifier">Optional list of strings</span></dt>
-<dd>One or more fields from the input that control which polygons are merged. If no fields are supplied, all
+<dt>input_layer</dt>
+ <span class="classifier-delimiter">:</span> <span class="classifier">Required layer (see Feature Input in documentation)</span><dd>The layer containing polygon features that will be dissolved.</dd>
+<dt>dissolve_fields</dt>
+ <span class="classifier-delimiter">:</span> <span class="classifier">Optional list of strings</span><dd>One or more fields from the input that control which polygons are merged. If no fields are supplied, all
 polygons that overlap or shared a common border will be dissolved into one polygon.</dd>
-<dt>summary_fields <span class="classifier-delimiter">:</span> <span class="classifier">Optional list of strings</span></dt>
-<dd>A list of field names and statistical types that will be used to summarize the output. Supported statistics
+<dt>summary_fields</dt>
+ <span class="classifier-delimiter">:</span> <span class="classifier">Optional list of strings</span><dd>A list of field names and statistical types that will be used to summarize the output. Supported statistics
 include: Sum, Mean, Min, Max, and Stddev.</dd>
-<dt>output_name <span class="classifier-delimiter">:</span> <span class="classifier">Optional string</span></dt>
-<dd>Additional properties such as output feature service name.</dd>
-<dt>context <span class="classifier-delimiter">:</span> <span class="classifier">Optional string</span></dt>
-<dd>Additional settings such as processing extent and output spatial reference.</dd>
+<dt>output_name</dt>
+ <span class="classifier-delimiter">:</span> <span class="classifier">Optional string</span><dd>Additional properties such as output feature service name.</dd>
+<dt>context</dt>
+ <span class="classifier-delimiter">:</span> <span class="classifier">Optional string</span><dd>Additional settings such as processing extent and output spatial reference.</dd>
 <dt>gis :</dt>
 <dd>Optional, the GIS on which this tool runs. If not specified, the active GIS is used.</dd>
 </dl>
@@ -642,18 +620,18 @@ include: Sum, Mean, Min, Max, and Stddev.</dd>
 <dd><p>Select and download data for a specified area of interest. Layers that you select will be added to a zip file or
 layer package.</p>
 <dl class="docutils">
-<dt>input_layers <span class="classifier-delimiter">:</span> <span class="classifier">Required list of strings</span></dt>
-<dd>The layers from which you can extract features.</dd>
-<dt>extent <span class="classifier-delimiter">:</span> <span class="classifier">Optional string</span></dt>
-<dd>The area that defines which features will be included in the output zip file or layer package.</dd>
-<dt>clip <span class="classifier-delimiter">:</span> <span class="classifier">Optional bool</span></dt>
-<dd>Select features that intersect the extent or clip features within the extent.</dd>
-<dt>data_format <span class="classifier-delimiter">:</span> <span class="classifier">Optional string</span></dt>
-<dd>Format of the data that will be extracted and downloaded.  Layer packages will always include file geodatabases.</dd>
-<dt>output_name <span class="classifier-delimiter">:</span> <span class="classifier">Optional string</span></dt>
-<dd>Additional properties such as output feature service name.</dd>
-<dt>context <span class="classifier-delimiter">:</span> <span class="classifier">Optional string</span></dt>
-<dd>Additional settings such as processing extent and output spatial reference.</dd>
+<dt>input_layers</dt>
+ <span class="classifier-delimiter">:</span> <span class="classifier">Required list of strings</span><dd>The layers from which you can extract features.</dd>
+<dt>extent</dt>
+ <span class="classifier-delimiter">:</span> <span class="classifier">Optional string</span><dd>The area that defines which features will be included in the output zip file or layer package.</dd>
+<dt>clip</dt>
+ <span class="classifier-delimiter">:</span> <span class="classifier">Optional bool</span><dd>Select features that intersect the extent or clip features within the extent.</dd>
+<dt>data_format</dt>
+ <span class="classifier-delimiter">:</span> <span class="classifier">Optional string</span><dd>Format of the data that will be extracted and downloaded.  Layer packages will always include file geodatabases.</dd>
+<dt>output_name</dt>
+ <span class="classifier-delimiter">:</span> <span class="classifier">Optional string</span><dd>Additional properties such as output feature service name.</dd>
+<dt>context</dt>
+ <span class="classifier-delimiter">:</span> <span class="classifier">Optional string</span><dd>Additional settings such as processing extent and output spatial reference.</dd>
 <dt>gis :</dt>
 <dd>Optional, the GIS on which this tool runs. If not specified, the active GIS is used.</dd>
 </dl>
@@ -668,18 +646,18 @@ layer package.</p>
 <code class="descclassname">manage_data.</code><code class="descname">merge_layers</code><span class="sig-paren">(</span><em>input_layer</em>, <em>merge_layer</em>, <em>merging_attributes=[]</em>, <em>output_name=None</em>, <em>context=None</em>, <em>gis=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.features.manage_data.merge_layers" title="Permalink to this definition">¶</a></dt>
 <dd><p>Combines two inputs of the same feature data type into a new output.</p>
 <dl class="docutils">
-<dt>input_layer <span class="classifier-delimiter">:</span> <span class="classifier">Required layer (see Feature Input in documentation)</span></dt>
-<dd>The point, line, or polygon  features to merge with the mergeLayer.</dd>
-<dt>merge_layer <span class="classifier-delimiter">:</span> <span class="classifier">Required layer (see Feature Input in documentation)</span></dt>
-<dd>The point, line or polygon features to merge with inputLayer.  mergeLayer must contain the same feature type
+<dt>input_layer</dt>
+ <span class="classifier-delimiter">:</span> <span class="classifier">Required layer (see Feature Input in documentation)</span><dd>The point, line, or polygon  features to merge with the mergeLayer.</dd>
+<dt>merge_layer</dt>
+ <span class="classifier-delimiter">:</span> <span class="classifier">Required layer (see Feature Input in documentation)</span><dd>The point, line or polygon features to merge with inputLayer.  mergeLayer must contain the same feature type
 point, line, or polygon) as the inputLayer.</dd>
-<dt>merging_attributes <span class="classifier-delimiter">:</span> <span class="classifier">Optional list of strings</span></dt>
-<dd>An array of values that describe how fields from the mergeLayer are to be modified.  By default all fields from
+<dt>merging_attributes</dt>
+ <span class="classifier-delimiter">:</span> <span class="classifier">Optional list of strings</span><dd>An array of values that describe how fields from the mergeLayer are to be modified.  By default all fields from
 both inputs will be carried across to the output.</dd>
-<dt>output_name <span class="classifier-delimiter">:</span> <span class="classifier">Optional string</span></dt>
-<dd>Additional properties such as output feature service name.</dd>
-<dt>context <span class="classifier-delimiter">:</span> <span class="classifier">Optional string</span></dt>
-<dd>Additional settings such as processing extent and output spatial reference.</dd>
+<dt>output_name</dt>
+ <span class="classifier-delimiter">:</span> <span class="classifier">Optional string</span><dd>Additional properties such as output feature service name.</dd>
+<dt>context</dt>
+ <span class="classifier-delimiter">:</span> <span class="classifier">Optional string</span><dd>Additional settings such as processing extent and output spatial reference.</dd>
 <dt>gis :</dt>
 <dd>Optional, the GIS on which this tool runs. If not specified, the active GIS is used.</dd>
 </dl>
@@ -691,27 +669,27 @@ both inputs will be carried across to the output.</dd>
 <h2>overlay_layers<a class="headerlink" href="#overlay-layers" title="Permalink to this headline">¶</a></h2>
 <dl class="method">
 <dt id="arcgis.features.manage_data.overlay_layers">
-<code class="descclassname">manage_data.</code><code class="descname">overlay_layers</code><span class="sig-paren">(</span><em>input_layer</em>, <em>overlay_layer</em>, <em>overlay_type=’Intersect’</em>, <em>snap_to_input=False</em>, <em>output_type=’Input’</em>, <em>tolerance=None</em>, <em>output_name=None</em>, <em>context=None</em>, <em>gis=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.features.manage_data.overlay_layers" title="Permalink to this definition">¶</a></dt>
+<code class="descclassname">manage_data.</code><code class="descname">overlay_layers</code><span class="sig-paren">(</span><em>input_layer</em>, <em>overlay_layer</em>, <em>overlay_type='Intersect'</em>, <em>snap_to_input=False</em>, <em>output_type='Input'</em>, <em>tolerance=None</em>, <em>output_name=None</em>, <em>context=None</em>, <em>gis=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.features.manage_data.overlay_layers" title="Permalink to this definition">¶</a></dt>
 <dd><p>Overlays the input layer with the overlay layer. Overlay operations supported are Intersect, Union, and Erase.</p>
 <dl class="docutils">
-<dt>input_layer <span class="classifier-delimiter">:</span> <span class="classifier">Required layer (see Feature Input in documentation)</span></dt>
-<dd>The input analysis layer.</dd>
-<dt>overlay_layer <span class="classifier-delimiter">:</span> <span class="classifier">Required layer (see Feature Input in documentation)</span></dt>
-<dd>The layer to be overlaid with the analysis layer.</dd>
-<dt>overlay_type <span class="classifier-delimiter">:</span> <span class="classifier">Optional string</span></dt>
-<dd>The overlay type (INTERSECT, UNION, or ERASE) defines how the analysis layer and the overlay layer are combined.</dd>
-<dt>snap_to_input <span class="classifier-delimiter">:</span> <span class="classifier">Optional bool</span></dt>
-<dd>When the distance between features is less than the tolerance, the features in the overlay layer will snap to
+<dt>input_layer</dt>
+ <span class="classifier-delimiter">:</span> <span class="classifier">Required layer (see Feature Input in documentation)</span><dd>The input analysis layer.</dd>
+<dt>overlay_layer</dt>
+ <span class="classifier-delimiter">:</span> <span class="classifier">Required layer (see Feature Input in documentation)</span><dd>The layer to be overlaid with the analysis layer.</dd>
+<dt>overlay_type</dt>
+ <span class="classifier-delimiter">:</span> <span class="classifier">Optional string</span><dd>The overlay type (INTERSECT, UNION, or ERASE) defines how the analysis layer and the overlay layer are combined.</dd>
+<dt>snap_to_input</dt>
+ <span class="classifier-delimiter">:</span> <span class="classifier">Optional bool</span><dd>When the distance between features is less than the tolerance, the features in the overlay layer will snap to
 the features in the input layer.</dd>
-<dt>output_type <span class="classifier-delimiter">:</span> <span class="classifier">Optional string</span></dt>
-<dd>The type of intersection (INPUT, LINE, POINT).</dd>
-<dt>tolerance <span class="classifier-delimiter">:</span> <span class="classifier">Optional float</span></dt>
-<dd>The minimum distance separating all feature coordinates (nodes and vertices) as well as the distance a
+<dt>output_type</dt>
+ <span class="classifier-delimiter">:</span> <span class="classifier">Optional string</span><dd>The type of intersection (INPUT, LINE, POINT).</dd>
+<dt>tolerance</dt>
+ <span class="classifier-delimiter">:</span> <span class="classifier">Optional float</span><dd>The minimum distance separating all feature coordinates (nodes and vertices) as well as the distance a
 coordinate can move in X or Y (or both).</dd>
-<dt>output_name <span class="classifier-delimiter">:</span> <span class="classifier">Optional string</span></dt>
-<dd>Additional properties such as output feature service name.</dd>
-<dt>context <span class="classifier-delimiter">:</span> <span class="classifier">Optional string</span></dt>
-<dd>Additional settings such as processing extent and output spatial reference.</dd>
+<dt>output_name</dt>
+ <span class="classifier-delimiter">:</span> <span class="classifier">Optional string</span><dd>Additional properties such as output feature service name.</dd>
+<dt>context</dt>
+ <span class="classifier-delimiter">:</span> <span class="classifier">Optional string</span><dd>Additional settings such as processing extent and output spatial reference.</dd>
 <dt>gis :</dt>
 <dd>Optional, the GIS on which this tool runs. If not specified, the active GIS is used.</dd>
 </dl>
@@ -723,18 +701,15 @@ coordinate can move in X or Y (or both).</dd>
 
 
            </div>
-           <div class="articleComments">
-            
-           </div>
           </div>
           <footer>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="arcgis.features.summarize_data.html" class="btn btn-neutral float-right" title="arcgis.features.summarize_data module" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="arcgis.features.summarize_data.html" class="btn btn-neutral float-right" title="arcgis.features.summarize_data module" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="arcgis.features.find_locations.html" class="btn btn-neutral" title="arcgis.features.find_locations module" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="arcgis.features.find_locations.html" class="btn btn-neutral" title="arcgis.features.find_locations module" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
@@ -765,11 +740,10 @@ coordinate can move in X or Y (or both).</dd>
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'./',
-            VERSION:'1.2.0',
+            VERSION:'1.2.1',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
-            HAS_SOURCE:  true,
-            SOURCELINK_SUFFIX: '.txt'
+            HAS_SOURCE:  true
         };
     </script>
       <script type="text/javascript" src="_static/jquery.js"></script>
