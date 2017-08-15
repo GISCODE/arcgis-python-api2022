@@ -8,11 +8,9 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>arcgis.network module &mdash; arcgis 1.2.0 documentation</title>
+  <title>arcgis.network module &mdash; arcgis 1.2.1 documentation</title>
   
 
-  
-  
   
   
 
@@ -30,12 +28,14 @@
   
 
   
+    <link rel="stylesheet" href="_static/theme_overrides.css" type="text/css" />
+  
 
   
         <link rel="index" title="Index"
               href="genindex.html"/>
         <link rel="search" title="Search" href="search.html"/>
-    <link rel="top" title="arcgis 1.2.0 documentation" href="index.html"/>
+    <link rel="top" title="arcgis 1.2.1 documentation" href="index.html"/>
         <link rel="next" title="arcgis.network.analysis module" href="arcgis.network.analysis.html"/>
         <link rel="prev" title="arcgis.raster.functions module" href="arcgis.raster.functions.html"/> 
 
@@ -46,7 +46,6 @@
 
 <body class="wy-body-for-nav" role="document">
 
-   
   <div class="wy-grid-for-nav">
 
     
@@ -66,7 +65,7 @@
             
             
               <div class="version">
-                1.2.0
+                1.2.1
               </div>
             
           
@@ -87,10 +86,7 @@
           
             
             
-              
-            
-            
-              <p class="caption"><span class="caption-text">arcgis</span></p>
+                <p class="caption"><span class="caption-text">arcgis</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="arcgis.gis.toc.html">arcgis.gis module</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.gis.toc.html#gis">GIS</a></li>
@@ -114,6 +110,7 @@
 <li class="toctree-l4"><a class="reference internal" href="arcgis.gis.admin.html#collaboration">Collaboration</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.gis.admin.html#creditmanager">CreditManager</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.gis.admin.html#passwordpolicy">PasswordPolicy</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.gis.admin.html#portalresourcemanager">PortalResourceManager</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.gis.admin.html#ux">UX</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.gis.admin.html#federation">Federation</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.gis.admin.html#logs">Logs</a></li>
@@ -546,10 +543,8 @@
 
       
       <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
-        
-          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-          <a href="index.html">arcgis</a>
-        
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="index.html">arcgis</a>
       </nav>
 
 
@@ -558,40 +553,23 @@
         <div class="rst-content">
           
 
-
-
-
-
-
-
-
-
-
-
-
+ 
 
 
 
 <div role="navigation" aria-label="breadcrumbs navigation">
-
   <ul class="wy-breadcrumbs">
-    
-      <li><a href="index.html">Docs</a> &raquo;</li>
-        
-      <li>arcgis.network module</li>
-    
-    
+    <li><a href="index.html">Docs</a> &raquo;</li>
+      
+    <li>arcgis.network module</li>
       <li class="wy-breadcrumbs-aside">
         
-            
-            <a href="_sources/arcgis.network.toc.rst.txt" rel="nofollow"> View page source</a>
+          
+            <a href="_sources/arcgis.network.toc.txt" rel="nofollow"> View page source</a>
           
         
       </li>
-    
   </ul>
-
-  
   <hr/>
 </div>
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
@@ -650,18 +628,18 @@ the analysis.</dd>
 / semi-colon based syntax or as a JSON structure. If
 barriers are not specified, preloaded barriers from the
 map document are used in the analysis. If an empty json
-object is passed (‘{}’) preloaded barriers are ignored.</dd>
+object is passed (&#8216;{}&#8217;) preloaded barriers are ignored.</dd>
 <dt>polylineBarriers - The set of polyline barriers loaded as network</dt>
 <dd>locations during analysis. If polyline barriers
 are not specified, preloaded polyline barriers
 from the map document are used in the analysis.
-If an empty json object is passed (‘{}’)
+If an empty json object is passed (&#8216;{}&#8217;)
 preloaded polyline barriers are ignored.</dd>
 <dt>polygonBarriers - The set of polygon barriers loaded as network</dt>
 <dd>locations during analysis. If polygon barriers
 are not specified, preloaded polygon barriers
 from the map document are used in the analysis.
-If an empty json object is passed (‘{}’) preloaded
+If an empty json object is passed (&#8216;{}&#8217;) preloaded
 polygon barriers are ignored.</dd>
 <dt>travelMode - Travel modes provide override values that help you</dt>
 <dd>quickly and consistently model a vehicle or mode of
@@ -789,7 +767,7 @@ Layer as well as some attributes unique to Service Area Layer
 only.</p>
 <dl class="method">
 <dt id="arcgis.network.ServiceAreaLayer.solve_service_area">
-<code class="descname">solve_service_area</code><span class="sig-paren">(</span><em>facilities</em>, <em>barriers=None</em>, <em>polyline_barriers=None</em>, <em>polygon_barriers=None</em>, <em>travel_mode=None</em>, <em>attribute_parameter_values=None</em>, <em>default_breaks=None</em>, <em>exclude_sources_from_polygons=None</em>, <em>merge_similar_polygon_ranges=None</em>, <em>output_lines=None</em>, <em>output_polygons=None</em>, <em>overlap_lines=None</em>, <em>overlap_polygons=None</em>, <em>split_lines_at_breaks=None</em>, <em>split_polygons_at_breaks=None</em>, <em>trim_outer_polygon=None</em>, <em>trim_polygon_distance=None</em>, <em>trim_polygon_distance_units=None</em>, <em>return_facilities=False</em>, <em>return_barriers=False</em>, <em>return_polyline_barriers=False</em>, <em>return_polygon_barriers=False</em>, <em>out_sr=None</em>, <em>accumulate_attribute_names=None</em>, <em>impedance_attribute_name=None</em>, <em>restriction_attribute_names=None</em>, <em>restrict_u_turns=None</em>, <em>output_geometry_precision=None</em>, <em>output_geometry_precision_units=’esriUnknownUnits’</em>, <em>use_hierarchy=None</em>, <em>time_of_day=None</em>, <em>time_of_day_is_utc=None</em>, <em>travel_direction=None</em>, <em>return_z=False</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.network.ServiceAreaLayer.solve_service_area" title="Permalink to this definition">¶</a></dt>
+<code class="descname">solve_service_area</code><span class="sig-paren">(</span><em>facilities</em>, <em>barriers=None</em>, <em>polyline_barriers=None</em>, <em>polygon_barriers=None</em>, <em>travel_mode=None</em>, <em>attribute_parameter_values=None</em>, <em>default_breaks=None</em>, <em>exclude_sources_from_polygons=None</em>, <em>merge_similar_polygon_ranges=None</em>, <em>output_lines=None</em>, <em>output_polygons=None</em>, <em>overlap_lines=None</em>, <em>overlap_polygons=None</em>, <em>split_lines_at_breaks=None</em>, <em>split_polygons_at_breaks=None</em>, <em>trim_outer_polygon=None</em>, <em>trim_polygon_distance=None</em>, <em>trim_polygon_distance_units=None</em>, <em>return_facilities=False</em>, <em>return_barriers=False</em>, <em>return_polyline_barriers=False</em>, <em>return_polygon_barriers=False</em>, <em>out_sr=None</em>, <em>accumulate_attribute_names=None</em>, <em>impedance_attribute_name=None</em>, <em>restriction_attribute_names=None</em>, <em>restrict_u_turns=None</em>, <em>output_geometry_precision=None</em>, <em>output_geometry_precision_units='esriUnknownUnits'</em>, <em>use_hierarchy=None</em>, <em>time_of_day=None</em>, <em>time_of_day_is_utc=None</em>, <em>travel_direction=None</em>, <em>return_z=False</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.network.ServiceAreaLayer.solve_service_area" title="Permalink to this definition">¶</a></dt>
 <dd><p>The solve service area operation is performed on a network layer
 resource of type service area (layerType is esriNAServerServiceArea).
 You can provide arguments to the solve service area operation as
@@ -803,25 +781,25 @@ a simple comma / semi-colon based syntax or as a
 JSON structure. If facilities are not specified,
 preloaded facilities from the map document are used
 in the analysis. If an empty json object is passed
-(‘{}’) preloaded facilities are ignored.</dd>
+(&#8216;{}&#8217;) preloaded facilities are ignored.</dd>
 <dt>barriers - The set of barriers loaded as network locations during</dt>
 <dd>analysis. Barriers can be specified using a simple
 comma/semicolon-based syntax or as a JSON structure.
 If barriers are not specified, preloaded barriers from
 the map document are used in the analysis. If an empty
-json object is passed (‘{}’), preloaded barriers are
+json object is passed (&#8216;{}&#8217;), preloaded barriers are
 ignored.</dd>
 <dt>polylineBarriers - The set of polyline barriers loaded as network</dt>
 <dd>locations during analysis. If polyline barriers
 are not specified, preloaded polyline barriers
 from the map document are used in the analysis.
-If an empty json object is passed (‘{}’),
+If an empty json object is passed (&#8216;{}&#8217;),
 preloaded polyline barriers are ignored.</dd>
 <dt>polygonBarriers - The set of polygon barriers loaded as network</dt>
 <dd>locations during analysis. If polygon barriers
 are not specified, preloaded polygon barriers
 from the map document are used in the analysis.
-If an empty json object is passed (‘{}’),
+If an empty json object is passed (&#8216;{}&#8217;),
 preloaded polygon barriers are ignored.</dd>
 <dt>travelMode - Travel modes provide override values that help you</dt>
 <dd>quickly and consistently model a vehicle or mode of
@@ -970,18 +948,18 @@ in the analysis.</dd>
 / semi-colon based syntax or as a JSON structure. If
 barriers are not specified, preloaded barriers from the
 map document are used in the analysis. If an empty json
-object is passed (‘{}’) preloaded barriers are ignored.</dd>
+object is passed (&#8216;{}&#8217;) preloaded barriers are ignored.</dd>
 <dt>polylineBarriers - The set of polyline barriers loaded as network</dt>
 <dd>locations during analysis. If polyline barriers
 are not specified, preloaded polyline barriers
 from the map document are used in the analysis.
-If an empty json object is passed (‘{}’)
+If an empty json object is passed (&#8216;{}&#8217;)
 preloaded polyline barriers are ignored.</dd>
 <dt>polygonBarriers - The set of polygon barriers loaded as network</dt>
 <dd>locations during analysis. If polygon barriers
 are not specified, preloaded polygon barriers
 from the map document are used in the analysis.
-If an empty json object is passed (‘{}’) preloaded
+If an empty json object is passed (&#8216;{}&#8217;) preloaded
 polygon barriers are ignored.</dd>
 <dt>travelMode - Travel modes provide override values that help you</dt>
 <dd>quickly and consistently model a vehicle or mode of
@@ -1085,8 +1063,8 @@ esriPoints | esriYards</dd>
 <dt>timeOfDayIsUTC - The time zone of the timeOfDay parameter. By setting</dt>
 <dd>timeOfDayIsUTC to true, the timeOfDay parameter refers
 to Coordinated Universal Time (UTC). Choose this option
-if you want to find what’s nearest for a specific time,
-such as now, but aren’t certain in which time zone the
+if you want to find what&#8217;s nearest for a specific time,
+such as now, but aren&#8217;t certain in which time zone the
 facilities or incidents will be located.</dd>
 <dt>timeOfDayUsage - Defines the way timeOfDay value is used. The default</dt>
 <dd>is as defined in the network layer.
@@ -1118,7 +1096,7 @@ service area layers and closest facility layers.</p>
 <dl class="classmethod">
 <dt id="arcgis.network.NetworkDataset.fromitem">
 <em class="property">classmethod </em><code class="descname">fromitem</code><span class="sig-paren">(</span><em>item</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.network.NetworkDataset.fromitem" title="Permalink to this definition">¶</a></dt>
-<dd><p>Creates a network dataset from a ‘Network Analysis Service’ Item in the GIS</p>
+<dd><p>Creates a network dataset from a &#8216;Network Analysis Service&#8217; Item in the GIS</p>
 </dd></dl>
 
 <dl class="attribute">
@@ -1157,18 +1135,15 @@ service area layers and closest facility layers.</p>
 
 
            </div>
-           <div class="articleComments">
-            
-           </div>
           </div>
           <footer>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="arcgis.network.analysis.html" class="btn btn-neutral float-right" title="arcgis.network.analysis module" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="arcgis.network.analysis.html" class="btn btn-neutral float-right" title="arcgis.network.analysis module" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="arcgis.raster.functions.html" class="btn btn-neutral" title="arcgis.raster.functions module" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="arcgis.raster.functions.html" class="btn btn-neutral" title="arcgis.raster.functions module" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
@@ -1199,11 +1174,10 @@ service area layers and closest facility layers.</p>
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'./',
-            VERSION:'1.2.0',
+            VERSION:'1.2.1',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
-            HAS_SOURCE:  true,
-            SOURCELINK_SUFFIX: '.txt'
+            HAS_SOURCE:  true
         };
     </script>
       <script type="text/javascript" src="_static/jquery.js"></script>

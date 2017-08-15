@@ -8,11 +8,9 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>arcgis package &mdash; arcgis 1.2.0 documentation</title>
+  <title>arcgis package &mdash; arcgis 1.2.1 documentation</title>
   
 
-  
-  
   
   
 
@@ -30,12 +28,14 @@
   
 
   
+    <link rel="stylesheet" href="_static/theme_overrides.css" type="text/css" />
+  
 
   
         <link rel="index" title="Index"
               href="genindex.html"/>
         <link rel="search" title="Search" href="search.html"/>
-    <link rel="top" title="arcgis 1.2.0 documentation" href="index.html"/> 
+    <link rel="top" title="arcgis 1.2.1 documentation" href="index.html"/> 
 
   
   <script src="_static/js/modernizr.min.js"></script>
@@ -44,7 +44,6 @@
 
 <body class="wy-body-for-nav" role="document">
 
-   
   <div class="wy-grid-for-nav">
 
     
@@ -64,7 +63,7 @@
             
             
               <div class="version">
-                1.2.0
+                1.2.1
               </div>
             
           
@@ -85,10 +84,7 @@
           
             
             
-              
-            
-            
-              <p class="caption"><span class="caption-text">arcgis</span></p>
+                <p class="caption"><span class="caption-text">arcgis</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="arcgis.gis.toc.html">arcgis.gis module</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.gis.toc.html#gis">GIS</a></li>
@@ -112,6 +108,7 @@
 <li class="toctree-l4"><a class="reference internal" href="arcgis.gis.admin.html#collaboration">Collaboration</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.gis.admin.html#creditmanager">CreditManager</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.gis.admin.html#passwordpolicy">PasswordPolicy</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.gis.admin.html#portalresourcemanager">PortalResourceManager</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.gis.admin.html#ux">UX</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.gis.admin.html#federation">Federation</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.gis.admin.html#logs">Logs</a></li>
@@ -544,10 +541,8 @@
 
       
       <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
-        
-          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-          <a href="index.html">arcgis</a>
-        
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="index.html">arcgis</a>
       </nav>
 
 
@@ -556,40 +551,23 @@
         <div class="rst-content">
           
 
-
-
-
-
-
-
-
-
-
-
-
+ 
 
 
 
 <div role="navigation" aria-label="breadcrumbs navigation">
-
   <ul class="wy-breadcrumbs">
-    
-      <li><a href="index.html">Docs</a> &raquo;</li>
-        
-      <li>arcgis package</li>
-    
-    
+    <li><a href="index.html">Docs</a> &raquo;</li>
+      
+    <li>arcgis package</li>
       <li class="wy-breadcrumbs-aside">
         
-            
-            <a href="_sources/arcgis.rst.txt" rel="nofollow"> View page source</a>
+          
+            <a href="_sources/arcgis.txt" rel="nofollow"> View page source</a>
           
         
       </li>
-    
   </ul>
-
-  
   <hr/>
 </div>
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
@@ -644,7 +622,7 @@
 <dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">object</span></code></p>
 <p id="gis">A GIS is representative of ArcGIS Online or ArcGIS Enterprise. The GIS object provides helper objects to manage
 (search, create, retrieve) GIS resources such as content, users and groups.</p>
-<p>Additionally, the GIS object has properties to query it’s state, accessible using the properties attribute.</p>
+<p>Additionally, the GIS object has properties to query it&#8217;s state, accessible using the properties attribute.</p>
 <p>The GIS provides a mapping widget that can be used in the Jupyter notebook environment for visualizing GIS content
 as well as the results of your analysis. To create a new map, call the map() method.</p>
 <dl class="attribute">
@@ -662,7 +640,7 @@ as well as the results of your analysis. To create a new map, call the map() met
 <code class="descname">map</code><span class="sig-paren">(</span><em>location=None</em>, <em>zoomlevel=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.GIS.map" title="Permalink to this definition">¶</a></dt>
 <dd><p>Creates a map widget centered at the location (Address or (lat, long) tuple)
 with the specified zoom-level(integer). If an Address is provided, it is geocoded
-using the GIS’s configured geocoders and if a match is found, the geographic
+using the GIS&#8217;s configured geocoders and if a match is found, the geographic
 extent of the matched address is used as the map extent. If a zoomlevel is also
 provided, the map is centered at the matched address instead and the map is zoomed
 to the specified zoomlevel.</p>
@@ -677,7 +655,7 @@ to the specified zoomlevel.</p>
 <dl class="method">
 <dt id="arcgis.GIS.update_properties">
 <code class="descname">update_properties</code><span class="sig-paren">(</span><em>properties_dict</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.GIS.update_properties" title="Permalink to this definition">¶</a></dt>
-<dd><p>Updates the GIS’s properties from those in properties_dict</p>
+<dd><p>Updates the GIS&#8217;s properties from those in properties_dict</p>
 </dd></dl>
 
 <dl class="attribute">
@@ -689,70 +667,108 @@ to the specified zoomlevel.</p>
 
 <dl class="function">
 <dt id="arcgis.geocode">
-<code class="descclassname">arcgis.</code><code class="descname">geocode</code><span class="sig-paren">(</span><em>address</em>, <em>search_extent=None</em>, <em>location=None</em>, <em>distance=None</em>, <em>out_sr=None</em>, <em>category=None</em>, <em>out_fields=’*’</em>, <em>max_locations=20</em>, <em>magic_key=None</em>, <em>for_storage=False</em>, <em>geocoder=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.geocode" title="Permalink to this definition">¶</a></dt>
+<code class="descclassname">arcgis.</code><code class="descname">geocode</code><span class="sig-paren">(</span><em>address</em>, <em>search_extent=None</em>, <em>location=None</em>, <em>distance=None</em>, <em>out_sr=None</em>, <em>category=None</em>, <em>out_fields='*'</em>, <em>max_locations=20</em>, <em>magic_key=None</em>, <em>for_storage=False</em>, <em>geocoder=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.geocode" title="Permalink to this definition">¶</a></dt>
 <dd><p>The geocode function geocodes one location per request.</p>
-<p>Inputs:</p>
-<blockquote>
-<div><p>address - Specifies the location to be geocoded. This can be a string
-containing the street address, place name, postal code, or POI.</p>
-<blockquote>
-<div><p>Alternatively, this can be a dictionary containing the various address fields accepted
-by the corresponding geocoder. These fields are listed in the addressFields property of
-the associated geocoder. For example, if the address_fields of a geocoder includes fields
-with the following names: Street, City, State and Zone, then the
-address argument is of the form:
+<table border="1" class="docutils">
+<colgroup>
+<col width="22%" />
+<col width="78%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><strong>Argument</strong></td>
+<td><strong>Description</strong></td>
+</tr>
+<tr class="row-even"><td>address</td>
+<td><p class="first">required list of strings or dictionaries.
+Specifies the location to be geocoded. This can be
+a string containing the street address, place name,
+postal code, or POI.</p>
+<p>Alternatively, this can be a dictionary containing
+the various address fields accepted by the
+corresponding geocoder. These fields are listed in
+the addressFields property of the associated
+geocoder. For example, if the address_fields of a
+geocoder includes fields with the following names:
+Street, City, State and Zone, then the address
+argument is of the form:
 {</p>
 <blockquote>
-<div>Street: “1234 W Main St”,
-City: “Small Town”,
-State: “WA”,
-Zone: “99027”</div></blockquote>
-<p>}</p>
-</div></blockquote>
-<dl class="docutils">
-<dt>search_extent - A set of bounding box coordinates that limit the search</dt>
-<dd>area to a specific region. This is especially useful for
-applications in which a user will search for places and
-addresses only within the current map extent.</dd>
-<dt>location - Defines an origin point location that is used with</dt>
-<dd>the distance parameter to sort geocoding candidates based upon
-their proximity to the location. The distance parameter
-specifies the radial distance from the location in meters. The
-priority of candidates within this radius is boosted relative
-to those outside the radius.</dd>
-<dt>distance - Specifies the radius of an area around a point</dt>
-<dd>location which is used to boost the rank of geocoding
-candidates so that candidates closest to the location are
-returned first. The distance value is in meters.</dd>
-<dt>out_sr - The spatial reference of the x/y coordinates returned by</dt>
-<dd>a geocode request. This is useful for applications using a map
-with a spatial reference different than that of the geocode
-service.</dd>
-<dt>category - A place or address type which can be used to filter</dt>
-<dd>find results. The parameter supports input of single category
-values or multiple comma-separated values. The category
-parameter can be passed in a request with or without the text
-parameter.</dd>
-</dl>
-<p>out_fields - The list of fields to be returned in the response.</p>
-<dl class="docutils">
-<dt>maxLocation - The maximum number of locations to be returned by</dt>
-<dd>a search, up to the maximum number allowed by the service. If
-not specified, then one location will be returned.</dd>
-<dt>magic_key - The find operation retrieves results quicker when you</dt>
-<dd>pass in valid text and magicKey values than when you don’t pass
-in magicKey. However, to get these advantages, you need to make
-a prior request to suggest, which provides a magicKey. This may
-or may not be relevant to your workflow.</dd>
-<dt>for_storage - Specifies whether the results of the operation will</dt>
-<dd>be persisted. The default value is false, which indicates the
-results of the operation can’t be stored, but they can be
-temporarily displayed on a map for instance. If you store the
-results, in a database for example, you need to set this
-parameter to true.</dd>
-</dl>
-<p>geocoder - Optional, the geocoder to be used. If not specified, the active GIS’s first geocoder is used.</p>
-</div></blockquote>
+<div>Street: &#8220;1234 W Main St&#8221;,
+City: &#8220;Small Town&#8221;,
+State: &#8220;WA&#8221;,
+Zone: &#8220;99027&#8221;</div></blockquote>
+<p class="last">}</p>
+</td>
+</tr>
+<tr class="row-odd"><td>search_extent</td>
+<td>optional string, A set of bounding box coordinates
+that limit the search area to a specific region.
+This is especially useful for applications in which
+a user will search for places and addresses only
+within the current map extent.</td>
+</tr>
+<tr class="row-even"><td>location</td>
+<td>optionl [x,y], Defines an origin point location that
+is used with the distance parameter to sort
+geocoding candidates based upon their proximity to
+the location.</td>
+</tr>
+<tr class="row-odd"><td>distance</td>
+<td>optional float, Specifies the radius of an area
+around a point location which is used to boost the
+rank of geocoding candidates so that candidates
+closest to the location are returned first. The
+distance value is in meters.</td>
+</tr>
+<tr class="row-even"><td>out_sr</td>
+<td>optional dictionary, The spatial reference of the
+x/y coordinates returned by a geocode request. This
+is useful for applications using a map with a spatial
+reference different than that of the geocode service.</td>
+</tr>
+<tr class="row-odd"><td>category</td>
+<td>optional string, A place or address type which can
+be used to filter find results. The parameter
+supports input of single category values or multiple
+comma-separated values. The category parameter can be
+passed in a request with or without the text
+parameter.</td>
+</tr>
+<tr class="row-even"><td>out_fields</td>
+<td>optional string, name of all the fields to inlcude.
+The default is &#8220;*&#8221; which means all fields.</td>
+</tr>
+<tr class="row-odd"><td>max_location</td>
+<td>optional integer, The number of locations to be
+returned from the service. The default is 20.</td>
+</tr>
+<tr class="row-even"><td>magic_key</td>
+<td>The find operation retrieves results quicker when
+you pass a valid text and magickey value.</td>
+</tr>
+<tr class="row-odd"><td>for_storage</td>
+<td>Specifies whether the results of the operation will
+be persisted. The default value is false, which
+indicates the results of the operation can&#8217;t be
+stored, but they can be temporarily displayed on a
+map for instance. If you store the results, in a
+database for example, you need to set this parameter
+to true.</td>
+</tr>
+<tr class="row-even"><td>geocoder</td>
+<td>Optional, the geocoder to be used. If not specified,
+the active GIS&#8217;s first geocoder is used.</td>
+</tr>
+</tbody>
+</table>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">dictionary</td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
 <dl class="function">
@@ -762,71 +778,71 @@ parameter to true.</dd>
 specified areas or boundaries (polygons). You can also summarize Sum, Mean, Min, Max and Standard deviation
 calculations for attributes of the point layer to understand the general characteristics of aggregated points.</p>
 <dl class="docutils">
-<dt>point_layer <span class="classifier-delimiter">:</span> <span class="classifier">Required layer (see Feature Input in documentation)</span></dt>
-<dd>Point layer to be aggregated</dd>
-<dt>polygon_layer <span class="classifier-delimiter">:</span> <span class="classifier">Required layer (see Feature Input in documentation)</span></dt>
-<dd>Polygon layer to which the points should be aggregated.</dd>
-<dt>keep_boundaries_with_no_points <span class="classifier-delimiter">:</span> <span class="classifier">Optional bool</span></dt>
-<dd>Specify whether the polygons without any points should be returned in the output.</dd>
-<dt>summary_fields <span class="classifier-delimiter">:</span> <span class="classifier">Optional list of strings</span></dt>
-<dd>A list of field names and summary type. Example [fieldName1 summaryType1,fieldName2 summaryType2].</dd>
-<dt>group_by_field <span class="classifier-delimiter">:</span> <span class="classifier">Optional string</span></dt>
-<dd>A field name from PointLayer based on which the points will be grouped.</dd>
-<dt>minority_majority <span class="classifier-delimiter">:</span> <span class="classifier">Optional bool</span></dt>
-<dd>This boolean parameter is applicable only when a groupByField is specified. If true, the minority
+<dt>point_layer</dt>
+ <span class="classifier-delimiter">:</span> <span class="classifier">Required layer (see Feature Input in documentation)</span><dd>Point layer to be aggregated</dd>
+<dt>polygon_layer</dt>
+ <span class="classifier-delimiter">:</span> <span class="classifier">Required layer (see Feature Input in documentation)</span><dd>Polygon layer to which the points should be aggregated.</dd>
+<dt>keep_boundaries_with_no_points</dt>
+ <span class="classifier-delimiter">:</span> <span class="classifier">Optional bool</span><dd>Specify whether the polygons without any points should be returned in the output.</dd>
+<dt>summary_fields</dt>
+ <span class="classifier-delimiter">:</span> <span class="classifier">Optional list of strings</span><dd>A list of field names and summary type. Example [fieldName1 summaryType1,fieldName2 summaryType2].</dd>
+<dt>group_by_field</dt>
+ <span class="classifier-delimiter">:</span> <span class="classifier">Optional string</span><dd>A field name from PointLayer based on which the points will be grouped.</dd>
+<dt>minority_majority</dt>
+ <span class="classifier-delimiter">:</span> <span class="classifier">Optional bool</span><dd>This boolean parameter is applicable only when a groupByField is specified. If true, the minority
 (least dominant) or the majority (most dominant) attribute values within each group, within each boundary will
 be calculated.</dd>
-<dt>percent_points <span class="classifier-delimiter">:</span> <span class="classifier">Optional bool</span></dt>
-<dd>This boolean parameter is applicable only when a groupByField is specified. If set to true, the percentage count
+<dt>percent_points</dt>
+ <span class="classifier-delimiter">:</span> <span class="classifier">Optional bool</span><dd>This boolean parameter is applicable only when a groupByField is specified. If set to true, the percentage count
 of points for each unique groupByField value is calculated.</dd>
-<dt>output_name <span class="classifier-delimiter">:</span> <span class="classifier">Optional string</span></dt>
-<dd>Additional properties such as output feature service name.</dd>
-<dt>context <span class="classifier-delimiter">:</span> <span class="classifier">Optional string</span></dt>
-<dd>Additional settings such as processing extent and output spatial reference.</dd>
+<dt>output_name</dt>
+ <span class="classifier-delimiter">:</span> <span class="classifier">Optional string</span><dd>Additional properties such as output feature service name.</dd>
+<dt>context</dt>
+ <span class="classifier-delimiter">:</span> <span class="classifier">Optional string</span><dd>Additional settings such as processing extent and output spatial reference.</dd>
 <dt>gis :</dt>
 <dd>Optional, the GIS on which this tool runs. If not specified, the active GIS is used.</dd>
 </dl>
 <dl class="docutils">
 <dt>dict with the following keys:</dt>
-<dd>“aggregated_layer” : layer (FeatureCollection)
-“group_summary” : layer (FeatureCollection)</dd>
+<dd>&#8220;aggregated_layer&#8221; : layer (FeatureCollection)
+&#8220;group_summary&#8221; : layer (FeatureCollection)</dd>
 </dl>
 </dd></dl>
 
 <dl class="function">
 <dt id="arcgis.calculate_density">
-<code class="descclassname">arcgis.</code><code class="descname">calculate_density</code><span class="sig-paren">(</span><em>input_layer</em>, <em>field=None</em>, <em>cell_size=None</em>, <em>cell_size_units=’Meters’</em>, <em>radius=None</em>, <em>radius_units=None</em>, <em>bounding_polygon_layer=None</em>, <em>area_units=None</em>, <em>classification_type=’EqualInterval’</em>, <em>num_classes=10</em>, <em>output_name=None</em>, <em>context=None</em>, <em>gis=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.calculate_density" title="Permalink to this definition">¶</a></dt>
+<code class="descclassname">arcgis.</code><code class="descname">calculate_density</code><span class="sig-paren">(</span><em>input_layer</em>, <em>field=None</em>, <em>cell_size=None</em>, <em>cell_size_units='Meters'</em>, <em>radius=None</em>, <em>radius_units=None</em>, <em>bounding_polygon_layer=None</em>, <em>area_units=None</em>, <em>classification_type='EqualInterval'</em>, <em>num_classes=10</em>, <em>output_name=None</em>, <em>context=None</em>, <em>gis=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.calculate_density" title="Permalink to this definition">¶</a></dt>
 <dd><p>The calculate_density function creates a density map from point or line features by spreading known quantities of
 some phenomenon (represented as attributes of the points or lines) across the map. The result is a layer of areas
 classified from least dense to most dense.</p>
 <dl class="docutils">
-<dt>input_layer <span class="classifier-delimiter">:</span> <span class="classifier">Required layer (see Feature Input in documentation)</span></dt>
-<dd>The point or line features from which to calculate density.</dd>
-<dt>field <span class="classifier-delimiter">:</span> <span class="classifier">Optional string</span></dt>
-<dd>A numeric field name specifying the number of incidents at each location. If not specified, each location will
+<dt>input_layer</dt>
+ <span class="classifier-delimiter">:</span> <span class="classifier">Required layer (see Feature Input in documentation)</span><dd>The point or line features from which to calculate density.</dd>
+<dt>field</dt>
+ <span class="classifier-delimiter">:</span> <span class="classifier">Optional string</span><dd>A numeric field name specifying the number of incidents at each location. If not specified, each location will
 be assumed to represent a single count.</dd>
-<dt>cell_size <span class="classifier-delimiter">:</span> <span class="classifier">Optional float</span></dt>
-<dd>This value is used to create a mesh of points where density values are calculated. The default is approximately
+<dt>cell_size</dt>
+ <span class="classifier-delimiter">:</span> <span class="classifier">Optional float</span><dd>This value is used to create a mesh of points where density values are calculated. The default is approximately
 1/1000th of the smaller of the width and height of the analysis extent as defined in the context parameter.</dd>
-<dt>cell_size_units <span class="classifier-delimiter">:</span> <span class="classifier">Optional string</span></dt>
-<dd>The units of the cellSize value</dd>
-<dt>radius <span class="classifier-delimiter">:</span> <span class="classifier">Optional float</span></dt>
-<dd>A distance specifying how far to search to find point or line features when calculating density values.</dd>
-<dt>radius_units <span class="classifier-delimiter">:</span> <span class="classifier">Optional string</span></dt>
-<dd>The units of the radius parameter.</dd>
-<dt>bounding_polygon_layer <span class="classifier-delimiter">:</span> <span class="classifier">Optional layer (see Feature Input in documentation)</span></dt>
-<dd>A layer specifying the polygon(s) where you want densities to be calculated.</dd>
-<dt>area_units <span class="classifier-delimiter">:</span> <span class="classifier">Optional string</span></dt>
-<dd>The units of the calculated density values.</dd>
-<dt>classification_type <span class="classifier-delimiter">:</span> <span class="classifier">Optional string</span></dt>
-<dd>Determines how density values will be classified into polygons.</dd>
-<dt>num_classes <span class="classifier-delimiter">:</span> <span class="classifier">Optional int</span></dt>
-<dd>This value is used to divide the range of predicted values into distinct classes. The range of values in each
+<dt>cell_size_units</dt>
+ <span class="classifier-delimiter">:</span> <span class="classifier">Optional string</span><dd>The units of the cellSize value</dd>
+<dt>radius</dt>
+ <span class="classifier-delimiter">:</span> <span class="classifier">Optional float</span><dd>A distance specifying how far to search to find point or line features when calculating density values.</dd>
+<dt>radius_units</dt>
+ <span class="classifier-delimiter">:</span> <span class="classifier">Optional string</span><dd>The units of the radius parameter.</dd>
+<dt>bounding_polygon_layer</dt>
+ <span class="classifier-delimiter">:</span> <span class="classifier">Optional layer (see Feature Input in documentation)</span><dd>A layer specifying the polygon(s) where you want densities to be calculated.</dd>
+<dt>area_units</dt>
+ <span class="classifier-delimiter">:</span> <span class="classifier">Optional string</span><dd>The units of the calculated density values.</dd>
+<dt>classification_type</dt>
+ <span class="classifier-delimiter">:</span> <span class="classifier">Optional string</span><dd>Determines how density values will be classified into polygons.</dd>
+<dt>num_classes</dt>
+ <span class="classifier-delimiter">:</span> <span class="classifier">Optional int</span><dd>This value is used to divide the range of predicted values into distinct classes. The range of values in each
 class is determined by the classificationType parameter.</dd>
-<dt>output_name <span class="classifier-delimiter">:</span> <span class="classifier">Optional string</span></dt>
-<dd>Additional properties such as output feature service name.</dd>
-<dt>context <span class="classifier-delimiter">:</span> <span class="classifier">Optional string</span></dt>
-<dd>Additional settings such as processing extent and output spatial reference.</dd>
+<dt>output_name</dt>
+ <span class="classifier-delimiter">:</span> <span class="classifier">Optional string</span><dd>Additional properties such as output feature service name.</dd>
+<dt>context</dt>
+ <span class="classifier-delimiter">:</span> <span class="classifier">Optional string</span><dd>Additional settings such as processing extent and output spatial reference.</dd>
 <dt>gis :</dt>
 <dd>Optional, the GIS on which this tool runs. If not specified, the active GIS is used.</dd>
 </dl>
@@ -835,67 +851,67 @@ class is determined by the classificationType parameter.</dd>
 
 <dl class="function">
 <dt id="arcgis.connect_origins_to_destinations">
-<code class="descclassname">arcgis.</code><code class="descname">connect_origins_to_destinations</code><span class="sig-paren">(</span><em>origins_layer</em>, <em>destinations_layer</em>, <em>measurement_type=’DrivingTime’</em>, <em>origins_layer_route_id_field=None</em>, <em>destinations_layer_route_id_field=None</em>, <em>time_of_day=None</em>, <em>time_zone_for_time_of_day=’GeoLocal’</em>, <em>output_name=None</em>, <em>context=None</em>, <em>gis=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.connect_origins_to_destinations" title="Permalink to this definition">¶</a></dt>
+<code class="descclassname">arcgis.</code><code class="descname">connect_origins_to_destinations</code><span class="sig-paren">(</span><em>origins_layer</em>, <em>destinations_layer</em>, <em>measurement_type='DrivingTime'</em>, <em>origins_layer_route_id_field=None</em>, <em>destinations_layer_route_id_field=None</em>, <em>time_of_day=None</em>, <em>time_zone_for_time_of_day='GeoLocal'</em>, <em>output_name=None</em>, <em>context=None</em>, <em>gis=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.connect_origins_to_destinations" title="Permalink to this definition">¶</a></dt>
 <dd><p>Calculates routes between pairs of points.</p>
 <dl class="docutils">
-<dt>origins_layer <span class="classifier-delimiter">:</span> <span class="classifier">Required layer (see Feature Input in documentation)</span></dt>
-<dd>The routes start from points in the origins layer.</dd>
-<dt>destinations_layer <span class="classifier-delimiter">:</span> <span class="classifier">Required layer (see Feature Input in documentation)</span></dt>
-<dd>The routes end at points in the destinations layer.</dd>
-<dt>measurement_type <span class="classifier-delimiter">:</span> <span class="classifier">Required string</span></dt>
-<dd>The routes can be determined by measuring travel distance or travel time along street network using different
+<dt>origins_layer</dt>
+ <span class="classifier-delimiter">:</span> <span class="classifier">Required layer (see Feature Input in documentation)</span><dd>The routes start from points in the origins layer.</dd>
+<dt>destinations_layer</dt>
+ <span class="classifier-delimiter">:</span> <span class="classifier">Required layer (see Feature Input in documentation)</span><dd>The routes end at points in the destinations layer.</dd>
+<dt>measurement_type</dt>
+ <span class="classifier-delimiter">:</span> <span class="classifier">Required string</span><dd>The routes can be determined by measuring travel distance or travel time along street network using different
 travel modes or by measuring straight line distance.</dd>
-<dt>origins_layer_route_id_field <span class="classifier-delimiter">:</span> <span class="classifier">Optional string</span></dt>
-<dd>The field in the origins layer containing the IDs that are used to match an origin with a destination.</dd>
-<dt>destinations_layer_route_id_field <span class="classifier-delimiter">:</span> <span class="classifier">Optional string</span></dt>
-<dd>The field in the destinations layer containing the IDs that are used to match an origin with a destination.</dd>
-<dt>time_of_day <span class="classifier-delimiter">:</span> <span class="classifier">Optional datetime.datetime</span></dt>
-<dd>When measurementType is DrivingTime, this value specifies the time of day to be used for driving time
+<dt>origins_layer_route_id_field</dt>
+ <span class="classifier-delimiter">:</span> <span class="classifier">Optional string</span><dd>The field in the origins layer containing the IDs that are used to match an origin with a destination.</dd>
+<dt>destinations_layer_route_id_field</dt>
+ <span class="classifier-delimiter">:</span> <span class="classifier">Optional string</span><dd>The field in the destinations layer containing the IDs that are used to match an origin with a destination.</dd>
+<dt>time_of_day</dt>
+ <span class="classifier-delimiter">:</span> <span class="classifier">Optional datetime.datetime</span><dd>When measurementType is DrivingTime, this value specifies the time of day to be used for driving time
 calculations based on traffic. WalkingTime and TruckingTime measurementType do not support calculations
 based on traffic.</dd>
-<dt>time_zone_for_time_of_day <span class="classifier-delimiter">:</span> <span class="classifier">Optional string</span></dt>
-<dd>Determines if the value specified for timeOfDay is specified in UTC or in a time zone that is local to the
+<dt>time_zone_for_time_of_day</dt>
+ <span class="classifier-delimiter">:</span> <span class="classifier">Optional string</span><dd>Determines if the value specified for timeOfDay is specified in UTC or in a time zone that is local to the
 location of the origins.</dd>
-<dt>output_name <span class="classifier-delimiter">:</span> <span class="classifier">Optional string</span></dt>
-<dd>Additional properties such as output feature service name.</dd>
-<dt>context <span class="classifier-delimiter">:</span> <span class="classifier">Optional string</span></dt>
-<dd>Additional settings such as processing extent and output spatial reference.</dd>
+<dt>output_name</dt>
+ <span class="classifier-delimiter">:</span> <span class="classifier">Optional string</span><dd>Additional properties such as output feature service name.</dd>
+<dt>context</dt>
+ <span class="classifier-delimiter">:</span> <span class="classifier">Optional string</span><dd>Additional settings such as processing extent and output spatial reference.</dd>
 <dt>gis :</dt>
 <dd>Optional, the GIS on which this tool runs. If not specified, the active GIS is used.</dd>
 </dl>
 <dl class="docutils">
 <dt>dict with the following keys:</dt>
-<dd>“routes_layer” : layer (FeatureCollection)
-“unassigned_origins_layer” : layer (FeatureCollection)
-“unassigned_destinations_layer” : layer (FeatureCollection)</dd>
+<dd>&#8220;routes_layer&#8221; : layer (FeatureCollection)
+&#8220;unassigned_origins_layer&#8221; : layer (FeatureCollection)
+&#8220;unassigned_destinations_layer&#8221; : layer (FeatureCollection)</dd>
 </dl>
 </dd></dl>
 
 <dl class="function">
 <dt id="arcgis.create_buffers">
-<code class="descclassname">arcgis.</code><code class="descname">create_buffers</code><span class="sig-paren">(</span><em>input_layer</em>, <em>distances=[]</em>, <em>field=None</em>, <em>units=’Meters’</em>, <em>dissolve_type=’None’</em>, <em>ring_type=’Disks’</em>, <em>side_type=’Full’</em>, <em>end_type=’Round’</em>, <em>output_name=None</em>, <em>context=None</em>, <em>gis=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.create_buffers" title="Permalink to this definition">¶</a></dt>
+<code class="descclassname">arcgis.</code><code class="descname">create_buffers</code><span class="sig-paren">(</span><em>input_layer</em>, <em>distances=[]</em>, <em>field=None</em>, <em>units='Meters'</em>, <em>dissolve_type='None'</em>, <em>ring_type='Disks'</em>, <em>side_type='Full'</em>, <em>end_type='Round'</em>, <em>output_name=None</em>, <em>context=None</em>, <em>gis=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.create_buffers" title="Permalink to this definition">¶</a></dt>
 <dd><p>Creates buffer polygon(s) around input features.</p>
 <dl class="docutils">
-<dt>input_layer <span class="classifier-delimiter">:</span> <span class="classifier">Required layer (see Feature Input in documentation)</span></dt>
-<dd>The input to be buffered.</dd>
-<dt>distances <span class="classifier-delimiter">:</span> <span class="classifier">Optional list of floats</span></dt>
-<dd>The distance(s) that will be buffered.</dd>
-<dt>field <span class="classifier-delimiter">:</span> <span class="classifier">Optional string</span></dt>
-<dd>Buffers will be created using field values.</dd>
-<dt>units <span class="classifier-delimiter">:</span> <span class="classifier">Optional string</span></dt>
-<dd>The linear unit to be used with the distance value(s).</dd>
-<dt>dissolve_type <span class="classifier-delimiter">:</span> <span class="classifier">Optional string</span></dt>
-<dd>Specifies the dissolve to be performed to remove buffer overlap.</dd>
-<dt>ring_type <span class="classifier-delimiter">:</span> <span class="classifier">Optional string</span></dt>
-<dd>The ring type.</dd>
-<dt>side_type <span class="classifier-delimiter">:</span> <span class="classifier">Optional string</span></dt>
-<dd>The side(s) of the input that will be buffered.</dd>
-<dt>end_type <span class="classifier-delimiter">:</span> <span class="classifier">Optional string</span></dt>
-<dd>The shape of the buffer at the end of buffered line features.</dd>
-<dt>output_name <span class="classifier-delimiter">:</span> <span class="classifier">Optional string</span></dt>
-<dd>Additional properties such as output feature service name.</dd>
-<dt>context <span class="classifier-delimiter">:</span> <span class="classifier">Optional string</span></dt>
-<dd>Additional settings such as processing extent and output spatial reference.</dd>
+<dt>input_layer</dt>
+ <span class="classifier-delimiter">:</span> <span class="classifier">Required layer (see Feature Input in documentation)</span><dd>The input to be buffered.</dd>
+<dt>distances</dt>
+ <span class="classifier-delimiter">:</span> <span class="classifier">Optional list of floats</span><dd>The distance(s) that will be buffered.</dd>
+<dt>field</dt>
+ <span class="classifier-delimiter">:</span> <span class="classifier">Optional string</span><dd>Buffers will be created using field values.</dd>
+<dt>units</dt>
+ <span class="classifier-delimiter">:</span> <span class="classifier">Optional string</span><dd>The linear unit to be used with the distance value(s).</dd>
+<dt>dissolve_type</dt>
+ <span class="classifier-delimiter">:</span> <span class="classifier">Optional string</span><dd>Specifies the dissolve to be performed to remove buffer overlap.</dd>
+<dt>ring_type</dt>
+ <span class="classifier-delimiter">:</span> <span class="classifier">Optional string</span><dd>The ring type.</dd>
+<dt>side_type</dt>
+ <span class="classifier-delimiter">:</span> <span class="classifier">Optional string</span><dd>The side(s) of the input that will be buffered.</dd>
+<dt>end_type</dt>
+ <span class="classifier-delimiter">:</span> <span class="classifier">Optional string</span><dd>The shape of the buffer at the end of buffered line features.</dd>
+<dt>output_name</dt>
+ <span class="classifier-delimiter">:</span> <span class="classifier">Optional string</span><dd>Additional properties such as output feature service name.</dd>
+<dt>context</dt>
+ <span class="classifier-delimiter">:</span> <span class="classifier">Optional string</span><dd>Additional settings such as processing extent and output spatial reference.</dd>
 <dt>gis :</dt>
 <dd>Optional, the GIS on which this tool runs. If not specified, the active GIS is used.</dd>
 </dl>
@@ -904,7 +920,7 @@ location of the origins.</dd>
 
 <dl class="function">
 <dt id="arcgis.create_drive_time_areas">
-<code class="descclassname">arcgis.</code><code class="descname">create_drive_time_areas</code><span class="sig-paren">(</span><em>input_layer, break_values=[5, 10, 15], break_units=’Minutes’, travel_mode=’Driving’, overlap_policy=’Overlap’, time_of_day=None, time_zone_for_time_of_day=’GeoLocal’, output_name=None, context=None, gis=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.create_drive_time_areas" title="Permalink to this definition">¶</a></dt>
+<code class="descclassname">arcgis.</code><code class="descname">create_drive_time_areas</code><span class="sig-paren">(</span><em>input_layer, break_values=[5, 10, 15], break_units='Minutes', travel_mode='Driving', overlap_policy='Overlap', time_of_day=None, time_zone_for_time_of_day='GeoLocal', output_name=None, context=None, gis=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.create_drive_time_areas" title="Permalink to this definition">¶</a></dt>
 <dd><p>input_layer : Required layer (see Feature Input in documentation)</p>
 <p>break_values : Optional list of floats</p>
 <p>break_units : Optional string</p>
@@ -913,10 +929,10 @@ location of the origins.</dd>
 <p>time_of_day : Optional datetime.datetime</p>
 <p>time_zone_for_time_of_day : Optional string</p>
 <dl class="docutils">
-<dt>output_name <span class="classifier-delimiter">:</span> <span class="classifier">Optional string</span></dt>
-<dd>Additional properties such as output feature service name.</dd>
-<dt>context <span class="classifier-delimiter">:</span> <span class="classifier">Optional string</span></dt>
-<dd>Additional settings such as processing extent and output spatial reference.</dd>
+<dt>output_name</dt>
+ <span class="classifier-delimiter">:</span> <span class="classifier">Optional string</span><dd>Additional properties such as output feature service name.</dd>
+<dt>context</dt>
+ <span class="classifier-delimiter">:</span> <span class="classifier">Optional string</span><dd>Additional settings such as processing extent and output spatial reference.</dd>
 <dt>gis :</dt>
 <dd>Optional, the GIS on which this tool runs. If not specified, the active GIS is used.</dd>
 </dl>
@@ -928,18 +944,18 @@ location of the origins.</dd>
 <code class="descclassname">arcgis.</code><code class="descname">create_route_layers</code><span class="sig-paren">(</span><em>route_data_item</em>, <em>delete_route_data_item=False</em>, <em>tags=None</em>, <em>summary=None</em>, <em>route_name_prefix=None</em>, <em>folder_name=None</em>, <em>gis=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.create_route_layers" title="Permalink to this definition">¶</a></dt>
 <dd><p>Creates route layer items on the portal from the input route data.</p>
 <dl class="docutils">
-<dt>route_data_item <span class="classifier-delimiter">:</span> <span class="classifier">Required item</span></dt>
-<dd>The route data item that is used to create route layer items.</dd>
-<dt>delete_route_data_item <span class="classifier-delimiter">:</span> <span class="classifier">Required Boolean (see Feature Input in documentation)</span></dt>
-<dd>Indicates if the input route data item should be deleted. The default value is False which does not delete the route data item.</dd>
+<dt>route_data_item</dt>
+ <span class="classifier-delimiter">:</span> <span class="classifier">Required item</span><dd>The route data item that is used to create route layer items.</dd>
+<dt>delete_route_data_item</dt>
+ <span class="classifier-delimiter">:</span> <span class="classifier">Required Boolean (see Feature Input in documentation)</span><dd>Indicates if the input route data item should be deleted. The default value is False which does not delete the route data item.</dd>
 <dt>tags: Optional string</dt>
 <dd>Tags used to describe and identify the route layer items. Individual tags are separated using a comma. The route name is always
 added as a tag even when a value for this argument is not specified.</dd>
 <dt>summary: Optional string</dt>
 <dd>The summary displayed as part of the item information for the route layer item. If a value for this argument is not specified,
-a default summary text “Route and directions for &lt;Route Name&gt;” is used.</dd>
-<dt>route_name_prefix <span class="classifier-delimiter">:</span> <span class="classifier">Optional string</span></dt>
-<dd>A qualifier added to the title of every route layer item. This can be used to designate all routes that are shared for a 
+a default summary text &#8220;Route and directions for &lt;Route Name&gt;&#8221; is used.</dd>
+<dt>route_name_prefix</dt>
+ <span class="classifier-delimiter">:</span> <span class="classifier">Optional string</span><dd>A qualifier added to the title of every route layer item. This can be used to designate all routes that are shared for a 
 specific purpose to have the same prefix in the title. The name of the route is always appended after this qualifier.
 If a value for the route_name_prefix is not specified, the title for the route layer item is created using only the route name.</dd>
 <dt>folder_name: Optional string</dt>
@@ -955,7 +971,7 @@ If a value for folder_name is not specified, the route layer items are created i
 
 <dl class="function">
 <dt id="arcgis.create_viewshed">
-<code class="descclassname">arcgis.</code><code class="descname">create_viewshed</code><span class="sig-paren">(</span><em>input_layer</em>, <em>dem_resolution=’Finest’</em>, <em>maximum_distance=None</em>, <em>max_distance_units=’Meters’</em>, <em>observer_height=None</em>, <em>observer_height_units=’Meters’</em>, <em>target_height=None</em>, <em>target_height_units=’Meters’</em>, <em>generalize=True</em>, <em>output_name=None</em>, <em>context=None</em>, <em>gis=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.create_viewshed" title="Permalink to this definition">¶</a></dt>
+<code class="descclassname">arcgis.</code><code class="descname">create_viewshed</code><span class="sig-paren">(</span><em>input_layer</em>, <em>dem_resolution='Finest'</em>, <em>maximum_distance=None</em>, <em>max_distance_units='Meters'</em>, <em>observer_height=None</em>, <em>observer_height_units='Meters'</em>, <em>target_height=None</em>, <em>target_height_units='Meters'</em>, <em>generalize=True</em>, <em>output_name=None</em>, <em>context=None</em>, <em>gis=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.create_viewshed" title="Permalink to this definition">¶</a></dt>
 <dd><p>Creates areas that are visible based on locations you specify.</p>
 <p>input_layer : Required layer (see Feature Input in documentation)</p>
 <p>dem_resolution : Optional string</p>
@@ -977,7 +993,7 @@ If a value for folder_name is not specified, the route layer items are created i
 
 <dl class="function">
 <dt id="arcgis.create_watersheds">
-<code class="descclassname">arcgis.</code><code class="descname">create_watersheds</code><span class="sig-paren">(</span><em>input_layer</em>, <em>search_distance=None</em>, <em>search_units=’Meters’</em>, <em>source_database=’FINEST’</em>, <em>generalize=True</em>, <em>output_name=None</em>, <em>context=None</em>, <em>gis=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.create_watersheds" title="Permalink to this definition">¶</a></dt>
+<code class="descclassname">arcgis.</code><code class="descname">create_watersheds</code><span class="sig-paren">(</span><em>input_layer</em>, <em>search_distance=None</em>, <em>search_units='Meters'</em>, <em>source_database='FINEST'</em>, <em>generalize=True</em>, <em>output_name=None</em>, <em>context=None</em>, <em>gis=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.create_watersheds" title="Permalink to this definition">¶</a></dt>
 <dd><p>Creates catchment areas based on locations you specify.</p>
 <p>input_layer : Required layer (see Feature Input in documentation)</p>
 <p>search_distance : Optional float</p>
@@ -992,8 +1008,8 @@ If a value for folder_name is not specified, the route layer items are created i
 </dl>
 <dl class="docutils">
 <dt>dict with the following keys:</dt>
-<dd>“snap_pour_pts_layer” : layer (FeatureCollection)
-“watershed_layer” : layer (FeatureCollection)</dd>
+<dd>&#8220;snap_pour_pts_layer&#8221; : layer (FeatureCollection)
+&#8220;watershed_layer&#8221; : layer (FeatureCollection)</dd>
 </dl>
 </dd></dl>
 
@@ -1003,7 +1019,7 @@ If a value for folder_name is not specified, the route layer items are created i
 <dd><p>The Derive New Locations task derives new features from the input layers that meet a query you specify. A query is
 made up of one or more expressions. There are two types of expressions: attribute and spatial. An example of an
 attribute expression is that a parcel must be vacant, which is an attribute of the Parcels layer
-(where STATUS = ‘VACANT’). An example of a spatial expression is that the parcel must also be within a certain
+(where STATUS = &#8216;VACANT&#8217;). An example of a spatial expression is that the parcel must also be within a certain
 distance of a river (Parcels within a distance of 0.75 Miles from Rivers).The Derive New Locations task is very
 similar to the Find Existing Locations task, the main difference is that the result of Derive New Locations can
 contain partial features.In both tasks, the attribute expression  where and the spatial relationships within and
@@ -1012,15 +1028,15 @@ withinDistance is used, Derive New Locations creates new features in the result.
 parcel feature and a flood zone area that partially overlap each other, Find Existing Locations will return the
 entire parcel whereas Derive New Locations will return just the portion of the parcel that is within the flood zone.</p>
 <dl class="docutils">
-<dt>input_layers <span class="classifier-delimiter">:</span> <span class="classifier">Required list of strings</span></dt>
-<dd>A list of layers that will be used in the expressions parameter.</dd>
-<dt>expressions <span class="classifier-delimiter">:</span> <span class="classifier">Required string</span></dt>
-<dd>Specify a list of expressions. Please refer documentation at <a class="reference external" href="http://developers.arcgis.com">http://developers.arcgis.com</a> for more information
+<dt>input_layers</dt>
+ <span class="classifier-delimiter">:</span> <span class="classifier">Required list of strings</span><dd>A list of layers that will be used in the expressions parameter.</dd>
+<dt>expressions</dt>
+ <span class="classifier-delimiter">:</span> <span class="classifier">Required string</span><dd>Specify a list of expressions. Please refer documentation at <a class="reference external" href="http://developers.arcgis.com">http://developers.arcgis.com</a> for more information
 on expressions.</dd>
-<dt>output_name <span class="classifier-delimiter">:</span> <span class="classifier">Optional string</span></dt>
-<dd>Additional properties such as output feature service name.</dd>
-<dt>context <span class="classifier-delimiter">:</span> <span class="classifier">Optional string</span></dt>
-<dd>Additional settings such as processing extent and output spatial reference.</dd>
+<dt>output_name</dt>
+ <span class="classifier-delimiter">:</span> <span class="classifier">Optional string</span><dd>Additional properties such as output feature service name.</dd>
+<dt>context</dt>
+ <span class="classifier-delimiter">:</span> <span class="classifier">Optional string</span><dd>Additional settings such as processing extent and output spatial reference.</dd>
 <dt>gis :</dt>
 <dd>Optional, the GIS on which this tool runs. If not specified, the active GIS is used.</dd>
 </dl>
@@ -1032,18 +1048,18 @@ on expressions.</dd>
 <code class="descclassname">arcgis.</code><code class="descname">dissolve_boundaries</code><span class="sig-paren">(</span><em>input_layer</em>, <em>dissolve_fields=[]</em>, <em>summary_fields=[]</em>, <em>output_name=None</em>, <em>context=None</em>, <em>gis=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.dissolve_boundaries" title="Permalink to this definition">¶</a></dt>
 <dd><p>Dissolve features based on specified fields.</p>
 <dl class="docutils">
-<dt>input_layer <span class="classifier-delimiter">:</span> <span class="classifier">Required layer (see Feature Input in documentation)</span></dt>
-<dd>The layer containing polygon features that will be dissolved.</dd>
-<dt>dissolve_fields <span class="classifier-delimiter">:</span> <span class="classifier">Optional list of strings</span></dt>
-<dd>One or more fields from the input that control which polygons are merged. If no fields are supplied, all
+<dt>input_layer</dt>
+ <span class="classifier-delimiter">:</span> <span class="classifier">Required layer (see Feature Input in documentation)</span><dd>The layer containing polygon features that will be dissolved.</dd>
+<dt>dissolve_fields</dt>
+ <span class="classifier-delimiter">:</span> <span class="classifier">Optional list of strings</span><dd>One or more fields from the input that control which polygons are merged. If no fields are supplied, all
 polygons that overlap or shared a common border will be dissolved into one polygon.</dd>
-<dt>summary_fields <span class="classifier-delimiter">:</span> <span class="classifier">Optional list of strings</span></dt>
-<dd>A list of field names and statistical types that will be used to summarize the output. Supported statistics
+<dt>summary_fields</dt>
+ <span class="classifier-delimiter">:</span> <span class="classifier">Optional list of strings</span><dd>A list of field names and statistical types that will be used to summarize the output. Supported statistics
 include: Sum, Mean, Min, Max, and Stddev.</dd>
-<dt>output_name <span class="classifier-delimiter">:</span> <span class="classifier">Optional string</span></dt>
-<dd>Additional properties such as output feature service name.</dd>
-<dt>context <span class="classifier-delimiter">:</span> <span class="classifier">Optional string</span></dt>
-<dd>Additional settings such as processing extent and output spatial reference.</dd>
+<dt>output_name</dt>
+ <span class="classifier-delimiter">:</span> <span class="classifier">Optional string</span><dd>Additional properties such as output feature service name.</dd>
+<dt>context</dt>
+ <span class="classifier-delimiter">:</span> <span class="classifier">Optional string</span><dd>Additional settings such as processing extent and output spatial reference.</dd>
 <dt>gis :</dt>
 <dd>Optional, the GIS on which this tool runs. If not specified, the active GIS is used.</dd>
 </dl>
@@ -1058,27 +1074,27 @@ your data locations. For example: What kind of people live here? What do people 
 their habits and lifestyles? What kind of businesses are there in this area?The result will be a new layer of input
 features that includes all demographic and geographic information from given data collections.</p>
 <dl class="docutils">
-<dt>input_layer <span class="classifier-delimiter">:</span> <span class="classifier">Required layer (see Feature Input in documentation)</span></dt>
-<dd>Feature layer to enrich with new data</dd>
-<dt>data_collections <span class="classifier-delimiter">:</span> <span class="classifier">Optional list of strings</span></dt>
-<dd>Data collections you wish to add to your features.</dd>
-<dt>analysis_variables <span class="classifier-delimiter">:</span> <span class="classifier">Optional list of strings</span></dt>
-<dd>A subset of specific variables instead of dataCollections.</dd>
-<dt>country <span class="classifier-delimiter">:</span> <span class="classifier">Optional string</span></dt>
-<dd>The two character country code that specifies the country of the input features. Eg. US (United States),
+<dt>input_layer</dt>
+ <span class="classifier-delimiter">:</span> <span class="classifier">Required layer (see Feature Input in documentation)</span><dd>Feature layer to enrich with new data</dd>
+<dt>data_collections</dt>
+ <span class="classifier-delimiter">:</span> <span class="classifier">Optional list of strings</span><dd>Data collections you wish to add to your features.</dd>
+<dt>analysis_variables</dt>
+ <span class="classifier-delimiter">:</span> <span class="classifier">Optional list of strings</span><dd>A subset of specific variables instead of dataCollections.</dd>
+<dt>country</dt>
+ <span class="classifier-delimiter">:</span> <span class="classifier">Optional string</span><dd>The two character country code that specifies the country of the input features. Eg. US (United States),
 FR (France), GB (United Kingdom) etc.</dd>
-<dt>buffer_type <span class="classifier-delimiter">:</span> <span class="classifier">Optional string</span></dt>
-<dd>Area to be created around the point or line features for enrichment. Default is 1 Mile straight-line buffer
+<dt>buffer_type</dt>
+ <span class="classifier-delimiter">:</span> <span class="classifier">Optional string</span><dd>Area to be created around the point or line features for enrichment. Default is 1 Mile straight-line buffer
 radius.</dd>
-<dt>distance <span class="classifier-delimiter">:</span> <span class="classifier">Optional float</span></dt>
-<dd>A double value that defines the straight-line distance or time (when drivingTime is used).</dd>
-<dt>units <span class="classifier-delimiter">:</span> <span class="classifier">Optional string</span></dt>
-<dd>The unit (eg. Miles, Minutes) to be used with the distance value(s) specified in the distance parameter to
+<dt>distance</dt>
+ <span class="classifier-delimiter">:</span> <span class="classifier">Optional float</span><dd>A double value that defines the straight-line distance or time (when drivingTime is used).</dd>
+<dt>units</dt>
+ <span class="classifier-delimiter">:</span> <span class="classifier">Optional string</span><dd>The unit (eg. Miles, Minutes) to be used with the distance value(s) specified in the distance parameter to
 calculate the area.</dd>
-<dt>output_name <span class="classifier-delimiter">:</span> <span class="classifier">Optional string</span></dt>
-<dd>Additional properties such as output feature service name.</dd>
-<dt>context <span class="classifier-delimiter">:</span> <span class="classifier">Optional string</span></dt>
-<dd>Additional settings such as processing extent and output spatial reference.</dd>
+<dt>output_name</dt>
+ <span class="classifier-delimiter">:</span> <span class="classifier">Optional string</span><dd>Additional properties such as output feature service name.</dd>
+<dt>context</dt>
+ <span class="classifier-delimiter">:</span> <span class="classifier">Optional string</span><dd>Additional settings such as processing extent and output spatial reference.</dd>
 <dt>gis :</dt>
 <dd>Optional, the GIS on which this tool runs. If not specified, the active GIS is used.</dd>
 </dl>
@@ -1091,18 +1107,18 @@ calculate the area.</dd>
 <dd><p>Select and download data for a specified area of interest. Layers that you select will be added to a zip file or
 layer package.</p>
 <dl class="docutils">
-<dt>input_layers <span class="classifier-delimiter">:</span> <span class="classifier">Required list of strings</span></dt>
-<dd>The layers from which you can extract features.</dd>
-<dt>extent <span class="classifier-delimiter">:</span> <span class="classifier">Optional string</span></dt>
-<dd>The area that defines which features will be included in the output zip file or layer package.</dd>
-<dt>clip <span class="classifier-delimiter">:</span> <span class="classifier">Optional bool</span></dt>
-<dd>Select features that intersect the extent or clip features within the extent.</dd>
-<dt>data_format <span class="classifier-delimiter">:</span> <span class="classifier">Optional string</span></dt>
-<dd>Format of the data that will be extracted and downloaded.  Layer packages will always include file geodatabases.</dd>
-<dt>output_name <span class="classifier-delimiter">:</span> <span class="classifier">Optional string</span></dt>
-<dd>Additional properties such as output feature service name.</dd>
-<dt>context <span class="classifier-delimiter">:</span> <span class="classifier">Optional string</span></dt>
-<dd>Additional settings such as processing extent and output spatial reference.</dd>
+<dt>input_layers</dt>
+ <span class="classifier-delimiter">:</span> <span class="classifier">Required list of strings</span><dd>The layers from which you can extract features.</dd>
+<dt>extent</dt>
+ <span class="classifier-delimiter">:</span> <span class="classifier">Optional string</span><dd>The area that defines which features will be included in the output zip file or layer package.</dd>
+<dt>clip</dt>
+ <span class="classifier-delimiter">:</span> <span class="classifier">Optional bool</span><dd>Select features that intersect the extent or clip features within the extent.</dd>
+<dt>data_format</dt>
+ <span class="classifier-delimiter">:</span> <span class="classifier">Optional string</span><dd>Format of the data that will be extracted and downloaded.  Layer packages will always include file geodatabases.</dd>
+<dt>output_name</dt>
+ <span class="classifier-delimiter">:</span> <span class="classifier">Optional string</span><dd>Additional properties such as output feature service name.</dd>
+<dt>context</dt>
+ <span class="classifier-delimiter">:</span> <span class="classifier">Optional string</span><dd>Additional settings such as processing extent and output spatial reference.</dd>
 <dt>gis :</dt>
 <dd>Optional, the GIS on which this tool runs. If not specified, the active GIS is used.</dd>
 </dl>
@@ -1115,18 +1131,18 @@ layer package.</p>
 <dd><p>The Find Existing Locations task selects features in the input layer that meet a query you specify.
 A query is made up of one or more expressions. There are two types of expressions: attribute and spatial.
 An example of an attribute expression is that a parcel must be vacant, which is an attribute of the Parcels layer
-(where STATUS = ‘VACANT’). An example of a spatial expression is that the parcel must also be within a certain
+(where STATUS = &#8216;VACANT&#8217;). An example of a spatial expression is that the parcel must also be within a certain
 distance of a river (Parcels within a distance of 0.75 Miles from Rivers).</p>
 <dl class="docutils">
-<dt>input_layers <span class="classifier-delimiter">:</span> <span class="classifier">Required list of strings</span></dt>
-<dd>A list of layers that will be used in the expressions parameter.</dd>
-<dt>expressions <span class="classifier-delimiter">:</span> <span class="classifier">Required string</span></dt>
-<dd>Specify a list of expressions. Please refer documentation at <a class="reference external" href="http://developers.arcgis.com">http://developers.arcgis.com</a> for more information
+<dt>input_layers</dt>
+ <span class="classifier-delimiter">:</span> <span class="classifier">Required list of strings</span><dd>A list of layers that will be used in the expressions parameter.</dd>
+<dt>expressions</dt>
+ <span class="classifier-delimiter">:</span> <span class="classifier">Required string</span><dd>Specify a list of expressions. Please refer documentation at <a class="reference external" href="http://developers.arcgis.com">http://developers.arcgis.com</a> for more information
 on creating expressions.</dd>
-<dt>output_name <span class="classifier-delimiter">:</span> <span class="classifier">Optional string</span></dt>
-<dd>Additional properties such as output feature service name.</dd>
-<dt>context <span class="classifier-delimiter">:</span> <span class="classifier">Optional string</span></dt>
-<dd>Additional settings such as processing extent and output spatial reference.</dd>
+<dt>output_name</dt>
+ <span class="classifier-delimiter">:</span> <span class="classifier">Optional string</span><dd>Additional properties such as output feature service name.</dd>
+<dt>context</dt>
+ <span class="classifier-delimiter">:</span> <span class="classifier">Optional string</span><dd>Additional settings such as processing extent and output spatial reference.</dd>
 <dt>gis :</dt>
 <dd>Optional, the GIS on which this tool runs. If not specified, the active GIS is used.</dd>
 </dl>
@@ -1144,67 +1160,67 @@ analysis_layer : Required layer (see Feature Input in documentation)</p>
 <blockquote>
 <div>The point or polygon feature layer for which hot spots will be calculated.</div></blockquote>
 <dl class="docutils">
-<dt>analysis_field <span class="classifier-delimiter">:</span> <span class="classifier">Optional string</span></dt>
-<dd>The numeric field in the AnalysisLayer that will be analyzed.</dd>
+<dt>analysis_field</dt>
+ <span class="classifier-delimiter">:</span> <span class="classifier">Optional string</span><dd>The numeric field in the AnalysisLayer that will be analyzed.</dd>
 </dl>
 <p>divided_by_field : Optional string</p>
 <dl class="docutils">
-<dt>bounding_polygon_layer <span class="classifier-delimiter">:</span> <span class="classifier">Optional layer (see Feature Input in documentation)</span></dt>
-<dd>When the analysis layer is points and no AnalysisField is specified, you can provide polygons features that
+<dt>bounding_polygon_layer</dt>
+ <span class="classifier-delimiter">:</span> <span class="classifier">Optional layer (see Feature Input in documentation)</span><dd>When the analysis layer is points and no AnalysisField is specified, you can provide polygons features that
 define where incidents could have occurred.</dd>
-<dt>aggregation_polygon_layer <span class="classifier-delimiter">:</span> <span class="classifier">Optional layer (see Feature Input in documentation)</span></dt>
-<dd>When the AnalysisLayer contains points and no AnalysisField is specified, you can provide polygon features into
+<dt>aggregation_polygon_layer</dt>
+ <span class="classifier-delimiter">:</span> <span class="classifier">Optional layer (see Feature Input in documentation)</span><dd>When the AnalysisLayer contains points and no AnalysisField is specified, you can provide polygon features into
 which the points will be aggregated and analyzed, such as administrative units.</dd>
-<dt>output_name <span class="classifier-delimiter">:</span> <span class="classifier">Optional string</span></dt>
-<dd>Additional properties such as output feature service name.</dd>
-<dt>context <span class="classifier-delimiter">:</span> <span class="classifier">Optional string</span></dt>
-<dd>Additional settings such as processing extent and output spatial reference.</dd>
+<dt>output_name</dt>
+ <span class="classifier-delimiter">:</span> <span class="classifier">Optional string</span><dd>Additional properties such as output feature service name.</dd>
+<dt>context</dt>
+ <span class="classifier-delimiter">:</span> <span class="classifier">Optional string</span><dd>Additional settings such as processing extent and output spatial reference.</dd>
 <dt>gis :</dt>
 <dd>Optional, the GIS on which this tool runs. If not specified, the active GIS is used.</dd>
 </dl>
 <dl class="docutils">
 <dt>dict with the following keys:</dt>
-<dd>“hot_spots_result_layer” : layer (FeatureCollection)
-“process_info” : list of messages</dd>
+<dd>&#8220;hot_spots_result_layer&#8221; : layer (FeatureCollection)
+&#8220;process_info&#8221; : list of messages</dd>
 </dl>
 </dd></dl>
 
 <dl class="function">
 <dt id="arcgis.find_nearest">
-<code class="descclassname">arcgis.</code><code class="descname">find_nearest</code><span class="sig-paren">(</span><em>analysis_layer</em>, <em>near_layer</em>, <em>measurement_type=’StraightLine’</em>, <em>max_count=100</em>, <em>search_cutoff=2147483647</em>, <em>search_cutoff_units=None</em>, <em>time_of_day=None</em>, <em>time_zone_for_time_of_day=’GeoLocal’</em>, <em>output_name=None</em>, <em>context=None</em>, <em>gis=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.find_nearest" title="Permalink to this definition">¶</a></dt>
+<code class="descclassname">arcgis.</code><code class="descname">find_nearest</code><span class="sig-paren">(</span><em>analysis_layer</em>, <em>near_layer</em>, <em>measurement_type='StraightLine'</em>, <em>max_count=100</em>, <em>search_cutoff=2147483647</em>, <em>search_cutoff_units=None</em>, <em>time_of_day=None</em>, <em>time_zone_for_time_of_day='GeoLocal'</em>, <em>output_name=None</em>, <em>context=None</em>, <em>gis=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.find_nearest" title="Permalink to this definition">¶</a></dt>
 <dd><p>Measures the straight-line distance, driving distance, or driving time from features in the analysis layer to
 features in the near layer, and copies the nearest features in the near layer to a new layer. Returns a layer
 containing the nearest features and a line layer that links the start locations to their nearest locations.</p>
 <dl class="docutils">
-<dt>analysis_layer <span class="classifier-delimiter">:</span> <span class="classifier">Required layer (see Feature Input in documentation)</span></dt>
-<dd>For each feature in this layer, the task finds the nearest features from the nearLayer.</dd>
-<dt>near_layer <span class="classifier-delimiter">:</span> <span class="classifier">Required layer (see Feature Input in documentation)</span></dt>
-<dd>The features from which the nearest locations are found.</dd>
-<dt>measurement_type <span class="classifier-delimiter">:</span> <span class="classifier">Required string</span></dt>
-<dd>The nearest locations can be determined by measuring straight-line distance, driving distance, or driving time</dd>
-<dt>max_count <span class="classifier-delimiter">:</span> <span class="classifier">Optional int</span></dt>
-<dd>The maximum number of near locations to find for each feature in analysisLayer.</dd>
-<dt>search_cutoff <span class="classifier-delimiter">:</span> <span class="classifier">Optional float</span></dt>
-<dd>Limits the search range to this value</dd>
-<dt>search_cutoff_units <span class="classifier-delimiter">:</span> <span class="classifier">Optional string</span></dt>
-<dd>The units for the value specified as searchCutoff</dd>
-<dt>time_of_day <span class="classifier-delimiter">:</span> <span class="classifier">Optional datetime.datetime</span></dt>
-<dd>When measurementType is DrivingTime, this value specifies the time of day to be used for driving time
+<dt>analysis_layer</dt>
+ <span class="classifier-delimiter">:</span> <span class="classifier">Required layer (see Feature Input in documentation)</span><dd>For each feature in this layer, the task finds the nearest features from the nearLayer.</dd>
+<dt>near_layer</dt>
+ <span class="classifier-delimiter">:</span> <span class="classifier">Required layer (see Feature Input in documentation)</span><dd>The features from which the nearest locations are found.</dd>
+<dt>measurement_type</dt>
+ <span class="classifier-delimiter">:</span> <span class="classifier">Required string</span><dd>The nearest locations can be determined by measuring straight-line distance, driving distance, or driving time</dd>
+<dt>max_count</dt>
+ <span class="classifier-delimiter">:</span> <span class="classifier">Optional int</span><dd>The maximum number of near locations to find for each feature in analysisLayer.</dd>
+<dt>search_cutoff</dt>
+ <span class="classifier-delimiter">:</span> <span class="classifier">Optional float</span><dd>Limits the search range to this value</dd>
+<dt>search_cutoff_units</dt>
+ <span class="classifier-delimiter">:</span> <span class="classifier">Optional string</span><dd>The units for the value specified as searchCutoff</dd>
+<dt>time_of_day</dt>
+ <span class="classifier-delimiter">:</span> <span class="classifier">Optional datetime.datetime</span><dd>When measurementType is DrivingTime, this value specifies the time of day to be used for driving time
 calculations based on traffic.</dd>
 </dl>
 <p>time_zone_for_time_of_day : Optional string</p>
 <dl class="docutils">
-<dt>output_name <span class="classifier-delimiter">:</span> <span class="classifier">Optional string</span></dt>
-<dd>Additional properties such as output feature service name</dd>
-<dt>context <span class="classifier-delimiter">:</span> <span class="classifier">Optional string</span></dt>
-<dd>Additional settings such as processing extent and output spatial reference</dd>
+<dt>output_name</dt>
+ <span class="classifier-delimiter">:</span> <span class="classifier">Optional string</span><dd>Additional properties such as output feature service name</dd>
+<dt>context</dt>
+ <span class="classifier-delimiter">:</span> <span class="classifier">Optional string</span><dd>Additional settings such as processing extent and output spatial reference</dd>
 <dt>gis :</dt>
 <dd>Optional, the GIS on which this tool runs. If not specified, the active GIS is used.</dd>
 </dl>
 <dl class="docutils">
 <dt>dict with the following keys:</dt>
-<dd>“nearest_layer” : layer (FeatureCollection)
-“connecting_lines_layer” : layer (FeatureCollection)</dd>
+<dd>&#8220;nearest_layer&#8221; : layer (FeatureCollection)
+&#8220;connecting_lines_layer&#8221; : layer (FeatureCollection)</dd>
 </dl>
 </dd></dl>
 
@@ -1221,79 +1237,79 @@ calculations based on traffic.</dd>
 <p>context : Optional string</p>
 <dl class="docutils">
 <dt>dict with the following keys:</dt>
-<dd>“similar_result_layer” : layer (FeatureCollection)
-“process_info” : layer (FeatureCollection)</dd>
+<dd>&#8220;similar_result_layer&#8221; : layer (FeatureCollection)
+&#8220;process_info&#8221; : layer (FeatureCollection)</dd>
 </dl>
 </dd></dl>
 
 <dl class="function">
 <dt id="arcgis.interpolate_points">
-<code class="descclassname">arcgis.</code><code class="descname">interpolate_points</code><span class="sig-paren">(</span><em>input_layer</em>, <em>field</em>, <em>interpolate_option=‘5’</em>, <em>output_prediction_error=False</em>, <em>classification_type=’GeometricInterval’</em>, <em>num_classes=10</em>, <em>class_breaks=[]</em>, <em>bounding_polygon_layer=None</em>, <em>predict_at_point_layer=None</em>, <em>output_name=None</em>, <em>context=None</em>, <em>gis=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.interpolate_points" title="Permalink to this definition">¶</a></dt>
+<code class="descclassname">arcgis.</code><code class="descname">interpolate_points</code><span class="sig-paren">(</span><em>input_layer</em>, <em>field</em>, <em>interpolate_option='5'</em>, <em>output_prediction_error=False</em>, <em>classification_type='GeometricInterval'</em>, <em>num_classes=10</em>, <em>class_breaks=[]</em>, <em>bounding_polygon_layer=None</em>, <em>predict_at_point_layer=None</em>, <em>output_name=None</em>, <em>context=None</em>, <em>gis=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.interpolate_points" title="Permalink to this definition">¶</a></dt>
 <dd><p>The Interpolate Points function allows you to predict values at new locations based on measurements from a
 collection of points. The function takes point data with values at each point and returns areas classified by
 predicted values.</p>
 <dl class="docutils">
-<dt>input_layer <span class="classifier-delimiter">:</span> <span class="classifier">Required layer (see Feature Input in documentation)</span></dt>
-<dd>The point layer whose features will be interpolated.</dd>
-<dt>field <span class="classifier-delimiter">:</span> <span class="classifier">Required string</span></dt>
-<dd>Name of the numeric field containing the values you wish to interpolate.</dd>
-<dt>interpolate_option <span class="classifier-delimiter">:</span> <span class="classifier">Optional string</span></dt>
-<dd>Integer value declaring your preference for speed versus accuracy, from 1 (fastest) to 9 (most accurate). More
+<dt>input_layer</dt>
+ <span class="classifier-delimiter">:</span> <span class="classifier">Required layer (see Feature Input in documentation)</span><dd>The point layer whose features will be interpolated.</dd>
+<dt>field</dt>
+ <span class="classifier-delimiter">:</span> <span class="classifier">Required string</span><dd>Name of the numeric field containing the values you wish to interpolate.</dd>
+<dt>interpolate_option</dt>
+ <span class="classifier-delimiter">:</span> <span class="classifier">Optional string</span><dd>Integer value declaring your preference for speed versus accuracy, from 1 (fastest) to 9 (most accurate). More
 accurate predictions take longer to calculate.</dd>
-<dt>output_prediction_error <span class="classifier-delimiter">:</span> <span class="classifier">Optional bool</span></dt>
-<dd>If True, a polygon layer of standard errors for the interpolation predictions will be returned in the
+<dt>output_prediction_error</dt>
+ <span class="classifier-delimiter">:</span> <span class="classifier">Optional bool</span><dd>If True, a polygon layer of standard errors for the interpolation predictions will be returned in the
 predictionError output parameter.</dd>
-<dt>classification_type <span class="classifier-delimiter">:</span> <span class="classifier">Optional string</span></dt>
-<dd>Determines how predicted values will be classified into areas.</dd>
-<dt>num_classes <span class="classifier-delimiter">:</span> <span class="classifier">Optional int</span></dt>
-<dd>This value is used to divide the range of interpolated values into distinct classes. The range of values in each
+<dt>classification_type</dt>
+ <span class="classifier-delimiter">:</span> <span class="classifier">Optional string</span><dd>Determines how predicted values will be classified into areas.</dd>
+<dt>num_classes</dt>
+ <span class="classifier-delimiter">:</span> <span class="classifier">Optional int</span><dd>This value is used to divide the range of interpolated values into distinct classes. The range of values in each
 class is determined by the classificationType parameter. Each class defines the boundaries of the result
 polygons.</dd>
-<dt>class_breaks <span class="classifier-delimiter">:</span> <span class="classifier">Optional list of floats</span></dt>
-<dd>If classificationType is Manual, supply desired class break values separated by spaces. These values define the
+<dt>class_breaks</dt>
+ <span class="classifier-delimiter">:</span> <span class="classifier">Optional list of floats</span><dd>If classificationType is Manual, supply desired class break values separated by spaces. These values define the
 upper limit of each class, so the number of classes will equal the number of entered values. Areas will not be
 created for any locations with predicted values above the largest entered break value. You must enter at least
 two values and no more than 32.</dd>
-<dt>bounding_polygon_layer <span class="classifier-delimiter">:</span> <span class="classifier">Optional layer (see Feature Input in documentation)</span></dt>
-<dd>A layer specifying the polygon(s) where you want values to be interpolated.</dd>
-<dt>predict_at_point_layer <span class="classifier-delimiter">:</span> <span class="classifier">Optional layer (see Feature Input in documentation)</span></dt>
-<dd>An optional layer specifying point locations to calculate prediction values. This allows you to make predictions
+<dt>bounding_polygon_layer</dt>
+ <span class="classifier-delimiter">:</span> <span class="classifier">Optional layer (see Feature Input in documentation)</span><dd>A layer specifying the polygon(s) where you want values to be interpolated.</dd>
+<dt>predict_at_point_layer</dt>
+ <span class="classifier-delimiter">:</span> <span class="classifier">Optional layer (see Feature Input in documentation)</span><dd>An optional layer specifying point locations to calculate prediction values. This allows you to make predictions
 at specific locations of interest.</dd>
-<dt>output_name <span class="classifier-delimiter">:</span> <span class="classifier">Optional string</span></dt>
-<dd>Additional properties such as output feature service name.</dd>
-<dt>context <span class="classifier-delimiter">:</span> <span class="classifier">Optional string</span></dt>
-<dd>Additional settings such as processing extent and output spatial reference.</dd>
+<dt>output_name</dt>
+ <span class="classifier-delimiter">:</span> <span class="classifier">Optional string</span><dd>Additional properties such as output feature service name.</dd>
+<dt>context</dt>
+ <span class="classifier-delimiter">:</span> <span class="classifier">Optional string</span><dd>Additional settings such as processing extent and output spatial reference.</dd>
 <dt>gis :</dt>
 <dd>Optional, the GIS on which this tool runs. If not specified, the active GIS is used.</dd>
 </dl>
 <dl class="docutils">
 <dt>dict with the following keys:</dt>
-<dd>“result_layer” : layer (FeatureCollection)
-“prediction_error” : layer (FeatureCollection)
-“predicted_point_layer” : layer (FeatureCollection)</dd>
+<dd>&#8220;result_layer&#8221; : layer (FeatureCollection)
+&#8220;prediction_error&#8221; : layer (FeatureCollection)
+&#8220;predicted_point_layer&#8221; : layer (FeatureCollection)</dd>
 </dl>
 </dd></dl>
 
 <dl class="function">
 <dt id="arcgis.join_features">
-<code class="descclassname">arcgis.</code><code class="descname">join_features</code><span class="sig-paren">(</span><em>target_layer</em>, <em>join_layer</em>, <em>spatial_relationship=None</em>, <em>spatial_relationship_distance=None</em>, <em>spatial_relationship_distance_units=None</em>, <em>attribute_relationship=None</em>, <em>join_operation=’JoinOneToOne’</em>, <em>summary_fields=None</em>, <em>output_name=None</em>, <em>context=None</em>, <em>gis=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.join_features" title="Permalink to this definition">¶</a></dt>
+<code class="descclassname">arcgis.</code><code class="descname">join_features</code><span class="sig-paren">(</span><em>target_layer</em>, <em>join_layer</em>, <em>spatial_relationship=None</em>, <em>spatial_relationship_distance=None</em>, <em>spatial_relationship_distance_units=None</em>, <em>attribute_relationship=None</em>, <em>join_operation='JoinOneToOne'</em>, <em>summary_fields=None</em>, <em>output_name=None</em>, <em>context=None</em>, <em>gis=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.join_features" title="Permalink to this definition">¶</a></dt>
 <dd><p>Parameters:</p>
 <blockquote>
 <div><p>target_layer: targetLayer (str). Required parameter.</p>
 <p>join_layer: joinLayer (str). Required parameter.</p>
 <dl class="docutils">
 <dt>spatial_relationship: spatialRelationship (str). Optional parameter.</dt>
-<dd>Choice list:[‘intersects’, ‘withindistance’, ‘completelycontains’, ‘completelywithin’, ‘within’, ‘contains’, ‘identicalto’]</dd>
+<dd>Choice list:[&#8216;intersects&#8217;, &#8216;withindistance&#8217;, &#8216;completelycontains&#8217;, &#8216;completelywithin&#8217;, &#8216;within&#8217;, &#8216;contains&#8217;, &#8216;identicalto&#8217;]</dd>
 </dl>
 <p>spatial_relationship_distance: spatialRelationshipDistance (float). Optional parameter.</p>
 <dl class="docutils">
 <dt>spatial_relationship_distance_units: spatialRelationshipDistanceUnits (str). Optional parameter.</dt>
-<dd>Choice list:[‘Meters’, ‘Kilometers’, ‘Feet’, ‘Yards’, ‘Miles’, ‘NauticalMiles’]</dd>
+<dd>Choice list:[&#8216;Meters&#8217;, &#8216;Kilometers&#8217;, &#8216;Feet&#8217;, &#8216;Yards&#8217;, &#8216;Miles&#8217;, &#8216;NauticalMiles&#8217;]</dd>
 </dl>
 <p>attribute_relationship: attributeRelationship (str). Optional parameter.</p>
 <dl class="docutils">
 <dt>join_operation: joinOperation (str). Optional parameter.</dt>
-<dd>Choice list:[‘JoinOneToOne’, ‘JoinOneToMany’]</dd>
+<dd>Choice list:[&#8216;JoinOneToOne&#8217;, &#8216;JoinOneToMany&#8217;]</dd>
 </dl>
 <p>summary_fields: summaryFields (str). Optional parameter.</p>
 <p>output_name: outputName (str). Optional parameter.</p>
@@ -1313,18 +1329,18 @@ at specific locations of interest.</dd>
 <code class="descclassname">arcgis.</code><code class="descname">merge_layers</code><span class="sig-paren">(</span><em>input_layer</em>, <em>merge_layer</em>, <em>merging_attributes=[]</em>, <em>output_name=None</em>, <em>context=None</em>, <em>gis=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.merge_layers" title="Permalink to this definition">¶</a></dt>
 <dd><p>Combines two inputs of the same feature data type into a new output.</p>
 <dl class="docutils">
-<dt>input_layer <span class="classifier-delimiter">:</span> <span class="classifier">Required layer (see Feature Input in documentation)</span></dt>
-<dd>The point, line, or polygon  features to merge with the mergeLayer.</dd>
-<dt>merge_layer <span class="classifier-delimiter">:</span> <span class="classifier">Required layer (see Feature Input in documentation)</span></dt>
-<dd>The point, line or polygon features to merge with inputLayer.  mergeLayer must contain the same feature type
+<dt>input_layer</dt>
+ <span class="classifier-delimiter">:</span> <span class="classifier">Required layer (see Feature Input in documentation)</span><dd>The point, line, or polygon  features to merge with the mergeLayer.</dd>
+<dt>merge_layer</dt>
+ <span class="classifier-delimiter">:</span> <span class="classifier">Required layer (see Feature Input in documentation)</span><dd>The point, line or polygon features to merge with inputLayer.  mergeLayer must contain the same feature type
 point, line, or polygon) as the inputLayer.</dd>
-<dt>merging_attributes <span class="classifier-delimiter">:</span> <span class="classifier">Optional list of strings</span></dt>
-<dd>An array of values that describe how fields from the mergeLayer are to be modified.  By default all fields from
+<dt>merging_attributes</dt>
+ <span class="classifier-delimiter">:</span> <span class="classifier">Optional list of strings</span><dd>An array of values that describe how fields from the mergeLayer are to be modified.  By default all fields from
 both inputs will be carried across to the output.</dd>
-<dt>output_name <span class="classifier-delimiter">:</span> <span class="classifier">Optional string</span></dt>
-<dd>Additional properties such as output feature service name.</dd>
-<dt>context <span class="classifier-delimiter">:</span> <span class="classifier">Optional string</span></dt>
-<dd>Additional settings such as processing extent and output spatial reference.</dd>
+<dt>output_name</dt>
+ <span class="classifier-delimiter">:</span> <span class="classifier">Optional string</span><dd>Additional properties such as output feature service name.</dd>
+<dt>context</dt>
+ <span class="classifier-delimiter">:</span> <span class="classifier">Optional string</span><dd>Additional settings such as processing extent and output spatial reference.</dd>
 <dt>gis :</dt>
 <dd>Optional, the GIS on which this tool runs. If not specified, the active GIS is used.</dd>
 </dl>
@@ -1333,27 +1349,27 @@ both inputs will be carried across to the output.</dd>
 
 <dl class="function">
 <dt id="arcgis.overlay_layers">
-<code class="descclassname">arcgis.</code><code class="descname">overlay_layers</code><span class="sig-paren">(</span><em>input_layer</em>, <em>overlay_layer</em>, <em>overlay_type=’Intersect’</em>, <em>snap_to_input=False</em>, <em>output_type=’Input’</em>, <em>tolerance=None</em>, <em>output_name=None</em>, <em>context=None</em>, <em>gis=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.overlay_layers" title="Permalink to this definition">¶</a></dt>
+<code class="descclassname">arcgis.</code><code class="descname">overlay_layers</code><span class="sig-paren">(</span><em>input_layer</em>, <em>overlay_layer</em>, <em>overlay_type='Intersect'</em>, <em>snap_to_input=False</em>, <em>output_type='Input'</em>, <em>tolerance=None</em>, <em>output_name=None</em>, <em>context=None</em>, <em>gis=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.overlay_layers" title="Permalink to this definition">¶</a></dt>
 <dd><p>Overlays the input layer with the overlay layer. Overlay operations supported are Intersect, Union, and Erase.</p>
 <dl class="docutils">
-<dt>input_layer <span class="classifier-delimiter">:</span> <span class="classifier">Required layer (see Feature Input in documentation)</span></dt>
-<dd>The input analysis layer.</dd>
-<dt>overlay_layer <span class="classifier-delimiter">:</span> <span class="classifier">Required layer (see Feature Input in documentation)</span></dt>
-<dd>The layer to be overlaid with the analysis layer.</dd>
-<dt>overlay_type <span class="classifier-delimiter">:</span> <span class="classifier">Optional string</span></dt>
-<dd>The overlay type (INTERSECT, UNION, or ERASE) defines how the analysis layer and the overlay layer are combined.</dd>
-<dt>snap_to_input <span class="classifier-delimiter">:</span> <span class="classifier">Optional bool</span></dt>
-<dd>When the distance between features is less than the tolerance, the features in the overlay layer will snap to
+<dt>input_layer</dt>
+ <span class="classifier-delimiter">:</span> <span class="classifier">Required layer (see Feature Input in documentation)</span><dd>The input analysis layer.</dd>
+<dt>overlay_layer</dt>
+ <span class="classifier-delimiter">:</span> <span class="classifier">Required layer (see Feature Input in documentation)</span><dd>The layer to be overlaid with the analysis layer.</dd>
+<dt>overlay_type</dt>
+ <span class="classifier-delimiter">:</span> <span class="classifier">Optional string</span><dd>The overlay type (INTERSECT, UNION, or ERASE) defines how the analysis layer and the overlay layer are combined.</dd>
+<dt>snap_to_input</dt>
+ <span class="classifier-delimiter">:</span> <span class="classifier">Optional bool</span><dd>When the distance between features is less than the tolerance, the features in the overlay layer will snap to
 the features in the input layer.</dd>
-<dt>output_type <span class="classifier-delimiter">:</span> <span class="classifier">Optional string</span></dt>
-<dd>The type of intersection (INPUT, LINE, POINT).</dd>
-<dt>tolerance <span class="classifier-delimiter">:</span> <span class="classifier">Optional float</span></dt>
-<dd>The minimum distance separating all feature coordinates (nodes and vertices) as well as the distance a
+<dt>output_type</dt>
+ <span class="classifier-delimiter">:</span> <span class="classifier">Optional string</span><dd>The type of intersection (INPUT, LINE, POINT).</dd>
+<dt>tolerance</dt>
+ <span class="classifier-delimiter">:</span> <span class="classifier">Optional float</span><dd>The minimum distance separating all feature coordinates (nodes and vertices) as well as the distance a
 coordinate can move in X or Y (or both).</dd>
-<dt>output_name <span class="classifier-delimiter">:</span> <span class="classifier">Optional string</span></dt>
-<dd>Additional properties such as output feature service name.</dd>
-<dt>context <span class="classifier-delimiter">:</span> <span class="classifier">Optional string</span></dt>
-<dd>Additional settings such as processing extent and output spatial reference.</dd>
+<dt>output_name</dt>
+ <span class="classifier-delimiter">:</span> <span class="classifier">Optional string</span><dd>Additional properties such as output feature service name.</dd>
+<dt>context</dt>
+ <span class="classifier-delimiter">:</span> <span class="classifier">Optional string</span><dd>Additional settings such as processing extent and output spatial reference.</dd>
 <dt>gis :</dt>
 <dd>Optional, the GIS on which this tool runs. If not specified, the active GIS is used.</dd>
 </dl>
@@ -1362,7 +1378,7 @@ coordinate can move in X or Y (or both).</dd>
 
 <dl class="function">
 <dt id="arcgis.plan_routes">
-<code class="descclassname">arcgis.</code><code class="descname">plan_routes</code><span class="sig-paren">(</span><em>stops_layer</em>, <em>route_count</em>, <em>max_stops_per_route</em>, <em>route_start_time</em>, <em>start_layer</em>, <em>start_layer_route_id_field=None</em>, <em>return_to_start=True</em>, <em>end_layer=None</em>, <em>end_layer_route_id_field=None</em>, <em>travel_mode=’Driving’</em>, <em>stop_service_time=0</em>, <em>max_route_time=525600</em>, <em>output_name=None</em>, <em>context=None</em>, <em>gis=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.plan_routes" title="Permalink to this definition">¶</a></dt>
+<code class="descclassname">arcgis.</code><code class="descname">plan_routes</code><span class="sig-paren">(</span><em>stops_layer</em>, <em>route_count</em>, <em>max_stops_per_route</em>, <em>route_start_time</em>, <em>start_layer</em>, <em>start_layer_route_id_field=None</em>, <em>return_to_start=True</em>, <em>end_layer=None</em>, <em>end_layer_route_id_field=None</em>, <em>travel_mode='Driving'</em>, <em>stop_service_time=0</em>, <em>max_route_time=525600</em>, <em>output_name=None</em>, <em>context=None</em>, <em>gis=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.plan_routes" title="Permalink to this definition">¶</a></dt>
 <dd><p>You provide a set of stops and the number of vehicles available to visit the stops, and Plan Routes determines how
 to efficiently assign the stops to the vehicles and route the vehicles to the stops.</p>
 <p>Use this tool to plan work for a mobile team of inspectors, appraisers, in-home support service providers, and
@@ -1387,15 +1403,15 @@ others; deliver or pick up items from remote locations; or offer transportation 
 </dl>
 <dl class="docutils">
 <dt>dict with the following keys:</dt>
-<dd>“routes_layer” : layer (FeatureCollection)
-“assigned_stops_layer” : layer (FeatureCollection)
-“unassigned_stops_layer” : layer (FeatureCollection)</dd>
+<dd>&#8220;routes_layer&#8221; : layer (FeatureCollection)
+&#8220;assigned_stops_layer&#8221; : layer (FeatureCollection)
+&#8220;unassigned_stops_layer&#8221; : layer (FeatureCollection)</dd>
 </dl>
 </dd></dl>
 
 <dl class="function">
 <dt id="arcgis.summarize_nearby">
-<code class="descclassname">arcgis.</code><code class="descname">summarize_nearby</code><span class="sig-paren">(</span><em>sum_nearby_layer</em>, <em>summary_layer</em>, <em>near_type=’StraightLine’</em>, <em>distances=[]</em>, <em>units=’Meters’</em>, <em>time_of_day=None</em>, <em>time_zone_for_time_of_day=’GeoLocal’</em>, <em>return_boundaries=True</em>, <em>sum_shape=True</em>, <em>shape_units=None</em>, <em>summary_fields=[]</em>, <em>group_by_field=None</em>, <em>minority_majority=False</em>, <em>percent_shape=False</em>, <em>output_name=None</em>, <em>context=None</em>, <em>gis=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.summarize_nearby" title="Permalink to this definition">¶</a></dt>
+<code class="descclassname">arcgis.</code><code class="descname">summarize_nearby</code><span class="sig-paren">(</span><em>sum_nearby_layer</em>, <em>summary_layer</em>, <em>near_type='StraightLine'</em>, <em>distances=[]</em>, <em>units='Meters'</em>, <em>time_of_day=None</em>, <em>time_zone_for_time_of_day='GeoLocal'</em>, <em>return_boundaries=True</em>, <em>sum_shape=True</em>, <em>shape_units=None</em>, <em>summary_fields=[]</em>, <em>group_by_field=None</em>, <em>minority_majority=False</em>, <em>percent_shape=False</em>, <em>output_name=None</em>, <em>context=None</em>, <em>gis=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.summarize_nearby" title="Permalink to this definition">¶</a></dt>
 <dd><p>The SummarizeNearby task finds features that are within a specified distance of features in the input layer.
 Distance can be measured as a straight-line distance, a drive-time distance (for example, within 10 minutes), or a
 drive distance (within 5 kilometers). Statistics are then calculated for the nearby features. For example:Calculate
@@ -1403,60 +1419,60 @@ the total population within five minutes of driving time of a proposed new store
 freeway access ramps within a one-mile driving distance of a proposed new store location to use as a measure of
 store accessibility.</p>
 <dl class="docutils">
-<dt>sum_nearby_layer <span class="classifier-delimiter">:</span> <span class="classifier">Required layer (see Feature Input in documentation)</span></dt>
-<dd>Point, line, or polygon features from which distances will be measured to features in the summarizeLayer.</dd>
-<dt>summary_layer <span class="classifier-delimiter">:</span> <span class="classifier">Required layer (see Feature Input in documentation)</span></dt>
-<dd>Point, line, or polygon features. Features in this layer that are within the specified distance to features in
+<dt>sum_nearby_layer</dt>
+ <span class="classifier-delimiter">:</span> <span class="classifier">Required layer (see Feature Input in documentation)</span><dd>Point, line, or polygon features from which distances will be measured to features in the summarizeLayer.</dd>
+<dt>summary_layer</dt>
+ <span class="classifier-delimiter">:</span> <span class="classifier">Required layer (see Feature Input in documentation)</span><dd>Point, line, or polygon features. Features in this layer that are within the specified distance to features in
 the sumNearbyLayer will be summarized.</dd>
-<dt>near_type <span class="classifier-delimiter">:</span> <span class="classifier">Optional string</span></dt>
-<dd>Defines what kind of distance measurement you want to use to create areas around the nearbyLayer features.</dd>
-<dt>distances <span class="classifier-delimiter">:</span> <span class="classifier">Required list of floats</span></dt>
-<dd>An array of double values that defines the search distance for creating areas mentioned above</dd>
-<dt>units <span class="classifier-delimiter">:</span> <span class="classifier">Optional string</span></dt>
-<dd>The linear unit for distances parameter above. Eg. Miles, Kilometers, Minutes Seconds etc</dd>
-<dt>time_of_day <span class="classifier-delimiter">:</span> <span class="classifier">Optional datetime.datetime</span></dt>
-<dd>For timeOfDay, set the time and day according to the number of milliseconds elapsed since the Unix epoc
+<dt>near_type</dt>
+ <span class="classifier-delimiter">:</span> <span class="classifier">Optional string</span><dd>Defines what kind of distance measurement you want to use to create areas around the nearbyLayer features.</dd>
+<dt>distances</dt>
+ <span class="classifier-delimiter">:</span> <span class="classifier">Required list of floats</span><dd>An array of double values that defines the search distance for creating areas mentioned above</dd>
+<dt>units</dt>
+ <span class="classifier-delimiter">:</span> <span class="classifier">Optional string</span><dd>The linear unit for distances parameter above. Eg. Miles, Kilometers, Minutes Seconds etc</dd>
+<dt>time_of_day</dt>
+ <span class="classifier-delimiter">:</span> <span class="classifier">Optional datetime.datetime</span><dd>For timeOfDay, set the time and day according to the number of milliseconds elapsed since the Unix epoc
 (January 1, 1970 UTC). When specified and if relevant for the nearType parameter, the traffic conditions during
 the time of the day will be considered.</dd>
-<dt>time_zone_for_time_of_day <span class="classifier-delimiter">:</span> <span class="classifier">Optional string</span></dt>
-<dd>Determines if the value specified for timeOfDay is specified in UTC or in a time zone that is local to the
+<dt>time_zone_for_time_of_day</dt>
+ <span class="classifier-delimiter">:</span> <span class="classifier">Optional string</span><dd>Determines if the value specified for timeOfDay is specified in UTC or in a time zone that is local to the
 location of the origins.</dd>
-<dt>return_boundaries <span class="classifier-delimiter">:</span> <span class="classifier">Optional bool</span></dt>
-<dd>If true, will return a result layer of areas that contain the requested summary information.  The resulting
+<dt>return_boundaries</dt>
+ <span class="classifier-delimiter">:</span> <span class="classifier">Optional bool</span><dd>If true, will return a result layer of areas that contain the requested summary information.  The resulting
 areas are defined by the specified nearType.  For example, if using a StraightLine of 5 miles, your result will
 contain areas with a 5 mile radius around the input features and specified summary information.If false, the
 resulting layer will return the same features as the input analysis layer with requested summary information.</dd>
-<dt>sum_shape <span class="classifier-delimiter">:</span> <span class="classifier">Optional bool</span></dt>
-<dd>A boolean value that instructs the task to calculate count of points, length of lines or areas of polygons of
+<dt>sum_shape</dt>
+ <span class="classifier-delimiter">:</span> <span class="classifier">Optional bool</span><dd>A boolean value that instructs the task to calculate count of points, length of lines or areas of polygons of
 the summaryLayer within each polygon in sumWithinLayer.</dd>
-<dt>shape_units <span class="classifier-delimiter">:</span> <span class="classifier">Optional string</span></dt>
-<dd>Specify units to summarize the length or areas when sumShape is set to true. Units is not required to summarize
+<dt>shape_units</dt>
+ <span class="classifier-delimiter">:</span> <span class="classifier">Optional string</span><dd>Specify units to summarize the length or areas when sumShape is set to true. Units is not required to summarize
 points.</dd>
-<dt>summary_fields <span class="classifier-delimiter">:</span> <span class="classifier">Optional list of strings</span></dt>
-<dd>A list of field names and statistical summary type that you wish to calculate for all features in the
-summaryLayer that are within each polygon in the sumWithinLayer . Eg: [“fieldname1 summary”,
-“fieldname2 summary”]</dd>
-<dt>group_by_field <span class="classifier-delimiter">:</span> <span class="classifier">Optional string</span></dt>
-<dd>Specify a field from the summaryLayer features to calculate statistics separately for each unique value of the
+<dt>summary_fields</dt>
+ <span class="classifier-delimiter">:</span> <span class="classifier">Optional list of strings</span><dd>A list of field names and statistical summary type that you wish to calculate for all features in the
+summaryLayer that are within each polygon in the sumWithinLayer . Eg: [&#8220;fieldname1 summary&#8221;,
+&#8220;fieldname2 summary&#8221;]</dd>
+<dt>group_by_field</dt>
+ <span class="classifier-delimiter">:</span> <span class="classifier">Optional string</span><dd>Specify a field from the summaryLayer features to calculate statistics separately for each unique value of the
 field.</dd>
-<dt>minority_majority <span class="classifier-delimiter">:</span> <span class="classifier">Optional bool</span></dt>
-<dd>This boolean parameter is applicable only when a groupByField is specified. If true, the minority
+<dt>minority_majority</dt>
+ <span class="classifier-delimiter">:</span> <span class="classifier">Optional bool</span><dd>This boolean parameter is applicable only when a groupByField is specified. If true, the minority
 (least dominant) or the majority (most dominant) attribute values within each group, within each boundary will
 be calculated.</dd>
-<dt>percent_shape <span class="classifier-delimiter">:</span> <span class="classifier">Optional bool</span></dt>
-<dd>This boolean parameter is applicable only when a groupByField is specified. If set to true, the percentage of
+<dt>percent_shape</dt>
+ <span class="classifier-delimiter">:</span> <span class="classifier">Optional bool</span><dd>This boolean parameter is applicable only when a groupByField is specified. If set to true, the percentage of
 shape (eg. length for lines) for each unique groupByField value is calculated.</dd>
-<dt>output_name <span class="classifier-delimiter">:</span> <span class="classifier">Optional string</span></dt>
-<dd>Additional properties such as output feature service name.</dd>
-<dt>context <span class="classifier-delimiter">:</span> <span class="classifier">Optional string</span></dt>
-<dd>Additional settings such as processing extent and output spatial reference.</dd>
+<dt>output_name</dt>
+ <span class="classifier-delimiter">:</span> <span class="classifier">Optional string</span><dd>Additional properties such as output feature service name.</dd>
+<dt>context</dt>
+ <span class="classifier-delimiter">:</span> <span class="classifier">Optional string</span><dd>Additional settings such as processing extent and output spatial reference.</dd>
 <dt>gis :</dt>
 <dd>Optional, the GIS on which this tool runs. If not specified, the active GIS is used.</dd>
 </dl>
 <dl class="docutils">
 <dt>dict with the following keys:</dt>
-<dd>“result_layer” : layer (FeatureCollection)
-“group_by_summary” : layer (FeatureCollection)</dd>
+<dd>&#8220;result_layer&#8221; : layer (FeatureCollection)
+&#8220;group_by_summary&#8221; : layer (FeatureCollection)</dd>
 </dl>
 </dd></dl>
 
@@ -1470,47 +1486,47 @@ type for each watershed.Given a layer of parcels in a county and a layer of city
 value of vacant parcels within each city boundary.Given a layer of counties and a layer of roads, summarize the
 total mileage of roads by road type within each county.</p>
 <dl class="docutils">
-<dt>sum_within_layer <span class="classifier-delimiter">:</span> <span class="classifier">Required layer (see Feature Input in documentation)</span></dt>
-<dd>A polygon feature layer or featurecollection. Features, or portions of features, in the summaryLayer (below)
+<dt>sum_within_layer</dt>
+ <span class="classifier-delimiter">:</span> <span class="classifier">Required layer (see Feature Input in documentation)</span><dd>A polygon feature layer or featurecollection. Features, or portions of features, in the summaryLayer (below)
 that fall within the boundaries of these polygons will be summarized.</dd>
-<dt>summary_layer <span class="classifier-delimiter">:</span> <span class="classifier">Required layer (see Feature Input in documentation)</span></dt>
-<dd>Point, line, or polygon features that will be summarized for each polygon in the sumWithinLayer.</dd>
-<dt>sum_shape <span class="classifier-delimiter">:</span> <span class="classifier">Optional bool</span></dt>
-<dd>A boolean value that instructs the task to calculate count of points, length of lines or areas of polygons of
+<dt>summary_layer</dt>
+ <span class="classifier-delimiter">:</span> <span class="classifier">Required layer (see Feature Input in documentation)</span><dd>Point, line, or polygon features that will be summarized for each polygon in the sumWithinLayer.</dd>
+<dt>sum_shape</dt>
+ <span class="classifier-delimiter">:</span> <span class="classifier">Optional bool</span><dd>A boolean value that instructs the task to calculate count of points, length of lines or areas of polygons of
 the summaryLayer within each polygon in sumWithinLayer.</dd>
-<dt>shape_units <span class="classifier-delimiter">:</span> <span class="classifier">Optional string</span></dt>
-<dd>Specify units to summarize the length or areas when sumShape is set to true. Units is not required to summarize
+<dt>shape_units</dt>
+ <span class="classifier-delimiter">:</span> <span class="classifier">Optional string</span><dd>Specify units to summarize the length or areas when sumShape is set to true. Units is not required to summarize
 points.</dd>
-<dt>summary_fields <span class="classifier-delimiter">:</span> <span class="classifier">Optional list of strings</span></dt>
-<dd>A list of field names and statistical summary type that you wish to calculate for all features in the
-summaryLayer that are within each polygon in the sumWithinLayer. Eg:[“fieldname1 summary”, “fieldname2 summary”]</dd>
-<dt>group_by_field <span class="classifier-delimiter">:</span> <span class="classifier">Optional string</span></dt>
-<dd>Specify a field from the summaryLayer features to calculate statistics separately for each unique attribute
+<dt>summary_fields</dt>
+ <span class="classifier-delimiter">:</span> <span class="classifier">Optional list of strings</span><dd>A list of field names and statistical summary type that you wish to calculate for all features in the
+summaryLayer that are within each polygon in the sumWithinLayer. Eg:[&#8220;fieldname1 summary&#8221;, &#8220;fieldname2 summary&#8221;]</dd>
+<dt>group_by_field</dt>
+ <span class="classifier-delimiter">:</span> <span class="classifier">Optional string</span><dd>Specify a field from the summaryLayer features to calculate statistics separately for each unique attribute
 value.</dd>
-<dt>minority_majority <span class="classifier-delimiter">:</span> <span class="classifier">Optional bool</span></dt>
-<dd>This boolean parameter is applicable only when a groupByField is specified. If true, the minority
+<dt>minority_majority</dt>
+ <span class="classifier-delimiter">:</span> <span class="classifier">Optional bool</span><dd>This boolean parameter is applicable only when a groupByField is specified. If true, the minority
 (least dominant) or the majority (most dominant) attribute values within each group, within each boundary will
 be calculated.</dd>
-<dt>percent_shape <span class="classifier-delimiter">:</span> <span class="classifier">Optional bool</span></dt>
-<dd>This boolean parameter is applicable only when a groupByField is specified. If set to true, the percentage of
+<dt>percent_shape</dt>
+ <span class="classifier-delimiter">:</span> <span class="classifier">Optional bool</span><dd>This boolean parameter is applicable only when a groupByField is specified. If set to true, the percentage of
 shape (eg. length for lines) for each unique groupByField value is calculated.</dd>
-<dt>output_name <span class="classifier-delimiter">:</span> <span class="classifier">Optional string</span></dt>
-<dd>Additional properties such as output feature service name.</dd>
-<dt>context <span class="classifier-delimiter">:</span> <span class="classifier">Optional string</span></dt>
-<dd>Additional settings such as processing extent and output spatial reference.</dd>
+<dt>output_name</dt>
+ <span class="classifier-delimiter">:</span> <span class="classifier">Optional string</span><dd>Additional properties such as output feature service name.</dd>
+<dt>context</dt>
+ <span class="classifier-delimiter">:</span> <span class="classifier">Optional string</span><dd>Additional settings such as processing extent and output spatial reference.</dd>
 <dt>gis :</dt>
 <dd>Optional, the GIS on which this tool runs. If not specified, the active GIS is used.</dd>
 </dl>
 <dl class="docutils">
 <dt>dict with the following keys:</dt>
-<dd>“result_layer” : layer (FeatureCollection)
-“group_by_summary” : layer (FeatureCollection)</dd>
+<dd>&#8220;result_layer&#8221; : layer (FeatureCollection)
+&#8220;group_by_summary&#8221; : layer (FeatureCollection)</dd>
 </dl>
 </dd></dl>
 
 <dl class="function">
 <dt id="arcgis.trace_downstream">
-<code class="descclassname">arcgis.</code><code class="descname">trace_downstream</code><span class="sig-paren">(</span><em>input_layer</em>, <em>split_distance=None</em>, <em>split_units=’Kilometers’</em>, <em>max_distance=None</em>, <em>max_distance_units=’Kilometers’</em>, <em>bounding_polygon_layer=None</em>, <em>source_database=None</em>, <em>generalize=True</em>, <em>output_name=None</em>, <em>context=None</em>, <em>gis=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.trace_downstream" title="Permalink to this definition">¶</a></dt>
+<code class="descclassname">arcgis.</code><code class="descname">trace_downstream</code><span class="sig-paren">(</span><em>input_layer</em>, <em>split_distance=None</em>, <em>split_units='Kilometers'</em>, <em>max_distance=None</em>, <em>max_distance_units='Kilometers'</em>, <em>bounding_polygon_layer=None</em>, <em>source_database=None</em>, <em>generalize=True</em>, <em>output_name=None</em>, <em>context=None</em>, <em>gis=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.trace_downstream" title="Permalink to this definition">¶</a></dt>
 <dd><p>Determine the flow paths in a downstream direction from the locations you specify.</p>
 <p>input_layer : Required layer (see Feature Input in documentation)</p>
 <p>split_distance : Optional float</p>
@@ -1533,9 +1549,6 @@ shape (eg. length for lines) for each unique groupByField value is calculated.</
 </div>
 
 
-           </div>
-           <div class="articleComments">
-            
            </div>
           </div>
           <footer>
@@ -1567,11 +1580,10 @@ shape (eg. length for lines) for each unique groupByField value is calculated.</
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'./',
-            VERSION:'1.2.0',
+            VERSION:'1.2.1',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
-            HAS_SOURCE:  true,
-            SOURCELINK_SUFFIX: '.txt'
+            HAS_SOURCE:  true
         };
     </script>
       <script type="text/javascript" src="_static/jquery.js"></script>

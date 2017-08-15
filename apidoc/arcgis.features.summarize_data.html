@@ -8,11 +8,9 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>arcgis.features.summarize_data module &mdash; arcgis 1.2.0 documentation</title>
+  <title>arcgis.features.summarize_data module &mdash; arcgis 1.2.1 documentation</title>
   
 
-  
-  
   
   
 
@@ -30,12 +28,14 @@
   
 
   
+    <link rel="stylesheet" href="_static/theme_overrides.css" type="text/css" />
+  
 
   
         <link rel="index" title="Index"
               href="genindex.html"/>
         <link rel="search" title="Search" href="search.html"/>
-    <link rel="top" title="arcgis 1.2.0 documentation" href="index.html"/>
+    <link rel="top" title="arcgis 1.2.1 documentation" href="index.html"/>
         <link rel="up" title="arcgis.features module" href="arcgis.features.toc.html"/>
         <link rel="next" title="arcgis.features.use_proximity module" href="arcgis.features.use_proximity.html"/>
         <link rel="prev" title="arcgis.features.manage_data module" href="arcgis.features.manage_data.html"/> 
@@ -47,7 +47,6 @@
 
 <body class="wy-body-for-nav" role="document">
 
-   
   <div class="wy-grid-for-nav">
 
     
@@ -67,7 +66,7 @@
             
             
               <div class="version">
-                1.2.0
+                1.2.1
               </div>
             
           
@@ -88,10 +87,7 @@
           
             
             
-              
-            
-            
-              <p class="caption"><span class="caption-text">arcgis</span></p>
+                <p class="caption"><span class="caption-text">arcgis</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="arcgis.gis.toc.html">arcgis.gis module</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.gis.toc.html#gis">GIS</a></li>
@@ -115,6 +111,7 @@
 <li class="toctree-l4"><a class="reference internal" href="arcgis.gis.admin.html#collaboration">Collaboration</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.gis.admin.html#creditmanager">CreditManager</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.gis.admin.html#passwordpolicy">PasswordPolicy</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.gis.admin.html#portalresourcemanager">PortalResourceManager</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.gis.admin.html#ux">UX</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.gis.admin.html#federation">Federation</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.gis.admin.html#logs">Logs</a></li>
@@ -547,10 +544,8 @@
 
       
       <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
-        
-          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-          <a href="index.html">arcgis</a>
-        
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="index.html">arcgis</a>
       </nav>
 
 
@@ -559,42 +554,25 @@
         <div class="rst-content">
           
 
-
-
-
-
-
-
-
-
-
-
-
+ 
 
 
 
 <div role="navigation" aria-label="breadcrumbs navigation">
-
   <ul class="wy-breadcrumbs">
-    
-      <li><a href="index.html">Docs</a> &raquo;</li>
-        
+    <li><a href="index.html">Docs</a> &raquo;</li>
+      
           <li><a href="arcgis.features.toc.html">arcgis.features module</a> &raquo;</li>
-        
-      <li>arcgis.features.summarize_data module</li>
-    
-    
+      
+    <li>arcgis.features.summarize_data module</li>
       <li class="wy-breadcrumbs-aside">
         
-            
-            <a href="_sources/arcgis.features.summarize_data.rst.txt" rel="nofollow"> View page source</a>
+          
+            <a href="_sources/arcgis.features.summarize_data.txt" rel="nofollow"> View page source</a>
           
         
       </li>
-    
   </ul>
-
-  
   <hr/>
 </div>
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
@@ -616,34 +594,34 @@ summarize_within calculates statistics for area features and attributes that ove
 specified areas or boundaries (polygons). You can also summarize Sum, Mean, Min, Max and Standard deviation
 calculations for attributes of the point layer to understand the general characteristics of aggregated points.</p>
 <dl class="docutils">
-<dt>point_layer <span class="classifier-delimiter">:</span> <span class="classifier">Required layer (see Feature Input in documentation)</span></dt>
-<dd>Point layer to be aggregated</dd>
-<dt>polygon_layer <span class="classifier-delimiter">:</span> <span class="classifier">Required layer (see Feature Input in documentation)</span></dt>
-<dd>Polygon layer to which the points should be aggregated.</dd>
-<dt>keep_boundaries_with_no_points <span class="classifier-delimiter">:</span> <span class="classifier">Optional bool</span></dt>
-<dd>Specify whether the polygons without any points should be returned in the output.</dd>
-<dt>summary_fields <span class="classifier-delimiter">:</span> <span class="classifier">Optional list of strings</span></dt>
-<dd>A list of field names and summary type. Example [fieldName1 summaryType1,fieldName2 summaryType2].</dd>
-<dt>group_by_field <span class="classifier-delimiter">:</span> <span class="classifier">Optional string</span></dt>
-<dd>A field name from PointLayer based on which the points will be grouped.</dd>
-<dt>minority_majority <span class="classifier-delimiter">:</span> <span class="classifier">Optional bool</span></dt>
-<dd>This boolean parameter is applicable only when a groupByField is specified. If true, the minority
+<dt>point_layer</dt>
+ <span class="classifier-delimiter">:</span> <span class="classifier">Required layer (see Feature Input in documentation)</span><dd>Point layer to be aggregated</dd>
+<dt>polygon_layer</dt>
+ <span class="classifier-delimiter">:</span> <span class="classifier">Required layer (see Feature Input in documentation)</span><dd>Polygon layer to which the points should be aggregated.</dd>
+<dt>keep_boundaries_with_no_points</dt>
+ <span class="classifier-delimiter">:</span> <span class="classifier">Optional bool</span><dd>Specify whether the polygons without any points should be returned in the output.</dd>
+<dt>summary_fields</dt>
+ <span class="classifier-delimiter">:</span> <span class="classifier">Optional list of strings</span><dd>A list of field names and summary type. Example [fieldName1 summaryType1,fieldName2 summaryType2].</dd>
+<dt>group_by_field</dt>
+ <span class="classifier-delimiter">:</span> <span class="classifier">Optional string</span><dd>A field name from PointLayer based on which the points will be grouped.</dd>
+<dt>minority_majority</dt>
+ <span class="classifier-delimiter">:</span> <span class="classifier">Optional bool</span><dd>This boolean parameter is applicable only when a groupByField is specified. If true, the minority
 (least dominant) or the majority (most dominant) attribute values within each group, within each boundary will
 be calculated.</dd>
-<dt>percent_points <span class="classifier-delimiter">:</span> <span class="classifier">Optional bool</span></dt>
-<dd>This boolean parameter is applicable only when a groupByField is specified. If set to true, the percentage count
+<dt>percent_points</dt>
+ <span class="classifier-delimiter">:</span> <span class="classifier">Optional bool</span><dd>This boolean parameter is applicable only when a groupByField is specified. If set to true, the percentage count
 of points for each unique groupByField value is calculated.</dd>
-<dt>output_name <span class="classifier-delimiter">:</span> <span class="classifier">Optional string</span></dt>
-<dd>Additional properties such as output feature service name.</dd>
-<dt>context <span class="classifier-delimiter">:</span> <span class="classifier">Optional string</span></dt>
-<dd>Additional settings such as processing extent and output spatial reference.</dd>
+<dt>output_name</dt>
+ <span class="classifier-delimiter">:</span> <span class="classifier">Optional string</span><dd>Additional properties such as output feature service name.</dd>
+<dt>context</dt>
+ <span class="classifier-delimiter">:</span> <span class="classifier">Optional string</span><dd>Additional settings such as processing extent and output spatial reference.</dd>
 <dt>gis :</dt>
 <dd>Optional, the GIS on which this tool runs. If not specified, the active GIS is used.</dd>
 </dl>
 <dl class="docutils">
 <dt>dict with the following keys:</dt>
-<dd>“aggregated_layer” : layer (FeatureCollection)
-“group_summary” : layer (FeatureCollection)</dd>
+<dd>&#8220;aggregated_layer&#8221; : layer (FeatureCollection)
+&#8220;group_summary&#8221; : layer (FeatureCollection)</dd>
 </dl>
 </dd></dl>
 
@@ -652,7 +630,7 @@ of points for each unique groupByField value is calculated.</dd>
 <h2>summarize_nearby<a class="headerlink" href="#summarize-nearby" title="Permalink to this headline">¶</a></h2>
 <dl class="method">
 <dt id="arcgis.features.summarize_data.summarize_nearby">
-<code class="descclassname">summarize_data.</code><code class="descname">summarize_nearby</code><span class="sig-paren">(</span><em>sum_nearby_layer</em>, <em>summary_layer</em>, <em>near_type=’StraightLine’</em>, <em>distances=[]</em>, <em>units=’Meters’</em>, <em>time_of_day=None</em>, <em>time_zone_for_time_of_day=’GeoLocal’</em>, <em>return_boundaries=True</em>, <em>sum_shape=True</em>, <em>shape_units=None</em>, <em>summary_fields=[]</em>, <em>group_by_field=None</em>, <em>minority_majority=False</em>, <em>percent_shape=False</em>, <em>output_name=None</em>, <em>context=None</em>, <em>gis=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.features.summarize_data.summarize_nearby" title="Permalink to this definition">¶</a></dt>
+<code class="descclassname">summarize_data.</code><code class="descname">summarize_nearby</code><span class="sig-paren">(</span><em>sum_nearby_layer</em>, <em>summary_layer</em>, <em>near_type='StraightLine'</em>, <em>distances=[]</em>, <em>units='Meters'</em>, <em>time_of_day=None</em>, <em>time_zone_for_time_of_day='GeoLocal'</em>, <em>return_boundaries=True</em>, <em>sum_shape=True</em>, <em>shape_units=None</em>, <em>summary_fields=[]</em>, <em>group_by_field=None</em>, <em>minority_majority=False</em>, <em>percent_shape=False</em>, <em>output_name=None</em>, <em>context=None</em>, <em>gis=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.features.summarize_data.summarize_nearby" title="Permalink to this definition">¶</a></dt>
 <dd><p>The SummarizeNearby task finds features that are within a specified distance of features in the input layer.
 Distance can be measured as a straight-line distance, a drive-time distance (for example, within 10 minutes), or a
 drive distance (within 5 kilometers). Statistics are then calculated for the nearby features. For example:Calculate
@@ -660,60 +638,60 @@ the total population within five minutes of driving time of a proposed new store
 freeway access ramps within a one-mile driving distance of a proposed new store location to use as a measure of
 store accessibility.</p>
 <dl class="docutils">
-<dt>sum_nearby_layer <span class="classifier-delimiter">:</span> <span class="classifier">Required layer (see Feature Input in documentation)</span></dt>
-<dd>Point, line, or polygon features from which distances will be measured to features in the summarizeLayer.</dd>
-<dt>summary_layer <span class="classifier-delimiter">:</span> <span class="classifier">Required layer (see Feature Input in documentation)</span></dt>
-<dd>Point, line, or polygon features. Features in this layer that are within the specified distance to features in
+<dt>sum_nearby_layer</dt>
+ <span class="classifier-delimiter">:</span> <span class="classifier">Required layer (see Feature Input in documentation)</span><dd>Point, line, or polygon features from which distances will be measured to features in the summarizeLayer.</dd>
+<dt>summary_layer</dt>
+ <span class="classifier-delimiter">:</span> <span class="classifier">Required layer (see Feature Input in documentation)</span><dd>Point, line, or polygon features. Features in this layer that are within the specified distance to features in
 the sumNearbyLayer will be summarized.</dd>
-<dt>near_type <span class="classifier-delimiter">:</span> <span class="classifier">Optional string</span></dt>
-<dd>Defines what kind of distance measurement you want to use to create areas around the nearbyLayer features.</dd>
-<dt>distances <span class="classifier-delimiter">:</span> <span class="classifier">Required list of floats</span></dt>
-<dd>An array of double values that defines the search distance for creating areas mentioned above</dd>
-<dt>units <span class="classifier-delimiter">:</span> <span class="classifier">Optional string</span></dt>
-<dd>The linear unit for distances parameter above. Eg. Miles, Kilometers, Minutes Seconds etc</dd>
-<dt>time_of_day <span class="classifier-delimiter">:</span> <span class="classifier">Optional datetime.datetime</span></dt>
-<dd>For timeOfDay, set the time and day according to the number of milliseconds elapsed since the Unix epoc
+<dt>near_type</dt>
+ <span class="classifier-delimiter">:</span> <span class="classifier">Optional string</span><dd>Defines what kind of distance measurement you want to use to create areas around the nearbyLayer features.</dd>
+<dt>distances</dt>
+ <span class="classifier-delimiter">:</span> <span class="classifier">Required list of floats</span><dd>An array of double values that defines the search distance for creating areas mentioned above</dd>
+<dt>units</dt>
+ <span class="classifier-delimiter">:</span> <span class="classifier">Optional string</span><dd>The linear unit for distances parameter above. Eg. Miles, Kilometers, Minutes Seconds etc</dd>
+<dt>time_of_day</dt>
+ <span class="classifier-delimiter">:</span> <span class="classifier">Optional datetime.datetime</span><dd>For timeOfDay, set the time and day according to the number of milliseconds elapsed since the Unix epoc
 (January 1, 1970 UTC). When specified and if relevant for the nearType parameter, the traffic conditions during
 the time of the day will be considered.</dd>
-<dt>time_zone_for_time_of_day <span class="classifier-delimiter">:</span> <span class="classifier">Optional string</span></dt>
-<dd>Determines if the value specified for timeOfDay is specified in UTC or in a time zone that is local to the
+<dt>time_zone_for_time_of_day</dt>
+ <span class="classifier-delimiter">:</span> <span class="classifier">Optional string</span><dd>Determines if the value specified for timeOfDay is specified in UTC or in a time zone that is local to the
 location of the origins.</dd>
-<dt>return_boundaries <span class="classifier-delimiter">:</span> <span class="classifier">Optional bool</span></dt>
-<dd>If true, will return a result layer of areas that contain the requested summary information.  The resulting
+<dt>return_boundaries</dt>
+ <span class="classifier-delimiter">:</span> <span class="classifier">Optional bool</span><dd>If true, will return a result layer of areas that contain the requested summary information.  The resulting
 areas are defined by the specified nearType.  For example, if using a StraightLine of 5 miles, your result will
 contain areas with a 5 mile radius around the input features and specified summary information.If false, the
 resulting layer will return the same features as the input analysis layer with requested summary information.</dd>
-<dt>sum_shape <span class="classifier-delimiter">:</span> <span class="classifier">Optional bool</span></dt>
-<dd>A boolean value that instructs the task to calculate count of points, length of lines or areas of polygons of
+<dt>sum_shape</dt>
+ <span class="classifier-delimiter">:</span> <span class="classifier">Optional bool</span><dd>A boolean value that instructs the task to calculate count of points, length of lines or areas of polygons of
 the summaryLayer within each polygon in sumWithinLayer.</dd>
-<dt>shape_units <span class="classifier-delimiter">:</span> <span class="classifier">Optional string</span></dt>
-<dd>Specify units to summarize the length or areas when sumShape is set to true. Units is not required to summarize
+<dt>shape_units</dt>
+ <span class="classifier-delimiter">:</span> <span class="classifier">Optional string</span><dd>Specify units to summarize the length or areas when sumShape is set to true. Units is not required to summarize
 points.</dd>
-<dt>summary_fields <span class="classifier-delimiter">:</span> <span class="classifier">Optional list of strings</span></dt>
-<dd>A list of field names and statistical summary type that you wish to calculate for all features in the
-summaryLayer that are within each polygon in the sumWithinLayer . Eg: [“fieldname1 summary”,
-“fieldname2 summary”]</dd>
-<dt>group_by_field <span class="classifier-delimiter">:</span> <span class="classifier">Optional string</span></dt>
-<dd>Specify a field from the summaryLayer features to calculate statistics separately for each unique value of the
+<dt>summary_fields</dt>
+ <span class="classifier-delimiter">:</span> <span class="classifier">Optional list of strings</span><dd>A list of field names and statistical summary type that you wish to calculate for all features in the
+summaryLayer that are within each polygon in the sumWithinLayer . Eg: [&#8220;fieldname1 summary&#8221;,
+&#8220;fieldname2 summary&#8221;]</dd>
+<dt>group_by_field</dt>
+ <span class="classifier-delimiter">:</span> <span class="classifier">Optional string</span><dd>Specify a field from the summaryLayer features to calculate statistics separately for each unique value of the
 field.</dd>
-<dt>minority_majority <span class="classifier-delimiter">:</span> <span class="classifier">Optional bool</span></dt>
-<dd>This boolean parameter is applicable only when a groupByField is specified. If true, the minority
+<dt>minority_majority</dt>
+ <span class="classifier-delimiter">:</span> <span class="classifier">Optional bool</span><dd>This boolean parameter is applicable only when a groupByField is specified. If true, the minority
 (least dominant) or the majority (most dominant) attribute values within each group, within each boundary will
 be calculated.</dd>
-<dt>percent_shape <span class="classifier-delimiter">:</span> <span class="classifier">Optional bool</span></dt>
-<dd>This boolean parameter is applicable only when a groupByField is specified. If set to true, the percentage of
+<dt>percent_shape</dt>
+ <span class="classifier-delimiter">:</span> <span class="classifier">Optional bool</span><dd>This boolean parameter is applicable only when a groupByField is specified. If set to true, the percentage of
 shape (eg. length for lines) for each unique groupByField value is calculated.</dd>
-<dt>output_name <span class="classifier-delimiter">:</span> <span class="classifier">Optional string</span></dt>
-<dd>Additional properties such as output feature service name.</dd>
-<dt>context <span class="classifier-delimiter">:</span> <span class="classifier">Optional string</span></dt>
-<dd>Additional settings such as processing extent and output spatial reference.</dd>
+<dt>output_name</dt>
+ <span class="classifier-delimiter">:</span> <span class="classifier">Optional string</span><dd>Additional properties such as output feature service name.</dd>
+<dt>context</dt>
+ <span class="classifier-delimiter">:</span> <span class="classifier">Optional string</span><dd>Additional settings such as processing extent and output spatial reference.</dd>
 <dt>gis :</dt>
 <dd>Optional, the GIS on which this tool runs. If not specified, the active GIS is used.</dd>
 </dl>
 <dl class="docutils">
 <dt>dict with the following keys:</dt>
-<dd>“result_layer” : layer (FeatureCollection)
-“group_by_summary” : layer (FeatureCollection)</dd>
+<dd>&#8220;result_layer&#8221; : layer (FeatureCollection)
+&#8220;group_by_summary&#8221; : layer (FeatureCollection)</dd>
 </dl>
 </dd></dl>
 
@@ -730,41 +708,41 @@ type for each watershed.Given a layer of parcels in a county and a layer of city
 value of vacant parcels within each city boundary.Given a layer of counties and a layer of roads, summarize the
 total mileage of roads by road type within each county.</p>
 <dl class="docutils">
-<dt>sum_within_layer <span class="classifier-delimiter">:</span> <span class="classifier">Required layer (see Feature Input in documentation)</span></dt>
-<dd>A polygon feature layer or featurecollection. Features, or portions of features, in the summaryLayer (below)
+<dt>sum_within_layer</dt>
+ <span class="classifier-delimiter">:</span> <span class="classifier">Required layer (see Feature Input in documentation)</span><dd>A polygon feature layer or featurecollection. Features, or portions of features, in the summaryLayer (below)
 that fall within the boundaries of these polygons will be summarized.</dd>
-<dt>summary_layer <span class="classifier-delimiter">:</span> <span class="classifier">Required layer (see Feature Input in documentation)</span></dt>
-<dd>Point, line, or polygon features that will be summarized for each polygon in the sumWithinLayer.</dd>
-<dt>sum_shape <span class="classifier-delimiter">:</span> <span class="classifier">Optional bool</span></dt>
-<dd>A boolean value that instructs the task to calculate count of points, length of lines or areas of polygons of
+<dt>summary_layer</dt>
+ <span class="classifier-delimiter">:</span> <span class="classifier">Required layer (see Feature Input in documentation)</span><dd>Point, line, or polygon features that will be summarized for each polygon in the sumWithinLayer.</dd>
+<dt>sum_shape</dt>
+ <span class="classifier-delimiter">:</span> <span class="classifier">Optional bool</span><dd>A boolean value that instructs the task to calculate count of points, length of lines or areas of polygons of
 the summaryLayer within each polygon in sumWithinLayer.</dd>
-<dt>shape_units <span class="classifier-delimiter">:</span> <span class="classifier">Optional string</span></dt>
-<dd>Specify units to summarize the length or areas when sumShape is set to true. Units is not required to summarize
+<dt>shape_units</dt>
+ <span class="classifier-delimiter">:</span> <span class="classifier">Optional string</span><dd>Specify units to summarize the length or areas when sumShape is set to true. Units is not required to summarize
 points.</dd>
-<dt>summary_fields <span class="classifier-delimiter">:</span> <span class="classifier">Optional list of strings</span></dt>
-<dd>A list of field names and statistical summary type that you wish to calculate for all features in the
-summaryLayer that are within each polygon in the sumWithinLayer. Eg:[“fieldname1 summary”, “fieldname2 summary”]</dd>
-<dt>group_by_field <span class="classifier-delimiter">:</span> <span class="classifier">Optional string</span></dt>
-<dd>Specify a field from the summaryLayer features to calculate statistics separately for each unique attribute
+<dt>summary_fields</dt>
+ <span class="classifier-delimiter">:</span> <span class="classifier">Optional list of strings</span><dd>A list of field names and statistical summary type that you wish to calculate for all features in the
+summaryLayer that are within each polygon in the sumWithinLayer. Eg:[&#8220;fieldname1 summary&#8221;, &#8220;fieldname2 summary&#8221;]</dd>
+<dt>group_by_field</dt>
+ <span class="classifier-delimiter">:</span> <span class="classifier">Optional string</span><dd>Specify a field from the summaryLayer features to calculate statistics separately for each unique attribute
 value.</dd>
-<dt>minority_majority <span class="classifier-delimiter">:</span> <span class="classifier">Optional bool</span></dt>
-<dd>This boolean parameter is applicable only when a groupByField is specified. If true, the minority
+<dt>minority_majority</dt>
+ <span class="classifier-delimiter">:</span> <span class="classifier">Optional bool</span><dd>This boolean parameter is applicable only when a groupByField is specified. If true, the minority
 (least dominant) or the majority (most dominant) attribute values within each group, within each boundary will
 be calculated.</dd>
-<dt>percent_shape <span class="classifier-delimiter">:</span> <span class="classifier">Optional bool</span></dt>
-<dd>This boolean parameter is applicable only when a groupByField is specified. If set to true, the percentage of
+<dt>percent_shape</dt>
+ <span class="classifier-delimiter">:</span> <span class="classifier">Optional bool</span><dd>This boolean parameter is applicable only when a groupByField is specified. If set to true, the percentage of
 shape (eg. length for lines) for each unique groupByField value is calculated.</dd>
-<dt>output_name <span class="classifier-delimiter">:</span> <span class="classifier">Optional string</span></dt>
-<dd>Additional properties such as output feature service name.</dd>
-<dt>context <span class="classifier-delimiter">:</span> <span class="classifier">Optional string</span></dt>
-<dd>Additional settings such as processing extent and output spatial reference.</dd>
+<dt>output_name</dt>
+ <span class="classifier-delimiter">:</span> <span class="classifier">Optional string</span><dd>Additional properties such as output feature service name.</dd>
+<dt>context</dt>
+ <span class="classifier-delimiter">:</span> <span class="classifier">Optional string</span><dd>Additional settings such as processing extent and output spatial reference.</dd>
 <dt>gis :</dt>
 <dd>Optional, the GIS on which this tool runs. If not specified, the active GIS is used.</dd>
 </dl>
 <dl class="docutils">
 <dt>dict with the following keys:</dt>
-<dd>“result_layer” : layer (FeatureCollection)
-“group_by_summary” : layer (FeatureCollection)</dd>
+<dd>&#8220;result_layer&#8221; : layer (FeatureCollection)
+&#8220;group_by_summary&#8221; : layer (FeatureCollection)</dd>
 </dl>
 </dd></dl>
 
@@ -773,18 +751,15 @@ shape (eg. length for lines) for each unique groupByField value is calculated.</
 
 
            </div>
-           <div class="articleComments">
-            
-           </div>
           </div>
           <footer>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="arcgis.features.use_proximity.html" class="btn btn-neutral float-right" title="arcgis.features.use_proximity module" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="arcgis.features.use_proximity.html" class="btn btn-neutral float-right" title="arcgis.features.use_proximity module" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="arcgis.features.manage_data.html" class="btn btn-neutral" title="arcgis.features.manage_data module" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="arcgis.features.manage_data.html" class="btn btn-neutral" title="arcgis.features.manage_data module" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
@@ -815,11 +790,10 @@ shape (eg. length for lines) for each unique groupByField value is calculated.</
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'./',
-            VERSION:'1.2.0',
+            VERSION:'1.2.1',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
-            HAS_SOURCE:  true,
-            SOURCELINK_SUFFIX: '.txt'
+            HAS_SOURCE:  true
         };
     </script>
       <script type="text/javascript" src="_static/jquery.js"></script>
