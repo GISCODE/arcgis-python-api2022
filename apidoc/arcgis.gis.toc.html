@@ -8,11 +8,9 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>arcgis.gis module &mdash; arcgis 1.2.0 documentation</title>
+  <title>arcgis.gis module &mdash; arcgis 1.2.1 documentation</title>
   
 
-  
-  
   
   
 
@@ -30,12 +28,14 @@
   
 
   
+    <link rel="stylesheet" href="_static/theme_overrides.css" type="text/css" />
+  
 
   
         <link rel="index" title="Index"
               href="genindex.html"/>
         <link rel="search" title="Search" href="search.html"/>
-    <link rel="top" title="arcgis 1.2.0 documentation" href="index.html"/>
+    <link rel="top" title="arcgis 1.2.1 documentation" href="index.html"/>
         <link rel="next" title="arcgis.gis.admin module" href="arcgis.gis.admin.html"/>
         <link rel="prev" title="API Reference for the ArcGIS API for Python" href="index.html"/> 
 
@@ -46,7 +46,6 @@
 
 <body class="wy-body-for-nav" role="document">
 
-   
   <div class="wy-grid-for-nav">
 
     
@@ -66,7 +65,7 @@
             
             
               <div class="version">
-                1.2.0
+                1.2.1
               </div>
             
           
@@ -87,10 +86,7 @@
           
             
             
-              
-            
-            
-              <p class="caption"><span class="caption-text">arcgis</span></p>
+                <p class="caption"><span class="caption-text">arcgis</span></p>
 <ul class="current">
 <li class="toctree-l1 current"><a class="current reference internal" href="#">arcgis.gis module</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#gis">GIS</a></li>
@@ -114,6 +110,7 @@
 <li class="toctree-l4"><a class="reference internal" href="arcgis.gis.admin.html#collaboration">Collaboration</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.gis.admin.html#creditmanager">CreditManager</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.gis.admin.html#passwordpolicy">PasswordPolicy</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.gis.admin.html#portalresourcemanager">PortalResourceManager</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.gis.admin.html#ux">UX</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.gis.admin.html#federation">Federation</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.gis.admin.html#logs">Logs</a></li>
@@ -546,10 +543,8 @@
 
       
       <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
-        
-          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-          <a href="index.html">arcgis</a>
-        
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="index.html">arcgis</a>
       </nav>
 
 
@@ -558,40 +553,23 @@
         <div class="rst-content">
           
 
-
-
-
-
-
-
-
-
-
-
-
+ 
 
 
 
 <div role="navigation" aria-label="breadcrumbs navigation">
-
   <ul class="wy-breadcrumbs">
-    
-      <li><a href="index.html">Docs</a> &raquo;</li>
-        
-      <li>arcgis.gis module</li>
-    
-    
+    <li><a href="index.html">Docs</a> &raquo;</li>
+      
+    <li>arcgis.gis module</li>
       <li class="wy-breadcrumbs-aside">
         
-            
-            <a href="_sources/arcgis.gis.toc.rst.txt" rel="nofollow"> View page source</a>
+          
+            <a href="_sources/arcgis.gis.toc.txt" rel="nofollow"> View page source</a>
           
         
       </li>
-    
   </ul>
-
-  
   <hr/>
 </div>
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
@@ -611,7 +589,7 @@ is the most important and provides the entry point into the GIS.</p>
 <em class="property">class </em><code class="descclassname">arcgis.gis.</code><code class="descname">GIS</code><span class="sig-paren">(</span><em>url=None</em>, <em>username=None</em>, <em>password=None</em>, <em>key_file=None</em>, <em>cert_file=None</em>, <em>verify_cert=True</em>, <em>set_active=True</em>, <em>client_id=None</em>, <em>profile=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.GIS" title="Permalink to this definition">¶</a></dt>
 <dd><p id="id1">A GIS is representative of ArcGIS Online or ArcGIS Enterprise. The GIS object provides helper objects to manage
 (search, create, retrieve) GIS resources such as content, users and groups.</p>
-<p>Additionally, the GIS object has properties to query it’s state, accessible using the properties attribute.</p>
+<p>Additionally, the GIS object has properties to query it&#8217;s state, accessible using the properties attribute.</p>
 <p>The GIS provides a mapping widget that can be used in the Jupyter notebook environment for visualizing GIS content
 as well as the results of your analysis. To create a new map, call the map() method.</p>
 <dl class="attribute">
@@ -629,7 +607,7 @@ as well as the results of your analysis. To create a new map, call the map() met
 <code class="descname">map</code><span class="sig-paren">(</span><em>location=None</em>, <em>zoomlevel=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.GIS.map" title="Permalink to this definition">¶</a></dt>
 <dd><p>Creates a map widget centered at the location (Address or (lat, long) tuple)
 with the specified zoom-level(integer). If an Address is provided, it is geocoded
-using the GIS’s configured geocoders and if a match is found, the geographic
+using the GIS&#8217;s configured geocoders and if a match is found, the geographic
 extent of the matched address is used as the map extent. If a zoomlevel is also
 provided, the map is centered at the matched address instead and the map is zoomed
 to the specified zoomlevel.</p>
@@ -644,7 +622,7 @@ to the specified zoomlevel.</p>
 <dl class="method">
 <dt id="arcgis.gis.GIS.update_properties">
 <code class="descname">update_properties</code><span class="sig-paren">(</span><em>properties_dict</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.GIS.update_properties" title="Permalink to this definition">¶</a></dt>
-<dd><p>Updates the GIS’s properties from those in properties_dict</p>
+<dd><p>Updates the GIS&#8217;s properties from those in properties_dict</p>
 </dd></dl>
 
 <dl class="attribute">
@@ -663,7 +641,7 @@ to the specified zoomlevel.</p>
 <dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">dict</span></code></p>
 <p>An item (a unit of content) in the GIS. Each item has a unique identifier and a well
 known URL that is independent of the user owning the item.
-An item can have associated binary or textual data that’s available via the item data resource.
+An item can have associated binary or textual data that&#8217;s available via the item data resource.
 For example, an item of type Map Package returns the actual bits corresponding to the
 map package via the item data resource.</p>
 <p>Items that have layers (eg FeatureLayerCollection items and ImageryLayer items) and tables have
@@ -696,12 +674,12 @@ who have access to the item.</p>
 Relationships are not tied to an item. They are directional links from an origin item
 to a destination item and have a type. The type defines the valid origin and destination
 item types as well as some rules. See Relationship types in REST API help for more information.
-Users don’t have to own the items they relate unless so defined by the rules of the
+Users don&#8217;t have to own the items they relate unless so defined by the rules of the
 relationship type.
 Users can only delete relationships they create.
 Relationships are deleted automatically if one of the two items is deleted.</p>
 <p>rel_item is the related item
-rel_type is one of [‘Map2Service’, ‘WMA2Code’, ‘Map2FeatureCollection’, ‘MobileApp2Code’, ‘Service2Data’, ‘Service2Service’]. See Relationship types in REST API help for more information on this parameter
+rel_type is one of [&#8216;Map2Service&#8217;, &#8216;WMA2Code&#8217;, &#8216;Map2FeatureCollection&#8217;, &#8216;MobileApp2Code&#8217;, &#8216;Service2Data&#8217;, &#8216;Service2Service&#8217;]. See Relationship types in REST API help for more information on this parameter
 Returns True if the relationship was added</p>
 </dd></dl>
 
@@ -709,6 +687,46 @@ Returns True if the relationship was added</p>
 <dt id="arcgis.gis.Item.comments">
 <code class="descname">comments</code><a class="headerlink" href="#arcgis.gis.Item.comments" title="Permalink to this definition">¶</a></dt>
 <dd><p>returns a list of comments on a given item</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="arcgis.gis.Item.create_tile_service">
+<code class="descname">create_tile_service</code><span class="sig-paren">(</span><em>title</em>, <em>min_scale</em>, <em>max_scale</em>, <em>cache_info=None</em>, <em>build_cache=False</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.Item.create_tile_service" title="Permalink to this definition">¶</a></dt>
+<dd><p>allows publishers and administrators to publish hosted feature
+layers and hosted feature layer views as a tile service.</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="20%" />
+<col width="80%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><strong>Argument</strong></td>
+<td><strong>Description</strong></td>
+</tr>
+<tr class="row-even"><td>title</td>
+<td>required string, name of the new service
+Example:
+&#8220;SeasideHeightsNJTiles&#8221;</td>
+</tr>
+<tr class="row-odd"><td>min_scale</td>
+<td>required float, the smallest scale to view data
+Example: 577790.0</td>
+</tr>
+<tr class="row-even"><td>max_scale</td>
+<td>required float, the largest scale to view data.
+Example: 80000.0</td>
+</tr>
+<tr class="row-odd"><td>cache_info</td>
+<td>optional dictionary, if not none, administrator provides the
+tile cache info for the service.  The default is the AGOL scheme</td>
+</tr>
+<tr class="row-even"><td>build_cache</td>
+<td>optional boolean, default False, if True, the cache will be
+built at publishing time.  This will increase the time it takes
+to publish the service.</td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
 <dl class="method">
@@ -736,7 +754,7 @@ Returns True if the relationship was added</p>
 <code class="descname">delete_relationship</code><span class="sig-paren">(</span><em>rel_item</em>, <em>rel_type</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.Item.delete_relationship" title="Permalink to this definition">¶</a></dt>
 <dd><p>Deletes a relationship between this item and the rel_item.
 rel_item is the related item
-rel_type is one of [‘Map2Service’, ‘WMA2Code’, ‘Map2FeatureCollection’, ‘MobileApp2Code’, ‘Service2Data’, ‘Service2Service’]
+rel_type is one of [&#8216;Map2Service&#8217;, &#8216;WMA2Code&#8217;, &#8216;Map2FeatureCollection&#8217;, &#8216;MobileApp2Code&#8217;, &#8216;Service2Data&#8217;, &#8216;Service2Service&#8217;]
 Returns True if the relationship was deleted</p>
 </dd></dl>
 
@@ -755,7 +773,7 @@ Returns True if the relationship was deleted</p>
 <dl class="method">
 <dt id="arcgis.gis.Item.download">
 <code class="descname">download</code><span class="sig-paren">(</span><em>save_path=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.Item.download" title="Permalink to this definition">¶</a></dt>
-<dd><p>Downloads the data to the specified folder or a temporary folder if a folder isn’t provided
+<dd><p>Downloads the data to the specified folder or a temporary folder if a folder isn&#8217;t provided
 :param save_path: Optional, location to download the file as a string
 :return: Returns download path if data was available else None.</p>
 </dd></dl>
@@ -765,7 +783,7 @@ Returns True if the relationship was deleted</p>
 <code class="descname">download_metadata</code><span class="sig-paren">(</span><em>save_folder=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.Item.download_metadata" title="Permalink to this definition">¶</a></dt>
 <dd><p>Downloads the item metadata for the specified item id, returns file path.
 Returns None if the item does not have metadata.
-Items with metadata have ‘Metadata’ in their typeKeywords</p>
+Items with metadata have &#8216;Metadata&#8217; in their typeKeywords</p>
 </dd></dl>
 
 <dl class="method">
@@ -787,10 +805,10 @@ Invokable only by the service item owner or an administrator.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">export_format:</th><td class="field-body"><p class="first">The format to export the data to.
-Allowed types: ‘Shapefile’, ‘CSV’,</p>
+Allowed types: &#8216;Shapefile&#8217;, &#8216;CSV&#8217;,</p>
 <blockquote>
-<div><p>‘File Geodatabase’, ‘Feature Collection’,
-‘GeoJson’, ‘Scene Package’, ‘KML’]</p>
+<div><p>&#8216;File Geodatabase&#8217;, &#8216;Feature Collection&#8217;,
+&#8216;GeoJson&#8217;, &#8216;Scene Package&#8217;, &#8216;KML&#8217;]</p>
 </div></blockquote>
 </td>
 </tr>
@@ -821,7 +839,7 @@ Binary files are downloaded and the path to the downloaded file is returned.
 For JSON/text files, if try_json is True, the method tries to convert it to a Python dict and returns it, else
 returns the data as a string. Zero byte files will return None.
 To convert this dict to string use json.dumps(data).
-Else, returns the data as a byte array, that can be converted to string using data.decode(‘utf-8’)</p>
+Else, returns the data as a byte array, that can be converted to string using data.decode(&#8216;utf-8&#8217;)</p>
 </dd></dl>
 
 <dl class="method">
@@ -853,7 +871,7 @@ Else, returns the data as a byte array, that can be converted to string using da
 <code class="descname">metadata</code><a class="headerlink" href="#arcgis.gis.Item.metadata" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns the item metadata for the specified item.
 Returns None if the item does not have metadata.
-Items with metadata have ‘Metadata’ in their typeKeywords</p>
+Items with metadata have &#8216;Metadata&#8217; in their typeKeywords</p>
 </dd></dl>
 
 <dl class="method">
@@ -871,9 +889,13 @@ Items with metadata have ‘Metadata’ in their typeKeywords</p>
 </tr>
 <tr class="row-even"><td>folder</td>
 <td>required string, the name of the folder to move the item to.
-Use ‘/’ for the root folder. For other folders, pass in the
-folder name as a string, or a dict containing the folder ‘id’,
+Use &#8216;/&#8217; for the root folder. For other folders, pass in the
+folder name as a string, or a dict containing the folder &#8216;id&#8217;,
 such as the dict obtained from the folders property.</td>
+</tr>
+<tr class="row-odd"><td>owner</td>
+<td>optional string or Owner object, The name of the user to
+move to.</td>
 </tr>
 </tbody>
 </table>
@@ -883,10 +905,10 @@ such as the dict obtained from the folders property.</td>
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">a json object like the following:
 {<blockquote>
-<div>”success”: true | false,
-“itemId”: “&lt;item id&gt;”,
-“owner”: “&lt;owner username&gt;”,
-“folder”: “&lt;folder id&gt;”</div></blockquote>
+<div>&#8220;success&#8221;: true | false,
+&#8220;itemId&#8221;: &#8220;&lt;item id&gt;&#8221;,
+&#8220;owner&#8221;: &#8220;&lt;owner username&gt;&#8221;,
+&#8220;folder&#8221;: &#8220;&lt;folder id&gt;&#8221;</div></blockquote>
 <p>}</p>
 </td>
 </tr>
@@ -919,7 +941,7 @@ to disable it</td>
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">a json object like the following:
 {<blockquote>
-<div>”success”: true | false</div></blockquote>
+<div>&#8220;success&#8221;: true | false</div></blockquote>
 <p>}</p>
 </td>
 </tr>
@@ -974,7 +996,7 @@ as well as its packaged data together with the definition of the geo-service to 
 <dd><p>Allows the administrator to reassign a single item from one user to another.</p>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
-<p class="last">If you wish to move all of a user’s items (and groups) to another user then use the
+<p class="last">If you wish to move all of a user&#8217;s items (and groups) to another user then use the
 user.reassign_to() method.  This method only moves one item at a time.</p>
 </div>
 <table border="1" class="docutils">
@@ -1009,10 +1031,10 @@ user.reassign_to() method.  This method only moves one item at a time.</p>
 
 <dl class="method">
 <dt id="arcgis.gis.Item.related_items">
-<code class="descname">related_items</code><span class="sig-paren">(</span><em>rel_type</em>, <em>direction=’forward’</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.Item.related_items" title="Permalink to this definition">¶</a></dt>
+<code class="descname">related_items</code><span class="sig-paren">(</span><em>rel_type</em>, <em>direction='forward'</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.Item.related_items" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns items related to this item. Relationsships can be added and deleted using item.add_relationship() and item.delete_relationship() respectively.
-rel_type is one of [‘Map2Service’, ‘WMA2Code’, ‘Map2FeatureCollection’, ‘MobileApp2Code’, ‘Service2Data’, ‘Service2Service’]
-direction is one of [‘forward’, ‘reverse’]</p>
+rel_type is one of [&#8216;Map2Service&#8217;, &#8216;WMA2Code&#8217;, &#8216;Map2FeatureCollection&#8217;, &#8216;MobileApp2Code&#8217;, &#8216;Service2Data&#8217;, &#8216;Service2Service&#8217;]
+direction is one of [&#8216;forward&#8217;, &#8216;reverse&#8217;]</p>
 </dd></dl>
 
 <dl class="method">
@@ -1023,7 +1045,7 @@ direction is one of [‘forward’, ‘reverse’]</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">dict with key “notSharedWith” containing array of groups with which the item could not be shared.</td>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">dict with key &#8220;notSharedWith&#8221; containing array of groups with which the item could not be shared.</td>
 </tr>
 </tbody>
 </table>
@@ -1033,7 +1055,7 @@ direction is one of [‘forward’, ‘reverse’]</p>
 <dt id="arcgis.gis.Item.status">
 <code class="descname">status</code><span class="sig-paren">(</span><em>job_id=None</em>, <em>job_type=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.Item.status" title="Permalink to this definition">¶</a></dt>
 <dd><p>Inquire about status when publishing an item, adding an item in
-async mode, or adding with a multipart upload. “Partial” is
+async mode, or adding with a multipart upload. &#8220;Partial&#8221; is
 available for Add Item Multipart, when only a part is uploaded
 and the item is not committed.</p>
 <dl class="docutils">
@@ -1041,7 +1063,7 @@ and the item is not committed.</p>
 <dd><dl class="first last docutils">
 <dt>job_type The type of asynchronous job for which the status has</dt>
 <dd><p class="first">to be checked. Default is none, which check the
-item’s status.  This parameter is optional unless
+item&#8217;s status.  This parameter is optional unless
 used with the operations listed below.
 Values: publish, generateFeatures, export,</p>
 <blockquote class="last">
@@ -1060,20 +1082,15 @@ Values: publish, generateFeatures, export,</p>
 <dd><p>Stops sharing the item with the specified list of groups</p>
 <table border="1" class="docutils">
 <colgroup>
-<col width="22%" />
-<col width="78%" />
+<col width="10%" />
+<col width="90%" />
 </colgroup>
 <tbody valign="top">
 <tr class="row-odd"><td><strong>Argument</strong></td>
 <td><strong>Description</strong></td>
 </tr>
 <tr class="row-even"><td>groups</td>
-<td><dl class="first docutils">
-<dt>optional list of group names as strings, or, list of</dt>
-<dd>arcgis.gis.Group objects.</dd>
-</dl>
-<p class="last">You can also pass a comma-separated list of group IDs</p>
-</td>
+<td>Optional string list. List of group names as strings, or list of arcgis.gis.Group objects. You can also pass a comma-separated list of group IDs.</td>
 </tr>
 </tbody>
 </table>
@@ -1081,7 +1098,7 @@ Values: publish, generateFeatures, export,</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">dict with key “notUnsharedFrom” containing array of groups from which the item could not be unshared.</td>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">dict with key &#8220;notUnsharedFrom&#8221; containing array of groups from which the item could not be unshared.</td>
 </tr>
 </tbody>
 </table>
@@ -1145,7 +1162,7 @@ will fail if the user has items or groups that need to be reassigned.</p>
 <td><strong>Description</strong></td>
 </tr>
 <tr class="row-even"><td>reassign_to</td>
-<td>optional string, new owner of items and groups</td>
+<td>optional string or User, new owner of items and groups</td>
 </tr>
 </tbody>
 </table>
@@ -1182,7 +1199,7 @@ user. It is only available to the administrator of the organization</p>
 <dl class="attribute">
 <dt id="arcgis.gis.User.folders">
 <code class="descname">folders</code><a class="headerlink" href="#arcgis.gis.User.folders" title="Permalink to this definition">¶</a></dt>
-<dd><p>list of the user’s folders</p>
+<dd><p>list of the user&#8217;s folders</p>
 </dd></dl>
 
 <dl class="method">
@@ -1215,7 +1232,7 @@ user. It is only available to the administrator of the organization</p>
 <dd><p>Returns a list of items in the specified folder.</p>
 <p>For content in the root folder, use the default value of None for the folder.</p>
 <p>For other folders, pass in the folder name as a string, or a dict containing
-the folder ‘id’, such as the dict obtained from the folders property.</p>
+the folder &#8216;id&#8217;, such as the dict obtained from the folders property.</p>
 </dd></dl>
 
 <dl class="attribute">
@@ -1227,7 +1244,7 @@ the folder ‘id’, such as the dict obtained from the folders property.</p>
 <dl class="method">
 <dt id="arcgis.gis.User.reassign_to">
 <code class="descname">reassign_to</code><span class="sig-paren">(</span><em>target_username</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.User.reassign_to" title="Permalink to this definition">¶</a></dt>
-<dd><p>Reassigns all of this user’s items and groups to another user.</p>
+<dd><p>Reassigns all of this user&#8217;s items and groups to another user.</p>
 <p>Items are transferred to the target user into a folder named
 &lt;user&gt;_&lt;folder&gt; where user corresponds to the user whose items were
 moved and folder corresponds to the folder that was moved.</p>
@@ -1246,7 +1263,8 @@ can not be undone.  The changes are immediately made and permanent.</p>
 <td><strong>Description</strong></td>
 </tr>
 <tr class="row-even"><td>target_username</td>
-<td>required string, user who will own items/groups after this.</td>
+<td>required string or User, user who will own items/groups
+after this.</td>
 </tr>
 </tbody>
 </table>
@@ -1263,7 +1281,7 @@ can not be undone.  The changes are immediately made and permanent.</p>
 <dl class="method">
 <dt id="arcgis.gis.User.reset">
 <code class="descname">reset</code><span class="sig-paren">(</span><em>password</em>, <em>new_password=None</em>, <em>new_security_question=None</em>, <em>new_security_answer=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.User.reset" title="Permalink to this definition">¶</a></dt>
-<dd><p>Resets a user’s password, security question, and/or security answer.</p>
+<dd><p>Resets a user&#8217;s password, security question, and/or security answer.</p>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
 <p>This function does not apply to those using enterprise accounts
@@ -1308,7 +1326,7 @@ be provided.</p>
 <dl class="method">
 <dt id="arcgis.gis.User.update">
 <code class="descname">update</code><span class="sig-paren">(</span><em>access=None</em>, <em>preferred_view=None</em>, <em>description=None</em>, <em>tags=None</em>, <em>thumbnail=None</em>, <em>fullname=None</em>, <em>email=None</em>, <em>culture=None</em>, <em>region=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.User.update" title="Permalink to this definition">¶</a></dt>
-<dd><p>Updates this user’s properties.</p>
+<dd><p>Updates this user&#8217;s properties.</p>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
 <p class="last">Only pass in arguments for properties you want to update.
@@ -1368,7 +1386,7 @@ JPEG, max size 1 MB</td>
 <dl class="method">
 <dt id="arcgis.gis.User.update_role">
 <code class="descname">update_role</code><span class="sig-paren">(</span><em>role</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.User.update_role" title="Permalink to this definition">¶</a></dt>
-<dd><p>Updates this user’s role to org_user, org_publisher, org_admin or a custom role</p>
+<dd><p>Updates this user&#8217;s role to org_user, org_publisher, org_admin or a custom role</p>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
 <p class="last">There are four types of roles in Portal - user, publisher, administrator and custom roles
@@ -1441,7 +1459,7 @@ Role object (from gis.users.roles)</td>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">A dictionary with a key of “not_added” which contains the users that were not
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">A dictionary with a key of &#8220;not_added&#8221; which contains the users that were not
 added to the group.</td>
 </tr>
 </tbody>
@@ -1497,7 +1515,7 @@ the group is part of one.</p>
 <td><strong>Value</strong></td>
 </tr>
 <tr class="row-even"><td>owner</td>
-<td>string value, the group’s owner</td>
+<td>string value, the group&#8217;s owner</td>
 </tr>
 <tr class="row-odd"><td>admins</td>
 <td>list of strings, typically this is the same as the owner</td>
@@ -1543,12 +1561,12 @@ the group is part of one.</p>
 
 <dl class="method">
 <dt id="arcgis.gis.Group.invite_users">
-<code class="descname">invite_users</code><span class="sig-paren">(</span><em>usernames</em>, <em>role=’group_member’</em>, <em>expiration=10080</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.Group.invite_users" title="Permalink to this definition">¶</a></dt>
+<code class="descname">invite_users</code><span class="sig-paren">(</span><em>usernames</em>, <em>role='group_member'</em>, <em>expiration=10080</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.Group.invite_users" title="Permalink to this definition">¶</a></dt>
 <dd><p>Invites users to this group.</p>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
 <p class="last">A user who is invited to this group will see a list of invitations
-in the “Groups” tab of portal listing invitations.  The user
+in the &#8220;Groups&#8221; tab of portal listing invitations.  The user
 can either accept or reject the invitation.</p>
 </div>
 <dl class="docutils">
@@ -1748,7 +1766,7 @@ group are sorted.</td>
 <dt id="arcgis.gis.Datastore">
 <em class="property">class </em><code class="descclassname">arcgis.gis.</code><code class="descname">Datastore</code><span class="sig-paren">(</span><em>datastore</em>, <em>path</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.Datastore" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">dict</span></code></p>
-<p>Represents a datastore (folder, database or bigdata fileshare) within the GIS’s data store</p>
+<p>Represents a datastore (folder, database or bigdata fileshare) within the GIS&#8217;s data store</p>
 <dl class="attribute">
 <dt id="arcgis.gis.Datastore.datasets">
 <code class="descname">datasets</code><a class="headerlink" href="#arcgis.gis.Datastore.datasets" title="Permalink to this definition">¶</a></dt>
@@ -1788,7 +1806,7 @@ group are sorted.</td>
 <dl class="method">
 <dt id="arcgis.gis.Datastore.validate">
 <code class="descname">validate</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.Datastore.validate" title="Permalink to this definition">¶</a></dt>
-<dd><p>Validates that this data item’s path (for file shares) or connection string (for databases)
+<dd><p>Validates that this data item&#8217;s path (for file shares) or connection string (for databases)
 is accessible to every server node in the site</p>
 <dl class="docutils">
 <dt>Output:</dt>
@@ -1856,9 +1874,9 @@ Administrative Privileges:</p>
 <li>portal:admin:updateItems: grants the ability to update content within organization.</li>
 <li>portal:admin:deleteItems: grants the ability to delete content within organization.</li>
 <li>portal:admin:reassignItems: grants the ability to reassign content to other members within organization.</li>
-<li>portal:admin:shareToGroup: grants the ability to share other member’s content to groups the user belongs to.</li>
-<li>portal:admin:shareToOrg: grants the ability to share other member’s content to organization.</li>
-<li>portal:admin:shareToPublic: grants the ability to share other member’s content to all users of the portal.</li>
+<li>portal:admin:shareToGroup: grants the ability to share other member&#8217;s content to groups the user belongs to.</li>
+<li>portal:admin:shareToOrg: grants the ability to share other member&#8217;s content to organization.</li>
+<li>portal:admin:shareToPublic: grants the ability to share other member&#8217;s content to all users of the portal.</li>
 </ul>
 <p>ArcGIS Marketplace Subscriptions</p>
 <ul class="simple">
@@ -1932,7 +1950,7 @@ GIS. Layer objects can be obtained through the layers attribute on layer Items i
 <em class="property">classmethod </em><code class="descname">fromitem</code><span class="sig-paren">(</span><em>item</em>, <em>index=0</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.Layer.fromitem" title="Permalink to this definition">¶</a></dt>
 <dd><p>returns the layer at the specified index from a layer item
 :param item: an item representing a layer
-:param index: optional, the index of the layer amongst the item’s layers
+:param index: optional, the index of the layer amongst the item&#8217;s layers
 :return: the layer at the specified index</p>
 </dd></dl>
 
@@ -1944,148 +1962,151 @@ GIS. Layer objects can be obtained through the layers attribute on layer Items i
 <dl class="class">
 <dt id="arcgis.gis.ContentManager">
 <em class="property">class </em><code class="descclassname">arcgis.gis.</code><code class="descname">ContentManager</code><span class="sig-paren">(</span><em>gis</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.ContentManager" title="Permalink to this definition">¶</a></dt>
-<dd><p>Helper class for managing GIS content. This class is not created by users directly.
-An instance of this class, called ‘content’, is available as a property of the Gis object.
-Users call methods on this ‘content’ object to manipulate (create, get, search…) items.</p>
+<dd><p>Helper class for managing content in ArcGIS Online or ArcGIS Enterprise.
+This class is not created by users directly. An instance of this class,
+called &#8216;content&#8217;, is available as a property of the GIS object. Users
+call methods on this &#8216;content&#8217; object to manipulate (create, get, search,
+etc) items.</p>
 <dl class="method">
 <dt id="arcgis.gis.ContentManager.add">
 <code class="descname">add</code><span class="sig-paren">(</span><em>item_properties</em>, <em>data=None</em>, <em>thumbnail=None</em>, <em>metadata=None</em>, <em>owner=None</em>, <em>folder=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.ContentManager.add" title="Permalink to this definition">¶</a></dt>
 <dd><p>Adds content to the GIS by creating an item.</p>
-<blockquote>
-<div><div class="admonition note">
+<div class="admonition note">
 <p class="first admonition-title">Note</p>
-<p>That content can be a file (such as a service definition, shapefile, CSV, layer package,
-file geodatabase, geoprocessing package, map package) or it can be a URL (to an ArcGIS Server
-service, WMS service, or an application).</p>
-<p>If you are uploading a package or other file, provide a path or URL
-to the file in the data argument.</p>
-<p class="last">From a technical perspective, none of the item properties below are required.  However,
-it is strongly recommended that title, type, typeKeywords, tags, snippet, and description
-be provided.</p>
+<p>Content can be a file (such as a service definition, shapefile,
+CSV, layer package, file geodatabase, geoprocessing package,
+map package) or it can be a URL (to an ArcGIS Server service,
+WMS service, or an application).</p>
+<p>If you are uploading a package or other file, provide a path or
+URL to the file in the data argument.</p>
+<p class="last">From a technical perspective, none of the item_properties (see
+table below <em>Key:Value Dictionary Options for Argument
+item_properties</em>) are required.  However, it is strongly
+recommended that arguments title, type, typeKeywords, tags,
+snippet, and description be provided.</p>
 </div>
-<table border="1" class="docutils">
-<colgroup>
-<col width="22%" />
-<col width="78%" />
-</colgroup>
-<tbody valign="top">
-<tr class="row-odd"><td><strong>Argument</strong></td>
-<td><strong>Description</strong></td>
-</tr>
-<tr class="row-even"><td>item_properties</td>
-<td>required dictionary, see below for the keys and
-values</td>
-</tr>
-<tr class="row-odd"><td>data</td>
-<td>optional string, either a path or URL to the data</td>
-</tr>
-<tr class="row-even"><td>thumbnail</td>
-<td>optional string, either a path or URL to an image</td>
-</tr>
-<tr class="row-odd"><td>metadata</td>
-<td>optional string, either a path or URL to metadata.</td>
-</tr>
-<tr class="row-even"><td>owner</td>
-<td>optional string, defaults to logged in user.</td>
-</tr>
-<tr class="row-odd"><td>folder</td>
-<td>optional string, name of folder where placing item</td>
-</tr>
-</tbody>
-</table>
 <table border="1" class="docutils">
 <colgroup>
 <col width="18%" />
 <col width="82%" />
 </colgroup>
 <tbody valign="top">
+<tr class="row-odd"><td><strong>Argument</strong></td>
+<td><strong>Description</strong></td>
+</tr>
+<tr class="row-even"><td>item_properties</td>
+<td>Required dictionary. See table below for the keys and values.</td>
+</tr>
+<tr class="row-odd"><td>data</td>
+<td>Optional string. Either a path or URL to the data.</td>
+</tr>
+<tr class="row-even"><td>thumbnail</td>
+<td>Optional string. Either a path or URL to a thumbnail image.</td>
+</tr>
+<tr class="row-odd"><td>metadata</td>
+<td>Optional string. Either a path or URL to the metadata.</td>
+</tr>
+<tr class="row-even"><td>owner</td>
+<td>Optional string. Defaults to the logged in user.</td>
+</tr>
+<tr class="row-odd"><td>folder</td>
+<td>Optional string. Name of the folder where placing item.</td>
+</tr>
+</tbody>
+</table>
+<p><em>Key:Value Dictionary Options for Argument item_properties</em></p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="15%" />
+<col width="85%" />
+</colgroup>
+<tbody valign="top">
 <tr class="row-odd"><td><strong>Key</strong></td>
 <td><strong>Value</strong></td>
 </tr>
 <tr class="row-even"><td>type</td>
-<td>optional string, indicates type of item.  See URL 1 below for valid values.</td>
+<td>Optional string. Indicates type of item, see URL 1 below for valid values.</td>
 </tr>
 <tr class="row-odd"><td>typeKeywords</td>
-<td>optinal string list.  Lists all sub-types.  See URL 1 for valid values.</td>
+<td>Optional string. Provide a lists all sub-types, see URL 1 below for valid values.</td>
 </tr>
 <tr class="row-even"><td>description</td>
-<td>optional string.  Description of the item.</td>
+<td>Optional string. Description of the item.</td>
 </tr>
 <tr class="row-odd"><td>title</td>
-<td>optional string.  Name of the item.</td>
+<td>Optional string. Name label of the item.</td>
 </tr>
 <tr class="row-even"><td>url</td>
-<td>optional string.  URL to item that are based on URLs.</td>
+<td>Optional string. URL to item that are based on URLs.</td>
 </tr>
 <tr class="row-odd"><td>text</td>
-<td>optional string.  For text based items such as Feature Collections &amp; WebMaps</td>
+<td>Optional string. For text based items such as Feature Collections &amp; WebMaps</td>
 </tr>
 <tr class="row-even"><td>tags</td>
-<td>optional string of comma-separated values, or list of strings.
+<td>Optional string. Tags listed as comma-separated values, or a list of strings.
 Used for searches on items.</td>
 </tr>
 <tr class="row-odd"><td>snippet</td>
-<td>optional string.  Provides a very short summary of the what the item is.</td>
+<td>Optional string. Provide a short summary (limit to max 250 characters) of the what the item is.</td>
 </tr>
 <tr class="row-even"><td>extent</td>
-<td>optional string with comma separated values for min x, min y, max x, max y.</td>
+<td>Optional string. Provide comma-separated values for min x, min y, max x, max y.</td>
 </tr>
 <tr class="row-odd"><td>spatialReference</td>
-<td>optional string.  Coordinate system that the item is in.</td>
+<td>Optional string. Coordinate system that the item is in.</td>
 </tr>
 <tr class="row-even"><td>accessInformation</td>
-<td>optional string.  Information on the source of the content.</td>
+<td>Optional string. Information on the source of the content.</td>
 </tr>
 <tr class="row-odd"><td>licenseInfo</td>
-<td>optinal string, any license information or restrictions regarding content.</td>
+<td>Optional string.  Any license information or restrictions regarding the content.</td>
 </tr>
 <tr class="row-even"><td>culture</td>
-<td>optional string.  Locale, country and language information.</td>
+<td>Optional string. Locale, country and language information.</td>
 </tr>
 <tr class="row-odd"><td>access</td>
-<td>optional string.  Valid values: private, shared, org, or public.</td>
+<td>Optional string. Valid values are private, shared, org, or public.</td>
 </tr>
 <tr class="row-even"><td>commentsEnabled</td>
-<td>optional boolean.  Default is true.  Controls whether comments are allowed.</td>
+<td>Optional boolean. Default is true, controls whether comments are allowed (true)
+or not allowed (false).</td>
 </tr>
 <tr class="row-odd"><td>culture</td>
-<td>optional string.  Language and country information.</td>
+<td>Optional string. Language and country information.</td>
 </tr>
 </tbody>
 </table>
-</div></blockquote>
 <p>URL 1: <a class="reference external" href="http://resources.arcgis.com/en/help/arcgis-rest-api/index.html#//02r3000000ms000000">http://resources.arcgis.com/en/help/arcgis-rest-api/index.html#//02r3000000ms000000</a></p>
-<blockquote>
-<div><table class="docutils field-list" frame="void" rules="none">
+<table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">return:</th><td class="field-body">The item if successfully added, None if unsuccessful.</td>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">The item if successfully added, None if unsuccessful.</td>
 </tr>
 </tbody>
 </table>
-</div></blockquote>
 </dd></dl>
 
 <dl class="method">
 <dt id="arcgis.gis.ContentManager.create_folder">
 <code class="descname">create_folder</code><span class="sig-paren">(</span><em>folder</em>, <em>owner=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.ContentManager.create_folder" title="Permalink to this definition">¶</a></dt>
-<dd><p>Creates a folder with the given name, for the given owner. Does nothing if the
-folder already exists. If owner is not specified, does so for the logged in user.</p>
+<dd><p>Creates a folder with the given folder name, for the given owner. Does
+nothing if the folder already exists. If owner is not specified, owner
+is set as the logged in user.</p>
 <table border="1" class="docutils">
 <colgroup>
-<col width="20%" />
-<col width="80%" />
+<col width="18%" />
+<col width="82%" />
 </colgroup>
 <tbody valign="top">
 <tr class="row-odd"><td><strong>Argument</strong></td>
 <td><strong>Description</strong></td>
 </tr>
 <tr class="row-even"><td>folder</td>
-<td>required string, the name of the folder to create for the owner</td>
+<td>Required string. The name of the folder to create for the owner.</td>
 </tr>
 <tr class="row-odd"><td>owner</td>
-<td>optional string or User, folder owner, None for logged in user</td>
+<td>Optional string. User, folder owner, None for logged in user.</td>
 </tr>
 </tbody>
 </table>
@@ -2093,8 +2114,8 @@ folder already exists. If owner is not specified, does so for the logged in user
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">a json object like the following:
-{“username” : “portaladmin”,”id” : “bff13218991c4485a62c81db3512396f”,”title” : “testcreate”} if the folder was created, None otherwise.</td>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">A json object like the following if the folder was created:
+{&#8220;username&#8221; : &#8220;portaladmin&#8221;,&#8221;id&#8221; : &#8220;bff13218991c4485a62c81db3512396f&#8221;,&#8221;title&#8221; : &#8220;testcreate&#8221;}; None otherwise.</td>
 </tr>
 </tbody>
 </table>
@@ -2102,117 +2123,125 @@ folder already exists. If owner is not specified, does so for the logged in user
 
 <dl class="method">
 <dt id="arcgis.gis.ContentManager.create_service">
-<code class="descname">create_service</code><span class="sig-paren">(</span><em>name</em>, <em>service_description=”</em>, <em>has_static_data=False</em>, <em>max_record_count=1000</em>, <em>supported_query_formats=’JSON’</em>, <em>capabilities=None</em>, <em>description=”</em>, <em>copyright_text=”</em>, <em>wkid=102100</em>, <em>create_params=None</em>, <em>service_type=’featureService’</em>, <em>owner=None</em>, <em>folder=None</em>, <em>item_properties=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.ContentManager.create_service" title="Permalink to this definition">¶</a></dt>
-<dd><p>Creates a service in the Portal</p>
-<dl class="docutils">
-<dt>Arguments</dt>
-<dd><p class="first">name                    required string, the unique name of the service
-service_description     optional string, description of the service
-has_static_data         optional boolean, indicating whether the data changes
-max_record_count        optional int, ,maximum number of records in query operations
-supported_query_formats optional string, formats in which query results are returned
-capabilities            optional string, Specify service capabilities.</p>
-<blockquote>
-<div>If left unspecified, ‘Image,Catalog,Metadata,Download,Pixels’
-are used for image services, and ‘Query’
-are used for feature services, and ‘Query’ otherwise</div></blockquote>
-<p>description             optional string, a user-friendly description for the published dataset.
-copyright_text          optional string, copyright information associated with the dataset.
-wkid                    optional int, the well known id of the spatial reference for the service.</p>
-<blockquote>
-<div>All layers added to a hosted feature service need to have the same spatial reference defined for the feature service. When creating a new empty service without specifying its spatial reference, the spatial reference of the hosted feature service is set to the first layer added to that feature service.</div></blockquote>
-<p>create_params           optional dict, containing all create parameters. If this parameter is used, all the parameters above are ignored</p>
-<p>service_type            optional string, the type of service to be created, imageService, featureService</p>
-<p>owner                   optional string, the username of the owner
-folder                  optional string, name of folder in which to create the service
-item_properties         optional dict, see below for the keys and values</p>
+<code class="descname">create_service</code><span class="sig-paren">(</span><em>name</em>, <em>service_description=''</em>, <em>has_static_data=False</em>, <em>max_record_count=1000</em>, <em>supported_query_formats='JSON'</em>, <em>capabilities=None</em>, <em>description=''</em>, <em>copyright_text=''</em>, <em>wkid=102100</em>, <em>create_params=None</em>, <em>service_type='featureService'</em>, <em>owner=None</em>, <em>folder=None</em>, <em>item_properties=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.ContentManager.create_service" title="Permalink to this definition">¶</a></dt>
+<dd><p>Creates a service in the Portal.</p>
 <table border="1" class="docutils">
 <colgroup>
-<col width="18%" />
-<col width="82%" />
+<col width="17%" />
+<col width="83%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><strong>Argument</strong></td>
+<td><strong>Description</strong></td>
+</tr>
+<tr class="row-even"><td>name</td>
+<td>Required string. The unique name of the service.</td>
+</tr>
+<tr class="row-odd"><td>service_description</td>
+<td>Optional string. Description of the service.</td>
+</tr>
+<tr class="row-even"><td>has_static_data</td>
+<td>Optional boolean. Indicating whether the data can change.  Default is True, data is not allowed to change.</td>
+</tr>
+<tr class="row-odd"><td>max_record_count</td>
+<td>Optional integer. Maximum number of records in query operations.</td>
+</tr>
+<tr class="row-even"><td>supported_query_formats</td>
+<td>Optional string. Formats in which query results are returned.</td>
+</tr>
+<tr class="row-odd"><td>capabilities</td>
+<td>Optional string. Specify service capabilities.
+If left unspecified, &#8216;Image,Catalog,Metadata,Download,Pixels&#8217;
+are used for image services, and &#8216;Query&#8217;
+is used for feature services, and &#8216;Query&#8217; otherwise</td>
+</tr>
+<tr class="row-even"><td>description</td>
+<td>Optional string. A user-friendly description for the published dataset.</td>
+</tr>
+<tr class="row-odd"><td>copyright_text</td>
+<td>Optional string. The copyright information associated with the dataset.</td>
+</tr>
+<tr class="row-even"><td>wkid</td>
+<td>Optional integer. The well known id (WKID) of the spatial reference for the service.
+All layers added to a hosted feature service need to have the same spatial
+reference defined for the feature service. When creating a new
+empty service without specifying its spatial reference, the spatial
+reference of the hosted feature service is set to the first layer added to that feature service.</td>
+</tr>
+<tr class="row-odd"><td>create_params</td>
+<td>Optional dictionary. Add all create_service parameters into a dictionary. If this parameter is used,
+all the parameters above are ignored.</td>
+</tr>
+<tr class="row-even"><td>service_type</td>
+<td>Optional string. The type of service to be created.  Currently the options are imageService or featureService.</td>
+</tr>
+<tr class="row-odd"><td>owner</td>
+<td>Optional string. The username of the owner of the service being created.</td>
+</tr>
+<tr class="row-even"><td>folder</td>
+<td>Optional string. The name of folder in which to create the service.</td>
+</tr>
+<tr class="row-odd"><td>item_properties</td>
+<td>Optional dictionary. See below for the keys and values</td>
+</tr>
+</tbody>
+</table>
+<p><em>Key:Value Dictionary Options for Argument item_properties</em></p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="15%" />
+<col width="85%" />
 </colgroup>
 <tbody valign="top">
 <tr class="row-odd"><td><strong>Key</strong></td>
 <td><strong>Value</strong></td>
 </tr>
 <tr class="row-even"><td>type</td>
-<td>optional string, indicates type of item.  See URL 1 below for valid values.</td>
+<td>Optional string. Indicates type of item, see URL 1 below for valid values.</td>
 </tr>
 <tr class="row-odd"><td>typeKeywords</td>
-<td>optional string list.  Lists all sub-types.  See URL 1 for valid values.</td>
+<td>Optional string. Provide a lists all sub-types, see URL 1 below for valid values.</td>
 </tr>
 <tr class="row-even"><td>description</td>
-<td>optional string.  Description of the item.</td>
+<td>Optional string. Description of the item.</td>
 </tr>
 <tr class="row-odd"><td>title</td>
-<td>optional string.  Name of the item.</td>
+<td>Optional string. Name label of the item.</td>
 </tr>
 <tr class="row-even"><td>url</td>
-<td>optional string.  URL to item that are based on URLs.</td>
+<td>Optional string. URL to item that are based on URLs.</td>
 </tr>
 <tr class="row-odd"><td>tags</td>
-<td>optional string of comma-separated values, or list of strings.
+<td>Optional string. Tags listed as comma-separated values, or a list of strings.
 Used for searches on items.</td>
 </tr>
 <tr class="row-even"><td>snippet</td>
-<td>optional string.  Provides a very short summary of the what the item is.</td>
+<td>Optional string. Provide a short summary (limit to max 250 characters) of the what the item is.</td>
 </tr>
 <tr class="row-odd"><td>extent</td>
-<td>optional string with comma separated values for min x, min y, max x, max y.</td>
+<td>Optional string. Provide comma-separated values for min x, min y, max x, max y.</td>
 </tr>
 <tr class="row-even"><td>spatialReference</td>
-<td>optional string.  Coordinate system that the item is in.</td>
+<td>Optional string. Coordinate system that the item is in.</td>
 </tr>
 <tr class="row-odd"><td>accessInformation</td>
-<td>optional string.  Information on the source of the content.</td>
+<td>Optional string. Information on the source of the content.</td>
 </tr>
 <tr class="row-even"><td>licenseInfo</td>
-<td>optinal string, any license information or restrictions regarding content.</td>
+<td>Optional string.  Any license information or restrictions regarding the content.</td>
 </tr>
 <tr class="row-odd"><td>culture</td>
-<td>optional string.  Locale, country and language information.</td>
+<td>Optional string. Locale, country and language information.</td>
 </tr>
 <tr class="row-even"><td>access</td>
-<td>optional string.  Valid values: private, shared, org, or public.</td>
+<td>Optional string. Valid values are private, shared, org, or public.</td>
 </tr>
 <tr class="row-odd"><td>commentsEnabled</td>
-<td>optional boolean.  Default is true.  Controls whether comments are allowed.</td>
+<td>Optional boolean. Default is true, controls whether comments are allowed (true)
+or not allowed (false).</td>
 </tr>
 <tr class="row-even"><td>culture</td>
-<td>optional string.  Language and country information.</td>
-</tr>
-</tbody>
-</table>
-<table class="last docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">return:</th><td class="field-body">The item for the service, if successfully created, None if unsuccessful.</td>
-</tr>
-</tbody>
-</table>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="method">
-<dt id="arcgis.gis.ContentManager.delete_folder">
-<code class="descname">delete_folder</code><span class="sig-paren">(</span><em>folder</em>, <em>owner=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.ContentManager.delete_folder" title="Permalink to this definition">¶</a></dt>
-<dd><p>Deletes a folder for the given owner (logged in user by default) with the given folder name.</p>
-<table border="1" class="docutils">
-<colgroup>
-<col width="20%" />
-<col width="80%" />
-</colgroup>
-<tbody valign="top">
-<tr class="row-odd"><td><strong>Argument</strong></td>
-<td><strong>Description</strong></td>
-</tr>
-<tr class="row-even"><td>folder</td>
-<td>required string, the name of the folder to delete</td>
-</tr>
-<tr class="row-odd"><td>owner</td>
-<td>optional string or User, folder owner, None for logged in user</td>
+<td>Optional string. Language and country information.</td>
 </tr>
 </tbody>
 </table>
@@ -2220,7 +2249,39 @@ Used for searches on items.</td>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">True if succeeded, False otherwise</td>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">The item for the service, if successfully created, None if unsuccessful.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="arcgis.gis.ContentManager.delete_folder">
+<code class="descname">delete_folder</code><span class="sig-paren">(</span><em>folder</em>, <em>owner=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.ContentManager.delete_folder" title="Permalink to this definition">¶</a></dt>
+<dd><p>Deletes a folder for the given owner (logged in user by default) with
+the given folder name.</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="17%" />
+<col width="83%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><strong>Argument</strong></td>
+<td><strong>Description</strong></td>
+</tr>
+<tr class="row-even"><td>folder</td>
+<td>Required string. The name of the folder to delete.</td>
+</tr>
+<tr class="row-odd"><td>owner</td>
+<td>Optional string. User, folder owner, None for logged in user is the default.</td>
+</tr>
+</tbody>
+</table>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">True if folder deletion succeeded, False if folder deletion failed.</td>
 </tr>
 </tbody>
 </table>
@@ -2230,15 +2291,25 @@ Used for searches on items.</td>
 <dt id="arcgis.gis.ContentManager.get">
 <code class="descname">get</code><span class="sig-paren">(</span><em>itemid</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.ContentManager.get" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns the item object for the specified itemid.</p>
-<dl class="docutils">
-<dt>Arguments</dt>
-<dd>itemid        required string, the item identifier</dd>
-</dl>
+<table border="1" class="docutils">
+<colgroup>
+<col width="27%" />
+<col width="73%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><strong>Argument</strong></td>
+<td><strong>Description</strong></td>
+</tr>
+<tr class="row-even"><td>itemid</td>
+<td>Required string. The item identifier.</td>
+</tr>
+</tbody>
+</table>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">None if the item is not found and returns an item object if the item is found</td>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">None if the item is not found, or returns an item object if the item is found.</td>
 </tr>
 </tbody>
 </table>
@@ -2247,78 +2318,33 @@ Used for searches on items.</td>
 <dl class="method">
 <dt id="arcgis.gis.ContentManager.import_data">
 <code class="descname">import_data</code><span class="sig-paren">(</span><em>df</em>, <em>address_fields=None</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.ContentManager.import_data" title="Permalink to this definition">¶</a></dt>
-<dd><p>Imports a Pandas data frame, that has an address column, or an arcgis spatial dataframe
-into the GIS.</p>
-<p>Spatial dataframes are imported into the GIS and published as feature layers.
-Pandas dataframes that have an address column are imported as an in memory feature collection.
-Note: By default, there is a limit of 1,000 rows/features for Pandas dataframes. This limit isn’t there for spatial dataframes.</p>
-<p>df : pandas dataframe or arcgis.SpatialDataFrame
-address_fields : dict containing mapping of df columns to address fields, eg: { “CountryCode” : “Country”} or { “Address” : “Address” }
-title: optional title of the item. This is used for spatial dataframe objects.
-tags: optional tags when publishing a spatial dataframe to the the GIS
-Returns feature collection or feature layer, that can be used for analysis, visualization or published to the GIS as an item</p>
-</dd></dl>
-
-<dl class="method">
-<dt id="arcgis.gis.ContentManager.is_service_name_available">
-<code class="descname">is_service_name_available</code><span class="sig-paren">(</span><em>service_name</em>, <em>service_type</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.ContentManager.is_service_name_available" title="Permalink to this definition">¶</a></dt>
-<dd><p>Returns True is the specified service_name is available for the specified service_type</p>
-</dd></dl>
-
-<dl class="method">
-<dt id="arcgis.gis.ContentManager.search">
-<code class="descname">search</code><span class="sig-paren">(</span><em>query</em>, <em>item_type=None</em>, <em>sort_field=’avgRating’</em>, <em>sort_order=’desc’</em>, <em>max_items=10</em>, <em>outside_org=False</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.ContentManager.search" title="Permalink to this definition">¶</a></dt>
-<dd><p>Searches for portal items.</p>
-<div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p>A few things that will be helpful to know.</p>
-<ol class="last arabic simple">
-<li><dl class="first docutils">
-<dt>The query syntax has quite a few features that can’t</dt>
-<dd>be adequately described here.  The query syntax is
-available in ArcGIS help.  A short version of that URL
-is <a class="reference external" href="http://bitly.com/1fJ8q31">http://bitly.com/1fJ8q31</a>.</dd>
-</dl>
-</li>
-<li><dl class="first docutils">
-<dt>Most of the time when searching items you want to</dt>
-<dd>search within your organization in ArcGIS Online
-or within your Portal.  As a convenience, the method
-automatically appends your organization id to the query by
-default.  If you want content from outside your org
-set outside_org to True.</dd>
-</dl>
-</li>
-</ol>
-</div>
+<dd><p>Imports a Pandas data frame (that has an address column), or an arcgis
+spatial dataframe into the GIS.</p>
+<p>Spatial dataframes are imported into the GIS and published as feature
+layers. Pandas dataframes that have an address column are imported as
+an in-memory feature collection.
+Note: By default, there is a limit of 1,000 rows/features for Pandas
+dataframes. This limit isn&#8217;t there for spatial dataframes.</p>
 <table border="1" class="docutils">
 <colgroup>
-<col width="16%" />
-<col width="84%" />
+<col width="10%" />
+<col width="90%" />
 </colgroup>
 <tbody valign="top">
 <tr class="row-odd"><td><strong>Argument</strong></td>
 <td><strong>Description</strong></td>
 </tr>
-<tr class="row-even"><td>query</td>
-<td>required string, query string.  See notes.</td>
+<tr class="row-even"><td>df</td>
+<td>Required string. Pandas dataframe or arcgis.SpatialDataFrame</td>
 </tr>
-<tr class="row-odd"><td>item_type</td>
-<td>optional string, set type of item to search.
-<a class="reference external" href="http://resources.arcgis.com/en/help/arcgis-rest-api/index.html#//02r3000000ms000000">http://resources.arcgis.com/en/help/arcgis-rest-api/index.html#//02r3000000ms000000</a></td>
+<tr class="row-odd"><td>address_fields</td>
+<td>Optional dictionary. Dictionary containing mapping of df columns to address fields, eg: { &#8220;CountryCode&#8221; : &#8220;Country&#8221;} or { &#8220;Address&#8221; : &#8220;Address&#8221; }.</td>
 </tr>
-<tr class="row-even"><td>sort_field</td>
-<td>optional string, valid values can be title, uploaded, type, owner, modified,
-avgRating, numRatings, numComments, and numViews.</td>
+<tr class="row-even"><td>title</td>
+<td>Optional string. Title of the item. This is used for spatial dataframe objects.</td>
 </tr>
-<tr class="row-odd"><td>sort_order</td>
-<td>optional string, valid values are asc or desc</td>
-</tr>
-<tr class="row-even"><td>max_items</td>
-<td>optional int, maximum number of items returned, default is 10</td>
-</tr>
-<tr class="row-odd"><td>outside_org</td>
-<td>optional boolean, controls whether to search outside your org (default is False)</td>
+<tr class="row-odd"><td>tags</td>
+<td>Optional string. Tags listed as comma-separated values, or a list of strings. Provide tags when publishing a spatial dataframe to the the GIS.</td>
 </tr>
 </tbody>
 </table>
@@ -2326,11 +2352,105 @@ avgRating, numRatings, numComments, and numViews.</td>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"></td>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">Feature collection or feature layer that can be used for analysis,
+visualization or published to the GIS as an item.</td>
 </tr>
 </tbody>
 </table>
-<p>Returns a list of items matching the specified query</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="arcgis.gis.ContentManager.is_service_name_available">
+<code class="descname">is_service_name_available</code><span class="sig-paren">(</span><em>service_name</em>, <em>service_type</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.ContentManager.is_service_name_available" title="Permalink to this definition">¶</a></dt>
+<dd><p>For a desired service name, determines if that service name is
+available for use or not.</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="13%" />
+<col width="87%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><strong>Argument</strong></td>
+<td><strong>Description</strong></td>
+</tr>
+<tr class="row-even"><td>service_name</td>
+<td>Required string. A desired service name.</td>
+</tr>
+<tr class="row-odd"><td>service_type</td>
+<td>Required string. The type of service to be created.  Currently the options are imageService or featureService.</td>
+</tr>
+</tbody>
+</table>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">True if the specified service_name is available for the
+specified service_type, False if the service_name is
+unavailable.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="arcgis.gis.ContentManager.search">
+<code class="descname">search</code><span class="sig-paren">(</span><em>query</em>, <em>item_type=None</em>, <em>sort_field='avgRating'</em>, <em>sort_order='desc'</em>, <em>max_items=10</em>, <em>outside_org=False</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.ContentManager.search" title="Permalink to this definition">¶</a></dt>
+<dd><p>Searches for portal items.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p>A few things that will be helpful to know...</p>
+<ol class="last arabic simple">
+<li>The query syntax has many features that can&#8217;t be adequately
+described here.  The query syntax is available in ArcGIS Help.
+A short version of that URL is <a class="reference external" href="http://bitly.com/1fJ8q31">http://bitly.com/1fJ8q31</a>.</li>
+<li>Most of the time when searching for items, you&#8217;ll want to
+search within your organization in ArcGIS Online
+or within your Portal.  As a convenience, the method
+automatically appends your organization id to the query by
+default.  If you want content from outside your organization
+set outside_org to True.</li>
+</ol>
+</div>
+<table border="1" class="docutils">
+<colgroup>
+<col width="12%" />
+<col width="88%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><strong>Argument</strong></td>
+<td><strong>Description</strong></td>
+</tr>
+<tr class="row-even"><td>query</td>
+<td>Required string. A query string.  See notes above.</td>
+</tr>
+<tr class="row-odd"><td>item_type</td>
+<td>Optional string. Set type of item to search.
+<a class="reference external" href="http://resources.arcgis.com/en/help/arcgis-rest-api/index.html#//02r3000000ms000000">http://resources.arcgis.com/en/help/arcgis-rest-api/index.html#//02r3000000ms000000</a></td>
+</tr>
+<tr class="row-even"><td>sort_field</td>
+<td>Optional string. Valid values can be title, uploaded, type, owner, modified,
+avgRating, numRatings, numComments, and numViews.</td>
+</tr>
+<tr class="row-odd"><td>sort_order</td>
+<td>Optional string. Valid values are asc or desc.</td>
+</tr>
+<tr class="row-even"><td>max_items</td>
+<td>Optional integer. Maximum number of items returned, default is 10.</td>
+</tr>
+<tr class="row-odd"><td>outside_org</td>
+<td>Optional boolean. Controls whether to search outside your org (default is False, do not search ourside your org).</td>
+</tr>
+</tbody>
+</table>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">A list of items matching the specified query.</td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
 </dd></dl>
@@ -2343,16 +2463,16 @@ avgRating, numRatings, numComments, and numViews.</td>
 <em class="property">class </em><code class="descclassname">arcgis.gis.</code><code class="descname">UserManager</code><span class="sig-paren">(</span><em>gis</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.UserManager" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">object</span></code></p>
 <p>Helper class for managing GIS users. This class is not created by users directly.
-An instance of this class, called ‘users’, is available as a property of the Gis object.
-Users call methods on this ‘users’ object to manipulate (create, get, search…) users.</p>
+An instance of this class, called &#8216;users&#8217;, is available as a property of the Gis object.
+Users call methods on this &#8216;users&#8217; object to manipulate (create, get, search...) users.</p>
 <dl class="method">
 <dt id="arcgis.gis.UserManager.create">
-<code class="descname">create</code><span class="sig-paren">(</span><em>username</em>, <em>password</em>, <em>firstname</em>, <em>lastname</em>, <em>email</em>, <em>description=None</em>, <em>role=’org_user’</em>, <em>provider=’arcgis’</em>, <em>idp_username=None</em>, <em>level=2</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.UserManager.create" title="Permalink to this definition">¶</a></dt>
+<code class="descname">create</code><span class="sig-paren">(</span><em>username</em>, <em>password</em>, <em>firstname</em>, <em>lastname</em>, <em>email</em>, <em>description=None</em>, <em>role='org_user'</em>, <em>provider='arcgis'</em>, <em>idp_username=None</em>, <em>level=2</em>, <em>thumbnail=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.UserManager.create" title="Permalink to this definition">¶</a></dt>
 <dd><p>This operation is used to pre-create built-in or enterprise accounts within the portal,
 or built-in users in an ArcGIS Online organization account.</p>
 <p>The provider parameter is used to indicate the type of user account. Only an administrator
 can call this method.</p>
-<p>To create a viewer account, choose role=’org_viewer’ and level=1</p>
+<p>To create a viewer account, choose role=&#8217;org_viewer&#8217; and level=1</p>
 <table border="1" class="docutils">
 <colgroup>
 <col width="17%" />
@@ -2384,21 +2504,24 @@ the user set their password by clicking on a link that is emailed to him/her.</t
 <tr class="row-odd"><td>description</td>
 <td>An optional description string for the user account.</td>
 </tr>
-<tr class="row-even"><td>role</td>
+<tr class="row-even"><td>thumbnail</td>
+<td>An optional string, URL to user image</td>
+</tr>
+<tr class="row-odd"><td>role</td>
 <td>The role for the user account. The default value is org_user.
 Values: org_user | org_publisher | org_admin | org_viewer</td>
 </tr>
-<tr class="row-odd"><td>provider</td>
+<tr class="row-even"><td>provider</td>
 <td>The provider for the account. The default value is arcgis.
 Values: arcgis | enterprise</td>
 </tr>
-<tr class="row-even"><td>idp_username</td>
+<tr class="row-odd"><td>idp_username</td>
 <td><blockquote class="first">
 <div>The name of the user as stored by the enterprise user store. This parameter is</div></blockquote>
 <p class="last">only required if the provider parameter is enterprise.</p>
 </td>
 </tr>
-<tr class="row-odd"><td>level</td>
+<tr class="row-even"><td>level</td>
 <td>The account level.
 See <a class="reference external" href="http://server.arcgis.com/en/portal/latest/administer/linux/roles.htm">http://server.arcgis.com/en/portal/latest/administer/linux/roles.htm</a></td>
 </tr>
@@ -2446,14 +2569,14 @@ See <a class="reference external" href="http://server.arcgis.com/en/portal/lates
 
 <dl class="method">
 <dt id="arcgis.gis.UserManager.search">
-<code class="descname">search</code><span class="sig-paren">(</span><em>query=None</em>, <em>sort_field=’username’</em>, <em>sort_order=’asc’</em>, <em>max_users=100</em>, <em>outside_org=False</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.UserManager.search" title="Permalink to this definition">¶</a></dt>
+<code class="descname">search</code><span class="sig-paren">(</span><em>query=None</em>, <em>sort_field='username'</em>, <em>sort_order='asc'</em>, <em>max_users=100</em>, <em>outside_org=False</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.UserManager.search" title="Permalink to this definition">¶</a></dt>
 <dd><p>Searches portal users.</p>
 <p>Returns a list of users matching the specified query</p>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
 <p>A few things that will be helpful to know.</p>
 <ol class="last arabic simple">
-<li>The query syntax has quite a few features that can’t
+<li>The query syntax has quite a few features that can&#8217;t
 be adequately described here.  The query syntax is
 available in ArcGIS help.  A short version of that URL
 is <a class="reference external" href="http://bitly.com/1fJ8q31">http://bitly.com/1fJ8q31</a>.</li>
@@ -2463,7 +2586,7 @@ a list of all users in your organization.</li>
 search within your organization in ArcGIS Online
 or within your Portal.  As a convenience, the method
 automatically appends your organization id to the query by
-default.  If you don’t want the API to append to your query
+default.  If you don&#8217;t want the API to append to your query
 set outside_org to True.  If you use this feature with an
 OR clause such as field=x or field=y you should put this
 into parenthesis when using outside_org.</li>
@@ -2555,11 +2678,11 @@ your org (default is False)</td>
 <em class="property">class </em><code class="descclassname">arcgis.gis.</code><code class="descname">GroupManager</code><span class="sig-paren">(</span><em>gis</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.GroupManager" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">object</span></code></p>
 <p>Helper class for managing GIS groups. This class is not created by users directly.
-An instance of this class, called ‘groups’, is available as a property of the Gis object.
-Users call methods on this ‘groups’ object to manipulate (create, get, search…) users.</p>
+An instance of this class, called &#8216;groups&#8217;, is available as a property of the Gis object.
+Users call methods on this &#8216;groups&#8217; object to manipulate (create, get, search...) users.</p>
 <dl class="method">
 <dt id="arcgis.gis.GroupManager.create">
-<code class="descname">create</code><span class="sig-paren">(</span><em>title</em>, <em>tags</em>, <em>description=None</em>, <em>snippet=None</em>, <em>access=’public’</em>, <em>thumbnail=None</em>, <em>is_invitation_only=False</em>, <em>sort_field=’avgRating’</em>, <em>sort_order=’desc’</em>, <em>is_view_only=False</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.GroupManager.create" title="Permalink to this definition">¶</a></dt>
+<code class="descname">create</code><span class="sig-paren">(</span><em>title</em>, <em>tags</em>, <em>description=None</em>, <em>snippet=None</em>, <em>access='public'</em>, <em>thumbnail=None</em>, <em>is_invitation_only=False</em>, <em>sort_field='avgRating'</em>, <em>sort_order='desc'</em>, <em>is_view_only=False</em>, <em>auto_join=False</em>, <em>provider_group_name=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.GroupManager.create" title="Permalink to this definition">¶</a></dt>
 <dd><p>Creates a group and returns it if successful.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -2601,30 +2724,33 @@ See help of create() method for parameters
 
 <dl class="method">
 <dt id="arcgis.gis.GroupManager.search">
-<code class="descname">search</code><span class="sig-paren">(</span><em>query=”</em>, <em>sort_field=’title’</em>, <em>sort_order=’asc’</em>, <em>max_groups=1000</em>, <em>outside_org=False</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.GroupManager.search" title="Permalink to this definition">¶</a></dt>
+<code class="descname">search</code><span class="sig-paren">(</span><em>query=''</em>, <em>sort_field='title'</em>, <em>sort_order='asc'</em>, <em>max_groups=1000</em>, <em>outside_org=False</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.GroupManager.search" title="Permalink to this definition">¶</a></dt>
 <dd><p>Searches for portal groups.</p>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
 <p>A few things that will be helpful to know.</p>
-<ol class="arabic simple">
+<ol class="arabic">
 <li><dl class="first docutils">
-<dt>The query syntax has quite a few features that can’t</dt>
-<dd>be adequately described here.  The query syntax is
+<dt>The query syntax has quite a few features that can&#8217;t</dt>
+<dd><p class="first last">be adequately described here.  The query syntax is
 available in ArcGIS help.  A short version of that URL
-is <a class="reference external" href="http://bitly.com/1fJ8q31">http://bitly.com/1fJ8q31</a>.</dd>
+is <a class="reference external" href="http://bitly.com/1fJ8q31">http://bitly.com/1fJ8q31</a>.</p>
+</dd>
 </dl>
 </li>
-<li>Searching without specifying a query parameter returns
-a list of all groups in your organization.</li>
+<li><p class="first">Searching without specifying a query parameter returns
+a list of all groups in your organization.</p>
+</li>
 </ol>
-<ol class="last arabic simple" start="2">
+<ol class="last arabic" start="2">
 <li><dl class="first docutils">
 <dt>Most of the time when searching groups you want to</dt>
-<dd>search within your organization in ArcGIS Online
+<dd><p class="first last">search within your organization in ArcGIS Online
 or within your Portal.  As a convenience, the method
 automatically appends your organization id to the query by
-default.  If you don’t want the API to append to your query
-set outside_org to True.</dd>
+default.  If you don&#8217;t want the API to append to your query
+set outside_org to True.</p>
+</dd>
 </dl>
 </li>
 </ol>
@@ -2682,7 +2808,7 @@ your org</td>
 This class is not created by users directly.
 Instances of this class are returned from arcgis.geoanalytics.get_datastores() and
 arcgis.raster.analytics.get_datastores() functions to get the corresponding datastores.
-Users call methods on this ‘datastores’ object to manage the datastores in a site federated with the portal.</p>
+Users call methods on this &#8216;datastores&#8217; object to manage the datastores in a site federated with the portal.</p>
 <dl class="method">
 <dt id="arcgis.gis.DatastoreManager.add">
 <code class="descname">add</code><span class="sig-paren">(</span><em>name</em>, <em>item</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.DatastoreManager.add" title="Permalink to this definition">¶</a></dt>
@@ -2713,14 +2839,14 @@ server_path - the path to the folder from the server</div></blockquote>
 
 <dl class="method">
 <dt id="arcgis.gis.DatastoreManager.add_database">
-<code class="descname">add_database</code><span class="sig-paren">(</span><em>name</em>, <em>conn_str</em>, <em>client_conn_str=None</em>, <em>conn_type=’shared’</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.DatastoreManager.add_database" title="Permalink to this definition">¶</a></dt>
+<code class="descname">add_database</code><span class="sig-paren">(</span><em>name</em>, <em>conn_str</em>, <em>client_conn_str=None</em>, <em>conn_type='shared'</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.DatastoreManager.add_database" title="Permalink to this definition">¶</a></dt>
 <dd><p>Registers a database with the data store.
 Input</p>
 <blockquote>
 <div>name - unique database name on the server
 conn_str - the path to the folder from the server (and client, if shared or serverOnly database)
 client_conn_str: connection string for client to connect to replicated enterprise database&gt;
-conn_type - “&lt;shared|replicated|serverOnly&gt;”</div></blockquote>
+conn_type - &#8220;&lt;shared|replicated|serverOnly&gt;&#8221;</div></blockquote>
 <dl class="docutils">
 <dt>Output:</dt>
 <dd>the data item is registered successfully, None otherwise</dd>
@@ -2736,7 +2862,7 @@ Input</p>
 <div>name - unique fileshare name on the server
 server_path - the path to the folder from the server (and client, if shared path)
 client_path - if folder is replicated, the path to the folder from the client
-if folder is shared, don’t set this parameter</div></blockquote>
+if folder is shared, don&#8217;t set this parameter</div></blockquote>
 <dl class="docutils">
 <dt>Output:</dt>
 <dd>the data item is registered successfully, None otherwise</dd>
@@ -2775,11 +2901,11 @@ If you specify the property as True, users will not be able to publish geoproces
 <dt id="arcgis.gis.DatastoreManager.search">
 <code class="descname">search</code><span class="sig-paren">(</span><em>parent_path=None</em>, <em>ancestor_path=None</em>, <em>types=None</em>, <em>id=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.DatastoreManager.search" title="Permalink to this definition">¶</a></dt>
 <dd><p>You can use this operation to search through the various data
-items registered in the server’s data store. Searching without specifying the parent_path and other parameters returns a lists of all registered data items
+items registered in the server&#8217;s data store. Searching without specifying the parent_path and other parameters returns a lists of all registered data items
 Inputs:</p>
 <blockquote>
 <div><blockquote>
-<div><p>parentPath - The path of the parent under which to find items. To get the root data items, pass ‘/’
+<div><p>parentPath - The path of the parent under which to find items. To get the root data items, pass &#8216;/&#8217;
 ancestorPath - The path of the ancestor under which to find</p>
 <blockquote>
 <div>items.</div></blockquote>
@@ -2802,7 +2928,7 @@ id - A filter to search by the ID of the item</p>
 <dt id="arcgis.gis.DatastoreManager.validate">
 <code class="descname">validate</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.DatastoreManager.validate" title="Permalink to this definition">¶</a></dt>
 <dd><p>Validates all items in the datastore and returns True if validated.</p>
-<p>In order for a data item to be registered and used successfully within the GIS’s data store,
+<p>In order for a data item to be registered and used successfully within the GIS&#8217;s data store,
 you need to make sure that the path (for file shares) or connection string (for databases)
 is accessible to every server node in the site. To validate all registered data items all
 at once, you can invoke this operation.</p>
@@ -2835,7 +2961,7 @@ at once, you can invoke this operation.</p>
 <dl class="method">
 <dt id="arcgis.gis.RoleManager.exists">
 <code class="descname">exists</code><span class="sig-paren">(</span><em>role_name</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.RoleManager.exists" title="Permalink to this definition">¶</a></dt>
-<dd><p>Checks to see if a role exists by it’s name
+<dd><p>Checks to see if a role exists by it&#8217;s name
 :role_name: name of the role to look up
 Returns:</p>
 <blockquote>
@@ -2861,13 +2987,13 @@ GIS if a role_id is not specified
 <em class="property">class </em><code class="descclassname">arcgis.gis.</code><code class="descname">ResourceManager</code><span class="sig-paren">(</span><em>item</em>, <em>gis</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.ResourceManager" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">object</span></code></p>
 <p>Helper class for managing resource files of an item. This class is not created by users directly.
-An instance of this class, called ‘resources’, is available as a property of the Item object.
-Users call methods on this ‘resources’ object to manage (add, remove, update, list, get) item resources.</p>
+An instance of this class, called &#8216;resources&#8217;, is available as a property of the Item object.
+Users call methods on this &#8216;resources&#8217; object to manage (add, remove, update, list, get) item resources.</p>
 <dl class="method">
 <dt id="arcgis.gis.ResourceManager.add">
-<code class="descname">add</code><span class="sig-paren">(</span><em>file</em>, <em>folder_name=None</em>, <em>file_name=None</em>, <em>text=None</em>, <em>archive=False</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.ResourceManager.add" title="Permalink to this definition">¶</a></dt>
+<code class="descname">add</code><span class="sig-paren">(</span><em>file=None</em>, <em>folder_name=None</em>, <em>file_name=None</em>, <em>text=None</em>, <em>archive=False</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.ResourceManager.add" title="Permalink to this definition">¶</a></dt>
 <dd><p>The add resources operation adds new file resources to an existing item. For example, an image that is
-used as custom logo for Report Template. All the files are added to ‘resources’ folder of the item. File
+used as custom logo for Report Template. All the files are added to &#8216;resources&#8217; folder of the item. File
 resources use storage space from your quota and are scanned for viruses. The item size is updated to
 include the size of added resource files. Each file added should be no more than 25 Mb.</p>
 <p>Supported item types that allow adding file resources are: Vector Tile Service, Vector Tile Package,
@@ -2885,7 +3011,7 @@ This operation is only available to the item owner and the organization administ
 <td><strong>Description</strong></td>
 </tr>
 <tr class="row-even"><td>file</td>
-<td>required string, path to the file that needs to be added</td>
+<td>optional string, path to the file that needs to be added</td>
 </tr>
 <tr class="row-odd"><td>folder_name</td>
 <td>optional string, provide a folder name if the file has to be
@@ -2897,7 +3023,8 @@ resource uploaded, or to be used together with text as file name for it.</td>
 </tr>
 <tr class="row-odd"><td>text</td>
 <td>optional string, text input to be added as a file resource,
-used together with file_name.</td>
+used together with file_name. If this resource is used, then
+file_name become required.</td>
 </tr>
 <tr class="row-even"><td>archive</td>
 <td>optional bool, default = False.  If True, file resources
@@ -2911,18 +3038,18 @@ added are extracted and files are uploaded to respective folders.</td>
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">Python dict like the following if succeeded:
 {<blockquote>
-<div>”success”: True,
-“itemId”: “&lt;item id&gt;”,
-“owner”: “&lt;owner username&gt;”,
-“folder”: “&lt;folder id&gt;”</div></blockquote>
+<div>&#8220;success&#8221;: True,
+&#8220;itemId&#8221;: &#8220;&lt;item id&gt;&#8221;,
+&#8220;owner&#8221;: &#8220;&lt;owner username&gt;&#8221;,
+&#8220;folder&#8221;: &#8220;&lt;folder id&gt;&#8221;</div></blockquote>
 <p>}</p>
 <p>else like the following if it failed:
-{“error”: {</p>
+{&#8220;error&#8221;: {</p>
 <blockquote>
-<div>”code”: 400,
-“messageCode”: “CONT_0093”,
-“message”: “File type not allowed for addResources”,
-“details”: []
+<div>&#8220;code&#8221;: 400,
+&#8220;messageCode&#8221;: &#8220;CONT_0093&#8221;,
+&#8220;message&#8221;: &#8220;File type not allowed for addResources&#8221;,
+&#8220;details&#8221;: []
 }</div></blockquote>
 <p>}</p>
 </td>
@@ -2956,11 +3083,11 @@ Python dictionary objects. Default is True.</td>
 </tr>
 <tr class="row-even"><td>out_folder</td>
 <td>optional string. Specify the folder into which the file has to
-saved. Default is user’s temporary directory.</td>
+saved. Default is user&#8217;s temporary directory.</td>
 </tr>
 <tr class="row-odd"><td>out_file_name</td>
 <td>optional string. Specify the name to use when downloading the
-file. Default is the resource file’s name.</td>
+file. Default is the resource file&#8217;s name.</td>
 </tr>
 </tbody>
 </table>
@@ -2992,16 +3119,16 @@ the item owner and the organization administrator.
 <blockquote>
 <div><dl class="docutils">
 <dt>{</dt>
-<dd>“resource”: “&lt;resource1&gt;”</dd>
+<dd>&#8220;resource&#8221;: &#8220;&lt;resource1&gt;&#8221;</dd>
 </dl>
 <p>},
 {</p>
 <blockquote>
-<div>“resource”: “&lt;resource2&gt;”</div></blockquote>
+<div>&#8220;resource&#8221;: &#8220;&lt;resource2&gt;&#8221;</div></blockquote>
 <p>},
 {</p>
 <blockquote>
-<div>“resource”: “&lt;resource3&gt;”</div></blockquote>
+<div>&#8220;resource&#8221;: &#8220;&lt;resource3&gt;&#8221;</div></blockquote>
 <p>}</p>
 </div></blockquote>
 <p>]</p>
@@ -3036,13 +3163,12 @@ folders (prefixes), specify using the format
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">If succeeded a Python dictionary of the form
-{ ‘success’: True }<p>else a dictionary with error info
-{“error”: {“code”: 404,</p>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">If succeeded a boolean of True will be returned.<p>else a dictionary with error info
+{&#8220;error&#8221;: {&#8220;code&#8221;: 404,</p>
 <blockquote>
 <div><blockquote>
-<div>”message”: “Resource does not exist or is inaccessible.”,
-“details”: []</div></blockquote>
+<div>&#8220;message&#8221;: &#8220;Resource does not exist or is inaccessible.&#8221;,
+&#8220;details&#8221;: []</div></blockquote>
 <p>}</p>
 </div></blockquote>
 <p>}</p>
@@ -3098,17 +3224,17 @@ used together with file_name.</td>
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">Python dict like the following if succeeded:
 {<blockquote>
-<div>”success”: True,
-“itemId”: “&lt;item id&gt;”,
-“owner”: “&lt;owner username&gt;”,
-“folder”: “&lt;folder id&gt;”</div></blockquote>
+<div>&#8220;success&#8221;: True,
+&#8220;itemId&#8221;: &#8220;&lt;item id&gt;&#8221;,
+&#8220;owner&#8221;: &#8220;&lt;owner username&gt;&#8221;,
+&#8220;folder&#8221;: &#8220;&lt;folder id&gt;&#8221;</div></blockquote>
 <p>}</p>
 <p>else like the following if it failed:
-{“error”: {</p>
+{&#8220;error&#8221;: {</p>
 <blockquote>
-<div>”code”: 404,
-“message”: “Resource does not exist or is inaccessible.”,
-“details”: []
+<div>&#8220;code&#8221;: 404,
+&#8220;message&#8221;: &#8220;Resource does not exist or is inaccessible.&#8221;,
+&#8220;details&#8221;: []
 }</div></blockquote>
 <p>}</p>
 </td>
@@ -3131,6 +3257,7 @@ used together with file_name.</td>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.gis.admin.html#collaboration">Collaboration</a></li>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.gis.admin.html#creditmanager">CreditManager</a></li>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.gis.admin.html#passwordpolicy">PasswordPolicy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.gis.admin.html#portalresourcemanager">PortalResourceManager</a></li>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.gis.admin.html#ux">UX</a></li>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.gis.admin.html#federation">Federation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.gis.admin.html#logs">Logs</a></li>
@@ -3177,18 +3304,15 @@ used together with file_name.</td>
 
 
            </div>
-           <div class="articleComments">
-            
-           </div>
           </div>
           <footer>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="arcgis.gis.admin.html" class="btn btn-neutral float-right" title="arcgis.gis.admin module" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="arcgis.gis.admin.html" class="btn btn-neutral float-right" title="arcgis.gis.admin module" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="index.html" class="btn btn-neutral" title="API Reference for the ArcGIS API for Python" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="index.html" class="btn btn-neutral" title="API Reference for the ArcGIS API for Python" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
@@ -3219,11 +3343,10 @@ used together with file_name.</td>
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'./',
-            VERSION:'1.2.0',
+            VERSION:'1.2.1',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
-            HAS_SOURCE:  true,
-            SOURCELINK_SUFFIX: '.txt'
+            HAS_SOURCE:  true
         };
     </script>
       <script type="text/javascript" src="_static/jquery.js"></script>
