@@ -8,11 +8,9 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>arcgis.gis.admin module &mdash; arcgis 1.2.0 documentation</title>
+  <title>arcgis.gis.admin module &mdash; arcgis 1.2.1 documentation</title>
   
 
-  
-  
   
   
 
@@ -30,12 +28,14 @@
   
 
   
+    <link rel="stylesheet" href="_static/theme_overrides.css" type="text/css" />
+  
 
   
         <link rel="index" title="Index"
               href="genindex.html"/>
         <link rel="search" title="Search" href="search.html"/>
-    <link rel="top" title="arcgis 1.2.0 documentation" href="index.html"/>
+    <link rel="top" title="arcgis 1.2.1 documentation" href="index.html"/>
         <link rel="up" title="arcgis.gis module" href="arcgis.gis.toc.html"/>
         <link rel="next" title="arcgis.gis.server module" href="arcgis.gis.server.html"/>
         <link rel="prev" title="arcgis.gis module" href="arcgis.gis.toc.html"/> 
@@ -47,7 +47,6 @@
 
 <body class="wy-body-for-nav" role="document">
 
-   
   <div class="wy-grid-for-nav">
 
     
@@ -67,7 +66,7 @@
             
             
               <div class="version">
-                1.2.0
+                1.2.1
               </div>
             
           
@@ -88,10 +87,7 @@
           
             
             
-              
-            
-            
-              <p class="caption"><span class="caption-text">arcgis</span></p>
+                <p class="caption"><span class="caption-text">arcgis</span></p>
 <ul class="current">
 <li class="toctree-l1 current"><a class="reference internal" href="arcgis.gis.toc.html">arcgis.gis module</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="arcgis.gis.toc.html#gis">GIS</a></li>
@@ -115,6 +111,7 @@
 <li class="toctree-l4"><a class="reference internal" href="#collaboration">Collaboration</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#creditmanager">CreditManager</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#passwordpolicy">PasswordPolicy</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#portalresourcemanager">PortalResourceManager</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#ux">UX</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#federation">Federation</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#logs">Logs</a></li>
@@ -547,10 +544,8 @@
 
       
       <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
-        
-          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-          <a href="index.html">arcgis</a>
-        
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="index.html">arcgis</a>
       </nav>
 
 
@@ -559,42 +554,25 @@
         <div class="rst-content">
           
 
-
-
-
-
-
-
-
-
-
-
-
+ 
 
 
 
 <div role="navigation" aria-label="breadcrumbs navigation">
-
   <ul class="wy-breadcrumbs">
-    
-      <li><a href="index.html">Docs</a> &raquo;</li>
-        
+    <li><a href="index.html">Docs</a> &raquo;</li>
+      
           <li><a href="arcgis.gis.toc.html">arcgis.gis module</a> &raquo;</li>
-        
-      <li>arcgis.gis.admin module</li>
-    
-    
+      
+    <li>arcgis.gis.admin module</li>
       <li class="wy-breadcrumbs-aside">
         
-            
-            <a href="_sources/arcgis.gis.admin.rst.txt" rel="nofollow"> View page source</a>
+          
+            <a href="_sources/arcgis.gis.admin.txt" rel="nofollow"> View page source</a>
           
         
       </li>
-    
   </ul>
-
-  
   <hr/>
 </div>
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
@@ -614,7 +592,7 @@ For ArcGIS Enterprise GIS , administrators will get an instance of PortalAdminMa
 <em class="property">class </em><code class="descclassname">arcgis.gis.admin.</code><code class="descname">AGOLAdminManager</code><span class="sig-paren">(</span><em>gis</em>, <em>ux=None</em>, <em>metadata=None</em>, <em>collaborations=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.admin.AGOLAdminManager" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">object</span></code></p>
 <p>This is the root resource for administering your online GIS. Starting from
-this root, all of the GIS’s environment is organized into a
+this root, all of the GIS&#8217;s environment is organized into a
 hierarchy of resources and operations.</p>
 <p>Parameter:
 :param gis: GIS object containing Administrative credentials
@@ -635,6 +613,13 @@ portal participates</p>
 </dd></dl>
 
 <dl class="attribute">
+<dt id="arcgis.gis.admin.AGOLAdminManager.license">
+<code class="descname">license</code><a class="headerlink" href="#arcgis.gis.admin.AGOLAdminManager.license" title="Permalink to this definition">¶</a></dt>
+<dd><p>provides a set of tools to access and manage user licenses and
+entitlements.</p>
+</dd></dl>
+
+<dl class="attribute">
 <dt id="arcgis.gis.admin.AGOLAdminManager.metadata">
 <code class="descname">metadata</code><a class="headerlink" href="#arcgis.gis.admin.AGOLAdminManager.metadata" title="Permalink to this definition">¶</a></dt>
 <dd><p>resources to work with metadata on GIS</p>
@@ -643,7 +628,13 @@ portal participates</p>
 <dl class="attribute">
 <dt id="arcgis.gis.admin.AGOLAdminManager.password_policy">
 <code class="descname">password_policy</code><a class="headerlink" href="#arcgis.gis.admin.AGOLAdminManager.password_policy" title="Permalink to this definition">¶</a></dt>
-<dd><p>tools to manage a Site’s password policy</p>
+<dd><p>tools to manage a Site&#8217;s password policy</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="arcgis.gis.admin.AGOLAdminManager.usage_reports">
+<code class="descname">usage_reports</code><a class="headerlink" href="#arcgis.gis.admin.AGOLAdminManager.usage_reports" title="Permalink to this definition">¶</a></dt>
+<dd><p>provides access to the usage reports of the AGOL organization</p>
 </dd></dl>
 
 <dl class="attribute">
@@ -662,7 +653,7 @@ portal participates</p>
 <em class="property">class </em><code class="descclassname">arcgis.gis.admin.</code><code class="descname">PortalAdminManager</code><span class="sig-paren">(</span><em>url</em>, <em>gis=None</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.admin.PortalAdminManager" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">arcgis.gis.admin._base.BasePortalAdmin</span></code></p>
 <p>This is the root resource for administering your portal. Starting from
-this root, all of the portal’s environment is organized into a
+this root, all of the portal&#8217;s environment is organized into a
 hierarchy of resources and operations. A version number is returned as
 a part of this resource. After installation, the portal can be
 configured using the Create Site operation. Once initialized, the
@@ -687,6 +678,19 @@ portal participates</p>
 </dd></dl>
 
 <dl class="attribute">
+<dt id="arcgis.gis.admin.PortalAdminManager.license">
+<code class="descname">license</code><a class="headerlink" href="#arcgis.gis.admin.PortalAdminManager.license" title="Permalink to this definition">¶</a></dt>
+<dd><p>provides a set of tools to access and manage user licenses and
+entitlements.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="arcgis.gis.admin.PortalAdminManager.living_atlas">
+<code class="descname">living_atlas</code><a class="headerlink" href="#arcgis.gis.admin.PortalAdminManager.living_atlas" title="Permalink to this definition">¶</a></dt>
+<dd><p>provides a set of tools to manage and setup Living Atlas content.</p>
+</dd></dl>
+
+<dl class="attribute">
 <dt id="arcgis.gis.admin.PortalAdminManager.logs">
 <code class="descname">logs</code><a class="headerlink" href="#arcgis.gis.admin.PortalAdminManager.logs" title="Permalink to this definition">¶</a></dt>
 <dd><p>returns a class to work with the portal logs</p>
@@ -703,12 +707,14 @@ to accept requests.</p>
 <dl class="attribute">
 <dt id="arcgis.gis.admin.PortalAdminManager.metadata">
 <code class="descname">metadata</code><a class="headerlink" href="#arcgis.gis.admin.PortalAdminManager.metadata" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>returns a set of tools to work with ArcGIS Enterprise metadata
+settings.</p>
+</dd></dl>
 
 <dl class="attribute">
 <dt id="arcgis.gis.admin.PortalAdminManager.password_policy">
 <code class="descname">password_policy</code><a class="headerlink" href="#arcgis.gis.admin.PortalAdminManager.password_policy" title="Permalink to this definition">¶</a></dt>
-<dd><p>tools to manage a Site’s password policy</p>
+<dd><p>tools to manage a Site&#8217;s password policy</p>
 </dd></dl>
 
 <dl class="attribute">
@@ -781,29 +787,29 @@ be shared between the host and guest(s).</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name" colspan="2">invitation_JSON:</th></tr>
-<tr class="field-odd field"><td>&#160;</td><td class="field-body">the same contents as the invitationFile
+<tr class="field-odd field"><td>&nbsp;</td><td class="field-body">the same contents as the invitationFile
 parameter but passed as a string. Use either this parameter or
 invitationFile.</td>
 </tr>
 <tr class="field-even field"><th class="field-name" colspan="2">webauth_username:</th></tr>
-<tr class="field-even field"><td>&#160;</td><td class="field-body">If the collaboration host requires web-tier
+<tr class="field-even field"><td>&nbsp;</td><td class="field-body">If the collaboration host requires web-tier
 authentication, optionally use this parameter to provide the
-host’s web-tier authentication user name.</td>
+host&#8217;s web-tier authentication user name.</td>
 </tr>
 <tr class="field-odd field"><th class="field-name" colspan="2">webauth_password:</th></tr>
-<tr class="field-odd field"><td>&#160;</td><td class="field-body">If the collaboration host requires web-tier
+<tr class="field-odd field"><td>&nbsp;</td><td class="field-body">If the collaboration host requires web-tier
 authentication, optionally use this parameter to provide the
-host’s web-tier authentication password.</td>
+host&#8217;s web-tier authentication password.</td>
 </tr>
 </tbody>
 </table>
 <dl class="last docutils">
 <dt>:webauth_cert_file:If the collaboration host requires web-tier</dt>
 <dd>authentication, optionally use this parameter to provide the
-host’s web-tier authentication certificate file.</dd>
+host&#8217;s web-tier authentication certificate file.</dd>
 <dt>:webauth_cert_password:If the collaboration host requires web-tier</dt>
 <dd>authentication, optionally use this parameter to provide the
-host’s web-tier authentication certificate password.</dd>
+host&#8217;s web-tier authentication certificate password.</dd>
 </dl>
 </dd>
 <dt>Output:</dt>
@@ -812,8 +818,24 @@ host’s web-tier authentication certificate password.</dd>
 </dd></dl>
 
 <dl class="method">
+<dt id="arcgis.gis.admin.CollaborationManager.collaborate_with">
+<code class="descname">collaborate_with</code><span class="sig-paren">(</span><em>guest_gis</em>, <em>collaboration_name</em>, <em>collaboration_description</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.admin.CollaborationManager.collaborate_with" title="Permalink to this definition">¶</a></dt>
+<dd><p>A high level method to quickly establish a collaboration between two GIS. This method uses defaults
+wherever applicable and internally calls the <cite>create</cite>, <cite>accept_invitation</cite> and <cite>invite_participant</cite> methods.
+This method will create a new group and a new workspace in both the host and guest GIS for this collaboration.
+Invitation and response files created during the collaborations will be downloaded to the current working
+directory.</p>
+<p>Use the other methods if you need fine-grained control over how the collaboration is set up.
+:param guest_gis: GIS object of the guest org or Enterprise 
+:param collaboration_name: A generic name for the collaboration. This name is used with prefixes such as 
+wksp_&lt;your_collab_name&gt;, grp_&lt;your_collab_name&gt; to create the collaboration workspace and groups.
+:param collaboration_description: A generic description for the collaboration.
+:return: returns True / False</p>
+</dd></dl>
+
+<dl class="method">
 <dt id="arcgis.gis.admin.CollaborationManager.create">
-<code class="descname">create</code><span class="sig-paren">(</span><em>name</em>, <em>description</em>, <em>workspace_name</em>, <em>workspace_description</em>, <em>portal_group_id</em>, <em>host_contact_first_name</em>, <em>host_contact_last_name</em>, <em>host_contact_email_address</em>, <em>access_mode=’sendAndReceive’</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.admin.CollaborationManager.create" title="Permalink to this definition">¶</a></dt>
+<code class="descname">create</code><span class="sig-paren">(</span><em>name</em>, <em>description</em>, <em>workspace_name</em>, <em>workspace_description</em>, <em>portal_group_id</em>, <em>host_contact_first_name</em>, <em>host_contact_last_name</em>, <em>host_contact_email_address</em>, <em>access_mode='sendAndReceive'</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.admin.CollaborationManager.create" title="Permalink to this definition">¶</a></dt>
 <dd><p>The create method creates a collaboration. The host
 of the collaboration is the portal where it is created. The initial
 workspace for the collaboration is also created. A portal group in
@@ -837,28 +859,28 @@ participants will see.</td>
 <tr class="field-odd field"><th class="field-name">workspace_name:</th><td class="field-body">The name of the initial workspace.</td>
 </tr>
 <tr class="field-even field"><th class="field-name" colspan="2">workspace_description:</th></tr>
-<tr class="field-even field"><td>&#160;</td><td class="field-body">The description of the initial workspace.</td>
+<tr class="field-even field"><td>&nbsp;</td><td class="field-body">The description of the initial workspace.</td>
 </tr>
 <tr class="field-odd field"><th class="field-name" colspan="2">portal_group_id:</th></tr>
-<tr class="field-odd field"><td>&#160;</td><td class="field-body">ID of group in the portal that will be linked
+<tr class="field-odd field"><td>&nbsp;</td><td class="field-body">ID of group in the portal that will be linked
 with the workspace.</td>
 </tr>
 <tr class="field-even field"><th class="field-name" colspan="2">host_contact_first_name:</th></tr>
-<tr class="field-even field"><td>&#160;</td><td class="field-body">The first name of the contact person for
+<tr class="field-even field"><td>&nbsp;</td><td class="field-body">The first name of the contact person for
 the collaboration host portal.</td>
 </tr>
 <tr class="field-odd field"><th class="field-name" colspan="2">host_contact_last_name:</th></tr>
-<tr class="field-odd field"><td>&#160;</td><td class="field-body">The last name of the contact person for
+<tr class="field-odd field"><td>&nbsp;</td><td class="field-body">The last name of the contact person for
 the collaboration host portal.</td>
 </tr>
 <tr class="field-even field"><th class="field-name" colspan="2">host_contact_email_address:</th></tr>
-<tr class="field-even field"><td>&#160;</td><td class="field-body">The email address of the contact
+<tr class="field-even field"><td>&nbsp;</td><td class="field-body">The email address of the contact
 person for the collaboration host portal.</td>
 </tr>
 </tbody>
 </table>
 <dl class="last docutils">
-<dt>:access_mode:The organization’s access mode to the workspace.</dt>
+<dt>:access_mode:The organization&#8217;s access mode to the workspace.</dt>
 <dd><p class="first last">Values: send | receive | sendAndReceive</p>
 </dd>
 </dl>
@@ -902,29 +924,29 @@ intended recipient.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name" colspan="2">invitation_JSON:</th></tr>
-<tr class="field-odd field"><td>&#160;</td><td class="field-body">the same contents as the invitationFile
+<tr class="field-odd field"><td>&nbsp;</td><td class="field-body">the same contents as the invitationFile
 parameter but passed as a string. Use either this parameter or
 invitationFile.</td>
 </tr>
 <tr class="field-even field"><th class="field-name" colspan="2">webauth_username:</th></tr>
-<tr class="field-even field"><td>&#160;</td><td class="field-body">If the collaboration host requires web-tier
+<tr class="field-even field"><td>&nbsp;</td><td class="field-body">If the collaboration host requires web-tier
 authentication, optionally use this parameter to provide the
-host’s web-tier authentication user name.</td>
+host&#8217;s web-tier authentication user name.</td>
 </tr>
 <tr class="field-odd field"><th class="field-name" colspan="2">webauth_password:</th></tr>
-<tr class="field-odd field"><td>&#160;</td><td class="field-body">If the collaboration host requires web-tier
+<tr class="field-odd field"><td>&nbsp;</td><td class="field-body">If the collaboration host requires web-tier
 authentication, optionally use this parameter to provide the
-host’s web-tier authentication password.</td>
+host&#8217;s web-tier authentication password.</td>
 </tr>
 </tbody>
 </table>
 <dl class="last docutils">
 <dt>:webauth_cert_file:If the collaboration host requires web-tier</dt>
 <dd>authentication, optionally use this parameter to provide the
-host’s web-tier authentication certificate file.</dd>
+host&#8217;s web-tier authentication certificate file.</dd>
 <dt>:webauth_cert_password:If the collaboration host requires web-tier</dt>
 <dd>authentication, optionally use this parameter to provide the
-host’s web-tier authentication certificate password.</dd>
+host&#8217;s web-tier authentication certificate password.</dd>
 </dl>
 </dd>
 <dt>Output:</dt>
@@ -954,7 +976,7 @@ with a specified ID.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>portal_group</strong> – arcgis.gis.Group object or group id string</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>portal_group</strong> &#8211; arcgis.gis.Group object or group id string</td>
 </tr>
 <tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"></td>
 </tr>
@@ -981,7 +1003,7 @@ new workspaces.</p>
 <tr class="field-odd field"><th class="field-name">config:</th><td class="field-body">The configuration details of the new workspace.</td>
 </tr>
 <tr class="field-even field"><th class="field-name" colspan="2">portal_group_id:</th></tr>
-<tr class="field-even field"><td>&#160;</td><td class="field-body">The ID of the portal group linked with the
+<tr class="field-even field"><td>&nbsp;</td><td class="field-body">The ID of the portal group linked with the
 workspace.</td>
 </tr>
 </tbody>
@@ -1011,7 +1033,7 @@ removeParticipation endpoint.</p>
 invitation response file from a collaboration guest portal. The
 exported response file must be sent via email or through other
 communication channels that are established in your organization to
-the inviting portal’s administrator. The inviting portal’s
+the inviting portal&#8217;s administrator. The inviting portal&#8217;s
 administrator will then import your response file to complete the
 establishment of trust between your portals.
 It is important that the contents of this response file are not
@@ -1072,22 +1094,22 @@ proceed from this point.</p>
 <tr class="field-odd field"><th class="field-name">response_file:</th><td class="field-body">A multipart form parameter—file upload.</td>
 </tr>
 <tr class="field-even field"><th class="field-name" colspan="2">webauth_username:</th></tr>
-<tr class="field-even field"><td>&#160;</td><td class="field-body">If the collaboration guest requires web-tier
+<tr class="field-even field"><td>&nbsp;</td><td class="field-body">If the collaboration guest requires web-tier
 authentication, optionally use this parameter to provide the
-guest’s web-tier authentication user name.</td>
+guest&#8217;s web-tier authentication user name.</td>
 </tr>
 <tr class="field-odd field"><th class="field-name" colspan="2">webauth_password:</th></tr>
-<tr class="field-odd field"><td>&#160;</td><td class="field-body">password for the webauth_username</td>
+<tr class="field-odd field"><td>&nbsp;</td><td class="field-body">password for the webauth_username</td>
 </tr>
 <tr class="field-even field"><th class="field-name" colspan="2">webauth_cert_file:</th></tr>
-<tr class="field-even field"><td>&#160;</td><td class="field-body">If the collaboration guest requires web-tier
+<tr class="field-even field"><td>&nbsp;</td><td class="field-body">If the collaboration guest requires web-tier
 authentication, optionally use this parameter to provide the
-guest’s web-tier authentication certificate file.</td>
+guest&#8217;s web-tier authentication certificate file.</td>
 </tr>
 <tr class="field-odd field"><th class="field-name" colspan="2">webauth_cert_password:</th></tr>
-<tr class="field-odd field"><td>&#160;</td><td class="field-body">If the collaboration guest requires
+<tr class="field-odd field"><td>&nbsp;</td><td class="field-body">If the collaboration guest requires
 web-tier authentication, optionally use this parameter to provide
-the guest’s web-tier authentication certificate password.</td>
+the guest&#8217;s web-tier authentication certificate password.</td>
 </tr>
 </tbody>
 </table>
@@ -1116,7 +1138,7 @@ host.</p>
 
 <dl class="method">
 <dt id="arcgis.gis.admin.Collaboration.invite_participant">
-<code class="descname">invite_participant</code><span class="sig-paren">(</span><em>config_json</em>, <em>expiration=24</em>, <em>guest_portal_url=None</em>, <em>guest_gis=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.admin.Collaboration.invite_participant" title="Permalink to this definition">¶</a></dt>
+<code class="descname">invite_participant</code><span class="sig-paren">(</span><em>config_json</em>, <em>expiration=24</em>, <em>guest_portal_url=None</em>, <em>guest_gis=None</em>, <em>save_path=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.admin.Collaboration.invite_participant" title="Permalink to this definition">¶</a></dt>
 <dd><p>As a collaboration host, once you have set up a new collaboration,
 you are ready to invite other portals as participants in your
 collaboration. The inviteParticipant operation allows you to invite
@@ -1145,9 +1167,9 @@ Defined as: send | receive | sendAndReceive
 :Example:
 config_json = [</p>
 <blockquote>
-<div><p>{“workspace_id” : “send”},
-{“workspace_id2” : “receive”},
-{“workspace_id3” : “sendAndReceive”}</p>
+<div><p>{&#8220;workspace_id&#8221; : &#8220;send&#8221;},
+{&#8220;workspace_id2&#8221; : &#8220;receive&#8221;},
+{&#8220;workspace_id3&#8221; : &#8220;sendAndReceive&#8221;}</p>
 </div></blockquote>
 <p>]</p>
 </td>
@@ -1157,11 +1179,14 @@ should expire.</p>
 </td>
 </tr>
 <tr class="field-odd field"><th class="field-name" colspan="2">guest_portal_url:</th></tr>
-<tr class="field-odd field"><td>&#160;</td><td class="field-body"><p class="first">The URL of the participating portal that you want
+<tr class="field-odd field"><td>&nbsp;</td><td class="field-body"><p class="first">The URL of the participating org or Enterprise that you want
 to invite to the collaboration.</p>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">guest_gis:</th><td class="field-body"><p class="first last">GIS object to the guest collaboration site (optional)</p>
+<tr class="field-even field"><th class="field-name">guest_gis:</th><td class="field-body"><p class="first">GIS object to the guest collaboration site (optional)</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">save_path:</th><td class="field-body"><p class="first last">Path to download the invitation file to.</p>
 </td>
 </tr>
 </tbody>
@@ -1272,7 +1297,7 @@ specific participant in a portal-to-portal collaboration.</p>
 <tr class="field-odd field"><th class="field-name">portal_id:</th><td class="field-body">ID of the portal</td>
 </tr>
 <tr class="field-even field"><th class="field-name" colspan="2">workspace_access_json:</th></tr>
-<tr class="field-even field"><td>&#160;</td><td class="field-body">JSON describing the participant’s access
+<tr class="field-even field"><td>&nbsp;</td><td class="field-body">JSON describing the participant&#8217;s access
 mode.</td>
 </tr>
 </tbody>
@@ -1328,7 +1353,7 @@ in the collaboration.</p>
 <tr class="field-even field"><th class="field-name">portal_id:</th><td class="field-body">the ID of the portal group link with the workspace</td>
 </tr>
 <tr class="field-odd field"><th class="field-name" colspan="2">enable_realtime_sync:</th></tr>
-<tr class="field-odd field"><td>&#160;</td><td class="field-body">Determines whether the content shared with
+<tr class="field-odd field"><td>&nbsp;</td><td class="field-body">Determines whether the content shared with
 the group is shared to other collaboration participants in real
 time, updating whenever changes are made, or whether the content
 is shared based on a schedule set by the collaboration host.
@@ -1407,7 +1432,7 @@ of the collaboration and validity of the invitation response file.</p>
 <dl class="class">
 <dt id="arcgis.gis.admin.CreditManager">
 <em class="property">class </em><code class="descclassname">arcgis.gis.admin.</code><code class="descname">CreditManager</code><span class="sig-paren">(</span><em>gis</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.admin.CreditManager" title="Permalink to this definition">¶</a></dt>
-<dd><p>Manages an AGOL Site’s Credits for users and sites</p>
+<dd><p>Manages an AGOL Site&#8217;s Credits for users and sites</p>
 </dd></dl>
 
 <table class="docutils field-list" frame="void" rules="none">
@@ -1421,7 +1446,7 @@ of the collaboration and validity of the invitation response file.</p>
 <tr class="field-odd field"><th class="field-name">undoc-members:</th><td class="field-body"></td>
 </tr>
 <tr class="field-even field"><th class="field-name" colspan="2">show-inheritance:</th></tr>
-<tr class="field-even field"><td>&#160;</td><td class="field-body"></td>
+<tr class="field-even field"><td>&nbsp;</td><td class="field-body"></td>
 </tr>
 </tbody>
 </table>
@@ -1437,7 +1462,7 @@ of the collaboration and validity of the invitation response file.</p>
 <em class="property">class </em><code class="descclassname">arcgis.gis.admin.</code><code class="descname">PasswordPolicy</code><span class="sig-paren">(</span><em>url</em>, <em>gis=None</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.admin.PasswordPolicy" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">arcgis.gis.admin._base.BasePortalAdmin</span></code></p>
 <p>Manages a GIS Security Policy.  Administrators can view, update or
-reset the site’s security policy.</p>
+reset the site&#8217;s security policy.</p>
 <dl class="attribute">
 <dt id="arcgis.gis.admin.PasswordPolicy.policy">
 <code class="descname">policy</code><a class="headerlink" href="#arcgis.gis.admin.PasswordPolicy.policy" title="Permalink to this definition">¶</a></dt>
@@ -1453,6 +1478,169 @@ reset the site’s security policy.</p>
 </dd></dl>
 
 </div>
+<div class="section" id="portalresourcemanager">
+<h2>PortalResourceManager<a class="headerlink" href="#portalresourcemanager" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="arcgis.gis.admin.PortalResourceManager">
+<em class="property">class </em><code class="descclassname">arcgis.gis.admin.</code><code class="descname">PortalResourceManager</code><span class="sig-paren">(</span><em>gis</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.admin.PortalResourceManager" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">object</span></code></p>
+<p>Helper class to manage a GIS&#8217; resources</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="20%" />
+<col width="80%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><strong>Argument</strong></td>
+<td><strong>Description</strong></td>
+</tr>
+<tr class="row-even"><td>gis</td>
+<td>required GIS, connection to ArcGIS Online or ArcGIS Enterprise</td>
+</tr>
+</tbody>
+</table>
+<dl class="method">
+<dt id="arcgis.gis.admin.PortalResourceManager.add">
+<code class="descname">add</code><span class="sig-paren">(</span><em>key=None</em>, <em>path=None</em>, <em>text=None</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.admin.PortalResourceManager.add" title="Permalink to this definition">¶</a></dt>
+<dd><p>The add resource operation allows the administrator to add a file
+resource, for example, the organization&#8217;s logo or custom banner.
+The resource can be used by any member of the organization. File
+resources use storage space from your quota and are scanned for
+viruses.</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="20%" />
+<col width="80%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><strong>Argument</strong></td>
+<td><strong>Description</strong></td>
+</tr>
+<tr class="row-even"><td>key</td>
+<td>optional string, look up key for file</td>
+</tr>
+<tr class="row-odd"><td>path</td>
+<td>optional string, file path to the local resource to upload</td>
+</tr>
+<tr class="row-even"><td>text</td>
+<td>optional string, text value to add to the site&#8217;s resources</td>
+</tr>
+<tr class="row-odd"><td>access</td>
+<td>optional string, sets the access level for the resource. The
+default is &#8216;public&#8217;.
+Values: public, org, orgprivate</td>
+</tr>
+</tbody>
+</table>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">boolean</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="arcgis.gis.admin.PortalResourceManager.delete">
+<code class="descname">delete</code><span class="sig-paren">(</span><em>key</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.admin.PortalResourceManager.delete" title="Permalink to this definition">¶</a></dt>
+<dd><p>The Remove Resource operation allows the administrator to remove
+a file resource.</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="20%" />
+<col width="80%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><strong>Argument</strong></td>
+<td><strong>Description</strong></td>
+</tr>
+<tr class="row-even"><td>key</td>
+<td>optional string, look up key for file to delete</td>
+</tr>
+</tbody>
+</table>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">boolean</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="arcgis.gis.admin.PortalResourceManager.get">
+<code class="descname">get</code><span class="sig-paren">(</span><em>resource_name</em>, <em>download_path=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.admin.PortalResourceManager.get" title="Permalink to this definition">¶</a></dt>
+<dd><p>Download or get a portal resource item</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="20%" />
+<col width="80%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><strong>Argument</strong></td>
+<td><strong>Description</strong></td>
+</tr>
+<tr class="row-even"><td>resource_name</td>
+<td>optional string, key/name of data</td>
+</tr>
+<tr class="row-odd"><td>download_path</td>
+<td>optional string, save folder location</td>
+</tr>
+</tbody>
+</table>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">path to data or raw data if not file.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="arcgis.gis.admin.PortalResourceManager.list">
+<code class="descname">list</code><span class="sig-paren">(</span><em>start=1</em>, <em>num=100</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.admin.PortalResourceManager.list" title="Permalink to this definition">¶</a></dt>
+<dd><p>returns a list of resources uploaded to portal.  The items can be
+images, files and other content used to stylize and modify a
+portal&#8217;s appearance.</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="20%" />
+<col width="80%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><strong>Argument</strong></td>
+<td><strong>Description</strong></td>
+</tr>
+<tr class="row-even"><td>start</td>
+<td>optional int, start location of the search. The default is
+a value of 1</td>
+</tr>
+<tr class="row-odd"><td>num</td>
+<td>optional int, the number of search results to return at one
+time. The value ranges between 1-100 (max).
+Default: 100</td>
+</tr>
+</tbody>
+</table>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">boolean</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+</div>
 <div class="section" id="ux">
 <h2>UX<a class="headerlink" href="#ux" title="Permalink to this headline">¶</a></h2>
 <dl class="class">
@@ -1460,43 +1648,206 @@ reset the site’s security policy.</p>
 <em class="property">class </em><code class="descclassname">arcgis.gis.admin.</code><code class="descname">UX</code><span class="sig-paren">(</span><em>gis</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.admin.UX" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">object</span></code></p>
 <p>Helper class for modifying the portal home page. This class is not created by users directly. An instance of
-the class, called ‘ux’, is available as a property of the GIS object. Users call methods on this ‘ux’ object
+the class, called &#8216;ux&#8217;, is available as a property of the GIS object. Users call methods on this &#8216;ux&#8217; object
 to set banner, background, logo, name etc.</p>
+<dl class="attribute">
+<dt id="arcgis.gis.admin.UX.default_basemap">
+<code class="descname">default_basemap</code><a class="headerlink" href="#arcgis.gis.admin.UX.default_basemap" title="Permalink to this definition">¶</a></dt>
+<dd><p>returns the site&#8217;s default extent</p>
+<blockquote>
+<div><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">return:</th><td class="field-body">dictionary</td>
+</tr>
+</tbody>
+</table>
+</div></blockquote>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="arcgis.gis.admin.UX.default_extent">
+<code class="descname">default_extent</code><a class="headerlink" href="#arcgis.gis.admin.UX.default_extent" title="Permalink to this definition">¶</a></dt>
+<dd><p>returns the site&#8217;s default extent</p>
+<blockquote>
+<div><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">return:</th><td class="field-body">dictionary</td>
+</tr>
+</tbody>
+</table>
+</div></blockquote>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="arcgis.gis.admin.UX.description">
+<code class="descname">description</code><a class="headerlink" href="#arcgis.gis.admin.UX.description" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the site&#8217;s description.</p>
+<blockquote>
+<div><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">return:</th><td class="field-body">dictionary</td>
+</tr>
+</tbody>
+</table>
+</div></blockquote>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="arcgis.gis.admin.UX.description_visibility">
+<code class="descname">description_visibility</code><a class="headerlink" href="#arcgis.gis.admin.UX.description_visibility" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the site&#8217;s description visibility</p>
+<blockquote>
+<div><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">return:</th><td class="field-body">boolean</td>
+</tr>
+</tbody>
+</table>
+</div></blockquote>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="arcgis.gis.admin.UX.enable_comments">
+<code class="descname">enable_comments</code><a class="headerlink" href="#arcgis.gis.admin.UX.enable_comments" title="Permalink to this definition">¶</a></dt>
+<dd><p>Turn on item comments</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="arcgis.gis.admin.UX.featured_content">
+<code class="descname">featured_content</code><a class="headerlink" href="#arcgis.gis.admin.UX.featured_content" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the featured content group information.  The information
+can then be set using the &#8216;set_featured_content()&#8217;.</p>
+<blockquote>
+<div><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">return:</th><td class="field-body">dictionary</td>
+</tr>
+</tbody>
+</table>
+</div></blockquote>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Usage Example:</th><td class="field-body"></td>
+</tr>
+</tbody>
+</table>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">data</span> <span class="o">=</span> <span class="n">ux</span><span class="o">.</span><span class="n">get_featured_content</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ux</span><span class="o">.</span><span class="n">set_featured_content</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+<span class="go">True</span>
+</pre></div>
+</div>
+</dd></dl>
+
 <dl class="method">
-<dt id="arcgis.gis.admin.UX.set_background">
-<code class="descname">set_background</code><span class="sig-paren">(</span><em>background_file=None</em>, <em>is_built_in=True</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.admin.UX.set_background" title="Permalink to this definition">¶</a></dt>
-<dd><p>Configure your home page by setting the organization’s background image. You can choose no image, a built-in image
-or upload your own. If you upload your own image, the image is positioned at the top and center of the page.
-The image repeats horizontally if it is smaller than the browser or device window. For best results, if you want
-a single, nonrepeating background image, the image should be 1,920 pixels wide (or smaller if your users are on
-smaller screens). The website does not resize the image. You can upload a file up to 1 MB in size.</p>
+<dt id="arcgis.gis.admin.UX.get_background">
+<code class="descname">get_background</code><span class="sig-paren">(</span><em>download_path</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.admin.UX.get_background" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get your organization&#8217;s home page background image. You can use the <cite>set_background()</cite> method to set an image
+as the home page background image.</p>
 <p>For more information, refer to <a class="reference external" href="http://server.arcgis.com/en/portal/latest/administer/windows/configure-home.htm">http://server.arcgis.com/en/portal/latest/administer/windows/configure-home.htm</a></p>
 <table border="1" class="docutils">
 <colgroup>
-<col width="18%" />
-<col width="82%" />
+<col width="20%" />
+<col width="80%" />
 </colgroup>
 <tbody valign="top">
 <tr class="row-odd"><td><strong>Argument</strong></td>
 <td><strong>Description</strong></td>
 </tr>
-<tr class="row-even"><td>background_file</td>
-<td><dl class="first last docutils">
-<dt>optional string. If using a custom background, specify path to image file.</dt>
-<dd>To remove an existing background, specify None for this argument and
-False for is_built_in argument.</dd>
-</dl>
-</td>
-</tr>
-<tr class="row-odd"><td>is_built_in</td>
-<td><dl class="first last docutils">
-<dt>optional bool, default=True. The built-in background is set by default.</dt>
-<dd>If uploading a custom image, this parameter is ignored.</dd>
-</dl>
-</td>
+<tr class="row-even"><td>download_path</td>
+<td>required string. Folder path to download the background file.</td>
 </tr>
 </tbody>
 </table>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">Path to downloaded background file.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="arcgis.gis.admin.UX.get_banner">
+<code class="descname">get_banner</code><span class="sig-paren">(</span><em>download_path</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.admin.UX.get_banner" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get your organization&#8217;s home page banner image. You can use the <cite>set_banner()</cite> method to set an image or custom HTML
+code as your banner.
+================  ===============================================================
+<strong>Argument</strong>      <strong>Description</strong>
+&#8212;&#8212;&#8212;&#8212;&#8212;-  &#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;
+download_path     required string. Folder path to download the banner file.
+================  ===============================================================</p>
+<blockquote>
+<div><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">return:</th><td class="field-body">Path to downloaded banner file.</td>
+</tr>
+</tbody>
+</table>
+</div></blockquote>
+</dd></dl>
+
+<dl class="method">
+<dt id="arcgis.gis.admin.UX.get_logo">
+<code class="descname">get_logo</code><span class="sig-paren">(</span><em>download_path</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.admin.UX.get_logo" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get your organization&#8217;s logo/thumbnail. You can use the <cite>set_logo()</cite> method to set an image as your logo.
+================  ===============================================================
+<strong>Argument</strong>      <strong>Description</strong>
+&#8212;&#8212;&#8212;&#8212;&#8212;-  &#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;
+download_path     required string. Folder path to download the logo file.
+================  ===============================================================</p>
+<blockquote>
+<div><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">return:</th><td class="field-body">Path to downloaded logo file.</td>
+</tr>
+</tbody>
+</table>
+</div></blockquote>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="arcgis.gis.admin.UX.name">
+<code class="descname">name</code><a class="headerlink" href="#arcgis.gis.admin.UX.name" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the site&#8217;s name.  The name can get defined using the &#8216;set_name()&#8217;.</p>
+<blockquote>
+<div><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">return:</th><td class="field-body">string of the name of the site</td>
+</tr>
+</tbody>
+</table>
+</div></blockquote>
+</dd></dl>
+
+<dl class="method">
+<dt id="arcgis.gis.admin.UX.set_background">
+<code class="descname">set_background</code><span class="sig-paren">(</span><em>background_file=None</em>, <em>is_built_in=True</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.admin.UX.set_background" title="Permalink to this definition">¶</a></dt>
+<dd><p>Configure your home page by setting the organization&#8217;s background image. You can choose no image, a built-in image
+or upload your own. If you upload your own image, the image is positioned at the top and center of the page.
+The image repeats horizontally if it is smaller than the browser or device window. For best results, if you want
+a single, nonrepeating background image, the image should be 1,920 pixels wide (or smaller if your users are on
+smaller screens). The website does not resize the image. You can upload a file up to 1 MB in size.</p>
+<p>For more information, refer to <a class="reference external" href="http://server.arcgis.com/en/portal/latest/administer/windows/configure-home.htm">http://server.arcgis.com/en/portal/latest/administer/windows/configure-home.htm</a></p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -1510,7 +1861,7 @@ False for is_built_in argument.</dd>
 <dl class="method">
 <dt id="arcgis.gis.admin.UX.set_banner">
 <code class="descname">set_banner</code><span class="sig-paren">(</span><em>banner_file=None</em>, <em>is_built_in=False</em>, <em>custom_html=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.admin.UX.set_banner" title="Permalink to this definition">¶</a></dt>
-<dd><p>Configure your home page by setting the organization’s banner. You can choose one of the 5 built-in banners or
+<dd><p>Configure your home page by setting the organization&#8217;s banner. You can choose one of the 5 built-in banners or
 upload your own. For best results the dimensions of the banner image should be 960 x 180 pixels. You can also
 specify a custom html for how the banner space should appear. For more information, refer to
 <a class="reference external" href="http://server.arcgis.com/en/portal/latest/administer/windows/configure-home.htm">http://server.arcgis.com/en/portal/latest/administer/windows/configure-home.htm</a></p>
@@ -1562,7 +1913,7 @@ banner is remove.</dd>
 <dl class="method">
 <dt id="arcgis.gis.admin.UX.set_logo">
 <code class="descname">set_logo</code><span class="sig-paren">(</span><em>logo_file=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.admin.UX.set_logo" title="Permalink to this definition">¶</a></dt>
-<dd><p>Configure your home page by setting the organization’s logo image. For best results the logo file should be
+<dd><p>Configure your home page by setting the organization&#8217;s logo image. For best results the logo file should be
 65 x 65 pixels in dimension.</p>
 <p>For more information, refer to <a class="reference external" href="http://server.arcgis.com/en/portal/latest/administer/windows/configure-general.htm">http://server.arcgis.com/en/portal/latest/administer/windows/configure-general.htm</a></p>
 <table border="1" class="docutils">
@@ -1589,36 +1940,10 @@ banner is remove.</dd>
 </table>
 </dd></dl>
 
-<dl class="method">
-<dt id="arcgis.gis.admin.UX.set_name_description">
-<code class="descname">set_name_description</code><span class="sig-paren">(</span><em>name</em>, <em>description</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.admin.UX.set_name_description" title="Permalink to this definition">¶</a></dt>
-<dd><p>Configure your home page by setting the organization’s name and description</p>
-<p>For more information, refer to <a class="reference external" href="http://server.arcgis.com/en/portal/latest/administer/windows/configure-general.htm">http://server.arcgis.com/en/portal/latest/administer/windows/configure-general.htm</a></p>
-<table border="1" class="docutils">
-<colgroup>
-<col width="20%" />
-<col width="80%" />
-</colgroup>
-<tbody valign="top">
-<tr class="row-odd"><td><strong>Argument</strong></td>
-<td><strong>Description</strong></td>
-</tr>
-<tr class="row-even"><td>name</td>
-<td>required string. Specify a name for the organization</td>
-</tr>
-<tr class="row-odd"><td>description</td>
-<td>required string. Specify a description about the organization</td>
-</tr>
-</tbody>
-</table>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">True | False</td>
-</tr>
-</tbody>
-</table>
+<dl class="attribute">
+<dt id="arcgis.gis.admin.UX.vector_basemap">
+<code class="descname">vector_basemap</code><a class="headerlink" href="#arcgis.gis.admin.UX.vector_basemap" title="Permalink to this definition">¶</a></dt>
+<dd><p>gets/sets the default vector basemap</p>
 </dd></dl>
 
 </dd></dl>
@@ -1646,8 +1971,8 @@ Parameters:</p>
 <tr class="field-odd field"><th class="field-name">url:</th><td class="field-body">The URL of the GIS server used by external users when
 accessing the ArcGIS Server site. If the site includes the Web
 Adaptor, the URL includes the Web Adaptor address, for example,
-<a class="reference external" href="https://webadaptor.domain.com/arcgis">https://webadaptor.domain.com/arcgis</a>. If you’ve added ArcGIS
-Server to your organization’s reverse proxy server, the URL is
+<a class="reference external" href="https://webadaptor.domain.com/arcgis">https://webadaptor.domain.com/arcgis</a>. If you&#8217;ve added ArcGIS
+Server to your organization&#8217;s reverse proxy server, the URL is
 the reverse proxy server address (for example,
 <a class="reference external" href="https://reverseproxy.domain.com/myorg">https://reverseproxy.domain.com/myorg</a>). Note that the federation
 operation will perform a validation check to determine if the
@@ -1774,6 +2099,23 @@ registered with Portal for ArcGIS.</p>
 <dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">arcgis.gis.admin._base.BasePortalAdmin</span></code></p>
 <p>Logs are records written by various components of the portal. You can
 query the logs, clean the logs, and edit log settings.</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="20%" />
+<col width="80%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><strong>Argument</strong></td>
+<td><strong>Description</strong></td>
+</tr>
+<tr class="row-even"><td>gis</td>
+<td>required GIS, portal connection object</td>
+</tr>
+<tr class="row-odd"><td>url</td>
+<td>required string, web address of the log resource</td>
+</tr>
+</tbody>
+</table>
 <dl class="method">
 <dt id="arcgis.gis.admin.Logs.clean">
 <code class="descname">clean</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.admin.Logs.clean" title="Permalink to this definition">¶</a></dt>
@@ -1784,78 +2126,14 @@ recovered after executing this operation.</p>
 
 <dl class="method">
 <dt id="arcgis.gis.admin.Logs.query">
-<code class="descname">query</code><span class="sig-paren">(</span><em>start_time</em>, <em>end_time=None</em>, <em>level=’WARNING’</em>, <em>query_filter=’*’</em>, <em>page_size=1000</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.admin.Logs.query" title="Permalink to this definition">¶</a></dt>
+<code class="descname">query</code><span class="sig-paren">(</span><em>start_time</em>, <em>end_time=None</em>, <em>level='WARNING'</em>, <em>query_filter='*'</em>, <em>page_size=1000</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.admin.Logs.query" title="Permalink to this definition">¶</a></dt>
 <dd><p>The query operation allows you to aggregate, filter, and page
 through logs written by the portal.</p>
-<dl class="docutils">
-<dt>Parameters:</dt>
-<dd><table class="first last docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">start_time:</th><td class="field-body"><p class="first">The most recent time to query. If the hasMore member
-of the response object is true, then to get the next set of
-records, pass the endTime member as the startTime parameter for
-the next request. This parameter is optional.
-Time can be specified as a portal timestamp (format in
-yyyy-mm-ddThh:mm:ss) or in milliseconds since UNIX epoch. For
-example:
-Timestamp: { “startTime”: “2015-08-01T15:17:20,123”, … }
-Milliseconds: { “startTime”: 1312237040123, … }
-Default: now</p>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">end_time:</th><td class="field-body"><p class="first">The oldest time to include in the result set. You can
-use this to limit the query to the last number of minutes, hours,
-days, months, and years as needed. If since PortalStart is true,
-then the default is all logs since the portal was started. This
-parameter is optional.</p>
-</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">level:</th><td class="field-body"><p class="first">Can be one of [OFF, SEVERE, WARNING, INFO, FINE, VERBOSE,
-DEBUG]. Returns only records with a log level at or more severe
-than the level specified. This parameter is required.
-Default: WARNING</p>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">query_filter:</th><td class="field-body"><p class="first">Filtering is allowed by any combination of codes,
-users, and source components. The filter accepts a comma
-delimited list of filter definitions. If any definition is
-omitted, it defaults to all. This parameter is required.
-Example:
-{“codes”:[204000-205999,212015,219114], “users”:[“admin”,”jcho”],</p>
-<blockquote>
-<div><p>“source”: [“PORTAL ADMIN”]}</p>
-</div></blockquote>
-<p>The source of logged events are generated from the sharing,
-administrative, and portal components of the software.
-For example:</p>
-<blockquote>
-<div><ul class="simple">
-<li>Events related to publishing and users are categorized under
-SHARING.</li>
-<li>Events related to security and indexing are categorized under
-PORTAL ADMIN.</li>
-<li>Events related to installing the software are categorized
-under PORTAL.</li>
-</ul>
-</div></blockquote>
-</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">page_size:</th><td class="field-body"><p class="first last">The maximum number of log records to be returned by
-this query. This parameter is optional.
-Default: 1000</p>
-</td>
-</tr>
-</tbody>
-</table>
-</dd>
-</dl>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">JSON response of the log messages</td>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">dictionary of messages</td>
 </tr>
 </tbody>
 </table>
@@ -1882,7 +2160,7 @@ requests.</p>
 <dl class="method">
 <dt id="arcgis.gis.admin.Machines.get">
 <code class="descname">get</code><span class="sig-paren">(</span><em>name</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.admin.Machines.get" title="Permalink to this definition">¶</a></dt>
-<dd><p>allows for retrieval of a single instance of Machine by it’s
+<dd><p>allows for retrieval of a single instance of Machine by it&#8217;s
 registered name.</p>
 </dd></dl>
 
@@ -2111,10 +2389,10 @@ the key store.</p>
 <dl class="class">
 <dt id="arcgis.gis.admin.SSLCertificates">
 <em class="property">class </em><code class="descclassname">arcgis.gis.admin.</code><code class="descname">SSLCertificates</code><span class="sig-paren">(</span><em>url</em>, <em>gis=None</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.admin.SSLCertificates" title="Permalink to this definition">¶</a></dt>
-<dd><p>Manages the Portal’s SSL Certificates</p>
+<dd><p>Manages the Portal&#8217;s SSL Certificates</p>
 <dl class="method">
 <dt id="arcgis.gis.admin.SSLCertificates.generate">
-<code class="descname">generate</code><span class="sig-paren">(</span><em>alias</em>, <em>common_name</em>, <em>organization</em>, <em>key_algorithm=’RSA’</em>, <em>validity=90</em>, <em>key_size=2048</em>, <em>signature_algorithm=’SHA256withRSA’</em>, <em>unit=”</em>, <em>city=”</em>, <em>state=”</em>, <em>country_code=”</em>, <em>alt_name=”</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.admin.SSLCertificates.generate" title="Permalink to this definition">¶</a></dt>
+<code class="descname">generate</code><span class="sig-paren">(</span><em>alias</em>, <em>common_name</em>, <em>organization</em>, <em>key_algorithm='RSA'</em>, <em>validity=90</em>, <em>key_size=2048</em>, <em>signature_algorithm='SHA256withRSA'</em>, <em>unit=''</em>, <em>city=''</em>, <em>state=''</em>, <em>country_code=''</em>, <em>alt_name=''</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.admin.SSLCertificates.generate" title="Permalink to this definition">¶</a></dt>
 <dd><p>Use this operation to create a self-signed certificate or as a
 starting point for getting a production-ready CA-signed
 certificate. The portal will generate a certificate for you and
@@ -2144,7 +2422,7 @@ The default is 90.</td>
 <tr class="field-even field"><th class="field-name">key_size:</th><td class="field-body">The size of the key. The default is 2048.</td>
 </tr>
 <tr class="field-odd field"><th class="field-name" colspan="2">signature_algorithm:</th></tr>
-<tr class="field-odd field"><td>&#160;</td><td class="field-body">The algorithm used to sign the
+<tr class="field-odd field"><td>&nbsp;</td><td class="field-body">The algorithm used to sign the
 self-signed certificates. The default is derived from the
 key_algorithm parameter.</td>
 </tr>
@@ -2180,7 +2458,7 @@ it returns None</p>
 <dl class="method">
 <dt id="arcgis.gis.admin.SSLCertificates.import_certificate">
 <code class="descname">import_certificate</code><span class="sig-paren">(</span><em>certificate</em>, <em>alias</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.admin.SSLCertificates.import_certificate" title="Permalink to this definition">¶</a></dt>
-<dd><p>This operation imports a certificate authority’s (CA) root and
+<dd><p>This operation imports a certificate authority&#8217;s (CA) root and
 intermediate certificates into the keystore.
 To create a production quality CA-signed certificate, you need
 to add the CA certificates into the keystore that enables the
@@ -2294,7 +2572,7 @@ within Portal for ArcGIS. The resource returns the total number of
 members in the system.</p>
 <dl class="method">
 <dt id="arcgis.gis.admin.EnterpriseUsers.create">
-<code class="descname">create</code><span class="sig-paren">(</span><em>username</em>, <em>password</em>, <em>first_name</em>, <em>last_name</em>, <em>email</em>, <em>role=’org_user’</em>, <em>level=2</em>, <em>provider=’arcgis’</em>, <em>idp_username=None</em>, <em>description=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.admin.EnterpriseUsers.create" title="Permalink to this definition">¶</a></dt>
+<code class="descname">create</code><span class="sig-paren">(</span><em>username</em>, <em>password</em>, <em>first_name</em>, <em>last_name</em>, <em>email</em>, <em>role='org_user'</em>, <em>level=2</em>, <em>provider='arcgis'</em>, <em>idp_username=None</em>, <em>description=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.admin.EnterpriseUsers.create" title="Permalink to this definition">¶</a></dt>
 <dd><p>This operation is used to pre-create built-in or enterprise
 accounts within the portal. The provider parameter is used to
 indicate the type of user account.</p>
@@ -2387,7 +2665,7 @@ an administrator to force a refresh.</p>
 
 <dl class="method">
 <dt id="arcgis.gis.admin.EnterpriseUsers.search">
-<code class="descname">search</code><span class="sig-paren">(</span><em>query=”</em>, <em>max_count=255</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.admin.EnterpriseUsers.search" title="Permalink to this definition">¶</a></dt>
+<code class="descname">search</code><span class="sig-paren">(</span><em>query=''</em>, <em>max_count=255</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.admin.EnterpriseUsers.search" title="Permalink to this definition">¶</a></dt>
 <dd><p>This operation searches users in the configured enterprise user
 store. You can narrow down the search using the filter parameter.</p>
 <dl class="docutils">
@@ -2442,7 +2720,7 @@ enterprise groups within the portal. The resource returns the total
 number of groups in the system.</p>
 <dl class="method">
 <dt id="arcgis.gis.admin.EnterpriseGroups.get_group_users">
-<code class="descname">get_group_users</code><span class="sig-paren">(</span><em>name</em>, <em>query=”</em>, <em>max_count=255</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.admin.EnterpriseGroups.get_group_users" title="Permalink to this definition">¶</a></dt>
+<code class="descname">get_group_users</code><span class="sig-paren">(</span><em>name</em>, <em>query=''</em>, <em>max_count=255</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.admin.EnterpriseGroups.get_group_users" title="Permalink to this definition">¶</a></dt>
 <dd><p>This operation returns the users that are currently assigned to the
 enterprise group within the enterprise user/group store. You can
 use the filter parameter to narrow down the user search.</p>
@@ -2466,7 +2744,7 @@ use the filter parameter to narrow down the user search.</p>
 
 <dl class="method">
 <dt id="arcgis.gis.admin.EnterpriseGroups.get_user_groups">
-<code class="descname">get_user_groups</code><span class="sig-paren">(</span><em>username</em>, <em>query=”</em>, <em>max_count=255</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.admin.EnterpriseGroups.get_user_groups" title="Permalink to this definition">¶</a></dt>
+<code class="descname">get_user_groups</code><span class="sig-paren">(</span><em>username</em>, <em>query=''</em>, <em>max_count=255</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.admin.EnterpriseGroups.get_user_groups" title="Permalink to this definition">¶</a></dt>
 <dd><p>This operation lists the groups assigned to a user account in the
 configured enterprise group store.</p>
 <dl class="docutils">
@@ -2514,7 +2792,7 @@ force a refresh.</p>
 
 <dl class="method">
 <dt id="arcgis.gis.admin.EnterpriseGroups.search">
-<code class="descname">search</code><span class="sig-paren">(</span><em>query=”</em>, <em>max_count=255</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.admin.EnterpriseGroups.search" title="Permalink to this definition">¶</a></dt>
+<code class="descname">search</code><span class="sig-paren">(</span><em>query=''</em>, <em>max_count=255</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.admin.EnterpriseGroups.search" title="Permalink to this definition">¶</a></dt>
 <dd><p>This operation searches groups in the configured enterprise group
 store. You can narrow down the search using the filter parameter.</p>
 <dl class="docutils">
@@ -2546,7 +2824,7 @@ store. You can narrow down the search using the filter parameter.</p>
 administrators can create, export, import, and join sites.</p>
 <dl class="method">
 <dt id="arcgis.gis.admin.Site.create">
-<code class="descname">create</code><span class="sig-paren">(</span><em>username</em>, <em>password</em>, <em>full_name</em>, <em>email</em>, <em>content_store</em>, <em>description=”</em>, <em>question_idx=None</em>, <em>question_ans=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.admin.Site.create" title="Permalink to this definition">¶</a></dt>
+<code class="descname">create</code><span class="sig-paren">(</span><em>username</em>, <em>password</em>, <em>full_name</em>, <em>email</em>, <em>content_store</em>, <em>description=''</em>, <em>question_idx=None</em>, <em>question_ans=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.admin.Site.create" title="Permalink to this definition">¶</a></dt>
 <dd><p>The create site operation initializes and configures Portal for
 ArcGIS for use. It must be the first operation invoked after
 installation. Creating a new site involves:</p>
@@ -2580,7 +2858,7 @@ restarted.</p>
 <tr class="field-even field"><th class="field-name">email:</th><td class="field-body">account email address</td>
 </tr>
 <tr class="field-odd field"><th class="field-name">content_store:</th><td class="field-body">JSON string including the path to the location of
-the site’s content.</td>
+the site&#8217;s content.</td>
 </tr>
 <tr class="field-even field"><th class="field-name">description:</th><td class="field-body">optional descript for the account</td>
 </tr>
@@ -2716,7 +2994,7 @@ portal.</p>
 <dt id="arcgis.gis.admin.System.database">
 <code class="descname">database</code><a class="headerlink" href="#arcgis.gis.admin.System.database" title="Permalink to this definition">¶</a></dt>
 <dd><p>The database resource represents the database management system
-(DBMS) that contains all of the portal’s configuration and
+(DBMS) that contains all of the portal&#8217;s configuration and
 relationship rules. This resource also returns the name and version
 of the database server currently running in the portal.
 You can use the properety to update database accounts</p>
@@ -2736,7 +3014,7 @@ associated with every item in the portal.</li>
 rules are stored in a Database server that places files in the
 database directory.</li>
 <li>Temporary directory - The temporary directory is used as a
-scratch workspace for all the portal’s runtime components.</li>
+scratch workspace for all the portal&#8217;s runtime components.</li>
 <li>Index directory-The index directory contains all the indexes
 associated with the content in the portal. The indexes are used
 for quick retrieval of information and for querying purposes.</li>
@@ -2766,7 +3044,7 @@ you can monitor the status by refreshing the page.</p>
 <code class="descname">languages</code><a class="headerlink" href="#arcgis.gis.admin.System.languages" title="Permalink to this definition">¶</a></dt>
 <dd><p>This resource gets/sets which languages will appear in portal
 content search results. Use the Update languages operation to
-modify which language’content will be available.</p>
+modify which language&#8217;content will be available.</p>
 </dd></dl>
 
 <dl class="attribute">
@@ -2785,7 +3063,7 @@ expiration properties.</p>
 <dt id="arcgis.gis.admin.System.properties">
 <code class="descname">properties</code><a class="headerlink" href="#arcgis.gis.admin.System.properties" title="Permalink to this definition">¶</a></dt>
 <dd><p>Gets/Sets the system properties that have been modified to control
-the portal’s environment. The list of available properties are:</p>
+the portal&#8217;s environment. The list of available properties are:</p>
 <blockquote>
 <div><ul class="simple">
 <li>privatePortalURL-Informs the portal that it has a front end
@@ -2824,7 +3102,7 @@ property to reverse proxy URL.</li>
 
 <dl class="method">
 <dt id="arcgis.gis.admin.System.reindex">
-<code class="descname">reindex</code><span class="sig-paren">(</span><em>mode=’FULL’</em>, <em>includes=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.admin.System.reindex" title="Permalink to this definition">¶</a></dt>
+<code class="descname">reindex</code><span class="sig-paren">(</span><em>mode='FULL'</em>, <em>includes=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.admin.System.reindex" title="Permalink to this definition">¶</a></dt>
 <dd><p>This operation allows you to generate or update the indexes for
 content; such as users, groups, and items stored in the database
 (store). During the process of upgrading an earlier version of
@@ -2878,10 +3156,10 @@ for licensing to define sets of privileges for registered members and
 their assigned roles.</p>
 <dl class="method">
 <dt id="arcgis.gis.admin.Licenses.entitlements">
-<code class="descname">entitlements</code><span class="sig-paren">(</span><em>app=’arcgisprodesktop’</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.admin.Licenses.entitlements" title="Permalink to this definition">¶</a></dt>
+<code class="descname">entitlements</code><span class="sig-paren">(</span><em>app='arcgisprodesktop'</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.admin.Licenses.entitlements" title="Permalink to this definition">¶</a></dt>
 <dd><p>This operation returns the currently queued entitlements for a
 product, such as ArcGIS Pro or Navigator for ArcGIS, and applies
-them when their start dates become effective. It’s possible that
+them when their start dates become effective. It&#8217;s possible that
 all entitlements imported using the Import Entitlements operation
 are effective immediately and no entitlements are added to the
 queue. In this case, the operation returns an empty result.</p>
@@ -2967,7 +3245,7 @@ the website.</p>
 
 <dl class="method">
 <dt id="arcgis.gis.admin.Licenses.remove_entitlement">
-<code class="descname">remove_entitlement</code><span class="sig-paren">(</span><em>app=’arcgisprodesktop’</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.admin.Licenses.remove_entitlement" title="Permalink to this definition">¶</a></dt>
+<code class="descname">remove_entitlement</code><span class="sig-paren">(</span><em>app='arcgisprodesktop'</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.admin.Licenses.remove_entitlement" title="Permalink to this definition">¶</a></dt>
 <dd><p>deletes an entitlement from a site</p>
 </dd></dl>
 
@@ -3017,7 +3295,7 @@ locates the actual path of the folder on the file system. Beginning at
 10.2.1, Portal for ArcGIS supports local directories and network shares
 as valid locations.
 During the Portal for ArcGIS installation, the setup program asks you
-for the root portal directory (that will contain all the portal’s sub
+for the root portal directory (that will contain all the portal&#8217;s sub
 directories). However, you can change each registered directory through
 this API.</p>
 <dl class="attribute">
@@ -3040,7 +3318,7 @@ independently by the system administrator.</p>
 <dt id="arcgis.gis.admin.WebAdaptor">
 <em class="property">class </em><code class="descclassname">arcgis.gis.admin.</code><code class="descname">WebAdaptor</code><span class="sig-paren">(</span><em>url</em>, <em>gis=None</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.admin.WebAdaptor" title="Permalink to this definition">¶</a></dt>
 <dd><p>The ArcGIS Web Adaptor is a web application that runs in a front-end
-web server. One of the Web Adaptor’s primary responsibilities is to
+web server. One of the Web Adaptor&#8217;s primary responsibilities is to
 forward HTTP requests from end users to Portal for ArcGIS. The Web
 Adaptor acts a reverse proxy, providing the end users with an entry
 point to the system, hiding the back-end servers, and providing some
@@ -3054,7 +3332,7 @@ defined entry point to your system without exposing the internal
 details of your portal. Portal for ArcGIS will trust requests being
 forwarded by the Web Adaptor and will not challenge the user for any
 credentials. However, the authorization of the request (by looking up
-roles and permissions) is still enforced by the portal’s sharing rules.</p>
+roles and permissions) is still enforced by the portal&#8217;s sharing rules.</p>
 <dl class="method">
 <dt id="arcgis.gis.admin.WebAdaptor.unregister">
 <code class="descname">unregister</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.admin.WebAdaptor.unregister" title="Permalink to this definition">¶</a></dt>
@@ -3098,18 +3376,15 @@ Adaptor configured with the portal.</p>
 
 
            </div>
-           <div class="articleComments">
-            
-           </div>
           </div>
           <footer>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="arcgis.gis.server.html" class="btn btn-neutral float-right" title="arcgis.gis.server module" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="arcgis.gis.server.html" class="btn btn-neutral float-right" title="arcgis.gis.server module" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="arcgis.gis.toc.html" class="btn btn-neutral" title="arcgis.gis module" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="arcgis.gis.toc.html" class="btn btn-neutral" title="arcgis.gis module" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
@@ -3140,11 +3415,10 @@ Adaptor configured with the portal.</p>
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'./',
-            VERSION:'1.2.0',
+            VERSION:'1.2.1',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
-            HAS_SOURCE:  true,
-            SOURCELINK_SUFFIX: '.txt'
+            HAS_SOURCE:  true
         };
     </script>
       <script type="text/javascript" src="_static/jquery.js"></script>

@@ -8,11 +8,9 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>arcgis.features.find_locations module &mdash; arcgis 1.2.0 documentation</title>
+  <title>arcgis.features.find_locations module &mdash; arcgis 1.2.1 documentation</title>
   
 
-  
-  
   
   
 
@@ -30,12 +28,14 @@
   
 
   
+    <link rel="stylesheet" href="_static/theme_overrides.css" type="text/css" />
+  
 
   
         <link rel="index" title="Index"
               href="genindex.html"/>
         <link rel="search" title="Search" href="search.html"/>
-    <link rel="top" title="arcgis 1.2.0 documentation" href="index.html"/>
+    <link rel="top" title="arcgis 1.2.1 documentation" href="index.html"/>
         <link rel="up" title="arcgis.features module" href="arcgis.features.toc.html"/>
         <link rel="next" title="arcgis.features.manage_data module" href="arcgis.features.manage_data.html"/>
         <link rel="prev" title="arcgis.features.enrich_data module" href="arcgis.features.enrich_data.html"/> 
@@ -47,7 +47,6 @@
 
 <body class="wy-body-for-nav" role="document">
 
-   
   <div class="wy-grid-for-nav">
 
     
@@ -67,7 +66,7 @@
             
             
               <div class="version">
-                1.2.0
+                1.2.1
               </div>
             
           
@@ -88,10 +87,7 @@
           
             
             
-              
-            
-            
-              <p class="caption"><span class="caption-text">arcgis</span></p>
+                <p class="caption"><span class="caption-text">arcgis</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="arcgis.gis.toc.html">arcgis.gis module</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.gis.toc.html#gis">GIS</a></li>
@@ -115,6 +111,7 @@
 <li class="toctree-l4"><a class="reference internal" href="arcgis.gis.admin.html#collaboration">Collaboration</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.gis.admin.html#creditmanager">CreditManager</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.gis.admin.html#passwordpolicy">PasswordPolicy</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.gis.admin.html#portalresourcemanager">PortalResourceManager</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.gis.admin.html#ux">UX</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.gis.admin.html#federation">Federation</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.gis.admin.html#logs">Logs</a></li>
@@ -547,10 +544,8 @@
 
       
       <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
-        
-          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-          <a href="index.html">arcgis</a>
-        
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="index.html">arcgis</a>
       </nav>
 
 
@@ -559,42 +554,25 @@
         <div class="rst-content">
           
 
-
-
-
-
-
-
-
-
-
-
-
+ 
 
 
 
 <div role="navigation" aria-label="breadcrumbs navigation">
-
   <ul class="wy-breadcrumbs">
-    
-      <li><a href="index.html">Docs</a> &raquo;</li>
-        
+    <li><a href="index.html">Docs</a> &raquo;</li>
+      
           <li><a href="arcgis.features.toc.html">arcgis.features module</a> &raquo;</li>
-        
-      <li>arcgis.features.find_locations module</li>
-    
-    
+      
+    <li>arcgis.features.find_locations module</li>
       <li class="wy-breadcrumbs-aside">
         
-            
-            <a href="_sources/arcgis.features.find_locations.rst.txt" rel="nofollow"> View page source</a>
+          
+            <a href="_sources/arcgis.features.find_locations.txt" rel="nofollow"> View page source</a>
           
         
       </li>
-    
   </ul>
-
-  
   <hr/>
 </div>
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
@@ -622,18 +600,18 @@ trace_downstream determines the flow paths in a downstream direction from the lo
 <dd><p>The Find Existing Locations task selects features in the input layer that meet a query you specify.
 A query is made up of one or more expressions. There are two types of expressions: attribute and spatial.
 An example of an attribute expression is that a parcel must be vacant, which is an attribute of the Parcels layer
-(where STATUS = ‘VACANT’). An example of a spatial expression is that the parcel must also be within a certain
+(where STATUS = &#8216;VACANT&#8217;). An example of a spatial expression is that the parcel must also be within a certain
 distance of a river (Parcels within a distance of 0.75 Miles from Rivers).</p>
 <dl class="docutils">
-<dt>input_layers <span class="classifier-delimiter">:</span> <span class="classifier">Required list of strings</span></dt>
-<dd>A list of layers that will be used in the expressions parameter.</dd>
-<dt>expressions <span class="classifier-delimiter">:</span> <span class="classifier">Required string</span></dt>
-<dd>Specify a list of expressions. Please refer documentation at <a class="reference external" href="http://developers.arcgis.com">http://developers.arcgis.com</a> for more information
+<dt>input_layers</dt>
+ <span class="classifier-delimiter">:</span> <span class="classifier">Required list of strings</span><dd>A list of layers that will be used in the expressions parameter.</dd>
+<dt>expressions</dt>
+ <span class="classifier-delimiter">:</span> <span class="classifier">Required string</span><dd>Specify a list of expressions. Please refer documentation at <a class="reference external" href="http://developers.arcgis.com">http://developers.arcgis.com</a> for more information
 on creating expressions.</dd>
-<dt>output_name <span class="classifier-delimiter">:</span> <span class="classifier">Optional string</span></dt>
-<dd>Additional properties such as output feature service name.</dd>
-<dt>context <span class="classifier-delimiter">:</span> <span class="classifier">Optional string</span></dt>
-<dd>Additional settings such as processing extent and output spatial reference.</dd>
+<dt>output_name</dt>
+ <span class="classifier-delimiter">:</span> <span class="classifier">Optional string</span><dd>Additional properties such as output feature service name.</dd>
+<dt>context</dt>
+ <span class="classifier-delimiter">:</span> <span class="classifier">Optional string</span><dd>Additional settings such as processing extent and output spatial reference.</dd>
 <dt>gis :</dt>
 <dd>Optional, the GIS on which this tool runs. If not specified, the active GIS is used.</dd>
 </dl>
@@ -649,7 +627,7 @@ on creating expressions.</dd>
 <dd><p>The Derive New Locations task derives new features from the input layers that meet a query you specify. A query is
 made up of one or more expressions. There are two types of expressions: attribute and spatial. An example of an
 attribute expression is that a parcel must be vacant, which is an attribute of the Parcels layer
-(where STATUS = ‘VACANT’). An example of a spatial expression is that the parcel must also be within a certain
+(where STATUS = &#8216;VACANT&#8217;). An example of a spatial expression is that the parcel must also be within a certain
 distance of a river (Parcels within a distance of 0.75 Miles from Rivers).The Derive New Locations task is very
 similar to the Find Existing Locations task, the main difference is that the result of Derive New Locations can
 contain partial features.In both tasks, the attribute expression  where and the spatial relationships within and
@@ -658,15 +636,15 @@ withinDistance is used, Derive New Locations creates new features in the result.
 parcel feature and a flood zone area that partially overlap each other, Find Existing Locations will return the
 entire parcel whereas Derive New Locations will return just the portion of the parcel that is within the flood zone.</p>
 <dl class="docutils">
-<dt>input_layers <span class="classifier-delimiter">:</span> <span class="classifier">Required list of strings</span></dt>
-<dd>A list of layers that will be used in the expressions parameter.</dd>
-<dt>expressions <span class="classifier-delimiter">:</span> <span class="classifier">Required string</span></dt>
-<dd>Specify a list of expressions. Please refer documentation at <a class="reference external" href="http://developers.arcgis.com">http://developers.arcgis.com</a> for more information
+<dt>input_layers</dt>
+ <span class="classifier-delimiter">:</span> <span class="classifier">Required list of strings</span><dd>A list of layers that will be used in the expressions parameter.</dd>
+<dt>expressions</dt>
+ <span class="classifier-delimiter">:</span> <span class="classifier">Required string</span><dd>Specify a list of expressions. Please refer documentation at <a class="reference external" href="http://developers.arcgis.com">http://developers.arcgis.com</a> for more information
 on expressions.</dd>
-<dt>output_name <span class="classifier-delimiter">:</span> <span class="classifier">Optional string</span></dt>
-<dd>Additional properties such as output feature service name.</dd>
-<dt>context <span class="classifier-delimiter">:</span> <span class="classifier">Optional string</span></dt>
-<dd>Additional settings such as processing extent and output spatial reference.</dd>
+<dt>output_name</dt>
+ <span class="classifier-delimiter">:</span> <span class="classifier">Optional string</span><dd>Additional properties such as output feature service name.</dd>
+<dt>context</dt>
+ <span class="classifier-delimiter">:</span> <span class="classifier">Optional string</span><dd>Additional settings such as processing extent and output spatial reference.</dd>
 <dt>gis :</dt>
 <dd>Optional, the GIS on which this tool runs. If not specified, the active GIS is used.</dd>
 </dl>
@@ -689,8 +667,8 @@ on expressions.</dd>
 <p>context : Optional string</p>
 <dl class="docutils">
 <dt>dict with the following keys:</dt>
-<dd>“similar_result_layer” : layer (FeatureCollection)
-“process_info” : layer (FeatureCollection)</dd>
+<dd>&#8220;similar_result_layer&#8221; : layer (FeatureCollection)
+&#8220;process_info&#8221; : layer (FeatureCollection)</dd>
 </dl>
 </dd></dl>
 
@@ -702,7 +680,7 @@ on expressions.</dd>
 <h2>create_viewshed<a class="headerlink" href="#create-viewshed" title="Permalink to this headline">¶</a></h2>
 <dl class="method">
 <dt id="arcgis.features.find_locations.create_viewshed">
-<code class="descclassname">find_locations.</code><code class="descname">create_viewshed</code><span class="sig-paren">(</span><em>input_layer</em>, <em>dem_resolution=’Finest’</em>, <em>maximum_distance=None</em>, <em>max_distance_units=’Meters’</em>, <em>observer_height=None</em>, <em>observer_height_units=’Meters’</em>, <em>target_height=None</em>, <em>target_height_units=’Meters’</em>, <em>generalize=True</em>, <em>output_name=None</em>, <em>context=None</em>, <em>gis=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.features.find_locations.create_viewshed" title="Permalink to this definition">¶</a></dt>
+<code class="descclassname">find_locations.</code><code class="descname">create_viewshed</code><span class="sig-paren">(</span><em>input_layer</em>, <em>dem_resolution='Finest'</em>, <em>maximum_distance=None</em>, <em>max_distance_units='Meters'</em>, <em>observer_height=None</em>, <em>observer_height_units='Meters'</em>, <em>target_height=None</em>, <em>target_height_units='Meters'</em>, <em>generalize=True</em>, <em>output_name=None</em>, <em>context=None</em>, <em>gis=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.features.find_locations.create_viewshed" title="Permalink to this definition">¶</a></dt>
 <dd><p>Creates areas that are visible based on locations you specify.</p>
 <p>input_layer : Required layer (see Feature Input in documentation)</p>
 <p>dem_resolution : Optional string</p>
@@ -727,7 +705,7 @@ on expressions.</dd>
 <h2>create_watersheds<a class="headerlink" href="#create-watersheds" title="Permalink to this headline">¶</a></h2>
 <dl class="method">
 <dt id="arcgis.features.find_locations.create_watersheds">
-<code class="descclassname">find_locations.</code><code class="descname">create_watersheds</code><span class="sig-paren">(</span><em>input_layer</em>, <em>search_distance=None</em>, <em>search_units=’Meters’</em>, <em>source_database=’FINEST’</em>, <em>generalize=True</em>, <em>output_name=None</em>, <em>context=None</em>, <em>gis=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.features.find_locations.create_watersheds" title="Permalink to this definition">¶</a></dt>
+<code class="descclassname">find_locations.</code><code class="descname">create_watersheds</code><span class="sig-paren">(</span><em>input_layer</em>, <em>search_distance=None</em>, <em>search_units='Meters'</em>, <em>source_database='FINEST'</em>, <em>generalize=True</em>, <em>output_name=None</em>, <em>context=None</em>, <em>gis=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.features.find_locations.create_watersheds" title="Permalink to this definition">¶</a></dt>
 <dd><p>Creates catchment areas based on locations you specify.</p>
 <p>input_layer : Required layer (see Feature Input in documentation)</p>
 <p>search_distance : Optional float</p>
@@ -742,8 +720,8 @@ on expressions.</dd>
 </dl>
 <dl class="docutils">
 <dt>dict with the following keys:</dt>
-<dd>“snap_pour_pts_layer” : layer (FeatureCollection)
-“watershed_layer” : layer (FeatureCollection)</dd>
+<dd>&#8220;snap_pour_pts_layer&#8221; : layer (FeatureCollection)
+&#8220;watershed_layer&#8221; : layer (FeatureCollection)</dd>
 </dl>
 </dd></dl>
 
@@ -752,7 +730,7 @@ on expressions.</dd>
 <h2>trace_downstream<a class="headerlink" href="#trace-downstream" title="Permalink to this headline">¶</a></h2>
 <dl class="method">
 <dt id="arcgis.features.find_locations.trace_downstream">
-<code class="descclassname">find_locations.</code><code class="descname">trace_downstream</code><span class="sig-paren">(</span><em>input_layer</em>, <em>split_distance=None</em>, <em>split_units=’Kilometers’</em>, <em>max_distance=None</em>, <em>max_distance_units=’Kilometers’</em>, <em>bounding_polygon_layer=None</em>, <em>source_database=None</em>, <em>generalize=True</em>, <em>output_name=None</em>, <em>context=None</em>, <em>gis=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.features.find_locations.trace_downstream" title="Permalink to this definition">¶</a></dt>
+<code class="descclassname">find_locations.</code><code class="descname">trace_downstream</code><span class="sig-paren">(</span><em>input_layer</em>, <em>split_distance=None</em>, <em>split_units='Kilometers'</em>, <em>max_distance=None</em>, <em>max_distance_units='Kilometers'</em>, <em>bounding_polygon_layer=None</em>, <em>source_database=None</em>, <em>generalize=True</em>, <em>output_name=None</em>, <em>context=None</em>, <em>gis=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.features.find_locations.trace_downstream" title="Permalink to this definition">¶</a></dt>
 <dd><p>Determine the flow paths in a downstream direction from the locations you specify.</p>
 <p>input_layer : Required layer (see Feature Input in documentation)</p>
 <p>split_distance : Optional float</p>
@@ -776,18 +754,15 @@ on expressions.</dd>
 
 
            </div>
-           <div class="articleComments">
-            
-           </div>
           </div>
           <footer>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="arcgis.features.manage_data.html" class="btn btn-neutral float-right" title="arcgis.features.manage_data module" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="arcgis.features.manage_data.html" class="btn btn-neutral float-right" title="arcgis.features.manage_data module" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="arcgis.features.enrich_data.html" class="btn btn-neutral" title="arcgis.features.enrich_data module" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="arcgis.features.enrich_data.html" class="btn btn-neutral" title="arcgis.features.enrich_data module" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
@@ -818,11 +793,10 @@ on expressions.</dd>
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'./',
-            VERSION:'1.2.0',
+            VERSION:'1.2.1',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
-            HAS_SOURCE:  true,
-            SOURCELINK_SUFFIX: '.txt'
+            HAS_SOURCE:  true
         };
     </script>
       <script type="text/javascript" src="_static/jquery.js"></script>
