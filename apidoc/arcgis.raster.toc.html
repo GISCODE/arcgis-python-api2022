@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>arcgis.raster module &mdash; arcgis 1.2.1 documentation</title>
+  <title>arcgis.raster module &mdash; arcgis 1.2.4 documentation</title>
   
 
   
@@ -35,7 +35,7 @@
         <link rel="index" title="Index"
               href="genindex.html"/>
         <link rel="search" title="Search" href="search.html"/>
-    <link rel="top" title="arcgis 1.2.1 documentation" href="index.html"/>
+    <link rel="top" title="arcgis 1.2.4 documentation" href="index.html"/>
         <link rel="next" title="arcgis.raster.analytics module" href="arcgis.raster.analytics.html"/>
         <link rel="prev" title="arcgis.features.managers module" href="arcgis.features.managers.html"/> 
 
@@ -65,7 +65,7 @@
             
             
               <div class="version">
-                1.2.1
+                1.2.4
               </div>
             
           
@@ -96,6 +96,7 @@
 <li class="toctree-l2"><a class="reference internal" href="arcgis.gis.toc.html#datastore">Datastore</a></li>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.gis.toc.html#role">Role</a></li>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.gis.toc.html#layer">Layer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.gis.toc.html#groupapplication">GroupApplication</a></li>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.gis.toc.html#contentmanager">ContentManager</a></li>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.gis.toc.html#usermanager">UserManager</a></li>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.gis.toc.html#groupmanager">GroupManager</a></li>
@@ -131,6 +132,7 @@
 </li>
 <li class="toctree-l3"><a class="reference internal" href="arcgis.gis.server.html">arcgis.gis.server module</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.gis.server.html#server">Server</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.gis.server.html#module-arcgis.gis.server.catalog">ServicesDirectory</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.gis.server.html#service">Service</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.gis.server.html#machine">Machine</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.gis.server.html#report">Report</a></li>
@@ -159,6 +161,7 @@
 <li class="toctree-l2"><a class="reference internal" href="arcgis.env.html#analysis-extent">analysis_extent</a></li>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.env.html#out-spatial-reference">out_spatial_reference</a></li>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.env.html#process-spatial-reference">process_spatial_reference</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.env.html#output-datastore">output_datastore</a></li>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.env.html#return-z">return_z</a></li>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.env.html#return-m">return_m</a></li>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.env.html#verbose">verbose</a></li>
@@ -323,7 +326,7 @@
 <li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#exp2">exp2</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#expression">expression</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#extract-band">extract_band</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#float">float</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#float">FLOAT</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#float-divide">float_divide</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#floor-divide">floor_divide</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#gemi">gemi</a></li>
@@ -332,7 +335,7 @@
 <li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#greater-than-equal">greater_than_equal</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#gvitm">gvitm</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#hillshade">hillshade</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#int">int</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#int">INT</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#is-null">is_null</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#less-than">less_than</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#less-than-equal">less_than_equal</a></li>
@@ -352,14 +355,14 @@
 <li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#mod">mod</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#mode">mode</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#msavi">msavi</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#multiply">multiply</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#multiply">MULTIPLY</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#ndvi">ndvi</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#negate">negate</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#not-equal">not_equal</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#plus">plus</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#power">power</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#pvi">pvi</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#range">range</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#cellstats-range">cellstats_range</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#remap">remap</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#resample">resample</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#round-down">round_down</a></li>
@@ -425,10 +428,12 @@
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="arcgis.geoanalytics.find_locations.html">arcgis.geoanalytics.find_locations module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.geoanalytics.find_locations.html#detect-incidents">detect_incidents</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.geoanalytics.find_locations.html#find-similar-locations">find_similar_locations</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="arcgis.geoanalytics.manage_data.html">arcgis.geoanalytics.manage_data module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.geoanalytics.manage_data.html#calculate-fields">calculate_fields</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.geoanalytics.manage_data.html#copy-to-data-store">copy_to_data_store</a></li>
 </ul>
 </li>
@@ -565,7 +570,7 @@
       <li class="wy-breadcrumbs-aside">
         
           
-            <a href="_sources/arcgis.raster.toc.txt" rel="nofollow"> View page source</a>
+            <a href="_sources/arcgis.raster.toc.rst.txt" rel="nofollow"> View page source</a>
           
         
       </li>
@@ -598,7 +603,7 @@ The Add Rasters operation adds new rasters to an image service
 The added rasters can either be uploaded items, using the item_ids
 parameter, or published services, using the service_url parameter.
 If item_ids is specified, uploaded rasters are copied to the image
-service&#8217;s dynamic image workspace location; if the service_url is
+service’s dynamic image workspace location; if the service_url is
 specified, the image service adds the URL to the mosaic dataset no
 raster files are copied. The service_url is required input for the
 following raster types: Image Service, Map Service, WCS, and WMS.</p>
@@ -664,16 +669,16 @@ Example: maximum_cell_size_factor=10</div></blockquote>
 <dd><p class="first">Syntax:
 {</p>
 <blockquote>
-<div>&#8220;&lt;name1&gt;&#8221; : &lt;value1&gt;,
-&#8220;&lt;name2&gt;&#8221; : &lt;value2&gt;</div></blockquote>
+<div>“&lt;name1&gt;” : &lt;value1&gt;,
+“&lt;name2&gt;” : &lt;value2&gt;</div></blockquote>
 <p>}
 Example:
 {</p>
 <blockquote>
-<div>&#8220;MinPS&#8221;: 0,
-&#8220;MaxPS&#8221;: 20;
-&#8220;Year&#8221; : 2002,
-&#8220;State&#8221; : &#8220;Florida&#8221;</div></blockquote>
+<div>“MinPS”: 0,
+“MaxPS”: 20;
+“Year” : 2002,
+“State” : “Florida”</div></blockquote>
 <p class="last">}</p>
 </dd>
 <dt>geodata_transforms - The geodata transformations applied on the</dt>
@@ -688,12 +693,12 @@ that is added.</p>
 [
 {</p>
 <blockquote>
-<div>&#8220;geodataTransform&#8221; : &#8220;&lt;geodataTransformName1&gt;&#8221;,
-&#8220;geodataTransformArguments&#8221; : {&lt;geodataTransformArguments1&gt;}
+<div>“geodataTransform” : “&lt;geodataTransformName1&gt;”,
+“geodataTransformArguments” : {&lt;geodataTransformArguments1&gt;}
 },
 {
-&#8220;geodataTransform&#8221; : &#8220;&lt;geodataTransformName2&gt;&#8221;,
-&#8220;geodataTransformArguments&#8221; : {&lt;geodataTransformArguments2&gt;}
+“geodataTransform” : “&lt;geodataTransformName2&gt;”,
+“geodataTransformArguments” : {&lt;geodataTransformArguments2&gt;}
 }</div></blockquote>
 <p>]</p>
 </div></blockquote>
@@ -716,7 +721,7 @@ esriGeodataTransformApplyOverwrite</div></blockquote>
 <dt id="arcgis.raster.ImageryLayer.blend">
 <code class="descname">blend</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.raster.ImageryLayer.blend" title="Permalink to this definition">¶</a></dt>
 <dd><p>overlapping pixels at the same location are resolved by blending all overlapping pixels
-:return: this imagery layer with mosaic operation set to &#8216;blend&#8217;</p>
+:return: this imagery layer with mosaic operation set to ‘blend’</p>
 </dd></dl>
 
 <dl class="method">
@@ -769,7 +774,7 @@ In addition to the usual response formats of HTML and JSON, you can
 also request the image format while performing this operation. When
 you perform an export with the image format , the server responds
 by directly streaming the image bytes to the client. With this
-approach, you don&#8217;t get any information associated with the
+approach, you don’t get any information associated with the
 exported image other than the image itself.</p>
 <dl class="docutils">
 <dt>Inputs:</dt>
@@ -778,16 +783,16 @@ exported image other than the image itself.</p>
 <dd><p class="first">the bbox_sr parameter has been specified, the bbox is
 assumed to be in the spatial reference of the imagery
 layer.</p>
-<p>The bbox should be specified as an arcgis.geometry.Envelope object, it&#8217;s json representation or as
-a list or string with this format: &#8216;&lt;xmin&gt;, &lt;ymin&gt;, &lt;xmax&gt;, &lt;ymax&gt;&#8217;</p>
+<p>The bbox should be specified as an arcgis.geometry.Envelope object, it’s json representation or as
+a list or string with this format: ‘&lt;xmin&gt;, &lt;ymin&gt;, &lt;xmax&gt;, &lt;ymax&gt;’</p>
 <p class="last">If omitted, the extent of the imagery layer is used</p>
 </dd>
 <dt>image_sr - The spatial reference of the exported image.</dt>
-<dd>The spatial reference can be specified as either a well-known ID, it&#8217;s json representation or as an
+<dd>The spatial reference can be specified as either a well-known ID, it’s json representation or as an
 arcgis.geometry.SpatialReference object.
 If the image_sr is not specified, the image will be exported in the spatial reference of the imagery layer.</dd>
 <dt>bbox_sr - The spatial reference of the bbox.</dt>
-<dd>The spatial reference can be specified as either a well-known ID, it&#8217;s json representation or as an
+<dd>The spatial reference can be specified as either a well-known ID, it’s json representation or as an
 arcgis.geometry.SpatialReference object.
 If the image_sr is not specified, bbox is assumed to be in the spatial reference of the imagery layer.</dd>
 <dt>size - The size (width * height) of the exported image in</dt>
@@ -857,7 +862,7 @@ parameters are also passed, in which case the image is written to the specified 
 <dl class="last docutils">
 <dt>compression_tolerance - Controls the tolerance of the lerc compression algorithm. The tolerance defines the</dt>
 <dd><blockquote class="first">
-<div>maximum possible error of pixel values in the compressed image. It&#8217;s a double value.
+<div>maximum possible error of pixel values in the compressed image. It’s a double value.
 Example: compression_tolerance=0.5 is loseless for 8 and 16 bit images, but has an accuracy of +-0.5 for
 floating point data. The compression tolerance works for the LERC format only.</div></blockquote>
 <p class="last">adjust_aspect_ratio -  indicates whether to adjust the aspect ratio or not. By default adjust_aspect_ratio is
@@ -884,11 +889,11 @@ response image has square pixels. Values: True | False</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>where</strong> &#8211; a where clause on this layer to filter the imagery layer by the selection sql statement.
+<li><strong>where</strong> – a where clause on this layer to filter the imagery layer by the selection sql statement.
 Any legal SQL where clause operating on the fields in the raster</li>
-<li><strong>geometry</strong> &#8211; spatial filter from arcgis.geometry.filters module to filter results by a
+<li><strong>geometry</strong> – spatial filter from arcgis.geometry.filters module to filter results by a
 spatial relationship with another geometry</li>
-<li><strong>time</strong> &#8211; <p>a temporal filter to this layer to filter the imagery layer by time using the specified time instant or the time extent.
+<li><strong>time</strong> – <p>a temporal filter to this layer to filter the imagery layer by time using the specified time instant or the time extent.
 Time instant specified as datetime.date, datetime.datetime or timestamp in milliseconds since epoch
 Syntax: time_filter=&lt;timeInstant&gt;</p>
 <p>Time extent specified as list of [&lt;startTime&gt;, &lt;endTime&gt;]
@@ -897,7 +902,7 @@ start time or end time will represent infinity for start or end time respectivel
 Syntax: time_filter=[&lt;startTime&gt;, &lt;endTime&gt;] ; specified as datetime.date, datetime.datetime or
 timestamp in milliseconds</p>
 </li>
-<li><strong>lock_rasters</strong> &#8211; bool If True, the LockRaster mosaic rule is applied to the layer, using the filtered objectids</li>
+<li><strong>lock_rasters</strong> – bool If True, the LockRaster mosaic rule is applied to the layer, using the filtered objectids</li>
 </ul>
 </td>
 </tr>
@@ -919,7 +924,7 @@ temporal filters. If no rasters are filtered, returns None. If all rasters are f
 <dt id="arcgis.raster.ImageryLayer.first">
 <code class="descname">first</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.raster.ImageryLayer.first" title="Permalink to this definition">¶</a></dt>
 <dd><p>overlapping pixels at the same location are resolved by picking the first image
-:return: this imagery layer with mosaic operation set to &#8216;first&#8217;</p>
+:return: this imagery layer with mosaic operation set to ‘first’</p>
 </dd></dl>
 
 <dl class="classmethod">
@@ -968,7 +973,7 @@ sample_count (100) is used for areas (polygons or envelopes).</dd>
 mosaic rule.</dd>
 <dt>pixel_size - The raster that is visible at the specified pixel size in the</dt>
 <dd>mosaic dataset will be used for sampling. If pixel_size is not specified,
-the service&#8217;s pixel size is used.
+the service’s pixel size is used.
 The structure of the esri_codephpixelSize parameter is the same as the
 structure of the point object returned by the ArcGIS REST API. In addition
 to the JSON structure, you can specify the pixel size with a simple
@@ -998,18 +1003,18 @@ If not histograms is found, returns None. In this case, call the compute_histogr
 <blockquote>
 <div><dl class="docutils">
 <dt>{ #band 1</dt>
-<dd>&#8220;size&#8221;:256,
-&#8220;min&#8221;:560,
-&#8220;max&#8221;:24568,
-counts: [10,99,56,42200,125,....] #length of this list corresponds &#8216;size&#8217;</dd>
+<dd>“size”:256,
+“min”:560,
+“max”:24568,
+counts: [10,99,56,42200,125,….] #length of this list corresponds ‘size’</dd>
 </dl>
 <p>}
 { #band 3</p>
 <blockquote>
-<div>&#8220;size&#8221;:256, #number of bins
-&#8220;min&#8221;:8000,
-&#8220;max&#8221;:15668,
-counts: [45,9,690,86580,857,....] #length of this list corresponds &#8216;size&#8217;</div></blockquote>
+<div>“size”:256, #number of bins
+“min”:8000,
+“max”:15668,
+counts: [45,9,690,86580,857,….] #length of this list corresponds ‘size’</div></blockquote>
 </div></blockquote>
 <p>]</p>
 </div></blockquote>
@@ -1023,7 +1028,7 @@ counts: [45,9,690,86580,857,....] #length of this list corresponds &#8216;size&#
 The response contains updated service information that reflects a custom processing as defined</p>
 <blockquote>
 <div><p>by the rendering rule. For example, if renderingRule contains an attributeTable function,
-the response will indicate &#8220;hasRasterAttributeTable&#8221;: true; if the renderingRule contains</p>
+the response will indicate “hasRasterAttributeTable”: true; if the renderingRule contains</p>
 <blockquote>
 <div>functions that alter the number of bands, the response will indicate correct bandCount.</div></blockquote>
 </div></blockquote>
@@ -1041,28 +1046,28 @@ the response will indicate &#8220;hasRasterAttributeTable&#8221;: true; if the r
 <dt id="arcgis.raster.ImageryLayer.last">
 <code class="descname">last</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.raster.ImageryLayer.last" title="Permalink to this definition">¶</a></dt>
 <dd><p>overlapping pixels at the same location are resolved by picking the last image
-:return: this imagery layer with mosaic operation set to &#8216;last&#8217;</p>
+:return: this imagery layer with mosaic operation set to ‘last’</p>
 </dd></dl>
 
 <dl class="method">
 <dt id="arcgis.raster.ImageryLayer.max">
 <code class="descname">max</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.raster.ImageryLayer.max" title="Permalink to this definition">¶</a></dt>
 <dd><p>overlapping pixels at the same location are resolved by picking the max pixel value
-:return: this imagery layer with mosaic operation set to &#8216;max&#8217;</p>
+:return: this imagery layer with mosaic operation set to ‘max’</p>
 </dd></dl>
 
 <dl class="method">
 <dt id="arcgis.raster.ImageryLayer.mean">
 <code class="descname">mean</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.raster.ImageryLayer.mean" title="Permalink to this definition">¶</a></dt>
 <dd><p>overlapping pixels at the same location are resolved by choosing the mean of all overlapping pixels
-:return: this imagery layer with mosaic operation set to &#8216;mean&#8217;</p>
+:return: this imagery layer with mosaic operation set to ‘mean’</p>
 </dd></dl>
 
 <dl class="method">
 <dt id="arcgis.raster.ImageryLayer.min">
 <code class="descname">min</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.raster.ImageryLayer.min" title="Permalink to this definition">¶</a></dt>
 <dd><p>overlapping pixels at the same location are resolved by picking the min pixel value
-:return: this imagery layer with mosaic operation set to &#8216;min&#8217;</p>
+:return: this imagery layer with mosaic operation set to ‘min’</p>
 </dd></dl>
 
 <dl class="method">
@@ -1081,28 +1086,28 @@ the mosaic dataset. A mosaic rule is used to define:</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>method</strong> &#8211; determines how the selected rasters are ordered.
+<li><strong>method</strong> – determines how the selected rasters are ordered.
 str, can be none | center | nadir | northwest | seamline | viewpoint | attribute | lock-raster
 required if method is: center | nadir | northwest | seamline,
-optional otherwise. If no method is passed &#8220;none&#8221; method is used, which uses the order of records to sort
-If sort_by and optionally sort_val parameters are specified, &#8220;attribute&#8221; method is used
-If lock_rasters are specified, &#8220;lock-raster&#8221; method is used
-If a viewpt parameter is passed, &#8220;viewpoint&#8221; method is used.</li>
-<li><strong>sort_by</strong> &#8211; optional str, field name when sorting by attributes</li>
-<li><strong>sort_val</strong> &#8211; optional, a constant value defining a reference or base value for the sort field when sorting by
+optional otherwise. If no method is passed “none” method is used, which uses the order of records to sort
+If sort_by and optionally sort_val parameters are specified, “attribute” method is used
+If lock_rasters are specified, “lock-raster” method is used
+If a viewpt parameter is passed, “viewpoint” method is used.</li>
+<li><strong>sort_by</strong> – optional str, field name when sorting by attributes</li>
+<li><strong>sort_val</strong> – optional, a constant value defining a reference or base value for the sort field when sorting by
 attributes</li>
-<li><strong>lock_rasters</strong> &#8211; optional, an array of raster Ids. All the rasters with the given list of raster Ids are selected
+<li><strong>lock_rasters</strong> – optional, an array of raster Ids. All the rasters with the given list of raster Ids are selected
 to participate in the mosaic. The rasters will be visible at all pixel sizes regardless of the minimum and
 maximum pixel size range of the locked rasters.</li>
-<li><strong>viewpt</strong> &#8211; optional point, used as view point for viewpoint mosaicking method</li>
-<li><strong>asc</strong> &#8211; optional bool, indicate whether to use ascending or descending order. Default is ascending order.</li>
-<li><strong>where</strong> &#8211; optional str, where clause to define a subset of rasters used in the mosaic, be aware that the rasters
+<li><strong>viewpt</strong> – optional point, used as view point for viewpoint mosaicking method</li>
+<li><strong>asc</strong> – optional bool, indicate whether to use ascending or descending order. Default is ascending order.</li>
+<li><strong>where</strong> – optional str, where clause to define a subset of rasters used in the mosaic, be aware that the rasters
 may not be visible at all scales</li>
-<li><strong>fids</strong> &#8211; optional list of objectids, use the raster id list to define a subset of rasters used in the mosaic, be
+<li><strong>fids</strong> – optional list of objectids, use the raster id list to define a subset of rasters used in the mosaic, be
 aware that the rasters may not be visible at all scales.</li>
-<li><strong>muldidef</strong> &#8211; optional dict, multidemensional definition used for filtering by variable/dimensions.
+<li><strong>muldidef</strong> – optional dict, multidemensional definition used for filtering by variable/dimensions.
 See <a class="reference external" href="http://resources.arcgis.com/en/help/arcgis-rest-api/index.html#//02r300000290000000">http://resources.arcgis.com/en/help/arcgis-rest-api/index.html#//02r300000290000000</a></li>
-<li><strong>op</strong> &#8211; optional string, first | last | min | max | mean | blend | sum
+<li><strong>op</strong> – optional string, first | last | min | max | mean | blend | sum
 mosaic operation to resolve overlap pixel values: from first or last raster, use the min, max or mean of the
 pixel values, or blend them.</li>
 </ul>
@@ -1211,7 +1216,7 @@ result_record_count - This option fetches query results up to
 the resultRecordCount specified. When resultOffset is
 specified and this parameter is not, image service defaults
 to maxRecordCount. The maximum value for this parameter is
-the value of the layer&#8217;s maxRecordCount property.
+the value of the layer’s maxRecordCount property.
 max_allowable_offset - This option can be used to specify the
 max_allowable_offset to be used for generalizing geometries
 returned by the query operation. The max_allowable_offset is
@@ -1241,17 +1246,17 @@ applying raster functions at source resolution across the extent of the output i
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>output_name</strong> &#8211; Optional. If not provided, an Imagery Layer item is created by the method and used as the output.
+<li><strong>output_name</strong> – Optional. If not provided, an Imagery Layer item is created by the method and used as the output.
 You can pass in the name of the output Imagery Layer that should be created by this method to
 be used as the output for the tool.
 Alternatively, if for_viz is False, you can pass in an existing Image Service Item from your GIS to use that instead
 A RuntimeError is raised if a service by that name already exists</li>
-<li><strong>for_viz</strong> &#8211; If True, a new Item is created that uses the applied raster functions for visualization at
+<li><strong>for_viz</strong> – If True, a new Item is created that uses the applied raster functions for visualization at
 display resolution using on-the-fly image processing.
 If for_viz is False, distributed raster analysis is used for generating a new raster information product
 for use in analysis and visualization by applying raster functions at source resolution across the extent of
 the output imagery layer.</li>
-<li><strong>gis</strong> &#8211; The GIS to be used for saving the output</li>
+<li><strong>gis</strong> – The GIS to be used for saving the output</li>
 </ul>
 </td>
 </tr>
@@ -1270,11 +1275,11 @@ the output imagery layer.</li>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>where</strong> &#8211; a where clause on this layer to filter the imagery layer by the selection sql statement.
+<li><strong>where</strong> – a where clause on this layer to filter the imagery layer by the selection sql statement.
 Any legal SQL where clause operating on the fields in the raster</li>
-<li><strong>geometry</strong> &#8211; spatial filter from arcgis.geometry.filters module to filter results by a
+<li><strong>geometry</strong> – spatial filter from arcgis.geometry.filters module to filter results by a
 spatial relationship with another geometry</li>
-<li><strong>time</strong> &#8211; <p>a temporal filter to this layer to filter the imagery layer by time using the specified time instant or the time extent.
+<li><strong>time</strong> – <p>a temporal filter to this layer to filter the imagery layer by time using the specified time instant or the time extent.
 Time instant specified as datetime.date, datetime.datetime or timestamp in milliseconds since epoch
 Syntax: time_filter=&lt;timeInstant&gt;</p>
 <p>Time extent specified as list of [&lt;startTime&gt;, &lt;endTime&gt;]
@@ -1283,8 +1288,8 @@ start time or end time will represent infinity for start or end time respectivel
 Syntax: time_filter=[&lt;startTime&gt;, &lt;endTime&gt;] ; specified as datetime.date, datetime.datetime or
 timestamp in milliseconds</p>
 </li>
-<li><strong>lock_rasters</strong> &#8211; if True, the LockRaster mosaic rule will be applied to the layer, unless overridden</li>
-<li><strong>clear_filters</strong> &#8211; if True, the applied filters are cleared</li>
+<li><strong>lock_rasters</strong> – if True, the LockRaster mosaic rule will be applied to the layer, unless overridden</li>
+<li><strong>clear_filters</strong> – if True, the applied filters are cleared</li>
 </ul>
 </td>
 </tr>
@@ -1299,7 +1304,7 @@ timestamp in milliseconds</p>
 <dt id="arcgis.raster.ImageryLayer.sum">
 <code class="descname">sum</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.raster.ImageryLayer.sum" title="Permalink to this definition">¶</a></dt>
 <dd><p>overlapping pixels at the same location are resolved by adding up all overlapping pixel values
-:return: this imagery layer with mosaic operation set to &#8216;sum&#8217;</p>
+:return: this imagery layer with mosaic operation set to ‘sum’</p>
 </dd></dl>
 
 </dd></dl>
@@ -1371,7 +1376,7 @@ timestamp in milliseconds</p>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.raster.functions.html#exp2">exp2</a></li>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.raster.functions.html#expression">expression</a></li>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.raster.functions.html#extract-band">extract_band</a></li>
-<li class="toctree-l2"><a class="reference internal" href="arcgis.raster.functions.html#float">float</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.raster.functions.html#float">FLOAT</a></li>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.raster.functions.html#float-divide">float_divide</a></li>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.raster.functions.html#floor-divide">floor_divide</a></li>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.raster.functions.html#gemi">gemi</a></li>
@@ -1380,7 +1385,7 @@ timestamp in milliseconds</p>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.raster.functions.html#greater-than-equal">greater_than_equal</a></li>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.raster.functions.html#gvitm">gvitm</a></li>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.raster.functions.html#hillshade">hillshade</a></li>
-<li class="toctree-l2"><a class="reference internal" href="arcgis.raster.functions.html#int">int</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.raster.functions.html#int">INT</a></li>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.raster.functions.html#is-null">is_null</a></li>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.raster.functions.html#less-than">less_than</a></li>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.raster.functions.html#less-than-equal">less_than_equal</a></li>
@@ -1400,14 +1405,14 @@ timestamp in milliseconds</p>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.raster.functions.html#mod">mod</a></li>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.raster.functions.html#mode">mode</a></li>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.raster.functions.html#msavi">msavi</a></li>
-<li class="toctree-l2"><a class="reference internal" href="arcgis.raster.functions.html#multiply">multiply</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.raster.functions.html#multiply">MULTIPLY</a></li>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.raster.functions.html#ndvi">ndvi</a></li>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.raster.functions.html#negate">negate</a></li>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.raster.functions.html#not-equal">not_equal</a></li>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.raster.functions.html#plus">plus</a></li>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.raster.functions.html#power">power</a></li>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.raster.functions.html#pvi">pvi</a></li>
-<li class="toctree-l2"><a class="reference internal" href="arcgis.raster.functions.html#range">range</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.raster.functions.html#cellstats-range">cellstats_range</a></li>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.raster.functions.html#remap">remap</a></li>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.raster.functions.html#resample">resample</a></li>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.raster.functions.html#round-down">round_down</a></li>
@@ -1483,7 +1488,7 @@ timestamp in milliseconds</p>
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'./',
-            VERSION:'1.2.1',
+            VERSION:'1.2.4',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  true

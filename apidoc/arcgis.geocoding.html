@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>arcgis.geocoding module &mdash; arcgis 1.2.1 documentation</title>
+  <title>arcgis.geocoding module &mdash; arcgis 1.2.4 documentation</title>
   
 
   
@@ -35,7 +35,7 @@
         <link rel="index" title="Index"
               href="genindex.html"/>
         <link rel="search" title="Search" href="search.html"/>
-    <link rel="top" title="arcgis 1.2.1 documentation" href="index.html"/>
+    <link rel="top" title="arcgis 1.2.4 documentation" href="index.html"/>
         <link rel="next" title="arcgis.geometry module" href="arcgis.geometry.html"/>
         <link rel="prev" title="arcgis.geoanalytics.use_proximity module" href="arcgis.geoanalytics.use_proximity.html"/> 
 
@@ -65,7 +65,7 @@
             
             
               <div class="version">
-                1.2.1
+                1.2.4
               </div>
             
           
@@ -96,6 +96,7 @@
 <li class="toctree-l2"><a class="reference internal" href="arcgis.gis.toc.html#datastore">Datastore</a></li>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.gis.toc.html#role">Role</a></li>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.gis.toc.html#layer">Layer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.gis.toc.html#groupapplication">GroupApplication</a></li>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.gis.toc.html#contentmanager">ContentManager</a></li>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.gis.toc.html#usermanager">UserManager</a></li>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.gis.toc.html#groupmanager">GroupManager</a></li>
@@ -131,6 +132,7 @@
 </li>
 <li class="toctree-l3"><a class="reference internal" href="arcgis.gis.server.html">arcgis.gis.server module</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.gis.server.html#server">Server</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.gis.server.html#module-arcgis.gis.server.catalog">ServicesDirectory</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.gis.server.html#service">Service</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.gis.server.html#machine">Machine</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.gis.server.html#report">Report</a></li>
@@ -159,6 +161,7 @@
 <li class="toctree-l2"><a class="reference internal" href="arcgis.env.html#analysis-extent">analysis_extent</a></li>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.env.html#out-spatial-reference">out_spatial_reference</a></li>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.env.html#process-spatial-reference">process_spatial_reference</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.env.html#output-datastore">output_datastore</a></li>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.env.html#return-z">return_z</a></li>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.env.html#return-m">return_m</a></li>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.env.html#verbose">verbose</a></li>
@@ -323,7 +326,7 @@
 <li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#exp2">exp2</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#expression">expression</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#extract-band">extract_band</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#float">float</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#float">FLOAT</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#float-divide">float_divide</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#floor-divide">floor_divide</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#gemi">gemi</a></li>
@@ -332,7 +335,7 @@
 <li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#greater-than-equal">greater_than_equal</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#gvitm">gvitm</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#hillshade">hillshade</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#int">int</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#int">INT</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#is-null">is_null</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#less-than">less_than</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#less-than-equal">less_than_equal</a></li>
@@ -352,14 +355,14 @@
 <li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#mod">mod</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#mode">mode</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#msavi">msavi</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#multiply">multiply</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#multiply">MULTIPLY</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#ndvi">ndvi</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#negate">negate</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#not-equal">not_equal</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#plus">plus</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#power">power</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#pvi">pvi</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#range">range</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#cellstats-range">cellstats_range</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#remap">remap</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#resample">resample</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#round-down">round_down</a></li>
@@ -425,10 +428,12 @@
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="arcgis.geoanalytics.find_locations.html">arcgis.geoanalytics.find_locations module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.geoanalytics.find_locations.html#detect-incidents">detect_incidents</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.geoanalytics.find_locations.html#find-similar-locations">find_similar_locations</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="arcgis.geoanalytics.manage_data.html">arcgis.geoanalytics.manage_data module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.geoanalytics.manage_data.html#calculate-fields">calculate_fields</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.geoanalytics.manage_data.html#copy-to-data-store">copy_to_data_store</a></li>
 </ul>
 </li>
@@ -565,7 +570,7 @@
       <li class="wy-breadcrumbs-aside">
         
           
-            <a href="_sources/arcgis.geocoding.txt" rel="nofollow"> View page source</a>
+            <a href="_sources/arcgis.geocoding.rst.txt" rel="nofollow"> View page source</a>
           
         
       </li>
@@ -601,7 +606,7 @@ a url to a Geocoding Service.</p>
 <dt id="arcgis.geocoding.Geocoder.fromitem">
 <em class="property">classmethod </em><code class="descname">fromitem</code><span class="sig-paren">(</span><em>item</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.geocoding.Geocoder.fromitem" title="Permalink to this definition">¶</a></dt>
 <dd><p>Creates a Geocoder from an Item in the GIS
-:param item: an Item of type &#8216;Geocoding Service&#8217;
+:param item: an Item of type ‘Geocoding Service’
 :return: Geocoder</p>
 </dd></dl>
 
@@ -630,7 +635,7 @@ can be queried using get_geocoders.
 <h2>geocode<a class="headerlink" href="#geocode" title="Permalink to this headline">¶</a></h2>
 <dl class="method">
 <dt id="arcgis.geocoding.geocode">
-<code class="descclassname">geocoding.</code><code class="descname">geocode</code><span class="sig-paren">(</span><em>address</em>, <em>search_extent=None</em>, <em>location=None</em>, <em>distance=None</em>, <em>out_sr=None</em>, <em>category=None</em>, <em>out_fields='*'</em>, <em>max_locations=20</em>, <em>magic_key=None</em>, <em>for_storage=False</em>, <em>geocoder=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.geocoding.geocode" title="Permalink to this definition">¶</a></dt>
+<code class="descclassname">geocoding.</code><code class="descname">geocode</code><span class="sig-paren">(</span><em>address</em>, <em>search_extent=None</em>, <em>location=None</em>, <em>distance=None</em>, <em>out_sr=None</em>, <em>category=None</em>, <em>out_fields='*'</em>, <em>max_locations=20</em>, <em>magic_key=None</em>, <em>for_storage=False</em>, <em>geocoder=None</em>, <em>as_featureset=False</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.geocoding.geocode" title="Permalink to this definition">¶</a></dt>
 <dd><p>The geocode function geocodes one location per request.</p>
 <table border="1" class="docutils">
 <colgroup>
@@ -656,10 +661,10 @@ Street, City, State and Zone, then the address
 argument is of the form:
 {</p>
 <blockquote>
-<div>Street: &#8220;1234 W Main St&#8221;,
-City: &#8220;Small Town&#8221;,
-State: &#8220;WA&#8221;,
-Zone: &#8220;99027&#8221;</div></blockquote>
+<div>Street: “1234 W Main St”,
+City: “Small Town”,
+State: “WA”,
+Zone: “99027”</div></blockquote>
 <p class="last">}</p>
 </td>
 </tr>
@@ -699,7 +704,7 @@ parameter.</td>
 </tr>
 <tr class="row-even"><td>out_fields</td>
 <td>optional string, name of all the fields to inlcude.
-The default is &#8220;*&#8221; which means all fields.</td>
+The default is “*” which means all fields.</td>
 </tr>
 <tr class="row-odd"><td>max_location</td>
 <td>optional integer, The number of locations to be
@@ -712,7 +717,7 @@ you pass a valid text and magickey value.</td>
 <tr class="row-odd"><td>for_storage</td>
 <td>Specifies whether the results of the operation will
 be persisted. The default value is false, which
-indicates the results of the operation can&#8217;t be
+indicates the results of the operation can’t be
 stored, but they can be temporarily displayed on a
 map for instance. If you store the results, in a
 database for example, you need to set this parameter
@@ -720,7 +725,12 @@ to true.</td>
 </tr>
 <tr class="row-even"><td>geocoder</td>
 <td>Optional, the geocoder to be used. If not specified,
-the active GIS&#8217;s first geocoder is used.</td>
+the active GIS’s first geocoder is used.</td>
+</tr>
+<tr class="row-odd"><td>as_featureset</td>
+<td>optional boolean, if True, the result set is
+returned as a FeatureSet object, else it is a
+dictionary.</td>
 </tr>
 </tbody>
 </table>
@@ -846,7 +856,7 @@ user until the address they are looking for appears in the list.</p>
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'./',
-            VERSION:'1.2.1',
+            VERSION:'1.2.4',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  true

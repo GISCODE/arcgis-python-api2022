@@ -17,7 +17,8 @@ PortalAdminManager
     :members:
     :undoc-members:
     :show-inheritance:
-	
+
+
 
 CollaborationManager
 ---------------
@@ -50,6 +51,12 @@ PasswordPolicy
     :undoc-members:
     :show-inheritance:
 
+PortalResourceManager
+---------------
+.. autoclass:: arcgis.gis.admin.PortalResourceManager
+    :members:
+    :undoc-members:
+    :show-inheritance:
 
 UX
 ---------------
@@ -57,7 +64,7 @@ UX
     :members:
     :undoc-members:
     :show-inheritance:
-	
+
 
 Federation
 ---------------
@@ -102,7 +109,7 @@ SSLCertificate
 .. autoclass:: arcgis.gis.admin.SSLCertificate
    :members:
    :undoc-members:
-   
+
 SSLCertificates
 ---------------
 .. autoclass:: arcgis.gis.admin.SSLCertificates
@@ -115,7 +122,7 @@ EnterpriseUsers
 .. autoclass:: arcgis.gis.admin.EnterpriseUsers
    :members:
    :undoc-members:
-   
+
 EnterpriseGroups
 ---------------
 .. autoclass:: arcgis.gis.admin.EnterpriseGroups
@@ -128,7 +135,7 @@ Site
    :members:
    :undoc-members:
    :show-inheritance:
-   
+
 
 System
 ---------------
@@ -155,7 +162,7 @@ WebAdaptor
 .. autoclass:: arcgis.gis.admin.WebAdaptor
    :members:
    :undoc-members:
-   
+
 WebAdaptors
 ---------------
 .. autoclass:: arcgis.gis.admin.WebAdaptors
