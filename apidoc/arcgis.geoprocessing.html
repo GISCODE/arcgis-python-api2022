@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>arcgis.geoprocessing module &mdash; arcgis 1.2.1 documentation</title>
+  <title>arcgis.geoprocessing module &mdash; arcgis 1.2.4 documentation</title>
   
 
   
@@ -35,7 +35,7 @@
         <link rel="index" title="Index"
               href="genindex.html"/>
         <link rel="search" title="Search" href="search.html"/>
-    <link rel="top" title="arcgis 1.2.1 documentation" href="index.html"/>
+    <link rel="top" title="arcgis 1.2.4 documentation" href="index.html"/>
         <link rel="next" title="arcgis.mapping module" href="arcgis.mapping.html"/>
         <link rel="prev" title="arcgis.geometry.filters module" href="arcgis.geometry.filters.html"/> 
 
@@ -65,7 +65,7 @@
             
             
               <div class="version">
-                1.2.1
+                1.2.4
               </div>
             
           
@@ -96,6 +96,7 @@
 <li class="toctree-l2"><a class="reference internal" href="arcgis.gis.toc.html#datastore">Datastore</a></li>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.gis.toc.html#role">Role</a></li>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.gis.toc.html#layer">Layer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.gis.toc.html#groupapplication">GroupApplication</a></li>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.gis.toc.html#contentmanager">ContentManager</a></li>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.gis.toc.html#usermanager">UserManager</a></li>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.gis.toc.html#groupmanager">GroupManager</a></li>
@@ -131,6 +132,7 @@
 </li>
 <li class="toctree-l3"><a class="reference internal" href="arcgis.gis.server.html">arcgis.gis.server module</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.gis.server.html#server">Server</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.gis.server.html#module-arcgis.gis.server.catalog">ServicesDirectory</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.gis.server.html#service">Service</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.gis.server.html#machine">Machine</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.gis.server.html#report">Report</a></li>
@@ -159,6 +161,7 @@
 <li class="toctree-l2"><a class="reference internal" href="arcgis.env.html#analysis-extent">analysis_extent</a></li>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.env.html#out-spatial-reference">out_spatial_reference</a></li>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.env.html#process-spatial-reference">process_spatial_reference</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.env.html#output-datastore">output_datastore</a></li>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.env.html#return-z">return_z</a></li>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.env.html#return-m">return_m</a></li>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.env.html#verbose">verbose</a></li>
@@ -323,7 +326,7 @@
 <li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#exp2">exp2</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#expression">expression</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#extract-band">extract_band</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#float">float</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#float">FLOAT</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#float-divide">float_divide</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#floor-divide">floor_divide</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#gemi">gemi</a></li>
@@ -332,7 +335,7 @@
 <li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#greater-than-equal">greater_than_equal</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#gvitm">gvitm</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#hillshade">hillshade</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#int">int</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#int">INT</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#is-null">is_null</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#less-than">less_than</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#less-than-equal">less_than_equal</a></li>
@@ -352,14 +355,14 @@
 <li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#mod">mod</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#mode">mode</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#msavi">msavi</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#multiply">multiply</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#multiply">MULTIPLY</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#ndvi">ndvi</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#negate">negate</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#not-equal">not_equal</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#plus">plus</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#power">power</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#pvi">pvi</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#range">range</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#cellstats-range">cellstats_range</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#remap">remap</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#resample">resample</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#round-down">round_down</a></li>
@@ -425,10 +428,12 @@
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="arcgis.geoanalytics.find_locations.html">arcgis.geoanalytics.find_locations module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.geoanalytics.find_locations.html#detect-incidents">detect_incidents</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.geoanalytics.find_locations.html#find-similar-locations">find_similar_locations</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="arcgis.geoanalytics.manage_data.html">arcgis.geoanalytics.manage_data module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.geoanalytics.manage_data.html#calculate-fields">calculate_fields</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.geoanalytics.manage_data.html#copy-to-data-store">copy_to_data_store</a></li>
 </ul>
 </li>
@@ -565,7 +570,7 @@
       <li class="wy-breadcrumbs-aside">
         
           
-            <a href="_sources/arcgis.geoprocessing.txt" rel="nofollow"> View page source</a>
+            <a href="_sources/arcgis.geoprocessing.rst.txt" rel="nofollow"> View page source</a>
           
         
       </li>
@@ -644,7 +649,7 @@ as a result of the upload operation.</td>
 <dl class="method">
 <dt id="arcgis.geoprocessing.DataFile.download">
 <code class="descname">download</code><span class="sig-paren">(</span><em>save_path=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.geoprocessing.DataFile.download" title="Permalink to this definition">¶</a></dt>
-<dd><p>Downloads the data to the specified folder or a tempoary folder if a folder isn&#8217;t provided</p>
+<dd><p>Downloads the data to the specified folder or a tempoary folder if a folder isn’t provided</p>
 </dd></dl>
 
 <dl class="classmethod">
@@ -689,10 +694,10 @@ as a result of the upload operation.</td>
 </tr>
 <tr class="row-odd"><td>units</td>
 <td>required string,  unit type of the linear distance,
-such as &#8220;Meters&#8221;, &#8220;Miles&#8221;, &#8220;Kilometers&#8221;, &#8220;Inches&#8221;,
-&#8220;Points&#8221;, &#8220;Feet&#8221;, &#8220;Yards&#8221;, &#8220;NauticalMiles&#8221;,
-&#8220;Millimeters&#8221;, &#8220;Centimeters&#8221;, &#8220;DecimalDegrees&#8221;,
-&#8220;Decimeters&#8221;</td>
+such as “Meters”, “Miles”, “Kilometers”, “Inches”,
+“Points”, “Feet”, “Yards”, “NauticalMiles”,
+“Millimeters”, “Centimeters”, “DecimalDegrees”,
+“Decimeters”</td>
 </tr>
 </tbody>
 </table>
@@ -706,7 +711,7 @@ such as &#8220;Meters&#8221;, &#8220;Miles&#8221;, &#8220;Kilometers&#8221;, &#8
 <dl class="classmethod">
 <dt id="arcgis.geoprocessing.LinearUnit.from_str">
 <em class="property">classmethod </em><code class="descname">from_str</code><span class="sig-paren">(</span><em>how_far</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.geoprocessing.LinearUnit.from_str" title="Permalink to this definition">¶</a></dt>
-<dd><p>Creates a linear unit from a string like &#8216;5 miles&#8217;.</p>
+<dd><p>Creates a linear unit from a string like ‘5 miles’.</p>
 </dd></dl>
 
 <dl class="method">
@@ -745,7 +750,7 @@ as a result of the upload operation.</td>
 </tr>
 <tr class="row-even"><td>format</td>
 <td>optional string, Specifies the format of the raster
-data, such as &#8220;jpg&#8221;, &#8220;tif&#8221;, etc.</td>
+data, such as “jpg”, “tif”, etc.</td>
 </tr>
 </tbody>
 </table>
@@ -808,7 +813,7 @@ data, such as &#8220;jpg&#8221;, &#8220;tif&#8221;, etc.</td>
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'./',
-            VERSION:'1.2.1',
+            VERSION:'1.2.4',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  true

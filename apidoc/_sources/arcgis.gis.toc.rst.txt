@@ -52,6 +52,13 @@ Layer
     :undoc-members:
     :show-inheritance:
     
+GroupApplication
+----------------
+.. autoclass:: arcgis.gis.GroupApplication
+    :members:
+    :undoc-members:
+    :show-inheritance:
+    
 ContentManager
 -------------------------
 .. autoclass:: arcgis.gis.ContentManager

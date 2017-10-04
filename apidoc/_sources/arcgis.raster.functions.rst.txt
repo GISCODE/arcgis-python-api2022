@@ -183,9 +183,9 @@ extract_band
 ____________
 .. automethod:: arcgis.raster.functions.extract_band
 
-float
+FLOAT
 _____
-.. automethod:: arcgis.raster.functions.float
+.. automethod:: arcgis.raster.functions.FLOAT
 
 float_divide
 ____________
@@ -219,9 +219,9 @@ hillshade
 _________
 .. automethod:: arcgis.raster.functions.hillshade
 
-int
+INT
 ___
-.. automethod:: arcgis.raster.functions.int
+.. automethod:: arcgis.raster.functions.INT
 
 is_null
 _______
@@ -298,9 +298,9 @@ msavi
 _____
 .. automethod:: arcgis.raster.functions.msavi
 
-multiply
+MULTIPLY
 ________
-.. automethod:: arcgis.raster.functions.multiply
+.. automethod:: arcgis.raster.functions.MULTIPLY
 
 ndvi
 ____
@@ -326,9 +326,9 @@ pvi
 ___
 .. automethod:: arcgis.raster.functions.pvi
 
-range
-_____
-.. automethod:: arcgis.raster.functions.range
+cellstats_range
+_______________
+.. automethod:: arcgis.raster.functions.cellstats_range
 
 remap
 _____

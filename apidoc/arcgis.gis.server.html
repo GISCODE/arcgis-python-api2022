@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>arcgis.gis.server module &mdash; arcgis 1.2.1 documentation</title>
+  <title>arcgis.gis.server module &mdash; arcgis 1.2.4 documentation</title>
   
 
   
@@ -35,7 +35,7 @@
         <link rel="index" title="Index"
               href="genindex.html"/>
         <link rel="search" title="Search" href="search.html"/>
-    <link rel="top" title="arcgis 1.2.1 documentation" href="index.html"/>
+    <link rel="top" title="arcgis 1.2.4 documentation" href="index.html"/>
         <link rel="up" title="arcgis.gis module" href="arcgis.gis.toc.html"/>
         <link rel="next" title="arcgis.env module" href="arcgis.env.html"/>
         <link rel="prev" title="arcgis.gis.admin module" href="arcgis.gis.admin.html"/> 
@@ -66,7 +66,7 @@
             
             
               <div class="version">
-                1.2.1
+                1.2.4
               </div>
             
           
@@ -97,6 +97,7 @@
 <li class="toctree-l2"><a class="reference internal" href="arcgis.gis.toc.html#datastore">Datastore</a></li>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.gis.toc.html#role">Role</a></li>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.gis.toc.html#layer">Layer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.gis.toc.html#groupapplication">GroupApplication</a></li>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.gis.toc.html#contentmanager">ContentManager</a></li>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.gis.toc.html#usermanager">UserManager</a></li>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.gis.toc.html#groupmanager">GroupManager</a></li>
@@ -132,6 +133,7 @@
 </li>
 <li class="toctree-l3 current"><a class="current reference internal" href="#">arcgis.gis.server module</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#server">Server</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#module-arcgis.gis.server.catalog">ServicesDirectory</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#service">Service</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#machine">Machine</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#report">Report</a></li>
@@ -160,6 +162,7 @@
 <li class="toctree-l2"><a class="reference internal" href="arcgis.env.html#analysis-extent">analysis_extent</a></li>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.env.html#out-spatial-reference">out_spatial_reference</a></li>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.env.html#process-spatial-reference">process_spatial_reference</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.env.html#output-datastore">output_datastore</a></li>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.env.html#return-z">return_z</a></li>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.env.html#return-m">return_m</a></li>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.env.html#verbose">verbose</a></li>
@@ -324,7 +327,7 @@
 <li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#exp2">exp2</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#expression">expression</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#extract-band">extract_band</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#float">float</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#float">FLOAT</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#float-divide">float_divide</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#floor-divide">floor_divide</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#gemi">gemi</a></li>
@@ -333,7 +336,7 @@
 <li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#greater-than-equal">greater_than_equal</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#gvitm">gvitm</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#hillshade">hillshade</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#int">int</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#int">INT</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#is-null">is_null</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#less-than">less_than</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#less-than-equal">less_than_equal</a></li>
@@ -353,14 +356,14 @@
 <li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#mod">mod</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#mode">mode</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#msavi">msavi</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#multiply">multiply</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#multiply">MULTIPLY</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#ndvi">ndvi</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#negate">negate</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#not-equal">not_equal</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#plus">plus</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#power">power</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#pvi">pvi</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#range">range</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#cellstats-range">cellstats_range</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#remap">remap</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#resample">resample</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#round-down">round_down</a></li>
@@ -426,10 +429,12 @@
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="arcgis.geoanalytics.find_locations.html">arcgis.geoanalytics.find_locations module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.geoanalytics.find_locations.html#detect-incidents">detect_incidents</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.geoanalytics.find_locations.html#find-similar-locations">find_similar_locations</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="arcgis.geoanalytics.manage_data.html">arcgis.geoanalytics.manage_data module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.geoanalytics.manage_data.html#calculate-fields">calculate_fields</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.geoanalytics.manage_data.html#copy-to-data-store">copy_to_data_store</a></li>
 </ul>
 </li>
@@ -568,7 +573,7 @@
       <li class="wy-breadcrumbs-aside">
         
           
-            <a href="_sources/arcgis.gis.server.txt" rel="nofollow"> View page source</a>
+            <a href="_sources/arcgis.gis.server.rst.txt" rel="nofollow"> View page source</a>
           
         
       </li>
@@ -578,36 +583,133 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="arcgis-gis-server-module">
-<h1>arcgis.gis.server module<a class="headerlink" href="#arcgis-gis-server-module" title="Permalink to this headline">¶</a></h1>
-<span class="target" id="module-arcgis.gis.server"></span><p>A collection of classes foradministering an ArcGIS Enterprise&#8217;s server.</p>
+  <div class="section" id="module-arcgis.gis.server">
+<span id="arcgis-gis-server-module"></span><h1>arcgis.gis.server module<a class="headerlink" href="#module-arcgis.gis.server" title="Permalink to this headline">¶</a></h1>
+<p>A collection of classes for administering an ArcGIS Enterprise server.</p>
 <div class="section" id="server">
 <h2>Server<a class="headerlink" href="#server" title="Permalink to this headline">¶</a></h2>
 <dl class="class">
 <dt id="arcgis.gis.server.Server">
-<em class="property">class </em><code class="descclassname">arcgis.gis.server.</code><code class="descname">Server</code><span class="sig-paren">(</span><em>url=None</em>, <em>tokenurl=None</em>, <em>username=None</em>, <em>password=None</em>, <em>verify_cert=False</em>, <em>gis=None</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.server.Server" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">object</span></code></p>
-<p>An ArcGIS Enterprise server used for hosting services</p>
-<p>Parameters:
-:param url: site url of the server
-:param tokenurl: optional URL for pointing to the server&#8217;s token url
-:param username: name of login user
-:param password: password of login user
-:param verify_cert: boolean value, False means any invalid certificates
-will be ignored.  True means only valid certificates will be accepted.
-:param gis: if a server is federated, a GIS object should be given
-inorder to ensure that the Portal Security is used over server token.</p>
+<em class="property">class </em><code class="descclassname">arcgis.gis.server.</code><code class="descname">Server</code><span class="sig-paren">(</span><em>url</em>, <em>gis=None</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.server.Server" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">arcgis.gis.server._common._base.BaseServer</span></code></p>
+<p>An ArcGIS Enterprise server used for hosting services.</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="20%" />
+<col width="80%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><strong>Argument</strong></td>
+<td><strong>Description</strong></td>
+</tr>
+<tr class="row-even"><td>url</td>
+<td><p class="first">Required string. The web address to the ArcGIS Server administration
+end point.</p>
+<p>Example: <a class="reference external" href="https://mysite.com/arcgis/admin">https://mysite.com/arcgis/admin</a></p>
+<p class="last">The URL should be formatted as follows:
+&lt;scheme&gt;://&lt;host&gt;:&lt;port (optional)&gt;/&lt;web adapter&gt;/admin</p>
+</td>
+</tr>
+<tr class="row-odd"><td>gis</td>
+<td>Optional string. The GIS object to which this Server is federated with.</td>
+</tr>
+</tbody>
+</table>
+<table border="1" class="docutils">
+<colgroup>
+<col width="23%" />
+<col width="77%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><strong>Optional Argument</strong></td>
+<td><strong>Description</strong></td>
+</tr>
+<tr class="row-even"><td>baseurl</td>
+<td>Optional string. The root URL to a site.
+Example: <a class="reference external" href="https://mysite.com/arcgis">https://mysite.com/arcgis</a></td>
+</tr>
+<tr class="row-odd"><td>tokenurl</td>
+<td>Optional string. Used when a site is federated or when the token
+URL differs from the site’s baseurl.  If a site is federated, the
+token URL will return as the Portal token and ArcGIS Server users
+will not validate correctly.</td>
+</tr>
+<tr class="row-even"><td>username</td>
+<td>Optional string. The login username for BUILT-IN security.</td>
+</tr>
+<tr class="row-odd"><td>password</td>
+<td>Optional string. A secret word or phrase that must be used to gain
+access to the account above.</td>
+</tr>
+<tr class="row-even"><td>key_file</td>
+<td>Optional string. The path to PKI key file.</td>
+</tr>
+<tr class="row-odd"><td>cert_file</td>
+<td>Optional string. The path to PKI cert file.</td>
+</tr>
+<tr class="row-even"><td>proxy_host</td>
+<td><p class="first">Optional string. The web address to the proxy host.</p>
+<p class="last">Example: proxy.mysite.com</p>
+</td>
+</tr>
+<tr class="row-odd"><td>proxy_port</td>
+<td>Optional integer. The port where the proxy resides on, default is 80.</td>
+</tr>
+<tr class="row-even"><td>expiration</td>
+<td>Optional integer. This is the length of time a token is valid for.
+Example 1440 is one week. The Default is 60.</td>
+</tr>
+<tr class="row-odd"><td>all_ssl</td>
+<td>Optional boolean. If True, all calls will be made over HTTPS instead
+of HTTP. The default is False.</td>
+</tr>
+<tr class="row-even"><td>portal_connection</td>
+<td>Optional string. This is used when a site is federated. It is the
+ArcGIS Online or Portal GIS object used.</td>
+</tr>
+<tr class="row-odd"><td>initialize</td>
+<td>Optional boolean. If True, the object will attempt to reach out to
+the URL resource and populate at creation time. The default is False.</td>
+</tr>
+</tbody>
+</table>
+<dl class="attribute">
+<dt id="arcgis.gis.server.Server.content">
+<code class="descname">content</code><a class="headerlink" href="#arcgis.gis.server.Server.content" title="Permalink to this definition">¶</a></dt>
+<dd><p>Gets the Services Directory which can help you discover information about
+services available on a particular server. A service represents a
+local GIS resource whose functionality has been made available on
+the server to a wider audience. For example, an ArcGIS Server
+administrator can publish an ArcMap document (.mxd) as a map
+service. Developers and clients can display the map service and
+query its contents.</p>
+<p>The Services Directory is available as part of the REST services
+infrastructure available with ArcGIS Server installations. It
+enables you to list the services available, including secured
+services when you provide a proper login. For each service, a set
+of general properties are displayed. For map services, these
+properties include the spatial extent, spatial reference
+(coordinate system) and supported operations. Layers are also
+listed, with links to details about layers, which includes layer
+fields and extent. The Services Directory can execute simple
+queries on layers.</p>
+<p>The Services Directory is also useful for finding information about
+non-map service types. For example, you can use the Services
+Directory to determine the required address format for a geocode
+service, or the necessary model inputs for a geoprocessing service.</p>
+</dd></dl>
+
 <dl class="attribute">
 <dt id="arcgis.gis.server.Server.datastores">
 <code class="descname">datastores</code><a class="headerlink" href="#arcgis.gis.server.Server.datastores" title="Permalink to this definition">¶</a></dt>
-<dd><p>This resource provides information about the data holdings of the
-_server. Data items are used by ArcGIS for Desktop and other clients
+<dd><p>Gets the information about the data holdings of the server. 
+Data items are used by ArcGIS for Desktop and other clients
 to validate data paths referenced by GIS services.
-You can register new data items with the _server by using the
+You can register new data items with the server by using the
 Register Data Item operation. Use the Find Data Items operation to
 search through the hierarchy of data items.
 A relational data store type represents a database platform that
-has been registered for use on a portal&#8217;s hosting _server by the
+has been registered for use on a portal’s hosting server by the
 ArcGIS Server administrator. Each relational data store type
 describes the properties ArcGIS Server requires in order to connect
 to an instance of a database for a particular platform. At least
@@ -622,9 +724,9 @@ particular data item can be safely deleted or refreshed.</p>
 <dl class="attribute">
 <dt id="arcgis.gis.server.Server.logs">
 <code class="descname">logs</code><a class="headerlink" href="#arcgis.gis.server.Server.logs" title="Permalink to this definition">¶</a></dt>
-<dd><p>This allows users to access the  ArcGIS Server&#8217;s logs and lets
+<dd><p>Gives users access the ArcGIS Server’s logs and lets
 administrators query and find errors and/or problems related to
-the _server or a service.</p>
+the server or a service.</p>
 <p>Logs are the records written by the various components of ArcGIS
 Server. You can query the logs and change various log settings.
 <strong>Note</strong>
@@ -634,30 +736,65 @@ ArcGIS Server Only</p>
 <dl class="attribute">
 <dt id="arcgis.gis.server.Server.machines">
 <code class="descname">machines</code><a class="headerlink" href="#arcgis.gis.server.Server.machines" title="Permalink to this definition">¶</a></dt>
-<dd><p>This resource represents a collection of all the _server machines that
+<dd><p>Gets the list of server machines registered with the site.  
+This resource represents a collection of all the server machines that
 have been registered with the site. It other words, it represents
 the total computing power of your site. A site will continue to run
-as long as there is one _server machine online.
-For a _server machine to start hosting GIS services, it must be
+as long as there is one server machine online.
+For a server machine to start hosting GIS services, it must be
 grouped (or clustered). When you create a new site, a cluster called
-&#8216;default&#8217; is created for you.
-The list of _server machines in your site can be dynamic. You can
-register additional _server machines when you need to increase the
+‘default’ is created for you.
+The list of server machines in your site can be dynamic. You can
+register additional server machines when you need to increase the
 computing power of your site or unregister them if you no longer
 need them.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="arcgis.gis.server.Server.publish_sd">
+<code class="descname">publish_sd</code><span class="sig-paren">(</span><em>sd_file</em>, <em>folder=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.server.Server.publish_sd" title="Permalink to this definition">¶</a></dt>
+<dd><p>Publishes a service definition file to ArcGIS Server.</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="20%" />
+<col width="80%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><strong>Argument</strong></td>
+<td><strong>Description</strong></td>
+</tr>
+<tr class="row-even"><td>sd_file</td>
+<td>Required string. The service definition file to be uploaded and published.</td>
+</tr>
+<tr class="row-odd"><td>folder</td>
+<td>Optional string. The folder in which to publish the service definition
+file to.  If this folder is not present, it will be created.  The
+default is None in which case the service definition will be published
+to the System folder.</td>
+</tr>
+</tbody>
+</table>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">A boolean indicating success (True) or failure (False).</td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
 <dl class="attribute">
 <dt id="arcgis.gis.server.Server.services">
 <code class="descname">services</code><a class="headerlink" href="#arcgis.gis.server.Server.services" title="Permalink to this definition">¶</a></dt>
-<dd><p>Provides administrator access to the services on ArcGIS Server as a
+<dd><p>Gives the administrator access to the services on ArcGIS Server as a
 ServerManager Object.</p>
 </dd></dl>
 
 <dl class="attribute">
 <dt id="arcgis.gis.server.Server.site">
 <code class="descname">site</code><a class="headerlink" href="#arcgis.gis.server.Server.site" title="Permalink to this definition">¶</a></dt>
-<dd><p>A site is a collection of server resources. This collection
+<dd><p>Gets the site’s collection of server resources. This collection
 includes server machines that are installed with ArcGIS Server,
 including GIS services, data and so on. The site resource also
 lists the current version of the software.
@@ -671,13 +808,13 @@ cause all of the resources to be cleaned up.</p>
 <dl class="attribute">
 <dt id="arcgis.gis.server.Server.system">
 <code class="descname">system</code><a class="headerlink" href="#arcgis.gis.server.Server.system" title="Permalink to this definition">¶</a></dt>
-<dd><p>provides access to common system configuration settings</p>
+<dd><p>Provides access to common system configuration settings.</p>
 </dd></dl>
 
 <dl class="attribute">
 <dt id="arcgis.gis.server.Server.usage">
 <code class="descname">usage</code><a class="headerlink" href="#arcgis.gis.server.Server.usage" title="Permalink to this definition">¶</a></dt>
-<dd><p>This resource is a collection of all the usage reports created
+<dd><p>Gets the collection of all the usage reports created
 within your site. The Create Usage Report operation lets you define
 a new usage report.</p>
 </dd></dl>
@@ -685,7 +822,142 @@ a new usage report.</p>
 <dl class="attribute">
 <dt id="arcgis.gis.server.Server.users">
 <code class="descname">users</code><a class="headerlink" href="#arcgis.gis.server.Server.users" title="Permalink to this definition">¶</a></dt>
-<dd><p>returns operations to work with users</p>
+<dd><p>Gets operations to work with users.</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-arcgis.gis.server.catalog">
+<span id="servicesdirectory"></span><h2>ServicesDirectory<a class="headerlink" href="#module-arcgis.gis.server.catalog" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="arcgis.gis.server.catalog.ServicesDirectory">
+<em class="property">class </em><code class="descclassname">arcgis.gis.server.catalog.</code><code class="descname">ServicesDirectory</code><span class="sig-paren">(</span><em>url</em>, <em>username=None</em>, <em>password=None</em>, <em>key_file=None</em>, <em>cert_file=None</em>, <em>verify_cert=False</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.server.catalog.ServicesDirectory" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">arcgis.gis.server._common._base.BaseServer</span></code></p>
+<p>Provides ArcGIS Server Services Directory access.</p>
+<p>The Services Directory allows you to browse the contents of an ArcGIS Server and obtain
+information that can be useful to endusers for developing applications, performing analysis, or
+cataloging services. The ServicesDirectory is a view of the ArcGIS Server REST API in a python
+class.</p>
+<dl class="docutils">
+<dt>With the Services Directory, you can do the following:</dt>
+<dd><ul class="first last simple">
+<li>Browse the contents of the GIS Server and get service-level metadata</li>
+<li>Navigate a series of links to view information about the services on your GIS Server.</li>
+<li>Get information to help you develop applications</li>
+</ul>
+</dd>
+</dl>
+<p>When you develop applications with the Python API, you must provide URLs to services and the
+layers and functionality they expose. The Services Directory provides an interactive way for
+you to construct those URLs.</p>
+<p>The Services Directory works using REST. REST is an architectural style that allows ArcGIS
+Server to reveal a hierarchy of information about itself through endpoints, or URLs. When you
+use the Services Directory, you navigate through a series of links to discover information
+about the server. Each time you click a link, you see a new page that reveals additional
+information about what’s available on the server. The information that you see on the page is
+retrieved through REST using the page’s URL.</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="24%" />
+<col width="76%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><strong>Arguments</strong></td>
+<td><strong>Description</strong></td>
+</tr>
+<tr class="row-even"><td>url</td>
+<td><p class="first">string required. The web address to the ArcGIS Server administration
+end point.</p>
+<p>Example: <a class="reference external" href="https://mysite.com/arcgis">https://mysite.com/arcgis</a></p>
+<p class="last">The URL should be formatted as follows:
+&lt;scheme&gt;://&lt;host&gt;:&lt;port (optional)&gt;/&lt;web adapter&gt;</p>
+</td>
+</tr>
+<tr class="row-odd"><td>baseurl</td>
+<td>optional string, the root URL to a site.
+Example: <a class="reference external" href="https://mysite.com/arcgis">https://mysite.com/arcgis</a></td>
+</tr>
+<tr class="row-even"><td>tokenurl</td>
+<td>optional string. Used when a site if federated or when the token
+URL differs from the site’s baseurl.  If a site is federated, the
+token URL will return as the Portal token and ArcGIS Server users
+will not validate correctly.</td>
+</tr>
+<tr class="row-odd"><td>username</td>
+<td>optional string, login username for BUILT-IN security</td>
+</tr>
+<tr class="row-even"><td>password</td>
+<td>optional string, a secret word or phrase that must be used to gain
+access to the account above.</td>
+</tr>
+<tr class="row-odd"><td>key_file</td>
+<td>optional string, path to PKI ket file</td>
+</tr>
+<tr class="row-even"><td>cert_file</td>
+<td>optional string, path to PKI cert file</td>
+</tr>
+<tr class="row-odd"><td>proxy_host</td>
+<td><p class="first">optional string, web address to the proxy host</p>
+<p class="last">Example: proxy.mysite.com</p>
+</td>
+</tr>
+<tr class="row-even"><td>proxy_port</td>
+<td>optional integer, default is 80. The port where the proxy resided on</td>
+</tr>
+<tr class="row-odd"><td>expiration</td>
+<td>optional integer. The Default is 60. This is the length of time a
+token is valid for.
+Example 1440 is one week.</td>
+</tr>
+<tr class="row-even"><td>all_ssl</td>
+<td>optional boolean. The default is False. If True, all calls will be
+made over HTTPS instead of HTTP.</td>
+</tr>
+<tr class="row-odd"><td>portal_connection</td>
+<td>optional GIS. This is used when a site is federated. It is the
+ArcGIS Online or Portal GIS object used.</td>
+</tr>
+<tr class="row-even"><td>initialize</td>
+<td>optional boolean.  The default is False.  If True, the object will
+attempt to reach out to the URL resource and populate at creation
+time.</td>
+</tr>
+<tr class="row-odd"><td>verify_cert</td>
+<td>optional booean.  The defaut is True.  If False, any certificate
+errors will be ignored.  This is useful for new sites or where site
+that have invalid certificates.</td>
+</tr>
+</tbody>
+</table>
+<dl class="method">
+<dt id="arcgis.gis.server.catalog.ServicesDirectory.find">
+<code class="descname">find</code><span class="sig-paren">(</span><em>service_name</em>, <em>folder=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.server.catalog.ServicesDirectory.find" title="Permalink to this definition">¶</a></dt>
+<dd><p>finds a service based on it’s name in a given folder</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="arcgis.gis.server.catalog.ServicesDirectory.folders">
+<code class="descname">folders</code><a class="headerlink" href="#arcgis.gis.server.catalog.ServicesDirectory.folders" title="Permalink to this definition">¶</a></dt>
+<dd><p>returns a list of server folders</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="arcgis.gis.server.catalog.ServicesDirectory.get">
+<code class="descname">get</code><span class="sig-paren">(</span><em>name</em>, <em>folder=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.server.catalog.ServicesDirectory.get" title="Permalink to this definition">¶</a></dt>
+<dd><p>returns a single service in a folder</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="arcgis.gis.server.catalog.ServicesDirectory.list">
+<code class="descname">list</code><span class="sig-paren">(</span><em>folder=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.server.catalog.ServicesDirectory.list" title="Permalink to this definition">¶</a></dt>
+<dd><p>returns a list of services at the given folder</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="arcgis.gis.server.catalog.ServicesDirectory.report">
+<code class="descname">report</code><span class="sig-paren">(</span><em>as_html=True</em>, <em>folder=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.server.catalog.ServicesDirectory.report" title="Permalink to this definition">¶</a></dt>
+<dd><p>Generates a table list of Services in the given folder</p>
 </dd></dl>
 
 </dd></dl>
@@ -695,18 +967,14 @@ a new usage report.</p>
 <h2>Service<a class="headerlink" href="#service" title="Permalink to this headline">¶</a></h2>
 <dl class="class">
 <dt id="arcgis.gis.server.Service">
-<em class="property">class </em><code class="descclassname">arcgis.gis.server.</code><code class="descname">Service</code><span class="sig-paren">(</span><em>url</em>, <em>server</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.server.Service" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">object</span></code></p>
+<em class="property">class </em><code class="descclassname">arcgis.gis.server.</code><code class="descname">Service</code><span class="sig-paren">(</span><em>url</em>, <em>gis</em>, <em>initialize=False</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.server.Service" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">arcgis.gis.server._common._base.BaseServer</span></code></p>
 <p>Represents a GIS administrative service</p>
-<p>Parameter:
-:param url: admin url of the service
-:param server: server object
-:param service: service object
-:param svcmgr: service manager object</p>
+<p><strong>(This should not be created by a user)</strong></p>
 <dl class="method">
 <dt id="arcgis.gis.server.Service.delete">
 <code class="descname">delete</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.server.Service.delete" title="Permalink to this definition">¶</a></dt>
-<dd><p>Deletes the service and return True if successful, False otherwise</p>
+<dd><p>deletes a service from arcgis server</p>
 </dd></dl>
 
 <dl class="method">
@@ -718,12 +986,6 @@ service properties. Editing a service causes the service to be
 restarted with updated properties.</p>
 </dd></dl>
 
-<dl class="attribute">
-<dt id="arcgis.gis.server.Service.properties">
-<code class="descname">properties</code><a class="headerlink" href="#arcgis.gis.server.Service.properties" title="Permalink to this definition">¶</a></dt>
-<dd><p>The properties of the Service</p>
-</dd></dl>
-
 <dl class="method">
 <dt id="arcgis.gis.server.Service.rename">
 <code class="descname">rename</code><span class="sig-paren">(</span><em>new_name</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.server.Service.rename" title="Permalink to this definition">¶</a></dt>
@@ -731,27 +993,33 @@ restarted with updated properties.</p>
 </dd></dl>
 
 <dl class="method">
+<dt id="arcgis.gis.server.Service.restart">
+<code class="descname">restart</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.server.Service.restart" title="Permalink to this definition">¶</a></dt>
+<dd><p>restarts the current service</p>
+</dd></dl>
+
+<dl class="method">
 <dt id="arcgis.gis.server.Service.start">
 <code class="descname">start</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.server.Service.start" title="Permalink to this definition">¶</a></dt>
-<dd><p>Starts the service</p>
+<dd><p>starts the specific service</p>
 </dd></dl>
 
 <dl class="attribute">
 <dt id="arcgis.gis.server.Service.statistics">
 <code class="descname">statistics</code><a class="headerlink" href="#arcgis.gis.server.Service.statistics" title="Permalink to this definition">¶</a></dt>
-<dd><p>Returns the stats for the service</p>
+<dd><p>returns the stats for the service</p>
 </dd></dl>
 
 <dl class="attribute">
 <dt id="arcgis.gis.server.Service.status">
 <code class="descname">status</code><a class="headerlink" href="#arcgis.gis.server.Service.status" title="Permalink to this definition">¶</a></dt>
-<dd><p>Returns the status of the service</p>
+<dd><p>returns the status of the service</p>
 </dd></dl>
 
 <dl class="method">
 <dt id="arcgis.gis.server.Service.stop">
 <code class="descname">stop</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.server.Service.stop" title="Permalink to this definition">¶</a></dt>
-<dd><p>Stops the service</p>
+<dd><p>stops the current service</p>
 </dd></dl>
 
 </dd></dl>
@@ -761,9 +1029,10 @@ restarted with updated properties.</p>
 <h2>Machine<a class="headerlink" href="#machine" title="Permalink to this headline">¶</a></h2>
 <dl class="class">
 <dt id="arcgis.gis.server.Machine">
-<em class="property">class </em><code class="descclassname">arcgis.gis.server.</code><code class="descname">Machine</code><span class="sig-paren">(</span><em>machine</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.server.Machine" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">object</span></code></p>
-<p>A server machine represents a machine on which ArcGIS Server
+<em class="property">class </em><code class="descclassname">arcgis.gis.server.</code><code class="descname">Machine</code><span class="sig-paren">(</span><em>url</em>, <em>gis</em>, <em>initialize=False</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.server.Machine" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">arcgis.gis.server._common._base.BaseServer</span></code></p>
+<blockquote>
+<div>A server machine represents a machine on which ArcGIS Server
 software has been installed and licensed. A site is made up one or
 more of such machines that work together to host GIS services and
 data and provide administrative capabilities for the site. Each
@@ -780,9 +1049,24 @@ through the ArcGIS Server Administrator API that can be accessed
 over HTTP(S). For a server machine to participate in a site, it must
 be registered with the site. A machine can participate in only one
 site at a time. To remove a machine permanently from the site, you
-can use the unregister operation.</p>
-<p>Parameter:
-:param machine: Machine object</p>
+can use the unregister operation.</div></blockquote>
+<dl class="docutils">
+<dt>Parameters:</dt>
+<dd><table class="first docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">url:</th><td class="field-body">web address of the machine</td>
+</tr>
+<tr class="field-even field"><th class="field-name">gis:</th><td class="field-body">GIS or Server object</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">initialize:</th><td class="field-body">default False, if True, the properties are loaded at</td>
+</tr>
+</tbody>
+</table>
+<p class="last">creation</p>
+</dd>
+</dl>
 <dl class="method">
 <dt id="arcgis.gis.server.Machine.export_certificate">
 <code class="descname">export_certificate</code><span class="sig-paren">(</span><em>certificate</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.server.Machine.export_certificate" title="Permalink to this definition">¶</a></dt>
@@ -841,7 +1125,7 @@ Parameters:</p>
 <tr class="field-odd field"><th class="field-name">certificate:</th><td class="field-body">name of the certificate to grab information for</td>
 </tr>
 <tr class="field-even field"><th class="field-name" colspan="2">ca_signed_certificate:</th></tr>
-<tr class="field-even field"><td>&nbsp;</td><td class="field-body">The multi-part POST parameter containing the
+<tr class="field-even field"><td>&#160;</td><td class="field-body">The multi-part POST parameter containing the
 signed certificate file.</td>
 </tr>
 </tbody>
@@ -882,12 +1166,12 @@ file</td>
 <dl class="method">
 <dt id="arcgis.gis.server.Machine.import_root_certificate">
 <code class="descname">import_root_certificate</code><span class="sig-paren">(</span><em>alias</em>, <em>root_CA_certificate</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.server.Machine.import_root_certificate" title="Permalink to this definition">¶</a></dt>
-<dd><p>This operation imports a certificate authority (CA)&#8217;s root and
+<dd><p>This operation imports a certificate authority (CA)’s root and
 intermediate certificates into the keystore.
 To create a production quality CA-signed certificate, you need to
-add the CA&#8217;s certificates into the keystore that enables the SSL
+add the CA’s certificates into the keystore that enables the SSL
 mechanism to trust the CA (and the certificates it has signed).
-While most of the popular CA&#8217;s certificates are already available
+While most of the popular CA’s certificates are already available
 in the keystore, you can use this operation if you have a custom
 CA or specific intermediate certificates.</p>
 <dl class="docutils">
@@ -906,12 +1190,6 @@ CA or specific intermediate certificates.</p>
 </dl>
 </dd>
 </dl>
-</dd></dl>
-
-<dl class="attribute">
-<dt id="arcgis.gis.server.Machine.properties">
-<code class="descname">properties</code><a class="headerlink" href="#arcgis.gis.server.Machine.properties" title="Permalink to this definition">¶</a></dt>
-<dd><p>lists the machine&#8217;s properties</p>
 </dd></dl>
 
 <dl class="method">
@@ -1000,12 +1278,16 @@ or join an existing site.</p>
 <h2>Report<a class="headerlink" href="#report" title="Permalink to this headline">¶</a></h2>
 <dl class="class">
 <dt id="arcgis.gis.server.Report">
-<em class="property">class </em><code class="descclassname">arcgis.gis.server.</code><code class="descname">Report</code><span class="sig-paren">(</span><em>report</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.server.Report" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">object</span></code></p>
-<p>A Single Usage Report returned by ArcGIS Server
-(This class should not be created by a user)
-Parameter:
-:param report: internal Report object</p>
+<em class="property">class </em><code class="descclassname">arcgis.gis.server.</code><code class="descname">Report</code><span class="sig-paren">(</span><em>url</em>, <em>gis</em>, <em>initialize=False</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.server.Report" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">arcgis.gis.server._common._base.BaseServer</span></code></p>
+<p><strong>(This class should not be created by a user)</strong></p>
+<p>A Single Usage Report returned by ArcGIS Server</p>
+<p>A Usage Report is used to obtain ArcGIS Server usage data for specified
+resources during a given time period. It specifies the parameters for
+obtaining server usage data, time range (since from and to parameters),
+aggregation interval, and queries (which specify the metrics to be
+gathered for a collection of server resources, such as folders and
+services).</p>
 <dl class="method">
 <dt id="arcgis.gis.server.Report.delete">
 <code class="descname">delete</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.server.Report.delete" title="Permalink to this definition">¶</a></dt>
@@ -1014,7 +1296,7 @@ Parameter:
 
 <dl class="method">
 <dt id="arcgis.gis.server.Report.edit">
-<code class="descname">edit</code><span class="sig-paren">(</span><em>report</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.server.Report.edit" title="Permalink to this definition">¶</a></dt>
+<code class="descname">edit</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.server.Report.edit" title="Permalink to this definition">¶</a></dt>
 <dd><p>Edits the usage report. To edit a usage report, you need to submit
 the complete JSON representation of the usage report which
 includes updates to the usage report properties. The name of the
@@ -1022,12 +1304,10 @@ report cannot be changed when editing the usage report.</p>
 <p>Values are changed in the class, to edit a property like
 metrics, pass in a new value.  Changed values to not take until the
 edit() is called.</p>
-</dd></dl>
-
-<dl class="attribute">
-<dt id="arcgis.gis.server.Report.properties">
-<code class="descname">properties</code><a class="headerlink" href="#arcgis.gis.server.Report.properties" title="Permalink to this definition">¶</a></dt>
-<dd><p>returns the Report Properties</p>
+<dl class="docutils">
+<dt>Inputs:</dt>
+<dd>None</dd>
+</dl>
 </dd></dl>
 
 <dl class="method">
@@ -1046,7 +1326,7 @@ the queried data is represented as an array of numerical values. A
 response of null indicates that data is not available or requests
 were not logged for that metric in the corresponding time-slice.</p>
 <dl class="docutils">
-<dt>Parameters:</dt>
+<dt>Inputs:</dt>
 <dd><dl class="first last docutils">
 <dt>query_filter - The report data can be filtered by the machine</dt>
 <dd><p class="first">where the data is generated. The filter accepts a comma
@@ -1054,9 +1334,9 @@ separated list of machine names; * represents all machines.</p>
 <dl class="last docutils">
 <dt>Examples:</dt>
 <dd># filters for the specified machines
-{&#8220;machines&#8221;: [&#8220;WIN-85VQ4T2LR5N&#8221;, &#8220;WIN-239486728937&#8221;]}
+{“machines”: [“WIN-85VQ4T2LR5N”, “WIN-239486728937”]}
 # no filtering; all machines are accepted
-{&#8220;machines&#8221;: &#8220;*&#8221;}</dd>
+{“machines”: “*”}</dd>
 </dl>
 </dd>
 </dl>
@@ -1071,11 +1351,9 @@ separated list of machine names; * represents all machines.</p>
 <h2>Datastore<a class="headerlink" href="#datastore" title="Permalink to this headline">¶</a></h2>
 <dl class="class">
 <dt id="arcgis.gis.server.Datastore">
-<em class="property">class </em><code class="descclassname">arcgis.gis.server.</code><code class="descname">Datastore</code><span class="sig-paren">(</span><em>datastore</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.server.Datastore" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">object</span></code></p>
+<em class="property">class </em><code class="descclassname">arcgis.gis.server.</code><code class="descname">Datastore</code><span class="sig-paren">(</span><em>datastore</em>, <em>path</em>, <em>datadict=None</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.server.Datastore" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">arcgis.gis.server._common._base.BaseServer</span></code></p>
 <p>Represents a Single Datastore in DataStoreManager</p>
-<p>Parameter:
-:param datastore: reprsents a single instance of datastore</p>
 <dl class="attribute">
 <dt id="arcgis.gis.server.Datastore.datasets">
 <code class="descname">datasets</code><a class="headerlink" href="#arcgis.gis.server.Datastore.datasets" title="Permalink to this definition">¶</a></dt>
@@ -1102,12 +1380,6 @@ are advanced parameters to control the generation of Manifest.</p>
 </dd></dl>
 
 <dl class="attribute">
-<dt id="arcgis.gis.server.Datastore.properties">
-<code class="descname">properties</code><a class="headerlink" href="#arcgis.gis.server.Datastore.properties" title="Permalink to this definition">¶</a></dt>
-<dd><p>returns the machine&#8217;s properties</p>
-</dd></dl>
-
-<dl class="attribute">
 <dt id="arcgis.gis.server.Datastore.ref_count">
 <code class="descname">ref_count</code><a class="headerlink" href="#arcgis.gis.server.Datastore.ref_count" title="Permalink to this definition">¶</a></dt>
 <dd><p>The total number of references to this data item that exist on the
@@ -1130,7 +1402,7 @@ can be safely deleted (or taken down for maintenance).</p>
 <dl class="method">
 <dt id="arcgis.gis.server.Datastore.validate">
 <code class="descname">validate</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.server.Datastore.validate" title="Permalink to this definition">¶</a></dt>
-<dd><p>Validates that this data item&#8217;s path (for file shares) or connection string (for databases)
+<dd><p>Validates that this data item’s path (for file shares) or connection string (for databases)
 is accessible to every server node in the site</p>
 <dl class="docutils">
 <dt>Output:</dt>
@@ -1145,7 +1417,7 @@ is accessible to every server node in the site</p>
 <h2>User<a class="headerlink" href="#user" title="Permalink to this headline">¶</a></h2>
 <dl class="class">
 <dt id="arcgis.gis.server.User">
-<em class="property">class </em><code class="descclassname">arcgis.gis.server.</code><code class="descname">User</code><span class="sig-paren">(</span><em>security</em>, <em>user_dict</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.server.User" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descclassname">arcgis.gis.server.</code><code class="descname">User</code><span class="sig-paren">(</span><em>usermanager</em>, <em>user_dict</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.server.User" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">dict</span></code></p>
 <p>Individual User Account</p>
 <dl class="method">
@@ -1204,13 +1476,43 @@ description - an optional field to add comments or description</p>
 <h2>Role<a class="headerlink" href="#role" title="Permalink to this headline">¶</a></h2>
 <dl class="class">
 <dt id="arcgis.gis.server.Role">
-<em class="property">class </em><code class="descclassname">arcgis.gis.server.</code><code class="descname">Role</code><span class="sig-paren">(</span><em>security</em>, <em>roledict</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.server.Role" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descclassname">arcgis.gis.server.</code><code class="descname">Role</code><span class="sig-paren">(</span><em>rolemanager</em>, <em>roledict</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.server.Role" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">dict</span></code></p>
 <p>represents a single role on server</p>
+<p><strong>(This is should not be created by a user)</strong></p>
 <dl class="method">
 <dt id="arcgis.gis.server.Role.delete">
 <code class="descname">delete</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.server.Role.delete" title="Permalink to this definition">¶</a></dt>
 <dd><p>deletes the current role</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="arcgis.gis.server.Role.grant">
+<code class="descname">grant</code><span class="sig-paren">(</span><em>username</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.server.Role.grant" title="Permalink to this definition">¶</a></dt>
+<dd><p>Adds a user to the current role</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="16%" />
+<col width="84%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td>Parmeters</td>
+<td><strong>Description</strong></td>
+</tr>
+<tr class="row-even"><td>username</td>
+<td>required string, account name to add to the role</td>
+</tr>
+</tbody>
+</table>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">boolean, True means added, False means could not add to
+Role</td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
 <dl class="method">
@@ -1229,10 +1531,10 @@ tiers of privileges:</p>
 </dl>
 </div></blockquote>
 <p>By assigning these privileges to one or more roles in the role
-store, ArcGIS Server&#8217;s security model supports role-based access
+store, ArcGIS Server’s security model supports role-based access
 control to its administrative functionality.
 These privilege assignments are stored independent of ArcGIS
-Server&#8217;s role store. As a result, you don&#8217;t need to update your
+Server’s role store. As a result, you don’t need to update your
 enterprise identity stores (like Active Directory).</p>
 </dd></dl>
 
@@ -1268,38 +1570,60 @@ for the role</td>
 <dt id="arcgis.gis.server.ServerManager">
 <em class="property">class </em><code class="descclassname">arcgis.gis.server.</code><code class="descname">ServerManager</code><span class="sig-paren">(</span><em>gis</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.server.ServerManager" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">object</span></code></p>
-<p>ServerManager is a set of tools to work with your WebGIS that allows
-administrators to federate, unfederate and manage ArcGIS Servers.</p>
-<dl class="docutils">
-<dt>Parameters:</dt>
-<dd><table class="first last docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">param gis:</th><td class="field-body">on-premise GIS object</td>
-</tr>
-</tbody>
-</table>
-</dd>
-</dl>
+<p>Helper class for managing your ArcGIS Servers. This class is not created
+by users directly. An instance of this class, called ‘servers’,
+is available as a property of the gis.admin object. Administrators call methods
+on this ‘gis.admin.servers’ object to manage and interrogate ArcGIS Servers.</p>
 <dl class="method">
 <dt id="arcgis.gis.server.ServerManager.get">
 <code class="descname">get</code><span class="sig-paren">(</span><em>role=None</em>, <em>function=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.server.ServerManager.get" title="Permalink to this definition">¶</a></dt>
-<dd><p>returns a server(s) by role or function.</p>
-<p>Parameters:
-:param role: Whether the server is a hosting server for the portal,
-a federated server, or a server with restricted access to
-publishing. The allowed values are FEDERATED_SERVER,
-FEDERATED_SERVER_WITH_RESTRICTED_PUBLISHING, or HOSTING_SERVER.
-:param function: Server function associates a specific function
-with the server. It takes in a comma separated list of values. The
-allowed values are GeoAnalytics,RasterAnalytics, and ImageHosting.</p>
+<dd><p>Retrieves the ArcGIS Server(s) by role or function. While each argument is optional, 
+at least one argument must be set with an allowed value other than None.</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="17%" />
+<col width="83%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><strong>Argument</strong></td>
+<td><strong>Description</strong></td>
+</tr>
+<tr class="row-even"><td>role</td>
+<td>Optional string. Limits the returned ArcGIS Servers based on the
+server’s role as either a hosting server for the portal, a federated server,
+or a server with restricted access to publishing. The allowed values
+are HOSTING_SERVER, FEDERATED_SERVER, or FEDERATED_SERVER_WITH_RESTRICTED_PUBLISHING,
+respectively.</td>
+</tr>
+<tr class="row-odd"><td>function</td>
+<td>Optional string. Limits the returned ArcGIS Servers based on the
+server’s function. Provide a comma-separated list of values. The
+allowed values are GeoAnalytics, RasterAnalytics, and ImageHosting.</td>
+</tr>
+</tbody>
+</table>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">The ArcGIS Server(s) discovered that match the criteria.</td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
 <dl class="method">
 <dt id="arcgis.gis.server.ServerManager.list">
 <code class="descname">list</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.server.ServerManager.list" title="Permalink to this definition">¶</a></dt>
-<dd><p>gets all servers in a GIS</p>
+<dd><p>Retrieves all servers in a GIS.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">A list of all servers found in the GIS.</td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
 <dl class="method">
@@ -1308,39 +1632,17 @@ allowed values are GeoAnalytics,RasterAnalytics, and ImageHosting.</p>
 <dd><p>This operation allows you to set an ArcGIS Server federated with
 Portal for ArcGIS as the hosting server or to enforce fine-grained
 access control to a federated server. You can also remove hosting
-server status from an ArcGIS Server. You can also remove hosting
 server status from an ArcGIS Server. To set a hosting server, an
 enterprise geodatabase must be registered as a managed database
 with the ArcGIS Server.</p>
-<dl class="docutils">
-<dt>Parameters:</dt>
-<dd><table class="first docutils field-list" frame="void" rules="none">
+<table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">param server:</th><td class="field-body"><p class="first">arcgis.gis.Server object</p>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">param role:</th><td class="field-body"><p class="first">Whether the server is a hosting server for the portal, a
-federated server, or a server with restricted access to
-publishing. The allowed values are:</p>
-<blockquote>
-<div><p>FEDERATED_SERVER, FEDERATED_SERVER_WITH_RESTRICTED_PUBLISHING,
-or HOSTING_SERVER.</p>
-</div></blockquote>
-</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">param function:</th><td class="field-body"><p class="first last">Function associates a specific function with the</p>
-</td>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">A status message of ‘success’ with the ID of the ArcGIS Server.</td>
 </tr>
 </tbody>
 </table>
-<p class="last">server. It takes in a comma separated list of values. The allowed
-values are GeoAnalytics,RasterAnalytics, and ImageHosting. Values
-can be comma separated but it is not recommend that a single
-server have all the server functions</p>
-</dd>
-</dl>
 </dd></dl>
 
 <dl class="method">
@@ -1348,9 +1650,15 @@ server have all the server functions</p>
 <code class="descname">validate</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.server.ServerManager.validate" title="Permalink to this definition">¶</a></dt>
 <dd><p>This operation returns information on the status of ArcGIS Servers
 registered with Portal for ArcGIS.</p>
-<p>Output: Boolean.  If false, there is an issue with 1 or more of the
-Federated Servers.  True means all servers are functioning as
-expected.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">True if all servers are functioning as expected, False if there is an 
+issue with 1 or more of the Federated Servers.</td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
 </dd></dl>
@@ -1360,22 +1668,22 @@ expected.</p>
 <h2>ServiceManager<a class="headerlink" href="#servicemanager" title="Permalink to this headline">¶</a></h2>
 <dl class="class">
 <dt id="arcgis.gis.server.ServiceManager">
-<em class="property">class </em><code class="descclassname">arcgis.gis.server.</code><code class="descname">ServiceManager</code><span class="sig-paren">(</span><em>server</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.server.ServiceManager" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">object</span></code></p>
+<em class="property">class </em><code class="descclassname">arcgis.gis.server.</code><code class="descname">ServiceManager</code><span class="sig-paren">(</span><em>url</em>, <em>gis</em>, <em>initialize=False</em>, <em>sm=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.server.ServiceManager" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">arcgis.gis.server._common._base.BaseServer</span></code></p>
 <p>Helper class for managing services. This class is not created by users directly. An instance of this class,
-called &#8216;services&#8217;, is available as a property of the Server object. Users call methods on this &#8216;services&#8217; object to
+called ‘services’, is available as a property of the Server object. Users call methods on this ‘services’ object to
 managing services.</p>
 <dl class="method">
 <dt id="arcgis.gis.server.ServiceManager.create_folder">
-<code class="descname">create_folder</code><span class="sig-paren">(</span><em>folder</em>, <em>description=''</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.server.ServiceManager.create_folder" title="Permalink to this definition">¶</a></dt>
-<dd><p>Creates a unique folder
-Parameters:</p>
+<code class="descname">create_folder</code><span class="sig-paren">(</span><em>folder_name</em>, <em>description=''</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.server.ServiceManager.create_folder" title="Permalink to this definition">¶</a></dt>
+<dd><p>Creates a unique folder name on AGS
+Inputs:</p>
 <blockquote>
-<div>:param folder_name - name of folder
-:param description - describes the folder</div></blockquote>
+<div>folder_name - name of folder on AGS
+description - describes the folder</div></blockquote>
 <dl class="docutils">
 <dt>Output:</dt>
-<dd>result as dictionary</dd>
+<dd>JSON message as dictionary</dd>
 </dl>
 </dd></dl>
 
@@ -1413,17 +1721,19 @@ describes the supported properties for each service.</div></blockquote>
 <div>on the service. The Extension Types section in the Help describes
 the supported out-of-the-box extensions for each service type.</div></blockquote>
 </div></blockquote>
-<p>Output:
-dictionary status message</p>
+<dl class="docutils">
+<dt>Output:</dt>
+<dd>dictionary status message</dd>
+</dl>
 </dd></dl>
 
 <dl class="method">
 <dt id="arcgis.gis.server.ServiceManager.delete_folder">
-<code class="descname">delete_folder</code><span class="sig-paren">(</span><em>folder</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.server.ServiceManager.delete_folder" title="Permalink to this definition">¶</a></dt>
-<dd><p>Deletes a folder
-Parameters:</p>
+<code class="descname">delete_folder</code><span class="sig-paren">(</span><em>folder_name</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.server.ServiceManager.delete_folder" title="Permalink to this definition">¶</a></dt>
+<dd><p>deletes a folder on AGS
+Inputs:</p>
 <blockquote>
-<div>:param folder - name of folder to remove</div></blockquote>
+<div>folder_name - name of folder to remove</div></blockquote>
 <dl class="docutils">
 <dt>Output:</dt>
 <dd>boolean</dd>
@@ -1438,12 +1748,16 @@ exists. To test if a folder exists, supply only a folder_name. To
 test if a service exists in a root folder, supply both serviceName
 and service_type with folder_name=None. To test if a service exists
 in a folder, supply all three parameters.</p>
-<p>Parameters:
-:param folder_name - a folder name
-:param name - a service name
-:param service_type - a service type. Allowed values:
-GeometryServer | ImageServer | MapServer | GeocodeServer |
-GeoDataServer | GPServer | GlobeServer | SearchServer</p>
+<dl class="docutils">
+<dt>Inputs:</dt>
+<dd><p class="first">folder_name - a folder name
+name - a service name
+service_type - a service type. Allowed values:</p>
+<blockquote class="last">
+<div>GeometryServer | ImageServer | MapServer | GeocodeServer |
+GeoDataServer | GPServer | GlobeServer | SearchServer</div></blockquote>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="attribute">
@@ -1454,7 +1768,7 @@ GeoDataServer | GPServer | GlobeServer | SearchServer</p>
 
 <dl class="method">
 <dt id="arcgis.gis.server.ServiceManager.list">
-<code class="descname">list</code><span class="sig-paren">(</span><em>folder='/'</em>, <em>refresh=False</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.server.ServiceManager.list" title="Permalink to this definition">¶</a></dt>
+<code class="descname">list</code><span class="sig-paren">(</span><em>folder=None</em>, <em>refresh=True</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.server.ServiceManager.list" title="Permalink to this definition">¶</a></dt>
 <dd><p>returns a list of services in the specified folder</p>
 <p>Parameters:
 :param folder: name of the folder to list services from
@@ -1464,11 +1778,8 @@ requested to the server, else the list will be returned from cache.</p>
 
 <dl class="method">
 <dt id="arcgis.gis.server.ServiceManager.publish_sd">
-<code class="descname">publish_sd</code><span class="sig-paren">(</span><em>sd_file_path</em>, <em>folder=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.server.ServiceManager.publish_sd" title="Permalink to this definition">¶</a></dt>
-<dd><p>Publishes a service definition file to the server
-:param sd_file_path: service defition file
-:param folder: optional folder name
-:return: True if published, False otherwise</p>
+<code class="descname">publish_sd</code><span class="sig-paren">(</span><em>sd_file</em>, <em>folder=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.server.ServiceManager.publish_sd" title="Permalink to this definition">¶</a></dt>
+<dd><p>publishes a service definition file to arcgis server</p>
 </dd></dl>
 
 </dd></dl>
@@ -1478,39 +1789,43 @@ requested to the server, else the list will be returned from cache.</p>
 <h2>MachineManager<a class="headerlink" href="#machinemanager" title="Permalink to this headline">¶</a></h2>
 <dl class="class">
 <dt id="arcgis.gis.server.MachineManager">
-<em class="property">class </em><code class="descclassname">arcgis.gis.server.</code><code class="descname">MachineManager</code><span class="sig-paren">(</span><em>server</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.server.MachineManager" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">object</span></code></p>
+<em class="property">class </em><code class="descclassname">arcgis.gis.server.</code><code class="descname">MachineManager</code><span class="sig-paren">(</span><em>url</em>, <em>gis</em>, <em>initialize=False</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.server.MachineManager" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">arcgis.gis.server._common._base.BaseServer</span></code></p>
 <p>This resource represents a collection of all the server machines that
 have been registered with the site. It other words, it represents the
 total computing power of your site. A site will continue to run as long
 as there is one server machine online.
 For a server machine to start hosting GIS services, it must be grouped
-(or clustered). When you create a new site, a cluster called &#8216;default&#8217;
+(or clustered). When you create a new site, a cluster called ‘default’
 is created for you.
 The list of server machines in your site can be dynamic. You can
 register additional server machines when you need to increase the
 computing power of your site or unregister them if you no longer need
 them.</p>
-<p>Parameters:
-:param server: server administration object</p>
 <dl class="method">
 <dt id="arcgis.gis.server.MachineManager.get">
-<code class="descname">get</code><span class="sig-paren">(</span><em>name</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.server.MachineManager.get" title="Permalink to this definition">¶</a></dt>
-<dd><p>gets a single instance of a machine</p>
-<p>Parameters:
-:param name: name of the machine</p>
+<code class="descname">get</code><span class="sig-paren">(</span><em>machine_name</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.server.MachineManager.get" title="Permalink to this definition">¶</a></dt>
+<dd><p>returns a machine object for a given machine
+Parameters:</p>
+<blockquote>
+<div><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name" colspan="2">param machine_name:</th></tr>
+<tr class="field-odd field"><td>&#160;</td><td class="field-body">name of the server</td>
+</tr>
+</tbody>
+</table>
+<p><strong>example</strong>
+&gt;&gt;&gt; machines_obj.get(“SERVER.DOMAIN.COM”)</p>
+</div></blockquote>
 </dd></dl>
 
 <dl class="method">
 <dt id="arcgis.gis.server.MachineManager.list">
 <code class="descname">list</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.server.MachineManager.list" title="Permalink to this definition">¶</a></dt>
-<dd><p>returns the list of machines in the GIS</p>
-</dd></dl>
-
-<dl class="attribute">
-<dt id="arcgis.gis.server.MachineManager.properties">
-<code class="descname">properties</code><a class="headerlink" href="#arcgis.gis.server.MachineManager.properties" title="Permalink to this definition">¶</a></dt>
-<dd><p>returns the machine&#8217;s properties</p>
+<dd><p>returns the list of machines in the cluster</p>
 </dd></dl>
 
 <dl class="method">
@@ -1519,31 +1834,17 @@ them.</p>
 <dd><p>For a server machine to participate in a site, it needs to be
 registered with the site. The server machine must have ArcGIS
 Server software installed and authorized.
-Registering machines this way is a &#8220;pull&#8221; approach to growing
+Registering machines this way is a “pull” approach to growing
 the site and is a convenient way when a large number of machines
 need to be added to a site. In contrast, a server machine can
 choose to join a site.
-Parameters:</p>
+Inputs:</p>
 <blockquote>
-<div><table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">param name:</th><td class="field-body"><ul class="first simple">
-<li>name of the server machine</li>
-</ul>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name" colspan="2">param admin_url:</th></tr>
-<tr class="field-even field"><td>&nbsp;</td><td class="field-body"><ul class="first simple">
-<li>URL wher ethe Administrator API is running on the</li>
-</ul>
-<p class="last">server machine.
-Example: <a class="reference external" href="http:/">http:/</a>/&lt;machineName&gt;:6080/arcgis/admin</p>
-</td>
-</tr>
-</tbody>
-</table>
+<div><p>name - name of the server machine
+admin_url - URL wher ethe Administrator API is running on the</p>
+<blockquote>
+<div>server machine.
+Example: <a class="reference external" href="http:/">http:/</a>/&lt;machineName&gt;:6080/arcgis/admin</div></blockquote>
 </div></blockquote>
 <dl class="docutils">
 <dt>Output:</dt>
@@ -1561,25 +1862,13 @@ By default, when the server is restarted, it is capable of
 identifying a name change and repairing itself and all its
 references. This operation is a manual call to handle the
 machine name change.
-Parameters:</p>
+Input:</p>
 <blockquote>
-<div><table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">param name:</th><td class="field-body"><ul class="first simple">
-<li>The former name of the server machine that is</li>
-</ul>
-<p>registered with the site.</p>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">param new_name:</th><td class="field-body"><ul class="first last simple">
-<li>The new name of the server machine.</li>
-</ul>
-</td>
-</tr>
-</tbody>
-</table>
+<div><dl class="docutils">
+<dt>name - The former name of the server machine that is</dt>
+<dd>registered with the site.</dd>
+</dl>
+<p>new_name - The new name of the server machine.</p>
 </div></blockquote>
 <dl class="docutils">
 <dt>Output:</dt>
@@ -1594,23 +1883,11 @@ Parameters:</p>
 <h2>LogManager<a class="headerlink" href="#logmanager" title="Permalink to this headline">¶</a></h2>
 <dl class="class">
 <dt id="arcgis.gis.server.LogManager">
-<em class="property">class </em><code class="descclassname">arcgis.gis.server.</code><code class="descname">LogManager</code><span class="sig-paren">(</span><em>server</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.server.LogManager" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">object</span></code></p>
+<em class="property">class </em><code class="descclassname">arcgis.gis.server.</code><code class="descname">LogManager</code><span class="sig-paren">(</span><em>url</em>, <em>gis</em>, <em>initialize=False</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.server.LogManager" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">arcgis.gis.server._common._base.BaseServer</span></code></p>
 <p>Log Mangement of a server</p>
 <p>This resource is accessed through by administrators to check on error
 messages.</p>
-<dl class="docutils">
-<dt>Parameters:</dt>
-<dd><table class="first last docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">param server:</th><td class="field-body">server object</td>
-</tr>
-</tbody>
-</table>
-</dd>
-</dl>
 <dl class="method">
 <dt id="arcgis.gis.server.LogManager.clean">
 <code class="descname">clean</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.server.LogManager.clean" title="Permalink to this definition">¶</a></dt>
@@ -1622,20 +1899,12 @@ messages.</p>
 <code class="descname">count_error_reports</code><span class="sig-paren">(</span><em>machine='*'</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.server.LogManager.count_error_reports" title="Permalink to this definition">¶</a></dt>
 <dd><p>This operation counts the number of error reports (crash
 reports) that have been generated on each machine.
-Parameters:</p>
+Input:</p>
 <blockquote>
-<div><table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">param machine:</th><td class="field-body"><ul class="first simple">
-<li>name of the machine in the cluster.  * means all</li>
-</ul>
-<p class="last">machines.  This is default</p>
-</td>
-</tr>
-</tbody>
-</table>
+<div><dl class="docutils">
+<dt>machine - name of the machine in the cluster.  * means all</dt>
+<dd>machines.  This is default</dd>
+</dl>
 </div></blockquote>
 <dl class="docutils">
 <dt>Output:</dt>
@@ -1647,45 +1916,21 @@ Parameters:</p>
 <dt id="arcgis.gis.server.LogManager.edit">
 <code class="descname">edit</code><span class="sig-paren">(</span><em>level='WARNING'</em>, <em>log_dir=None</em>, <em>max_age=90</em>, <em>max_report_count=10</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.server.LogManager.edit" title="Permalink to this definition">¶</a></dt>
 <dd><p>The log settings are for the entire site.
-Parameters:</p>
+Inputs:</p>
 <blockquote>
-<div><table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">param level:</th><td class="field-body"><ul class="first simple">
-<li>Can be one of [OFF, SEVERE, WARNING, INFO, FINE,</li>
-</ul>
-<p>VERBOSE, DEBUG].</p>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">param log_dir:</th><td class="field-body"><ul class="first simple">
-<li>File path to the root of the log directory</li>
-</ul>
-</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">param max_age:</th><td class="field-body"><ul class="first simple">
-<li>number of days that a server should save a log</li>
-</ul>
-<p>file.</p>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name" colspan="2">param ax_report_count:</th></tr>
-<tr class="field-even field"><td>&nbsp;</td><td class="field-body"><ul class="first simple">
-<li>maximum number of error report files</li>
-</ul>
-<p class="last">per machine</p>
-</td>
-</tr>
-</tbody>
-</table>
+<div><dl class="docutils">
+<dt>level -  Can be one of [OFF, SEVERE, WARNING, INFO, FINE,</dt>
+<dd>VERBOSE, DEBUG].</dd>
+</dl>
+<p>log_dir - File path to the root of the log directory
+max_age - number of days that a server should save a log</p>
+<blockquote>
+<div>file.</div></blockquote>
+<dl class="docutils">
+<dt>ax_report_count - maximum number of error report files</dt>
+<dd>per machine</dd>
+</dl>
 </div></blockquote>
-</dd></dl>
-
-<dl class="attribute">
-<dt id="arcgis.gis.server.LogManager.properties">
-<code class="descname">properties</code><a class="headerlink" href="#arcgis.gis.server.LogManager.properties" title="Permalink to this definition">¶</a></dt>
-<dd><p>returns the properties for the Logs</p>
 </dd></dl>
 
 <dl class="method">
@@ -1693,7 +1938,7 @@ Parameters:</p>
 <code class="descname">query</code><span class="sig-paren">(</span><em>start_time=None</em>, <em>end_time=None</em>, <em>since_server_start=False</em>, <em>level='WARNING'</em>, <em>services='*'</em>, <em>machines='*'</em>, <em>server='*'</em>, <em>codes=None</em>, <em>process_IDs=None</em>, <em>export=False</em>, <em>export_type='CSV'</em>, <em>out_path=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.server.LogManager.query" title="Permalink to this definition">¶</a></dt>
 <dd><p>The query operation on the logs resource provides a way to
 aggregate, filter, and page through logs across the entire site.
-Parameters:</p>
+Inputs:</p>
 </dd></dl>
 
 <dl class="attribute">
@@ -1709,18 +1954,16 @@ Parameters:</p>
 <h2>ReportManager<a class="headerlink" href="#reportmanager" title="Permalink to this headline">¶</a></h2>
 <dl class="class">
 <dt id="arcgis.gis.server.ReportManager">
-<em class="property">class </em><code class="descclassname">arcgis.gis.server.</code><code class="descname">ReportManager</code><span class="sig-paren">(</span><em>server</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.server.ReportManager" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">object</span></code></p>
+<em class="property">class </em><code class="descclassname">arcgis.gis.server.</code><code class="descname">ReportManager</code><span class="sig-paren">(</span><em>url</em>, <em>gis</em>, <em>initialize=False</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.server.ReportManager" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">arcgis.gis.server._common._base.BaseServer</span></code></p>
 <p>Manages and modifies the usage reports for ArcGIS Server</p>
-<p>Parameter:
-:param server: Server object</p>
 <dl class="method">
 <dt id="arcgis.gis.server.ReportManager.create">
 <code class="descname">create</code><span class="sig-paren">(</span><em>reportname</em>, <em>queries</em>, <em>metadata=None</em>, <em>since='LAST_DAY'</em>, <em>from_value=None</em>, <em>to_value=None</em>, <em>aggregation_interval=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.server.ReportManager.create" title="Permalink to this definition">¶</a></dt>
 <dd><p>Creates a new usage report. A usage report is created by submitting
 a JSON representation of the usage report to this operation.</p>
 <dl class="docutils">
-<dt>Parameters:</dt>
+<dt>Inputs:</dt>
 <dd><p class="first">reportname - the unique name of the report
 since - the time duration of the report. The supported values</p>
 <blockquote>
@@ -1823,7 +2066,7 @@ title, colors, line-styles, etc. Also used to denote
 visibility in ArcGIS Server Manager for reports created with
 the Administrator Directory. To make any report created in
 the Administrator Directory visible to Manager, include
-&#8220;managerReport&#8221;:true in the metadata JSON object. When this
+“managerReport”:true in the metadata JSON object. When this
 value is not set (default), reports are not visible in
 Manager. This behavior can be extended to any client that
 wants to interact with the Administrator Directory. Any
@@ -1834,15 +2077,15 @@ user-created value will need to be processed by the client.</dd>
 <p>Example:
 &gt;&gt;&gt; queryObj = [{</p>
 <blockquote>
-<div>&#8220;resourceURIs&#8221;: [&#8220;services/Map_bv_999.MapServer&#8221;],
-&#8220;metrics&#8221;: [&#8220;RequestCount&#8221;]</div></blockquote>
+<div>“resourceURIs”: [“services/Map_bv_999.MapServer”],
+“metrics”: [“RequestCount”]</div></blockquote>
 <p>}]
 &gt;&gt;&gt; obj.createReport(</p>
 <blockquote>
-<div>reportname=&#8221;SampleReport&#8221;,
+<div>reportname=”SampleReport”,
 queries=queryObj,
-metadata=&#8221;This could be any String or JSON Object.&#8221;,
-since=&#8221;LAST_DAY&#8221;</div></blockquote>
+metadata=”This could be any String or JSON Object.”,
+since=”LAST_DAY”</div></blockquote>
 <p>)</p>
 </dd></dl>
 
@@ -1852,7 +2095,7 @@ since=&#8221;LAST_DAY&#8221;</div></blockquote>
 <dd><p>The usage reports settings are applied to the entire site. A POST
 request updates the usage reports settings.</p>
 <dl class="docutils">
-<dt>Parameters:</dt>
+<dt>Inputs:</dt>
 <dd><dl class="first last docutils">
 <dt>interval - Defines the duration (in minutes) for which</dt>
 <dd>the usage statistics are aggregated or sampled, in-memory,
@@ -1874,12 +2117,6 @@ statistics are persisted forever.</dd>
 <dt id="arcgis.gis.server.ReportManager.list">
 <code class="descname">list</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.server.ReportManager.list" title="Permalink to this definition">¶</a></dt>
 <dd><p>returns a list of reports on the server</p>
-</dd></dl>
-
-<dl class="attribute">
-<dt id="arcgis.gis.server.ReportManager.properties">
-<code class="descname">properties</code><a class="headerlink" href="#arcgis.gis.server.ReportManager.properties" title="Permalink to this definition">¶</a></dt>
-<dd><p>returns the report manager&#8217;s properties</p>
 </dd></dl>
 
 <dl class="method">
@@ -1999,8 +2236,8 @@ statistics are persisted forever.</p>
 <h2>DataStoreManager<a class="headerlink" href="#datastoremanager" title="Permalink to this headline">¶</a></h2>
 <dl class="class">
 <dt id="arcgis.gis.server.DataStoreManager">
-<em class="property">class </em><code class="descclassname">arcgis.gis.server.</code><code class="descname">DataStoreManager</code><span class="sig-paren">(</span><em>server</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.server.DataStoreManager" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">object</span></code></p>
+<em class="property">class </em><code class="descclassname">arcgis.gis.server.</code><code class="descname">DataStoreManager</code><span class="sig-paren">(</span><em>url</em>, <em>gis=None</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.server.DataStoreManager" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">arcgis.gis.server._common._base.BaseServer</span></code></p>
 <p>This resource provides information about the data holdings of the
 server. Data items are used by ArcGIS for Desktop and other clients to
 validate data paths referenced by GIS services.</p>
@@ -2008,7 +2245,7 @@ validate data paths referenced by GIS services.</p>
 Data Item operation. Use the Find Data Items operation to search
 through the hierarchy of data items.</p>
 <p>A relational data store type represents a database platform that has
-been registered for use on a portal&#8217;s hosting server by the ArcGIS
+been registered for use on a portal’s hosting server by the ArcGIS
 Server administrator. Each relational data store type describes the
 properties ArcGIS Server requires in order to connect to an instance of
 a database for a particular platform. At least one registered
@@ -2018,8 +2255,20 @@ items.</p>
 <p>The Compute Ref Count operation counts and lists all references to a
 specific data item. This operation helps you determine if a particular
 data item can be safely deleted or refreshed.</p>
-<p>Parameters:
-:param server: Server object</p>
+<dl class="docutils">
+<dt>Parameters:</dt>
+<dd><table class="first last docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">param url:</th><td class="field-body">URL to the Data Store URL</td>
+</tr>
+<tr class="field-even field"><th class="field-name">param gis:</th><td class="field-body">GIS, Server, or ServicesDirectory object</td>
+</tr>
+</tbody>
+</table>
+</dd>
+</dl>
 <dl class="method">
 <dt id="arcgis.gis.server.DataStoreManager.add">
 <code class="descname">add</code><span class="sig-paren">(</span><em>name</em>, <em>item</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.server.DataStoreManager.add" title="Permalink to this definition">¶</a></dt>
@@ -2057,7 +2306,7 @@ Input</p>
 <div>name - unique database name on the server
 conn_str - the path to the folder from the server (and client, if shared or serverOnly database)
 client_conn_str: connection string for client to connect to replicated enterprise database&gt;
-conn_type - &#8220;&lt;shared|replicated|serverOnly&gt;&#8221;</div></blockquote>
+conn_type - “&lt;shared|replicated|serverOnly&gt;”</div></blockquote>
 <dl class="docutils">
 <dt>Output:</dt>
 <dd>the data item is registered successfully, None otherwise</dd>
@@ -2073,7 +2322,7 @@ Input</p>
 <div>name - unique fileshare name on the server
 server_path - the path to the folder from the server (and client, if shared path)
 client_path - if folder is replicated, the path to the folder from the client
-if folder is shared, don&#8217;t set this parameter</div></blockquote>
+if folder is shared, don’t set this parameter</div></blockquote>
 <dl class="docutils">
 <dt>Output:</dt>
 <dd>the data item is registered successfully, None otherwise</dd>
@@ -2105,11 +2354,27 @@ data items in the data store.</p>
 <dt id="arcgis.gis.server.DataStoreManager.get">
 <code class="descname">get</code><span class="sig-paren">(</span><em>path</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.server.DataStoreManager.get" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns the data item object at the given path</p>
-<p>Parameters:
-:param path: required string, the data item path
-Output:
-None if the data item is not found at that path and the data item
-object if its found</p>
+<dl class="docutils">
+<dt>Arguments</dt>
+<dd><table class="first last docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">path:</th><td class="field-body">required string, the data item path</td>
+</tr>
+</tbody>
+</table>
+</dd>
+</dl>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">None if the data item is not found at that path and the data
+item object if its found</td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
 <dl class="method">
@@ -2140,7 +2405,7 @@ Connection portal item.</p>
 that exist on the server. You can use this operation to
 determine if a data resource can be safely deleted (or taken
 down for maintenance).
-Parameters:</p>
+Input:</p>
 <blockquote>
 <div>path - The complete hierarchical path to the item</div></blockquote>
 <dl class="docutils">
@@ -2184,12 +2449,6 @@ existing primary machine is downgraded to a standby machine.</p>
 </dd></dl>
 
 <dl class="attribute">
-<dt id="arcgis.gis.server.DataStoreManager.properties">
-<code class="descname">properties</code><a class="headerlink" href="#arcgis.gis.server.DataStoreManager.properties" title="Permalink to this definition">¶</a></dt>
-<dd><p>returns the machine&#8217;s properties</p>
-</dd></dl>
-
-<dl class="attribute">
 <dt id="arcgis.gis.server.DataStoreManager.relational_datastore_types">
 <code class="descname">relational_datastore_types</code><a class="headerlink" href="#arcgis.gis.server.DataStoreManager.relational_datastore_types" title="Permalink to this definition">¶</a></dt>
 <dd><p>This resource lists the relational data store types that have been
@@ -2209,7 +2468,7 @@ Teradata.</p>
 <dd><p>Removes a standby machine from the Data Store. This operation is
 not supported on the primary Data Store machine.</p>
 <dl class="docutils">
-<dt>Parameters:</dt>
+<dt>Inputs:</dt>
 <dd>item_name - name of the data store item
 machine_name - name of the machine to remove</dd>
 </dl>
@@ -2219,8 +2478,8 @@ machine_name - name of the machine to remove</dd>
 <dt id="arcgis.gis.server.DataStoreManager.search">
 <code class="descname">search</code><span class="sig-paren">(</span><em>parent_path=None</em>, <em>ancestor_path=None</em>, <em>types=None</em>, <em>id=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.server.DataStoreManager.search" title="Permalink to this definition">¶</a></dt>
 <dd><p>You can use this operation to search through the various data
-items registered in the server&#8217;s data store.
-Parameters:</p>
+items registered in the server’s data store.
+Inputs:</p>
 <blockquote>
 <div><p>parent_path - The path of the parent under which to find items
 ancestor_path - The path of the ancestor under which to find</p>
@@ -2240,7 +2499,7 @@ id - A filter to search by the ID of the item</p>
 <code class="descname">start</code><span class="sig-paren">(</span><em>item_name</em>, <em>machine_name</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.server.DataStoreManager.start" title="Permalink to this definition">¶</a></dt>
 <dd><p>Starts the database instance running on the Data Store machine.</p>
 <dl class="docutils">
-<dt>Parameters:</dt>
+<dt>Inputs:</dt>
 <dd>item_name - name of the item to start
 machine_name - name of the machine to start on</dd>
 </dl>
@@ -2251,7 +2510,7 @@ machine_name - name of the machine to start on</dd>
 <code class="descname">stop</code><span class="sig-paren">(</span><em>item_name</em>, <em>machine_name</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.server.DataStoreManager.stop" title="Permalink to this definition">¶</a></dt>
 <dd><p>Stop the database instance running on the Data Store machine.</p>
 <dl class="docutils">
-<dt>Parameters:</dt>
+<dt>Inputs:</dt>
 <dd>item_name - name of the item to stop
 machine_name - name of the machine to stop on</dd>
 </dl>
@@ -2269,7 +2528,7 @@ machine_name - name of the machine to stop on</dd>
 <dd><p>Checks the status of ArcGIS Data Store and provides a health check
 response.</p>
 <dl class="docutils">
-<dt>Parameters:</dt>
+<dt>Inputs:</dt>
 <dd>data_store_namee - name of the datastore
 name - name of the machine</dd>
 </dl>
@@ -2282,12 +2541,12 @@ name - name of the machine</dd>
 <h2>UserManager<a class="headerlink" href="#usermanager" title="Permalink to this headline">¶</a></h2>
 <dl class="class">
 <dt id="arcgis.gis.server.UserManager">
-<em class="property">class </em><code class="descclassname">arcgis.gis.server.</code><code class="descname">UserManager</code><span class="sig-paren">(</span><em>server</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.server.UserManager" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">object</span></code></p>
+<em class="property">class </em><code class="descclassname">arcgis.gis.server.</code><code class="descname">UserManager</code><span class="sig-paren">(</span><em>url</em>, <em>gis</em>, <em>initialize=False</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.server.UserManager" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">arcgis.gis.server._common._base.BaseServer</span></code></p>
 <p>This resource represents all users available in the user store that can
 administer ArcGIS Server and access the GIS services hosted on the
 server. In short, it represents the complete user space.
-As the user space could be potentially large, there isn&#8217;t any listing
+As the user space could be potentially large, there isn’t any listing
 of users, but you can use Get Users or Search operations to access
 their account information.
 ArcGIS Server is capable of connecting to your enterprise identity
@@ -2307,12 +2566,11 @@ The total numbers of users are returned in the response.</p>
 </dl>
 <dl class="method">
 <dt id="arcgis.gis.server.UserManager.create">
-<code class="descname">create</code><span class="sig-paren">(</span><em>username</em>, <em>password</em>, <em>firstname</em>, <em>lastname</em>, <em>email=None</em>, <em>description=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.server.UserManager.create" title="Permalink to this definition">¶</a></dt>
-<dd><dl class="docutils">
-<dt>Add a user account to the user store</dt>
-<dd><dl class="first last docutils">
-<dt>Parameters:</dt>
-<dd><dl class="first docutils">
+<code class="descname">create</code><span class="sig-paren">(</span><em>username</em>, <em>password</em>, <em>fullname=None</em>, <em>description=None</em>, <em>email=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.server.UserManager.create" title="Permalink to this definition">¶</a></dt>
+<dd><p>Add a user account to the user store
+Parameters:</p>
+<blockquote>
+<div><dl class="docutils">
 <dt>username - The name of the user. The name must be unique in</dt>
 <dd>the user store.</dd>
 </dl>
@@ -2321,13 +2579,8 @@ fullname - an optional full name for the user
 description - an option field to add comments or description</p>
 <blockquote>
 <div>for the user account</div></blockquote>
-<p class="last">email - an optional email for the user account</p>
-</dd>
-<dt>Output:</dt>
-<dd>User Object</dd>
-</dl>
-</dd>
-</dl>
+<p>email - an optional email for the user account</p>
+</div></blockquote>
 </dd></dl>
 
 <dl class="method">
@@ -2399,8 +2652,8 @@ controlled with the max_results parameter.</p>
 <h2>RoleManager<a class="headerlink" href="#rolemanager" title="Permalink to this headline">¶</a></h2>
 <dl class="class">
 <dt id="arcgis.gis.server.RoleManager">
-<em class="property">class </em><code class="descclassname">arcgis.gis.server.</code><code class="descname">RoleManager</code><span class="sig-paren">(</span><em>security</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.server.RoleManager" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">object</span></code></p>
+<em class="property">class </em><code class="descclassname">arcgis.gis.server.</code><code class="descname">RoleManager</code><span class="sig-paren">(</span><em>url</em>, <em>gis</em>, <em>initialize=False</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.server.RoleManager" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">arcgis.gis.server._common._base.BaseServer</span></code></p>
 <p>This resource represents all roles available in the role store. The
 ArcGIS Server security model supports a role-based access control in
 which each role can be assigned certain permissions (privileges) to
@@ -2421,42 +2674,70 @@ to use the default role store shipped with the server, which is
 treated as a read-write store.</p>
 <dl class="method">
 <dt id="arcgis.gis.server.RoleManager.all">
-<code class="descname">all</code><span class="sig-paren">(</span><em>start_index=0</em>, <em>max_roles=255</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.server.RoleManager.all" title="Permalink to this definition">¶</a></dt>
-<dd><p>Returns list of all roles in the Server
-:param max_roles: the maximum number of roles to be returned
-:return: list of all roles in the server</p>
+<code class="descname">all</code><span class="sig-paren">(</span><em>start_index=0</em>, <em>page_size=10</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.server.RoleManager.all" title="Permalink to this definition">¶</a></dt>
+<dd><p>This operation gives you a pageable view of roles in the role
+store. It is intended for iterating through all available role
+accounts. To search for specific role accounts instead, use the
+Search Roles operation.
+Parameters:</p>
+<blockquote>
+<div><dl class="docutils">
+<dt>start_index - The starting index (zero-based) from the roles</dt>
+<dd>list that must be returned in the result page.
+The default is 0.</dd>
+<dt>page_size - The maximum number of roles to return in the</dt>
+<dd>result page. The default size is 10.</dd>
+</dl>
+</div></blockquote>
+<dl class="docutils">
+<dt>Output:</dt>
+<dd>returns JSON messages as dictionary</dd>
+</dl>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="arcgis.gis.server.RoleManager.count">
+<code class="descname">count</code><a class="headerlink" href="#arcgis.gis.server.RoleManager.count" title="Permalink to this definition">¶</a></dt>
+<dd><p>returns the number of roles for AGS</p>
 </dd></dl>
 
 <dl class="method">
 <dt id="arcgis.gis.server.RoleManager.create">
-<code class="descname">create</code><span class="sig-paren">(</span><em>name</em>, <em>description</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.server.RoleManager.create" title="Permalink to this definition">¶</a></dt>
-<dd><p>Creates and returns a custom role with the specified parameters</p>
+<code class="descname">create</code><span class="sig-paren">(</span><em>name</em>, <em>description=''</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.server.RoleManager.create" title="Permalink to this definition">¶</a></dt>
+<dd><p>Adds a role to the role store. This operation is available only
+when the role store is a read-write store such as the default
+ArcGIS Server store.
+If the name of the role exists in the role store, an error will
+be returned.
+Parameters:</p>
+<blockquote>
+<div><dl class="docutils">
+<dt>rolename - The name of the role. The name must be unique in the</dt>
+<dd>role store.</dd>
+<dt>description - An optional field to add comments or a</dt>
+<dd>description for the role.</dd>
+</dl>
+</div></blockquote>
 <dl class="docutils">
-<dt>Parameters:</dt>
-<dd><table class="first last docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">name:</th><td class="field-body">name of the role (must be unique)</td>
-</tr>
-<tr class="field-even field"><th class="field-name">description:</th><td class="field-body">optional descriptive field as string</td>
-</tr>
-</tbody>
-</table>
-</dd>
 <dt>Output:</dt>
-<dd>JSON dictionary</dd>
+<dd>JSON message as dictionary</dd>
 </dl>
 </dd></dl>
 
 <dl class="method">
 <dt id="arcgis.gis.server.RoleManager.get_role">
-<code class="descname">get_role</code><span class="sig-paren">(</span><em>role_id</em>, <em>max_roles=10</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.server.RoleManager.get_role" title="Permalink to this definition">¶</a></dt>
-<dd><p>Returns the role with the specified role id. Returns list of all roles in the
-Server if a role_id is not specified
-:role_id: the role id of the role to get. Leave None to get all roles
-:max_roles: the total number of roles to limit search to
-:return: list of roles</p>
+<code class="descname">get_role</code><span class="sig-paren">(</span><em>role_id=None</em>, <em>max_count=10</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.server.RoleManager.get_role" title="Permalink to this definition">¶</a></dt>
+<dd><p>You can use this operation to search a specific role or a group
+of roles from the role store. The size of the search results can
+be controlled with the max_count parameter.
+Parameters:</p>
+<blockquote>
+<div>role_filter - a filter string to search for the roles
+max_count - maximum size of the result</div></blockquote>
+<dl class="docutils">
+<dt>Ouput:</dt>
+<dd>JSON message as dictionary</dd>
+</dl>
 </dd></dl>
 
 </dd></dl>
@@ -2466,148 +2747,173 @@ Server if a role_id is not specified
 <h2>SystemManager<a class="headerlink" href="#systemmanager" title="Permalink to this headline">¶</a></h2>
 <dl class="class">
 <dt id="arcgis.gis.server.SystemManager">
-<em class="property">class </em><code class="descclassname">arcgis.gis.server.</code><code class="descname">SystemManager</code><span class="sig-paren">(</span><em>server</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.server.SystemManager" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">object</span></code></p>
+<em class="property">class </em><code class="descclassname">arcgis.gis.server.</code><code class="descname">SystemManager</code><span class="sig-paren">(</span><em>url</em>, <em>gis</em>, <em>initialize=False</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.server.SystemManager" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">arcgis.gis.server._common._base.BaseServer</span></code></p>
 <p>The System resource is a collection of miscellaneous server-wide
 resources such as server properties, server directories, the
 configuration store, Web Adaptors, and licenses.</p>
 <dl class="method">
 <dt id="arcgis.gis.server.SystemManager.clear_cache">
 <code class="descname">clear_cache</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.server.SystemManager.clear_cache" title="Permalink to this definition">¶</a></dt>
-<dd><p>This resource currently supports a single operation to clear the
-REST cache.</p>
+<dd><p>This operation clears the cache on all REST handlers in the system.
+While the server typically manages the REST cache for you, use this
+operation to get explicit control over the cache.</p>
 </dd></dl>
 
 <dl class="attribute">
 <dt id="arcgis.gis.server.SystemManager.configuration_store">
 <code class="descname">configuration_store</code><a class="headerlink" href="#arcgis.gis.server.SystemManager.configuration_store" title="Permalink to this definition">¶</a></dt>
-<dd><p>provides access to the configuration store settings</p>
+<dd><p>returns the ConfigurationStore object for this site</p>
 </dd></dl>
 
 <dl class="attribute">
+<dt id="arcgis.gis.server.SystemManager.deployment">
+<code class="descname">deployment</code><a class="headerlink" href="#arcgis.gis.server.SystemManager.deployment" title="Permalink to this definition">¶</a></dt>
+<dd><p>ArcGIS Server has a deployment configuration resource that can
+control the load balancing functionality between GIS server
+machines:</p>
+<blockquote>
+<div><p>singleClusterMode-At 10.4, in large sites with a single cluster,
+the site is configured to prevent load balancing between GIS
+server machines. This reduces network traffic between machines
+in the site and helps reduce load on your network. The default
+is true for new installations of ArcGIS Server, meaning that
+load balancing is disabled. Upgrades from earlier versions will
+set this property to true if the site uses a single cluster.
+Sites with multiple clusters cannot use singleClusterMode.
+To prevent load balancing, the following criteria must be met:</p>
+<blockquote>
+<div><ul class="simple">
+<li>All machines in the site must participate in a single
+cluster. Multiple clusters cannot exist.</li>
+<li>An external load balancer or ArcGIS Web Adaptor must be</li>
+</ul>
+<blockquote>
+<div>configured to forward requests to the site. If no external
+gateway exists, requests will only be handled by the
+machine designated in the request.</div></blockquote>
+</div></blockquote>
+<p>To enable load balancing, set this property to false. Updating
+this property will restart all machines in the site.</p>
+</div></blockquote>
+</dd></dl>
+
+<dl class="method">
 <dt id="arcgis.gis.server.SystemManager.directories">
-<code class="descname">directories</code><a class="headerlink" href="#arcgis.gis.server.SystemManager.directories" title="Permalink to this definition">¶</a></dt>
-<dd><p>Provides access to the server&#8217;s directories</p>
+<code class="descname">directories</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.server.SystemManager.directories" title="Permalink to this definition">¶</a></dt>
+<dd><p>returns the server directory object in a list</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="arcgis.gis.server.SystemManager.handlers">
+<code class="descname">handlers</code><a class="headerlink" href="#arcgis.gis.server.SystemManager.handlers" title="Permalink to this definition">¶</a></dt>
+<dd><p>A handler exposes the GIS capabilities of ArcGIS Server through a
+specific interface/API. There are two types of handlers currently
+available in the server:</p>
+<blockquote>
+<div>Rest-Exposes the REST-ful API
+Soap-Exposes the SOAP API</div></blockquote>
+<p>The Rest Handler resource exposes some of the administrative
+operations on the REST handler such as clearing the cache.</p>
 </dd></dl>
 
 <dl class="attribute">
 <dt id="arcgis.gis.server.SystemManager.jobs">
 <code class="descname">jobs</code><a class="headerlink" href="#arcgis.gis.server.SystemManager.jobs" title="Permalink to this definition">¶</a></dt>
-<dd><p>This resource is a collection of all the administrative jobs
-(asynchronous operations) created within your site. When operations
-that support asynchronous execution are run, the server creates a
-new job entry that can be queried for its current status and
-messages.</p>
-<dl class="docutils">
-<dt>Note: These administrative jobs are not the same as geoprocessing</dt>
-<dd>jobs.</dd>
-</dl>
+<dd><p>get the Jobs object</p>
 </dd></dl>
 
 <dl class="attribute">
 <dt id="arcgis.gis.server.SystemManager.licenses">
 <code class="descname">licenses</code><a class="headerlink" href="#arcgis.gis.server.SystemManager.licenses" title="Permalink to this definition">¶</a></dt>
-<dd><p>The licenses resource lists the current license level of ArcGIS
+<dd><p>The licenses resource lists the current license level of ArcGIS for
 Server and all authorized extensions. Contact Esri Customer Service
 if you have questions about license levels or expiration properties.</p>
 </dd></dl>
 
 <dl class="attribute">
+<dt id="arcgis.gis.server.SystemManager.rest_handler">
+<code class="descname">rest_handler</code><a class="headerlink" href="#arcgis.gis.server.SystemManager.rest_handler" title="Permalink to this definition">¶</a></dt>
+<dd><p>Provides a list of resources accessible throught the REST API</p>
+</dd></dl>
+
+<dl class="attribute">
 <dt id="arcgis.gis.server.SystemManager.server_properties">
 <code class="descname">server_properties</code><a class="headerlink" href="#arcgis.gis.server.SystemManager.server_properties" title="Permalink to this definition">¶</a></dt>
-<dd><p>The Server has configuration parameters that can be govern some of its
-intricate behavior. The Server Properties resource is a container for
-such properties. These properties are available to all server objects
-and extensions through the server environment interface.
-The properties include:</p>
-<blockquote>
-<div><dl class="docutils">
-<dt>CacheSizeForSecureTileRequests - An integer that specifies the</dt>
-<dd>number of users whose token information will be cached. This
-increases the speed of tile retrieval for cached services. If not
-specified, the default cache size is 200,000. Both REST and SOAP
-services honor this property. You&#8217;ll need to manually restart
-ArcGIS Server in order for this change to take effect.</dd>
-<dt>DisableAdminDirectoryCache - Disables browser caching of the</dt>
-<dd>Administrator Directory pages. The default is false. To disable
-browser caching, set this property to true.</dd>
-<dt>disableIPLogging - When a possible cross-site request forgery</dt>
-<dd>(CSRF) attack is detected, the server logs a message containing
-the possible IP address of the attacker. If you do not want IP
-addresses listed in the logs, set this property to true. Also,
-HTTP request referrers are logged at FINE level by the REST and
-SOAP handlers unless this property is set to true.</dd>
-<dt>javaExtsBeginPort - Specifies a start port of the port range used</dt>
-<dd>for debugging Java server object extensions.
-Example: 8000</dd>
-<dt>javaExtsEndPort - Specifies an end port of the port range used for</dt>
-<dd>debugging Java server object extensions.
-Example: 8010</dd>
-<dt>localTempFolder - Defines the local folder on a machine that can</dt>
-<dd><p class="first">be used by GIS services and objects. If this property is not
-explicitly set, the services and objects will revert to using the
-system&#8217;s default temporary directory.</p>
-<p>Note:
-If this property is used, you must create the temporary directory
-on every server machine in the site. Example: /tmp/arcgis.</p>
-<dl class="last docutils">
-<dt>messageFormat - Defines the transmission protocol supported by</dt>
-<dd><p class="first">the services catalog in the server.
-Values: esriServiceCatalogMessageFormatBin,</p>
-<blockquote class="last">
-<div>esriServiceCatalogMessageFormatSoap,
-esriServiceCatalogMessageFormatSoapOrBin</div></blockquote>
+<dd><p>gets the server properties for the site as an object</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="arcgis.gis.server.SystemManager.unregister_webadaptor">
+<code class="descname">unregister_webadaptor</code><span class="sig-paren">(</span><em>wa_id</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.server.SystemManager.unregister_webadaptor" title="Permalink to this definition">¶</a></dt>
+<dd><p>Unregistering a Web Adaptor removes the Web Adaptor from the
+server’s trusted list. The Web Adaptor can no longer submit requests
+to the server.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="arcgis.gis.server.SystemManager.update_web_adaptor">
+<code class="descname">update_web_adaptor</code><span class="sig-paren">(</span><em>wa_id</em>, <em>description</em>, <em>http_port</em>, <em>https_port</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.server.SystemManager.update_web_adaptor" title="Permalink to this definition">¶</a></dt>
+<dd><p>This operation allows you to update the description, HTTP port, and
+HTTPS port of a Web Adaptor that is registered with the server.</p>
+<p><strong>Note</strong>
+This operation is only meant to change the descriptive properties
+of the Web Adaptor and does not affect the configuration of the web
+server that deploys your Web Adaptor.</p>
+<dl class="docutils">
+<dt>Parameters:</dt>
+<dd><table class="first last docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">wa_id:</th><td class="field-body">web adaptor id</td>
+</tr>
+<tr class="field-even field"><th class="field-name">description:</th><td class="field-body">descriptive text</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">http_port:</th><td class="field-body">The HTTP port of the web server</td>
+</tr>
+<tr class="field-even field"><th class="field-name">https_port:</th><td class="field-body">the HTTPS (SSL) port of the web server</td>
+</tr>
+</tbody>
+</table>
 </dd>
-<dt>messageVersion - Defines the version supported by the services</dt>
-<dd>catalog in the server. Example: esriArcGISVersion101</dd>
-<dt>PushIdentityToDatabase - Propogates the credentials of the logged</dt>
-<dd>-in user to make connections to an Oracle database. This
-property is only supported for use with Oracle databases.
-Values: true | false</dd>
-<dt>suspendDuration - Specifies the duration for which the ArcGIS</dt>
-<dd>service hosting processes should suspend at startup. This
-duration is specified in milliseconds. This is an optional
-property that takes effect when suspendServiceAtStartup is set
-to true. If unspecified and suspension of service at startup is
-requested, then the default suspend duration is 30 seconds.
-Example: 10000 (meaning 10 seconds)</dd>
-<dt>suspendServiceAtStartup - Suspends the ArcGIS service hosting</dt>
-<dd>processes at startup. This will enable attaching to those
-processes and debugging code that runs early in the lifecycle of
-server extensions soon after they are instantiated.
-Values: true | false</dd>
-<dt>uploadFileExtensionWhitelist - This specifies what files are</dt>
-<dd>allowed to be uploaded through the file upload API by
-identifying the allowable extensions. It is a list of comma
-separated extensions without dots. If this property is not
-specified a default list is used. This is the default list: soe,
-sd, sde, odc, csv, txt, zshp, kmz, and geodatabase.</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="arcgis.gis.server.SystemManager.update_web_adaptors_configuration">
+<code class="descname">update_web_adaptors_configuration</code><span class="sig-paren">(</span><em>config</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.server.SystemManager.update_web_adaptors_configuration" title="Permalink to this definition">¶</a></dt>
+<dd><p>You can use this operation to change the configuration parameters
+and shared key.</p>
+<dl class="docutils">
+<dt>Inputs:</dt>
+<dd><dl class="first last docutils">
+<dt>config - the sharedkey attribute must always be</dt>
+<dd>present in this JSON</dd>
 </dl>
 </dd>
 </dl>
-<p>Note:
-Updating this list overrides the default list completely. This
-means if you set this property to a subset of the default list
-then only those items in the subset will be accepted for upload.
-Example: sd, so, sde, odc.</p>
-<dl class="docutils">
-<dt>uploadItemInfoFileExtensionWhitelist - This specifies what files</dt>
-<dd>are allowed to be uploaded through the service iteminfo upload
-API by identifying the allowable extensions. It should be a list
-of comma separated extensions without dots. If this property is
-not specified a default list is used. This is the default list:
-xml, img, png, gif, jpg, jpeg, bmp.</dd>
-</dl>
-</div></blockquote>
-<p>Note:
-This list overrides the default list completely. This means if you
-set this property to a subset of the default list then only those
-items in the subset will be accepted for upload. Example: png, svg,
-gif, jpg, tiff, bmp.</p>
-<dl class="docutils">
-<dt>WebContextURL - Defines the web front end as seen by your users.</dt>
-<dd>Example: <a class="reference external" href="http://mycompany.com/gis">http://mycompany.com/gis</a></dd>
-</dl>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="arcgis.gis.server.SystemManager.web_adaptors">
+<code class="descname">web_adaptors</code><a class="headerlink" href="#arcgis.gis.server.SystemManager.web_adaptors" title="Permalink to this definition">¶</a></dt>
+<dd><p>This property lists all the Web Adaptors that have been registered
+with the site. The server will trust all these Web Adaptors and
+will authorize calls from these servers.
+To configure a new Web Adaptor with the server, you’ll need to use
+the configuration web page or the command line utility. For full
+instructions, see Configuring the Web Adaptor after installation.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="arcgis.gis.server.SystemManager.web_adaptors_configuration">
+<code class="descname">web_adaptors_configuration</code><a class="headerlink" href="#arcgis.gis.server.SystemManager.web_adaptors_configuration" title="Permalink to this definition">¶</a></dt>
+<dd><p>The Web Adaptors configuration is a resource for all the
+configuration parameters shared across all the Web Adaptors in the
+site. Most importantly, this resource lists the shared key that is
+used by all the Web Adaptors to encrypt key data bits in the
+incoming requests to the server.</p>
 </dd></dl>
 
 </dd></dl>
@@ -2675,7 +2981,7 @@ installation directory.</div></blockquote>
 <dd>directories to create. By default, the server directories will
 be created locally.</dd>
 <dt>cluster - An optional cluster configuration. By default, the</dt>
-<dd>site will create a cluster called &#8216;default&#8217; with the first
+<dd>site will create a cluster called ‘default’ with the first
 available port numbers starting from 4004.</dd>
 </dl>
 <p>logsSettings - Optional log settings.
@@ -2757,7 +3063,7 @@ that you created using the exportSite operation.</p>
 <dt id="arcgis.gis.server.SiteManager.join">
 <code class="descname">join</code><span class="sig-paren">(</span><em>admin_url</em>, <em>username</em>, <em>password</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.server.SiteManager.join" title="Permalink to this definition">¶</a></dt>
 <dd><p>The Join Site operation is used to connect a server machine to an
-existing site. This is considered a &#8216;push&#8217; mechanism, in which a
+existing site. This is considered a ‘push’ mechanism, in which a
 server machine pushes its configuration to the site. For the
 operation to be successful, you need to provide an account with
 administrative privileges to the site.
@@ -2845,7 +3151,7 @@ remove the directory by using the Unregister Directory operation.</p>
 <dt id="arcgis.gis.server.DirectoryManager.add">
 <code class="descname">add</code><span class="sig-paren">(</span><em>name</em>, <em>physicalPath</em>, <em>directoryType</em>, <em>maxFileAge</em>, <em>cleanupMode='NONE'</em>, <em>description=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.server.DirectoryManager.add" title="Permalink to this definition">¶</a></dt>
 <dd><p>Registers a new server directory. While registering the server
-directory, you can also specify the directory&#8217;s cleanup parameters</p>
+directory, you can also specify the directory’s cleanup parameters</p>
 <dl class="docutils">
 <dt>Parameters:</dt>
 <dd><table class="first last docutils field-list" frame="void" rules="none">
@@ -2872,9 +3178,9 @@ kept before it is deleted.</td>
 </dl>
 </dd></dl>
 
-<dl class="attribute">
+<dl class="method">
 <dt id="arcgis.gis.server.DirectoryManager.all">
-<code class="descname">all</code><a class="headerlink" href="#arcgis.gis.server.DirectoryManager.all" title="Permalink to this definition">¶</a></dt>
+<code class="descname">all</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.server.DirectoryManager.all" title="Permalink to this definition">¶</a></dt>
 <dd><p>Server directories are used by GIS services as a location to output
 items such as map images, tile caches, and geoprocessing results.
 In addition, some directories contain configurations that power the
@@ -2903,7 +3209,7 @@ previews. Defaults to the ArcGIS.com map viewer but could be used
 to point at your own Portal for ArcGIS map viewer.</td>
 </tr>
 <tr class="field-odd field"><th class="field-name" colspan="2">arcgis_com_map_text:</th></tr>
-<tr class="field-odd field"><td>&nbsp;</td><td class="field-body"></td>
+<tr class="field-odd field"><td>&#160;</td><td class="field-body"></td>
 </tr>
 <tr class="field-even field"><th class="field-name">jsapi_arcgis:</th><td class="field-body">The URL of the JavaScript API to use for service
 previews. Defaults to the online ArcGIS API for JavaScript, but
@@ -2911,7 +3217,7 @@ could be pointed at your own locally-installed instance of the
 JavaScript API.</td>
 </tr>
 <tr class="field-odd field"><th class="field-name" colspan="2">jsapi_arcgis_css:</th></tr>
-<tr class="field-odd field"><td>&nbsp;</td><td class="field-body">CSS file associated with the ArcGIS API for
+<tr class="field-odd field"><td>&#160;</td><td class="field-body">CSS file associated with the ArcGIS API for
 JavaScript. Defaults to the online Dojo tundra.css.</td>
 </tr>
 </tbody>
@@ -2925,10 +3231,10 @@ JavaScript. Defaults to the online Dojo tundra.css.</td>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name" colspan="2">jsapi_arcgis_sdk:</th></tr>
-<tr class="field-odd field"><td>&nbsp;</td><td class="field-body">URL of the ArcGIS API for JavaScript help.</td>
+<tr class="field-odd field"><td>&#160;</td><td class="field-body">URL of the ArcGIS API for JavaScript help.</td>
 </tr>
 <tr class="field-even field"><th class="field-name" colspan="2">serviceDirEnabled:</th></tr>
-<tr class="field-even field"><td>&nbsp;</td><td class="field-body">Flag to enable/disable the HTML view of the
+<tr class="field-even field"><td>&#160;</td><td class="field-body">Flag to enable/disable the HTML view of the
 services directory.</td>
 </tr>
 </tbody>
@@ -3001,7 +3307,7 @@ services directory.</td>
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'./',
-            VERSION:'1.2.1',
+            VERSION:'1.2.4',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  true
