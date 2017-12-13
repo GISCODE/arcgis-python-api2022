@@ -8,9 +8,11 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>arcgis.mapping module &mdash; arcgis 1.2.4 documentation</title>
+  <title>arcgis.mapping module &mdash; arcgis 1.3.0 documentation</title>
   
 
+  
+  
   
   
 
@@ -35,7 +37,7 @@
         <link rel="index" title="Index"
               href="genindex.html"/>
         <link rel="search" title="Search" href="search.html"/>
-    <link rel="top" title="arcgis 1.2.4 documentation" href="index.html"/>
+    <link rel="top" title="arcgis 1.3.0 documentation" href="index.html"/>
         <link rel="next" title="arcgis.realtime module" href="arcgis.realtime.html"/>
         <link rel="prev" title="arcgis.geoprocessing module" href="arcgis.geoprocessing.html"/> 
 
@@ -46,6 +48,7 @@
 
 <body class="wy-body-for-nav" role="document">
 
+   
   <div class="wy-grid-for-nav">
 
     
@@ -65,7 +68,7 @@
             
             
               <div class="version">
-                1.2.4
+                1.3.0
               </div>
             
           
@@ -86,7 +89,10 @@
           
             
             
-                <p class="caption"><span class="caption-text">arcgis</span></p>
+              
+            
+            
+              <p class="caption"><span class="caption-text">arcgis</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="arcgis.gis.toc.html">arcgis.gis module</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.gis.toc.html#gis">GIS</a></li>
@@ -107,9 +113,11 @@
 <li class="toctree-l3"><a class="reference internal" href="arcgis.gis.admin.html">arcgis.gis.admin module</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.gis.admin.html#agoladminmanager">AGOLAdminManager</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.gis.admin.html#portaladminmanager">PortalAdminManager</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.gis.admin.html#categorymanager">CategoryManager</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.gis.admin.html#collaborationmanager">CollaborationManager</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.gis.admin.html#collaboration">Collaboration</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.gis.admin.html#creditmanager">CreditManager</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.gis.admin.html#identityprovidermanager">IdentityProviderManager</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.gis.admin.html#passwordpolicy">PasswordPolicy</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.gis.admin.html#portalresourcemanager">PortalResourceManager</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.gis.admin.html#ux">UX</a></li>
@@ -150,6 +158,10 @@
 <li class="toctree-l4"><a class="reference internal" href="arcgis.gis.server.html#systemmanager">SystemManager</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.gis.server.html#sitemanager">SiteManager</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.gis.server.html#directorymanager">DirectoryManager</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.gis.server.html#configurationstore">ConfigurationStore</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.gis.server.html#jobs">Jobs</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.gis.server.html#serverdirectory">ServerDirectory</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.gis.server.html#serverproperties">ServerProperties</a></li>
 </ul>
 </li>
 </ul>
@@ -263,6 +275,9 @@
 </li>
 <li class="toctree-l1"><a class="reference internal" href="arcgis.raster.toc.html">arcgis.raster module</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.raster.toc.html#imagerylayer">ImageryLayer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.raster.toc.html#rastercatalogitem">RasterCatalogItem</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.raster.toc.html#rastermanager">RasterManager</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.raster.toc.html#imagerytilemanager">ImageryTileManager</a></li>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.raster.toc.html#submodules">Submodules</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="arcgis.raster.analytics.html">arcgis.raster.analytics module</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.raster.analytics.html#get-datastores">get_datastores</a></li>
@@ -310,6 +325,9 @@
 <li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#classify">classify</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#clip">clip</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#colormap">colormap</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#colormap-to-rgb">colormap_to_rgb</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#id1">colormap_to_rgb</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#colorspace-conversion">colorspace_conversion</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#composite-band">composite_band</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#con">con</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#contrast-brightness">contrast_brightness</a></li>
@@ -335,6 +353,7 @@
 <li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#greater-than-equal">greater_than_equal</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#gvitm">gvitm</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#hillshade">hillshade</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#identity">identity</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#int">INT</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#is-null">is_null</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#less-than">less_than</a></li>
@@ -359,6 +378,7 @@
 <li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#ndvi">ndvi</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#negate">negate</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#not-equal">not_equal</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#pansharpen">pansharpen</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#plus">plus</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#power">power</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#pvi">pvi</a></li>
@@ -377,19 +397,40 @@
 <li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#sqrt">sqrt</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#square">square</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#focal-statistics">focal_statistics</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#statistics-histogram">statistics_histogram</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#std">std</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#stretch">stretch</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#sultan">sultan</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#sum">sum</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#tan">tan</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#tanh">tanh</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#tasseled-cap">tasseled_cap</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#threshold">threshold</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#times">times</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#transpose-bits">transpose_bits</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#tsavi">tsavi</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#unit-conversion">unit_conversion</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#variety">variety</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#vector-field">vector_field</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#vector-field-renderer">vector_field_renderer</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#weighted-overlay">weighted_overlay</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#weighted-sum">weighted_sum</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="arcgis.raster.functions.gbl.html">arcgis.raster.functions.gbl module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.gbl.html#cost-allocation">cost_allocation</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.gbl.html#cost-distance">cost_distance</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.gbl.html#euclidean-allocation">euclidean_allocation</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.gbl.html#euclidean-distance">euclidean_distance</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.gbl.html#fill">fill</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.gbl.html#flow-accumulation">flow_accumulation</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.gbl.html#flow-distance">flow_distance</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.gbl.html#flow-direction">flow_direction</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.gbl.html#least-cost-path">least_cost_path</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.gbl.html#nibble">nibble</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.gbl.html#stream-link">stream_link</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.gbl.html#watershed">watershed</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.gbl.html#zonal-statistics">zonal_statistics</a></li>
 </ul>
 </li>
 </ul>
@@ -430,6 +471,7 @@
 <li class="toctree-l3"><a class="reference internal" href="arcgis.geoanalytics.find_locations.html">arcgis.geoanalytics.find_locations module</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.geoanalytics.find_locations.html#detect-incidents">detect_incidents</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.geoanalytics.find_locations.html#find-similar-locations">find_similar_locations</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.geoanalytics.find_locations.html#geocode-locations">geocode_locations</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="arcgis.geoanalytics.manage_data.html">arcgis.geoanalytics.manage_data module</a><ul>
@@ -457,9 +499,20 @@
 <li class="toctree-l2"><a class="reference internal" href="arcgis.geocoding.html#geocoder">Geocoder</a></li>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.geocoding.html#get-geocoders">get_geocoders</a></li>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.geocoding.html#geocode">geocode</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.geocoding.html#geocode-from-items">geocode_from_items</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.geocoding.html#analyze-geocode-input">analyze_geocode_input</a></li>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.geocoding.html#reverse-geocode">reverse_geocode</a></li>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.geocoding.html#batch-geocode">batch_geocode</a></li>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.geocoding.html#suggest">suggest</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.geoenrichment.html">arcgis.geoenrichment module</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.geoenrichment.html#country">Country</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.geoenrichment.html#get-countries">get_countries</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.geoenrichment.html#create-report">create_report</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.geoenrichment.html#enrich">enrich</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.geoenrichment.html#find-businesses">find_businesses</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.geoenrichment.html#standard-geography-query">standard_geography_query</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="arcgis.geometry.html">arcgis.geometry module</a><ul>
@@ -548,8 +601,10 @@
 
       
       <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
-        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-        <a href="index.html">arcgis</a>
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">arcgis</a>
+        
       </nav>
 
 
@@ -558,23 +613,40 @@
         <div class="rst-content">
           
 
- 
+
+
+
+
+
+
+
+
+
+
+
 
 
 
 <div role="navigation" aria-label="breadcrumbs navigation">
+
   <ul class="wy-breadcrumbs">
-    <li><a href="index.html">Docs</a> &raquo;</li>
-      
-    <li>arcgis.mapping module</li>
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>arcgis.mapping module</li>
+    
+    
       <li class="wy-breadcrumbs-aside">
         
-          
+            
             <a href="_sources/arcgis.mapping.rst.txt" rel="nofollow"> View page source</a>
           
         
       </li>
+    
   </ul>
+
+  
   <hr/>
 </div>
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
@@ -590,15 +662,272 @@ MapImageLayer and VectorTileLayer</p>
 <h2>WebMap<a class="headerlink" href="#webmap" title="Permalink to this headline">¶</a></h2>
 <dl class="class">
 <dt id="arcgis.mapping.WebMap">
-<em class="property">class </em><code class="descclassname">arcgis.mapping.</code><code class="descname">WebMap</code><span class="sig-paren">(</span><em>webmapitem</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.mapping.WebMap" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descclassname">arcgis.mapping.</code><code class="descname">WebMap</code><span class="sig-paren">(</span><em>webmapitem=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.mapping.WebMap" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">collections.OrderedDict</span></code></p>
-<p>Represents a webmap and provides access to it’s basemaps and operational layers as well
+<p>Represents a web map item and provides access to its basemaps and operational layers as well
 as functionality to visualize and interact with them.
 <a class="reference external" href="http://resources.arcgis.com/en/help/arcgis-web-map-json/index.html#/Web_map_format_overview/02qt00000007000000/">http://resources.arcgis.com/en/help/arcgis-web-map-json/index.html#/Web_map_format_overview/02qt00000007000000/</a></p>
 <dl class="method">
+<dt id="arcgis.mapping.WebMap.add_layer">
+<code class="descname">add_layer</code><span class="sig-paren">(</span><em>layer</em>, <em>options=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.mapping.WebMap.add_layer" title="Permalink to this definition">¶</a></dt>
+<dd><p>Adds the given layer to the WebMap.</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="17%" />
+<col width="83%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><strong>Argument</strong></td>
+<td><strong>Description</strong></td>
+</tr>
+<tr class="row-even"><td>layer</td>
+<td>Required object. You can add any Layer objects such as FeatureLayer, MapImageLayer,
+ImageryLayer etc. You can also add Item objects and FeatureSet and FeatureCollections.</td>
+</tr>
+<tr class="row-odd"><td>options</td>
+<td>Optional dict. Specify properties such as title, symbol, opacity, visibility, renderer
+for the layer that is added. If not specified, appropriate defaults are applied.</td>
+</tr>
+</tbody>
+</table>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">True if layer was successfully added. Else, raises appropriate exception.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="arcgis.mapping.WebMap.basemap">
+<code class="descname">basemap</code><a class="headerlink" href="#arcgis.mapping.WebMap.basemap" title="Permalink to this definition">¶</a></dt>
+<dd><p>Base map layers in the web map
+:return: List of layer objects</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="arcgis.mapping.WebMap.layers">
+<code class="descname">layers</code><a class="headerlink" href="#arcgis.mapping.WebMap.layers" title="Permalink to this definition">¶</a></dt>
+<dd><p>Operational layers in the web map
+:return: List of Layer objects</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="arcgis.mapping.WebMap.offline_areas">
+<code class="descname">offline_areas</code><a class="headerlink" href="#arcgis.mapping.WebMap.offline_areas" title="Permalink to this definition">¶</a></dt>
+<dd><p>Resource manager for offline areas cached for the web map
+:return:</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="arcgis.mapping.WebMap.remove_layer">
+<code class="descname">remove_layer</code><span class="sig-paren">(</span><em>layer</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.mapping.WebMap.remove_layer" title="Permalink to this definition">¶</a></dt>
+<dd><p>Removes the specified layer from the web map. You can get the list of layers in map using the ‘layers’ property
+and pass one of those layers to this method for removal form the map.</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="17%" />
+<col width="83%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><strong>Argument</strong></td>
+<td><strong>Description</strong></td>
+</tr>
+<tr class="row-even"><td>layer</td>
+<td>Required object. Pass the layer that needs to be removed from the map. You can get the
+list of layers in the map by calling the <cite>layers</cite> property.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="arcgis.mapping.WebMap.save">
+<code class="descname">save</code><span class="sig-paren">(</span><em>item_properties</em>, <em>thumbnail=None</em>, <em>metadata=None</em>, <em>owner=None</em>, <em>folder=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.mapping.WebMap.save" title="Permalink to this definition">¶</a></dt>
+<dd><p>Save the WebMap object into a new web map Item in your GIS.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p>If you started out with a fresh WebMap object, use this method to save it as a the web map item in your GIS.</p>
+<p class="last">If you started with a WebMap object from an existing web map item, calling this method will create a new item
+with your changes. If you want to update the existing web map item with your changes, call the <cite>update()</cite>
+method instead.</p>
+</div>
+<table border="1" class="docutils">
+<colgroup>
+<col width="18%" />
+<col width="82%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><strong>Argument</strong></td>
+<td><strong>Description</strong></td>
+</tr>
+<tr class="row-even"><td>item_properties</td>
+<td>Required dictionary. See table below for the keys and values.</td>
+</tr>
+<tr class="row-odd"><td>thumbnail</td>
+<td>Optional string. Either a path or URL to a thumbnail image.</td>
+</tr>
+<tr class="row-even"><td>metadata</td>
+<td>Optional string. Either a path or URL to the metadata.</td>
+</tr>
+<tr class="row-odd"><td>owner</td>
+<td>Optional string. Defaults to the logged in user.</td>
+</tr>
+<tr class="row-even"><td>folder</td>
+<td>Optional string. Name of the folder where placing item.</td>
+</tr>
+</tbody>
+</table>
+<p><em>Key:Value Dictionary Options for Argument item_properties</em></p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="15%" />
+<col width="85%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><strong>Key</strong></td>
+<td><strong>Value</strong></td>
+</tr>
+<tr class="row-even"><td>typeKeywords</td>
+<td>Optional string. Provide a lists all sub-types, see URL 1 below for valid values.</td>
+</tr>
+<tr class="row-odd"><td>description</td>
+<td>Optional string. Description of the item.</td>
+</tr>
+<tr class="row-even"><td>title</td>
+<td>Optional string. Name label of the item.</td>
+</tr>
+<tr class="row-odd"><td>tags</td>
+<td>Optional string. Tags listed as comma-separated values, or a list of strings.
+Used for searches on items.</td>
+</tr>
+<tr class="row-even"><td>snippet</td>
+<td>Optional string. Provide a short summary (limit to max 250 characters) of the what the item is.</td>
+</tr>
+<tr class="row-odd"><td>accessInformation</td>
+<td>Optional string. Information on the source of the content.</td>
+</tr>
+<tr class="row-even"><td>licenseInfo</td>
+<td>Optional string.  Any license information or restrictions regarding the content.</td>
+</tr>
+<tr class="row-odd"><td>culture</td>
+<td>Optional string. Locale, country and language information.</td>
+</tr>
+<tr class="row-even"><td>access</td>
+<td>Optional string. Valid values are private, shared, org, or public.</td>
+</tr>
+<tr class="row-odd"><td>commentsEnabled</td>
+<td>Optional boolean. Default is true, controls whether comments are allowed (true)
+or not allowed (false).</td>
+</tr>
+<tr class="row-even"><td>culture</td>
+<td>Optional string. Language and country information.</td>
+</tr>
+</tbody>
+</table>
+<p>URL 1: <a class="reference external" href="http://resources.arcgis.com/en/help/arcgis-rest-api/index.html#//02r3000000ms000000">http://resources.arcgis.com/en/help/arcgis-rest-api/index.html#//02r3000000ms000000</a></p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">Item object corresponding to the new web map Item created.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
 <dt id="arcgis.mapping.WebMap.update">
-<code class="descname">update</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.mapping.WebMap.update" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<code class="descname">update</code><span class="sig-paren">(</span><em>item_properties=None</em>, <em>thumbnail=None</em>, <em>metadata=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.mapping.WebMap.update" title="Permalink to this definition">¶</a></dt>
+<dd><p>Updates the web map item in your GIS with the changes you made to the WebMap object. In addition, you can update
+other item properties, thumbnail and metadata.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p>If you started with a WebMap object from an existing web map item, calling this method will update the item
+with your changes.</p>
+<p>If you started out with a fresh WebMap object (without a web map item), calling this method will raise a
+RuntimeError exception. If you want to save the WebMap object into a new web map item, call the <cite>save()</cite>
+method instead.</p>
+<p class="last">For item_properties, pass in arguments for only the properties you want to be updated.
+All other properties will be untouched.  For example, if you want to update only the
+item’s description, then only provide the description argument in item_properties.</p>
+</div>
+<table border="1" class="docutils">
+<colgroup>
+<col width="18%" />
+<col width="82%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><strong>Argument</strong></td>
+<td><strong>Description</strong></td>
+</tr>
+<tr class="row-even"><td>item_properties</td>
+<td>Optional dictionary. See table below for the keys and values.</td>
+</tr>
+<tr class="row-odd"><td>thumbnail</td>
+<td>Optional string. Either a path or URL to a thumbnail image.</td>
+</tr>
+<tr class="row-even"><td>metadata</td>
+<td>Optional string. Either a path or URL to the metadata.</td>
+</tr>
+</tbody>
+</table>
+<p><em>Key:Value Dictionary Options for Argument item_properties</em></p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="15%" />
+<col width="85%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><strong>Key</strong></td>
+<td><strong>Value</strong></td>
+</tr>
+<tr class="row-even"><td>typeKeywords</td>
+<td>Optional string. Provide a lists all sub-types, see URL 1 below for valid values.</td>
+</tr>
+<tr class="row-odd"><td>description</td>
+<td>Optional string. Description of the item.</td>
+</tr>
+<tr class="row-even"><td>title</td>
+<td>Optional string. Name label of the item.</td>
+</tr>
+<tr class="row-odd"><td>tags</td>
+<td>Optional string. Tags listed as comma-separated values, or a list of strings.
+Used for searches on items.</td>
+</tr>
+<tr class="row-even"><td>snippet</td>
+<td>Optional string. Provide a short summary (limit to max 250 characters) of the what the item is.</td>
+</tr>
+<tr class="row-odd"><td>accessInformation</td>
+<td>Optional string. Information on the source of the content.</td>
+</tr>
+<tr class="row-even"><td>licenseInfo</td>
+<td>Optional string.  Any license information or restrictions regarding the content.</td>
+</tr>
+<tr class="row-odd"><td>culture</td>
+<td>Optional string. Locale, country and language information.</td>
+</tr>
+<tr class="row-even"><td>access</td>
+<td>Optional string. Valid values are private, shared, org, or public.</td>
+</tr>
+<tr class="row-odd"><td>commentsEnabled</td>
+<td>Optional boolean. Default is true, controls whether comments are allowed (true)
+or not allowed (false).</td>
+</tr>
+</tbody>
+</table>
+<p>URL 1: <a class="reference external" href="http://resources.arcgis.com/en/help/arcgis-rest-api/index.html#//02r3000000ms000000">http://resources.arcgis.com/en/help/arcgis-rest-api/index.html#//02r3000000ms000000</a></p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">A boolean indicating success (True) or failure (False).</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
 
 </dd></dl>
 
@@ -609,7 +938,7 @@ as functionality to visualize and interact with them.
 <dt id="arcgis.mapping.WebScene">
 <em class="property">class </em><code class="descclassname">arcgis.mapping.</code><code class="descname">WebScene</code><span class="sig-paren">(</span><em>websceneitem</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.mapping.WebScene" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">collections.OrderedDict</span></code></p>
-<p>Represents a web scene and provides access to it’s basemaps and operational layers as well
+<p>Represents a web scene and provides access to its basemaps and operational layers as well
 as functionality to visualize and interact with them.</p>
 <dl class="method">
 <dt id="arcgis.mapping.WebScene.update">
@@ -631,9 +960,74 @@ an LOD (level of detail), a bounding box, dpi, spatial reference and other optio
 entire map extent specified.</p>
 <p>MapImageLayer does not display tiled images. To display tiled map service layers, see TileLayer.</p>
 <dl class="method">
+<dt id="arcgis.mapping.MapImageLayer.create_dynamic_layer">
+<code class="descname">create_dynamic_layer</code><span class="sig-paren">(</span><em>layer</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.mapping.MapImageLayer.create_dynamic_layer" title="Permalink to this definition">¶</a></dt>
+<dd><p>A dynamic layer / table method represents a single layer / table
+of a map service published by ArcGIS Server or of a registered
+workspace. This resource is supported only when the map image layer
+supports dynamic layers, as indicated by supportsDynamicLayers on
+the map image layer properties.</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="20%" />
+<col width="80%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><strong>Argument</strong></td>
+<td><strong>Description</strong></td>
+</tr>
+<tr class="row-even"><td>layer</td>
+<td><p class="first">required dict.  Dynamic layer/table source definition.
+Syntax:
+{</p>
+<blockquote>
+<div><p>“id”: &lt;layerOrTableId&gt;,
+“source”: &lt;layer source&gt;, //required
+“definitionExpression”: “&lt;definitionExpression&gt;”,
+“drawingInfo”:
+{</p>
+<blockquote>
+<div>“renderer”: &lt;renderer&gt;,
+“transparency”: &lt;transparency&gt;,
+“scaleSymbols”: &lt;true,false&gt;,
+“showLabels”: &lt;true,false&gt;,
+“labelingInfo”: &lt;labeling info&gt;</div></blockquote>
+<p>},
+“layerTimeOptions”: //supported only for time enabled map layers
+{</p>
+<blockquote>
+<div><p>“useTime” : &lt;true,false&gt;,
+“timeDataCumulative” : &lt;true,false&gt;,
+“timeOffset” : &lt;timeOffset&gt;,
+“timeOffsetUnits” : “&lt;esriTimeUnitsCenturies,esriTimeUnitsDays,</p>
+<blockquote>
+<div>esriTimeUnitsDecades,esriTimeUnitsHours,
+esriTimeUnitsMilliseconds,esriTimeUnitsMinutes,
+esriTimeUnitsMonths,esriTimeUnitsSeconds,
+esriTimeUnitsWeeks,esriTimeUnitsYears |
+esriTimeUnitsUnknown&gt;”</div></blockquote>
+</div></blockquote>
+<p>}</p>
+</div></blockquote>
+<p class="last">}</p>
+</td>
+</tr>
+</tbody>
+</table>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">arcgis.features.FeatureLayer or None (if not enabled)</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
 <dt id="arcgis.mapping.MapImageLayer.estimate_export_tiles_size">
-<code class="descname">estimate_export_tiles_size</code><span class="sig-paren">(</span><em>exportBy</em>, <em>levels</em>, <em>tilePackage=False</em>, <em>exportExtent='DEFAULTEXTENT'</em>, <em>areaOfInterest=None</em>, <em>asynchronous=True</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.mapping.MapImageLayer.estimate_export_tiles_size" title="Permalink to this definition">¶</a></dt>
-<dd><p>The estimateExportTilesSize operation is an asynchronous task that
+<code class="descname">estimate_export_tiles_size</code><span class="sig-paren">(</span><em>export_by</em>, <em>levels</em>, <em>tile_package=False</em>, <em>export_extent='DEFAULTEXTENT'</em>, <em>area_of_interest=None</em>, <em>asynchronous=True</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.mapping.MapImageLayer.estimate_export_tiles_size" title="Permalink to this definition">¶</a></dt>
+<dd><p>The estimate_export_tiles_size method is an asynchronous task that
 allows estimation of the size of the tile package or the cache data
 set that you download using the Export Tiles operation. This
 operation can also be used to estimate the tile count in a tile
@@ -643,144 +1037,93 @@ operation is Map Service Job. This job response contains reference
 to Map Service Result resource that returns the total size of the
 cache to be exported (in bytes) and the number of tiles that will
 be exported.</p>
-<p>Inputs:</p>
-<dl class="docutils">
-<dt>tilePackage - Allows estimating the size for either a tile package</dt>
-<dd><p class="first">or a cache raster data set. Specify the value true for tile
+<table border="1" class="docutils">
+<colgroup>
+<col width="21%" />
+<col width="79%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><strong>Argument</strong></td>
+<td><strong>Description</strong></td>
+</tr>
+<tr class="row-even"><td>tile_package</td>
+<td>optional boolean. Allows estimating the size for either a tile
+package or a cache raster data set. Specify the value true for tile
 packages format and false for Cache Raster data set. The default
-value is False</p>
+value is False</td>
+</tr>
+<tr class="row-odd"><td>levels</td>
+<td>required string. Specify the tiled service levels for which you want
+to get the estimates. The values should correspond to Level IDs,
+cache scales or the Resolution as specified in export_by parameter.
+The values can be comma separated values or a range.
+Example 1: 1,2,3,4,5,6,7,8,9
+Example 2: 1-4,7-9</td>
+</tr>
+<tr class="row-even"><td>export_by</td>
+<td>required string. The criteria that will be used to select the tile
+service levels to export. The values can be Level IDs, cache scales
+or the Resolution (in the case of image services).
+Values: LevelID, Resolution, Scale</td>
+</tr>
+<tr class="row-odd"><td>export_extent</td>
+<td>The extent (bounding box) of the tile package or the cache dataset
+to be exported. If extent does not include a spatial reference, the
+extent values are assumed to be in the spatial reference of the map.
+The default value is full extent of the tiled map service.
+Syntax: &lt;xmin&gt;, &lt;ymin&gt;, &lt;xmax&gt;, &lt;ymax&gt;
+Example: -104,35.6,-94.32,41</td>
+</tr>
+<tr class="row-even"><td>area_of_interest</td>
+<td><p class="first">optiona dictionary or Polygon. This allows exporting tiles within
+the specified polygon areas. This parameter supersedes extent
+parameter.
+Example: { “features”: [{“geometry”:{“rings”:[[[-100,35],</p>
 <blockquote class="last">
-<div>Values: True | False</div></blockquote>
-</dd>
-<dt>exportExtent - The extent (bounding box) of the tile package or the</dt>
-<dd>cache dataset to be exported. If extent does not include a spatial
-reference, the extent values are assumed to be in the spatial
-reference of the map. The default value is full extent of the
-tiled map service.</dd>
-<dt>Syntax: &lt;xmin&gt;, &lt;ymin&gt;, &lt;xmax&gt;, &lt;ymax&gt;</dt>
-<dd>Example 1: -104,35.6,-94.32,41</dd>
-<dt>exportBy - The criteria that will be used to select the tile</dt>
-<dd>service levels to export. The values can be Level IDs, cache scales
-or the Resolution (in the case of image services).</dd>
-</dl>
-<p>Values: LevelID | Resolution | Scale
-levels - Specify the tiled service levels for which you want to get</p>
-<blockquote>
-<div>the estimates. The values should correspond to Level IDs, cache
-scales or the Resolution as specified in exportBy parameter. The
-values can be comma separated values or a range.</div></blockquote>
-<p>Example 1: 1,2,3,4,5,6,7,8,9
-Example 2: 1-4,7-9
-areaOfInterest - (Optional) The areaOfInterest polygon allows</p>
-<blockquote>
-<div>exporting tiles within the specified polygon areas. This parameter
-supersedes exportExtent parameter. Also excepts geometry.Polygon.</div></blockquote>
-<dl class="docutils">
-<dt>Example: { “features”: [{“geometry”:{“rings”:[[[-100,35],</dt>
-<dd>[-100,45],[-90,45],[-90,35],[-100,35]]],
-“spatialReference”:{“wkid”:4326}}}]}</dd>
-<dt>asynchronous - (optional) the estimate function is run asynchronously</dt>
-<dd><p class="first">requiring the tool status to be checked manually to force it to
+<div>[-100,45],[-90,45],[-90,35],[-100,35]]],
+“spatialReference”:{“wkid”:4326}}}]}</div></blockquote>
+</td>
+</tr>
+<tr class="row-odd"><td>asynchronous</td>
+<td>optional boolean. The estimate function is run asynchronously
+requiring the tool status to be checked manually to force it to
 run synchronously the tool will check the status until the
 estimation completes.  The default is True, which means the status
 of the job and results need to be checked manually.  If the value
-is set to False, the function will wait until the task completes.</p>
-<blockquote class="last">
-<div>Values: True | False</div></blockquote>
-</dd>
-</dl>
+is set to False, the function will wait until the task completes.</td>
+</tr>
+</tbody>
+</table>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">dictionary</td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
 <dl class="method">
 <dt id="arcgis.mapping.MapImageLayer.export_map">
-<code class="descname">export_map</code><span class="sig-paren">(</span><em>bbox</em>, <em>bboxSR=None</em>, <em>size='600</em>, <em>550'</em>, <em>dpi=200</em>, <em>imageSR=None</em>, <em>image_format='png'</em>, <em>layerDefFilter=None</em>, <em>layers=None</em>, <em>transparent=False</em>, <em>timeFilter=None</em>, <em>layerTimeOptions=None</em>, <em>dynamicLayers=None</em>, <em>mapScale=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.mapping.MapImageLayer.export_map" title="Permalink to this definition">¶</a></dt>
-<dd><blockquote>
-<div><p>The export operation is performed on a map service resource.
+<code class="descname">export_map</code><span class="sig-paren">(</span><em>bbox</em>, <em>bbox_sr=None</em>, <em>size='600</em>, <em>550'</em>, <em>dpi=200</em>, <em>image_sr=None</em>, <em>image_format='png'</em>, <em>layer_defs=None</em>, <em>layers=None</em>, <em>transparent=False</em>, <em>time_value=None</em>, <em>time_options=None</em>, <em>dynamic_layers=None</em>, <em>gdb_version=None</em>, <em>scale=None</em>, <em>rotation=None</em>, <em>transformation=None</em>, <em>map_range_values=None</em>, <em>layer_range_values=None</em>, <em>layer_parameter=None</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.mapping.MapImageLayer.export_map" title="Permalink to this definition">¶</a></dt>
+<dd><p>The export operation is performed on a map service resource.
 The result of this operation is a map image resource. This
 resource provides information about the exported map image such
-as its URL, its width and height, extent and scale.
-Inputs:</p>
-<blockquote>
-<div><dl class="docutils">
-<dt>bbox - (Required) The extent (bounding box) of the exported</dt>
-<dd>image. Unless the bboxSR parameter has been specified, the bbox
-is assumed to be in the spatial reference of the map.
-Example: bbox=”-104,35.6,-94.32,41”</dd>
-</dl>
-<p>size - size of image in pixels
-dpi - dots per inch
-imageSR - spatial reference of the output image
-image_format - Description: The format of the exported image.</p>
-<blockquote>
-<div><p>The default format is .png.
-Values: png | png8 | png24 | jpg | pdf | bmp | gif</p>
-<blockquote>
-<div><div class="line-block">
-<div class="line">svg | svgz | emf | ps | png32</div>
-</div>
-</div></blockquote>
-</div></blockquote>
-<dl class="docutils">
-<dt>layerDefFilter - Description: Allows you to filter the</dt>
-<dd>features of individual layers in the exported
-map by specifying definition expressions for
-those layers. Definition expression for a
-layer that is published with the service will
-be always honored.</dd>
-<dt>layers - Determines which layers appear on the exported map.</dt>
-<dd><dl class="first last docutils">
-<dt>There are four ways to specify which layers are shown:</dt>
-<dd><dl class="first last docutils">
-<dt>show: Only the layers specified in this list will</dt>
-<dd>be exported.</dd>
-<dt>hide: All layers except those specified in this</dt>
-<dd>list will be exported.</dd>
-<dt>include: In addition to the layers exported by</dt>
-<dd>default, the layers specified in this list
-will be exported.</dd>
-<dt>exclude: The layers exported by default excluding</dt>
-<dd>those specified in this list will be
-exported.</dd>
-</dl>
-</dd>
-</dl>
-</dd>
-<dt>transparent - If true, the image will be exported with the</dt>
-<dd>background color of the map set as its
-transparent color. The default is false. Only
-the .png and .gif formats support transparency.
-Internet Explorer 6 does not display transparency
-correctly for png24 image formats.</dd>
-<dt>timeFilter - The time instant or time extent of the exported</dt>
-<dd>map image.</dd>
-<dt>layerTimeOptions - The time options per layer. Users can</dt>
-<dd>indicate whether or not the layer should use
-the time extent specified by the time
-parameter or not, whether to draw the layer
-features cumulatively or not and the time
-offsets for the layer.
-see: <a class="reference external" href="http://resources.arcgis.com/en/help/arcgis-rest-api/index.html#/Export_Map/02r3000000v7000000/">http://resources.arcgis.com/en/help/arcgis-rest-api/index.html#/Export_Map/02r3000000v7000000/</a></dd>
-<dt>dynamicLayers - Use dynamicLayers parameter to modify the layer</dt>
-<dd>drawing order, change layer drawing info, and
-change layer data source version for this request.
-New layers (dataLayer) can also be added to the
-dynamicLayers based on the map service registered
-workspaces.</dd>
-<dt>mapScale - Use this parameter to export a map image at a specific</dt>
-<dd>scale, with the map centered around the center of the
-specified bounding box (bbox).</dd>
-</dl>
-</div></blockquote>
-</div></blockquote>
-<dl class="docutils">
-<dt>Output:</dt>
-<dd>Image of the map.</dd>
-</dl>
+as its URL, its width and height, extent and scale.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">string, image of the map.</td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
 <dl class="method">
 <dt id="arcgis.mapping.MapImageLayer.export_tiles">
-<code class="descname">export_tiles</code><span class="sig-paren">(</span><em>levels</em>, <em>exportBy='LevelID'</em>, <em>tilePackage=False</em>, <em>exportExtent='DEFAULT'</em>, <em>optimizeTilesForSize=True</em>, <em>compressionQuality=0</em>, <em>areaOfInterest=None</em>, <em>asynchronous=False</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.mapping.MapImageLayer.export_tiles" title="Permalink to this definition">¶</a></dt>
+<code class="descname">export_tiles</code><span class="sig-paren">(</span><em>levels</em>, <em>export_by='LevelID'</em>, <em>tile_package=False</em>, <em>export_extent='DEFAULT'</em>, <em>optimize_for_size=True</em>, <em>compression=75</em>, <em>area_of_interest=None</em>, <em>asynchronous=False</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.mapping.MapImageLayer.export_tiles" title="Permalink to this definition">¶</a></dt>
 <dd><p>The exportTiles operation is performed as an asynchronous task and
 allows client applications to download map tiles from a server for
 offline use. This operation is performed on a Map Service that
@@ -802,81 +1145,228 @@ operation of the Map Server. The use of the
 <a class="reference external" href="http://Map">http://Map</a> Service/exportTiles/submitJob operation is deprecated.
 You can provide arguments to the exportTiles operation as defined
 in the following parameters table:</p>
-<dl class="docutils">
-<dt>Inputs:</dt>
-<dd><dl class="first last docutils">
-<dt>exportBy - The criteria that will be used to select the tile</dt>
-<dd>service levels to export. The values can be Level IDs, cache
-scales. or the resolution (in the case of image services).</dd>
-</dl>
-</dd>
-</dl>
-<p>Values: LevelID | Resolution | Scale
-levels - Specifies the tiled service levels to export. The values</p>
-<blockquote>
-<div>should correspond to Level IDs, cache scales. or the resolution
-as specified in exportBy parameter. The values can be comma
-separated values or a range. Make sure tiles are present at the
-levels where you attempt to export tiles.</div></blockquote>
-<p>Example 1: 1,2,3,4,5,6,7,8,9
-Example 2: 1-4,7-9
-tilePackage - Allows exporting either a tile package or a cache</p>
-<blockquote>
-<div>raster data set. If the value is true, output will be in tile
+<table border="1" class="docutils">
+<colgroup>
+<col width="21%" />
+<col width="79%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><strong>Argument</strong></td>
+<td><strong>Description</strong></td>
+</tr>
+<tr class="row-even"><td>levels</td>
+<td>required string. Specifies the tiled service levels to export. The
+values should correspond to Level IDs, cache scales. or the
+resolution as specified in export_by parameter. The values can be
+comma separated values or a range. Make sure tiles are present at
+the levels where you attempt to export tiles.
+Example 1: 1,2,3,4,5,6,7,8,9
+Example 2: 1-4,7-9</td>
+</tr>
+<tr class="row-odd"><td>export_by</td>
+<td>required string. The criteria that will be used to select the tile
+service levels to export. The values can be Level IDs, cache scales.
+or the resolution.  The defaut is ‘LevelID’.
+Values: LevelID | Resolution | Scale</td>
+</tr>
+<tr class="row-even"><td>tile_package</td>
+<td>optiona boolean. Allows exporting either a tile package or a cache
+raster data set. If the value is true, output will be in tile
 package format, and if the value is false, a cache raster data
-set is returned. The default value is false</div></blockquote>
-<p>Values: true | false
-exportExtent - The extent (bounding box) of the tile package or the</p>
-<blockquote>
-<div><p>cache dataset to be exported. If extent does not include a
-spatial reference, the extent values are assumed to be in the
-spatial reference of the map. The default value is full extent of
-the tiled map service.</p>
-<blockquote>
-<div><p>Syntax: &lt;xmin&gt;, &lt;ymin&gt;, &lt;xmax&gt;, &lt;ymax&gt;
+set is returned. The default value is false.</td>
+</tr>
+<tr class="row-odd"><td>export_extent</td>
+<td><p class="first">optional dictionary or string. The extent (bounding box) of the tile
+package or the cache dataset to be exported. If extent does not
+include a spatial reference, the extent values are assumed to be in
+the spatial reference of the map. The default value is full extent
+of the tiled map service.
+Syntax: &lt;xmin&gt;, &lt;ymin&gt;, &lt;xmax&gt;, &lt;ymax&gt;
 Example 1: -104,35.6,-94.32,41
 Example 2: {“xmin” : -109.55, “ymin” : 25.76,</p>
-<blockquote>
+<blockquote class="last">
 <div>“xmax” : -86.39, “ymax” : 49.94,
 “spatialReference” : {“wkid” : 4326}}</div></blockquote>
-</div></blockquote>
-</div></blockquote>
-<dl class="docutils">
-<dt>optimizeTilesForSize - (Optional) Use this parameter to enable</dt>
-<dd>compression of JPEG tiles and reduce the size of the downloaded
-tile package or the cache raster data set. Compressing tiles
-slightly compromises the quality of tiles but helps reduce the
-size of the download. Try sample compressions to determine the
-optimal compression before using this feature.</dd>
-</dl>
-<p>Values: true | false
-compressionQuality - (Optional) When optimizeTilesForSize=true, you</p>
-<blockquote>
-<div>can specify a compression factor. The value must be between 0 and
-100. The value cannot be greater than the default compression
-already set on the original tile. For example, if the default
-value is 75, the value of compressionQuality must be between 0 and
-75. A value greater than 75 in this example will attempt to up
-sample an already compressed tile and will further degrade the
-quality of tiles.</div></blockquote>
-<dl class="docutils">
-<dt>areaOfInterest - (Optional) The areaOfInterest polygon allows</dt>
-<dd>exporting tiles within the specified polygon areas. This parameter
-supersedes the exportExtent parameter. Must be geometry.Polygon
-object.</dd>
-<dt>Example: { “features”: [{“geometry”:{“rings”:[[[-100,35],</dt>
-<dd>[-100,45],[-90,45],[-90,35],[-100,35]]],
-“spatialReference”:{“wkid”:4326}}}]}</dd>
-<dt>asynchronous - default True, this value ensures the returns are returned</dt>
-<dd>to the user instead of the user having the check the job status
-manually.</dd>
-</dl>
+</td>
+</tr>
+<tr class="row-even"><td>optimize_for_size</td>
+<td>optional boolean. Use this parameter to enable compression of JPEG
+tiles and reduce the size of the downloaded tile package or the
+cache raster data set. Compressing tiles slightly compromises the
+quality of tiles but helps reduce the size of the download. Try
+sample compressions to determine the optimal compression before
+using this feature.
+The default value is True.</td>
+</tr>
+<tr class="row-odd"><td>compression=75,</td>
+<td>optional integer. When optimize_for_size=true, you can specify a
+compression factor. The value must be between 0 and 100. The value
+cannot be greater than the default compression already set on the
+original tile. For example, if the default value is 75, the value
+of compressionQuality must be between 0 and 75. A value greater
+than 75 in this example will attempt to up sample an already
+compressed tile and will further degrade the quality of tiles.</td>
+</tr>
+<tr class="row-even"><td>area_of_interest</td>
+<td><p class="first">optional dictionary, Polygon. The area_of_interest polygon allows
+exporting tiles within the specified polygon areas. This parameter
+supersedes the exportExtent parameter.
+Example: { “features”: [{“geometry”:{“rings”:[[[-100,35],</p>
+<blockquote class="last">
+<div>[-100,45],[-90,45],[-90,35],[-100,35]]],
+“spatialReference”:{“wkid”:4326}}}]}</div></blockquote>
+</td>
+</tr>
+<tr class="row-odd"><td>asynchronous</td>
+<td>optional boolean. Default False, this value ensures the returns are
+returned to the user instead of the user having the check the job
+status manually.</td>
+</tr>
+</tbody>
+</table>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">path to download file is asynchronous is False. If True, a dictionary is returned.</td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
 <dl class="method">
 <dt id="arcgis.mapping.MapImageLayer.find">
-<code class="descname">find</code><span class="sig-paren">(</span><em>searchText</em>, <em>layers</em>, <em>contains=True</em>, <em>searchFields=''</em>, <em>sr=''</em>, <em>layerDefs=''</em>, <em>returnGeometry=True</em>, <em>maxAllowableOffset=''</em>, <em>geometryPrecision=''</em>, <em>dynamicLayers=''</em>, <em>returnZ=False</em>, <em>returnM=False</em>, <em>gdbVersion=''</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.mapping.MapImageLayer.find" title="Permalink to this definition">¶</a></dt>
+<code class="descname">find</code><span class="sig-paren">(</span><em>search_text</em>, <em>layers</em>, <em>contains=True</em>, <em>search_fields=None</em>, <em>sr=None</em>, <em>layer_defs=None</em>, <em>return_geometry=True</em>, <em>max_offset=None</em>, <em>precision=None</em>, <em>dynamic_layers=None</em>, <em>return_z=False</em>, <em>return_m=False</em>, <em>gdb_version=None</em>, <em>return_unformatted=False</em>, <em>return_field_name=False</em>, <em>transformations=None</em>, <em>map_range_values=None</em>, <em>layer_range_values=None</em>, <em>layer_parameters=None</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.mapping.MapImageLayer.find" title="Permalink to this definition">¶</a></dt>
 <dd><p>performs the map service find operation</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="21%" />
+<col width="79%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><strong>Argument</strong></td>
+<td><strong>Description</strong></td>
+</tr>
+<tr class="row-even"><td>search_text</td>
+<td>required string.The search string. This is the text that is searched
+across the layers and fields the user specifies.</td>
+</tr>
+<tr class="row-odd"><td>layers</td>
+<td><p class="first">optional string. The layers to perform the identify operation on.
+There are three ways to specify which layers to identify on:</p>
+<blockquote class="last">
+<div><ul class="simple">
+<li>top: Only the top-most layer at the specified location.</li>
+<li>visible: All visible layers at the specified location.</li>
+<li>all: All layers at the specified location.</li>
+</ul>
+</div></blockquote>
+</td>
+</tr>
+<tr class="row-even"><td>contains</td>
+<td>optional boolean. If false, the operation searches for an exact
+match of the search_text string. An exact match is case sensitive.
+Otherwise, it searches for a value that contains the search_text
+provided. This search is not case sensitive. The default is true.</td>
+</tr>
+<tr class="row-odd"><td>search_fields</td>
+<td>optional string. List of field names to look in.</td>
+</tr>
+<tr class="row-even"><td>sr</td>
+<td>optional dict, string, or SpatialReference. The well-known ID of the
+spatial reference of the input and output geometries as well as the
+map_extent. If sr is not specified, the geometry and the map_extent
+are assumed to be in the spatial reference of the map, and the
+output geometries are also in the spatial reference of the map.</td>
+</tr>
+<tr class="row-odd"><td>layer_defs</td>
+<td>optional dict. Allows you to filter the features of individual
+layers in the exported map by specifying definition expressions for
+those layers. Definition expression for a layer that is
+published with the service will be always honored.</td>
+</tr>
+<tr class="row-even"><td>return_geometry</td>
+<td>optional boolean. If true, the resultset will include the geometries
+associated with each result. The default is true.</td>
+</tr>
+<tr class="row-odd"><td>max_offset</td>
+<td>optional integer. This option can be used to specify the maximum
+allowable offset to be used for generalizing geometries returned by
+the identify operation.</td>
+</tr>
+<tr class="row-even"><td>precision</td>
+<td>optional integer. This option can be used to specify the number of
+decimal places in the response geometries returned by the identify
+operation. This applies to X and Y values only (not m or z-values).</td>
+</tr>
+<tr class="row-odd"><td>dynamic_layers</td>
+<td>optional dict. Use dynamicLayers property to reorder layers and
+change the layer data source. dynamicLayers can also be used to add
+new layer that was not defined in the map used to create the map
+service. The new layer should have its source pointing to one of the
+registered workspaces that was defined at the time the map service
+was created.
+The order of dynamicLayers array defines the layer drawing order.
+The first element of the dynamicLayers is stacked on top of all
+other layers. When defining a dynamic layer, source is required.</td>
+</tr>
+<tr class="row-even"><td>return_z</td>
+<td>optional boolean. If true, Z values will be included in the results
+if the features have Z values. Otherwise, Z values are not returned.
+The default is false.</td>
+</tr>
+<tr class="row-odd"><td>return_m</td>
+<td>optional boolean.If true, M values will be included in the results
+if the features have M values. Otherwise, M values are not returned.
+The default is false.</td>
+</tr>
+<tr class="row-even"><td>gdb_version</td>
+<td>optional string. Switch map layers to point to an alternate
+geodatabase version.</td>
+</tr>
+<tr class="row-odd"><td>return_unformatted</td>
+<td>optional boolean. If true, the values in the result will not be
+formatted i.e. numbers will returned as is and dates will be
+returned as epoch values.</td>
+</tr>
+<tr class="row-even"><td>return_field_name</td>
+<td>optional boolean. If true, field names will be returned instead of
+field aliases.</td>
+</tr>
+<tr class="row-odd"><td>transformations</td>
+<td>optional list. Use this parameter to apply one or more datum
+transformations to the map when sr is different than the map
+service’s spatial reference. It is an array of transformation
+elements.</td>
+</tr>
+<tr class="row-even"><td>map_range_values</td>
+<td>optional list. Allows you to filter features in the exported map
+from all layer that are within the specified range instant or
+extent.</td>
+</tr>
+<tr class="row-odd"><td>layer_range_values</td>
+<td>optional dictionary. Allows you to filter features for each
+individual layer that are within the specified range instant or
+extent. Note: Check range infos at the layer resources for the
+available ranges.</td>
+</tr>
+<tr class="row-even"><td>layer_parameters</td>
+<td>optional list. Allows you to filter the features of individual
+layers in the exported map by specifying value(s) to an array of
+pre-authored parameterized filters for those layers. When value is
+not specified for any parameter in a request, the default value,
+that is assigned during authoring time, gets used instead.</td>
+</tr>
+</tbody>
+</table>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">dictionary</td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
 <dl class="classmethod">
@@ -886,135 +1376,69 @@ manually.</dd>
 
 <dl class="method">
 <dt id="arcgis.mapping.MapImageLayer.generate_kml">
-<code class="descname">generate_kml</code><span class="sig-paren">(</span><em>save_location</em>, <em>docName</em>, <em>layers</em>, <em>layerOptions='composite'</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.mapping.MapImageLayer.generate_kml" title="Permalink to this definition">¶</a></dt>
+<code class="descname">generate_kml</code><span class="sig-paren">(</span><em>save_location</em>, <em>name</em>, <em>layers</em>, <em>options='composite'</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.mapping.MapImageLayer.generate_kml" title="Permalink to this definition">¶</a></dt>
 <dd><p>The generateKml operation is performed on a map service resource.
 The result of this operation is a KML document wrapped in a KMZ
 file. The document contains a network link to the KML Service
-endpoint with properties and parameters you specify.
-Inputs:</p>
-<blockquote>
-<div><dl class="docutils">
-<dt>docName - The name of the resulting KML document. This is the</dt>
-<dd>name that appears in the Places panel of Google
-Earth.</dd>
-<dt>layers - the layers to perform the generateKML operation on.</dt>
-<dd>The layers are specified as a comma-separated list
-of layer ids.</dd>
-<dt>layerOptions - The layer drawing options. Based on the option</dt>
-<dd><p class="first">chosen, the layers are drawn as one composite
-image, as separate images, or as vectors. When
-the KML capability is enabled, the ArcGIS
-Server administrator has the option of setting
-the layer operations allowed. If vectors are
-not allowed, then the caller will not be able
-to get vectors. Instead, the caller receives a
-single composite image.
-values: composite | separateImage |</p>
-<blockquote class="last">
-<div>nonComposite</div></blockquote>
-</dd>
-</dl>
-</div></blockquote>
+endpoint with properties and parameters you specify.</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="20%" />
+<col width="80%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><strong>Argument</strong></td>
+<td><strong>Description</strong></td>
+</tr>
+<tr class="row-even"><td>save_location</td>
+<td>required string. Save folder.</td>
+</tr>
+<tr class="row-odd"><td>name</td>
+<td>The name of the resulting KML document. This is the name that
+appears in the Places panel of Google Earth.</td>
+</tr>
+<tr class="row-even"><td>layers</td>
+<td>required string. the layers to perform the generateKML operation on.
+The layers are specified as a comma-separated list of layer ids.</td>
+</tr>
+<tr class="row-odd"><td>options</td>
+<td>required string. The layer drawing options. Based on the option
+chosen, the layers are drawn as one composite image, as separate
+images, or as vectors. When the KML capability is enabled, the
+ArcGIS Server administrator has the option of setting the layer
+operations allowed. If vectors are not allowed, then the caller will
+not be able to get vectors. Instead, the caller receives a single
+composite image.
+values: composite, separateImage, nonComposite</td>
+</tr>
+</tbody>
+</table>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">string to file path</td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
 <dl class="method">
 <dt id="arcgis.mapping.MapImageLayer.identify">
-<code class="descname">identify</code><span class="sig-paren">(</span><em>geometry</em>, <em>mapExtent</em>, <em>imageDisplay</em>, <em>tolerance</em>, <em>geometryType='esriGeometryPoint'</em>, <em>sr=None</em>, <em>layerDefs=None</em>, <em>time_value=None</em>, <em>layerTimeOptions=None</em>, <em>layers='top'</em>, <em>returnGeometry=True</em>, <em>maxAllowableOffset=None</em>, <em>geometryPrecision=None</em>, <em>dynamicLayers=None</em>, <em>returnZ=False</em>, <em>returnM=False</em>, <em>gdbVersion=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.mapping.MapImageLayer.identify" title="Permalink to this definition">¶</a></dt>
+<code class="descname">identify</code><span class="sig-paren">(</span><em>geometry</em>, <em>map_extent</em>, <em>image_display</em>, <em>geometry_type='Point'</em>, <em>sr=None</em>, <em>layer_defs=None</em>, <em>time_value=None</em>, <em>time_options=None</em>, <em>layers='all'</em>, <em>tolerance=None</em>, <em>return_geometry=True</em>, <em>max_offset=None</em>, <em>precision=4</em>, <em>dynamic_layers=None</em>, <em>return_z=False</em>, <em>return_m=False</em>, <em>gdb_version=None</em>, <em>return_unformatted=False</em>, <em>return_field_name=False</em>, <em>transformations=None</em>, <em>map_range_values=None</em>, <em>layer_range_values=None</em>, <em>layer_parameters=None</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.mapping.MapImageLayer.identify" title="Permalink to this definition">¶</a></dt>
 <dd><p>The identify operation is performed on a map service resource
 to discover features at a geographic location. The result of this
 operation is an identify results resource. Each identified result
 includes its name, layer ID, layer name, geometry and geometry type,
 and other attributes of that result as name-value pairs.</p>
-<p>Inputs:
-geometry - The geometry to identify on. The type of the geometry is</p>
-<blockquote>
-<div>specified by the geometryType parameter. The structure of
-the geometries is same as the structure of the JSON geometry
-objects returned by the ArcGIS REST API. In addition to the
-JSON structures, for points and envelopes, you can specify
-the geometries with a simpler comma-separated syntax.
-Syntax:
-JSON structures:
-&lt;geometryType&gt;&amp;geometry={ geometry}
-Point simple syntax:
-esriGeometryPoint&amp;geometry=&lt;x&gt;,&lt;y&gt;
-Envelope simple syntax:
-esriGeometryEnvelope&amp;geometry=&lt;xmin&gt;,&lt;ymin&gt;,&lt;xmax&gt;,&lt;ymax&gt;</div></blockquote>
-<dl class="docutils">
-<dt>geometryType - The type of geometry specified by the geometry parameter.</dt>
-<dd>The geometry type could be a point, line, polygon, or
-an envelope.
-Values:
-esriGeometryPoint | esriGeometryMultipoint |
-esriGeometryPolyline | esriGeometryPolygon |
-esriGeometryEnvelope</dd>
-<dt>sr - The well-known ID of the spatial reference of the input and</dt>
-<dd>output geometries as well as the mapExtent. If sr is not specified,
-the geometry and the mapExtent are assumed to be in the spatial
-reference of the map, and the output geometries are also in the
-spatial reference of the map.</dd>
-<dt>layerDefs - Allows you to filter the features of individual layers in</dt>
-<dd>the exported map by specifying definition expressions for
-those layers. Definition expression for a layer that is
-published with the service will be always honored.</dd>
-</dl>
-<p>time_value - The time instant or the time extent of the features to be
-identified.</p>
-<dl class="docutils">
-<dt>layerTimeOptions - The time options per layer. Users can indicate</dt>
-<dd>whether or not the layer should use the time extent
-specified by the time parameter or not, whether to
-draw the layer features cumulatively or not and the
-time offsets for the layer.</dd>
-<dt>layers - The layers to perform the identify operation on. There are</dt>
-<dd>three ways to specify which layers to identify on:
-top: Only the top-most layer at the specified location.
-visible: All visible layers at the specified location.
-all: All layers at the specified location.</dd>
-<dt>tolerance - The distance in screen pixels from the specified geometry</dt>
-<dd>within which the identify should be performed. The value for
-the tolerance is an integer.</dd>
-<dt>mapExtent - The extent or bounding box of the map currently being viewed.</dt>
-<dd>Unless the sr parameter has been specified, the mapExtent is
-assumed to be in the spatial reference of the map.
-Syntax: &lt;xmin&gt;, &lt;ymin&gt;, &lt;xmax&gt;, &lt;ymax&gt;
-The mapExtent and the imageDisplay parameters are used by the
-server to determine the layers visible in the current extent.
-They are also used to calculate the distance on the map to
-search based on the tolerance in screen pixels.</dd>
-<dt>imageDisplay - The screen image display parameters (width, height, and DPI)</dt>
-<dd>of the map being currently viewed. The mapExtent and the
-imageDisplay parameters are used by the server to determine
-the layers visible in the current extent. They are also used
-to calculate the distance on the map to search based on the
-tolerance in screen pixels.
-Syntax: &lt;width&gt;, &lt;height&gt;, &lt;dpi&gt;</dd>
-<dt>returnGeometry - If true, the resultset will include the geometries</dt>
-<dd>associated with each result. The default is true.</dd>
-<dt>maxAllowableOffset - This option can be used to specify the maximum allowable</dt>
-<dd>offset to be used for generalizing geometries returned by
-the identify operation. The maxAllowableOffset is in the units
-of the sr. If sr is not specified, maxAllowableOffset is
-assumed to be in the unit of the spatial reference of the map.</dd>
-<dt>geometryPrecision - This option can be used to specify the number of decimal places</dt>
-<dd>in the response geometries returned by the identify operation.
-This applies to X and Y values only (not m or z-values).</dd>
-<dt>dynamicLayers - Use dynamicLayers property to reorder layers and change the layer</dt>
-<dd>data source. dynamicLayers can also be used to add new layer that
-was not defined in the map used to create the map service. The new
-layer should have its source pointing to one of the registered
-workspaces that was defined at the time the map service was created.
-The order of dynamicLayers array defines the layer drawing order.
-The first element of the dynamicLayers is stacked on top of all
-other layers. When defining a dynamic layer, source is required.</dd>
-<dt>returnZ - If true, Z values will be included in the results if the features have</dt>
-<dd>Z values. Otherwise, Z values are not returned. The default is false.
-This parameter only applies if returnGeometry=true.</dd>
-<dt>returnM - If true, M values will be included in the results if the features have</dt>
-<dd>M values. Otherwise, M values are not returned. The default is false.
-This parameter only applies if returnGeometry=true.</dd>
-</dl>
-<p>gdbVersion - Switch map layers to point to an alternate geodatabase version.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">dictionary</td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
 <dl class="attribute">
@@ -1026,7 +1450,21 @@ This parameter only applies if returnGeometry=true.</dd>
 <dl class="attribute">
 <dt id="arcgis.mapping.MapImageLayer.kml">
 <code class="descname">kml</code><a class="headerlink" href="#arcgis.mapping.MapImageLayer.kml" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>returns the KML file for the layer</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="arcgis.mapping.MapImageLayer.legend">
+<code class="descname">legend</code><a class="headerlink" href="#arcgis.mapping.MapImageLayer.legend" title="Permalink to this definition">¶</a></dt>
+<dd><p>The legend resource represents a map service’s legend. It returns
+the legend information for all layers in the service. Each layer’s
+legend information includes the symbol images and labels for each
+symbol. Each symbol is an image of size 20 x 20 pixels at 96 DPI.
+Additional information for each layer such as the layer ID, name,
+and min and max scales are also included.</p>
+<p>The legend symbols include the base64 encoded imageData as well as
+a url that could be used to retrieve the image from the server.</p>
+</dd></dl>
 
 <dl class="attribute">
 <dt id="arcgis.mapping.MapImageLayer.manager">
@@ -1042,7 +1480,8 @@ This parameter only applies if returnGeometry=true.</dd>
 <dl class="method">
 <dt id="arcgis.mapping.MapImageLayer.thumbnail">
 <code class="descname">thumbnail</code><span class="sig-paren">(</span><em>out_path=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.mapping.MapImageLayer.thumbnail" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>if present, this operation will download the image to local disk</p>
+</dd></dl>
 
 </dd></dl>
 
@@ -1315,15 +1754,18 @@ Parameters:</p>
 
 
            </div>
+           <div class="articleComments">
+            
+           </div>
           </div>
           <footer>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="arcgis.realtime.html" class="btn btn-neutral float-right" title="arcgis.realtime module" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="arcgis.realtime.html" class="btn btn-neutral float-right" title="arcgis.realtime module" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="arcgis.geoprocessing.html" class="btn btn-neutral" title="arcgis.geoprocessing module" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="arcgis.geoprocessing.html" class="btn btn-neutral" title="arcgis.geoprocessing module" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
@@ -1354,10 +1796,11 @@ Parameters:</p>
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'./',
-            VERSION:'1.2.4',
+            VERSION:'1.3.0',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
-            HAS_SOURCE:  true
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
         };
     </script>
       <script type="text/javascript" src="_static/jquery.js"></script>
