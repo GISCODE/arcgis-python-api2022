@@ -8,9 +8,11 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>arcgis.geocoding module &mdash; arcgis 1.2.4 documentation</title>
+  <title>arcgis.geocoding module &mdash; arcgis 1.3.0 documentation</title>
   
 
+  
+  
   
   
 
@@ -35,8 +37,8 @@
         <link rel="index" title="Index"
               href="genindex.html"/>
         <link rel="search" title="Search" href="search.html"/>
-    <link rel="top" title="arcgis 1.2.4 documentation" href="index.html"/>
-        <link rel="next" title="arcgis.geometry module" href="arcgis.geometry.html"/>
+    <link rel="top" title="arcgis 1.3.0 documentation" href="index.html"/>
+        <link rel="next" title="arcgis.geoenrichment module" href="arcgis.geoenrichment.html"/>
         <link rel="prev" title="arcgis.geoanalytics.use_proximity module" href="arcgis.geoanalytics.use_proximity.html"/> 
 
   
@@ -46,6 +48,7 @@
 
 <body class="wy-body-for-nav" role="document">
 
+   
   <div class="wy-grid-for-nav">
 
     
@@ -65,7 +68,7 @@
             
             
               <div class="version">
-                1.2.4
+                1.3.0
               </div>
             
           
@@ -86,7 +89,10 @@
           
             
             
-                <p class="caption"><span class="caption-text">arcgis</span></p>
+              
+            
+            
+              <p class="caption"><span class="caption-text">arcgis</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="arcgis.gis.toc.html">arcgis.gis module</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.gis.toc.html#gis">GIS</a></li>
@@ -107,9 +113,11 @@
 <li class="toctree-l3"><a class="reference internal" href="arcgis.gis.admin.html">arcgis.gis.admin module</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.gis.admin.html#agoladminmanager">AGOLAdminManager</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.gis.admin.html#portaladminmanager">PortalAdminManager</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.gis.admin.html#categorymanager">CategoryManager</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.gis.admin.html#collaborationmanager">CollaborationManager</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.gis.admin.html#collaboration">Collaboration</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.gis.admin.html#creditmanager">CreditManager</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.gis.admin.html#identityprovidermanager">IdentityProviderManager</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.gis.admin.html#passwordpolicy">PasswordPolicy</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.gis.admin.html#portalresourcemanager">PortalResourceManager</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.gis.admin.html#ux">UX</a></li>
@@ -150,6 +158,10 @@
 <li class="toctree-l4"><a class="reference internal" href="arcgis.gis.server.html#systemmanager">SystemManager</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.gis.server.html#sitemanager">SiteManager</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.gis.server.html#directorymanager">DirectoryManager</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.gis.server.html#configurationstore">ConfigurationStore</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.gis.server.html#jobs">Jobs</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.gis.server.html#serverdirectory">ServerDirectory</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.gis.server.html#serverproperties">ServerProperties</a></li>
 </ul>
 </li>
 </ul>
@@ -263,6 +275,9 @@
 </li>
 <li class="toctree-l1"><a class="reference internal" href="arcgis.raster.toc.html">arcgis.raster module</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.raster.toc.html#imagerylayer">ImageryLayer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.raster.toc.html#rastercatalogitem">RasterCatalogItem</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.raster.toc.html#rastermanager">RasterManager</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.raster.toc.html#imagerytilemanager">ImageryTileManager</a></li>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.raster.toc.html#submodules">Submodules</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="arcgis.raster.analytics.html">arcgis.raster.analytics module</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.raster.analytics.html#get-datastores">get_datastores</a></li>
@@ -310,6 +325,9 @@
 <li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#classify">classify</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#clip">clip</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#colormap">colormap</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#colormap-to-rgb">colormap_to_rgb</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#id1">colormap_to_rgb</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#colorspace-conversion">colorspace_conversion</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#composite-band">composite_band</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#con">con</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#contrast-brightness">contrast_brightness</a></li>
@@ -335,6 +353,7 @@
 <li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#greater-than-equal">greater_than_equal</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#gvitm">gvitm</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#hillshade">hillshade</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#identity">identity</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#int">INT</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#is-null">is_null</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#less-than">less_than</a></li>
@@ -359,6 +378,7 @@
 <li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#ndvi">ndvi</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#negate">negate</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#not-equal">not_equal</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#pansharpen">pansharpen</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#plus">plus</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#power">power</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#pvi">pvi</a></li>
@@ -377,19 +397,40 @@
 <li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#sqrt">sqrt</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#square">square</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#focal-statistics">focal_statistics</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#statistics-histogram">statistics_histogram</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#std">std</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#stretch">stretch</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#sultan">sultan</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#sum">sum</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#tan">tan</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#tanh">tanh</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#tasseled-cap">tasseled_cap</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#threshold">threshold</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#times">times</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#transpose-bits">transpose_bits</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#tsavi">tsavi</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#unit-conversion">unit_conversion</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#variety">variety</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#vector-field">vector_field</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#vector-field-renderer">vector_field_renderer</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#weighted-overlay">weighted_overlay</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#weighted-sum">weighted_sum</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="arcgis.raster.functions.gbl.html">arcgis.raster.functions.gbl module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.gbl.html#cost-allocation">cost_allocation</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.gbl.html#cost-distance">cost_distance</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.gbl.html#euclidean-allocation">euclidean_allocation</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.gbl.html#euclidean-distance">euclidean_distance</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.gbl.html#fill">fill</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.gbl.html#flow-accumulation">flow_accumulation</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.gbl.html#flow-distance">flow_distance</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.gbl.html#flow-direction">flow_direction</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.gbl.html#least-cost-path">least_cost_path</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.gbl.html#nibble">nibble</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.gbl.html#stream-link">stream_link</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.gbl.html#watershed">watershed</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.gbl.html#zonal-statistics">zonal_statistics</a></li>
 </ul>
 </li>
 </ul>
@@ -430,6 +471,7 @@
 <li class="toctree-l3"><a class="reference internal" href="arcgis.geoanalytics.find_locations.html">arcgis.geoanalytics.find_locations module</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.geoanalytics.find_locations.html#detect-incidents">detect_incidents</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.geoanalytics.find_locations.html#find-similar-locations">find_similar_locations</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.geoanalytics.find_locations.html#geocode-locations">geocode_locations</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="arcgis.geoanalytics.manage_data.html">arcgis.geoanalytics.manage_data module</a><ul>
@@ -457,9 +499,20 @@
 <li class="toctree-l2"><a class="reference internal" href="#geocoder">Geocoder</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#get-geocoders">get_geocoders</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#geocode">geocode</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#geocode-from-items">geocode_from_items</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#analyze-geocode-input">analyze_geocode_input</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#reverse-geocode">reverse_geocode</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#batch-geocode">batch_geocode</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#suggest">suggest</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.geoenrichment.html">arcgis.geoenrichment module</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.geoenrichment.html#country">Country</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.geoenrichment.html#get-countries">get_countries</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.geoenrichment.html#create-report">create_report</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.geoenrichment.html#enrich">enrich</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.geoenrichment.html#find-businesses">find_businesses</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.geoenrichment.html#standard-geography-query">standard_geography_query</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="arcgis.geometry.html">arcgis.geometry module</a><ul>
@@ -548,8 +601,10 @@
 
       
       <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
-        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-        <a href="index.html">arcgis</a>
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">arcgis</a>
+        
       </nav>
 
 
@@ -558,23 +613,40 @@
         <div class="rst-content">
           
 
- 
+
+
+
+
+
+
+
+
+
+
+
 
 
 
 <div role="navigation" aria-label="breadcrumbs navigation">
+
   <ul class="wy-breadcrumbs">
-    <li><a href="index.html">Docs</a> &raquo;</li>
-      
-    <li>arcgis.geocoding module</li>
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>arcgis.geocoding module</li>
+    
+    
       <li class="wy-breadcrumbs-aside">
         
-          
+            
             <a href="_sources/arcgis.geocoding.rst.txt" rel="nofollow"> View page source</a>
           
         
       </li>
+    
   </ul>
+
+  
   <hr/>
 </div>
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
@@ -625,9 +697,17 @@ a url to a Geocoding Service.</p>
 <dt id="arcgis.geocoding.get_geocoders">
 <code class="descclassname">geocoding.</code><code class="descname">get_geocoders</code><span class="sig-paren">(</span><em>gis</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.geocoding.get_geocoders" title="Permalink to this definition">¶</a></dt>
 <dd><p>A GIS includes one or more geocoders. The list of geocoders registered with the GIS
-can be queried using get_geocoders.
-:param gis: the GIS whose registered geocoders are to be queried
-:return: list of geocoders registered with the GIS</p>
+can be queried using get_geocoders.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>gis</strong> – the GIS whose registered geocoders are to be queried</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">list of geocoders registered with the GIS</td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
 </div>
@@ -745,6 +825,136 @@ dictionary.</td>
 </dd></dl>
 
 </div>
+<div class="section" id="geocode-from-items">
+<h2>geocode_from_items<a class="headerlink" href="#geocode-from-items" title="Permalink to this headline">¶</a></h2>
+<dl class="method">
+<dt id="arcgis.geocoding.geocode_from_items">
+<code class="descclassname">geocoding.</code><code class="descname">geocode_from_items</code><span class="sig-paren">(</span><em>input_data</em>, <em>output_type='Feature Layer'</em>, <em>geocode_service_url=None</em>, <em>geocode_parameters=None</em>, <em>country=None</em>, <em>output_fields=None</em>, <em>header_rows_to_skip=1</em>, <em>output_name=None</em>, <em>category=None</em>, <em>context=None</em>, <em>gis=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.geocoding.geocode_from_items" title="Permalink to this definition">¶</a></dt>
+<dd><p>The Batch Geocode geocodes a table or file of addresses and returns the geocoded results. It
+supports CSV, XLS or table input. The task geocodes the entire file regardless of size.</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="23%" />
+<col width="77%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><strong>Argument</strong></td>
+<td><strong>Description</strong></td>
+</tr>
+<tr class="row-even"><td>input_data</td>
+<td>required Item, string, Layer. Data to geocode.</td>
+</tr>
+<tr class="row-odd"><td>output_type</td>
+<td>optional string.  Export item types.  Allowed values are CSV,
+XLS, or Feature Layer (default)</td>
+</tr>
+<tr class="row-even"><td>geocode_service_url</td>
+<td>optional string of Geocoder. Optional geocoder to use to
+spatially enable the dataset.</td>
+</tr>
+<tr class="row-odd"><td>geocode_parameters</td>
+<td><p class="first">optional dictionary.  This includes parameters that help parse
+the input data, as well the field lengths and a field mapping.
+This value is the output from the analyze_geocode_input()
+available on your server designated to geocode. It is important
+to inspect the field mapping closely and adjust them accordingly
+before submitting your job, otherwise your geocoding results may
+not be accurate. It is recommended to use the output from
+analyze_geocode_input() and modify the field mapping instead of
+constructing this dictionary by hand.</p>
+<p><strong>Values</strong></p>
+<p><strong>field_info</strong> - A list of triples with the field names of your input
+data, the field type (usually TEXT), and the allowed length
+(usually 255).
+Example: [[‘ObjectID’, ‘TEXT’, 255], [‘Address’, ‘TEXT’, 255],</p>
+<blockquote>
+<div>[‘Region’, ‘TEXT’, 255], [‘Postal’, ‘TEXT’, 255]]</div></blockquote>
+<p><strong>header_row_exists</strong> - Enter true or false.</p>
+<p><strong>column_names</strong> - Submit the column names of your data if your data
+does not have a header row.</p>
+<p><strong>field_mapping</strong> - Field mapping between each input field and
+candidate fields on the geocoding service.
+Example: [[‘ObjectID’, ‘OBJECTID’], [‘Address’, ‘Address’],</p>
+<blockquote class="last">
+<div>[‘Region’, ‘Region’], [‘Postal’, ‘Postal’]]</div></blockquote>
+</td>
+</tr>
+<tr class="row-even"><td>country</td>
+<td>optional string.  If all your data is in one country, this helps
+improve performance for locators that accept that variable.</td>
+</tr>
+<tr class="row-odd"><td>output_fields</td>
+<td>optional string. Enter the output fields from the geocoding
+service that you want returned in the results, separated by
+commas. To output all available outputFields, leave this
+parameter blank.
+Example: score,match_addr,x,y</td>
+</tr>
+<tr class="row-even"><td>header_rows_to_skip</td>
+<td>optional integer. Describes on which row your data begins in
+your file or table. The default is 1 (since the first row
+contains the headers). The default is 1.</td>
+</tr>
+<tr class="row-odd"><td>output_name</td>
+<td>optional string, The task will create a feature service of the
+results. You define the name of the service.</td>
+</tr>
+<tr class="row-even"><td>category</td>
+<td>optional string. Enter a category for more precise geocoding
+results, if applicable. Some geocoding services do not support
+category, and the available options depend on your geocode service.</td>
+</tr>
+<tr class="row-odd"><td>context</td>
+<td><p class="first">optional dictionary. Context contains additional settings that
+affect task execution. Batch Geocode has the following two
+settings:</p>
+<ol class="arabic simple">
+<li>Extent (extent) - A bounding box that defines the analysis
+area. Only those points in inputLayer that intersect the
+bounding box are analyzed.</li>
+<li>Output Spatial Reference (outSR) - The output features are
+projected into the output spatial reference.</li>
+</ol>
+<p class="last">Syntax:
+{
+“extent” : {extent}
+“outSR” : {spatial reference}
+}</p>
+</td>
+</tr>
+<tr class="row-even"><td>gis</td>
+<td>optional GIS, the GIS on which this tool runs. If not specified,
+the active GIS is used.</td>
+</tr>
+</tbody>
+</table>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">arcgis.gis.Item</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+<div class="section" id="analyze-geocode-input">
+<h2>analyze_geocode_input<a class="headerlink" href="#analyze-geocode-input" title="Permalink to this headline">¶</a></h2>
+<dl class="method">
+<dt id="arcgis.geocoding.analyze_geocode_input">
+<code class="descclassname">geocoding.</code><code class="descname">analyze_geocode_input</code><span class="sig-paren">(</span><em>input_table_or_item</em>, <em>geocode_service_url=None</em>, <em>column_names=None</em>, <em>input_file_parameters=None</em>, <em>locale='en'</em>, <em>context=None</em>, <em>gis=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.geocoding.analyze_geocode_input" title="Permalink to this definition">¶</a></dt>
+<dd><p>The analyze_geocode_input function takes in a geocode input (either a table or file of
+addresses) and returns an output dictionary that includes a suggested field mapping. It supports CSV,
+XLS, or table input. The table can be from a big data file share or from a feature service. The
+task generates a suggested field mapping based on the input fields and the geocoding service
+candidate fields and returns it in a geocode_parameters dictionary. This geocode_parameters
+dictionary output is the an input to the Batch Geocode tool. The output geocode_parameters
+dictionary also includes field info (name, length, and type) as well as additional information
+that helps the geocode tool parse the input file or table.</p>
+</dd></dl>
+
+</div>
 <div class="section" id="reverse-geocode">
 <h2>reverse_geocode<a class="headerlink" href="#reverse-geocode" title="Permalink to this headline">¶</a></h2>
 <dl class="method">
@@ -754,6 +964,42 @@ dictionary.</td>
 x/y location. You pass the coordinates of a point location to the
 geocoding service, and the service returns the address that is
 closest to the location.</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="27%" />
+<col width="73%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><strong>Argument</strong></td>
+<td><strong>Description</strong></td>
+</tr>
+<tr class="row-even"><td>location</td>
+<td>required list/Point Geometry</td>
+</tr>
+<tr class="row-odd"><td>distance</td>
+<td>optional float, radial distance in meteres to
+search for an address.  The default is 100 meters.</td>
+</tr>
+<tr class="row-even"><td>out_sr</td>
+<td>optional integer, spatial reference of the x/y
+coordinate returned.</td>
+</tr>
+<tr class="row-odd"><td>return_intersection</td>
+<td>optional Boolean, which specifies whether the
+service should return the nearest street
+intersection or the nearest address to the input
+location</td>
+</tr>
+<tr class="row-even"><td>for_storage</td>
+<td>optional boolean, specifies whether the results of
+the operation will be persisted</td>
+</tr>
+<tr class="row-odd"><td>geocoder</td>
+<td>optional geocoder, the geocoder to be used. If not
+specified, the active GIS’s first geocoder is used.</td>
+</tr>
+</tbody>
+</table>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -772,6 +1018,83 @@ closest to the location.</p>
 <code class="descclassname">geocoding.</code><code class="descname">batch_geocode</code><span class="sig-paren">(</span><em>addresses</em>, <em>source_country=None</em>, <em>category=None</em>, <em>out_sr=None</em>, <em>geocoder=None</em>, <em>as_featureset=False</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.geocoding.batch_geocode" title="Permalink to this definition">¶</a></dt>
 <dd><p>The batch_geocode() function geocodes an entire list of addresses.
 Geocoding many addresses at once is also known as bulk geocoding.</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="19%" />
+<col width="81%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><strong>Argument</strong></td>
+<td><strong>Description</strong></td>
+</tr>
+<tr class="row-even"><td>addresses</td>
+<td><p class="first">required list of strings or dictionaries.
+A list of addresses to be geocoded.
+For passing in the location name as a single line of text -
+single field batch geocoding - use a string.
+For passing in the location name as multiple lines of text
+multifield batch geocoding - use the address fields described
+in the Geocoder documentation.</p>
+<blockquote class="last">
+<div><p>The maximum number of addresses that can be geocoded in a
+single request is limited to the SuggestedBatchSize property of
+the locator.
+Syntax:</p>
+<blockquote>
+<div><p>addresses = [“380 New York St, Redlands, CA”,
+“1 World Way, Los Angeles, CA”,
+“1200 Getty Center Drive, Los Angeles, CA”,
+“5905 Wilshire Boulevard, Los Angeles, CA”,
+“100 Universal City Plaza, Universal City, CA 91608”,
+“4800 Oak Grove Dr, Pasadena, CA 91109”]</p>
+<p>OR</p>
+<dl class="docutils">
+<dt>addresses= [{</dt>
+<dd>“Address”: “380 New York St.”,
+“City”: “Redlands”,
+“Region”: “CA”,
+“Postal”: “92373”</dd>
+</dl>
+</div></blockquote>
+<dl class="docutils">
+<dt>},{</dt>
+<dd>“Address”: “1 World Way”,
+“City”: “Los Angeles”,
+“Region”: “CA”,
+“Postal”: “90045”</dd>
+</dl>
+<p>}]</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="row-odd"><td>source_country</td>
+<td>optional string, The source_country parameter is
+only supported by geocoders published using StreetMap
+Premium locators.
+Added at 10.3 and only supported by geocoders published
+with ArcGIS 10.3 for Server and later versions.</td>
+</tr>
+<tr class="row-even"><td>category</td>
+<td>The category parameter is only supported by geocode
+services published using StreetMap Premium locators.</td>
+</tr>
+<tr class="row-odd"><td>out_sr</td>
+<td>optional dictionary, The spatial reference of the
+x/y coordinates returned by a geocode request. This
+is useful for applications using a map with a spatial
+reference different than that of the geocode service.</td>
+</tr>
+<tr class="row-even"><td>as_featureset</td>
+<td>optional boolean, if True, the result set is
+returned as a FeatureSet object, else it is a
+dictionary.</td>
+</tr>
+<tr class="row-odd"><td>geocoder</td>
+<td>Optional, the geocoder to be used. If not specified,
+the active GIS’s first geocoder is used.</td>
+</tr>
+</tbody>
+</table>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -810,6 +1133,60 @@ by reducing the number of characters that need to be typed before
 a suggested match is obtained. A client application can provide a
 list of suggestions that is updated with each character typed by a
 user until the address they are looking for appears in the list.</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="19%" />
+<col width="81%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><strong>Argument</strong></td>
+<td><strong>Description</strong></td>
+</tr>
+<tr class="row-even"><td>text</td>
+<td>The input text provided by a user that is used by the
+suggest operation to generate a list of possible
+matches. This is a required parameter.</td>
+</tr>
+<tr class="row-odd"><td>location</td>
+<td>Defines an origin point location that is used with
+the distance parameter to sort suggested candidates
+based on their proximity to the location. The
+distance parameter specifies the radial distance from
+the location in meters. The priority of candidates
+within this radius is boosted relative to those
+outside the radius.
+This is useful in mobile applications where a user
+wants to search for places in the vicinity of their
+current GPS location. It is also useful for web
+mapping applications where a user wants to find
+places within or near the map extent.
+The location parameter can be specified without
+specifying a distance. If distance is not specified,
+it defaults to 2000 meters.</td>
+</tr>
+<tr class="row-even"><td>distance</td>
+<td>Specifies the radius around the point defined in the
+location parameter to create an area, which is used to boost
+the rank of suggested candidates so that candidates closest to
+the location are returned first. The distance value is in
+meters.
+If the distance parameter is specified, the location parameter
+must be specified as well.
+It is important to note that the location and distance
+parameters allow searches to extend beyond the specified search
+radius. They are not used to filter results, but rather to rank
+resulting candidates based on their distance from a location.</td>
+</tr>
+<tr class="row-odd"><td>category</td>
+<td>The category parameter is only supported by geocode
+services published using StreetMap Premium locators.</td>
+</tr>
+<tr class="row-even"><td>geocoder</td>
+<td>Optional, the geocoder to be used. If not specified,
+the active GIS’s first geocoder is used.</td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
 </div>
@@ -817,15 +1194,18 @@ user until the address they are looking for appears in the list.</p>
 
 
            </div>
+           <div class="articleComments">
+            
+           </div>
           </div>
           <footer>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="arcgis.geometry.html" class="btn btn-neutral float-right" title="arcgis.geometry module" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="arcgis.geoenrichment.html" class="btn btn-neutral float-right" title="arcgis.geoenrichment module" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="arcgis.geoanalytics.use_proximity.html" class="btn btn-neutral" title="arcgis.geoanalytics.use_proximity module" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="arcgis.geoanalytics.use_proximity.html" class="btn btn-neutral" title="arcgis.geoanalytics.use_proximity module" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
@@ -856,10 +1236,11 @@ user until the address they are looking for appears in the list.</p>
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'./',
-            VERSION:'1.2.4',
+            VERSION:'1.3.0',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
-            HAS_SOURCE:  true
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
         };
     </script>
       <script type="text/javascript" src="_static/jquery.js"></script>
