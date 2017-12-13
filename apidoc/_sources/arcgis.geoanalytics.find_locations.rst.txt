@@ -10,3 +10,8 @@ detect_incidents
 find_similar_locations
 --------------
 .. automethod:: arcgis.geoanalytics.find_locations.find_similar_locations
+
+geocode_locations
+--------------
+.. automethod:: arcgis.geoanalytics.find_locations.geocode_locations
+
