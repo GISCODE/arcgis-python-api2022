@@ -2263,11 +2263,7 @@ Portal or the owner of the group.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><dl class="docutils">
-<dt>A dictionary with a key of notAdded which contains the users that were not</dt>
-<dd>added to the group.</dd>
-</dl>
-</td>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">A dictionary which contains the users that were not added to the group.</td>
 </tr>
 </tbody>
 </table>
@@ -3069,49 +3065,58 @@ or not allowed (false).</td>
 <dd><p>Clone content to the GIS by creating new items.</p>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
-<p>Cloning an item will create a copy of the item and for certain item types
-a copy of the item dependencies in the GIS.</p>
-<p class="last">For example if you clone a hosted web application created using Web AppBuilder
-or a Configurable App Template, the web map that is used by that web application
-and all the hosted feature layers used in the web map. It will then clone all of
-these items to the new organization and swizzle the paths in the web map and
-web application to point to the new layers. This creates a completely disconnected
-copy of the application, map and layers in the GIS.</p>
+<p>Cloning an item will create a copy of the item and for certain 
+item types a copy of the item dependencies in the GIS.</p>
+<p>For example a web application created using Web AppBuilder 
+or a Configurable App Template which is built from a web map 
+that references one or more hosted feature layers. This function 
+will clone all of these items to the GIS and swizzle the paths 
+in the web map and web application to point to the new layers.</p>
+<p class="last">This creates an exact copy of the application, map, and layers 
+in the GIS.</p>
 </div>
 <table border="1" class="docutils">
 <colgroup>
-<col width="11%" />
-<col width="89%" />
+<col width="22%" />
+<col width="78%" />
 </colgroup>
-<thead valign="bottom">
-<tr class="row-odd"><th class="head"><strong>Argument</strong></th>
-<th class="head"><strong>Description</strong></th>
-</tr>
-<tr class="row-even"><th class="head">items</th>
-<th class="head">Required list. Collection of items to clone.</th>
-</tr>
-<tr class="row-odd"><th class="head">folder</th>
-<th class="head">Optional string. Name of the folder where placing item.</th>
-</tr>
-<tr class="row-even"><th class="head">item_extent</th>
-<th class="head">Optional Envelope. Extent set for any cloned items. Default is None, extent will remain unchanged. Spatial reference of the envelope will be used for any cloned feature layers.</th>
-</tr>
-<tr class="row-odd"><th class="head">use_org_basemap</th>
-<th class="head">Optional boolean. Indicating whether the basemap in any cloned web maps should be updated to the organizations default basemap. Default is False, basemap will not change.</th>
-</tr>
-<tr class="row-even"><th class="head">copy_data</th>
-<th class="head">Optional boolean. Indicating whether the data should be copied with any feature layer or feature collections. Default is True, data will be copied.</th>
-</tr>
-<tr class="row-odd"><th class="head">search_existing_items</th>
-<th class="head">Optional boolean. Indicating whether items that have already been cloned should be searched for in the GIS and reused rather than cloned again.</th>
-</tr>
-<tr class="row-even"><th class="head">item_mapping</th>
-<th class="head">Optional dictionary. Can be used to associate an item in the source GIS to an item in the target GIS. The target item will be used rather than cloning the source item.</th>
-</tr>
-</thead>
 <tbody valign="top">
+<tr class="row-odd"><td><strong>Argument</strong></td>
+<td><strong>Description</strong></td>
+</tr>
+<tr class="row-even"><td>items</td>
+<td>Required list. Collection of Items to clone.</td>
+</tr>
+<tr class="row-odd"><td>folder</td>
+<td>Optional string. Name of the folder where placing item.</td>
+</tr>
+<tr class="row-even"><td>item_extent</td>
+<td>Optional Envelope. Extent set for any cloned items. Default is None,
+extent will remain unchanged. Spatial reference of the envelope will be
+used for any cloned feature layers.</td>
+</tr>
+<tr class="row-odd"><td>use_org_basemap</td>
+<td>Optional boolean. Indicating whether the basemap in any cloned web maps
+should be updated to the organizations default basemap. Default is False,
+basemap will not change.</td>
+</tr>
+<tr class="row-even"><td>copy_data</td>
+<td>Optional boolean. Indicating whether the data should be copied with any
+feature layer or feature collections. Default is True, data will be copied.</td>
+</tr>
+<tr class="row-odd"><td>search_existing_items</td>
+<td>Optional boolean. Indicating whether items that have already been cloned
+should be searched for in the GIS and reused rather than cloned again.</td>
+</tr>
+<tr class="row-even"><td>item_mapping</td>
+<td>Optional dictionary. Can be used to associate an item id in the source
+GIS (key) to an item id in the target GIS (value). The target item will
+be used rather than cloning the source item.</td>
+</tr>
 <tr class="row-odd"><td>group_mapping</td>
-<td>Optional dictionary. Can be used to associate a group in the source GIS to a group in the target GIS. The target group will be used rather than cloning the source group.</td>
+<td>Optional dictionary. Can be used to associate a group id in the source
+GIS (key) to a group id in the target GIS (value). The target group will
+be used rather than cloning the source group.</td>
 </tr>
 </tbody>
 </table>
