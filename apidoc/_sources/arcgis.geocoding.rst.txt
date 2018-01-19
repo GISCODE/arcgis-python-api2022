@@ -17,6 +17,14 @@ get_geocoders
 geocode
 --------------
 .. automethod:: arcgis.geocoding.geocode
+
+geocode_from_items
+------------------
+.. automethod:: arcgis.geocoding.geocode_from_items
+
+analyze_geocode_input
+------------------
+.. automethod:: arcgis.geocoding.analyze_geocode_input
     
 reverse_geocode
 --------------

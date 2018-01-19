@@ -8,9 +8,11 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>arcgis.geometry module &mdash; arcgis 1.2.4 documentation</title>
+  <title>arcgis.geometry module &mdash; arcgis 1.3.0 documentation</title>
   
 
+  
+  
   
   
 
@@ -35,9 +37,9 @@
         <link rel="index" title="Index"
               href="genindex.html"/>
         <link rel="search" title="Search" href="search.html"/>
-    <link rel="top" title="arcgis 1.2.4 documentation" href="index.html"/>
+    <link rel="top" title="arcgis 1.3.0 documentation" href="index.html"/>
         <link rel="next" title="arcgis.geometry.filters module" href="arcgis.geometry.filters.html"/>
-        <link rel="prev" title="arcgis.geocoding module" href="arcgis.geocoding.html"/> 
+        <link rel="prev" title="arcgis.geoenrichment module" href="arcgis.geoenrichment.html"/> 
 
   
   <script src="_static/js/modernizr.min.js"></script>
@@ -46,6 +48,7 @@
 
 <body class="wy-body-for-nav" role="document">
 
+   
   <div class="wy-grid-for-nav">
 
     
@@ -65,7 +68,7 @@
             
             
               <div class="version">
-                1.2.4
+                1.3.0
               </div>
             
           
@@ -86,7 +89,10 @@
           
             
             
-                <p class="caption"><span class="caption-text">arcgis</span></p>
+              
+            
+            
+              <p class="caption"><span class="caption-text">arcgis</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="arcgis.gis.toc.html">arcgis.gis module</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.gis.toc.html#gis">GIS</a></li>
@@ -107,9 +113,11 @@
 <li class="toctree-l3"><a class="reference internal" href="arcgis.gis.admin.html">arcgis.gis.admin module</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.gis.admin.html#agoladminmanager">AGOLAdminManager</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.gis.admin.html#portaladminmanager">PortalAdminManager</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.gis.admin.html#categorymanager">CategoryManager</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.gis.admin.html#collaborationmanager">CollaborationManager</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.gis.admin.html#collaboration">Collaboration</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.gis.admin.html#creditmanager">CreditManager</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.gis.admin.html#identityprovidermanager">IdentityProviderManager</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.gis.admin.html#passwordpolicy">PasswordPolicy</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.gis.admin.html#portalresourcemanager">PortalResourceManager</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.gis.admin.html#ux">UX</a></li>
@@ -150,6 +158,10 @@
 <li class="toctree-l4"><a class="reference internal" href="arcgis.gis.server.html#systemmanager">SystemManager</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.gis.server.html#sitemanager">SiteManager</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.gis.server.html#directorymanager">DirectoryManager</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.gis.server.html#configurationstore">ConfigurationStore</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.gis.server.html#jobs">Jobs</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.gis.server.html#serverdirectory">ServerDirectory</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.gis.server.html#serverproperties">ServerProperties</a></li>
 </ul>
 </li>
 </ul>
@@ -263,6 +275,9 @@
 </li>
 <li class="toctree-l1"><a class="reference internal" href="arcgis.raster.toc.html">arcgis.raster module</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.raster.toc.html#imagerylayer">ImageryLayer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.raster.toc.html#rastercatalogitem">RasterCatalogItem</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.raster.toc.html#rastermanager">RasterManager</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.raster.toc.html#imagerytilemanager">ImageryTileManager</a></li>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.raster.toc.html#submodules">Submodules</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="arcgis.raster.analytics.html">arcgis.raster.analytics module</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.raster.analytics.html#get-datastores">get_datastores</a></li>
@@ -310,6 +325,9 @@
 <li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#classify">classify</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#clip">clip</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#colormap">colormap</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#colormap-to-rgb">colormap_to_rgb</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#id1">colormap_to_rgb</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#colorspace-conversion">colorspace_conversion</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#composite-band">composite_band</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#con">con</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#contrast-brightness">contrast_brightness</a></li>
@@ -335,6 +353,7 @@
 <li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#greater-than-equal">greater_than_equal</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#gvitm">gvitm</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#hillshade">hillshade</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#identity">identity</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#int">INT</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#is-null">is_null</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#less-than">less_than</a></li>
@@ -359,6 +378,7 @@
 <li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#ndvi">ndvi</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#negate">negate</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#not-equal">not_equal</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#pansharpen">pansharpen</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#plus">plus</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#power">power</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#pvi">pvi</a></li>
@@ -377,19 +397,40 @@
 <li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#sqrt">sqrt</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#square">square</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#focal-statistics">focal_statistics</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#statistics-histogram">statistics_histogram</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#std">std</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#stretch">stretch</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#sultan">sultan</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#sum">sum</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#tan">tan</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#tanh">tanh</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#tasseled-cap">tasseled_cap</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#threshold">threshold</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#times">times</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#transpose-bits">transpose_bits</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#tsavi">tsavi</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#unit-conversion">unit_conversion</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#variety">variety</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#vector-field">vector_field</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#vector-field-renderer">vector_field_renderer</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#weighted-overlay">weighted_overlay</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#weighted-sum">weighted_sum</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="arcgis.raster.functions.gbl.html">arcgis.raster.functions.gbl module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.gbl.html#cost-allocation">cost_allocation</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.gbl.html#cost-distance">cost_distance</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.gbl.html#euclidean-allocation">euclidean_allocation</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.gbl.html#euclidean-distance">euclidean_distance</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.gbl.html#fill">fill</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.gbl.html#flow-accumulation">flow_accumulation</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.gbl.html#flow-distance">flow_distance</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.gbl.html#flow-direction">flow_direction</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.gbl.html#least-cost-path">least_cost_path</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.gbl.html#nibble">nibble</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.gbl.html#stream-link">stream_link</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.gbl.html#watershed">watershed</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.gbl.html#zonal-statistics">zonal_statistics</a></li>
 </ul>
 </li>
 </ul>
@@ -430,6 +471,7 @@
 <li class="toctree-l3"><a class="reference internal" href="arcgis.geoanalytics.find_locations.html">arcgis.geoanalytics.find_locations module</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.geoanalytics.find_locations.html#detect-incidents">detect_incidents</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.geoanalytics.find_locations.html#find-similar-locations">find_similar_locations</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.geoanalytics.find_locations.html#geocode-locations">geocode_locations</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="arcgis.geoanalytics.manage_data.html">arcgis.geoanalytics.manage_data module</a><ul>
@@ -457,9 +499,20 @@
 <li class="toctree-l2"><a class="reference internal" href="arcgis.geocoding.html#geocoder">Geocoder</a></li>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.geocoding.html#get-geocoders">get_geocoders</a></li>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.geocoding.html#geocode">geocode</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.geocoding.html#geocode-from-items">geocode_from_items</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.geocoding.html#analyze-geocode-input">analyze_geocode_input</a></li>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.geocoding.html#reverse-geocode">reverse_geocode</a></li>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.geocoding.html#batch-geocode">batch_geocode</a></li>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.geocoding.html#suggest">suggest</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.geoenrichment.html">arcgis.geoenrichment module</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.geoenrichment.html#country">Country</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.geoenrichment.html#get-countries">get_countries</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.geoenrichment.html#create-report">create_report</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.geoenrichment.html#enrich">enrich</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.geoenrichment.html#find-businesses">find_businesses</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.geoenrichment.html#standard-geography-query">standard_geography_query</a></li>
 </ul>
 </li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">arcgis.geometry module</a><ul>
@@ -548,8 +601,10 @@
 
       
       <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
-        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-        <a href="index.html">arcgis</a>
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">arcgis</a>
+        
       </nav>
 
 
@@ -558,23 +613,40 @@
         <div class="rst-content">
           
 
- 
+
+
+
+
+
+
+
+
+
+
+
 
 
 
 <div role="navigation" aria-label="breadcrumbs navigation">
+
   <ul class="wy-breadcrumbs">
-    <li><a href="index.html">Docs</a> &raquo;</li>
-      
-    <li>arcgis.geometry module</li>
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>arcgis.geometry module</li>
+    
+    
       <li class="wy-breadcrumbs-aside">
         
-          
+            
             <a href="_sources/arcgis.geometry.rst.txt" rel="nofollow"> View page source</a>
           
         
       </li>
+    
   </ul>
+
+  
   <hr/>
 </div>
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
@@ -639,6 +711,12 @@ geometry type and returns the correct type as the example below demonstrates:</p
 point can also contain m and z fields. A point is empty when its x
 field is present and has the value null or the string “NaN”. An empty
 point has no location in space.</p>
+<dl class="method">
+<dt id="arcgis.geometry.Point.coordinates">
+<code class="descname">coordinates</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.geometry.Point.coordinates" title="Permalink to this definition">¶</a></dt>
+<dd><p>returns the coordinates as a np.array</p>
+</dd></dl>
+
 <dl class="attribute">
 <dt id="arcgis.geometry.Point.type">
 <code class="descname">type</code><a class="headerlink" href="#arcgis.geometry.Point.type" title="Permalink to this definition">¶</a></dt>
@@ -668,6 +746,12 @@ points with Ms, the Z coordinate is at index 2, and the M coordinate,
 if present, is at index 3.
 An empty multipoint has a points field with no elements. Empty points
 are ignored.</p>
+<dl class="method">
+<dt id="arcgis.geometry.MultiPoint.coordinates">
+<code class="descname">coordinates</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.geometry.MultiPoint.coordinates" title="Permalink to this definition">¶</a></dt>
+<dd><p>returns the coordinates as a np.array</p>
+</dd></dl>
+
 <dl class="attribute">
 <dt id="arcgis.geometry.MultiPoint.type">
 <code class="descname">type</code><a class="headerlink" href="#arcgis.geometry.MultiPoint.type" title="Permalink to this definition">¶</a></dt>
@@ -692,6 +776,12 @@ are interpreted.
 An empty polyline is represented with an empty array for the paths
 field. Nulls and/or NaNs embedded in an otherwise defined coordinate
 stream for polylines/polygons is a syntax error.</p>
+<dl class="method">
+<dt id="arcgis.geometry.Polyline.coordinates">
+<code class="descname">coordinates</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.geometry.Polyline.coordinates" title="Permalink to this definition">¶</a></dt>
+<dd><p>returns the coordinates as a np.array</p>
+</dd></dl>
+
 <dl class="attribute">
 <dt id="arcgis.geometry.Polyline.type">
 <code class="descname">type</code><a class="headerlink" href="#arcgis.geometry.Polyline.type" title="Permalink to this definition">¶</a></dt>
@@ -721,6 +811,12 @@ intersections. Polygons returned by services are topologically simple.
 When drawing a polygon, use the even-odd fill rule. The even-odd fill
 rule will guarantee that the polygon will draw correctly even if the
 ring orientation is not as described above.</p>
+<dl class="method">
+<dt id="arcgis.geometry.Polygon.coordinates">
+<code class="descname">coordinates</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.geometry.Polygon.coordinates" title="Permalink to this definition">¶</a></dt>
+<dd><p>returns the coordinates as a np.array</p>
+</dd></dl>
+
 <dl class="attribute">
 <dt id="arcgis.geometry.Polygon.type">
 <code class="descname">type</code><a class="headerlink" href="#arcgis.geometry.Polygon.type" title="Permalink to this definition">¶</a></dt>
@@ -739,6 +835,12 @@ coordinate and attribute. It also has a spatialReference field. The
 fields for the z and m ranges are optional. An empty envelope has no
 in space and is defined by the presence of an xmin field a null value
 or a “NaN” string.</p>
+<dl class="method">
+<dt id="arcgis.geometry.Envelope.coordinates">
+<code class="descname">coordinates</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.geometry.Envelope.coordinates" title="Permalink to this definition">¶</a></dt>
+<dd><p>returns the coordinates as a np.array</p>
+</dd></dl>
+
 <dl class="attribute">
 <dt id="arcgis.geometry.Envelope.type">
 <code class="descname">type</code><a class="headerlink" href="#arcgis.geometry.Envelope.type" title="Permalink to this definition">¶</a></dt>
@@ -821,12 +923,18 @@ to figure out the geometry type and returns the correct type as the example belo
 <dl class="attribute">
 <dt id="arcgis.geometry.Geometry.WKB">
 <code class="descname">WKB</code><a class="headerlink" href="#arcgis.geometry.Geometry.WKB" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>Returns the well-known binary (WKB) representation for OGC geometry.
+It provides a portable representation of a geometry value as a
+contiguous stream of bytes.</p>
+</dd></dl>
 
 <dl class="attribute">
 <dt id="arcgis.geometry.Geometry.WKT">
 <code class="descname">WKT</code><a class="headerlink" href="#arcgis.geometry.Geometry.WKT" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>Returns the well-known text (WKT) representation for OGC geometry.
+It provides a portable representation of a geometry value as a text
+string.</p>
+</dd></dl>
 
 <dl class="method">
 <dt id="arcgis.geometry.Geometry.angle_distance_to">
@@ -863,12 +971,14 @@ an alternative, if desired.</p>
 <dl class="attribute">
 <dt id="arcgis.geometry.Geometry.area">
 <code class="descname">area</code><a class="headerlink" href="#arcgis.geometry.Geometry.area" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>The area of a polygon feature. Empty for all other feature types.</p>
+</dd></dl>
 
 <dl class="attribute">
 <dt id="arcgis.geometry.Geometry.as_arcpy">
 <code class="descname">as_arcpy</code><a class="headerlink" href="#arcgis.geometry.Geometry.as_arcpy" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>returns the arcpy.Geometry object</p>
+</dd></dl>
 
 <dl class="method">
 <dt id="arcgis.geometry.Geometry.boundary">
@@ -901,7 +1011,16 @@ an alternative, if desired.</p>
 <dl class="attribute">
 <dt id="arcgis.geometry.Geometry.centroid">
 <code class="descname">centroid</code><a class="headerlink" href="#arcgis.geometry.Geometry.centroid" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>Returns the center of the geometry</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">a arcgis.geometry.Point</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
 
 <dl class="method">
 <dt id="arcgis.geometry.Geometry.clip">
@@ -1139,12 +1258,14 @@ Paramters:</p>
 <dl class="attribute">
 <dt id="arcgis.geometry.Geometry.extent">
 <code class="descname">extent</code><a class="headerlink" href="#arcgis.geometry.Geometry.extent" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>The extent of the geometry.</p>
+</dd></dl>
 
 <dl class="attribute">
 <dt id="arcgis.geometry.Geometry.first_point">
 <code class="descname">first_point</code><a class="headerlink" href="#arcgis.geometry.Geometry.first_point" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>The first coordinate point of the geometry.</p>
+</dd></dl>
 
 <dl class="method">
 <dt id="arcgis.geometry.Geometry.generalize">
@@ -1177,7 +1298,16 @@ tolerance.</p>
 <dl class="attribute">
 <dt id="arcgis.geometry.Geometry.geometry_type">
 <code class="descname">geometry_type</code><a class="headerlink" href="#arcgis.geometry.Geometry.geometry_type" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>The geometry type: polygon, polyline, point, multipoint</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">string</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
 
 <dl class="method">
 <dt id="arcgis.geometry.Geometry.get_area">
@@ -1271,7 +1401,9 @@ or an array containing a number of arrays, one for each part.</p>
 <dl class="attribute">
 <dt id="arcgis.geometry.Geometry.hull_rectangle">
 <code class="descname">hull_rectangle</code><a class="headerlink" href="#arcgis.geometry.Geometry.hull_rectangle" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>A space-delimited string of the coordinate pairs of the convex hull
+rectangle.</p>
+</dd></dl>
 
 <dl class="method">
 <dt id="arcgis.geometry.Geometry.intersect">
@@ -1314,27 +1446,50 @@ between the original geometries.</p>
 <dl class="attribute">
 <dt id="arcgis.geometry.Geometry.is_multipart">
 <code class="descname">is_multipart</code><a class="headerlink" href="#arcgis.geometry.Geometry.is_multipart" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>True, if the number of parts for this geometry is more than one.</p>
+</dd></dl>
 
 <dl class="attribute">
 <dt id="arcgis.geometry.Geometry.label_point">
 <code class="descname">label_point</code><a class="headerlink" href="#arcgis.geometry.Geometry.label_point" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>The point at which the label is located. The label_point is always
+located within or on a feature.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">arcgis.geometry.Point</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
 
 <dl class="attribute">
 <dt id="arcgis.geometry.Geometry.last_point">
 <code class="descname">last_point</code><a class="headerlink" href="#arcgis.geometry.Geometry.last_point" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>The last coordinate of the feature.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">arcgis.geometry.Point</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
 
 <dl class="attribute">
 <dt id="arcgis.geometry.Geometry.length">
 <code class="descname">length</code><a class="headerlink" href="#arcgis.geometry.Geometry.length" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>The length of the linear feature. Zero for point and multipoint feature types.</p>
+</dd></dl>
 
 <dl class="attribute">
 <dt id="arcgis.geometry.Geometry.length3D">
 <code class="descname">length3D</code><a class="headerlink" href="#arcgis.geometry.Geometry.length3D" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>The 3D length of the linear feature. Zero for point and multipoint
+feature types.</p>
+</dd></dl>
 
 <dl class="method">
 <dt id="arcgis.geometry.Geometry.measure_on_line">
@@ -1391,12 +1546,14 @@ either of the input geometries.</p>
 <dl class="attribute">
 <dt id="arcgis.geometry.Geometry.part_count">
 <code class="descname">part_count</code><a class="headerlink" href="#arcgis.geometry.Geometry.part_count" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>The number of geometry parts for the feature.</p>
+</dd></dl>
 
 <dl class="attribute">
 <dt id="arcgis.geometry.Geometry.point_count">
 <code class="descname">point_count</code><a class="headerlink" href="#arcgis.geometry.Geometry.point_count" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>The total number of points for the feature.</p>
+</dd></dl>
 
 <dl class="method">
 <dt id="arcgis.geometry.Geometry.point_from_angle_and_distance">
@@ -1606,7 +1763,8 @@ expressed as a double from 0.0 (0 percent) to 1.0 (100 percent).</p>
 <dl class="attribute">
 <dt id="arcgis.geometry.Geometry.spatial_reference">
 <code class="descname">spatial_reference</code><a class="headerlink" href="#arcgis.geometry.Geometry.spatial_reference" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>The spatial reference of the geometry.</p>
+</dd></dl>
 
 <dl class="method">
 <dt id="arcgis.geometry.Geometry.symmetric_difference">
@@ -1661,7 +1819,16 @@ expressed as a double from 0.0 (0 percent) to 1.0 (100 percent).</p>
 <dl class="attribute">
 <dt id="arcgis.geometry.Geometry.true_centroid">
 <code class="descname">true_centroid</code><a class="headerlink" href="#arcgis.geometry.Geometry.true_centroid" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>The center of gravity for a feature.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">arcgis.geometry.Point</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
 
 <dl class="method">
 <dt id="arcgis.geometry.Geometry.union">
@@ -2543,15 +2710,18 @@ spatial_ref - The well-known ID of the spatial reference or a spatial</p>
 
 
            </div>
+           <div class="articleComments">
+            
+           </div>
           </div>
           <footer>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="arcgis.geometry.filters.html" class="btn btn-neutral float-right" title="arcgis.geometry.filters module" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="arcgis.geometry.filters.html" class="btn btn-neutral float-right" title="arcgis.geometry.filters module" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="arcgis.geocoding.html" class="btn btn-neutral" title="arcgis.geocoding module" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="arcgis.geoenrichment.html" class="btn btn-neutral" title="arcgis.geoenrichment module" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
@@ -2582,10 +2752,11 @@ spatial_ref - The well-known ID of the spatial reference or a spatial</p>
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'./',
-            VERSION:'1.2.4',
+            VERSION:'1.3.0',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
-            HAS_SOURCE:  true
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
         };
     </script>
       <script type="text/javascript" src="_static/jquery.js"></script>
