@@ -668,8 +668,7 @@ summarize_within calculates statistics for area features and attributes that ove
 <dl class="method">
 <dt id="arcgis.geoanalytics.summarize_data.aggregate_points">
 <code class="descclassname">summarize_data.</code><code class="descname">aggregate_points</code><span class="sig-paren">(</span><em>point_layer</em>, <em>bin_type: str = None</em>, <em>bin_size: float = None</em>, <em>bin_size_unit: str = None</em>, <em>polygon_layer=None</em>, <em>time_step_interval: int = None</em>, <em>time_step_interval_unit: str = None</em>, <em>time_step_repeat_interval: int = None</em>, <em>time_step_repeat_interval_unit: str = None</em>, <em>time_step_reference: datetime.datetime = None</em>, <em>summary_fields: str = None</em>, <em>output_name: str = None</em>, <em>gis=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.geoanalytics.summarize_data.aggregate_points" title="Permalink to this definition">¶</a></dt>
-<dd><blockquote>
-<div><p>Using a layer of point features and either a layer of area features or bins defined by a specified distance, this tool determines which points fall within each area or bin and calculates statistics about all the points within each area or bin. You may optionally apply time slicing with this tool.</p>
+<dd><p>Using a layer of point features and either a layer of area features or bins defined by a specified distance, this tool determines which points fall within each area or bin and calculates statistics about all the points within each area or bin. You may optionally apply time slicing with this tool.</p>
 <p>For example</p>
 <ul class="simple">
 <li>Given point locations of crime incidents, count the number of crimes per county or other administrative district.</li>
@@ -679,39 +678,104 @@ summarize_within calculates statistics for area features and attributes that ove
 <p>For example, suppose you have point features of coffee shop locations and area features of counties, and you want to summarize coffee sales by county. Assuming the coffee shops have a TOTAL_SALES attribute, you can get the sum of all TOTAL_SALES within each county, the minimum or maximum TOTAL_SALES within each county, or other statistics such as the count, range, standard deviation, and variance.</p>
 <p>This tool can also work with data that is time-enabled. If time is enabled on the input points, then the time slicing options are available. Time slicing allows you to calculate the point-in-area relationship while looking at a specific slice in time. For example, you could look at hourly intervals, which would result in outputs for each hour.</p>
 <p>For an example with time, suppose you had point features of every transaction made at various coffee shop locations and no area layer. The data has been recorded over a year and each transaction has a location and a time stamp. Assuming each transaction has a TOTAL_SALES attribute, you can get the sum of all TOTAL_SALES within the space and time of interest. If these transactions are for a single city, we could generate areas that are 1-kilometer grids and look at weekly time slices to summarize the transactions in both time and space.</p>
-</div></blockquote>
-<p>Parameters:</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="27%" />
+<col width="73%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><strong>Argument</strong></td>
+<td><strong>Description</strong></td>
+</tr>
+<tr class="row-even"><td>point_layer</td>
+<td>Required Input Points layer (features).</td>
+</tr>
+<tr class="row-odd"><td>bin_type</td>
+<td>Optional string parameter. If polygon_layer is not defined, it is required.
+Choice list:[‘Square’, ‘Hexagon’]</td>
+</tr>
+<tr class="row-even"><td>bin_size</td>
+<td>Bin Size (float). Optional parameter.</td>
+</tr>
+<tr class="row-odd"><td>bin_size_unit</td>
+<td>Bin Size Unit (str). Optional parameter.
+Choice list:[‘Feet’, ‘Yards’, ‘Miles’, ‘Meters’, ‘Kilometers’, ‘NauticalMiles’]</td>
+</tr>
+<tr class="row-even"><td>polygon_layer</td>
+<td>Optional Input Polygons layer (features). If bin_type and bin properties are not defined, it is
+required.</td>
+</tr>
+<tr class="row-odd"><td>time_step_interval</td>
+<td>Time Step Interval (int). Optional parameter.</td>
+</tr>
+<tr class="row-even"><td>time_step_interval_unit</td>
+<td>Time Step Interval Unit (str). Optional parameter.
+Choice list:[‘Years’, ‘Months’, ‘Weeks’, ‘Days’, ‘Hours’, ‘Minutes’, ‘Seconds’, ‘Milliseconds’]</td>
+</tr>
+<tr class="row-odd"><td>time_step_repeat_interval</td>
+<td>Time Step Repeat Interval (int). Optional parameter.</td>
+</tr>
+<tr class="row-even"><td>time_step_repeat_interval_unit</td>
+<td>Time Step Repeat Interval Unit (str). Optional parameter.
+Choice list:[‘Years’, ‘Months’, ‘Weeks’, ‘Days’, ‘Hours’, ‘Minutes’, ‘Seconds’, ‘Milliseconds’]</td>
+</tr>
+<tr class="row-odd"><td>time_step_reference</td>
+<td>Time Step Reference (datetime). Optional parameter.</td>
+</tr>
+<tr class="row-even"><td>summary_fields</td>
+<td><p class="first">Summary Statistics (str). Optional parameter.</p>
+<p>The summary_fields string must enclose a Python list. Each list item must be a Python dictionary
+with two keys. See the Key:Value definitions below.</p>
+<p class="last">See URL 1 below for full details.</p>
+</td>
+</tr>
+<tr class="row-odd"><td>output_name</td>
+<td>Output Features Name (str). Optional parameter.</td>
+</tr>
+<tr class="row-even"><td>gis</td>
+<td>Optional, the GIS on which this tool runs. If not specified, the active GIS is used.</td>
+</tr>
+</tbody>
+</table>
+<p><em>Key:Value Dictionary Options for Argument summary_fields</em></p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="13%" />
+<col width="87%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><strong>Key</strong></td>
+<td><strong>Value</strong></td>
+</tr>
+<tr class="row-even"><td>statisticType</td>
+<td><p class="first">Required string. Indicates statistic to summarize. See URL 1 below for full explanation.</p>
+<p>Choice list numeric fields:[‘Count’, ‘Sum’, ‘Mean’, ‘Min’, ‘Max’, ‘Range’, ‘Stddev’, ‘Var’]</p>
+<p class="last">Choice list for string fields:[‘Count’, ‘Any’]</p>
+</td>
+</tr>
+<tr class="row-odd"><td>onStatisticField</td>
+<td><p class="first">Required string. Provides the field name to summarize.</p>
+<p class="last">See <a class="reference external" href="https://developers.arcgis.com/python/guide/working-with-feature-layers-and-features/#Querying-feature-layers">https://developers.arcgis.com/python/guide/working-with-feature-layers-and-features/#Querying-feature-layers</a>
+for instructions to query a feature layer for field names.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p>For detailed explanation see:</p>
+<p>URL 1: <a class="reference external" href="http://resources.arcgis.com/en/help/arcgis-rest-api/index.html#/Aggregate_Points/02r3000002rr000000/">http://resources.arcgis.com/en/help/arcgis-rest-api/index.html#/Aggregate_Points/02r3000002rr000000/</a></p>
 <blockquote>
-<div><p>point_layer: Input Points (features). Required parameter.</p>
-<dl class="docutils">
-<dt>bin_type: Output Bin Type (str). Optional parameter.</dt>
-<dd>Choice list:[‘Square’, ‘Hexagon’]</dd>
-</dl>
-<p>bin_size: Bin Size (float). Optional parameter.</p>
-<dl class="docutils">
-<dt>bin_size_unit: Bin Size Unit (str). Optional parameter.</dt>
-<dd>Choice list:[‘Feet’, ‘Yards’, ‘Miles’, ‘Meters’, ‘Kilometers’, ‘NauticalMiles’]</dd>
-</dl>
-<p>polygon_layer: Input Polygons (features). Optional parameter.</p>
-<p>time_step_interval: Time Step Interval (int). Optional parameter.</p>
-<dl class="docutils">
-<dt>time_step_interval_unit: Time Step Interval Unit (str). Optional parameter.</dt>
-<dd>Choice list:[‘Years’, ‘Months’, ‘Weeks’, ‘Days’, ‘Hours’, ‘Minutes’, ‘Seconds’, ‘Milliseconds’]</dd>
-</dl>
-<p>time_step_repeat_interval: Time Step Repeat Interval (int). Optional parameter.</p>
-<dl class="docutils">
-<dt>time_step_repeat_interval_unit: Time Step Repeat Interval Unit (str). Optional parameter.</dt>
-<dd>Choice list:[‘Years’, ‘Months’, ‘Weeks’, ‘Days’, ‘Hours’, ‘Minutes’, ‘Seconds’, ‘Milliseconds’]</dd>
-</dl>
-<p>time_step_reference: Time Step Reference (datetime). Optional parameter.</p>
-<p>summary_fields: Summary Statistics (str). Optional parameter.</p>
-<p>output_name: Output Features Name (str). Optional parameter.</p>
-<p>gis: Optional, the GIS on which this tool runs. If not specified, the active GIS is used.</p>
-</div></blockquote>
-<dl class="docutils">
-<dt>Returns:</dt>
-<dd>output - Output Features as Item</dd>
-</dl>
+<div><strong>Returns:</strong> Output Features as Item</div></blockquote>
+<p><em>Example</em></p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="c1"># Usage Example: Using summary_fields on a layer.</span>
+
+<span class="n">agg_pts_item</span> <span class="o">=</span> <span class="n">aggregate_points</span><span class="p">(</span><span class="n">input_points_layer</span><span class="p">,</span>
+                  <span class="n">bin_size</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span>
+                  <span class="n">bin_type</span><span class="o">=</span><span class="s1">&#39;Hexagon&#39;</span><span class="p">,</span>
+                  <span class="n">bin_size_unit</span><span class="o">=</span><span class="s1">&#39;Miles&#39;</span><span class="p">,</span>
+                  <span class="n">summary_fields</span><span class="o">=</span><span class="s1">&#39;[{&quot;statisticType&quot;: &quot;Count&quot;, &quot;onStatisticField&quot;: &quot;fieldName1&quot;}, {&quot;statisticType&quot;: &quot;Any&quot;, &quot;onStatisticField&quot;: &quot;fieldName2&quot;}]&#39;</span>
+                  <span class="p">)</span>
+</pre></div>
+</div>
 </dd></dl>
 
 </div>
