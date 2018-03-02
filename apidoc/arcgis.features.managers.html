@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>arcgis.features.managers module &mdash; arcgis 1.3.0 documentation</title>
+  <title>arcgis.features.managers module &mdash; arcgis 1.4.0 documentation</title>
   
 
   
@@ -37,10 +37,19 @@
         <link rel="index" title="Index"
               href="genindex.html"/>
         <link rel="search" title="Search" href="search.html"/>
-    <link rel="top" title="arcgis 1.3.0 documentation" href="index.html"/>
+    <link rel="top" title="arcgis 1.4.0 documentation" href="index.html"/>
         <link rel="up" title="arcgis.features module" href="arcgis.features.toc.html"/>
         <link rel="next" title="arcgis.raster module" href="arcgis.raster.toc.html"/>
-        <link rel="prev" title="arcgis.features.elevation module" href="arcgis.features.elevation.html"/> 
+        <link rel="prev" title="arcgis.features.elevation module" href="arcgis.features.elevation.html"/>
+<!-- This code block is inserted close near the <head> tag. See http://bit.ly/2BHUQzB -->
+<!-- The point of this code block is to send us google analytics on website views -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-NJGGV5');</script>
+ 
+
 
   
   <script src="_static/js/modernizr.min.js"></script>
@@ -69,7 +78,7 @@
             
             
               <div class="version">
-                1.3.0
+                1.4.0
               </div>
             
           
@@ -219,6 +228,7 @@
 <li class="toctree-l3"><a class="reference internal" href="arcgis.features.analyze_patterns.html">arcgis.features.analyze_patterns module</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.features.analyze_patterns.html#calculate-density">calculate_density</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.features.analyze_patterns.html#find-hot-spots">find_hot_spots</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.features.analyze_patterns.html#find-outliers">find_outliers</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.features.analyze_patterns.html#interpolate-points">interpolate_points</a></li>
 </ul>
 </li>
@@ -245,6 +255,7 @@
 </li>
 <li class="toctree-l3"><a class="reference internal" href="arcgis.features.summarize_data.html">arcgis.features.summarize_data module</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.features.summarize_data.html#aggregate-points">aggregate_points</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.features.summarize_data.html#join-features">join_features</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.features.summarize_data.html#summarize-nearby">summarize_nearby</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.features.summarize_data.html#summarize-within">summarize_within</a></li>
 </ul>
@@ -327,8 +338,8 @@
 <li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#clip">clip</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#colormap">colormap</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#colormap-to-rgb">colormap_to_rgb</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#id1">colormap_to_rgb</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#colorspace-conversion">colorspace_conversion</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#complex">complex</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#composite-band">composite_band</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#con">con</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#contrast-brightness">contrast_brightness</a></li>
@@ -350,6 +361,7 @@
 <li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#floor-divide">floor_divide</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#gemi">gemi</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#geometric">geometric</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#grayscale">grayscale</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#greater-than">greater_than</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#greater-than-equal">greater_than_equal</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#gvitm">gvitm</a></li>
@@ -384,6 +396,7 @@
 <li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#power">power</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#pvi">pvi</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#cellstats-range">cellstats_range</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#raster-calculator">raster_calculator</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#remap">remap</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#resample">resample</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#round-down">round_down</a></li>
@@ -395,6 +408,8 @@
 <li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#sin">sin</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#sinh">sinh</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#slope">slope</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#spectral-conversion">spectral_conversion</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#speckle">speckle</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#sqrt">sqrt</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#square">square</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#focal-statistics">focal_statistics</a></li>
@@ -642,8 +657,6 @@
       <li class="wy-breadcrumbs-aside">
         
             
-            <a href="_sources/arcgis.features.managers.rst.txt" rel="nofollow"> View page source</a>
-          
         
       </li>
     
@@ -655,6 +668,11 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
+<!-- This code block is inserted close near the <body> tag. See http://bit.ly/2BHUQzB -->
+<!-- The point of this code block is to send us google analytics on website views -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NJGGV5"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+
   <div class="section" id="module-arcgis.features.managers">
 <span id="arcgis-features-managers-module"></span><h1>arcgis.features.managers module<a class="headerlink" href="#module-arcgis.features.managers" title="Permalink to this headline">¶</a></h1>
 <p>Helper classes for managing feature layers and datasets.  These class are not created by users directly.
@@ -939,41 +957,66 @@ individual feature service layer object.</dd>
 <dl class="method">
 <dt id="arcgis.features.managers.FeatureLayerCollectionManager.create_view">
 <code class="descname">create_view</code><span class="sig-paren">(</span><em>name</em>, <em>spatial_reference=None</em>, <em>extent=None</em>, <em>allow_schema_changes=True</em>, <em>updateable=True</em>, <em>capabilities='Query'</em>, <em>view_layers=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.features.managers.FeatureLayerCollectionManager.create_view" title="Permalink to this definition">¶</a></dt>
-<dd><p>Creates a View of an Existing Feature Service.</p>
-<dl class="docutils">
-<dt>Parameters:</dt>
-<dd><table class="first last docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
+<dd><p>Creates a view of an existing feature service. You can create a view, if you need a different view of the data
+represented by a hosted feature layer—for example, you want to apply different editor settings, apply different
+styles or filters, define which features or fields are available, or share the data to different groups than
+the hosted feature layer—create a hosted feature layer view of that hosted feature layer.</p>
+<p>When you create a feature layer view, a new hosted feature layer item is added to Content. This new layer is a
+view of the data in the hosted feature layer, which means updates made to the data appear in the hosted feature
+layer and all of its hosted feature layer views. However, since the view is a separate layer, you can change
+properties and settings on this item separately from the hosted feature layer from which it is created.</p>
+<p>For example, you can allow members of your organization to edit the hosted feature layer but share a read-only
+feature layer view with the public.</p>
+<p>To learn more about views visit: <a class="reference external" href="https://doc.arcgis.com/en/arcgis-online/share-maps/create-hosted-views.htm">https://doc.arcgis.com/en/arcgis-online/share-maps/create-hosted-views.htm</a></p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="21%" />
+<col width="79%" />
+</colgroup>
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">name:</th><td class="field-body">Name of the new view item</td>
+<tr class="row-odd"><td><strong>Argument</strong></td>
+<td><strong>Description</strong></td>
 </tr>
-<tr class="field-even field"><th class="field-name" colspan="2">spatial_reference:</th></tr>
-<tr class="field-even field"><td>&#160;</td><td class="field-body"></td>
+<tr class="row-even"><td>name</td>
+<td>Required string. Name of the new view item</td>
 </tr>
-<tr class="field-odd field"><th class="field-name">extent:</th><td class="field-body">initial extent of the object</td>
+<tr class="row-odd"><td>spatial_reference</td>
+<td>Optional dict. Specify the spatial reference of the view</td>
 </tr>
-<tr class="field-even field"><th class="field-name" colspan="2">allow_schema_changes:</th></tr>
-<tr class="field-even field"><td>&#160;</td><td class="field-body">boolean that determines if a view can alter a
-service’s schema.</td>
+<tr class="row-even"><td>extent</td>
+<td>Optional dict. Specify the extent of the view</td>
 </tr>
-<tr class="field-odd field"><th class="field-name">updateable:</th><td class="field-body">boolean value that says if a view can update values</td>
+<tr class="row-odd"><td>allow_schema_changes</td>
+<td><dl class="first last docutils">
+<dt>Optional bool. Default is True. Determines if a view can alter a</dt>
+<dd>service’s schema.</dd>
+</dl>
+</td>
 </tr>
-<tr class="field-even field"><th class="field-name">capabilities:</th><td class="field-body">determines what operations a user can do on a given
-view</td>
+<tr class="row-even"><td>updateable</td>
+<td>Optional bool. Default is True. Determines if view can update values</td>
 </tr>
-<tr class="field-odd field"><th class="field-name">view_layers:</th><td class="field-body">optional dictionary used to define the layers that
-are referenced inside the view.  The default is all layers.</td>
+<tr class="row-odd"><td>capabilities</td>
+<td><dl class="first last docutils">
+<dt>Optional string. Specify capabilities as a comma separated string.</dt>
+<dd>For example “Query, Update, Delete”. Default is ‘Query’.</dd>
+</dl>
+</td>
+</tr>
+<tr class="row-even"><td>view_layers</td>
+<td><dl class="first last docutils">
+<dt>Optional list. Specify list of layers present in the FeatureLayerCollection</dt>
+<dd>that you want in the view.</dd>
+</dl>
+</td>
 </tr>
 </tbody>
 </table>
-</dd>
-</dl>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">Item for  the view</td>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">Returns the newly created item for the view.</td>
 </tr>
 </tbody>
 </table>
@@ -1209,6 +1252,7 @@ individual feature service layer object.</dd>
 </div>
 
 
+
            </div>
            <div class="articleComments">
             
@@ -1252,7 +1296,7 @@ individual feature service layer object.</dd>
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'./',
-            VERSION:'1.3.0',
+            VERSION:'1.4.0',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  true,
