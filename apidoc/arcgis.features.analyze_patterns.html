@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>arcgis.features.analyze_patterns module &mdash; arcgis 1.3.0 documentation</title>
+  <title>arcgis.features.analyze_patterns module &mdash; arcgis 1.4.0 documentation</title>
   
 
   
@@ -37,10 +37,19 @@
         <link rel="index" title="Index"
               href="genindex.html"/>
         <link rel="search" title="Search" href="search.html"/>
-    <link rel="top" title="arcgis 1.3.0 documentation" href="index.html"/>
+    <link rel="top" title="arcgis 1.4.0 documentation" href="index.html"/>
         <link rel="up" title="arcgis.features module" href="arcgis.features.toc.html"/>
         <link rel="next" title="arcgis.features.enrich_data module" href="arcgis.features.enrich_data.html"/>
-        <link rel="prev" title="arcgis.features.analysis module" href="arcgis.features.analysis.html"/> 
+        <link rel="prev" title="arcgis.features.analysis module" href="arcgis.features.analysis.html"/>
+<!-- This code block is inserted close near the <head> tag. See http://bit.ly/2BHUQzB -->
+<!-- The point of this code block is to send us google analytics on website views -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-NJGGV5');</script>
+ 
+
 
   
   <script src="_static/js/modernizr.min.js"></script>
@@ -69,7 +78,7 @@
             
             
               <div class="version">
-                1.3.0
+                1.4.0
               </div>
             
           
@@ -219,6 +228,7 @@
 <li class="toctree-l3 current"><a class="current reference internal" href="#">arcgis.features.analyze_patterns module</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#calculate-density">calculate_density</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#find-hot-spots">find_hot_spots</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#find-outliers">find_outliers</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#interpolate-points">interpolate_points</a></li>
 </ul>
 </li>
@@ -245,6 +255,7 @@
 </li>
 <li class="toctree-l3"><a class="reference internal" href="arcgis.features.summarize_data.html">arcgis.features.summarize_data module</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.features.summarize_data.html#aggregate-points">aggregate_points</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.features.summarize_data.html#join-features">join_features</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.features.summarize_data.html#summarize-nearby">summarize_nearby</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.features.summarize_data.html#summarize-within">summarize_within</a></li>
 </ul>
@@ -327,8 +338,8 @@
 <li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#clip">clip</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#colormap">colormap</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#colormap-to-rgb">colormap_to_rgb</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#id1">colormap_to_rgb</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#colorspace-conversion">colorspace_conversion</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#complex">complex</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#composite-band">composite_band</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#con">con</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#contrast-brightness">contrast_brightness</a></li>
@@ -350,6 +361,7 @@
 <li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#floor-divide">floor_divide</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#gemi">gemi</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#geometric">geometric</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#grayscale">grayscale</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#greater-than">greater_than</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#greater-than-equal">greater_than_equal</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#gvitm">gvitm</a></li>
@@ -384,6 +396,7 @@
 <li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#power">power</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#pvi">pvi</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#cellstats-range">cellstats_range</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#raster-calculator">raster_calculator</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#remap">remap</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#resample">resample</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#round-down">round_down</a></li>
@@ -395,6 +408,8 @@
 <li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#sin">sin</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#sinh">sinh</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#slope">slope</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#spectral-conversion">spectral_conversion</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#speckle">speckle</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#sqrt">sqrt</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#square">square</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#focal-statistics">focal_statistics</a></li>
@@ -642,8 +657,6 @@
       <li class="wy-breadcrumbs-aside">
         
             
-            <a href="_sources/arcgis.features.analyze_patterns.rst.txt" rel="nofollow"> View page source</a>
-          
         
       </li>
     
@@ -655,6 +668,11 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
+<!-- This code block is inserted close near the <body> tag. See http://bit.ly/2BHUQzB -->
+<!-- The point of this code block is to send us google analytics on website views -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NJGGV5"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+
   <div class="section" id="module-arcgis.features.analyze_patterns">
 <span id="arcgis-features-analyze-patterns-module"></span><h1>arcgis.features.analyze_patterns module<a class="headerlink" href="#module-arcgis.features.analyze_patterns" title="Permalink to this headline">¶</a></h1>
 <p>These functions help you identify, quantify, and visualize spatial patterns in your data.</p>
@@ -743,6 +761,66 @@ which the points will be aggregated and analyzed, such as administrative units.<
 </dd></dl>
 
 </div>
+<div class="section" id="find-outliers">
+<h2>find_outliers<a class="headerlink" href="#find-outliers" title="Permalink to this headline">¶</a></h2>
+<dl class="method">
+<dt id="arcgis.features.analyze_patterns.find_outliers">
+<code class="descclassname">analyze_patterns.</code><code class="descname">find_outliers</code><span class="sig-paren">(</span><em>analysis_layer</em>, <em>analysis_field</em>, <em>divided_by_field=None</em>, <em>bounding_polygon_layer=None</em>, <em>aggregation_polygon_layer=None</em>, <em>permutations=None</em>, <em>shape_type=None</em>, <em>cell_size=None</em>, <em>cell_units=None</em>, <em>distance_band=None</em>, <em>band_units=None</em>, <em>output_name=None</em>, <em>context=None</em>, <em>gis=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.features.analyze_patterns.find_outliers" title="Permalink to this definition">¶</a></dt>
+<dd><p>The Find Outliers task analyzes point data (such as crime incidents, traffic accidents, or trees) or field values associated with points or area features (such as the number of people in each census tract or the total sales for retail stores). It finds statistically significant spatial clusters of high values and low values and statistically significant high or low spatial outliers within those clusters.</p>
+<p>The result map layer shows high outliers in red and low outliers in dark blue. Clusters of high values appear pink and clusters of low values appear light blue. Features that are beige are not a statistically significant outlier and not part of a statistically significant cluster; the spatial pattern associated with these features could very likely be the result of random processes and random chance.</p>
+<dl class="docutils">
+<dt>analysis_layer <span class="classifier-delimiter">:</span> <span class="classifier">Required layer (see Feature Input in documentation)</span></dt>
+<dd>The point or polygon feature layer for which outliers will be calculated.</dd>
+<dt>analysis_field <span class="classifier-delimiter">:</span> <span class="classifier">Optional string</span></dt>
+<dd>The numeric field that will be analyzed.</dd>
+</dl>
+<p>divided_by_field : Optional string, The numeric field in the analysis_layer that will be used to normalize your data.
+bounding_polygon_layer : Optional layer (see Feature Input in documentation)</p>
+<blockquote>
+<div>When the analysis layer is points and no analysisField is specified, you can provide polygon features that define where incidents could have occurred.</div></blockquote>
+<dl class="docutils">
+<dt>aggregation_polygon_layer <span class="classifier-delimiter">:</span> <span class="classifier">Optional layer (see Feature Input in documentation)</span></dt>
+<dd>When the AnalysisLayer contains points and no AnalysisField is specified, you can provide polygon features into which the points will be aggregated and analyzed, such as administrative units.</dd>
+</dl>
+<p>permutations : Permutations are used to determine how likely it would be to find the actual spatial distribution of the values you are analyzing. Choosing the number of permutations is a balance between precision and increased processing time. A lower number of permutations can be used when first exploring a problem, but it is best practice to increase the permutations to the highest number feasible for final results.</p>
+<blockquote>
+<div><ul class="simple">
+<li>Speed implements 199 permutations and results in p-values with a precision of 0.01.</li>
+<li>Balance implements 499 permutations and results in p-values with a precision of 0.002.</li>
+<li>Precision implements 999 permutations and results in p-values with a precision of 0.001.</li>
+</ul>
+<p>Values: Speed | Balance | Precision</p>
+</div></blockquote>
+<p>shape_type : optional string, The shape of the polygon mesh the input features will be aggregated into.</p>
+<blockquote>
+<div><ul class="simple">
+<li>Fishnet - The input features will be aggregated into a grid of square (fishnet) cells.</li>
+<li>Hexagon - The input features will be aggregated into a grid of hexagonal cells.</li>
+</ul>
+</div></blockquote>
+<p>cell_size : The size of the grid cells used to aggregate your features. When aggregating into a hexagon grid, this distance is used as the height to construct the hexagon polygons.
+cell_units : The units of the cellSize value. You must provide a value if cellSize has been set.</p>
+<blockquote>
+<div>Values: Miles | Feet | Kilometers | Meters</div></blockquote>
+<p>distance_band : The spatial extent of the analysis neighborhood. This value determines which features are analyzed together in order to assess local clustering.
+band_units : The units of the distanceBand value. You must provide a value if distanceBand has been set.</p>
+<blockquote>
+<div>Values: Miles | Feet | Kilometers | Meters</div></blockquote>
+<dl class="docutils">
+<dt>output_name <span class="classifier-delimiter">:</span> <span class="classifier">Optional string</span></dt>
+<dd>Additional properties such as output feature service name.</dd>
+<dt>context <span class="classifier-delimiter">:</span> <span class="classifier">Optional string</span></dt>
+<dd>Additional settings such as processing extent and output spatial reference.</dd>
+</dl>
+<p>gis : The GIS used for running this analysis</p>
+<p>Item it output_name is set.
+dict with the following keys:</p>
+<blockquote>
+<div>“find_outliers_result_layer” : layer (FeatureCollection)
+“process_info” : list of messages</div></blockquote>
+</dd></dl>
+
+</div>
 <div class="section" id="interpolate-points">
 <h2>interpolate_points<a class="headerlink" href="#interpolate-points" title="Permalink to this headline">¶</a></h2>
 <dl class="method">
@@ -797,6 +875,7 @@ at specific locations of interest.</dd>
 </div>
 
 
+
            </div>
            <div class="articleComments">
             
@@ -840,7 +919,7 @@ at specific locations of interest.</dd>
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'./',
-            VERSION:'1.3.0',
+            VERSION:'1.4.0',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  true,
