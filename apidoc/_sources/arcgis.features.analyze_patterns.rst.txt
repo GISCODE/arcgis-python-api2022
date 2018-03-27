@@ -11,6 +11,10 @@ find_hot_spots
 --------------
 .. automethod:: arcgis.features.analyze_patterns.find_hot_spots
 
+find_outliers
+--------------
+.. automethod:: arcgis.features.analyze_patterns.find_outliers
+
 interpolate_points
 --------------
 .. automethod:: arcgis.features.analyze_patterns.interpolate_points
