@@ -7,6 +7,10 @@ aggregate_points
 --------------
 .. automethod:: arcgis.features.summarize_data.aggregate_points
     
+join_features
+--------------
+.. automethod:: arcgis.features.summarize_data.join_features
+    
 summarize_nearby
 --------------
 .. automethod:: arcgis.features.summarize_data.summarize_nearby
