@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>arcgis.raster.functions module &mdash; arcgis 1.3.0 documentation</title>
+  <title>arcgis.raster.functions module &mdash; arcgis 1.4.0 documentation</title>
   
 
   
@@ -37,10 +37,19 @@
         <link rel="index" title="Index"
               href="genindex.html"/>
         <link rel="search" title="Search" href="search.html"/>
-    <link rel="top" title="arcgis 1.3.0 documentation" href="index.html"/>
+    <link rel="top" title="arcgis 1.4.0 documentation" href="index.html"/>
         <link rel="up" title="arcgis.raster module" href="arcgis.raster.toc.html"/>
         <link rel="next" title="arcgis.raster.functions.gbl module" href="arcgis.raster.functions.gbl.html"/>
-        <link rel="prev" title="arcgis.raster.analytics module" href="arcgis.raster.analytics.html"/> 
+        <link rel="prev" title="arcgis.raster.analytics module" href="arcgis.raster.analytics.html"/>
+<!-- This code block is inserted close near the <head> tag. See http://bit.ly/2BHUQzB -->
+<!-- The point of this code block is to send us google analytics on website views -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-NJGGV5');</script>
+ 
+
 
   
   <script src="_static/js/modernizr.min.js"></script>
@@ -69,7 +78,7 @@
             
             
               <div class="version">
-                1.3.0
+                1.4.0
               </div>
             
           
@@ -219,6 +228,7 @@
 <li class="toctree-l3"><a class="reference internal" href="arcgis.features.analyze_patterns.html">arcgis.features.analyze_patterns module</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.features.analyze_patterns.html#calculate-density">calculate_density</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.features.analyze_patterns.html#find-hot-spots">find_hot_spots</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.features.analyze_patterns.html#find-outliers">find_outliers</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.features.analyze_patterns.html#interpolate-points">interpolate_points</a></li>
 </ul>
 </li>
@@ -245,6 +255,7 @@
 </li>
 <li class="toctree-l3"><a class="reference internal" href="arcgis.features.summarize_data.html">arcgis.features.summarize_data module</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.features.summarize_data.html#aggregate-points">aggregate_points</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.features.summarize_data.html#join-features">join_features</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.features.summarize_data.html#summarize-nearby">summarize_nearby</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.features.summarize_data.html#summarize-within">summarize_within</a></li>
 </ul>
@@ -327,8 +338,8 @@
 <li class="toctree-l4"><a class="reference internal" href="#clip">clip</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#colormap">colormap</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#colormap-to-rgb">colormap_to_rgb</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#id1">colormap_to_rgb</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#colorspace-conversion">colorspace_conversion</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#complex">complex</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#composite-band">composite_band</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#con">con</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#contrast-brightness">contrast_brightness</a></li>
@@ -350,6 +361,7 @@
 <li class="toctree-l4"><a class="reference internal" href="#floor-divide">floor_divide</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#gemi">gemi</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#geometric">geometric</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#grayscale">grayscale</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#greater-than">greater_than</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#greater-than-equal">greater_than_equal</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#gvitm">gvitm</a></li>
@@ -384,6 +396,7 @@
 <li class="toctree-l4"><a class="reference internal" href="#power">power</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#pvi">pvi</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#cellstats-range">cellstats_range</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#raster-calculator">raster_calculator</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#remap">remap</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#resample">resample</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#round-down">round_down</a></li>
@@ -395,6 +408,8 @@
 <li class="toctree-l4"><a class="reference internal" href="#sin">sin</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#sinh">sinh</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#slope">slope</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#spectral-conversion">spectral_conversion</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#speckle">speckle</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#sqrt">sqrt</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#square">square</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#focal-statistics">focal_statistics</a></li>
@@ -642,8 +657,6 @@
       <li class="wy-breadcrumbs-aside">
         
             
-            <a href="_sources/arcgis.raster.functions.rst.txt" rel="nofollow"> View page source</a>
-          
         
       </li>
     
@@ -655,6 +668,11 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
+<!-- This code block is inserted close near the <body> tag. See http://bit.ly/2BHUQzB -->
+<!-- The point of this code block is to send us google analytics on website views -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NJGGV5"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+
   <div class="section" id="module-arcgis.raster.functions">
 <span id="arcgis-raster-functions-module"></span><h1>arcgis.raster.functions module<a class="headerlink" href="#module-arcgis.raster.functions" title="Permalink to this headline">¶</a></h1>
 <p>Raster functions allow you to define processing operations that will be applied to one or more rasters.
@@ -814,7 +832,7 @@ within each input raster.</p>
 from all bands.</p>
 <p>Consider values from all bands as an array. After sorting the array in ascending order, the median is the
 one value separating the lower half of the array from the higher half. More specifically, if the ascend-sorted
-array has n values, the median is the ith (0-based) value, where:</p>
+array has n values, the median is the ith (0-based) value, where: i = ( (n-1) / 2 )</p>
 <p>See <a class="reference external" href="http://desktop.arcgis.com/en/arcmap/latest/manage-data/raster-and-images/argstatistics-function.htm">http://desktop.arcgis.com/en/arcmap/latest/manage-data/raster-and-images/argstatistics-function.htm</a></p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -1376,7 +1394,7 @@ see Band Arithmetic function at <a class="reference external" href="http://deskt
 <h2>classify<a class="headerlink" href="#classify" title="Permalink to this headline">¶</a></h2>
 <dl class="method">
 <dt id="arcgis.raster.functions.classify">
-<code class="descclassname">functions.</code><code class="descname">classify</code><span class="sig-paren">(</span><em>raster1</em>, <em>raster2</em>, <em>classifier_definition</em>, <em>astype=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.raster.functions.classify" title="Permalink to this definition">¶</a></dt>
+<code class="descclassname">functions.</code><code class="descname">classify</code><span class="sig-paren">(</span><em>raster1</em>, <em>raster2=None</em>, <em>classifier_definition=None</em>, <em>astype=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.raster.functions.classify" title="Permalink to this definition">¶</a></dt>
 <dd><p>classifies a segmented raster to a categorical raster.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -1384,7 +1402,8 @@ see Band Arithmetic function at <a class="reference external" href="http://deskt
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
 <li><strong>raster1</strong> – the first raster - imagery layers filtered by where clause, spatial and temporal filters</li>
-<li><strong>raster2</strong> – the 2nd raster - imagery layers filtered by where clause, spatial and temporal filters</li>
+<li><strong>raster2</strong> – Optional segmentation raster -  If provided, pixels in each segment will get same class assignments. 
+imagery layers filtered by where clause, spatial and temporal filters</li>
 <li><strong>classifier_definition</strong> – the classifier parameters as a Python dictionary / json format</li>
 </ul>
 </td>
@@ -1488,33 +1507,6 @@ or png format. For more information, see
 </dd></dl>
 
 </div>
-<div class="section" id="id1">
-<h2>colormap_to_rgb<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
-<dl class="method">
-<dt>
-<code class="descclassname">functions.</code><code class="descname">colormap_to_rgb</code><span class="sig-paren">(</span><em>raster</em><span class="sig-paren">)</span></dt>
-<dd><p>”
-The function is designed to work with single band image service that has
-internal colormap. It will convert the image into a three-band 8-bit RGB
-raster. This function takes no arguments except an input raster. For 
-qualified image service, there are two situations when ColormapToRGB 
-function is automatically applied: The “colormapToRGB” property of the 
-image service is set to true; or, client asks to export image into jpg 
-or png format. For more information, see 
-<a class="reference external" href="http://desktop.arcgis.com/en/arcmap/latest/manage-data/raster-and-images/colormap-to-rgb-function.htm">http://desktop.arcgis.com/en/arcmap/latest/manage-data/raster-and-images/colormap-to-rgb-function.htm</a>)</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>raster</strong> – the input raster / imagery layer</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">Three band raster</td>
-</tr>
-</tbody>
-</table>
-</dd></dl>
-
-</div>
 <div class="section" id="colorspace-conversion">
 <h2>colorspace_conversion<a class="headerlink" href="#colorspace-conversion" title="Permalink to this headline">¶</a></h2>
 <dl class="method">
@@ -1538,6 +1530,29 @@ input of ColorspaceConversion function. For more information, see
 </tr>
 <tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">the output raster with this function applied to it</p>
 </td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+<div class="section" id="complex">
+<h2>complex<a class="headerlink" href="#complex" title="Permalink to this headline">¶</a></h2>
+<dl class="method">
+<dt id="arcgis.raster.functions.complex">
+<code class="descclassname">functions.</code><code class="descname">complex</code><span class="sig-paren">(</span><em>raster</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.raster.functions.complex" title="Permalink to this definition">¶</a></dt>
+<dd><p>Complex function computes magnitude from complex values. It is used when
+input raster has complex pixel type. It computes magnitude from complex
+value to convert the pixel type to floating point for each pixel. It takes
+no argument but an optional input raster. For more information, see 
+<a class="reference external" href="http://desktop.arcgis.com/en/arcmap/latest/manage-data/raster-and-images/complex-function.htm">http://desktop.arcgis.com/en/arcmap/latest/manage-data/raster-and-images/complex-function.htm</a></p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>raster</strong> – the input raster / imagery layer</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">Output raster obtained after applying the function</td>
 </tr>
 </tbody>
 </table>
@@ -1930,7 +1945,7 @@ this conceptual help&lt;/a&gt; on how it works. The arguments for the elevation_
 <dl class="method">
 <dt id="arcgis.raster.functions.expression">
 <code class="descclassname">functions.</code><code class="descname">expression</code><span class="sig-paren">(</span><em>raster</em>, <em>expression='(B3 - B1 / B3 + B1)'</em>, <em>astype=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.raster.functions.expression" title="Permalink to this definition">¶</a></dt>
-<dd><p>Use a single-line algebraic formula to create a single-band output. The supported operators are -, +, /, <a href="#id2"><span class="problematic" id="id3">*</span></a>, and unary -.
+<dd><p>Use a single-line algebraic formula to create a single-band output. The supported operators are -, +, /, <a href="#id1"><span class="problematic" id="id2">*</span></a>, and unary -.
 To identify the bands, prepend the band number with a B or b. For example: “BandIndexes”:”(B1 + B2) / (B3 * B5)”</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -2111,6 +2126,33 @@ terrain model.This function was added at 10.1.The arguments for the geometric fu
 </td>
 </tr>
 <tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">the output raster</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+<div class="section" id="grayscale">
+<h2>grayscale<a class="headerlink" href="#grayscale" title="Permalink to this headline">¶</a></h2>
+<dl class="method">
+<dt id="arcgis.raster.functions.grayscale">
+<code class="descclassname">functions.</code><code class="descname">grayscale</code><span class="sig-paren">(</span><em>raster</em>, <em>conversion_parameters=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.raster.functions.grayscale" title="Permalink to this definition">¶</a></dt>
+<dd><p>The Grayscale function converts a multi-band image into a single-band grayscale
+image. Specified weights are applied to each of the input bands, and a 
+normalization is applied for output. For more information, see
+<a class="reference external" href="http://desktop.arcgis.com/en/arcmap/latest/manage-data/raster-and-images/grayscale-function.htm">http://desktop.arcgis.com/en/arcmap/latest/manage-data/raster-and-images/grayscale-function.htm</a></p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>raster</strong> – the input raster</li>
+<li><strong>conversion_parameters</strong> – array of double (A length of N array representing weights for each band, where N=band count.)</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">the output raster with this function applied to it</p>
 </td>
 </tr>
 </tbody>
@@ -3002,6 +3044,40 @@ PVI = (NIR-a*Red-b)/(sqrt(1+a^2))</p>
 </dd></dl>
 
 </div>
+<div class="section" id="raster-calculator">
+<h2>raster_calculator<a class="headerlink" href="#raster-calculator" title="Permalink to this headline">¶</a></h2>
+<dl class="method">
+<dt id="arcgis.raster.functions.raster_calculator">
+<code class="descclassname">functions.</code><code class="descname">raster_calculator</code><span class="sig-paren">(</span><em>rasters</em>, <em>input_names</em>, <em>expression</em>, <em>extent_type='FirstOf'</em>, <em>cellsize_type='FirstOf'</em>, <em>astype=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.raster.functions.raster_calculator" title="Permalink to this definition">¶</a></dt>
+<dd><p>The RasterCalculator function provides access to all existing math functions
+so you can make calls to them when building your expressions. The calculator
+function requires single-band inputs. If you need to perform expressions on
+bands in a multispectral image as part of a function chain, you can use 
+the Extract Bands Function before the RasterCalculator function. 
+For more info including operators supported, see Calculator function 
+<a class="reference external" href="http://pro.arcgis.com/en/pro-app/help/data/imagery/calculator-function.htm">http://pro.arcgis.com/en/pro-app/help/data/imagery/calculator-function.htm</a></p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>raster</strong> – array of rasters</li>
+<li><strong>input_names</strong> – array of strings for arbitrary raster names.</li>
+<li><strong>expression</strong> – string, expression to calculate output raster from input rasters</li>
+<li><strong>extent_type</strong> – string, one of “FirstOf”, “IntersectionOf” “UnionOf”, “LastOf”. Default is “FirstOf”.</li>
+<li><strong>cellsize_type</strong> – one of “FirstOf”, “MinOf”, “MaxOf “MeanOf”, “LastOf”. Default is “FirstOf”.</li>
+<li><strong>astype</strong> – output pixel type</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">output raster with function applied</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
 <div class="section" id="remap">
 <h2>remap<a class="headerlink" href="#remap" title="Permalink to this headline">¶</a></h2>
 <dl class="method">
@@ -3038,7 +3114,7 @@ see &lt;a href=”<a class="reference external" href="http://desktop.arcgis.com/
 <h2>resample<a class="headerlink" href="#resample" title="Permalink to this headline">¶</a></h2>
 <dl class="method">
 <dt id="arcgis.raster.functions.resample">
-<code class="descclassname">functions.</code><code class="descname">resample</code><span class="sig-paren">(</span><em>raster</em>, <em>resampling_type=None</em>, <em>input_cellsize=None</em>, <em>astype=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.raster.functions.resample" title="Permalink to this definition">¶</a></dt>
+<code class="descclassname">functions.</code><code class="descname">resample</code><span class="sig-paren">(</span><em>raster</em>, <em>resampling_type=None</em>, <em>input_cellsize=None</em>, <em>output_cellsize=None</em>, <em>astype=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.raster.functions.resample" title="Permalink to this definition">¶</a></dt>
 <dd><p>The resample function resamples pixel values from a given resolution.The arguments for the resample function are as follows:</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -3049,6 +3125,7 @@ see &lt;a href=”<a class="reference external" href="http://desktop.arcgis.com/
 <li><strong>resampling_type</strong> – one of NearestNeighbor,Bilinear,Cubic,Majority,BilinearInterpolationPlus,BilinearGaussBlur,
 BilinearGaussBlurPlus, Average, Minimum, Maximum,VectorAverage(require two bands)</li>
 <li><strong>input_cellsize</strong> – point that defines cellsize in source spatial reference</li>
+<li><strong>output_cellsize</strong> – point that defines output cellsize</li>
 <li><strong>astype</strong> – output pixel type</li>
 </ul>
 </td>
@@ -3321,6 +3398,71 @@ The arguments for the slope function are as follows:</p>
 </td>
 </tr>
 <tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">the output raster</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+<div class="section" id="spectral-conversion">
+<h2>spectral_conversion<a class="headerlink" href="#spectral-conversion" title="Permalink to this headline">¶</a></h2>
+<dl class="method">
+<dt id="arcgis.raster.functions.spectral_conversion">
+<code class="descclassname">functions.</code><code class="descname">spectral_conversion</code><span class="sig-paren">(</span><em>raster</em>, <em>conversion_matrix</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.raster.functions.spectral_conversion" title="Permalink to this definition">¶</a></dt>
+<dd><p>The SpectralConversion function applies a matrix to a multi-band image to
+affect the spectral values of the output. In the matrix, different weights
+can be assigned to all the input bands to calculate each of the output 
+bands. The column/row size of the matrix equals to the band count of input 
+raster. For more information, see Spectral Conversion function
+<a class="reference external" href="http://desktop.arcgis.com/en/arcmap/latest/manage-data/raster-and-images/spectral-conversion-function.htm">http://desktop.arcgis.com/en/arcmap/latest/manage-data/raster-and-images/spectral-conversion-function.htm</a></p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>raster</strong> – the input raster</li>
+<li><strong>conversion_parameters</strong> – array of double (A NxN length one-dimension matrix, where N=band count.)</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">the output raster with this function applied to it</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+<div class="section" id="speckle">
+<h2>speckle<a class="headerlink" href="#speckle" title="Permalink to this headline">¶</a></h2>
+<dl class="method">
+<dt id="arcgis.raster.functions.speckle">
+<code class="descclassname">functions.</code><code class="descname">speckle</code><span class="sig-paren">(</span><em>raster</em>, <em>filter_type='Lee'</em>, <em>filter_size='3x3'</em>, <em>noise_model='Multiplicative'</em>, <em>noise_var=None</em>, <em>additive_noise_mean=None</em>, <em>multiplicative_noise_mean=1</em>, <em>nlooks=1</em>, <em>damp_factor=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.raster.functions.speckle" title="Permalink to this definition">¶</a></dt>
+<dd><p>The Speckle function filters the speckled radar dataset to smooth out the 
+noise while retaining the edges or sharp features in the image. Four speckle
+reduction filtering algorithms are provided through this function. For more
+information including required and optional parameters for each filter and 
+the default parameter values, see Speckle function 
+<a class="reference external" href="http://desktop.arcgis.com/en/arcmap/latest/manage-data/raster-and-images/speckle-function.htm">http://desktop.arcgis.com/en/arcmap/latest/manage-data/raster-and-images/speckle-function.htm</a></p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>raster</strong> – input raster type</li>
+<li><strong>filter_type</strong> – string, one of “Lee”, “EnhancedLee” “Frost”, “Kaun”. Default is “Lee”.</li>
+<li><strong>filter_size</strong> – string, kernel size. One of “3x3”, “5x5”, “7x7”, “9x9”, “11x11”. Default is “3x3”.</li>
+<li><strong>noise_model</strong> – string, For Lee filter only. One of “Multiplicative”, “Additive”, “AdditiveAndMultiplicative”</li>
+<li><strong>noise_var</strong> – double, for Lee filter with noise_model “Additive” or “AdditiveAndMultiplicative”</li>
+<li><strong>additive_noise_mean</strong> – string, for Lee filter witth noise_model “AdditiveAndMultiplicative” only</li>
+<li><strong>multiplicative_noise_mean</strong> – double, For Lee filter with noise_model “Additive” or “AdditiveAndMultiplicative”</li>
+<li><strong>nlooks</strong> – int, for Lee, EnhancedLee and Kuan Filters</li>
+<li><strong>damp_factor</strong> – double, for EnhancedLee and Frost filters</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">output raster with function applied</p>
 </td>
 </tr>
 </tbody>
@@ -3990,6 +4132,7 @@ It can be any positive or negative decimal value.</li>
 </div>
 
 
+
            </div>
            <div class="articleComments">
             
@@ -4033,7 +4176,7 @@ It can be any positive or negative decimal value.</li>
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'./',
-            VERSION:'1.3.0',
+            VERSION:'1.4.0',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  true,

@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>arcgis.gis.server module &mdash; arcgis 1.3.0 documentation</title>
+  <title>arcgis.gis.server module &mdash; arcgis 1.4.0 documentation</title>
   
 
   
@@ -37,10 +37,19 @@
         <link rel="index" title="Index"
               href="genindex.html"/>
         <link rel="search" title="Search" href="search.html"/>
-    <link rel="top" title="arcgis 1.3.0 documentation" href="index.html"/>
+    <link rel="top" title="arcgis 1.4.0 documentation" href="index.html"/>
         <link rel="up" title="arcgis.gis module" href="arcgis.gis.toc.html"/>
         <link rel="next" title="arcgis.env module" href="arcgis.env.html"/>
-        <link rel="prev" title="arcgis.gis.admin module" href="arcgis.gis.admin.html"/> 
+        <link rel="prev" title="arcgis.gis.admin module" href="arcgis.gis.admin.html"/>
+<!-- This code block is inserted close near the <head> tag. See http://bit.ly/2BHUQzB -->
+<!-- The point of this code block is to send us google analytics on website views -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-NJGGV5');</script>
+ 
+
 
   
   <script src="_static/js/modernizr.min.js"></script>
@@ -69,7 +78,7 @@
             
             
               <div class="version">
-                1.3.0
+                1.4.0
               </div>
             
           
@@ -219,6 +228,7 @@
 <li class="toctree-l3"><a class="reference internal" href="arcgis.features.analyze_patterns.html">arcgis.features.analyze_patterns module</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.features.analyze_patterns.html#calculate-density">calculate_density</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.features.analyze_patterns.html#find-hot-spots">find_hot_spots</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.features.analyze_patterns.html#find-outliers">find_outliers</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.features.analyze_patterns.html#interpolate-points">interpolate_points</a></li>
 </ul>
 </li>
@@ -245,6 +255,7 @@
 </li>
 <li class="toctree-l3"><a class="reference internal" href="arcgis.features.summarize_data.html">arcgis.features.summarize_data module</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.features.summarize_data.html#aggregate-points">aggregate_points</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.features.summarize_data.html#join-features">join_features</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.features.summarize_data.html#summarize-nearby">summarize_nearby</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.features.summarize_data.html#summarize-within">summarize_within</a></li>
 </ul>
@@ -327,8 +338,8 @@
 <li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#clip">clip</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#colormap">colormap</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#colormap-to-rgb">colormap_to_rgb</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#id1">colormap_to_rgb</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#colorspace-conversion">colorspace_conversion</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#complex">complex</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#composite-band">composite_band</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#con">con</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#contrast-brightness">contrast_brightness</a></li>
@@ -350,6 +361,7 @@
 <li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#floor-divide">floor_divide</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#gemi">gemi</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#geometric">geometric</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#grayscale">grayscale</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#greater-than">greater_than</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#greater-than-equal">greater_than_equal</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#gvitm">gvitm</a></li>
@@ -384,6 +396,7 @@
 <li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#power">power</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#pvi">pvi</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#cellstats-range">cellstats_range</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#raster-calculator">raster_calculator</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#remap">remap</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#resample">resample</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#round-down">round_down</a></li>
@@ -395,6 +408,8 @@
 <li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#sin">sin</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#sinh">sinh</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#slope">slope</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#spectral-conversion">spectral_conversion</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#speckle">speckle</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#sqrt">sqrt</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#square">square</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#focal-statistics">focal_statistics</a></li>
@@ -642,8 +657,6 @@
       <li class="wy-breadcrumbs-aside">
         
             
-            <a href="_sources/arcgis.gis.server.rst.txt" rel="nofollow"> View page source</a>
-          
         
       </li>
     
@@ -655,6 +668,11 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
+<!-- This code block is inserted close near the <body> tag. See http://bit.ly/2BHUQzB -->
+<!-- The point of this code block is to send us google analytics on website views -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NJGGV5"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+
   <div class="section" id="module-arcgis.gis.server">
 <span id="arcgis-gis-server-module"></span><h1>arcgis.gis.server module<a class="headerlink" href="#module-arcgis.gis.server" title="Permalink to this headline">¶</a></h1>
 <p>A collection of classes for administering an ArcGIS Enterprise server.</p>
@@ -664,26 +682,31 @@
 <dt id="arcgis.gis.server.Server">
 <em class="property">class </em><code class="descclassname">arcgis.gis.server.</code><code class="descname">Server</code><span class="sig-paren">(</span><em>url</em>, <em>gis=None</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.server.Server" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">arcgis.gis.server._common._base.BaseServer</span></code></p>
-<p>An ArcGIS Enterprise server used for hosting services.</p>
+<p>An ArcGIS Enterprise Server site used for hosting GIS Web services.</p>
 <table border="1" class="docutils">
 <colgroup>
-<col width="20%" />
-<col width="80%" />
+<col width="19%" />
+<col width="81%" />
 </colgroup>
 <tbody valign="top">
 <tr class="row-odd"><td><strong>Argument</strong></td>
 <td><strong>Description</strong></td>
 </tr>
 <tr class="row-even"><td>url</td>
-<td><p class="first">Required string. The web address to the ArcGIS Server administration
-end point.</p>
-<p>Example: <a class="reference external" href="https://mysite.com/arcgis/admin">https://mysite.com/arcgis/admin</a></p>
-<p class="last">The URL should be formatted as follows:
-&lt;scheme&gt;://&lt;host&gt;:&lt;port (optional)&gt;/&lt;web adapter&gt;/admin</p>
+<td><p class="first">Required string. The URL to the ArcGIS Server administration
+end point for the ArcGIS Server Site.</p>
+<p>Example: <a class="reference external" href="https://gis.mysite.com/arcgis/admin">https://gis.mysite.com/arcgis/admin</a></p>
+<p>The URL should be formatted as follows:
+&lt;scheme&gt;://&lt;fully_qualified_domain_name&gt;:&lt;port (optional)&gt;/&lt;web adaptor&gt;/admin</p>
+<p class="last">Note: Using the fully-qualified domain name to the server, also known as the
+Web Context URL, is recommended as generally the SSL Certificate binding for
+the web server uses this hostname.</p>
 </td>
 </tr>
 <tr class="row-odd"><td>gis</td>
-<td>Optional string. The GIS object to which this Server is federated with.</td>
+<td>Optional string. The GIS object representing the Portal which thi
+Server is federated with. The GIS object should be logged in with a username
+in the publisher or administrator Role in order to administer the Server</td>
 </tr>
 </tbody>
 </table>
@@ -707,29 +730,35 @@ token URL will return as the Portal token and ArcGIS Server users
 will not validate correctly.</td>
 </tr>
 <tr class="row-even"><td>username</td>
-<td>Optional string. The login username for BUILT-IN security.</td>
+<td>Optional string. The login username for BUILT-IN GIS Server security.</td>
 </tr>
 <tr class="row-odd"><td>password</td>
 <td>Optional string. A secret word or phrase that must be used to gain
 access to the account above.</td>
 </tr>
 <tr class="row-even"><td>key_file</td>
-<td>Optional string. The path to PKI key file.</td>
+<td>Optional string. The path to a PKI key file used to authenticate the
+user to the Web Server in front of the ArcGIS Server site.</td>
 </tr>
 <tr class="row-odd"><td>cert_file</td>
-<td>Optional string. The path to PKI cert file.</td>
+<td>Optional string. The path to PKI cert file used to authenticate the
+user to the Web Server in front of the ArcGIS Server site.</td>
 </tr>
 <tr class="row-even"><td>proxy_host</td>
-<td><p class="first">Optional string. The web address to the proxy host.</p>
+<td><p class="first">Optional string. The web address to the proxy host if the environment
+where the Python API is running requires a proxy host for access to the
+Site URL or GIS URL.</p>
 <p class="last">Example: proxy.mysite.com</p>
 </td>
 </tr>
 <tr class="row-odd"><td>proxy_port</td>
-<td>Optional integer. The port where the proxy resides on, default is 80.</td>
+<td>Optional integer. The port which the proxy is accessed through,
+default is 80.</td>
 </tr>
 <tr class="row-even"><td>expiration</td>
-<td>Optional integer. This is the length of time a token is valid for.
-Example 1440 is one week. The Default is 60.</td>
+<td>Optional integer. This is the length of time in minutes that a token
+requested through this login process will be valid for.
+Example: 1440 is one day. The Default is 60.</td>
 </tr>
 <tr class="row-odd"><td>all_ssl</td>
 <td>Optional boolean. If True, all calls will be made over HTTPS instead
@@ -1514,7 +1543,7 @@ list of machine names; * represents all machines.</td>
 </pre></div>
 </div>
 <div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">USAGE</span> <span class="n">EXAMPLE</span> <span class="mi">2</span><span class="p">:</span> <span class="n">No</span> <span class="n">filtering</span><span class="p">,</span> <span class="nb">all</span> <span class="n">machines</span> <span class="n">are</span> <span class="n">accepted</span>
-   
+
 <span class="p">{</span><span class="s2">&quot;machines&quot;</span><span class="p">:</span> <span class="s2">&quot;*&quot;</span><span class="p">}</span>
 </pre></div>
 </div>
@@ -1611,7 +1640,7 @@ can be safely deleted or taken down for maintenance.</p>
 <dt id="arcgis.gis.server.Datastore.validate">
 <code class="descname">validate</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.server.Datastore.validate" title="Permalink to this definition">¶</a></dt>
 <dd><p>Validates that this data item’s path (for file shares) or connection string (for databases)
-is accessible to every server node in the site. This is necessary for the data item to be 
+is accessible to every server node in the site. This is necessary for the data item to be
 registered and used successfully with the server’s data store.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -2710,7 +2739,7 @@ for a specified service</li>
 <dl class="attribute">
 <dt id="arcgis.gis.server.ReportManager.settings">
 <code class="descname">settings</code><a class="headerlink" href="#arcgis.gis.server.ReportManager.settings" title="Permalink to this definition">¶</a></dt>
-<dd><p>Gets the current usage reports settings. The usage reports  
+<dd><p>Gets the current usage reports settings. The usage reports
 settings are applied to the entire site. When usage
 reports are enabled, service usage statistics are collected and
 persisted to a statistics database. When usage reports are
@@ -2733,14 +2762,14 @@ statistics are persisted forever.</p>
 <em class="property">class </em><code class="descclassname">arcgis.gis.server.</code><code class="descname">DataStoreManager</code><span class="sig-paren">(</span><em>url</em>, <em>gis=None</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.server.DataStoreManager" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">arcgis.gis.server._common._base.BaseServer</span></code></p>
 <p>This resource provides information about the data holdings of the
-server, as well as the ability to manage (add new items, update primary 
-data store, remove a data store item, etc) the data store. Data items 
-are used by ArcGIS for Desktop and other clients to validate data paths 
+server, as well as the ability to manage (add new items, update primary
+data store, remove a data store item, etc) the data store. Data items
+are used by ArcGIS for Desktop and other clients to validate data paths
 referenced by GIS services.</p>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
-<p class="last">A relational data store type represents a database platform that has been 
-registered for use on a portal’s hosting server by the ArcGIS Server 
+<p class="last">A relational data store type represents a database platform that has been
+registered for use on a portal’s hosting server by the ArcGIS Server
 administrator. Each relational data store type describes the
 properties ArcGIS Server requires in order to connect to an instance of
 a database for a particular platform. At least one registered
@@ -2905,12 +2934,12 @@ the client; if folder is shared, don’t set this parameter.</td>
 <dl class="attribute">
 <dt id="arcgis.gis.server.DataStoreManager.config">
 <code class="descname">config</code><a class="headerlink" href="#arcgis.gis.server.DataStoreManager.config" title="Permalink to this definition">¶</a></dt>
-<dd><p>Gets the data store configuration properties. These properties 
+<dd><p>Gets the data store configuration properties. These properties
 affect the behavior of the data holdings of the server. For
-example, the blockDataCopy property - when this property is false, 
-or not set at all, copying data to the site when publishing services 
-from a client application is allowed. This is the default behavior. 
-When this property is true, the client application is not allowed to 
+example, the blockDataCopy property - when this property is false,
+or not set at all, copying data to the site when publishing services
+from a client application is allowed. This is the default behavior.
+When this property is true, the client application is not allowed to
 copy data to the site when publishing. Rather, the publisher is
 required to register data items through which the service being
 published can reference data. Values: true | false</p>
@@ -2920,6 +2949,36 @@ published can reference data. Values: true | false</p>
 <dt id="arcgis.gis.server.DataStoreManager.data_items">
 <code class="descname">data_items</code><a class="headerlink" href="#arcgis.gis.server.DataStoreManager.data_items" title="Permalink to this definition">¶</a></dt>
 <dd><p>Gets the list of data items that are the root of all other data items in the data store.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="arcgis.gis.server.DataStoreManager.generate_connection_string">
+<code class="descname">generate_connection_string</code><span class="sig-paren">(</span><em>sde</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.server.DataStoreManager.generate_connection_string" title="Permalink to this definition">¶</a></dt>
+<dd><p>Converts an SDE connection file to a string with encrypted password.</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="22%" />
+<col width="78%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><strong>Parameters</strong></td>
+<td><strong>Description</strong></td>
+</tr>
+<tr class="row-even"><td>sde</td>
+<td>required string.  Path to SDE connection file.</td>
+</tr>
+</tbody>
+</table>
+<p>returns: string on success, None on failure</p>
+<p><strong>Usage</strong>:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">con</span> <span class="o">=</span> <span class="n">dm</span><span class="o">.</span><span class="n">create_connection_string</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;c:\myfolder\postgres_db.sde&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">con</span><span class="p">)</span>
+<span class="go">&#39;ENCRYPTED_PASSWORD=************************;SERVER=localhost;</span>
+<span class="go">INSTANCE=sde:postgresql:localhost,5432;DBCLIENT=postgresql;</span>
+<span class="go">DB_CONNECTION_PROPERTIES=localhost,5432;DATABASE=esri_spatial;</span>
+<span class="go">USER=sde;VERSION=sde.DEFAULT;AUTHENTICATION_MODE=DBMS&#39;</span>
+</pre></div>
+</div>
 </dd></dl>
 
 <dl class="method">
@@ -4783,6 +4842,7 @@ class description for all possible properties.</p>
 </div>
 
 
+
            </div>
            <div class="articleComments">
             
@@ -4826,7 +4886,7 @@ class description for all possible properties.</p>
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'./',
-            VERSION:'1.3.0',
+            VERSION:'1.4.0',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  true,
