@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>arcgis.features module &mdash; arcgis 1.4.0 documentation</title>
+  <title>arcgis.features module &mdash; arcgis 1.4.1 documentation</title>
   
 
   
@@ -37,7 +37,7 @@
         <link rel="index" title="Index"
               href="genindex.html"/>
         <link rel="search" title="Search" href="search.html"/>
-    <link rel="top" title="arcgis 1.4.0 documentation" href="index.html"/>
+    <link rel="top" title="arcgis 1.4.1 documentation" href="index.html"/>
         <link rel="next" title="arcgis.features.analysis module" href="arcgis.features.analysis.html"/>
         <link rel="prev" title="arcgis.env module" href="arcgis.env.html"/>
 <!-- This code block is inserted close near the <head> tag. See http://bit.ly/2BHUQzB -->
@@ -77,7 +77,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             
             
               <div class="version">
-                1.4.0
+                1.4.1
               </div>
             
           
@@ -490,12 +490,15 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="arcgis.geoanalytics.manage_data.html">arcgis.geoanalytics.manage_data module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.geoanalytics.manage_data.html#append-data">append_data</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.geoanalytics.manage_data.html#calculate-fields">calculate_fields</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.geoanalytics.manage_data.html#copy-to-data-store">copy_to_data_store</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.geoanalytics.manage_data.html#overlay-data">overlay_data</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="arcgis.geoanalytics.summarize_data.html">arcgis.geoanalytics.summarize_data module</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.geoanalytics.summarize_data.html#aggregate-points">aggregate_points</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.geoanalytics.summarize_data.html#build-multivariable-grid">build_multivariable_grid</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.geoanalytics.summarize_data.html#join-features">join_features</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.geoanalytics.summarize_data.html#reconstruct-tracks">reconstruct_tracks</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.geoanalytics.summarize_data.html#summarize-attributes">summarize_attributes</a></li>
@@ -584,6 +587,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 </li>
 <li class="toctree-l1"><a class="reference internal" href="arcgis.mapping.html">arcgis.mapping module</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.mapping.html#webmap">WebMap</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.mapping.html#offlinemapareamanager">OfflineMapAreaManager</a></li>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.mapping.html#webscene">WebScene</a></li>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.mapping.html#mapimagelayer">MapImageLayer</a></li>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.mapping.html#mapimagelayermanager">MapImageLayerManager</a></li>
@@ -602,6 +606,23 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 </li>
 <li class="toctree-l1"><a class="reference internal" href="arcgis.widgets.html">arcgis.widgets module</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.widgets.html#mapview">MapView</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.apps.html">arcgis.apps module</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.apps.html#submodules">Submodules</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="arcgis.apps.workforce.html">arcgis.apps.workforce module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.apps.workforce.html#assignment">Assignment</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.apps.workforce.html#assignmenttype">AssignmentType</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.apps.workforce.html#attachment">Attachment</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.apps.workforce.html#dispatcher">Dispatcher</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.apps.workforce.html#project">Project</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.apps.workforce.html#track">Track</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.apps.workforce.html#worker">Worker</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.apps.workforce.html#submodules">Submodules</a></li>
+</ul>
+</li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -703,7 +724,7 @@ representation and user experience - on a map, in a 3D scene, as entities with a
 <dt id="arcgis.features.Feature.as_row">
 <code class="descname">as_row</code><a class="headerlink" href="#arcgis.features.Feature.as_row" title="Permalink to this definition">¶</a></dt>
 <dd><p>converts a feature to a list for insertion into an insert cursor
-Output:</p>
+:return:</p>
 <blockquote>
 <div>[row items], [field names]
 returns a list of fields and the row object</div></blockquote>
@@ -749,12 +770,59 @@ returns a list of fields and the row object</div></blockquote>
 <dt id="arcgis.features.Feature.get_value">
 <code class="descname">get_value</code><span class="sig-paren">(</span><em>field_name</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.features.Feature.get_value" title="Permalink to this definition">¶</a></dt>
 <dd><p>returns a value for a given field name</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="18%" />
+<col width="82%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><strong>Argument</strong></td>
+<td><strong>Description</strong></td>
+</tr>
+<tr class="row-even"><td>field_name</td>
+<td>Required String. The name of the field to get the value for.</td>
+</tr>
+</tbody>
+</table>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">object</td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
 <dl class="method">
 <dt id="arcgis.features.Feature.set_value">
 <code class="descname">set_value</code><span class="sig-paren">(</span><em>field_name</em>, <em>value</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.features.Feature.set_value" title="Permalink to this definition">¶</a></dt>
-<dd><p>sets an attribute value for a given field name</p>
+<dd><p>Sets an attribute value for a given field name</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="18%" />
+<col width="82%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><strong>Argument</strong></td>
+<td><strong>Description</strong></td>
+</tr>
+<tr class="row-even"><td>field_name</td>
+<td>Required String. The name of the field to update.</td>
+</tr>
+<tr class="row-odd"><td>value</td>
+<td>Required object. The value to update the field with.</td>
+</tr>
+</tbody>
+</table>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">boolean</td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
 </dd></dl>
@@ -773,13 +841,13 @@ tools.</p>
 GIS. Feature layer objects can be obtained through the layers attribute on feature layer Items in the GIS.</p>
 <dl class="method">
 <dt id="arcgis.features.FeatureLayer.append">
-<code class="descname">append</code><span class="sig-paren">(</span><em>item_id=None</em>, <em>upload_format='featureCollection'</em>, <em>source_table_name=None</em>, <em>field_mappings=None</em>, <em>edits=None</em>, <em>source_info=None</em>, <em>upsert=True</em>, <em>skip_updates=False</em>, <em>use_globalids=False</em>, <em>update_geometry=True</em>, <em>append_fields=None</em>, <em>rollback=False</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.features.FeatureLayer.append" title="Permalink to this definition">¶</a></dt>
+<code class="descname">append</code><span class="sig-paren">(</span><em>item_id=None</em>, <em>upload_format='featureCollection'</em>, <em>source_table_name=None</em>, <em>field_mappings=None</em>, <em>edits=None</em>, <em>source_info=None</em>, <em>upsert=True</em>, <em>skip_updates=False</em>, <em>use_globalids=False</em>, <em>update_geometry=True</em>, <em>append_fields=None</em>, <em>rollback=False</em>, <em>skip_inserts=None</em>, <em>upsert_matching_field=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.features.FeatureLayer.append" title="Permalink to this definition">¶</a></dt>
 <dd><p>Only available in AGOL</p>
 <p>Update an existing hosted feature layer using append.</p>
 <table border="1" class="docutils">
 <colgroup>
-<col width="20%" />
-<col width="80%" />
+<col width="26%" />
+<col width="74%" />
 </colgroup>
 <tbody valign="top">
 <tr class="row-odd"><td><strong>Argument</strong></td>
@@ -791,7 +859,8 @@ than one tables, e.g., for filegdb.
 Example: source_tabl_name=  “Building”</td>
 </tr>
 <tr class="row-odd"><td>item_id</td>
-<td>optional string. The ID for the Portal item that contains the source file.
+<td>optional string. The ID for the Portal item that contains the source
+file.
 Used in conjunction with editsUploadFormat.</td>
 </tr>
 <tr class="row-even"><td>field_mappings</td>
@@ -827,7 +896,7 @@ Default is false.</td>
 when matching features.</td>
 </tr>
 <tr class="row-even"><td>update_geometry</td>
-<td>optional boolean. The parameter is used only when upsert is true.
+<td>Optional boolean. The parameter is used only when upsert is true.
 Skip updating the geometry and update only the attributes for
 existing features if they match source features by objectId or
 globalId.(as specified by useGlobalIds parameter).</td>
@@ -846,6 +915,19 @@ geojson | csv | excel</td>
 <tr class="row-odd"><td>rollback</td>
 <td>Optional boolean. Optional parameter specifying whether the upsert
 edits needs to be rolled back in case of failure. Default is false.</td>
+</tr>
+<tr class="row-even"><td>skip_inserts</td>
+<td>Used only when upsert is true. Used to skip inserts if the value is
+true. The default value is false.</td>
+</tr>
+<tr class="row-odd"><td>upsert_matching_field</td>
+<td>Optional string. The layer field to be used when matching features
+with upsert. ObjectId, GlobalId, and any other field that has a
+unique index can be used with upsert.
+This parameter overrides use_globalids; e.g., specifying
+upsert_matching_field will be used even if you specify
+use_globalids = True.
+Example: upsert_matching_field=”MyfieldWithUniqueIndex”</td>
 </tr>
 </tbody>
 </table>
@@ -870,40 +952,52 @@ supportsCalculate property of the layer is true.
 Neither the Shape field nor system fields can be updated using
 calculate. System fields include ObjectId and GlobalId.
 See Calculate a field for more information on supported expressions</p>
-<dl class="docutils">
-<dt>Inputs:</dt>
-<dd><dl class="first last docutils">
-<dt>where - A where clause can be used to limit the updated records.</dt>
-<dd>Any legal SQL where clause operating on the fields in
-the layer is allowed.</dd>
-<dt>calcExpression - The array of field/value info objects that</dt>
-<dd><p class="first">contain the field or fields to update and their
+<blockquote>
+<div><table border="1" class="docutils">
+<colgroup>
+<col width="27%" />
+<col width="73%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><strong>Inputs</strong></td>
+<td><strong>Description</strong></td>
+</tr>
+<tr class="row-even"><td>where</td>
+<td>A where clause can be used to limit the updated records.
+Any legal SQL where clause operating on the fields in
+the layer is allowed.</td>
+</tr>
+<tr class="row-odd"><td>calc_expression</td>
+<td>The array of field/value info objects that
+contain the field or fields to update and their
 scalar values or SQL expression.  Allowed types
 are dictionary and list.  List must be a list
 of dictionary objects.
-Calculation Format is as follows:</p>
-<blockquote class="last">
-<div>{“field” : “&lt;field name&gt;”,
-“value” : “&lt;value&gt;”}</div></blockquote>
-</dd>
-<dt>sqlFormat - The SQL format for the calcExpression. It can be</dt>
-<dd>either standard SQL92 (standard) or native SQL
+Calculation Format is as follows:
+{“field” : “&lt;field name&gt;”,  “value” : “&lt;value&gt;”}</td>
+</tr>
+<tr class="row-even"><td>sql_format</td>
+<td>The SQL format for the calcExpression. It can be
+either standard SQL92 (standard) or native SQL
 (native). The default is standard.
-Values: standard, native</dd>
-</dl>
-</dd>
-<dt>Output:</dt>
-<dd>JSON as string</dd>
-</dl>
-<p>Usage:
-&gt;&gt;&gt;print(fl.calculate(where=”OBJECTID &lt; 2”,</p>
-<blockquote>
-<div><dl class="docutils">
-<dt>calcExpression={“field”: “ZONE”,</dt>
-<dd>“value” : “R1”}))</dd>
-</dl>
+Values: standard, native</td>
+</tr>
+</tbody>
+</table>
 </div></blockquote>
-<p>{‘updatedFeatureCount’: 1, ‘success’: True}</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="c1"># Usage Example 1:</span>
+
+<span class="k">print</span><span class="p">(</span><span class="n">fl</span><span class="o">.</span><span class="n">calculate</span><span class="p">(</span><span class="n">where</span><span class="o">=</span><span class="s2">&quot;OBJECTID &lt; 2&quot;</span><span class="p">,</span>
+                   <span class="n">calc_expression</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;field&quot;</span><span class="p">:</span> <span class="s2">&quot;ZONE&quot;</span><span class="p">,</span> <span class="s2">&quot;value&quot;</span> <span class="p">:</span> <span class="s2">&quot;R1&quot;</span><span class="p">}))</span>
+</pre></div>
+</div>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="c1"># Usage Example 2:</span>
+
+<span class="k">print</span><span class="p">(</span><span class="n">fl</span><span class="o">.</span><span class="n">calculate</span><span class="p">(</span><span class="n">where</span><span class="o">=</span><span class="s2">&quot;OBJECTID &lt; 2001&quot;</span><span class="p">,</span>
+                   <span class="n">calc_expression</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;field&quot;</span><span class="p">:</span> <span class="s2">&quot;A&quot;</span><span class="p">,</span>  <span class="s2">&quot;sqlExpression&quot;</span> <span class="p">:</span> <span class="s2">&quot;B*3&quot;</span><span class="p">}))</span>
+</pre></div>
+</div>
+<p>Output: dictionary with format {‘updatedFeatureCount’: 1, ‘success’: True}</p>
 </dd></dl>
 
 <dl class="attribute">
@@ -915,34 +1009,50 @@ Values: standard, native</dd>
 <dl class="method">
 <dt id="arcgis.features.FeatureLayer.delete_features">
 <code class="descname">delete_features</code><span class="sig-paren">(</span><em>deletes=None</em>, <em>where=None</em>, <em>geometry_filter=None</em>, <em>gdb_version=None</em>, <em>rollback_on_failure=True</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.features.FeatureLayer.delete_features" title="Permalink to this definition">¶</a></dt>
-<dd><p>This operation deletes features in a feature layer or table
-Inputs:</p>
-<blockquote>
-<div><p>deletes - string of OIDs to remove from service
-where -  A where clause for the query filter.</p>
-<blockquote>
-<div>Any legal SQL where clause operating on the fields in
-the layer is allowed. Features conforming to the specified
-where clause will be deleted.</div></blockquote>
-<dl class="docutils">
-<dt>geometry_filter - spatial filter from arcgis.geometry.filters module to filter results by a</dt>
-<dd>spatial relationship with another geometry</dd>
-</dl>
-<p>gdb_version - Geodatabase version to apply the edits.
-rollback_on_failure - Optional parameter to specify if the</p>
-<blockquote>
-<div>edits should be applied only if all
-submitted edits succeed. If false, the
-server will apply the edits that succeed
-even if some of the submitted edits fail.
-If true, the server will apply the edits
-only if all edits succeed. The default
-value is true.</div></blockquote>
-</div></blockquote>
-<dl class="docutils">
-<dt>Output:</dt>
-<dd>dictionary of messages</dd>
-</dl>
+<dd><p>This operation deletes features in a feature layer or table</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="23%" />
+<col width="77%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><strong>Argument</strong></td>
+<td><strong>Description</strong></td>
+</tr>
+<tr class="row-even"><td>deletes</td>
+<td>Optional string. A comma seperated string of OIDs to remove from the
+service.</td>
+</tr>
+<tr class="row-odd"><td>where</td>
+<td>Optional string.  A where clause for the query filter. Any legal SQL
+where clause operating on the fields in the layer is allowed.
+Features conforming to the specified where clause will be deleted.</td>
+</tr>
+<tr class="row-even"><td>geometry_filter</td>
+<td>Optional SpatialFilter. A spatial filter from
+arcgis.geometry.filters module to filter results by a spatial
+relationship with another geometry.</td>
+</tr>
+<tr class="row-odd"><td>gdb_version</td>
+<td>Optional string. A Geodatabase version to apply the edits.</td>
+</tr>
+<tr class="row-even"><td>rollback_on_failure</td>
+<td>Optional boolean. Optional parameter to specify if the edits should
+be applied only if all submitted edits succeed. If false, the server
+will apply the edits that succeed even if some of the submitted
+edits fail. If true, the server will apply the edits only if all
+edits succeed. The default value is true.</td>
+</tr>
+</tbody>
+</table>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">dict</td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
 <dl class="method">
@@ -1049,11 +1159,29 @@ the dynamic layer/table is allowed.</td>
 <dt id="arcgis.features.FeatureLayer.get_html_popup">
 <code class="descname">get_html_popup</code><span class="sig-paren">(</span><em>oid</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.features.FeatureLayer.get_html_popup" title="Permalink to this definition">¶</a></dt>
 <dd><p>The htmlPopup resource provides details about the HTML pop-up
-authored by the user using ArcGIS for Desktop.
-Input:</p>
-<blockquote>
-<div>oid - object id of the feature where the HTML pop-up</div></blockquote>
-<p>Output:</p>
+authored by the user using ArcGIS for Desktop.</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="18%" />
+<col width="82%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><strong>Argument</strong></td>
+<td><strong>Description</strong></td>
+</tr>
+<tr class="row-even"><td>oid</td>
+<td>Optional string. Object id of the feature to get the HTML popup.</td>
+</tr>
+</tbody>
+</table>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">string</td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
 <dl class="attribute">
@@ -1070,152 +1198,244 @@ Input:</p>
 
 <dl class="method">
 <dt id="arcgis.features.FeatureLayer.query">
-<code class="descname">query</code><span class="sig-paren">(</span><em>where='1=1'</em>, <em>out_fields='*'</em>, <em>time_filter=None</em>, <em>geometry_filter=None</em>, <em>return_geometry=True</em>, <em>return_count_only=False</em>, <em>return_ids_only=False</em>, <em>return_distinct_values=False</em>, <em>return_extent_only=False</em>, <em>group_by_fields_for_statistics=None</em>, <em>statistic_filter=None</em>, <em>result_offset=None</em>, <em>result_record_count=None</em>, <em>object_ids=None</em>, <em>distance=None</em>, <em>units=None</em>, <em>max_allowable_offset=None</em>, <em>out_sr=None</em>, <em>geometry_precision=None</em>, <em>gdb_version=None</em>, <em>order_by_fields=None</em>, <em>out_statistics=None</em>, <em>return_z=False</em>, <em>return_m=False</em>, <em>multipatch_option=None</em>, <em>quanitization_parameters=None</em>, <em>return_centroid=False</em>, <em>return_all_records=True</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.features.FeatureLayer.query" title="Permalink to this definition">¶</a></dt>
-<dd><p>queries a feature layer based on a sql statement
-Inputs:</p>
-<blockquote>
-<div><blockquote>
-<div><p>where - the selection sql statement
-out_fields - the attribute fields to return
-object_ids -  The object IDs of this layer or table to be</p>
-<blockquote>
-<div>queried.</div></blockquote>
+<code class="descname">query</code><span class="sig-paren">(</span><em>where='1=1'</em>, <em>out_fields='*'</em>, <em>time_filter=None</em>, <em>geometry_filter=None</em>, <em>return_geometry=True</em>, <em>return_count_only=False</em>, <em>return_ids_only=False</em>, <em>return_distinct_values=False</em>, <em>return_extent_only=False</em>, <em>group_by_fields_for_statistics=None</em>, <em>statistic_filter=None</em>, <em>result_offset=None</em>, <em>result_record_count=None</em>, <em>object_ids=None</em>, <em>distance=None</em>, <em>units=None</em>, <em>max_allowable_offset=None</em>, <em>out_sr=None</em>, <em>geometry_precision=None</em>, <em>gdb_version=None</em>, <em>order_by_fields=None</em>, <em>out_statistics=None</em>, <em>return_z=False</em>, <em>return_m=False</em>, <em>multipatch_option=None</em>, <em>quantization_parameters=None</em>, <em>return_centroid=False</em>, <em>return_all_records=True</em>, <em>result_type=None</em>, <em>historic_moment=None</em>, <em>sql_format=None</em>, <em>return_true_curves=False</em>, <em>return_exceeded_limit_features=None</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.features.FeatureLayer.query" title="Permalink to this definition">¶</a></dt>
+<dd><p>Queries a feature layer based on a sql statement</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="30%" />
+<col width="70%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><strong>Argument</strong></td>
+<td><strong>Description</strong></td>
+</tr>
+<tr class="row-even"><td>where</td>
+<td>Optional string. The default is 1=1. The selection sql statement.</td>
+</tr>
+<tr class="row-odd"><td>out_fields</td>
+<td>Optional string. The attribute fields to return. The default is “*”.</td>
+</tr>
+<tr class="row-even"><td>object_ids</td>
+<td>Optional list. The object IDs of this layer or table to be queried.</td>
+</tr>
+<tr class="row-odd"><td>distance</td>
+<td>Optional integer. The buffer distance for the input geometries.
+The distance unit is specified by units. For example, if the
+distance is 100, the query geometry is a point, units is set to
+meters, and all points within 100 meters of the point are returned.</td>
+</tr>
+<tr class="row-even"><td>units</td>
+<td><p class="first">Optional string. The unit for calculating the buffer distance. If
+unit is not specified, the unit is derived from the geometry spatial
+reference. If the geometry spatial reference is not specified, the
+unit is derived from the feature service data spatial reference.
+This parameter only applies if supportsQueryWithDistance is true.
+Values: esriSRUnit_Meter | esriSRUnit_StatuteMile |</p>
+<blockquote class="last">
+<div>esriSRUnit_Foot | esriSRUnit_Kilometer |
+esriSRUnit_NauticalMile | esriSRUnit_USNauticalMile</div></blockquote>
+</td>
+</tr>
+<tr class="row-odd"><td>time_filter</td>
+<td><p class="first">Optional list. The format is of [&lt;startTime&gt;, &lt;endTime&gt;] using
+datetime.date, datetime.datetime or timestamp in milliseconds.
+Syntax: time_filter=[&lt;startTime&gt;, &lt;endTime&gt;] ; specified as</p>
+<blockquote class="last">
+<div>datetime.date, datetime.datetime or timestamp in
+milliseconds</div></blockquote>
+</td>
+</tr>
+<tr class="row-even"><td>geometry_filter</td>
+<td>Optional from arcgis.geometry.filter. Allows for the information to
+be filtered on spatial relationship with another geometry.</td>
+</tr>
+<tr class="row-odd"><td>max_allowable_offset</td>
+<td>Optional float. This option can be used to specify the
+max_allowable_offset to be used for generalizing geometries returned
+by the query operation.
+The max_allowable_offset is in the units of out_sr. If out_sr is not
+specified, max_allowable_offset is assumed to be in the unit of the
+spatial reference of the layer.</td>
+</tr>
+<tr class="row-even"><td>out_sr</td>
+<td>Optional Integer. The WKID for the spatial reference of the returned
+geometry.</td>
+</tr>
+<tr class="row-odd"><td>geometry_precision</td>
+<td>Optional Integer. This option can be used to specify the number of
+decimal places in the response geometries returned by the query
+operation.
+This applies to X and Y values only (not m or z-values).</td>
+</tr>
+<tr class="row-even"><td>gdb_version</td>
+<td>Optional string. The geodatabase version to query. This parameter
+applies only if the isDataVersioned property of the layer is true.
+If this is not specified, the query will apply to the published
+map’s version.</td>
+</tr>
+<tr class="row-odd"><td>return_geometry</td>
+<td>Optional boolean. If true, geometry is returned with the query.
+Default is true.</td>
+</tr>
+<tr class="row-even"><td>return_distinct_values</td>
+<td>Optional boolean.  If true, it returns distinct values based on the
+fields specified in out_fields. This parameter applies only if the
+supportsAdvancedQueries property of the layer is true.</td>
+</tr>
+<tr class="row-odd"><td>return_ids_only</td>
+<td>Optional boolean. Default is False.  If true, the response only
+includes an array of object IDs. Otherwise, the response is a
+feature set.</td>
+</tr>
+<tr class="row-even"><td>return_count_only</td>
+<td>Optional boolean. If true, the response only includes the count
+(number of features/records) that would be returned by a query.
+Otherwise, the response is a feature set. The default is false. This
+option supersedes the returnIdsOnly parameter. If
+returnCountOnly = true, the response will return both the count and
+the extent.</td>
+</tr>
+<tr class="row-odd"><td>return_extent_only</td>
+<td>Optional boolean. If true, the response only includes the extent of
+the features that would be returned by the query. If
+returnCountOnly=true, the response will return both the count and
+the extent.
+The default is false. This parameter applies only if the
+supportsReturningQueryExtent property of the layer is true.</td>
+</tr>
+<tr class="row-even"><td>order_by_fields</td>
+<td>Optional string. One or more field names on which the
+features/records need to be ordered. Use ASC or DESC for ascending
+or descending, respectively, following every field to control the
+ordering.
+example: STATE_NAME ASC, RACE DESC, GENDER</td>
+</tr>
+<tr class="row-odd"><td>group_by_fields_for_statistics</td>
+<td>Optional string. One or more field names on which the values need to
+be grouped for calculating the statistics.
+example: STATE_NAME, GENDER</td>
+</tr>
+<tr class="row-even"><td>out_statistics</td>
+<td><p class="first">Optional string. The definitions for one or more field-based
+statistics to be calculated.</p>
+<p>Syntax:</p>
 <dl class="docutils">
-<dt>distance - The buffer distance for the input geometries.</dt>
-<dd>The distance unit is specified by units. For
-example, if the distance is 100, the query
-geometry is a point, units is set to meters, and
-all points within 100 meters of the point are
-returned.</dd>
-<dt>units - The unit for calculating the buffer distance. If</dt>
-<dd>unit is not specified, the unit is derived from the
-geometry spatial reference. If the geometry spatial
-reference is not specified, the unit is derived
-from the feature service data spatial reference.
-This parameter only applies if
-supportsQueryWithDistance is true.
-Values: esriSRUnit_Meter | esriSRUnit_StatuteMile |
-esriSRUnit_Foot | esriSRUnit_Kilometer |
-esriSRUnit_NauticalMile | esriSRUnit_USNauticalMile</dd>
-<dt>time_filter - a TimeFilter object where either the start time</dt>
-<dd>or start and end time are defined to limit the
-search results for a given time.  The values in
-the timeFilter should be as UTC timestampes in
-milliseconds.  No checking occurs to see if they
-are in the right format.</dd>
-<dt>geometry_filter - spatial filter from arcgis.geometry.filters module to filter results by a</dt>
-<dd>spatial relationship with another geometry</dd>
-<dt>max_allowable_offset - This option can be used to specify the</dt>
-<dd>maxAllowableOffset to be used for
-generalizing geometries returned by
-the query operation.
-The maxAllowableOffset is in the units
-of outSR. If outSR is not specified,
-maxAllowableOffset is assumed to be in
-the unit of the spatial reference of
-the map.</dd>
+<dt>[</dt>
+<dd><dl class="first docutils">
+<dt>{</dt>
+<dd>“statisticType”: “&lt;count | sum | min | max | avg | stddev | var&gt;”,
+“onStatisticField”: “Field1”,
+“outStatisticFieldName”: “Out_Field_Name1”</dd>
 </dl>
-<p>out_sr - The spatial reference of the returned geometry.
-geometry_precision -  This option can be used to specify the</p>
+<p>},
+{</p>
 <blockquote>
-<div>number of decimal places in the
-response geometries returned by the
-Query operation.</div></blockquote>
-<p>gdb_version - Geodatabase version to query
-return_geometry - If true, geometry is returned with the query. Default is true.
-return_distinct_values -  If true, it returns distinct values</p>
-<blockquote>
-<div>based on the fields specified in
-outFields. This parameter applies
-only if the
-supportsAdvancedQueries property of
-the layer is true.</div></blockquote>
-<dl class="docutils">
-<dt>return_ids_only -  If true, the response only includes an</dt>
-<dd>array of object IDs. Otherwise, the
-response is a feature set. The default is
-false.</dd>
-<dt>return_count_only -  If true, the response only includes the</dt>
-<dd>count (number of features/records) that
-would be returned by a query. Otherwise,
-the response is a feature set. The
-default is false. This option supersedes
-the returnIdsOnly parameter. If
-returnCountOnly = true, the response will
-return both the count and the extent.</dd>
-<dt>return_extent_only -  If true, the response only includes the</dt>
-<dd>extent of the features that would be
-returned by the query. If
-returnCountOnly=true, the response will
-return both the count and the extent.
-The default is false. This parameter
-applies only if the
-supportsReturningQueryExtent property
-of the layer is true.</dd>
-<dt>order_by_fields - One or more field names on which the</dt>
-<dd>features/records need to be ordered. Use
-ASC or DESC for ascending or descending,
-respectively, following every field to
-control the ordering.</dd>
-<dt>group_by_fields_for_statistics - One or more field names on</dt>
-<dd>which the values need to be
-grouped for calculating the
-statistics.</dd>
-<dt>out_statistics - The definitions for one or more field-based</dt>
-<dd>statistics to be calculated.</dd>
-<dt>return_z -  If true, Z values are included in the results if</dt>
-<dd>the features have Z values. Otherwise, Z values
-are not returned. The default is false.</dd>
-<dt>return_m - If true, M values are included in the results if</dt>
-<dd>the features have M values. Otherwise, M values
-are not returned. The default is false.</dd>
-<dt>multipatch_option - This option dictates how the geometry of</dt>
-<dd>a multipatch feature will be returned.</dd>
-<dt>result_offset -  This option can be used for fetching query</dt>
-<dd>results by skipping the specified number of
-records and starting from the next record
-(that is, resultOffset + 1th). This option is
-ignored if return_all_records is True (i.e. by default).</dd>
-<dt>result_record_count - This option can be used for fetching</dt>
-<dd>query results up to the
-result_record_count specified. When
-result_offset is specified but this
-parameter is not, the map service
-defaults it to max_record_count. The
-maximum value for this parameter is the
-value of the layer’s max_record_count
-property. This option is ignored if
-return_all_records is True (i.e. by default).</dd>
-<dt>quantization_parameters - Used to project the geometry onto</dt>
-<dd>a virtual grid, likely
-representing pixels on the screen.</dd>
-<dt>return_centroid - Used to return the geometry centroid</dt>
-<dd>associated with each feature returned. If
-true, the result includes the geometry
-centroid. The default is false.</dd>
-<dt>return_all_records - When True, the query operation will call</dt>
-<dd>the service until all records that satisfy
-the where_clause are returned. Note: result_offset
-and result_record_count will be ignored
-if return_all_records is True. Also, if
-return_count_only, return_ids_only, or
-return_extent_only are True, this parameter
-will be ignored.</dd>
+<div>“statisticType”: “&lt;count | sum | min | max | avg | stddev | var&gt;”,
+“onStatisticField”: “Field2”,
+“outStatisticFieldName”: “Out_Field_Name2”</div></blockquote>
+<p class="last">}</p>
+</dd>
 </dl>
-</div></blockquote>
-<dl class="docutils">
-<dt>kwargs - optional parameters that can be passed to the Query</dt>
-<dd>function.  This will allow users to pass additional
-parameters not explicitly implemented on the function. A
-complete list of functions available is documented on the
-Query REST API.</dd>
-</dl>
-</div></blockquote>
-<dl class="docutils">
-<dt>Output:</dt>
-<dd>A FeatureSet containing the features matching the query
-unless another return type is specified, such as count</dd>
-</dl>
+<p class="last">]</p>
+</td>
+</tr>
+<tr class="row-odd"><td>return_z</td>
+<td>Optional boolean. If true, Z values are included in the results if
+the features have Z values. Otherwise, Z values are not returned.
+The default is False.</td>
+</tr>
+<tr class="row-even"><td>return_m</td>
+<td>Optional boolean. If true, M values are included in the results if
+the features have M values. Otherwise, M values are not returned.
+The default is false.</td>
+</tr>
+<tr class="row-odd"><td>multipatch_option</td>
+<td>Optional x/y footprint. This option dictates how the geometry of
+a multipatch feature will be returned.</td>
+</tr>
+<tr class="row-even"><td>result_offset</td>
+<td>Optional integer. This option can be used for fetching query results
+by skipping the specified number of records and starting from the
+next record (that is, resultOffset + 1th). This option is ignored
+if return_all_records is True (i.e. by default).</td>
+</tr>
+<tr class="row-odd"><td>result_record_count</td>
+<td>Optional integer. This option can be used for fetching query results
+up to the result_record_count specified. When result_offset is
+specified but this parameter is not, the map service defaults it to
+max_record_count. The maximum value for this parameter is the value
+of the layer’s max_record_count property. This option is ignored if
+return_all_records is True (i.e. by default).</td>
+</tr>
+<tr class="row-even"><td>quantization_parameters</td>
+<td>Optional dict. Used to project the geometry onto a virtual grid,
+likely representing pixels on the screen.</td>
+</tr>
+<tr class="row-odd"><td>return_centroid</td>
+<td>Optional boolean. Used to return the geometry centroid associated
+with each feature returned. If true, the result includes the geometry
+centroid. The default is false.</td>
+</tr>
+<tr class="row-even"><td>return_all_records</td>
+<td>Optional boolean. When True, the query operation will call the
+service until all records that satisfy the where_clause are
+returned. Note: result_offset and result_record_count will be
+ignored if return_all_records is True. Also, if return_count_only,
+return_ids_only, or return_extent_only are True, this parameter
+will be ignored.</td>
+</tr>
+<tr class="row-odd"><td>result_type</td>
+<td>Optional string. The result_type parameter can be used to control
+the number of features returned by the query operation.
+Values: None | standard | tile</td>
+</tr>
+<tr class="row-even"><td>historic_moment</td>
+<td><p class="first">Optional integer. The historic moment to query. This parameter
+applies only if the layer is archiving enabled and the
+supportsQueryWithHistoricMoment property is set to true. This
+property is provided in the layer resource.</p>
+<p class="last">If historic_moment is not specified, the query will apply to the
+current features.</p>
+</td>
+</tr>
+<tr class="row-odd"><td>sql_format</td>
+<td>Optional string.  The sql_format parameter can be either standard
+SQL92 standard or it can use the native SQL of the underlying
+datastore native. The default is none which means the sql_format
+depends on useStandardizedQuery parameter.
+Values: none | standard | native</td>
+</tr>
+<tr class="row-even"><td>return_true_curves</td>
+<td>Optional boolean. When set to true, returns true curves in output
+geometries. When set to false, curves are converted to densified
+polylines or polygons.</td>
+</tr>
+<tr class="row-odd"><td>return_exceeded_limit_features</td>
+<td><p class="first">Optional boolean. Optional parameter which is true by default. When
+set to true, features are returned even when the results include
+‘exceededTransferLimit’: True.</p>
+<p class="last">When set to false and querying with resultType = tile features are
+not returned when the results include ‘exceededTransferLimit’: True.
+This allows a client to find the resolution in which the transfer
+limit is no longer exceeded without making multiple calls.</p>
+</td>
+</tr>
+<tr class="row-even"><td>kwargs</td>
+<td>Optional dict. Optional parameters that can be passed to the Query
+function.  This will allow users to pass additional parameters not
+explicitly implemented on the function. A complete list of functions
+available is documented on the Query REST API.</td>
+</tr>
+</tbody>
+</table>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">A FeatureSet containing the features matching the query unless another return type is specified, such as count</td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
 <dl class="method">
@@ -1228,58 +1448,79 @@ Feature objects including the values for the fields requested by
 the user. For related layers, if you request geometry
 information, the geometry of each feature is also returned in
 the feature set. For related tables, the feature set does not
-include geometries.
-Inputs:</p>
-<blockquote>
-<div><p>objectIds - the object IDs of the table/layer to be queried
-relationshipId - The ID of the relationship to be queried.
-outFields - the list of fields from the related table/layer</p>
-<blockquote>
-<div>to be included in the returned feature set. This
-list is a comma delimited list of field names. If
-you specify the shape field in the list of return
-fields, it is ignored. To request geometry, set
-returnGeometry to true.
-You can also specify the wildcard “*” as the
-value of this parameter. In this case, the result
-s will include all the field values.</div></blockquote>
-<dl class="docutils">
-<dt>definitionExpression - The definition expression to be</dt>
-<dd>applied to the related table/layer.
-From the list of objectIds, only those
-records that conform to this
-expression are queried for related
-records.</dd>
-<dt>returnGeometry - If true, the feature set includes the</dt>
-<dd>geometry associated with each feature. The
-default is true.</dd>
-<dt>maxAllowableOffset - This option can be used to specify the</dt>
-<dd>maxAllowableOffset to be used for
-generalizing geometries returned by the
-query operation. The maxAllowableOffset
-is in the units of the outSR. If outSR
-is not specified, then
-maxAllowableOffset is assumed to be in
-the unit of the spatial reference of the
-map.</dd>
-<dt>geometryPrecision - This option can be used to specify the</dt>
-<dd>number of decimal places in the response
-geometries.</dd>
-</dl>
-<p>outWKID - The spatial reference of the returned geometry.
-gdbVersion - The geodatabase version to query. This parameter</p>
-<blockquote>
-<div>applies only if the isDataVersioned property of
-the layer queried is true.</div></blockquote>
-<dl class="docutils">
-<dt>returnZ - If true, Z values are included in the results if</dt>
-<dd>the features have Z values. Otherwise, Z values are
-not returned. The default is false.</dd>
-<dt>returnM - If true, M values are included in the results if</dt>
-<dd>the features have M values. Otherwise, M values are
-not returned. The default is false.</dd>
-</dl>
-</div></blockquote>
+include geometries.</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="24%" />
+<col width="76%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><strong>Argument</strong></td>
+<td><strong>Description</strong></td>
+</tr>
+<tr class="row-even"><td>object_ids</td>
+<td>Required string. The object IDs of the table/layer to be queried</td>
+</tr>
+<tr class="row-odd"><td>relationship_id</td>
+<td>Required string. The ID of the relationship to be queried.</td>
+</tr>
+<tr class="row-even"><td>out_fields</td>
+<td>Required string. the list of fields from the related table/layer
+to be included in the returned feature set. This list is a comma
+delimited list of field names. If you specify the shape field in the
+list of return fields, it is ignored. To request geometry, set
+return_geometry to true. You can also specify the wildcard “*” as
+the value of this parameter. In this case, the results will include
+all the field values.</td>
+</tr>
+<tr class="row-odd"><td>definition_expression</td>
+<td>Optional string. The definition expression to be applied to the
+related table/layer. From the list of objectIds, only those records
+that conform to this expression are queried for related records.</td>
+</tr>
+<tr class="row-even"><td>return_geometry</td>
+<td>Optional boolean. If true, the feature set includes the geometry
+associated with each feature. The default is true.</td>
+</tr>
+<tr class="row-odd"><td>max_allowable_offset</td>
+<td>Optional float. This option can be used to specify the
+max_allowable_offset to be used for generalizing geometries returned
+by the query operation. The max_allowable_offset is in the units of
+the outSR. If out_wkid is not specified, then max_allowable_offset
+is assumed to be in the unit of the spatial reference of the map.</td>
+</tr>
+<tr class="row-even"><td>geometry_precision</td>
+<td>Optional integer. This option can be used to specify the number of
+decimal places in the response geometries.</td>
+</tr>
+<tr class="row-odd"><td>out_wkid</td>
+<td>Optional Integer. The spatial reference of the returned geometry.</td>
+</tr>
+<tr class="row-even"><td>gdb_version</td>
+<td>Optional string. The geodatabase version to query. This parameter
+applies only if the isDataVersioned property of the layer queried is
+true.</td>
+</tr>
+<tr class="row-odd"><td>return_z</td>
+<td>Optional boolean. If true, Z values are included in the results if
+the features have Z values. Otherwise, Z values are not returned.
+The default is false.</td>
+</tr>
+<tr class="row-even"><td>return_m</td>
+<td>Optional boolean. If true, M values are included in the results if
+the features have M values. Otherwise, M values are not returned.
+The default is false.</td>
+</tr>
+</tbody>
+</table>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">dict</td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
 <dl class="method">
@@ -1296,24 +1537,25 @@ calculate operation.
 validate_sql also prevents SQL injection. In addition, all table
 and field names used in the SQL expression or WHERE clause are
 validated to ensure they are valid tables and fields.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
+<table border="1" class="docutils">
+<colgroup>
+<col width="31%" />
+<col width="69%" />
+</colgroup>
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><table class="first last docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">sql:</th><td class="field-body"><p class="first">the SQL expression of WHERE clause to validate
-Example: “Population &gt; 300000”</p>
-</td>
+<tr class="row-odd"><td><strong>Argument</strong></td>
+<td><strong>Description</strong></td>
 </tr>
-<tr class="field-even field"><th class="field-name">sql_type:</th><td class="field-body"><p class="first">Three SQL types are supported in validate_sql
-- where (default) - Represents the custom WHERE clause the user</p>
-<blockquote>
-<div><p>can compose when querying a layer or using calculate.</p>
-</div></blockquote>
-<ul class="last simple">
+<tr class="row-even"><td>sql</td>
+<td>Required String. The SQL expression of WHERE clause to validate.
+Example: “Population &gt; 300000”</td>
+</tr>
+<tr class="row-odd"><td>sql_type</td>
+<td><dl class="first last docutils">
+<dt>Optional String. Three SQL types are supported in validate_sql</dt>
+<dd><ul class="first last simple">
+<li>where (default) - Represents the custom WHERE clause the user
+can compose when querying a layer or using calculate.</li>
 <li>expression - Represents an SQL-92 expression. Currently,
 expression is used as a default value expression when adding a
 new field or using the calculate API.</li>
@@ -1324,11 +1566,17 @@ statement directly. It has been added to the validateSQL for
 completeness.
 Values: where | expression | statement</li>
 </ul>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
 </table>
-</td>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">dict</td>
 </tr>
 </tbody>
 </table>
@@ -1348,13 +1596,13 @@ features, the GIS can also work with non-spatial entities as rows in tables.</p>
 have a geometry, and tables ignore any geometry related operation.</p>
 <dl class="method">
 <dt id="arcgis.features.Table.append">
-<code class="descname">append</code><span class="sig-paren">(</span><em>item_id=None</em>, <em>upload_format='featureCollection'</em>, <em>source_table_name=None</em>, <em>field_mappings=None</em>, <em>edits=None</em>, <em>source_info=None</em>, <em>upsert=True</em>, <em>skip_updates=False</em>, <em>use_globalids=False</em>, <em>update_geometry=True</em>, <em>append_fields=None</em>, <em>rollback=False</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.features.Table.append" title="Permalink to this definition">¶</a></dt>
+<code class="descname">append</code><span class="sig-paren">(</span><em>item_id=None</em>, <em>upload_format='featureCollection'</em>, <em>source_table_name=None</em>, <em>field_mappings=None</em>, <em>edits=None</em>, <em>source_info=None</em>, <em>upsert=True</em>, <em>skip_updates=False</em>, <em>use_globalids=False</em>, <em>update_geometry=True</em>, <em>append_fields=None</em>, <em>rollback=False</em>, <em>skip_inserts=None</em>, <em>upsert_matching_field=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.features.Table.append" title="Permalink to this definition">¶</a></dt>
 <dd><p>Only available in AGOL</p>
 <p>Update an existing hosted feature layer using append.</p>
 <table border="1" class="docutils">
 <colgroup>
-<col width="20%" />
-<col width="80%" />
+<col width="26%" />
+<col width="74%" />
 </colgroup>
 <tbody valign="top">
 <tr class="row-odd"><td><strong>Argument</strong></td>
@@ -1366,7 +1614,8 @@ than one tables, e.g., for filegdb.
 Example: source_tabl_name=  “Building”</td>
 </tr>
 <tr class="row-odd"><td>item_id</td>
-<td>optional string. The ID for the Portal item that contains the source file.
+<td>optional string. The ID for the Portal item that contains the source
+file.
 Used in conjunction with editsUploadFormat.</td>
 </tr>
 <tr class="row-even"><td>field_mappings</td>
@@ -1402,7 +1651,7 @@ Default is false.</td>
 when matching features.</td>
 </tr>
 <tr class="row-even"><td>update_geometry</td>
-<td>optional boolean. The parameter is used only when upsert is true.
+<td>Optional boolean. The parameter is used only when upsert is true.
 Skip updating the geometry and update only the attributes for
 existing features if they match source features by objectId or
 globalId.(as specified by useGlobalIds parameter).</td>
@@ -1421,6 +1670,19 @@ geojson | csv | excel</td>
 <tr class="row-odd"><td>rollback</td>
 <td>Optional boolean. Optional parameter specifying whether the upsert
 edits needs to be rolled back in case of failure. Default is false.</td>
+</tr>
+<tr class="row-even"><td>skip_inserts</td>
+<td>Used only when upsert is true. Used to skip inserts if the value is
+true. The default value is false.</td>
+</tr>
+<tr class="row-odd"><td>upsert_matching_field</td>
+<td>Optional string. The layer field to be used when matching features
+with upsert. ObjectId, GlobalId, and any other field that has a
+unique index can be used with upsert.
+This parameter overrides use_globalids; e.g., specifying
+upsert_matching_field will be used even if you specify
+use_globalids = True.
+Example: upsert_matching_field=”MyfieldWithUniqueIndex”</td>
 </tr>
 </tbody>
 </table>
@@ -1445,40 +1707,52 @@ supportsCalculate property of the layer is true.
 Neither the Shape field nor system fields can be updated using
 calculate. System fields include ObjectId and GlobalId.
 See Calculate a field for more information on supported expressions</p>
-<dl class="docutils">
-<dt>Inputs:</dt>
-<dd><dl class="first last docutils">
-<dt>where - A where clause can be used to limit the updated records.</dt>
-<dd>Any legal SQL where clause operating on the fields in
-the layer is allowed.</dd>
-<dt>calcExpression - The array of field/value info objects that</dt>
-<dd><p class="first">contain the field or fields to update and their
+<blockquote>
+<div><table border="1" class="docutils">
+<colgroup>
+<col width="27%" />
+<col width="73%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><strong>Inputs</strong></td>
+<td><strong>Description</strong></td>
+</tr>
+<tr class="row-even"><td>where</td>
+<td>A where clause can be used to limit the updated records.
+Any legal SQL where clause operating on the fields in
+the layer is allowed.</td>
+</tr>
+<tr class="row-odd"><td>calc_expression</td>
+<td>The array of field/value info objects that
+contain the field or fields to update and their
 scalar values or SQL expression.  Allowed types
 are dictionary and list.  List must be a list
 of dictionary objects.
-Calculation Format is as follows:</p>
-<blockquote class="last">
-<div>{“field” : “&lt;field name&gt;”,
-“value” : “&lt;value&gt;”}</div></blockquote>
-</dd>
-<dt>sqlFormat - The SQL format for the calcExpression. It can be</dt>
-<dd>either standard SQL92 (standard) or native SQL
+Calculation Format is as follows:
+{“field” : “&lt;field name&gt;”,  “value” : “&lt;value&gt;”}</td>
+</tr>
+<tr class="row-even"><td>sql_format</td>
+<td>The SQL format for the calcExpression. It can be
+either standard SQL92 (standard) or native SQL
 (native). The default is standard.
-Values: standard, native</dd>
-</dl>
-</dd>
-<dt>Output:</dt>
-<dd>JSON as string</dd>
-</dl>
-<p>Usage:
-&gt;&gt;&gt;print(fl.calculate(where=”OBJECTID &lt; 2”,</p>
-<blockquote>
-<div><dl class="docutils">
-<dt>calcExpression={“field”: “ZONE”,</dt>
-<dd>“value” : “R1”}))</dd>
-</dl>
+Values: standard, native</td>
+</tr>
+</tbody>
+</table>
 </div></blockquote>
-<p>{‘updatedFeatureCount’: 1, ‘success’: True}</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="c1"># Usage Example 1:</span>
+
+<span class="k">print</span><span class="p">(</span><span class="n">fl</span><span class="o">.</span><span class="n">calculate</span><span class="p">(</span><span class="n">where</span><span class="o">=</span><span class="s2">&quot;OBJECTID &lt; 2&quot;</span><span class="p">,</span>
+                   <span class="n">calc_expression</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;field&quot;</span><span class="p">:</span> <span class="s2">&quot;ZONE&quot;</span><span class="p">,</span> <span class="s2">&quot;value&quot;</span> <span class="p">:</span> <span class="s2">&quot;R1&quot;</span><span class="p">}))</span>
+</pre></div>
+</div>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="c1"># Usage Example 2:</span>
+
+<span class="k">print</span><span class="p">(</span><span class="n">fl</span><span class="o">.</span><span class="n">calculate</span><span class="p">(</span><span class="n">where</span><span class="o">=</span><span class="s2">&quot;OBJECTID &lt; 2001&quot;</span><span class="p">,</span>
+                   <span class="n">calc_expression</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;field&quot;</span><span class="p">:</span> <span class="s2">&quot;A&quot;</span><span class="p">,</span>  <span class="s2">&quot;sqlExpression&quot;</span> <span class="p">:</span> <span class="s2">&quot;B*3&quot;</span><span class="p">}))</span>
+</pre></div>
+</div>
+<p>Output: dictionary with format {‘updatedFeatureCount’: 1, ‘success’: True}</p>
 </dd></dl>
 
 <dl class="attribute">
@@ -1490,34 +1764,50 @@ Values: standard, native</dd>
 <dl class="method">
 <dt id="arcgis.features.Table.delete_features">
 <code class="descname">delete_features</code><span class="sig-paren">(</span><em>deletes=None</em>, <em>where=None</em>, <em>geometry_filter=None</em>, <em>gdb_version=None</em>, <em>rollback_on_failure=True</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.features.Table.delete_features" title="Permalink to this definition">¶</a></dt>
-<dd><p>This operation deletes features in a feature layer or table
-Inputs:</p>
-<blockquote>
-<div><p>deletes - string of OIDs to remove from service
-where -  A where clause for the query filter.</p>
-<blockquote>
-<div>Any legal SQL where clause operating on the fields in
-the layer is allowed. Features conforming to the specified
-where clause will be deleted.</div></blockquote>
-<dl class="docutils">
-<dt>geometry_filter - spatial filter from arcgis.geometry.filters module to filter results by a</dt>
-<dd>spatial relationship with another geometry</dd>
-</dl>
-<p>gdb_version - Geodatabase version to apply the edits.
-rollback_on_failure - Optional parameter to specify if the</p>
-<blockquote>
-<div>edits should be applied only if all
-submitted edits succeed. If false, the
-server will apply the edits that succeed
-even if some of the submitted edits fail.
-If true, the server will apply the edits
-only if all edits succeed. The default
-value is true.</div></blockquote>
-</div></blockquote>
-<dl class="docutils">
-<dt>Output:</dt>
-<dd>dictionary of messages</dd>
-</dl>
+<dd><p>This operation deletes features in a feature layer or table</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="23%" />
+<col width="77%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><strong>Argument</strong></td>
+<td><strong>Description</strong></td>
+</tr>
+<tr class="row-even"><td>deletes</td>
+<td>Optional string. A comma seperated string of OIDs to remove from the
+service.</td>
+</tr>
+<tr class="row-odd"><td>where</td>
+<td>Optional string.  A where clause for the query filter. Any legal SQL
+where clause operating on the fields in the layer is allowed.
+Features conforming to the specified where clause will be deleted.</td>
+</tr>
+<tr class="row-even"><td>geometry_filter</td>
+<td>Optional SpatialFilter. A spatial filter from
+arcgis.geometry.filters module to filter results by a spatial
+relationship with another geometry.</td>
+</tr>
+<tr class="row-odd"><td>gdb_version</td>
+<td>Optional string. A Geodatabase version to apply the edits.</td>
+</tr>
+<tr class="row-even"><td>rollback_on_failure</td>
+<td>Optional boolean. Optional parameter to specify if the edits should
+be applied only if all submitted edits succeed. If false, the server
+will apply the edits that succeed even if some of the submitted
+edits fail. If true, the server will apply the edits only if all
+edits succeed. The default value is true.</td>
+</tr>
+</tbody>
+</table>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">dict</td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
 <dl class="method">
@@ -1624,11 +1914,29 @@ the dynamic layer/table is allowed.</td>
 <dt id="arcgis.features.Table.get_html_popup">
 <code class="descname">get_html_popup</code><span class="sig-paren">(</span><em>oid</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.features.Table.get_html_popup" title="Permalink to this definition">¶</a></dt>
 <dd><p>The htmlPopup resource provides details about the HTML pop-up
-authored by the user using ArcGIS for Desktop.
-Input:</p>
-<blockquote>
-<div>oid - object id of the feature where the HTML pop-up</div></blockquote>
-<p>Output:</p>
+authored by the user using ArcGIS for Desktop.</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="18%" />
+<col width="82%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><strong>Argument</strong></td>
+<td><strong>Description</strong></td>
+</tr>
+<tr class="row-even"><td>oid</td>
+<td>Optional string. Object id of the feature to get the HTML popup.</td>
+</tr>
+</tbody>
+</table>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">string</td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
 <dl class="attribute">
@@ -1645,152 +1953,244 @@ Input:</p>
 
 <dl class="method">
 <dt id="arcgis.features.Table.query">
-<code class="descname">query</code><span class="sig-paren">(</span><em>where='1=1'</em>, <em>out_fields='*'</em>, <em>time_filter=None</em>, <em>geometry_filter=None</em>, <em>return_geometry=True</em>, <em>return_count_only=False</em>, <em>return_ids_only=False</em>, <em>return_distinct_values=False</em>, <em>return_extent_only=False</em>, <em>group_by_fields_for_statistics=None</em>, <em>statistic_filter=None</em>, <em>result_offset=None</em>, <em>result_record_count=None</em>, <em>object_ids=None</em>, <em>distance=None</em>, <em>units=None</em>, <em>max_allowable_offset=None</em>, <em>out_sr=None</em>, <em>geometry_precision=None</em>, <em>gdb_version=None</em>, <em>order_by_fields=None</em>, <em>out_statistics=None</em>, <em>return_z=False</em>, <em>return_m=False</em>, <em>multipatch_option=None</em>, <em>quanitization_parameters=None</em>, <em>return_centroid=False</em>, <em>return_all_records=True</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.features.Table.query" title="Permalink to this definition">¶</a></dt>
-<dd><p>queries a feature layer based on a sql statement
-Inputs:</p>
-<blockquote>
-<div><blockquote>
-<div><p>where - the selection sql statement
-out_fields - the attribute fields to return
-object_ids -  The object IDs of this layer or table to be</p>
-<blockquote>
-<div>queried.</div></blockquote>
+<code class="descname">query</code><span class="sig-paren">(</span><em>where='1=1'</em>, <em>out_fields='*'</em>, <em>time_filter=None</em>, <em>geometry_filter=None</em>, <em>return_geometry=True</em>, <em>return_count_only=False</em>, <em>return_ids_only=False</em>, <em>return_distinct_values=False</em>, <em>return_extent_only=False</em>, <em>group_by_fields_for_statistics=None</em>, <em>statistic_filter=None</em>, <em>result_offset=None</em>, <em>result_record_count=None</em>, <em>object_ids=None</em>, <em>distance=None</em>, <em>units=None</em>, <em>max_allowable_offset=None</em>, <em>out_sr=None</em>, <em>geometry_precision=None</em>, <em>gdb_version=None</em>, <em>order_by_fields=None</em>, <em>out_statistics=None</em>, <em>return_z=False</em>, <em>return_m=False</em>, <em>multipatch_option=None</em>, <em>quantization_parameters=None</em>, <em>return_centroid=False</em>, <em>return_all_records=True</em>, <em>result_type=None</em>, <em>historic_moment=None</em>, <em>sql_format=None</em>, <em>return_true_curves=False</em>, <em>return_exceeded_limit_features=None</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.features.Table.query" title="Permalink to this definition">¶</a></dt>
+<dd><p>Queries a feature layer based on a sql statement</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="30%" />
+<col width="70%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><strong>Argument</strong></td>
+<td><strong>Description</strong></td>
+</tr>
+<tr class="row-even"><td>where</td>
+<td>Optional string. The default is 1=1. The selection sql statement.</td>
+</tr>
+<tr class="row-odd"><td>out_fields</td>
+<td>Optional string. The attribute fields to return. The default is “*”.</td>
+</tr>
+<tr class="row-even"><td>object_ids</td>
+<td>Optional list. The object IDs of this layer or table to be queried.</td>
+</tr>
+<tr class="row-odd"><td>distance</td>
+<td>Optional integer. The buffer distance for the input geometries.
+The distance unit is specified by units. For example, if the
+distance is 100, the query geometry is a point, units is set to
+meters, and all points within 100 meters of the point are returned.</td>
+</tr>
+<tr class="row-even"><td>units</td>
+<td><p class="first">Optional string. The unit for calculating the buffer distance. If
+unit is not specified, the unit is derived from the geometry spatial
+reference. If the geometry spatial reference is not specified, the
+unit is derived from the feature service data spatial reference.
+This parameter only applies if supportsQueryWithDistance is true.
+Values: esriSRUnit_Meter | esriSRUnit_StatuteMile |</p>
+<blockquote class="last">
+<div>esriSRUnit_Foot | esriSRUnit_Kilometer |
+esriSRUnit_NauticalMile | esriSRUnit_USNauticalMile</div></blockquote>
+</td>
+</tr>
+<tr class="row-odd"><td>time_filter</td>
+<td><p class="first">Optional list. The format is of [&lt;startTime&gt;, &lt;endTime&gt;] using
+datetime.date, datetime.datetime or timestamp in milliseconds.
+Syntax: time_filter=[&lt;startTime&gt;, &lt;endTime&gt;] ; specified as</p>
+<blockquote class="last">
+<div>datetime.date, datetime.datetime or timestamp in
+milliseconds</div></blockquote>
+</td>
+</tr>
+<tr class="row-even"><td>geometry_filter</td>
+<td>Optional from arcgis.geometry.filter. Allows for the information to
+be filtered on spatial relationship with another geometry.</td>
+</tr>
+<tr class="row-odd"><td>max_allowable_offset</td>
+<td>Optional float. This option can be used to specify the
+max_allowable_offset to be used for generalizing geometries returned
+by the query operation.
+The max_allowable_offset is in the units of out_sr. If out_sr is not
+specified, max_allowable_offset is assumed to be in the unit of the
+spatial reference of the layer.</td>
+</tr>
+<tr class="row-even"><td>out_sr</td>
+<td>Optional Integer. The WKID for the spatial reference of the returned
+geometry.</td>
+</tr>
+<tr class="row-odd"><td>geometry_precision</td>
+<td>Optional Integer. This option can be used to specify the number of
+decimal places in the response geometries returned by the query
+operation.
+This applies to X and Y values only (not m or z-values).</td>
+</tr>
+<tr class="row-even"><td>gdb_version</td>
+<td>Optional string. The geodatabase version to query. This parameter
+applies only if the isDataVersioned property of the layer is true.
+If this is not specified, the query will apply to the published
+map’s version.</td>
+</tr>
+<tr class="row-odd"><td>return_geometry</td>
+<td>Optional boolean. If true, geometry is returned with the query.
+Default is true.</td>
+</tr>
+<tr class="row-even"><td>return_distinct_values</td>
+<td>Optional boolean.  If true, it returns distinct values based on the
+fields specified in out_fields. This parameter applies only if the
+supportsAdvancedQueries property of the layer is true.</td>
+</tr>
+<tr class="row-odd"><td>return_ids_only</td>
+<td>Optional boolean. Default is False.  If true, the response only
+includes an array of object IDs. Otherwise, the response is a
+feature set.</td>
+</tr>
+<tr class="row-even"><td>return_count_only</td>
+<td>Optional boolean. If true, the response only includes the count
+(number of features/records) that would be returned by a query.
+Otherwise, the response is a feature set. The default is false. This
+option supersedes the returnIdsOnly parameter. If
+returnCountOnly = true, the response will return both the count and
+the extent.</td>
+</tr>
+<tr class="row-odd"><td>return_extent_only</td>
+<td>Optional boolean. If true, the response only includes the extent of
+the features that would be returned by the query. If
+returnCountOnly=true, the response will return both the count and
+the extent.
+The default is false. This parameter applies only if the
+supportsReturningQueryExtent property of the layer is true.</td>
+</tr>
+<tr class="row-even"><td>order_by_fields</td>
+<td>Optional string. One or more field names on which the
+features/records need to be ordered. Use ASC or DESC for ascending
+or descending, respectively, following every field to control the
+ordering.
+example: STATE_NAME ASC, RACE DESC, GENDER</td>
+</tr>
+<tr class="row-odd"><td>group_by_fields_for_statistics</td>
+<td>Optional string. One or more field names on which the values need to
+be grouped for calculating the statistics.
+example: STATE_NAME, GENDER</td>
+</tr>
+<tr class="row-even"><td>out_statistics</td>
+<td><p class="first">Optional string. The definitions for one or more field-based
+statistics to be calculated.</p>
+<p>Syntax:</p>
 <dl class="docutils">
-<dt>distance - The buffer distance for the input geometries.</dt>
-<dd>The distance unit is specified by units. For
-example, if the distance is 100, the query
-geometry is a point, units is set to meters, and
-all points within 100 meters of the point are
-returned.</dd>
-<dt>units - The unit for calculating the buffer distance. If</dt>
-<dd>unit is not specified, the unit is derived from the
-geometry spatial reference. If the geometry spatial
-reference is not specified, the unit is derived
-from the feature service data spatial reference.
-This parameter only applies if
-supportsQueryWithDistance is true.
-Values: esriSRUnit_Meter | esriSRUnit_StatuteMile |
-esriSRUnit_Foot | esriSRUnit_Kilometer |
-esriSRUnit_NauticalMile | esriSRUnit_USNauticalMile</dd>
-<dt>time_filter - a TimeFilter object where either the start time</dt>
-<dd>or start and end time are defined to limit the
-search results for a given time.  The values in
-the timeFilter should be as UTC timestampes in
-milliseconds.  No checking occurs to see if they
-are in the right format.</dd>
-<dt>geometry_filter - spatial filter from arcgis.geometry.filters module to filter results by a</dt>
-<dd>spatial relationship with another geometry</dd>
-<dt>max_allowable_offset - This option can be used to specify the</dt>
-<dd>maxAllowableOffset to be used for
-generalizing geometries returned by
-the query operation.
-The maxAllowableOffset is in the units
-of outSR. If outSR is not specified,
-maxAllowableOffset is assumed to be in
-the unit of the spatial reference of
-the map.</dd>
+<dt>[</dt>
+<dd><dl class="first docutils">
+<dt>{</dt>
+<dd>“statisticType”: “&lt;count | sum | min | max | avg | stddev | var&gt;”,
+“onStatisticField”: “Field1”,
+“outStatisticFieldName”: “Out_Field_Name1”</dd>
 </dl>
-<p>out_sr - The spatial reference of the returned geometry.
-geometry_precision -  This option can be used to specify the</p>
+<p>},
+{</p>
 <blockquote>
-<div>number of decimal places in the
-response geometries returned by the
-Query operation.</div></blockquote>
-<p>gdb_version - Geodatabase version to query
-return_geometry - If true, geometry is returned with the query. Default is true.
-return_distinct_values -  If true, it returns distinct values</p>
-<blockquote>
-<div>based on the fields specified in
-outFields. This parameter applies
-only if the
-supportsAdvancedQueries property of
-the layer is true.</div></blockquote>
-<dl class="docutils">
-<dt>return_ids_only -  If true, the response only includes an</dt>
-<dd>array of object IDs. Otherwise, the
-response is a feature set. The default is
-false.</dd>
-<dt>return_count_only -  If true, the response only includes the</dt>
-<dd>count (number of features/records) that
-would be returned by a query. Otherwise,
-the response is a feature set. The
-default is false. This option supersedes
-the returnIdsOnly parameter. If
-returnCountOnly = true, the response will
-return both the count and the extent.</dd>
-<dt>return_extent_only -  If true, the response only includes the</dt>
-<dd>extent of the features that would be
-returned by the query. If
-returnCountOnly=true, the response will
-return both the count and the extent.
-The default is false. This parameter
-applies only if the
-supportsReturningQueryExtent property
-of the layer is true.</dd>
-<dt>order_by_fields - One or more field names on which the</dt>
-<dd>features/records need to be ordered. Use
-ASC or DESC for ascending or descending,
-respectively, following every field to
-control the ordering.</dd>
-<dt>group_by_fields_for_statistics - One or more field names on</dt>
-<dd>which the values need to be
-grouped for calculating the
-statistics.</dd>
-<dt>out_statistics - The definitions for one or more field-based</dt>
-<dd>statistics to be calculated.</dd>
-<dt>return_z -  If true, Z values are included in the results if</dt>
-<dd>the features have Z values. Otherwise, Z values
-are not returned. The default is false.</dd>
-<dt>return_m - If true, M values are included in the results if</dt>
-<dd>the features have M values. Otherwise, M values
-are not returned. The default is false.</dd>
-<dt>multipatch_option - This option dictates how the geometry of</dt>
-<dd>a multipatch feature will be returned.</dd>
-<dt>result_offset -  This option can be used for fetching query</dt>
-<dd>results by skipping the specified number of
-records and starting from the next record
-(that is, resultOffset + 1th). This option is
-ignored if return_all_records is True (i.e. by default).</dd>
-<dt>result_record_count - This option can be used for fetching</dt>
-<dd>query results up to the
-result_record_count specified. When
-result_offset is specified but this
-parameter is not, the map service
-defaults it to max_record_count. The
-maximum value for this parameter is the
-value of the layer’s max_record_count
-property. This option is ignored if
-return_all_records is True (i.e. by default).</dd>
-<dt>quantization_parameters - Used to project the geometry onto</dt>
-<dd>a virtual grid, likely
-representing pixels on the screen.</dd>
-<dt>return_centroid - Used to return the geometry centroid</dt>
-<dd>associated with each feature returned. If
-true, the result includes the geometry
-centroid. The default is false.</dd>
-<dt>return_all_records - When True, the query operation will call</dt>
-<dd>the service until all records that satisfy
-the where_clause are returned. Note: result_offset
-and result_record_count will be ignored
-if return_all_records is True. Also, if
-return_count_only, return_ids_only, or
-return_extent_only are True, this parameter
-will be ignored.</dd>
+<div>“statisticType”: “&lt;count | sum | min | max | avg | stddev | var&gt;”,
+“onStatisticField”: “Field2”,
+“outStatisticFieldName”: “Out_Field_Name2”</div></blockquote>
+<p class="last">}</p>
+</dd>
 </dl>
-</div></blockquote>
-<dl class="docutils">
-<dt>kwargs - optional parameters that can be passed to the Query</dt>
-<dd>function.  This will allow users to pass additional
-parameters not explicitly implemented on the function. A
-complete list of functions available is documented on the
-Query REST API.</dd>
-</dl>
-</div></blockquote>
-<dl class="docutils">
-<dt>Output:</dt>
-<dd>A FeatureSet containing the features matching the query
-unless another return type is specified, such as count</dd>
-</dl>
+<p class="last">]</p>
+</td>
+</tr>
+<tr class="row-odd"><td>return_z</td>
+<td>Optional boolean. If true, Z values are included in the results if
+the features have Z values. Otherwise, Z values are not returned.
+The default is False.</td>
+</tr>
+<tr class="row-even"><td>return_m</td>
+<td>Optional boolean. If true, M values are included in the results if
+the features have M values. Otherwise, M values are not returned.
+The default is false.</td>
+</tr>
+<tr class="row-odd"><td>multipatch_option</td>
+<td>Optional x/y footprint. This option dictates how the geometry of
+a multipatch feature will be returned.</td>
+</tr>
+<tr class="row-even"><td>result_offset</td>
+<td>Optional integer. This option can be used for fetching query results
+by skipping the specified number of records and starting from the
+next record (that is, resultOffset + 1th). This option is ignored
+if return_all_records is True (i.e. by default).</td>
+</tr>
+<tr class="row-odd"><td>result_record_count</td>
+<td>Optional integer. This option can be used for fetching query results
+up to the result_record_count specified. When result_offset is
+specified but this parameter is not, the map service defaults it to
+max_record_count. The maximum value for this parameter is the value
+of the layer’s max_record_count property. This option is ignored if
+return_all_records is True (i.e. by default).</td>
+</tr>
+<tr class="row-even"><td>quantization_parameters</td>
+<td>Optional dict. Used to project the geometry onto a virtual grid,
+likely representing pixels on the screen.</td>
+</tr>
+<tr class="row-odd"><td>return_centroid</td>
+<td>Optional boolean. Used to return the geometry centroid associated
+with each feature returned. If true, the result includes the geometry
+centroid. The default is false.</td>
+</tr>
+<tr class="row-even"><td>return_all_records</td>
+<td>Optional boolean. When True, the query operation will call the
+service until all records that satisfy the where_clause are
+returned. Note: result_offset and result_record_count will be
+ignored if return_all_records is True. Also, if return_count_only,
+return_ids_only, or return_extent_only are True, this parameter
+will be ignored.</td>
+</tr>
+<tr class="row-odd"><td>result_type</td>
+<td>Optional string. The result_type parameter can be used to control
+the number of features returned by the query operation.
+Values: None | standard | tile</td>
+</tr>
+<tr class="row-even"><td>historic_moment</td>
+<td><p class="first">Optional integer. The historic moment to query. This parameter
+applies only if the layer is archiving enabled and the
+supportsQueryWithHistoricMoment property is set to true. This
+property is provided in the layer resource.</p>
+<p class="last">If historic_moment is not specified, the query will apply to the
+current features.</p>
+</td>
+</tr>
+<tr class="row-odd"><td>sql_format</td>
+<td>Optional string.  The sql_format parameter can be either standard
+SQL92 standard or it can use the native SQL of the underlying
+datastore native. The default is none which means the sql_format
+depends on useStandardizedQuery parameter.
+Values: none | standard | native</td>
+</tr>
+<tr class="row-even"><td>return_true_curves</td>
+<td>Optional boolean. When set to true, returns true curves in output
+geometries. When set to false, curves are converted to densified
+polylines or polygons.</td>
+</tr>
+<tr class="row-odd"><td>return_exceeded_limit_features</td>
+<td><p class="first">Optional boolean. Optional parameter which is true by default. When
+set to true, features are returned even when the results include
+‘exceededTransferLimit’: True.</p>
+<p class="last">When set to false and querying with resultType = tile features are
+not returned when the results include ‘exceededTransferLimit’: True.
+This allows a client to find the resolution in which the transfer
+limit is no longer exceeded without making multiple calls.</p>
+</td>
+</tr>
+<tr class="row-even"><td>kwargs</td>
+<td>Optional dict. Optional parameters that can be passed to the Query
+function.  This will allow users to pass additional parameters not
+explicitly implemented on the function. A complete list of functions
+available is documented on the Query REST API.</td>
+</tr>
+</tbody>
+</table>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">A FeatureSet containing the features matching the query unless another return type is specified, such as count</td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
 <dl class="method">
@@ -1803,58 +2203,79 @@ Feature objects including the values for the fields requested by
 the user. For related layers, if you request geometry
 information, the geometry of each feature is also returned in
 the feature set. For related tables, the feature set does not
-include geometries.
-Inputs:</p>
-<blockquote>
-<div><p>objectIds - the object IDs of the table/layer to be queried
-relationshipId - The ID of the relationship to be queried.
-outFields - the list of fields from the related table/layer</p>
-<blockquote>
-<div>to be included in the returned feature set. This
-list is a comma delimited list of field names. If
-you specify the shape field in the list of return
-fields, it is ignored. To request geometry, set
-returnGeometry to true.
-You can also specify the wildcard “*” as the
-value of this parameter. In this case, the result
-s will include all the field values.</div></blockquote>
-<dl class="docutils">
-<dt>definitionExpression - The definition expression to be</dt>
-<dd>applied to the related table/layer.
-From the list of objectIds, only those
-records that conform to this
-expression are queried for related
-records.</dd>
-<dt>returnGeometry - If true, the feature set includes the</dt>
-<dd>geometry associated with each feature. The
-default is true.</dd>
-<dt>maxAllowableOffset - This option can be used to specify the</dt>
-<dd>maxAllowableOffset to be used for
-generalizing geometries returned by the
-query operation. The maxAllowableOffset
-is in the units of the outSR. If outSR
-is not specified, then
-maxAllowableOffset is assumed to be in
-the unit of the spatial reference of the
-map.</dd>
-<dt>geometryPrecision - This option can be used to specify the</dt>
-<dd>number of decimal places in the response
-geometries.</dd>
-</dl>
-<p>outWKID - The spatial reference of the returned geometry.
-gdbVersion - The geodatabase version to query. This parameter</p>
-<blockquote>
-<div>applies only if the isDataVersioned property of
-the layer queried is true.</div></blockquote>
-<dl class="docutils">
-<dt>returnZ - If true, Z values are included in the results if</dt>
-<dd>the features have Z values. Otherwise, Z values are
-not returned. The default is false.</dd>
-<dt>returnM - If true, M values are included in the results if</dt>
-<dd>the features have M values. Otherwise, M values are
-not returned. The default is false.</dd>
-</dl>
-</div></blockquote>
+include geometries.</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="24%" />
+<col width="76%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><strong>Argument</strong></td>
+<td><strong>Description</strong></td>
+</tr>
+<tr class="row-even"><td>object_ids</td>
+<td>Required string. The object IDs of the table/layer to be queried</td>
+</tr>
+<tr class="row-odd"><td>relationship_id</td>
+<td>Required string. The ID of the relationship to be queried.</td>
+</tr>
+<tr class="row-even"><td>out_fields</td>
+<td>Required string. the list of fields from the related table/layer
+to be included in the returned feature set. This list is a comma
+delimited list of field names. If you specify the shape field in the
+list of return fields, it is ignored. To request geometry, set
+return_geometry to true. You can also specify the wildcard “*” as
+the value of this parameter. In this case, the results will include
+all the field values.</td>
+</tr>
+<tr class="row-odd"><td>definition_expression</td>
+<td>Optional string. The definition expression to be applied to the
+related table/layer. From the list of objectIds, only those records
+that conform to this expression are queried for related records.</td>
+</tr>
+<tr class="row-even"><td>return_geometry</td>
+<td>Optional boolean. If true, the feature set includes the geometry
+associated with each feature. The default is true.</td>
+</tr>
+<tr class="row-odd"><td>max_allowable_offset</td>
+<td>Optional float. This option can be used to specify the
+max_allowable_offset to be used for generalizing geometries returned
+by the query operation. The max_allowable_offset is in the units of
+the outSR. If out_wkid is not specified, then max_allowable_offset
+is assumed to be in the unit of the spatial reference of the map.</td>
+</tr>
+<tr class="row-even"><td>geometry_precision</td>
+<td>Optional integer. This option can be used to specify the number of
+decimal places in the response geometries.</td>
+</tr>
+<tr class="row-odd"><td>out_wkid</td>
+<td>Optional Integer. The spatial reference of the returned geometry.</td>
+</tr>
+<tr class="row-even"><td>gdb_version</td>
+<td>Optional string. The geodatabase version to query. This parameter
+applies only if the isDataVersioned property of the layer queried is
+true.</td>
+</tr>
+<tr class="row-odd"><td>return_z</td>
+<td>Optional boolean. If true, Z values are included in the results if
+the features have Z values. Otherwise, Z values are not returned.
+The default is false.</td>
+</tr>
+<tr class="row-even"><td>return_m</td>
+<td>Optional boolean. If true, M values are included in the results if
+the features have M values. Otherwise, M values are not returned.
+The default is false.</td>
+</tr>
+</tbody>
+</table>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">dict</td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
 <dl class="method">
@@ -1871,24 +2292,25 @@ calculate operation.
 validate_sql also prevents SQL injection. In addition, all table
 and field names used in the SQL expression or WHERE clause are
 validated to ensure they are valid tables and fields.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
+<table border="1" class="docutils">
+<colgroup>
+<col width="31%" />
+<col width="69%" />
+</colgroup>
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><table class="first last docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">sql:</th><td class="field-body"><p class="first">the SQL expression of WHERE clause to validate
-Example: “Population &gt; 300000”</p>
-</td>
+<tr class="row-odd"><td><strong>Argument</strong></td>
+<td><strong>Description</strong></td>
 </tr>
-<tr class="field-even field"><th class="field-name">sql_type:</th><td class="field-body"><p class="first">Three SQL types are supported in validate_sql
-- where (default) - Represents the custom WHERE clause the user</p>
-<blockquote>
-<div><p>can compose when querying a layer or using calculate.</p>
-</div></blockquote>
-<ul class="last simple">
+<tr class="row-even"><td>sql</td>
+<td>Required String. The SQL expression of WHERE clause to validate.
+Example: “Population &gt; 300000”</td>
+</tr>
+<tr class="row-odd"><td>sql_type</td>
+<td><dl class="first last docutils">
+<dt>Optional String. Three SQL types are supported in validate_sql</dt>
+<dd><ul class="first last simple">
+<li>where (default) - Represents the custom WHERE clause the user
+can compose when querying a layer or using calculate.</li>
 <li>expression - Represents an SQL-92 expression. Currently,
 expression is used as a default value expression when adding a
 new field or using the calculate API.</li>
@@ -1899,11 +2321,17 @@ statement directly. It has been added to the validateSQL for
 completeness.
 Values: where | expression | statement</li>
 </ul>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
 </table>
-</td>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">dict</td>
 </tr>
 </tbody>
 </table>
@@ -1960,58 +2388,79 @@ Feature objects including the values for the fields requested by
 the user. For related layers, if you request geometry
 information, the geometry of each feature is also returned in
 the feature set. For related tables, the feature set does not
-include geometries.
-Inputs:</p>
-<blockquote>
-<div><p>objectIds - the object IDs of the table/layer to be queried
-relationshipId - The ID of the relationship to be queried.
-outFields - the list of fields from the related table/layer</p>
-<blockquote>
-<div>to be included in the returned feature set. This
-list is a comma delimited list of field names. If
-you specify the shape field in the list of return
-fields, it is ignored. To request geometry, set
-returnGeometry to true.
-You can also specify the wildcard “*” as the
-value of this parameter. In this case, the result
-s will include all the field values.</div></blockquote>
-<dl class="docutils">
-<dt>definitionExpression - The definition expression to be</dt>
-<dd>applied to the related table/layer.
-From the list of objectIds, only those
-records that conform to this
-expression are queried for related
-records.</dd>
-<dt>returnGeometry - If true, the feature set includes the</dt>
-<dd>geometry associated with each feature. The
-default is true.</dd>
-<dt>maxAllowableOffset - This option can be used to specify the</dt>
-<dd>maxAllowableOffset to be used for
-generalizing geometries returned by the
-query operation. The maxAllowableOffset
-is in the units of the outSR. If outSR
-is not specified, then
-maxAllowableOffset is assumed to be in
-the unit of the spatial reference of the
-map.</dd>
-<dt>geometryPrecision - This option can be used to specify the</dt>
-<dd>number of decimal places in the response
-geometries.</dd>
-</dl>
-<p>outWKID - The spatial reference of the returned geometry.
-gdbVersion - The geodatabase version to query. This parameter</p>
-<blockquote>
-<div>applies only if the isDataVersioned property of
-the layer queried is true.</div></blockquote>
-<dl class="docutils">
-<dt>returnZ - If true, Z values are included in the results if</dt>
-<dd>the features have Z values. Otherwise, Z values are
-not returned. The default is false.</dd>
-<dt>returnM - If true, M values are included in the results if</dt>
-<dd>the features have M values. Otherwise, M values are
-not returned. The default is false.</dd>
-</dl>
-</div></blockquote>
+include geometries.</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="24%" />
+<col width="76%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><strong>Argument</strong></td>
+<td><strong>Description</strong></td>
+</tr>
+<tr class="row-even"><td>object_ids</td>
+<td>Optional string. the object IDs of the table/layer to be queried.</td>
+</tr>
+<tr class="row-odd"><td>relationship_id</td>
+<td>Optional string. The ID of the relationship to be queried.</td>
+</tr>
+<tr class="row-even"><td>out_fields</td>
+<td>Optional string.the list of fields from the related table/layer
+to be included in the returned feature set. This list is a comma
+delimited list of field names. If you specify the shape field in the
+list of return fields, it is ignored. To request geometry, set
+return_geometry to true. You can also specify the wildcard “*” as the
+value of this parameter. In this case, the results will include all
+the field values.</td>
+</tr>
+<tr class="row-odd"><td>definition_expression</td>
+<td>Optional string. The definition expression to be applied to the
+related table/layer. From the list of objectIds, only those records
+that conform to this expression are queried for related records.</td>
+</tr>
+<tr class="row-even"><td>return_geometry</td>
+<td>Optional boolean. If true, the feature set includes the geometry
+associated with each feature. The default is true.</td>
+</tr>
+<tr class="row-odd"><td>max_allowable_offset</td>
+<td>Optional float. This option can be used to specify the
+max_allowable_offset to be used for generalizing geometries returned
+by the query operation. The max_allowable_offset is in the units of
+the outSR. If outSR is not specified, then max_allowable_offset is
+assumed to be in the unit of the spatial reference of the map.</td>
+</tr>
+<tr class="row-even"><td>geometry_precision</td>
+<td>Optional integer. This option can be used to specify the number of
+decimal places in the response geometries.</td>
+</tr>
+<tr class="row-odd"><td>out_wkid</td>
+<td>Optional integer. The spatial reference of the returned geometry.</td>
+</tr>
+<tr class="row-even"><td>gdb_version</td>
+<td>Optional string. The geodatabase version to query. This parameter
+applies only if the isDataVersioned property of the layer queried is
+true.</td>
+</tr>
+<tr class="row-odd"><td>return_z</td>
+<td>Optional boolean. If true, Z values are included in the results if
+the features have Z values. Otherwise, Z values are not returned.
+The default is false.</td>
+</tr>
+<tr class="row-even"><td>return_m</td>
+<td>Optional boolean. If true, M values are included in the results if
+the features have M values. Otherwise, M values are not returned.
+The default is false.</td>
+</tr>
+</tbody>
+</table>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">dict</td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
 <dl class="method">
@@ -2019,20 +2468,31 @@ not returned. The default is false.</dd>
 <code class="descname">upload</code><span class="sig-paren">(</span><em>path</em>, <em>description=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.features.FeatureLayerCollection.upload" title="Permalink to this definition">¶</a></dt>
 <dd><p>Uploads a new item to the server. Once the operation is completed
 successfully, the JSON structure of the uploaded item is returned.</p>
-<dl class="docutils">
-<dt>Parameters:</dt>
-<dd><table class="first last docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
+<table border="1" class="docutils">
+<colgroup>
+<col width="18%" />
+<col width="82%" />
+</colgroup>
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">path:</th><td class="field-body">path of the file to upload</td>
+<tr class="row-odd"><td><strong>Argument</strong></td>
+<td><strong>Description</strong></td>
 </tr>
-<tr class="field-even field"><th class="field-name">description:</th><td class="field-body">optional descriptive text for the upload item</td>
+<tr class="row-even"><td>path</td>
+<td>Optional string. Filepath of the file to upload.</td>
+</tr>
+<tr class="row-odd"><td>description</td>
+<td>Optional string. Descriptive text for the uploaded item.</td>
 </tr>
 </tbody>
 </table>
-</dd>
-</dl>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">boolean</td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
 </dd></dl>
@@ -2136,30 +2596,37 @@ spatial reference will be UnknownCoordinateSystem.</p>
 <dl class="method">
 <dt id="arcgis.features.FeatureSet.save">
 <code class="descname">save</code><span class="sig-paren">(</span><em>save_location</em>, <em>out_name</em>, <em>encoding=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.features.FeatureSet.save" title="Permalink to this definition">¶</a></dt>
-<dd><p>Saves a featureset object to a feature class
-Input:</p>
-<blockquote>
-<div><p>saveLocation - output location of the data
-outName - name of the table the data will be saved to</p>
-<blockquote>
-<div><blockquote>
-<div><dl class="docutils">
-<dt>Types:</dt>
-<dd><p class="first"><a href="#id1"><span class="problematic" id="id2">*</span></a>.csv - CSV file returned
-<a href="#id3"><span class="problematic" id="id4">*</span></a>.json - text file with json
-* If no extension, a shapefile if the path is a</p>
-<blockquote class="last">
-<div>folder, a featureclass if the path is a GDB</div></blockquote>
-</dd>
-</dl>
-</div></blockquote>
-<dl class="docutils">
-<dt>encoding - character encoding is used to represent a repertoire</dt>
-<dd>of characters by some kind of encoding system. The
-default is None.</dd>
-</dl>
-</div></blockquote>
-</div></blockquote>
+<dd><p>Saves a featureset object to a feature class</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="20%" />
+<col width="80%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><strong>Argument</strong></td>
+<td><strong>Description</strong></td>
+</tr>
+<tr class="row-even"><td>save_location</td>
+<td>Required string. Path to export the FeatureSet to.</td>
+</tr>
+<tr class="row-odd"><td>out_name</td>
+<td>Required string. Name of the saved table.</td>
+</tr>
+<tr class="row-even"><td>encoding</td>
+<td>Optional string. character encoding is used to represent a
+repertoire of characters by some kind of encoding system. The
+default is None.</td>
+</tr>
+</tbody>
+</table>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">string</td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
 <dl class="attribute">
@@ -2240,17 +2707,23 @@ data into new forms of information for users.</p>
 available to the object at creation.  It will first leverage the arcpy
 geometry engine, then shapely, then it will create the geometry objects
 without any engine.</p>
-<p><strong>Scenerios</strong>
-=================   ======================================================
-<strong>Engine Type</strong>     <strong>Functionality</strong>
-—————–   ——————————————————
-ArcPy               Users will have the full functionality provided by the</p>
-<blockquote>
-<div>API.</div></blockquote>
-<p>—————–   ——————————————————
-Shapely             Users get a sub-set of operations, and all properties.</p>
-<blockquote>
-<div><table class="docutils field-list" frame="void" rules="none">
+<p><strong>Scenerios</strong></p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="24%" />
+<col width="76%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><strong>Engine Type</strong></td>
+<td><strong>Functionality</strong></td>
+</tr>
+<tr class="row-even"><td>ArcPy</td>
+<td>Users will have the full functionality provided by the
+API.</td>
+</tr>
+<tr class="row-odd"><td>Shapely</td>
+<td><p class="first">Users get a sub-set of operations, and all properties.</p>
+<table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
@@ -2304,11 +2777,14 @@ Shapely             Users get a sub-set of operations, and all properties.</p>
 <li>union</li>
 <li>within</li>
 </ul>
-<p>Everything else will return None</p>
-</div></blockquote>
-<p>—————–   ——————————————————
-No Engine           Values will return None by default
-=================   ======================================================</p>
+<p class="last">Everything else will return None</p>
+</td>
+</tr>
+<tr class="row-even"><td>No Engine</td>
+<td>Values will return None by default</td>
+</tr>
+</tbody>
+</table>
 <dl class="docutils">
 <dt>Required Parameters:</dt>
 <dd>None</dd>
@@ -2365,29 +2841,72 @@ Make a deep copy, i.e. also copy data</td>
 <dt id="arcgis.features.SpatialDataFrame.erase">
 <code class="descname">erase</code><span class="sig-paren">(</span><em>other</em>, <em>inplace=False</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.features.SpatialDataFrame.erase" title="Permalink to this definition">¶</a></dt>
 <dd><p>Erases</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="28%" />
+<col width="72%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><strong>Argument</strong></td>
+<td><strong>Description</strong></td>
+</tr>
+<tr class="row-even"><td>other</td>
+<td>Required Geometry. A geometry object to erase from other geometries.</td>
+</tr>
+<tr class="row-odd"><td>inplace</td>
+<td>Optional boolean. Default False. Modify the SpatialDataFrame in
+place (do not create a new object)</td>
+</tr>
+</tbody>
+</table>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">SpatialDataFrame</td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
 <dl class="staticmethod">
 <dt id="arcgis.features.SpatialDataFrame.from_df">
 <em class="property">static </em><code class="descname">from_df</code><span class="sig-paren">(</span><em>df</em>, <em>address_column='address'</em>, <em>geocoder=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.features.SpatialDataFrame.from_df" title="Permalink to this definition">¶</a></dt>
-<dd><p>Returns a SpatialDataFrame from a dataframe with an address column.
-Inputs:</p>
-<blockquote>
-<div>df: Pandas dataframe with an address column</div></blockquote>
-<dl class="docutils">
-<dt>Optional Parameters:</dt>
-<dd><dl class="first last docutils">
-<dt>address_column: string, default “address”. This is the name of a</dt>
-<dd>column in the specified dataframe that contains
-addresses (as strings). The addresses are batch geocoded using
-the GIS’s first configured geocoder and their locations used as
-the geometry of the spatial dataframe. Ignored if the
-‘geometry’ parameter is also specified.</dd>
-</dl>
-</dd>
-<dt>geocoder:  the geocoder to be used. If not specified,</dt>
-<dd>the active GIS’s first geocoder is used.</dd>
-</dl>
+<dd><p>Returns a SpatialDataFrame from a dataframe with an address column.</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="26%" />
+<col width="74%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><strong>Argument</strong></td>
+<td><strong>Description</strong></td>
+</tr>
+<tr class="row-even"><td>df</td>
+<td>Required Pandas DataFrame. Source dataset</td>
+</tr>
+<tr class="row-odd"><td>address_column</td>
+<td>Optional String. The default is “address”. This is the
+name of a column in the specified dataframe that contains
+addresses (as strings). The addresses are batch geocoded
+using the GIS’s first configured geocoder and their
+locations used as the geometry of the spatial dataframe.
+Ignored if the ‘geometry’ parameter is also specified.</td>
+</tr>
+<tr class="row-even"><td>geocoder</td>
+<td>Optional Geocoder. The geocoder to be used. If not
+specified, the active GIS’s first geocoder is used.</td>
+</tr>
+</tbody>
+</table>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">SpatialDataFrame</td>
+</tr>
+</tbody>
+</table>
 <p>NOTE: Credits will be consumed for batch_geocoding, from
 the GIS to which the geocoder belongs.</p>
 </dd></dl>
@@ -2395,16 +2914,38 @@ the GIS to which the geocoder belongs.</p>
 <dl class="staticmethod">
 <dt id="arcgis.features.SpatialDataFrame.from_featureclass">
 <em class="property">static </em><code class="descname">from_featureclass</code><span class="sig-paren">(</span><em>filename</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.features.SpatialDataFrame.from_featureclass" title="Permalink to this definition">¶</a></dt>
-<dd><p>Returns a SpatialDataFrame from a feature class.
-Inputs:</p>
-<blockquote>
-<div>filename: full path to the feature class</div></blockquote>
-<dl class="docutils">
-<dt>Optional Parameters:</dt>
-<dd>sql_clause: sql clause to parse data down
-where_clause: where statement
-sr: spatial reference object</dd>
-</dl>
+<dd><p>Returns a SpatialDataFrame from a feature class.</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="26%" />
+<col width="74%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><strong>Argument</strong></td>
+<td><strong>Description</strong></td>
+</tr>
+<tr class="row-even"><td>filename</td>
+<td>Required string. The full path to the feature class</td>
+</tr>
+<tr class="row-odd"><td>sql_clause</td>
+<td>Optional string. The sql clause to parse data down</td>
+</tr>
+<tr class="row-even"><td>where_clause</td>
+<td>Optional string. A where statement</td>
+</tr>
+<tr class="row-odd"><td>sr</td>
+<td>Optional SpatialReference. A spatial reference object</td>
+</tr>
+</tbody>
+</table>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">SpatialDataFrame</td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
 <dl class="staticmethod">
@@ -2441,22 +2982,66 @@ chunksize : optional, nrows to include in iteration, return an iterator</p>
 <dl class="staticmethod">
 <dt id="arcgis.features.SpatialDataFrame.from_layer">
 <em class="property">static </em><code class="descname">from_layer</code><span class="sig-paren">(</span><em>layer</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.features.SpatialDataFrame.from_layer" title="Permalink to this definition">¶</a></dt>
-<dd><p>Returns a SpatialDataFrame from a FeatureLayer or Table object.
-Inputs:</p>
-<blockquote>
-<div><table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
+<dd><p>Returns a SpatialDataFrame/Pandas’ Dataframe from a FeatureLayer or Table object.</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="18%" />
+<col width="82%" />
+</colgroup>
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">param layer:</th><td class="field-body">FeatureLayer or Table</td>
+<tr class="row-odd"><td><strong>Arguments</strong></td>
+<td><strong>Description</strong></td>
 </tr>
-<tr class="field-even field"><th class="field-name">param gis:</th><td class="field-body">GIS object</td>
+<tr class="row-even"><td>layer</td>
+<td>required FeatureLayer/Table. This is the service endpoint object.</td>
 </tr>
 </tbody>
 </table>
-</div></blockquote>
-<p>Returns a SpatialDataFrame for services with geometry and Panda’s
-Dataframe for table services.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">SpatialDataFrame for feature layers with geometry and Panda’s Dataframe for tables</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="staticmethod">
+<dt id="arcgis.features.SpatialDataFrame.from_xy">
+<em class="property">static </em><code class="descname">from_xy</code><span class="sig-paren">(</span><em>df</em>, <em>x_column</em>, <em>y_column</em>, <em>sr=4326</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.features.SpatialDataFrame.from_xy" title="Permalink to this definition">¶</a></dt>
+<dd><p>Converts a Pandas DataFrame into a Spatial DataFrame by providing the X/Y columns.</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="26%" />
+<col width="74%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><strong>Argument</strong></td>
+<td><strong>Description</strong></td>
+</tr>
+<tr class="row-even"><td>df</td>
+<td>Required Pandas DataFrame. Source dataset</td>
+</tr>
+<tr class="row-odd"><td>x_column</td>
+<td>Required string.  The name of the X-coordinate series</td>
+</tr>
+<tr class="row-even"><td>y_column</td>
+<td>Required string.  The name of the Y-coordinate series</td>
+</tr>
+<tr class="row-odd"><td>sr</td>
+<td>Optional int.  The wkid number of the spatial reference.</td>
+</tr>
+</tbody>
+</table>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">SpatialDataFrame</td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
 <dl class="attribute">
@@ -2472,11 +3057,68 @@ Dataframe for table services.</p>
 </dd></dl>
 
 <dl class="method">
+<dt id="arcgis.features.SpatialDataFrame.info">
+<code class="descname">info</code><span class="sig-paren">(</span><em>verbose=None</em>, <em>buf=None</em>, <em>max_cols=None</em>, <em>memory_usage=None</em>, <em>null_counts=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.features.SpatialDataFrame.info" title="Permalink to this definition">¶</a></dt>
+<dd><p>Concise summary of a DataFrame.</p>
+<dl class="docutils">
+<dt>verbose <span class="classifier-delimiter">:</span> <span class="classifier">{None, True, False}, optional</span></dt>
+<dd>Whether to print the full summary.
+None follows the <cite>display.max_info_columns</cite> setting.
+True or False overrides the <cite>display.max_info_columns</cite> setting.</dd>
+</dl>
+<p>buf : writable buffer, defaults to sys.stdout
+max_cols : int, default None</p>
+<blockquote>
+<div>Determines whether full summary or short summary is printed.
+None follows the <cite>display.max_info_columns</cite> setting.</div></blockquote>
+<dl class="docutils">
+<dt>memory_usage <span class="classifier-delimiter">:</span> <span class="classifier">boolean/string, default None</span></dt>
+<dd>Specifies whether total memory usage of the DataFrame
+elements (including index) should be displayed. None follows
+the <cite>display.memory_usage</cite> setting. True or False overrides
+the <cite>display.memory_usage</cite> setting. A value of ‘deep’ is equivalent
+of True, with deep introspection. Memory usage is shown in
+human-readable units (base-2 representation).</dd>
+<dt>null_counts <span class="classifier-delimiter">:</span> <span class="classifier">boolean, default None</span></dt>
+<dd><p class="first">Whether to show the non-null counts</p>
+<ul class="last simple">
+<li>If None, then only show if the frame is smaller than
+max_info_rows and max_info_columns.</li>
+<li>If True, always show counts.</li>
+<li>If False, never show counts.</li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
 <dt id="arcgis.features.SpatialDataFrame.merge_datasets">
 <code class="descname">merge_datasets</code><span class="sig-paren">(</span><em>other</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.features.SpatialDataFrame.merge_datasets" title="Permalink to this definition">¶</a></dt>
 <dd><p>This operation combines two dataframes into one new DataFrame.
 If the operation is combining two SpatialDataFrames, the
 geometry_type must match.</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="28%" />
+<col width="72%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><strong>Argument</strong></td>
+<td><strong>Description</strong></td>
+</tr>
+<tr class="row-even"><td>other</td>
+<td>Required SpatialDataFrame. Another SpatialDataFrame to combine.</td>
+</tr>
+</tbody>
+</table>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">SpatialDataFrame</td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
 <dl class="method">
@@ -3226,21 +3868,69 @@ create_renderer method.</p>
 <dt id="arcgis.features.SpatialDataFrame.reproject">
 <code class="descname">reproject</code><span class="sig-paren">(</span><em>spatial_reference</em>, <em>transformation=None</em>, <em>inplace=False</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.features.SpatialDataFrame.reproject" title="Permalink to this definition">¶</a></dt>
 <dd><p>Reprojects a given dataframe into a new coordinate system.</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="28%" />
+<col width="72%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><strong>Argument</strong></td>
+<td><strong>Description</strong></td>
+</tr>
+<tr class="row-even"><td>spatial_reference</td>
+<td>Required Integer/SpatialReference. The spatial reference the data
+should be reprojected into.</td>
+</tr>
+<tr class="row-odd"><td>transformation</td>
+<td>Optional string. The optional transformation string.</td>
+</tr>
+<tr class="row-even"><td>inplace</td>
+<td>Optional boolean. Default False. Modify the SpatialDataFrame in
+place (do not create a new object)</td>
+</tr>
+</tbody>
+</table>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">SpatialDataFrame</td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
 <dl class="method">
 <dt id="arcgis.features.SpatialDataFrame.select_by_location">
 <code class="descname">select_by_location</code><span class="sig-paren">(</span><em>other</em>, <em>matches_only=True</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.features.SpatialDataFrame.select_by_location" title="Permalink to this definition">¶</a></dt>
 <dd><p>Selects all rows in a given SpatialDataFrame based on a given geometry</p>
-<dl class="docutils">
-<dt>Inputs:</dt>
-<dd><p class="first">other: arcpy.Geometry object
-matches_only: boolean value, if true, only matched records will be</p>
-<blockquote class="last">
-<div>returned, else a field called ‘select_by_location’ will be added
-to the dataframe with the results of the select by location.</div></blockquote>
-</dd>
-</dl>
+<table border="1" class="docutils">
+<colgroup>
+<col width="28%" />
+<col width="72%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><strong>Argument</strong></td>
+<td><strong>Description</strong></td>
+</tr>
+<tr class="row-even"><td>other</td>
+<td>Required Geometry. A geometry object to check for intersection.</td>
+</tr>
+<tr class="row-odd"><td>matches_only</td>
+<td>Optional boolean.  if true, only matched records will be
+returned, else a field called ‘select_by_location’ will be added
+to the dataframe with the results of the select by location.</td>
+</tr>
+</tbody>
+</table>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">SpatialDataFrame</td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
 <dl class="method">
@@ -3249,21 +3939,42 @@ to the dataframe with the results of the select by location.</div></blockquote>
 <dd><p>Set the SpatialDataFrame geometry using either an existing column or
 the specified input. By default yields a new object.</p>
 <p>The original geometry column is replaced with the input.</p>
-<p>Parameters:
-col: column label or array
-drop: boolean, default True</p>
-<blockquote>
-<div>Delete column to be used as the new geometry</div></blockquote>
-<dl class="docutils">
-<dt>inplace: boolean, default False</dt>
-<dd>Modify the SpatialDataFrame in place (do not create a new object)</dd>
-<dt>sr <span class="classifier-delimiter">:</span> <span class="classifier">str/integer the wkid value</span></dt>
-<dd>Coordinate system to use. If passed, overrides both DataFrame and
-col’s sr. Otherwise, tries to get sr from passed col values or
-DataFrame.</dd>
-</dl>
-<p>Returns:
-SpatialDataFrame</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="28%" />
+<col width="72%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><strong>Argument</strong></td>
+<td><strong>Description</strong></td>
+</tr>
+<tr class="row-even"><td>col</td>
+<td>Required string/np.array. column label or array</td>
+</tr>
+<tr class="row-odd"><td>drop</td>
+<td>Optional boolean. Default True. Delete column to be used as the new
+geometry</td>
+</tr>
+<tr class="row-even"><td>inplace</td>
+<td>Optional boolean. Default False. Modify the SpatialDataFrame in
+place (do not create a new object)</td>
+</tr>
+<tr class="row-odd"><td>sr</td>
+<td>Optional SpatialReference/Integer. The wkid value Coordinate
+system to use. If passed, overrides both DataFrame and col’s sr.
+Otherwise, tries to get sr from passed col values or
+DataFrame.</td>
+</tr>
+</tbody>
+</table>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">SpatialDataFrame</td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
 <dl class="method">
@@ -3313,33 +4024,73 @@ DataFrame.</td>
 <dt id="arcgis.features.SpatialDataFrame.to_featureclass">
 <code class="descname">to_featureclass</code><span class="sig-paren">(</span><em>out_location</em>, <em>out_name</em>, <em>overwrite=True</em>, <em>skip_invalid=True</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.features.SpatialDataFrame.to_featureclass" title="Permalink to this definition">¶</a></dt>
 <dd><p>converts a SpatialDataFrame to a feature class</p>
-<dl class="docutils">
-<dt>Parameters:</dt>
-<dd><table class="first last docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
+<table border="1" class="docutils">
+<colgroup>
+<col width="26%" />
+<col width="74%" />
+</colgroup>
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">out_location:</th><td class="field-body">save location workspace</td>
+<tr class="row-odd"><td><strong>Argument</strong></td>
+<td><strong>Description</strong></td>
 </tr>
-<tr class="field-even field"><th class="field-name">out_name:</th><td class="field-body">name of the feature class to save as</td>
+<tr class="row-even"><td>out_location</td>
+<td>Required string. A save location workspace</td>
 </tr>
-<tr class="field-odd field"><th class="field-name">overwrite:</th><td class="field-body">boolean. True means to erase and replace value, false
-means to append</td>
+<tr class="row-odd"><td>out_name</td>
+<td>Required string. The name of the feature class to save as</td>
 </tr>
-<tr class="field-even field"><th class="field-name">skip_invalids:</th><td class="field-body">if True, any bad rows will be ignored.</td>
+<tr class="row-even"><td>overwrite</td>
+<td>Optional boolean. True means to erase and replace value,
+false means to append</td>
+</tr>
+<tr class="row-odd"><td>skip_invalids</td>
+<td>Optional boolean. If True, any bad rows will be ignored.</td>
 </tr>
 </tbody>
 </table>
-</dd>
-<dt>Output:</dt>
-<dd>tuple of feature class path and list of bad rows by index number.</dd>
-</dl>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">string</td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
 <dl class="method">
 <dt id="arcgis.features.SpatialDataFrame.to_featurelayer">
 <code class="descname">to_featurelayer</code><span class="sig-paren">(</span><em>title</em>, <em>gis=None</em>, <em>tags=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.features.SpatialDataFrame.to_featurelayer" title="Permalink to this definition">¶</a></dt>
 <dd><p>publishes a spatial dataframe to a new feature layer</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="28%" />
+<col width="72%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><strong>Argument</strong></td>
+<td><strong>Description</strong></td>
+</tr>
+<tr class="row-even"><td>title</td>
+<td>Required string. The name of the service</td>
+</tr>
+<tr class="row-odd"><td>gis</td>
+<td>Optional GIS. The GIS connection object</td>
+</tr>
+<tr class="row-even"><td>tags</td>
+<td>Optional string. A comma seperated list of descriptive words for the
+service</td>
+</tr>
+</tbody>
+</table>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">FeatureLayer</td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
 <dl class="method">
@@ -3541,7 +4292,7 @@ in the store wherever possible</dd>
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'./',
-            VERSION:'1.4.0',
+            VERSION:'1.4.1',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  true,
