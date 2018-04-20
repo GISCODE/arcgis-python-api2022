@@ -10,6 +10,13 @@ WebMap
     :undoc-members:
     :show-inheritance:
 
+OfflineMapAreaManager
+-----------------------
+.. autoclass:: arcgis.mapping.OfflineMapAreaManager
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
 WebScene
 -------------------
 .. autoclass:: arcgis.mapping.WebScene
