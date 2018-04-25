@@ -1,4 +1,4 @@
-Esri welcomes contributions from anyone and everyone. Please see our [guidelines for contributing](https://github.com/esri/contributing). Please expect any pull request to go through a peer review before being accepted.
+Esri welcomes contributions from anyone and everyone. Please see our [guidelines for contributing](https://github.com/esri/contributing). Please expect any pull requests to go through a peer review before being accepted.
 
 ### Before filing an issue
 
