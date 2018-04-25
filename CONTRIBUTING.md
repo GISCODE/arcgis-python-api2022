@@ -4,7 +4,7 @@ Esri welcomes contributions from anyone and everyone. Please see our [guidelines
 
 Please take a look at [previous issues](https://github.com/Esri/arcgis-python-api/issues?q=is%3Aissue+is%3Aclosed) that resolve common problems.
 
-If you're just looking for help, you'll probably attract the most eyes if you post in the [GeoNet Forums](https://community.esri.com/groups/arcgis-python-api/) or the [GIS Stackexchange](https://gis.stackexchange.com/questions/tagged/arcgis-python-api).
+If you're just looking for help, you'll probably attract the most eyes if you post in the [GeoNet Forums](https://community.esri.com/groups/arcgis-python-api/).
 
 If you think you're encountering a new bug, please feel free to log an [issue](https://github.com/Esri/arcgis-python-api/issues/new) and include the steps to reproduce the problem.
 
