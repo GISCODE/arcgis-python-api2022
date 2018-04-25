@@ -26,6 +26,7 @@ Contents:
    arcgis.realtime
    arcgis.schematics
    arcgis.widgets
+   arcgis.apps
 
 
 Indices and tables
