@@ -16,10 +16,10 @@ If you think you're encountering a new bug, please feel free to log an [issue](h
 
 Do you see an error in an existing notebook? Is there a typo, a misnamed variable, and do you know how to fix it?
 * Make the fix in the notebook
-* If you made code changes, re-run the appropriate cells in the notebook
+* If you made code changes, re-run the appropriate cells in the notebook (Don't re-run every cell in the notebook unless necessary)
 * Make a copy of the `dev_site_current` branch on your local fork
 * Add the updated notebook to your branch on your fork
-* [Open a pull request](https://help.github.com/articles/about-pull-requests/) from your fork's branch to this repository's `dev_site_current` branch
+* [Open a pull request](https://help.github.com/articles/creating-a-pull-request-from-a-fork/) from your fork's branch to this repository's `dev_site_current` branch
 
 # Adding new sample notebooks
 
@@ -29,4 +29,4 @@ Do you have a notebook that shows off functionality of the API? Do you want to s
 * Make a copy of the `dev_site_next_release` branch on your local fork
 * Place the notebook in the correct folder in the `samples/` folder on your fork
 * Add the notebook to your branch on your fork
-* [Open a pull request](https://help.github.com/articles/about-pull-requests/) from your fork's branch to this repository's `dev_site_current` branch
+* [Open a pull request](https://help.github.com/articles/creating-a-pull-request-from-a-fork/) from your fork's branch to this repository's `dev_site_current` branch
