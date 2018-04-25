@@ -23,7 +23,7 @@ Do you see an error in an existing notebook? Is there a typo, a misnamed variabl
 
 # Adding new sample notebooks
 
-Do you have a notebook that shows off functionality of the API? Do you want to see that notebook released with the next version of the ArcGIS API for Python?
+Do you have a notebook that shows off functionality of the API? Do you want to see that notebook released with the next version of the ArcGIS API for Python? We welcome your notebooks and workflows as it will benefit a large audience. Please expect your pull request to go through a proper a peer review before being accepted.
 * Create a new notebook, make sure it runs consistently on its own on a few systems
     * Make sure the notebook filename is in an `all_lowercase_underscore_delimiter_convention.ipynb`
 * Make a copy of the `dev_site_next_release` branch on your local fork
