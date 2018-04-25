@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>arcgis.geometry module &mdash; arcgis 1.4.0 documentation</title>
+  <title>arcgis.geometry module &mdash; arcgis 1.4.1 documentation</title>
   
 
   
@@ -37,7 +37,7 @@
         <link rel="index" title="Index"
               href="genindex.html"/>
         <link rel="search" title="Search" href="search.html"/>
-    <link rel="top" title="arcgis 1.4.0 documentation" href="index.html"/>
+    <link rel="top" title="arcgis 1.4.1 documentation" href="index.html"/>
         <link rel="next" title="arcgis.geometry.filters module" href="arcgis.geometry.filters.html"/>
         <link rel="prev" title="arcgis.geoenrichment module" href="arcgis.geoenrichment.html"/>
 <!-- This code block is inserted close near the <head> tag. See http://bit.ly/2BHUQzB -->
@@ -77,7 +77,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             
             
               <div class="version">
-                1.4.0
+                1.4.1
               </div>
             
           
@@ -490,12 +490,15 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="arcgis.geoanalytics.manage_data.html">arcgis.geoanalytics.manage_data module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.geoanalytics.manage_data.html#append-data">append_data</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.geoanalytics.manage_data.html#calculate-fields">calculate_fields</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.geoanalytics.manage_data.html#copy-to-data-store">copy_to_data_store</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.geoanalytics.manage_data.html#overlay-data">overlay_data</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="arcgis.geoanalytics.summarize_data.html">arcgis.geoanalytics.summarize_data module</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.geoanalytics.summarize_data.html#aggregate-points">aggregate_points</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.geoanalytics.summarize_data.html#build-multivariable-grid">build_multivariable_grid</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.geoanalytics.summarize_data.html#join-features">join_features</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.geoanalytics.summarize_data.html#reconstruct-tracks">reconstruct_tracks</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.geoanalytics.summarize_data.html#summarize-attributes">summarize_attributes</a></li>
@@ -584,6 +587,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 </li>
 <li class="toctree-l1"><a class="reference internal" href="arcgis.mapping.html">arcgis.mapping module</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.mapping.html#webmap">WebMap</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.mapping.html#offlinemapareamanager">OfflineMapAreaManager</a></li>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.mapping.html#webscene">WebScene</a></li>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.mapping.html#mapimagelayer">MapImageLayer</a></li>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.mapping.html#mapimagelayermanager">MapImageLayerManager</a></li>
@@ -602,6 +606,23 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 </li>
 <li class="toctree-l1"><a class="reference internal" href="arcgis.widgets.html">arcgis.widgets module</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.widgets.html#mapview">MapView</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.apps.html">arcgis.apps module</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.apps.html#submodules">Submodules</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="arcgis.apps.workforce.html">arcgis.apps.workforce module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.apps.workforce.html#assignment">Assignment</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.apps.workforce.html#assignmenttype">AssignmentType</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.apps.workforce.html#attachment">Attachment</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.apps.workforce.html#dispatcher">Dispatcher</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.apps.workforce.html#project">Project</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.apps.workforce.html#track">Track</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.apps.workforce.html#worker">Worker</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.apps.workforce.html#submodules">Submodules</a></li>
+</ul>
+</li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -936,7 +957,16 @@ to figure out the geometry type and returns the correct type as the example belo
 <dl class="attribute">
 <dt id="arcgis.geometry.Geometry.JSON">
 <code class="descname">JSON</code><a class="headerlink" href="#arcgis.geometry.Geometry.JSON" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>Returns an Esri JSON representation of the geometry as a string.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">string</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
 
 <dl class="attribute">
 <dt id="arcgis.geometry.Geometry.WKB">
@@ -944,6 +974,14 @@ to figure out the geometry type and returns the correct type as the example belo
 <dd><p>Returns the well-known binary (WKB) representation for OGC geometry.
 It provides a portable representation of a geometry value as a
 contiguous stream of bytes.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">bytes</td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
 <dl class="attribute">
@@ -951,7 +989,17 @@ contiguous stream of bytes.</p>
 <code class="descname">WKT</code><a class="headerlink" href="#arcgis.geometry.Geometry.WKT" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns the well-known text (WKT) representation for OGC geometry.
 It provides a portable representation of a geometry value as a text
-string.</p>
+string.
+Any true curves in the geometry will be densified into approximate
+curves in the WKT string.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">string</td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
 <dl class="method">
@@ -959,37 +1007,49 @@ string.</p>
 <code class="descname">angle_distance_to</code><span class="sig-paren">(</span><em>second_geometry</em>, <em>method='GEODESIC'</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.geometry.Geometry.angle_distance_to" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns a tuple of angle and distance to another point using a
 measurement type.</p>
-<dl class="docutils">
-<dt>Paramters:</dt>
-<dd><table class="first last docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
+<table border="1" class="docutils">
+<colgroup>
+<col width="17%" />
+<col width="83%" />
+</colgroup>
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name" colspan="2">second_geometry:</th></tr>
-<tr class="field-odd field"><td>&#160;</td><td class="field-body"><ul class="first simple">
-<li>a second geometry</li>
-</ul>
-</td>
+<tr class="row-odd"><td><strong>Argument</strong></td>
+<td><strong>Description</strong></td>
 </tr>
-<tr class="field-even field"><th class="field-name">method:</th><td class="field-body"><ul class="first simple">
-<li>PLANAR measurements reflect the projection of geographic</li>
-</ul>
-<p class="last">data onto the 2D surface (in other words, they will not take into
+<tr class="row-even"><td>second_geometry</td>
+<td>Required Geometry.  A arcgis.Geometry object.</td>
+</tr>
+<tr class="row-odd"><td>method</td>
+<td>Optional String. PLANAR measurements reflect the projection of geographic
+data onto the 2D surface (in other words, they will not take into
 account the curvature of the earth). GEODESIC, GREAT_ELLIPTIC,
 LOXODROME, and PRESERVE_SHAPE measurement types may be chosen as
-an alternative, if desired.</p>
-</td>
+an alternative, if desired.</td>
 </tr>
 </tbody>
 </table>
-</dd>
-</dl>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">a tuple of angle and distance to another point using a measurement type.</td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
 <dl class="attribute">
 <dt id="arcgis.geometry.Geometry.area">
 <code class="descname">area</code><a class="headerlink" href="#arcgis.geometry.Geometry.area" title="Permalink to this definition">¶</a></dt>
 <dd><p>The area of a polygon feature. Empty for all other feature types.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">float</td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
 <dl class="attribute">
@@ -1008,28 +1068,44 @@ an alternative, if desired.</p>
 <dt id="arcgis.geometry.Geometry.boundary">
 <code class="descname">boundary</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.geometry.Geometry.boundary" title="Permalink to this definition">¶</a></dt>
 <dd><p>Constructs the boundary of the geometry.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">arcgis.geometry.Polyline</td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
 <dl class="method">
 <dt id="arcgis.geometry.Geometry.buffer">
 <code class="descname">buffer</code><span class="sig-paren">(</span><em>distance</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.geometry.Geometry.buffer" title="Permalink to this definition">¶</a></dt>
 <dd><p>Constructs a polygon at a specified distance from the geometry.</p>
-<dl class="docutils">
-<dt>Parameters:</dt>
-<dd><table class="first last docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
+<table border="1" class="docutils">
+<colgroup>
+<col width="18%" />
+<col width="82%" />
+</colgroup>
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">distance:</th><td class="field-body"><ul class="first simple">
-<li>length in current projection.  Only polygon accept</li>
-</ul>
-<p class="last">negative values.</p>
-</td>
+<tr class="row-odd"><td><strong>Argument</strong></td>
+<td><strong>Description</strong></td>
+</tr>
+<tr class="row-even"><td>distance</td>
+<td>Required float. The buffer distance. The buffer distance is in the
+same units as the geometry that is being buffered.
+A negative distance can only be specified against a polygon geometry.</td>
 </tr>
 </tbody>
 </table>
-</dd>
-</dl>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">arcgis.geometry.Polygon</td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
 <dl class="attribute">
@@ -1050,45 +1126,66 @@ an alternative, if desired.</p>
 <dt id="arcgis.geometry.Geometry.clip">
 <code class="descname">clip</code><span class="sig-paren">(</span><em>envelope</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.geometry.Geometry.clip" title="Permalink to this definition">¶</a></dt>
 <dd><p>Constructs the intersection of the geometry and the specified extent.</p>
-<dl class="docutils">
-<dt>Parameters:</dt>
-<dd><table class="first last docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
+<table border="1" class="docutils">
+<colgroup>
+<col width="17%" />
+<col width="83%" />
+</colgroup>
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">envelope:</th><td class="field-body"><ul class="first last simple">
-<li>arcpy.Extent object</li>
-</ul>
-</td>
+<tr class="row-odd"><td><strong>Argument</strong></td>
+<td><strong>Description</strong></td>
+</tr>
+<tr class="row-even"><td>envelope</td>
+<td>required tuple. The tuple must have (XMin, YMin, XMax, YMax) each value
+represents the lower left bound and upper right bound of the extent.</td>
 </tr>
 </tbody>
 </table>
-</dd>
-</dl>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">output geometry clipped to extent</td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
 <dl class="method">
 <dt id="arcgis.geometry.Geometry.contains">
 <code class="descname">contains</code><span class="sig-paren">(</span><em>second_geometry</em>, <em>relation=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.geometry.Geometry.contains" title="Permalink to this definition">¶</a></dt>
 <dd><p>Indicates if the base geometry contains the comparison geometry.</p>
-<dl class="docutils">
-<dt>Paramters:</dt>
-<dd><table class="first last docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
+<table border="1" class="docutils">
+<colgroup>
+<col width="10%" />
+<col width="90%" />
+</colgroup>
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name" colspan="2">second_geometry:</th></tr>
-<tr class="field-odd field"><td>&#160;</td><td class="field-body"><ul class="first last simple">
-<li>a second geometry</li>
+<tr class="row-odd"><td><strong>Argument</strong></td>
+<td><strong>Description</strong></td>
+</tr>
+<tr class="row-even"><td>second_geometry</td>
+<td>Required arcgis.geometry.Geometry. A second geometry</td>
+</tr>
+<tr class="row-odd"><td>relation</td>
+<td><p class="first">Optional string. The spatial relationship type.</p>
+<ul class="last simple">
+<li>BOUNDARY - Relationship has no restrictions for interiors or boundaries.</li>
+<li>CLEMENTINI - Interiors of geometries must intersect. Specifying CLEMENTINI is equivalent to specifying None. This is the default.</li>
+<li>PROPER - Boundaries of geometries must not intersect.</li>
 </ul>
 </td>
 </tr>
 </tbody>
 </table>
-</dd>
-<dt>Returns:</dt>
-<dd>Boolean</dd>
-</dl>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">boolean</td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
 <dl class="method">
@@ -1103,22 +1200,28 @@ that all outer angles are convex.</p>
 <code class="descname">crosses</code><span class="sig-paren">(</span><em>second_geometry</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.geometry.Geometry.crosses" title="Permalink to this definition">¶</a></dt>
 <dd><p>Indicates if the two geometries intersect in a geometry of a lesser
 shape type.</p>
-<dl class="docutils">
-<dt>Paramters:</dt>
-<dd><table class="first last docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
+<table border="1" class="docutils">
+<colgroup>
+<col width="18%" />
+<col width="82%" />
+</colgroup>
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name" colspan="2">second_geometry:</th></tr>
-<tr class="field-odd field"><td>&#160;</td><td class="field-body"><ul class="first last simple">
-<li>a second geometry</li>
-</ul>
-</td>
+<tr class="row-odd"><td><strong>Argument</strong></td>
+<td><strong>Description</strong></td>
+</tr>
+<tr class="row-even"><td>second_geometry</td>
+<td>Required arcgis.geometry.Geometry. A second geometry</td>
 </tr>
 </tbody>
 </table>
-</dd>
-</dl>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">boolean</td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
 <dl class="method">
@@ -1126,62 +1229,72 @@ shape type.</p>
 <code class="descname">cut</code><span class="sig-paren">(</span><em>cutter</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.geometry.Geometry.cut" title="Permalink to this definition">¶</a></dt>
 <dd><p>Splits this geometry into a part left of the cutting polyline, and
 a part right of it.</p>
-<dl class="docutils">
-<dt>Parameters:</dt>
-<dd><table class="first last docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
+<table border="1" class="docutils">
+<colgroup>
+<col width="18%" />
+<col width="82%" />
+</colgroup>
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">cutter:</th><td class="field-body"><ul class="first last simple">
-<li>The cutting polyline geometry.</li>
-</ul>
-</td>
+<tr class="row-odd"><td><strong>Argument</strong></td>
+<td><strong>Description</strong></td>
+</tr>
+<tr class="row-even"><td>cutter</td>
+<td>Required Polyline. The cuttin polyline geometry</td>
 </tr>
 </tbody>
 </table>
-</dd>
-</dl>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">a list of two geometries</td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
 <dl class="method">
 <dt id="arcgis.geometry.Geometry.densify">
 <code class="descname">densify</code><span class="sig-paren">(</span><em>method</em>, <em>distance</em>, <em>deviation</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.geometry.Geometry.densify" title="Permalink to this definition">¶</a></dt>
 <dd><p>Creates a new geometry with added vertices</p>
-<dl class="docutils">
-<dt>Parameters:</dt>
-<dd><table class="first last docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
+<table border="1" class="docutils">
+<colgroup>
+<col width="17%" />
+<col width="83%" />
+</colgroup>
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">method:</th><td class="field-body"><ul class="first simple">
-<li>The type of densification, DISTANCE, ANGLE, or GEODESIC</li>
-</ul>
-</td>
+<tr class="row-odd"><td><strong>Argument</strong></td>
+<td><strong>Description</strong></td>
 </tr>
-<tr class="field-even field"><th class="field-name">distance:</th><td class="field-body"><ul class="first simple">
-<li>The maximum distance between vertices. The actual</li>
-</ul>
-<p>distance between vertices will usually be less than the maximum
+<tr class="row-even"><td>method</td>
+<td>Required String. The type of densification, DISTANCE, ANGLE, or GEODESIC</td>
+</tr>
+<tr class="row-odd"><td>distance</td>
+<td>Required float. The maximum distance between vertices. The actual
+distance between vertices will usually be less than the maximum
 distance as new vertices will be evenly distributed along the
 original segment. If using a type of DISTANCE or ANGLE, the
 distance is measured in the units of the geometry’s spatial
 reference. If using a type of GEODESIC, the distance is measured
-in meters.</p>
-</td>
+in meters.</td>
 </tr>
-<tr class="field-odd field"><th class="field-name">deviation:</th><td class="field-body"><ul class="first simple">
-<li>Densify uses straight lines to approximate curves.</li>
-</ul>
-<p class="last">You use deviation to control the accuracy of this approximation.
+<tr class="row-even"><td>deviation</td>
+<td>Required float. Densify uses straight lines to approximate curves.
+You use deviation to control the accuracy of this approximation.
 The deviation is the maximum distance between the new segment and
 the original curve. The smaller its value, the more segments will
-be required to approximate the curve.</p>
-</td>
+be required to approximate the curve.</td>
 </tr>
 </tbody>
 </table>
-</dd>
-</dl>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">arcgis.geometry.Geometry</td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
 <dl class="method">
@@ -1191,22 +1304,28 @@ be required to approximate the curve.</p>
 to the base geometry but not part of the other geometry. The
 following illustration shows the results when the red polygon is the
 source geometry.</p>
-<dl class="docutils">
-<dt>Paramters:</dt>
-<dd><table class="first last docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
+<table border="1" class="docutils">
+<colgroup>
+<col width="18%" />
+<col width="82%" />
+</colgroup>
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name" colspan="2">second_geometry:</th></tr>
-<tr class="field-odd field"><td>&#160;</td><td class="field-body"><ul class="first last simple">
-<li>a second geometry</li>
-</ul>
-</td>
+<tr class="row-odd"><td><strong>Argument</strong></td>
+<td><strong>Description</strong></td>
+</tr>
+<tr class="row-even"><td>second_geometry</td>
+<td>Required arcgis.geometry.Geometry. A second geometry</td>
 </tr>
 </tbody>
 </table>
-</dd>
-</dl>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">arcgis.geometry.Geometry</td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
 <dl class="method">
@@ -1214,22 +1333,28 @@ source geometry.</p>
 <code class="descname">disjoint</code><span class="sig-paren">(</span><em>second_geometry</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.geometry.Geometry.disjoint" title="Permalink to this definition">¶</a></dt>
 <dd><p>Indicates if the base and comparison geometries share no points in
 common.</p>
-<dl class="docutils">
-<dt>Paramters:</dt>
-<dd><table class="first last docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
+<table border="1" class="docutils">
+<colgroup>
+<col width="18%" />
+<col width="82%" />
+</colgroup>
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name" colspan="2">second_geometry:</th></tr>
-<tr class="field-odd field"><td>&#160;</td><td class="field-body"><ul class="first last simple">
-<li>a second geometry</li>
-</ul>
-</td>
+<tr class="row-odd"><td><strong>Argument</strong></td>
+<td><strong>Description</strong></td>
+</tr>
+<tr class="row-even"><td>second_geometry</td>
+<td>Required arcgis.geometry.Geometry. A second geometry</td>
 </tr>
 </tbody>
 </table>
-</dd>
-</dl>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">boolean</td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
 <dl class="method">
@@ -1238,22 +1363,28 @@ common.</p>
 <dd><p>Returns the minimum distance between two geometries. If the
 geometries intersect, the minimum distance is 0.
 Both geometries must have the same projection.</p>
-<dl class="docutils">
-<dt>Paramters:</dt>
-<dd><table class="first last docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
+<table border="1" class="docutils">
+<colgroup>
+<col width="18%" />
+<col width="82%" />
+</colgroup>
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name" colspan="2">second_geometry:</th></tr>
-<tr class="field-odd field"><td>&#160;</td><td class="field-body"><ul class="first last simple">
-<li>a second geometry</li>
-</ul>
-</td>
+<tr class="row-odd"><td><strong>Argument</strong></td>
+<td><strong>Description</strong></td>
+</tr>
+<tr class="row-even"><td>second_geometry</td>
+<td>Required arcgis.geometry.Geometry. A second geometry</td>
 </tr>
 </tbody>
 </table>
-</dd>
-</dl>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">float</td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
 <dl class="method">
@@ -1261,34 +1392,57 @@ Both geometries must have the same projection.</p>
 <code class="descname">equals</code><span class="sig-paren">(</span><em>second_geometry</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.geometry.Geometry.equals" title="Permalink to this definition">¶</a></dt>
 <dd><p>Indicates if the base and comparison geometries are of the same
 shape type and define the same set of points in the plane. This is
-a 2D comparison only; M and Z values are ignored.
-Paramters:</p>
-<blockquote>
-<div><table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
+a 2D comparison only; M and Z values are ignored.</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="18%" />
+<col width="82%" />
+</colgroup>
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name" colspan="2">second_geometry:</th></tr>
-<tr class="field-odd field"><td>&#160;</td><td class="field-body"><ul class="first last simple">
-<li>a second geometry</li>
-</ul>
-</td>
+<tr class="row-odd"><td><strong>Argument</strong></td>
+<td><strong>Description</strong></td>
+</tr>
+<tr class="row-even"><td>second_geometry</td>
+<td>Required arcgis.geometry.Geometry. A second geometry</td>
 </tr>
 </tbody>
 </table>
-</div></blockquote>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">boolean</td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
 <dl class="attribute">
 <dt id="arcgis.geometry.Geometry.extent">
 <code class="descname">extent</code><a class="headerlink" href="#arcgis.geometry.Geometry.extent" title="Permalink to this definition">¶</a></dt>
-<dd><p>The extent of the geometry.</p>
+<dd><p>The extent of the geometry as a tuple containing xmin, ymin, xmax, ymax</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">tuple</td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
 <dl class="attribute">
 <dt id="arcgis.geometry.Geometry.first_point">
 <code class="descname">first_point</code><a class="headerlink" href="#arcgis.geometry.Geometry.first_point" title="Permalink to this definition">¶</a></dt>
 <dd><p>The first coordinate point of the geometry.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">arcgis.gis.Geometry</td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
 <dl class="method">
@@ -1296,27 +1450,42 @@ Paramters:</p>
 <code class="descname">generalize</code><span class="sig-paren">(</span><em>max_offset</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.geometry.Geometry.generalize" title="Permalink to this definition">¶</a></dt>
 <dd><p>Creates a new simplified geometry using a specified maximum offset
 tolerance.</p>
-<dl class="docutils">
-<dt>Parameters:</dt>
-<dd><table class="first last docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
+<table border="1" class="docutils">
+<colgroup>
+<col width="18%" />
+<col width="82%" />
+</colgroup>
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">max_offset:</th><td class="field-body"><ul class="first last simple">
-<li>The maximum offset tolerance.</li>
-</ul>
-</td>
+<tr class="row-odd"><td><strong>Argument</strong></td>
+<td><strong>Description</strong></td>
+</tr>
+<tr class="row-even"><td>max_offset</td>
+<td>Required float. The maximum offset tolerance.</td>
 </tr>
 </tbody>
 </table>
-</dd>
-</dl>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">arcgis.geometry.Geometry</td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
 <dl class="attribute">
 <dt id="arcgis.geometry.Geometry.geoextent">
 <code class="descname">geoextent</code><a class="headerlink" href="#arcgis.geometry.Geometry.geoextent" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns the current feature’s extent</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">tuple</td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
 <dl class="attribute">
@@ -1337,67 +1506,75 @@ tolerance.</p>
 <dt id="arcgis.geometry.Geometry.get_area">
 <code class="descname">get_area</code><span class="sig-paren">(</span><em>method</em>, <em>units=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.geometry.Geometry.get_area" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns the area of the feature using a measurement type.</p>
-<dl class="docutils">
-<dt>Parameters:</dt>
-<dd><table class="first last docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
+<table border="1" class="docutils">
+<colgroup>
+<col width="17%" />
+<col width="83%" />
+</colgroup>
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">method:</th><td class="field-body"><ul class="first simple">
-<li>PLANAR measurements reflect the projection of</li>
-</ul>
-<p>geographic data onto the 2D surface (in other words, they will not
+<tr class="row-odd"><td><strong>Argument</strong></td>
+<td><strong>Description</strong></td>
+</tr>
+<tr class="row-even"><td>method</td>
+<td>Required String. LANAR measurements reflect the projection of
+geographic data onto the 2D surface (in other words, they will not
 take into account the curvature of the earth). GEODESIC,
 GREAT_ELLIPTIC, LOXODROME, and PRESERVE_SHAPE measurement types
-may be chosen as an alternative, if desired.</p>
-</td>
+may be chosen as an alternative, if desired.</td>
 </tr>
-<tr class="field-even field"><th class="field-name">units:</th><td class="field-body"><ul class="first simple">
-<li>Areal unit of measure keywords: ACRES | ARES | HECTARES</li>
-</ul>
-<div class="line-block">
-<div class="line">SQUARECENTIMETERS | SQUAREDECIMETERS | SQUAREINCHES | SQUAREFEET</div>
-<div class="line">SQUAREKILOMETERS | SQUAREMETERS | SQUAREMILES |</div>
-</div>
-<p class="last">SQUAREMILLIMETERS | SQUAREYARDS</p>
-</td>
+<tr class="row-odd"><td>units</td>
+<td>Optional String. Areal unit of measure keywords: ACRES | ARES | HECTARES
+| SQUARECENTIMETERS | SQUAREDECIMETERS | SQUAREINCHES | SQUAREFEET
+| SQUAREKILOMETERS | SQUAREMETERS | SQUAREMILES |
+SQUAREMILLIMETERS | SQUAREYARDS</td>
 </tr>
 </tbody>
 </table>
-</dd>
-</dl>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">float</td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
 <dl class="method">
 <dt id="arcgis.geometry.Geometry.get_length">
 <code class="descname">get_length</code><span class="sig-paren">(</span><em>method</em>, <em>units</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.geometry.Geometry.get_length" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns the length of the feature using a measurement type.</p>
-<dl class="docutils">
-<dt>Parameters:</dt>
-<dd><table class="first last docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
+<table border="1" class="docutils">
+<colgroup>
+<col width="18%" />
+<col width="82%" />
+</colgroup>
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">method:</th><td class="field-body"><ul class="first simple">
-<li>PLANAR measurements reflect the projection of</li>
-</ul>
-<p>geographic data onto the 2D surface (in other words, they will not
+<tr class="row-odd"><td><strong>Argument</strong></td>
+<td><strong>Description</strong></td>
+</tr>
+<tr class="row-even"><td>method</td>
+<td>Required String. PLANAR measurements reflect the projection of
+geographic data onto the 2D surface (in other words, they will not
 take into account the curvature of the earth). GEODESIC,
 GREAT_ELLIPTIC, LOXODROME, and PRESERVE_SHAPE measurement types
-may be chosen as an alternative, if desired.</p>
-</td>
+may be chosen as an alternative, if desired.</td>
 </tr>
-<tr class="field-even field"><th class="field-name">units:</th><td class="field-body"><ul class="first simple">
-<li>Linear unit of measure keywords: CENTIMETERS |</li>
-</ul>
-<p class="last">DECIMETERS | FEET | INCHES | KILOMETERS | METERS | MILES |
-MILLIMETERS | NAUTICALMILES | YARDS</p>
-</td>
+<tr class="row-odd"><td>units</td>
+<td>Required String. Linear unit of measure keywords: CENTIMETERS |
+DECIMETERS | FEET | INCHES | KILOMETERS | METERS | MILES |
+MILLIMETERS | NAUTICALMILES | YARDS</td>
 </tr>
 </tbody>
 </table>
-</dd>
-</dl>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">float</td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
 <dl class="method">
@@ -1405,21 +1582,28 @@ MILLIMETERS | NAUTICALMILES | YARDS</p>
 <code class="descname">get_part</code><span class="sig-paren">(</span><em>index=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.geometry.Geometry.get_part" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns an array of point objects for a particular part of geometry
 or an array containing a number of arrays, one for each part.</p>
-<dl class="docutils">
-<dt>Parameters:</dt>
-<dd><table class="first last docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
+<table border="1" class="docutils">
+<colgroup>
+<col width="18%" />
+<col width="82%" />
+</colgroup>
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">index:</th><td class="field-body"><ul class="first last simple">
-<li>The index position of the geometry.</li>
-</ul>
-</td>
+<tr class="row-odd"><td><strong>Argument</strong></td>
+<td><strong>Description</strong></td>
+</tr>
+<tr class="row-even"><td>index</td>
+<td>Required Integer. The index position of the geometry.</td>
 </tr>
 </tbody>
 </table>
-</dd>
-</dl>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">arcgis.geometry.Geometry</td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
 <dl class="attribute">
@@ -1427,6 +1611,14 @@ or an array containing a number of arrays, one for each part.</p>
 <code class="descname">hull_rectangle</code><a class="headerlink" href="#arcgis.geometry.Geometry.hull_rectangle" title="Permalink to this definition">¶</a></dt>
 <dd><p>A space-delimited string of the coordinate pairs of the convex hull
 rectangle.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">string</td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
 <dl class="method">
@@ -1437,34 +1629,38 @@ input geometries. Different dimension values can be used to create
 different shape types. The intersection of two geometries of the
 same shape type is a geometry containing only the regions of overlap
 between the original geometries.</p>
-<dl class="docutils">
-<dt>Paramters:</dt>
-<dd><table class="first last docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
+<table border="1" class="docutils">
+<colgroup>
+<col width="18%" />
+<col width="82%" />
+</colgroup>
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name" colspan="2">second_geometry:</th></tr>
-<tr class="field-odd field"><td>&#160;</td><td class="field-body"><ul class="first simple">
-<li>a second geometry</li>
-</ul>
-</td>
+<tr class="row-odd"><td><strong>Argument</strong></td>
+<td><strong>Description</strong></td>
 </tr>
-<tr class="field-even field"><th class="field-name">dimension:</th><td class="field-body"><ul class="first simple">
-<li>The topological dimension (shape type) of the</li>
+<tr class="row-even"><td>second_geometry</td>
+<td>Required arcgis.geometry.Geometry. A second geometry</td>
+</tr>
+<tr class="row-odd"><td>dimension</td>
+<td><p class="first">Required Integer. The topological dimension (shape type) of the
+resulting geometry.</p>
+<ul class="last simple">
+<li>1  -A zero-dimensional geometry (point or multipoint).</li>
+<li>2  -A one-dimensional geometry (polyline).</li>
+<li>4  -A two-dimensional geometry (polygon).</li>
 </ul>
-<dl class="last docutils">
-<dt>resulting geometry.</dt>
-<dd><p class="first last">1  -A zero-dimensional geometry (point or multipoint).
-2  -A one-dimensional geometry (polyline).
-4  -A two-dimensional geometry (polygon).</p>
-</dd>
-</dl>
 </td>
 </tr>
 </tbody>
 </table>
-</dd>
-</dl>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">boolean</td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
 <dl class="attribute">
@@ -1477,6 +1673,14 @@ between the original geometries.</p>
 <dt id="arcgis.geometry.Geometry.is_multipart">
 <code class="descname">is_multipart</code><a class="headerlink" href="#arcgis.geometry.Geometry.is_multipart" title="Permalink to this definition">¶</a></dt>
 <dd><p>True, if the number of parts for this geometry is more than one.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">boolean</td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
 <dl class="attribute">
@@ -1512,6 +1716,14 @@ located within or on a feature.</p>
 <dt id="arcgis.geometry.Geometry.length">
 <code class="descname">length</code><a class="headerlink" href="#arcgis.geometry.Geometry.length" title="Permalink to this definition">¶</a></dt>
 <dd><p>The length of the linear feature. Zero for point and multipoint feature types.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">float</td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
 <dl class="attribute">
@@ -1519,34 +1731,46 @@ located within or on a feature.</p>
 <code class="descname">length3D</code><a class="headerlink" href="#arcgis.geometry.Geometry.length3D" title="Permalink to this definition">¶</a></dt>
 <dd><p>The 3D length of the linear feature. Zero for point and multipoint
 feature types.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">float</td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
 <dl class="method">
 <dt id="arcgis.geometry.Geometry.measure_on_line">
 <code class="descname">measure_on_line</code><span class="sig-paren">(</span><em>second_geometry</em>, <em>as_percentage=False</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.geometry.Geometry.measure_on_line" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns a measure from the start point of this line to the in_point.</p>
-<dl class="docutils">
-<dt>Paramters:</dt>
-<dd><table class="first last docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
+<table border="1" class="docutils">
+<colgroup>
+<col width="18%" />
+<col width="82%" />
+</colgroup>
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name" colspan="2">second_geometry:</th></tr>
-<tr class="field-odd field"><td>&#160;</td><td class="field-body"><ul class="first simple">
-<li>a second geometry</li>
-</ul>
-</td>
+<tr class="row-odd"><td><strong>Argument</strong></td>
+<td><strong>Description</strong></td>
 </tr>
-<tr class="field-even field"><th class="field-name">as_percentage:</th><td class="field-body"><ul class="first simple">
-<li>If False, the measure will be returned as a</li>
-</ul>
-<p class="last">distance; if True, the measure will be returned as a percentage.</p>
-</td>
+<tr class="row-even"><td>second_geometry</td>
+<td>Required arcgis.geometry.Geometry. A second geometry</td>
+</tr>
+<tr class="row-odd"><td>as_percentage</td>
+<td>Optional Boolean. If False, the measure will be returned as a
+distance; if True, the measure will be returned as a percentage.</td>
 </tr>
 </tbody>
 </table>
-</dd>
-</dl>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">float</td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
 <dl class="method">
@@ -1555,34 +1779,56 @@ feature types.</p>
 <dd><p>Indicates if the intersection of the two geometries has the same
 shape type as one of the input geometries and is not equivalent to
 either of the input geometries.</p>
-<dl class="docutils">
-<dt>Paramters:</dt>
-<dd><table class="first last docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
+<table border="1" class="docutils">
+<colgroup>
+<col width="18%" />
+<col width="82%" />
+</colgroup>
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name" colspan="2">second_geometry:</th></tr>
-<tr class="field-odd field"><td>&#160;</td><td class="field-body"><ul class="first last simple">
-<li>a second geometry</li>
-</ul>
-</td>
+<tr class="row-odd"><td><strong>Argument</strong></td>
+<td><strong>Description</strong></td>
+</tr>
+<tr class="row-even"><td>second_geometry</td>
+<td>Required arcgis.geometry.Geometry. A second geometry</td>
 </tr>
 </tbody>
 </table>
-</dd>
-</dl>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">boolean</td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
 <dl class="attribute">
 <dt id="arcgis.geometry.Geometry.part_count">
 <code class="descname">part_count</code><a class="headerlink" href="#arcgis.geometry.Geometry.part_count" title="Permalink to this definition">¶</a></dt>
 <dd><p>The number of geometry parts for the feature.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">integer</td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
 <dl class="attribute">
 <dt id="arcgis.geometry.Geometry.point_count">
 <code class="descname">point_count</code><a class="headerlink" href="#arcgis.geometry.Geometry.point_count" title="Permalink to this definition">¶</a></dt>
 <dd><p>The total number of points for the feature.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">Integer</td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
 <dl class="method">
@@ -1590,35 +1836,38 @@ either of the input geometries.</p>
 <code class="descname">point_from_angle_and_distance</code><span class="sig-paren">(</span><em>angle</em>, <em>distance</em>, <em>method='GEODESCIC'</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.geometry.Geometry.point_from_angle_and_distance" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns a point at a given angle and distance in degrees and meters
 using the specified measurement type.</p>
-<dl class="docutils">
-<dt>Parameters:</dt>
-<dd><table class="first last docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
+<table border="1" class="docutils">
+<colgroup>
+<col width="17%" />
+<col width="83%" />
+</colgroup>
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">angle:</th><td class="field-body"><ul class="first simple">
-<li>The angle in degrees to the returned point.</li>
-</ul>
-</td>
+<tr class="row-odd"><td><strong>Argument</strong></td>
+<td><strong>Description</strong></td>
 </tr>
-<tr class="field-even field"><th class="field-name">distance:</th><td class="field-body"><ul class="first simple">
-<li>The distance in meters to the returned point.</li>
-</ul>
-</td>
+<tr class="row-even"><td>angle</td>
+<td>Required Float. The angle in degrees to the returned point.</td>
 </tr>
-<tr class="field-odd field"><th class="field-name">method:</th><td class="field-body"><ul class="first simple">
-<li>PLANAR measurements reflect the projection of geographic</li>
-</ul>
-<p class="last">data onto the 2D surface (in other words, they will not take into
+<tr class="row-odd"><td>distance</td>
+<td>Required Float. The distance in meters to the returned point.</td>
+</tr>
+<tr class="row-even"><td>method</td>
+<td>Optional String. PLANAR measurements reflect the projection of geographic
+data onto the 2D surface (in other words, they will not take into
 account the curvature of the earth). GEODESIC, GREAT_ELLIPTIC,
 LOXODROME, and PRESERVE_SHAPE measurement types may be chosen as
-an alternative, if desired.</p>
-</td>
+an alternative, if desired.</td>
 </tr>
 </tbody>
 </table>
-</dd>
-</dl>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">arcgis.geometry.Geometry</td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
 <dl class="method">
@@ -1626,36 +1875,59 @@ an alternative, if desired.</p>
 <code class="descname">position_along_line</code><span class="sig-paren">(</span><em>value</em>, <em>use_percentage=False</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.geometry.Geometry.position_along_line" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns a point on a line at a specified distance from the beginning
 of the line.</p>
-<dl class="docutils">
-<dt>Parameters:</dt>
-<dd><table class="first last docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
+<table border="1" class="docutils">
+<colgroup>
+<col width="18%" />
+<col width="82%" />
+</colgroup>
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">value:</th><td class="field-body"><ul class="first simple">
-<li>The distance along the line.</li>
-</ul>
-</td>
+<tr class="row-odd"><td><strong>Argument</strong></td>
+<td><strong>Description</strong></td>
 </tr>
-<tr class="field-even field"><th class="field-name">use_percentage:</th><td class="field-body"><ul class="first simple">
-<li>The distance may be specified as a fixed unit</li>
-</ul>
-<p class="last">of measure or a ratio of the length of the line. If True, value
+<tr class="row-even"><td>value</td>
+<td>Required Float. The distance along the line.</td>
+</tr>
+<tr class="row-odd"><td>use_percentage</td>
+<td>Optional Boolean. The distance may be specified as a fixed unit
+of measure or a ratio of the length of the line. If True, value
 is used as a percentage; if False, value is used as a distance.
 For percentages, the value should be expressed as a double from
-0.0 (0%) to 1.0 (100%).</p>
-</td>
+0.0 (0%) to 1.0 (100%).</td>
 </tr>
 </tbody>
 </table>
-</dd>
-</dl>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">arcgis.gis.Geometry</td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
 <dl class="method">
 <dt id="arcgis.geometry.Geometry.project_as">
 <code class="descname">project_as</code><span class="sig-paren">(</span><em>spatial_reference</em>, <em>transformation_name=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.geometry.Geometry.project_as" title="Permalink to this definition">¶</a></dt>
 <dd><p>Projects a geometry and optionally applies a geotransformation.</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="23%" />
+<col width="77%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><strong>Argument</strong></td>
+<td><strong>Description</strong></td>
+</tr>
+<tr class="row-even"><td>spatial_reference</td>
+<td>Required SpatialReference. The new spatial reference. This can be a
+SpatialReference object or the coordinate system name.</td>
+</tr>
+<tr class="row-odd"><td>transformation_name</td>
+<td>Required String. The geotransformation name.</td>
+</tr>
+</tbody>
+</table>
 <dl class="docutils">
 <dt>Parameter:</dt>
 <dd><table class="first last docutils field-list" frame="void" rules="none">
@@ -1688,28 +1960,32 @@ For percentages, the value should be expressed as a double from
 distance between those points. Also returns information about the
 side of the line the in_point is on as well as the distance along
 the line where the nearest point occurs.</p>
-<dl class="docutils">
-<dt>Paramters:</dt>
-<dd><table class="first last docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
+<table border="1" class="docutils">
+<colgroup>
+<col width="18%" />
+<col width="82%" />
+</colgroup>
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name" colspan="2">second_geometry:</th></tr>
-<tr class="field-odd field"><td>&#160;</td><td class="field-body"><ul class="first simple">
-<li>a second geometry</li>
-</ul>
-</td>
+<tr class="row-odd"><td><strong>Argument</strong></td>
+<td><strong>Description</strong></td>
 </tr>
-<tr class="field-even field"><th class="field-name">as_percentage:</th><td class="field-body"><ul class="first simple">
-<li>if False, the measure will be returned as</li>
-</ul>
-<p class="last">distance, True, measure will be a percentage</p>
-</td>
+<tr class="row-even"><td>second_geometry</td>
+<td>Required arcgis.geometry.Geometry. A second geometry</td>
+</tr>
+<tr class="row-odd"><td>as_percentage</td>
+<td>Optional boolean - if False, the measure will be returned as
+distance, True, measure will be a percentage</td>
 </tr>
 </tbody>
 </table>
-</dd>
-</dl>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">tuple</td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
 <dl class="method">
@@ -1772,72 +2048,100 @@ expressed as a double from 0.0 (0 percent) to 1.0 (100 percent).</p>
 <dt id="arcgis.geometry.Geometry.snap_to_line">
 <code class="descname">snap_to_line</code><span class="sig-paren">(</span><em>second_geometry</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.geometry.Geometry.snap_to_line" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns a new point based on in_point snapped to this geometry.</p>
-<dl class="docutils">
-<dt>Paramters:</dt>
-<dd><table class="first last docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
+<table border="1" class="docutils">
+<colgroup>
+<col width="18%" />
+<col width="82%" />
+</colgroup>
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name" colspan="2">second_geometry:</th></tr>
-<tr class="field-odd field"><td>&#160;</td><td class="field-body"><ul class="first last simple">
-<li>a second geometry</li>
-</ul>
-</td>
+<tr class="row-odd"><td><strong>Argument</strong></td>
+<td><strong>Description</strong></td>
+</tr>
+<tr class="row-even"><td>second_geometry</td>
+<td>Required arcgis.geometry.Geometry. A second geometry</td>
 </tr>
 </tbody>
 </table>
-</dd>
-</dl>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">arcgis.gis.Geometry</td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
 <dl class="attribute">
 <dt id="arcgis.geometry.Geometry.spatial_reference">
 <code class="descname">spatial_reference</code><a class="headerlink" href="#arcgis.geometry.Geometry.spatial_reference" title="Permalink to this definition">¶</a></dt>
 <dd><p>The spatial reference of the geometry.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">arcgis.geometery.SpatialReference</td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
 <dl class="method">
 <dt id="arcgis.geometry.Geometry.symmetric_difference">
 <code class="descname">symmetric_difference</code><span class="sig-paren">(</span><em>second_geometry</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.geometry.Geometry.symmetric_difference" title="Permalink to this definition">¶</a></dt>
-<dd><p>Returns a new point based on in_point snapped to this geometry.</p>
-<dl class="docutils">
-<dt>Paramters:</dt>
-<dd><table class="first last docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
+<dd><p>Constructs the geometry that is the union of two geometries minus the
+instersection of those geometries.</p>
+<p>The two input geometries must be the same shape type.</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="18%" />
+<col width="82%" />
+</colgroup>
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name" colspan="2">second_geometry:</th></tr>
-<tr class="field-odd field"><td>&#160;</td><td class="field-body"><ul class="first last simple">
-<li>a second geometry</li>
-</ul>
-</td>
+<tr class="row-odd"><td><strong>Argument</strong></td>
+<td><strong>Description</strong></td>
+</tr>
+<tr class="row-even"><td>second_geometry</td>
+<td>Required arcgis.geometry.Geometry. A second geometry</td>
 </tr>
 </tbody>
 </table>
-</dd>
-</dl>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">arcgis.gis.Geometry</td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
 <dl class="method">
 <dt id="arcgis.geometry.Geometry.touches">
 <code class="descname">touches</code><span class="sig-paren">(</span><em>second_geometry</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.geometry.Geometry.touches" title="Permalink to this definition">¶</a></dt>
 <dd><p>Indicates if the boundaries of the geometries intersect.</p>
-<dl class="docutils">
-<dt>Paramters:</dt>
-<dd><table class="first last docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
+<table border="1" class="docutils">
+<colgroup>
+<col width="18%" />
+<col width="82%" />
+</colgroup>
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name" colspan="2">second_geometry:</th></tr>
-<tr class="field-odd field"><td>&#160;</td><td class="field-body"><ul class="first last simple">
-<li>a second geometry</li>
-</ul>
-</td>
+<tr class="row-odd"><td><strong>Argument</strong></td>
+<td><strong>Description</strong></td>
+</tr>
+<tr class="row-even"><td>second_geometry</td>
+<td>Required arcgis.geometry.Geometry. A second geometry</td>
 </tr>
 </tbody>
 </table>
-</dd>
-</dl>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">boolean</td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
 <dl class="method">
@@ -1865,51 +2169,65 @@ expressed as a double from 0.0 (0 percent) to 1.0 (100 percent).</p>
 <code class="descname">union</code><span class="sig-paren">(</span><em>second_geometry</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.geometry.Geometry.union" title="Permalink to this definition">¶</a></dt>
 <dd><p>Constructs the geometry that is the set-theoretic union of the input
 geometries.</p>
-<dl class="docutils">
-<dt>Paramters:</dt>
-<dd><table class="first last docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
+<table border="1" class="docutils">
+<colgroup>
+<col width="18%" />
+<col width="82%" />
+</colgroup>
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name" colspan="2">second_geometry:</th></tr>
-<tr class="field-odd field"><td>&#160;</td><td class="field-body"><ul class="first last simple">
-<li>a second geometry</li>
-</ul>
-</td>
+<tr class="row-odd"><td><strong>Argument</strong></td>
+<td><strong>Description</strong></td>
+</tr>
+<tr class="row-even"><td>second_geometry</td>
+<td>Required arcgis.geometry.Geometry. A second geometry</td>
 </tr>
 </tbody>
 </table>
-</dd>
-</dl>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">arcgis.gis.Geometry</td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
 <dl class="method">
 <dt id="arcgis.geometry.Geometry.within">
 <code class="descname">within</code><span class="sig-paren">(</span><em>second_geometry</em>, <em>relation=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.geometry.Geometry.within" title="Permalink to this definition">¶</a></dt>
-<dd><p>Indicates if the base geometry is within the comparison geometry.
-Paramters:</p>
-<blockquote>
-<div><table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
+<dd><p>Indicates if the base geometry is within the comparison geometry.</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="10%" />
+<col width="90%" />
+</colgroup>
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name" colspan="2">second_geometry:</th></tr>
-<tr class="field-odd field"><td>&#160;</td><td class="field-body"><ul class="first simple">
-<li>a second geometry</li>
-</ul>
-</td>
+<tr class="row-odd"><td><strong>Argument</strong></td>
+<td><strong>Description</strong></td>
 </tr>
-<tr class="field-even field"><th class="field-name">relation:</th><td class="field-body"><ul class="first simple">
-<li>The spatial relationship type.</li>
+<tr class="row-even"><td>second_geometry</td>
+<td>Required arcgis.geometry.Geometry. A second geometry</td>
+</tr>
+<tr class="row-odd"><td>relation</td>
+<td><p class="first">Optional String. The spatial relationship type.</p>
+<ul class="last simple">
+<li>BOUNDARY  - Relationship has no restrictions for interiors or boundaries.</li>
+<li>CLEMENTINI  - Interiors of geometries must intersect. Specifying CLEMENTINI is equivalent to specifying None. This is the default.</li>
+<li>PROPER  - Boundaries of geometries must not intersect.</li>
 </ul>
-<p class="last">BOUNDARY  - Relationship has no restrictions for interiors or boundaries.
-CLEMENTINI  - Interiors of geometries must intersect. Specifying CLEMENTINI is equivalent to specifying None. This is the default.
-PROPER  - Boundaries of geometries must not intersect.</p>
 </td>
 </tr>
 </tbody>
 </table>
-</div></blockquote>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">boolean</td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
 </dd></dl>
@@ -2783,7 +3101,7 @@ spatial_ref - The well-known ID of the spatial reference or a spatial</p>
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'./',
-            VERSION:'1.4.0',
+            VERSION:'1.4.1',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  true,

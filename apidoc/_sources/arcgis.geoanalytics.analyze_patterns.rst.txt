@@ -15,4 +15,3 @@ create_space_time_cube
 ----------------------
 .. automethod:: arcgis.geoanalytics.analyze_patterns.create_space_time_cube
 
-    

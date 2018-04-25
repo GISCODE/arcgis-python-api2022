@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>arcgis.gis module &mdash; arcgis 1.4.0 documentation</title>
+  <title>arcgis.gis module &mdash; arcgis 1.4.1 documentation</title>
   
 
   
@@ -37,7 +37,7 @@
         <link rel="index" title="Index"
               href="genindex.html"/>
         <link rel="search" title="Search" href="search.html"/>
-    <link rel="top" title="arcgis 1.4.0 documentation" href="index.html"/>
+    <link rel="top" title="arcgis 1.4.1 documentation" href="index.html"/>
         <link rel="next" title="arcgis.gis.admin module" href="arcgis.gis.admin.html"/>
         <link rel="prev" title="API Reference for the ArcGIS API for Python" href="index.html"/>
 <!-- This code block is inserted close near the <head> tag. See http://bit.ly/2BHUQzB -->
@@ -77,7 +77,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             
             
               <div class="version">
-                1.4.0
+                1.4.1
               </div>
             
           
@@ -490,12 +490,15 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="arcgis.geoanalytics.manage_data.html">arcgis.geoanalytics.manage_data module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.geoanalytics.manage_data.html#append-data">append_data</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.geoanalytics.manage_data.html#calculate-fields">calculate_fields</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.geoanalytics.manage_data.html#copy-to-data-store">copy_to_data_store</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.geoanalytics.manage_data.html#overlay-data">overlay_data</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="arcgis.geoanalytics.summarize_data.html">arcgis.geoanalytics.summarize_data module</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.geoanalytics.summarize_data.html#aggregate-points">aggregate_points</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.geoanalytics.summarize_data.html#build-multivariable-grid">build_multivariable_grid</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.geoanalytics.summarize_data.html#join-features">join_features</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.geoanalytics.summarize_data.html#reconstruct-tracks">reconstruct_tracks</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.geoanalytics.summarize_data.html#summarize-attributes">summarize_attributes</a></li>
@@ -584,6 +587,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 </li>
 <li class="toctree-l1"><a class="reference internal" href="arcgis.mapping.html">arcgis.mapping module</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.mapping.html#webmap">WebMap</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.mapping.html#offlinemapareamanager">OfflineMapAreaManager</a></li>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.mapping.html#webscene">WebScene</a></li>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.mapping.html#mapimagelayer">MapImageLayer</a></li>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.mapping.html#mapimagelayermanager">MapImageLayerManager</a></li>
@@ -602,6 +606,23 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 </li>
 <li class="toctree-l1"><a class="reference internal" href="arcgis.widgets.html">arcgis.widgets module</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.widgets.html#mapview">MapView</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.apps.html">arcgis.apps module</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.apps.html#submodules">Submodules</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="arcgis.apps.workforce.html">arcgis.apps.workforce module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.apps.workforce.html#assignment">Assignment</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.apps.workforce.html#assignmenttype">AssignmentType</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.apps.workforce.html#attachment">Attachment</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.apps.workforce.html#dispatcher">Dispatcher</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.apps.workforce.html#project">Project</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.apps.workforce.html#track">Track</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.apps.workforce.html#worker">Worker</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.apps.workforce.html#submodules">Submodules</a></li>
+</ul>
+</li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -703,8 +724,8 @@ file/password manager by that profile name. Multiple profiles can be created and
 <p>See <a class="reference external" href="https://developers.arcgis.com/python/guide/working-with-different-authentication-schemes/">https://developers.arcgis.com/python/guide/working-with-different-authentication-schemes/</a> for examples.</p>
 <table border="1" class="docutils">
 <colgroup>
-<col width="18%" />
-<col width="82%" />
+<col width="17%" />
+<col width="83%" />
 </colgroup>
 <tbody valign="top">
 <tr class="row-odd"><td><strong>Argument</strong></td>
@@ -731,7 +752,8 @@ authentication</td>
 </tr>
 <tr class="row-even"><td>cert_file</td>
 <td>Optional string. The file path to a user’s certificate file for PKI
-authentication</td>
+authentication. If a PFX or P12 certificate is used, a password is required.
+If a PEM file is used, the key_file is required.</td>
 </tr>
 <tr class="row-odd"><td>verify_cert</td>
 <td>Optional boolean. If a site has an invalid SSL certificate or is
@@ -769,8 +791,10 @@ arguments:</p>
 <td><strong>Description</strong></td>
 </tr>
 <tr class="row-even"><td>proxy_host</td>
-<td>Optional string. The host name of the proxy server used to allow HTTP/S
-access in the network where the script is run.</td>
+<td><p class="first">Optional string. The host name of the proxy server used to allow HTTP/S
+access in the network where the script is run.</p>
+<p class="last">ex: 127.0.0.1</p>
+</td>
 </tr>
 <tr class="row-odd"><td>proxy_port</td>
 <td>Optional integer. The proxy host port.  The default is 80.</td>
@@ -804,17 +828,27 @@ is None and the security for the site uses BUILT-IN security.</td>
           <span class="n">password</span><span class="o">=</span><span class="s2">&quot;password1&quot;</span><span class="p">,</span> <span class="n">verify_cert</span><span class="o">=</span><span class="bp">False</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>gis = GIS(proxy_host=‘127.0.0.1’, proxy_port=8888)</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="c1"># Usage Example 5: Anonymous ArcGIS Online Login with Proxy</span>
+
+<span class="n">gis</span> <span class="o">=</span> <span class="n">GIS</span><span class="p">(</span><span class="n">proxy_host</span><span class="o">=</span><span class="s1">&#39;127.0.0.1&#39;</span><span class="p">,</span> <span class="n">proxy_port</span><span class="o">=</span><span class="mi">8888</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="c1"># Usage Example 6: PKI Login to ArcGIS Enterprise, using PKCS12 user certificate</span>
+
+<span class="n">gis</span> <span class="o">=</span> <span class="n">GIS</span><span class="p">(</span><span class="n">url</span><span class="o">=</span><span class="s2">&quot;https://pkienterprise.esri.com/portal&quot;</span><span class="p">,</span>
+          <span class="n">cert_file</span><span class="o">=</span><span class="s2">&quot;C:\users\someuser\mycert.pfx&quot;</span><span class="p">,</span> <span class="n">password</span><span class="o">=</span><span class="s2">&quot;password1&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
 <dl class="attribute">
 <dt id="arcgis.gis.GIS.content">
 <code class="descname">content</code><a class="headerlink" href="#arcgis.gis.GIS.content" title="Permalink to this definition">¶</a></dt>
-<dd><p>The resource manager for GIS content.</p>
+<dd><p>The resource manager for GIS content. See <a class="reference internal" href="#arcgis.gis.ContentManager" title="arcgis.gis.ContentManager"><code class="xref py py-class docutils literal"><span class="pre">ContentManager</span></code></a>.</p>
 </dd></dl>
 
 <dl class="attribute">
 <dt id="arcgis.gis.GIS.groups">
 <code class="descname">groups</code><a class="headerlink" href="#arcgis.gis.GIS.groups" title="Permalink to this definition">¶</a></dt>
-<dd><p>The resource manager for GIS groups.</p>
+<dd><p>The resource manager for GIS groups. See <a class="reference internal" href="#arcgis.gis.GroupManager" title="arcgis.gis.GroupManager"><code class="xref py py-class docutils literal"><span class="pre">GroupManager</span></code></a>.</p>
 </dd></dl>
 
 <dl class="method">
@@ -863,7 +897,8 @@ to the specified zoomlevel.</p>
 <dl class="method">
 <dt id="arcgis.gis.GIS.update_properties">
 <code class="descname">update_properties</code><span class="sig-paren">(</span><em>properties_dict</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.GIS.update_properties" title="Permalink to this definition">¶</a></dt>
-<dd><p>Updates the GIS’s properties from those in properties_dict.</p>
+<dd><p>Updates the GIS’s properties from those in properties_dict. This method can be useful
+for updating the utility services used by the GIS.</p>
 <table border="1" class="docutils">
 <colgroup>
 <col width="18%" />
@@ -883,16 +918,37 @@ values that are to be updated.</td>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">The item if successfully added, None if unsuccessful.</td>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">True if successfully updated, False if unsuccessful.</td>
 </tr>
 </tbody>
 </table>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">For examples of the property names and key/values to use when updating utility services,
+refer to the Portal parameters section at <a class="reference external" href="https://developers.arcgis.com/rest/users-groups-and-items/common-parameters.htm">https://developers.arcgis.com/rest/users-groups-and-items/common-parameters.htm</a></p>
+</div>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="c1"># Usage Example: Update the geocode service</span>
+
+<span class="n">gis</span> <span class="o">=</span> <span class="n">GIS</span><span class="p">(</span><span class="n">profile</span><span class="o">=</span><span class="s1">&#39;xyz&#39;</span><span class="p">)</span>
+<span class="n">upd</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;geocodeService&#39;</span><span class="p">:</span> <span class="p">[{</span>
+  <span class="s2">&quot;singleLineFieldName&quot;</span><span class="p">:</span> <span class="s2">&quot;Single Line Input&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;AtlantaLocator&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;url&quot;</span><span class="p">:</span> <span class="s2">&quot;https://some.server.com/server/rest/services/GeoAnalytics/AtlantaLocator/GeocodeServer&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;itemId&quot;</span><span class="p">:</span> <span class="s2">&quot;abc6e1fc691542938917893c8944606d&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;placeholder&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;placefinding&quot;</span><span class="p">:</span> <span class="s2">&quot;true&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;batch&quot;</span><span class="p">:</span> <span class="s2">&quot;true&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;zoomScale&quot;</span><span class="p">:</span> <span class="mi">10000</span><span class="p">}]}</span>
+
+<span class="n">gis</span><span class="o">.</span><span class="n">update_properties</span><span class="p">(</span><span class="n">upd</span><span class="p">)</span>
+</pre></div>
+</div>
 </dd></dl>
 
 <dl class="attribute">
 <dt id="arcgis.gis.GIS.users">
 <code class="descname">users</code><a class="headerlink" href="#arcgis.gis.GIS.users" title="Permalink to this definition">¶</a></dt>
-<dd><p>The resource manager for GIS users.</p>
+<dd><p>The resource manager for GIS users. See <a class="reference internal" href="#arcgis.gis.UserManager" title="arcgis.gis.UserManager"><code class="xref py py-class docutils literal"><span class="pre">UserManager</span></code></a>.</p>
 </dd></dl>
 
 </dd></dl>
@@ -1011,6 +1067,77 @@ authoritative.
 If a value of None is given, then the value will be reset.</p>
 <p class="last">Allowsed Values: authoritative, deprecated, or None</p>
 </td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="arcgis.gis.Item.copy">
+<code class="descname">copy</code><span class="sig-paren">(</span><em>title=None</em>, <em>tags=None</em>, <em>snippet=None</em>, <em>description=None</em>, <em>layers=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.Item.copy" title="Permalink to this definition">¶</a></dt>
+<dd><p>Copy allows for the creation of an item that is derived from the current item.</p>
+<p>For layers, <cite>copy</cite> will create a new item that uses the URL as a reference.
+For non-layer based items, these will be copied and the exact same data will be
+provided.</p>
+<p>If title, tags, snippet of description is not provided the values from <cite>item</cite> will be used.</p>
+<p>Copy use example:</p>
+<blockquote>
+<div><ul class="simple">
+<li>Vector tile service sprite customization</li>
+<li>Limiting feature service exposure</li>
+<li>Sharing content by reference with groups</li>
+<li>Creating backup items.</li>
+</ul>
+</div></blockquote>
+<p><strong>Usage Example</strong></p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">item</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+<span class="go">&lt;Item title:&quot;gisslideshow - Copy 94452b&quot; type:Microsoft Powerpoint owner:geoguy&gt;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">item</span><span class="o">.</span><span class="n">copy</span><span class="p">(</span><span class="n">title</span><span class="o">=</span><span class="s2">&quot;GIS_Tutorial&quot;</span><span class="p">)</span>
+<span class="go">&lt;Item title:&quot;GIS_Tutorial&quot; type:Microsoft Powerpoint owner:geoguy&gt;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">item</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+<span class="go">&lt;Item title:&quot;NZTiles - Copy 021a06&quot; type:Vector Tile Layer owner:geoguy&gt;</span>
+</pre></div>
+</div>
+<table border="1" class="docutils">
+<colgroup>
+<col width="27%" />
+<col width="73%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><strong>Argument</strong></td>
+<td><strong>Description</strong></td>
+</tr>
+<tr class="row-even"><td>title</td>
+<td>Optional string. The name of the new item.</td>
+</tr>
+<tr class="row-odd"><td>tags</td>
+<td>Optional list of string. Descriptive words that help in the
+searching and locating of the published information.</td>
+</tr>
+<tr class="row-even"><td>snippet</td>
+<td>Optional string. A brief summary of the information being
+published.</td>
+</tr>
+<tr class="row-odd"><td>description</td>
+<td>Optional string. A long description of the Item being
+published.</td>
+</tr>
+<tr class="row-even"><td>layers</td>
+<td><p class="first">Optional list of integers.  If you have a layer with multiple
+and you only want specific layers, an index can be provided
+those layers.  If nothing is provided, all layers will be
+visible.</p>
+<p class="last">Example: layers=[0,3]
+Example 2: layers=[9]</p>
+</td>
+</tr>
+</tbody>
+</table>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">Item</td>
 </tr>
 </tbody>
 </table>
@@ -1174,13 +1301,15 @@ REST API help for more information on this parameter.</td>
 <dl class="method">
 <dt id="arcgis.gis.Item.dependent_to">
 <code class="descname">dependent_to</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.Item.dependent_to" title="Permalink to this definition">¶</a></dt>
-<dd><p>Returns items, urls, etc that are dependent to this item.</p>
+<dd><p>Returns items, urls, etc that are dependent to this item. This capability (item dependencies)
+is not yet available on ArcGIS Online. Currently it is available only with an ArcGIS Enterprise.</p>
 </dd></dl>
 
 <dl class="method">
 <dt id="arcgis.gis.Item.dependent_upon">
 <code class="descname">dependent_upon</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.Item.dependent_upon" title="Permalink to this definition">¶</a></dt>
-<dd><p>Returns items, urls, etc that this item is dependent on.</p>
+<dd><p>Returns items, urls, etc that this item is dependent on. This capability (item dependencies)
+is not yet available on ArcGIS Online. Currently it is available only with an ArcGIS Enterprise.</p>
 </dd></dl>
 
 <dl class="method">
@@ -1584,6 +1713,10 @@ user.reassign_to() method.  This method only moves one item at a time.</p>
 <code class="descname">related_items</code><span class="sig-paren">(</span><em>rel_type</em>, <em>direction='forward'</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.Item.related_items" title="Permalink to this definition">¶</a></dt>
 <dd><p>Retrieves the items related to this item. Relationships can be added and deleted using
 item.add_relationship() and item.delete_relationship(), respectively.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">With WebMaps items, relationships are only available on local enterprises.</p>
+</div>
 <table border="1" class="docutils">
 <colgroup>
 <col width="18%" />
@@ -1651,6 +1784,28 @@ shared with groups that allow shared update</td>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">A dictionary with key “notSharedWith” containing array of groups with which the item could not be shared.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="arcgis.gis.Item.shared_with">
+<code class="descname">shared_with</code><a class="headerlink" href="#arcgis.gis.Item.shared_with" title="Permalink to this definition">¶</a></dt>
+<dd><p>Reveals the privacy or sharing status of the current item. An item can be private or shared with one or more of
+the following: A specified list of groups, to all members in the organization or to everyone (including
+anonymous users). If the return is False for <cite>org</cite>, <cite>everyone</cite> and contains an empty list of <cite>groups</cite>, then the
+item is private and visible only to the owner.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">Dictionary of the following kind
+{
+‘groups’: [],  # one or more Group objects
+‘everyone’: True | False,
+‘org’: True | False
+}</td>
 </tr>
 </tbody>
 </table>
@@ -2563,9 +2718,48 @@ the group is part of one.</p>
 </dd></dl>
 
 <dl class="method">
+<dt id="arcgis.gis.Group.invite_by_email">
+<code class="descname">invite_by_email</code><span class="sig-paren">(</span><em>email</em>, <em>message</em>, <em>role='member'</em>, <em>expiration='1 Day'</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.Group.invite_by_email" title="Permalink to this definition">¶</a></dt>
+<dd><p>Invites a user by email to the existing group.</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="22%" />
+<col width="78%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><strong>Argument</strong></td>
+<td><strong>Description</strong></td>
+</tr>
+<tr class="row-even"><td>email</td>
+<td>Required string. The user to send join email to.</td>
+</tr>
+<tr class="row-odd"><td>message</td>
+<td>Required string. The message to send to the user.</td>
+</tr>
+<tr class="row-even"><td>role</td>
+<td>Optional string. Either member (the default) or admin.</td>
+</tr>
+<tr class="row-odd"><td>expiration</td>
+<td>Optional string.  The is the time out of the invite.
+The values are: 1 Day (default), 3 Days, 1 Week, or
+2 Weeks.</td>
+</tr>
+</tbody>
+</table>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">boolean</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
 <dt id="arcgis.gis.Group.invite_users">
 <code class="descname">invite_users</code><span class="sig-paren">(</span><em>usernames</em>, <em>role='group_member'</em>, <em>expiration=10080</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.Group.invite_users" title="Permalink to this definition">¶</a></dt>
-<dd><p>Invites users to this group. The user executing this command must be the group owner.</p>
+<dd><p>Invites existing users to this group. The user executing this command must be the group owner.</p>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
 <p class="last">A user who is invited to this group will see a list of invitations
@@ -2641,21 +2835,28 @@ that the user be logged in.</p>
 </table>
 </dd></dl>
 
+<dl class="attribute">
+<dt id="arcgis.gis.Group.protected">
+<code class="descname">protected</code><a class="headerlink" href="#arcgis.gis.Group.protected" title="Permalink to this definition">¶</a></dt>
+<dd><p>Indicates if the group is protected from deletion.
+Default value is false.</p>
+</dd></dl>
+
 <dl class="method">
 <dt id="arcgis.gis.Group.reassign_to">
 <code class="descname">reassign_to</code><span class="sig-paren">(</span><em>target_owner</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.Group.reassign_to" title="Permalink to this definition">¶</a></dt>
 <dd><p>Reassigns this group to another owner.</p>
 <table border="1" class="docutils">
 <colgroup>
-<col width="22%" />
-<col width="78%" />
+<col width="21%" />
+<col width="79%" />
 </colgroup>
 <tbody valign="top">
 <tr class="row-odd"><td><strong>Argument</strong></td>
 <td><strong>Description</strong></td>
 </tr>
 <tr class="row-even"><td>target_owner</td>
-<td>Required string.  The username of the new group owner.</td>
+<td>Required string or User.  The username of the new group owner.</td>
 </tr>
 </tbody>
 </table>
@@ -2994,6 +3195,12 @@ is accessible to every server node in the site.</p>
 <p>Layers can be added to and visualized using maps. They act as inputs to and outputs from analysis tools.</p>
 <p>Layers are created by publishing data to a GIS, and are exposed as a broader resource (Item) in the
 GIS. Layer objects can be obtained through the layers attribute on layer Items in the GIS.</p>
+<dl class="attribute">
+<dt id="arcgis.gis.Layer.filter">
+<code class="descname">filter</code><em class="property"> = None</em><a class="headerlink" href="#arcgis.gis.Layer.filter" title="Permalink to this definition">¶</a></dt>
+<dd><p>optional attribute query string to select features to process by geoanalytics or spatial analysis tools</p>
+</dd></dl>
+
 <dl class="classmethod">
 <dt id="arcgis.gis.Layer.fromitem">
 <em class="property">classmethod </em><code class="descname">fromitem</code><span class="sig-paren">(</span><em>item</em>, <em>index=0</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.Layer.fromitem" title="Permalink to this definition">¶</a></dt>
@@ -3154,6 +3361,12 @@ snippet, and description be provided.</p>
 </tr>
 <tr class="row-even"><td>type</td>
 <td>Optional string. Indicates type of item, see URL 1 below for valid values.</td>
+</tr>
+<tr class="row-odd"><td>dataUrl</td>
+<td>Optional string. The Url of the data stored on cloud storage. If given, filename is required.</td>
+</tr>
+<tr class="row-even"><td>filename</td>
+<td>Optional string. The name of the file on cloud storage.  This is required is dataUrl is used.</td>
 </tr>
 <tr class="row-odd"><td>typeKeywords</td>
 <td>Optional string. Provide a lists all sub-types, see URL 1 below for valid values.</td>
@@ -3790,6 +4003,60 @@ available for use or not.</p>
 </dd></dl>
 
 <dl class="method">
+<dt id="arcgis.gis.ContentManager.replace_service">
+<code class="descname">replace_service</code><span class="sig-paren">(</span><em>replace_item</em>, <em>new_item</em>, <em>replaced_service_name=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.ContentManager.replace_service" title="Permalink to this definition">¶</a></dt>
+<dd><p>The replace_service operation allows you to replace your production vector tile layers with staging ones. This
+operation allows you to perform quality control on a staging tile layer and to then replace the production tile
+layer with the staging with minimal downtime. This operation has the option to keep a backup of the production
+tile layer.</p>
+<p><em>Note</em>: If you are looking to clone services, use the <cite>clone_items()</cite> method instead.
+<em>Note</em>: This functionality is only available for Vector Tile Services.</p>
+<p>Workflow for replace_service:</p>
+<p>1. Publish the staging service to the same system as the production service. Both services are active at
+the same time. Share the staging service with a smaller set of users and QA the staging service.</p>
+<p>2. The item properties (ex: thumbnail, iteminfo, metadata) of the production item will be preserved.
+If you need to update them use the <cite>Item.update()</cite> method.</p>
+<p>3. Call the replace_service operation. The service running on the hosting server gets replaced
+(for example, its cache).</p>
+<p><a href="#id12"><span class="problematic" id="id13">*</span></a>Note:
+It is the responsibility of the user to ensure both services are functionally equivalent for clients
+consuming them. For example, when replacing a hosted feature service, ensure the new service is constructed
+with the anticipated layers and fields for its client application.</p>
+<p>If you want to retain the replaced production service, for example, to keep an archive of the evolution of the
+service you can do so by omitting a value for “Replaced Service Name” . If replaced service name is not provided,
+the production service being replaced will be archived with a time stamp when replace service was executed.
+You can provide any name for the replaced service as long as it is not pre-existing on your portal content.</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="24%" />
+<col width="76%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><strong>Argument</strong></td>
+<td><strong>Description</strong></td>
+</tr>
+<tr class="row-even"><td>replace_item</td>
+<td>Required Item or Item’s Id as string. The service to be replaced</td>
+</tr>
+<tr class="row-odd"><td>new_item</td>
+<td>Required Item or Item’s Id as string. The replacement service.</td>
+</tr>
+<tr class="row-even"><td>replaced_service_name</td>
+<td>Optional string. The name of the replacement service.</td>
+</tr>
+</tbody>
+</table>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">boolean</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
 <dt id="arcgis.gis.ContentManager.search">
 <code class="descname">search</code><span class="sig-paren">(</span><em>query</em>, <em>item_type=None</em>, <em>sort_field='avgRating'</em>, <em>sort_order='desc'</em>, <em>max_items=10</em>, <em>outside_org=False</em>, <em>categories=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.ContentManager.search" title="Permalink to this definition">¶</a></dt>
 <dd><p>Searches for portal items.</p>
@@ -3957,6 +4224,59 @@ See <a class="reference external" href="http://server.arcgis.com/en/portal/lates
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">The user object if successfully found, None if unsuccessful.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="arcgis.gis.UserManager.invite">
+<code class="descname">invite</code><span class="sig-paren">(</span><em>email</em>, <em>role='org_user'</em>, <em>level=2</em>, <em>provider=None</em>, <em>must_approve=False</em>, <em>expiration='1 Day'</em>, <em>validate_email=True</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.UserManager.invite" title="Permalink to this definition">¶</a></dt>
+<dd><p>Invites a user to an organization by email</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="17%" />
+<col width="83%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><strong>Argument</strong></td>
+<td><strong>Description</strong></td>
+</tr>
+<tr class="row-even"><td>email</td>
+<td>Required string. The user’s email that will be invited to the organization.</td>
+</tr>
+<tr class="row-odd"><td>role</td>
+<td>Optional string. The role for the user account. The default value is org_user.
+Other possible values are org_publisher, org_admin, org_viewer.</td>
+</tr>
+<tr class="row-even"><td>level</td>
+<td>Optional string. The account level. The default is 2.
+See <a class="reference external" href="http://server.arcgis.com/en/portal/latest/administer/linux/roles.htm">http://server.arcgis.com/en/portal/latest/administer/linux/roles.htm</a></td>
+</tr>
+<tr class="row-odd"><td>provider</td>
+<td>Optional string. The provider for the account. The default value is arcgis.
+The other possible value is enterprise.</td>
+</tr>
+<tr class="row-even"><td>must_approve</td>
+<td>Optional boolean. After a user accepts the invite, if True, and administrator
+must approve of the individual joining the organization. The default is False.</td>
+</tr>
+<tr class="row-odd"><td>expiration</td>
+<td>Optional string.  The default is ‘1 Day’. This is the time the emailed user has
+to accept the invitiation request until it expires.
+The values are: 1 Day (default), 3 Days, 1 Week, or 2 Weeks.</td>
+</tr>
+<tr class="row-even"><td>validate_email</td>
+<td>Optional boolean. If True (default) the Enterprise will ensure that the email
+is properly formatted. If false, no check will occur</td>
+</tr>
+</tbody>
+</table>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">boolean</td>
 </tr>
 </tbody>
 </table>
@@ -5053,7 +5373,7 @@ used together with file_name.</td>
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'./',
-            VERSION:'1.4.0',
+            VERSION:'1.4.1',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  true,
