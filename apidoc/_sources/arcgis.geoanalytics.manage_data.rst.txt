@@ -3,6 +3,9 @@ arcgis.geoanalytics.manage_data module
 
 .. automodule:: arcgis.geoanalytics.manage_data
 
+append_data
+--------------
+.. automethod:: arcgis.geoanalytics.manage_data.append_data
 
 calculate_fields
 --------------
@@ -11,3 +14,7 @@ calculate_fields
 copy_to_data_store
 --------------
 .. automethod:: arcgis.geoanalytics.manage_data.copy_to_data_store
+
+overlay_data
+--------------
+.. automethod:: arcgis.geoanalytics.manage_data.overlay_data

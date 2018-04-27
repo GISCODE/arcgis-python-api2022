@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>arcgis.mapping module &mdash; arcgis 1.4.0 documentation</title>
+  <title>arcgis.mapping module &mdash; arcgis 1.4.1 documentation</title>
   
 
   
@@ -37,7 +37,7 @@
         <link rel="index" title="Index"
               href="genindex.html"/>
         <link rel="search" title="Search" href="search.html"/>
-    <link rel="top" title="arcgis 1.4.0 documentation" href="index.html"/>
+    <link rel="top" title="arcgis 1.4.1 documentation" href="index.html"/>
         <link rel="next" title="arcgis.realtime module" href="arcgis.realtime.html"/>
         <link rel="prev" title="arcgis.geoprocessing module" href="arcgis.geoprocessing.html"/>
 <!-- This code block is inserted close near the <head> tag. See http://bit.ly/2BHUQzB -->
@@ -77,7 +77,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             
             
               <div class="version">
-                1.4.0
+                1.4.1
               </div>
             
           
@@ -490,12 +490,15 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="arcgis.geoanalytics.manage_data.html">arcgis.geoanalytics.manage_data module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.geoanalytics.manage_data.html#append-data">append_data</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.geoanalytics.manage_data.html#calculate-fields">calculate_fields</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.geoanalytics.manage_data.html#copy-to-data-store">copy_to_data_store</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.geoanalytics.manage_data.html#overlay-data">overlay_data</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="arcgis.geoanalytics.summarize_data.html">arcgis.geoanalytics.summarize_data module</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.geoanalytics.summarize_data.html#aggregate-points">aggregate_points</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.geoanalytics.summarize_data.html#build-multivariable-grid">build_multivariable_grid</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.geoanalytics.summarize_data.html#join-features">join_features</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.geoanalytics.summarize_data.html#reconstruct-tracks">reconstruct_tracks</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.geoanalytics.summarize_data.html#summarize-attributes">summarize_attributes</a></li>
@@ -584,6 +587,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 </li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">arcgis.mapping module</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#webmap">WebMap</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#offlinemapareamanager">OfflineMapAreaManager</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#webscene">WebScene</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#mapimagelayer">MapImageLayer</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#mapimagelayermanager">MapImageLayerManager</a></li>
@@ -602,6 +606,23 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 </li>
 <li class="toctree-l1"><a class="reference internal" href="arcgis.widgets.html">arcgis.widgets module</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.widgets.html#mapview">MapView</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.apps.html">arcgis.apps module</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.apps.html#submodules">Submodules</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="arcgis.apps.workforce.html">arcgis.apps.workforce module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.apps.workforce.html#assignment">Assignment</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.apps.workforce.html#assignmenttype">AssignmentType</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.apps.workforce.html#attachment">Attachment</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.apps.workforce.html#dispatcher">Dispatcher</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.apps.workforce.html#project">Project</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.apps.workforce.html#track">Track</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.apps.workforce.html#worker">Worker</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.apps.workforce.html#submodules">Submodules</a></li>
+</ul>
+</li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -794,7 +815,8 @@ method instead.</p>
 <td>Optional string. Defaults to the logged in user.</td>
 </tr>
 <tr class="row-even"><td>folder</td>
-<td>Optional string. Name of the folder where placing item.</td>
+<td>Optional string. Name of the folder into which the web map should be
+saved.</td>
 </tr>
 </tbody>
 </table>
@@ -945,6 +967,226 @@ or not allowed (false).</td>
 </tr>
 </tbody>
 </table>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="offlinemapareamanager">
+<h2>OfflineMapAreaManager<a class="headerlink" href="#offlinemapareamanager" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="arcgis.mapping.OfflineMapAreaManager">
+<em class="property">class </em><code class="descclassname">arcgis.mapping.</code><code class="descname">OfflineMapAreaManager</code><span class="sig-paren">(</span><em>item</em>, <em>gis</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.mapping.OfflineMapAreaManager" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">object</span></code></p>
+<p>Helper class to manage offline map areas attached to a web map item. Users should not instantiate this class
+directly, instead, should access the methods exposed by accessing the <cite>offline_areas</cite> property on the <cite>WebMap</cite>
+object.</p>
+<dl class="method">
+<dt id="arcgis.mapping.OfflineMapAreaManager.create">
+<code class="descname">create</code><span class="sig-paren">(</span><em>area</em>, <em>item_properties=None</em>, <em>folder=None</em>, <em>min_scale=None</em>, <em>max_scale=None</em>, <em>layers_to_ignore=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.mapping.OfflineMapAreaManager.create" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create offline map area items and packages for ArcGIS Runtime powered applications. This method creates two
+different types of items. It first creates ‘Map Area’ items for the specified extent or bookmark. Next it
+creates one or more map area packages corresponding to each layer type in the extent.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<ul class="last simple">
+<li>Offline map area functionality is only available if your GIS is ArcGIS Online.</li>
+<li>There can be only 1 map area item for an extent or bookmark.</li>
+<li>You need to be the owner of the web map or an administrator of your GIS.</li>
+</ul>
+</div>
+<table border="1" class="docutils">
+<colgroup>
+<col width="21%" />
+<col width="79%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><strong>Argument</strong></td>
+<td><strong>Description</strong></td>
+</tr>
+<tr class="row-even"><td>area</td>
+<td><p class="first">Required object. You can specify the name of a web map bookmark or a
+desired extent.</p>
+<p>To get the bookmarks from a web map, query the <cite>definition.bookmarks</cite>
+property.</p>
+<p class="last">You can specify the extent as a list or dictionary of ‘xmin’, ‘ymin’,
+‘xmax’, ‘ymax’ and spatial reference. If spatial reference is not
+specified, it is assumed to be ‘wkid’ : 4326.</p>
+</td>
+</tr>
+<tr class="row-odd"><td>item_properties</td>
+<td>Required dictionary. See table below for the keys and values.</td>
+</tr>
+<tr class="row-even"><td>folder</td>
+<td>Optional string. Specify a folder name if you want the offline map
+area item and the packages to be created inside a folder.</td>
+</tr>
+<tr class="row-odd"><td>min_scale</td>
+<td>Optional number. Specify the minimum scale to cache tile and vector
+tile layers. When zoomed out beyond this scale, cached layers would
+not display.</td>
+</tr>
+<tr class="row-even"><td>max_scale</td>
+<td>Optional number. Specify the maximum scale to cache tile and vector
+tile layers. When zoomed in beyond this scale, cached layers would
+not display.</td>
+</tr>
+<tr class="row-odd"><td>layers_to_ignore</td>
+<td>Optional List of layer objects to exclude when creating offline
+packages. You can get the list of layers in a web map by calling
+the <cite>layers</cite> property on the <cite>WebMap</cite> object.</td>
+</tr>
+</tbody>
+</table>
+<p><em>Hint: Your min_scale is always bigger in value than your max_scale</em></p>
+<p><em>Key:Value Dictionary Options for Argument item_properties</em></p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="20%" />
+<col width="80%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><strong>Key</strong></td>
+<td><strong>Value</strong></td>
+</tr>
+<tr class="row-even"><td>description</td>
+<td>Optional string. Description of the item.</td>
+</tr>
+<tr class="row-odd"><td>title</td>
+<td>Optional string. Name label of the item.</td>
+</tr>
+<tr class="row-even"><td>tags</td>
+<td>Optional string. Tags listed as comma-separated values, or a list of
+strings. Used for searches on items.</td>
+</tr>
+<tr class="row-odd"><td>snippet</td>
+<td>Optional string. Provide a short summary (limit to max 250 characters)
+of the what the item is.</td>
+</tr>
+</tbody>
+</table>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">Item object for the offline map area item that was created.</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">USAGE</span> <span class="n">EXAMPLE</span><span class="p">:</span> <span class="n">Creating</span> <span class="n">offline</span> <span class="nb">map</span> <span class="n">areas</span>
+
+<span class="n">wm</span> <span class="o">=</span> <span class="n">WebMap</span><span class="p">(</span><span class="n">wm_item</span><span class="p">)</span>
+
+<span class="c1"># create offline areas ignoring a layer and for certain min, max scales for other layers</span>
+<span class="n">item_prop</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;title&#39;</span><span class="p">:</span> <span class="s1">&#39;Clear lake hyperspectral field campaign&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;snippet&#39;</span><span class="p">:</span> <span class="s1">&#39;Offline package for field data collection using spectro-radiometer&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;tags&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;python api&#39;</span><span class="p">,</span> <span class="s1">&#39;in-situ data&#39;</span><span class="p">,</span> <span class="s1">&#39;field data collection&#39;</span><span class="p">]}</span>
+
+<span class="n">aviris_layer</span> <span class="o">=</span> <span class="n">wm</span><span class="o">.</span><span class="n">layers</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+
+<span class="n">north_bed</span> <span class="o">=</span> <span class="n">wm</span><span class="o">.</span><span class="n">definition</span><span class="o">.</span><span class="n">bookmarks</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">][</span><span class="s1">&#39;name&#39;</span><span class="p">]</span>
+<span class="n">wm</span><span class="o">.</span><span class="n">offline_areas</span><span class="o">.</span><span class="n">create</span><span class="p">(</span><span class="n">extent</span><span class="o">=</span><span class="n">north_bed</span><span class="p">,</span> <span class="n">item_properties</span><span class="o">=</span><span class="n">item_prop</span><span class="p">,</span>
+                      <span class="n">folder</span><span class="o">=</span><span class="s1">&#39;clear_lake&#39;</span><span class="p">,</span> <span class="n">min_scale</span><span class="o">=</span><span class="mi">9000</span><span class="p">,</span> <span class="n">max_scale</span><span class="o">=</span><span class="mi">4500</span><span class="p">,</span>
+                       <span class="n">layers_to_ignore</span><span class="o">=</span><span class="p">[</span><span class="n">aviris_layer</span><span class="p">])</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p>This method executes silently. To view informative status messages, set the verbosity environment variable
+as shown below:</p>
+<div class="last highlight-python"><div class="highlight"><pre><span></span><span class="n">USAGE</span> <span class="n">EXAMPLE</span><span class="p">:</span> <span class="n">setting</span> <span class="n">verbosity</span>
+
+<span class="kn">from</span> <span class="nn">arcgis</span> <span class="kn">import</span> <span class="n">env</span>
+<span class="n">env</span><span class="o">.</span><span class="n">verbose</span> <span class="o">=</span> <span class="bp">True</span>
+</pre></div>
+</div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="arcgis.mapping.OfflineMapAreaManager.list">
+<code class="descname">list</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.mapping.OfflineMapAreaManager.list" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns a list of Map Area items related to the current WebMap object.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p>Map Area items and the corresponding offline packages cached for each share a relationship of type
+‘Area2Package’. You can use this relationship to get the list of package items cached for a particular Map
+Area item. Refer to the Python snippet below for the steps:</p>
+<div class="last highlight-python"><div class="highlight"><pre><span></span><span class="n">USAGE</span> <span class="n">EXAMPLE</span><span class="p">:</span> <span class="n">Finding</span> <span class="n">packages</span> <span class="n">cached</span> <span class="k">for</span> <span class="n">a</span> <span class="n">Map</span> <span class="n">Area</span> <span class="n">item</span>
+
+<span class="kn">from</span> <span class="nn">arcgis.mapping</span> <span class="kn">import</span> <span class="n">WebMap</span>
+<span class="n">wm</span> <span class="o">=</span> <span class="n">WebMap</span><span class="p">(</span><span class="n">a_web_map_item_object</span><span class="p">)</span>
+<span class="n">all_map_areas</span> <span class="o">=</span> <span class="n">wm</span><span class="o">.</span><span class="n">offline_areas</span><span class="o">.</span><span class="n">list</span><span class="p">()</span>  <span class="c1"># get all the offline areas for that web map</span>
+
+<span class="n">area1</span> <span class="o">=</span> <span class="n">all_map_areas</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">area1_packages</span> <span class="o">=</span> <span class="n">area1</span><span class="o">.</span><span class="n">related_items</span><span class="p">(</span><span class="s1">&#39;Area2Package&#39;</span><span class="p">,</span><span class="s1">&#39;forward&#39;</span><span class="p">)</span>
+
+<span class="k">for</span> <span class="n">pkg</span> <span class="ow">in</span> <span class="n">area1_packages</span><span class="p">:</span>
+     <span class="k">print</span><span class="p">(</span><span class="n">pkg</span><span class="o">.</span><span class="n">homepage</span><span class="p">)</span>  <span class="c1"># get the homepage url for each package item.</span>
+</pre></div>
+</div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">List of Map Area items related to the current WebMap object</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="arcgis.mapping.OfflineMapAreaManager.update">
+<code class="descname">update</code><span class="sig-paren">(</span><em>offline_map_area_items=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.mapping.OfflineMapAreaManager.update" title="Permalink to this definition">¶</a></dt>
+<dd><p>Refreshes existing map area packages associated with the list of map area items specified.
+This process updates the packages with changes made on the source data since the last time those packages were
+created or refreshed.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<ul class="last simple">
+<li>Offline map area functionality is only available if your GIS is ArcGIS Online.</li>
+<li>You need to be the owner of the web map or an administrator of your GIS.</li>
+</ul>
+</div>
+<table border="1" class="docutils">
+<colgroup>
+<col width="27%" />
+<col width="73%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><strong>Argument</strong></td>
+<td><strong>Description</strong></td>
+</tr>
+<tr class="row-even"><td>offline_map_area_items</td>
+<td><p class="first">Optional list. Specify one or more Map Area items for which the packages need
+to be refreshed. If not specified, this method updates all the packages
+associated with all the map area items of the web map.</p>
+<p class="last">To get the list of Map Area items related to the WebMap object, call the
+<cite>list()</cite> method.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">Dictionary containing update status.</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p>This method executes silently. To view informative status messages, set the verbosity environment variable
+as shown below:</p>
+<div class="last highlight-python"><div class="highlight"><pre><span></span><span class="n">USAGE</span> <span class="n">EXAMPLE</span><span class="p">:</span> <span class="n">setting</span> <span class="n">verbosity</span>
+
+<span class="kn">from</span> <span class="nn">arcgis</span> <span class="kn">import</span> <span class="n">env</span>
+<span class="n">env</span><span class="o">.</span><span class="n">verbose</span> <span class="o">=</span> <span class="bp">True</span>
+</pre></div>
+</div>
+</div>
 </dd></dl>
 
 </dd></dl>
@@ -1637,25 +1879,26 @@ code: ALL | ERROR | CANCELED</td>
 <dt id="arcgis.mapping.MapImageLayerManager.update_tiles">
 <code class="descname">update_tiles</code><span class="sig-paren">(</span><em>levels=None</em>, <em>extent=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.mapping.MapImageLayerManager.update_tiles" title="Permalink to this definition">¶</a></dt>
 <dd><p>The starts tile generation for ArcGIS Online.  The levels of detail
-and the extent are provided to determine the area where tiles need
+and the extent are needed to determine the area where tiles need
 to be rebuilt.</p>
 <p>..Note: This operation is for ArcGIS Online only.</p>
 <table border="1" class="docutils">
 <colgroup>
-<col width="20%" />
-<col width="80%" />
+<col width="18%" />
+<col width="82%" />
 </colgroup>
 <tbody valign="top">
 <tr class="row-odd"><td><strong>Argument</strong></td>
 <td><strong>Description</strong></td>
 </tr>
 <tr class="row-even"><td>levels</td>
-<td>Optional string, The level of details to update
-example: “1,2,10,20”</td>
+<td>Optional String / List of integers, The level of details
+to update. Example: “1,2,10,20” or [1,2,10,20]</td>
 </tr>
 <tr class="row-odd"><td>extent</td>
-<td>Optional string, the area to update as Xmin, YMin, XMax, YMax
-example: “-100,-50,200,500”</td>
+<td>Optional String / Dict. The area to update as Xmin, YMin, XMax, YMax
+example: “-100,-50,200,500” or
+{‘xmin’:100, ‘ymin’:200, ‘xmax’:105, ‘ymax’:205}</td>
 </tr>
 </tbody>
 </table>
@@ -1815,7 +2058,7 @@ Parameters:</p>
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'./',
-            VERSION:'1.4.0',
+            VERSION:'1.4.1',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  true,
