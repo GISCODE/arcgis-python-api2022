@@ -1,9 +1,9 @@
 # Swimming pool detection and classification using deep learning
-This project was presented at the Esri UC 2018 Plenary session. This repository contains code for creating a swimming pool detector. However, with minor modifications it can be trained to detect objects of different types from aerial, drone or satellite imagery. The the following blog arcicles outline our approach.
+This project was presented at the Esri UC 2018 Plenary session. This repository contains code for creating a swimming pool detector. However, with minor modifications it can be trained to detect objects of different types from aerial, drone or satellite imagery. The the following blog articles outline our approach.
 
-* [Medium in-depth blog](https://medium.com/geoai/swimming-pool-detection-and-classification-using-deep-learning-aaf4a3a5e652)
+* [Medium blog: Swimming pool detection and classification using deep learning](https://medium.com/geoai/swimming-pool-detection-and-classification-using-deep-learning-aaf4a3a5e652)
 
-* [Esri overview blog](https://www.esri.com/arcgis-blog/products/api-python/analytics/how-we-did-it-integrating-arcgis-and-machine-learning-at-uc-2018/?adumkts=product&adupro=ArcGIS_Enterprise&aduc=social&adum=external&aduSF=twitter&utm_Source=social&aduca=ArcGIS_Enterprise_Releases&adut=deeplearningUC_blog&sf_id=701f2000000rpeWAAQ&adbsc=social2466101&adbid=1021789845209804800&adbpl=tw&adbpr=80676821)
+* [Esri blog: How we did it: Integrating ArcGIS and deep learning at UC 2018](https://www.esri.com/arcgis-blog/products/api-python/analytics/how-we-did-it-integrating-arcgis-and-machine-learning-at-uc-2018/?adumkts=product&adupro=ArcGIS_Enterprise&aduc=social&adum=external&aduSF=twitter&utm_Source=social&aduca=ArcGIS_Enterprise_Releases&adut=deeplearningUC_blog&sf_id=701f2000000rpeWAAQ&adbsc=social2466101&adbid=1021789845209804800&adbpl=tw&adbpr=80676821)
 
 
 ## An end-to-end object detection workflow
