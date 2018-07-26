@@ -1,19 +1,19 @@
 # Swimming pool detection and classification using deep learning
-This project was presented at UC Plenary this year. This repository contains code for creating an swimming pool detector. However, with minor modifications it can be trained on new data. If know want to our journey of development of this project the following  blogs might be helpful to you.
+This project was presented at the Esri UC 2018 Plenary session. This repository contains code for creating a swimming pool detector. However, with minor modifications it can be trained to detect objects of different types from aerial, drone or satellite imagery. The the following blog arcicles outline our approach.
 
 * [Medium in-depth blog](https://medium.com/geoai/swimming-pool-detection-and-classification-using-deep-learning-aaf4a3a5e652)
 
 * [Esri overview blog](https://www.esri.com/arcgis-blog/products/api-python/analytics/how-we-did-it-integrating-arcgis-and-machine-learning-at-uc-2018/?adumkts=product&adupro=ArcGIS_Enterprise&aduc=social&adum=external&aduSF=twitter&utm_Source=social&aduca=ArcGIS_Enterprise_Releases&adut=deeplearningUC_blog&sf_id=701f2000000rpeWAAQ&adbsc=social2466101&adbid=1021789845209804800&adbpl=tw&adbpr=80676821)
 
 
-## Object detection and GIS
-The field od Deep Learning has recently witnessed groundbreaking research with state of the art results, but taking this research to the field and solving real-world problems is still a challenge. Integration of the latest research in AI with ArcGIS, the industry leading GIS, opens up a world of opportunities ranging from feature identification and land cover classification to creating maps straight out of imagery. With the great results of deep learning this project also showcases the flexibility of ArcGIS api for python to integrate with deep learning libraries like PyTorch and Fast.ai
+## An end-to-end object detection workflow
+The field of Deep Learning has recently witnessed groundbreaking research with state of the art results, but taking this research to the field and solving real-world problems is still a challenge. Integration of the latest research in AI with ArcGIS opens up a world of opportunities. The notebooks in this folder show an end-to-end workflow that starts from extracting image chips to training a deep learning object detection model, deploying it over a large geographical area and creating information products like maps, layers and web apps to share the results, as well as creating assignments for field workers for verification and field assessment of results.
 
 ![Detected Pools](https://cdn-images-1.medium.com/max/896/1*17wkvk94x7EKx8u33FQdwA.png)
 
 <sub> Detected Pools (700m X 700m)</sub>  
 
-## The Challenge
+## Objective
 
 #### Update assessor data
 
@@ -34,9 +34,10 @@ Public health and mosquito control agencies are tasked with protecting the publi
 <sub>  Green or Clean Pools </sub>  
 
 ## Enviroment Setup
-The project used Amazon p2.xlarge for training and inference.Fast.ai V2 community AMI(ami-c6ac1cbc) was used, as it comes set up with all the required enviroments and libraries. To setup your own AWS instance follow [this guide](https://github.com/reshamas/fastai_deeplearn_part1/blob/master/tools/aws_ami_gpu_setup.md)
 
-After setting the AMI up you need to run the following commands.
+The project uses PyTorch and fast.ai deep learning libraries for training and deploying deep learning models. An easy and efficient way to set up the environment with the required libraries and the necessary GPU support is to create an EC2 instance using Amazon Web Services. Any AWS GPU compute instance, such as `p2.xlarge` will do. The fastai-part1v2-p2 (ami-c6ac1cbc) AMI comes set up with all the required enviroments and libraries. To setup your own AWS instance follow [this guide](https://github.com/reshamas/fastai_deeplearn_part1/blob/master/tools/aws_ami_gpu_setup.md)
+
+After setting the AMI up you need to run the following commands to update the environment.
 ```shell
 sudo apt update
 sudo apt upgrade
@@ -45,9 +46,7 @@ conda env update
 conda update --all 
 ```
 
-If you want to set it up locally then you need to have a CUDA supported NVIDIA GPU.
-
-Following are the libraries and tools you will need to install.
+If you want to set up the environment locally, you need to have a CUDA supported NVIDIA GPU and install the following libraries and tools:
 ```
 Anaconda
 PyTorch v0.3+
@@ -56,7 +55,7 @@ CUDA V9.0
 CuDNN
 ```
 
-After setting up the AMI/Local machine, we need the following two more libraries. To install them just type in the following command in the terminal.
+After setting up the AMI/ local development machine, install ArcGIS API for Python and its dependencies using the following command in the terminal:
 
 ```bash
 conda install -c esri arcgis
@@ -70,40 +69,53 @@ ln -s PATH_TO_CLONED_FASTAI_GITHUB_REPO/fastai fastai
 
 ## Workflow
 
-The `data` directory contains a shapefile of swimming pools.The shapefile format is a popular geospatial vector data format for geographic information system (GIS). If you want to train your own object detector on satellite imagery, you will need this shapefile which can be easily created using ArcGIS pro software for Windows.
+### Label object locations
 
-### Create shapefile and Image Extraction
+ArcGIS Pro can be used to can manually label sample object locations and create a shapefile containing the labeled locations.
 
-You can manually label datset using ArcGIS pro software and then create a shapefile so that our notebook can be used to extract images. After you have created the shapefile you need to run the `Export Training Samples.ipynb` after setting up the path of the shapefile in the `PATH` variable. The images will be extracted from the specific locations in the shapefile and will be stored in the images folder in the directory of the shapefile.
+It provides access to a host of aerial, satellite and drone imagery from Esri and its partners and includes an easy to use interface to label data as well as advanced GIS functionality, including tools for reviewing data to manage its quality. Additionally, it includes geoprocessing tools to create buffers and bounding boxes around labeled pool locations.
 
-One more method that to use ArcGIS pro software to extract the images also. If you use this method then the labels of the images will be created in PascalVOC format. We also provide a notebook `Convert Pascal VOC to Tilemapping.ipynb` to convert that file into tilemapping file, which is further used in training notebook
+### Extract training data
+
+Once you have the labeled object locations, you have the following two options to export the necessary training chips and training data:
+
+#### Option A: Use Python code to export training samples
+ArcGIS API for Python has methods for exporting images from Imagery (eg NAIP imagery layers) as well as Tile layers (such as the Esri World Imagery layer). The `Export Training Samples` notebook uses that approach. Run the `Export Training Samples.ipynb` after setting up the path to a shapefile containing the sample object locations in the `PATH` variable. The images will be extracted from the specific locations in the shapefile and will be stored in the images folder. Additionally, a tilemapping file containing a mapping of each image chip to the center coordinates of each object within that image is created.
+
+#### Option B: Use ArcGIS Pro's 'Export Training Data for Deep Learning’ tool 
+ArcGIS Pro includes the ‘Export Training Data for Deep Learning’ tool that can be used to create labelled image chips that are needed to train a deep learning model. For object detection workflows, the output data format is in the "Pascal VOC (Visual Object Challenge)" format.
+
+The `Pascal VOC to Tile Mapping` notebook reads in the labeled Pascal VOC format files, and creates the necessary tilemapping file needed by the training step below.
 
 ![Screenshot of PascalVOC format downloading](https://user-images.githubusercontent.com/16683472/43246778-5d7ab360-90d0-11e8-930a-d664322992e1.png)
 
-### Train a swimming pool detector
+### Train object detector
 
-Once the images are downloaded it can be used for training the deep learning network. Once the tilemapping object is created which contains a mapping from filepath to bounding boxes. Here also the `PATH` variable has to be set. 
+Once the training data is obtailed, we can begin training the deep learning network using the `Train a Swimming Pool detector` notebook. Set the `PATH` variable to point to the folder containing the training data:
 
 ```python
 PATH = Path('path/to/folder/which/contains/tilemapping')
 ```
-Make sure the images are also stored in this directory inside a folder named `images`.
 
-In training you may need to train for longer depending on your data. The visualization of results are at the end of the notebook. This project is for only one class object detector. With minor changes it can be made to work on multi-classe 
+Make sure the images are also stored in a subdirectory named `images`.
 
-Look at the few of our results.
+Note that you may need to train for longer depending upon your data. The visualization of results are at the end of the notebook. This project is for detecting objects of one class (type). With minor changes it can be made to work on multiple classes of objects. 
+
+A few results of swimming pool detection are shown below.
 ![Our results](https://cdn-images-1.medium.com/max/716/1*rCYlCzQu4EODnOb986m07Q.png)
 
-### Clean Vs Green Pools
-This step is specific to our case in which we classify the detected pools as clean or green. The detected pools are downloaded and then mannually classified and stored in directory format. It assumes that the root directory for classification to have `train` and `valid` directories. It also assumes that each directory will have subdirectories for each class. (in this case, `green` and `clean`).
+### Train 'clean or green' pools classifier
+The detected pools as further classified as *clean or green* (i.e. neglected pools) using the `Clean or Green Pools Training` notebook.
 
-Then the notebook `Clean or Green Pools Training.ipynb` will create a deep learning model which will be able to classify clean and green pools.
+To train this Resnet-34 based classification model, some detected pools are downloaded and then mannually labeled as *clean* or *green*. The training notebook assumes that the root directory for classification will have `train` and `valid` directories to contain the training and validation images. It also assumes that each directory will have subdirectories for each class (in this case, `green` and `clean`).
 
 ![green pool detection](https://cdn-images-1.medium.com/max/896/1*RLD_PDZHBUl1oAYcv7aQOA.png)
 
 ### Deploy model's predictions as a Feature Layer.
-The deployment code for the project is in `Deploy model to find swimming pools.ipynb`. This notebook is used to run the object detector on a large area whose predictions can be accumulated and then be converted into a feature layer. The webmap can be created using this feature layer. 
+The deployment code for the project is in the `Deploy model to find swimming pools` notebook. This notebook is used to run the object detector on a large area whose predictions can be accumulated and then be converted into a feature layer. A webmap is then created using this feature layer. 
 
-Later the the predictions from object detector can used to further classify the pools are clean or green, which also can be converted to a feature layer for visualization on a webmap.
+Later the the predictions from object detector are used to further classify the pools are clean or green, which also can be converted to a feature layer for visualization on a web map.
+
+The deployment notebook also demonstrates creation of Workforce assignments for mosquito-control field workers based on the results of the neglected pool detection analysis.
 
 ![final results](https://cdn-images-1.medium.com/max/896/1*6-y2UbWpuHvZyEhn3vbPuA.png)
