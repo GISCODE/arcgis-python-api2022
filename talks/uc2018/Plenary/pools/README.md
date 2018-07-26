@@ -105,14 +105,16 @@ A few results of swimming pool detection are shown below.
 ![Our results](https://cdn-images-1.medium.com/max/716/1*rCYlCzQu4EODnOb986m07Q.png)
 
 ### Train 'clean or green' pools classifier
+
 The detected pools as further classified as *clean or green* (i.e. neglected pools) using the `Clean or Green Pools Training` notebook.
 
 To train this Resnet-34 based classification model, some detected pools are downloaded and then mannually labeled as *clean* or *green*. The training notebook assumes that the root directory for classification will have `train` and `valid` directories to contain the training and validation images. It also assumes that each directory will have subdirectories for each class (in this case, `green` and `clean`).
 
 ![green pool detection](https://cdn-images-1.medium.com/max/896/1*RLD_PDZHBUl1oAYcv7aQOA.png)
 
-### Deploy model's predictions as a Feature Layer.
-The deployment code for the project is in the `Deploy model to find swimming pools` notebook. This notebook is used to run the object detector on a large area whose predictions can be accumulated and then be converted into a feature layer. A webmap is then created using this feature layer. 
+### Deploy trained model
+
+The deployment code for the project is in the `Deploy model to find swimming pools` notebook. This notebook is used to run the object detector on a large area whose predictions can be accumulated and then be used to create information products such as feature layers for visualization and further analysis. A webmap is then created using this feature layer. The locations of the detected swimming pools are used to identify parcels that were not being accessed correctly using analysis tools from ArcGS Online. The Spatial DataFrame in ArcGIS API for Python is used for generating reports of such parcels.
 
 Later the the predictions from object detector are used to further classify the pools are clean or green, which also can be converted to a feature layer for visualization on a web map.
 
