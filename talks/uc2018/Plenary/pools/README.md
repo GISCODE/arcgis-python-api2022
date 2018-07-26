@@ -11,7 +11,7 @@ The field of Deep Learning has recently witnessed groundbreaking research with s
 
 ![Detected Pools](https://cdn-images-1.medium.com/max/896/1*17wkvk94x7EKx8u33FQdwA.png)
 
-<sub> Detected Pools (700m X 700m)</sub>  
+<sub> Representative results of the detected swimming pools. The parcels outlined in red are being assessed incorrectly.</sub>  
 
 ## Objective
 
