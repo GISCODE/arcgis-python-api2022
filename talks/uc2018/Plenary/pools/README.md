@@ -1,5 +1,5 @@
 # Swimming pool detection and classification using deep learning
-This project was presented at the Esri UC 2018 Plenary session. This repository contains code for creating a swimming pool detector. However, with minor modifications it can be trained to detect objects of different types from aerial, drone or satellite imagery. The the following blog articles outline our approach.
+This project was presented at the Esri UC 2018 Plenary session. This repository contains code for creating a swimming pool detector. However, with minor modifications it can be trained to detect objects of different types from aerial, drone or satellite imagery. The following blog articles outline our approach.
 
 * [Medium blog: Swimming pool detection and classification using deep learning](https://medium.com/geoai/swimming-pool-detection-and-classification-using-deep-learning-aaf4a3a5e652)
 
