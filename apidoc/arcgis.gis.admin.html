@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>arcgis.gis.admin module &mdash; arcgis 1.4.1 documentation</title>
+  <title>arcgis.gis.admin module &mdash; arcgis 1.5.0 documentation</title>
   
 
   
@@ -37,7 +37,7 @@
         <link rel="index" title="Index"
               href="genindex.html"/>
         <link rel="search" title="Search" href="search.html"/>
-    <link rel="top" title="arcgis 1.4.1 documentation" href="index.html"/>
+    <link rel="top" title="arcgis 1.5.0 documentation" href="index.html"/>
         <link rel="up" title="arcgis.gis module" href="arcgis.gis.toc.html"/>
         <link rel="next" title="arcgis.gis.server module" href="arcgis.gis.server.html"/>
         <link rel="prev" title="arcgis.gis module" href="arcgis.gis.toc.html"/>
@@ -78,7 +78,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             
             
               <div class="version">
-                1.4.1
+                1.5.0
               </div>
             
           
@@ -127,6 +127,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <li class="toctree-l4"><a class="reference internal" href="#collaborationmanager">CollaborationManager</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#collaboration">Collaboration</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#creditmanager">CreditManager</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#license">License</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#licensemanager">LicenseManager</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#identityprovidermanager">IdentityProviderManager</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#passwordpolicy">PasswordPolicy</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#portalresourcemanager">PortalResourceManager</a></li>
@@ -187,6 +189,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <li class="toctree-l2"><a class="reference internal" href="arcgis.env.html#return-z">return_z</a></li>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.env.html#return-m">return_m</a></li>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.env.html#verbose">verbose</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.env.html#default-aggregation-styles">default_aggregation_styles</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="arcgis.features.toc.html">arcgis.features module</a><ul>
@@ -196,6 +199,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <li class="toctree-l2"><a class="reference internal" href="arcgis.features.toc.html#featurelayercollection">FeatureLayerCollection</a></li>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.features.toc.html#featureset">FeatureSet</a></li>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.features.toc.html#featurecollection">FeatureCollection</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.features.toc.html#arcgis-features-geoaccessor">arcgis.features.GeoAccessor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.features.toc.html#arcgis-features-geoseriesaccessor">arcgis.features.GeoSeriesAccessor</a></li>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.features.toc.html#spatialdataframe">SpatialDataFrame</a></li>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.features.toc.html#submodules">Submodules</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="arcgis.features.analysis.html">arcgis.features.analysis module</a><ul>
@@ -305,6 +310,10 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <li class="toctree-l4"><a class="reference internal" href="arcgis.raster.analytics.html#convert-feature-to-raster">convert_feature_to_raster</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.raster.analytics.html#convert-raster-to-feature">convert_raster_to_feature</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.raster.analytics.html#copy-raster">copy_raster</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.analytics.html#create-image-collection">create_image_collection</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.analytics.html#add-image">add_image</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.analytics.html#delete-image">delete_image</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.analytics.html#delete-image-collection">delete_image_collection</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="arcgis.raster.functions.html">arcgis.raster.functions module</a><ul>
@@ -449,6 +458,25 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.gbl.html#zonal-statistics">zonal_statistics</a></li>
 </ul>
 </li>
+<li class="toctree-l3"><a class="reference internal" href="arcgis.raster.orthomapping.html">arcgis.raster.orthomapping module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.orthomapping.html#is-supported">is_supported</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.orthomapping.html#compute-sensor-model">compute_sensor_model</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.orthomapping.html#alter-processing-states">alter_processing_states</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.orthomapping.html#get-processing-states">get_processing_states</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.orthomapping.html#match-control-points">match_control_points</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.orthomapping.html#color-correction">color_correction</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.orthomapping.html#compute-control-points">compute_control_points</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.orthomapping.html#compute-seamlines">compute_seamlines</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.orthomapping.html#edit-control-points">edit_control_points</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.orthomapping.html#generate-dem">generate_dem</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.orthomapping.html#generate-orthomosaic">generate_orthomosaic</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.orthomapping.html#generate-report">generate_report</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.orthomapping.html#query-camera-info">query_camera_info</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.orthomapping.html#query-control-points">query_control_points</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.orthomapping.html#reset-image-collection">reset_image_collection</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.orthomapping.html#compute-spatial-reference-factory-code">compute_spatial_reference_factory_code</a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -493,6 +521,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <li class="toctree-l3"><a class="reference internal" href="arcgis.geoanalytics.manage_data.html">arcgis.geoanalytics.manage_data module</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.geoanalytics.manage_data.html#append-data">append_data</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.geoanalytics.manage_data.html#calculate-fields">calculate_fields</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.geoanalytics.manage_data.html#clip-layer">clip_layer</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.geoanalytics.manage_data.html#copy-to-data-store">copy_to_data_store</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.geoanalytics.manage_data.html#overlay-data">overlay_data</a></li>
 </ul>
@@ -593,6 +622,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <li class="toctree-l2"><a class="reference internal" href="arcgis.mapping.html#mapimagelayer">MapImageLayer</a></li>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.mapping.html#mapimagelayermanager">MapImageLayerManager</a></li>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.mapping.html#vectortilelayer">VectorTileLayer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.mapping.html#scenelayer">SceneLayer</a></li>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.mapping.html#export-map">export_map</a></li>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.mapping.html#get-layout-templates">get_layout_templates</a></li>
 </ul>
@@ -610,6 +640,10 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="arcgis.apps.html">arcgis.apps module</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.apps.html#build-collector-url">build_collector_url</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.apps.html#build-explorer-url">build_explorer_url</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.apps.html#build-navigator-url">build_navigator_url</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.apps.html#build-survey123-url">build_survey123_url</a></li>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.apps.html#submodules">Submodules</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="arcgis.apps.workforce.html">arcgis.apps.workforce module</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.apps.workforce.html#assignment">Assignment</a></li>
@@ -620,6 +654,10 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <li class="toctree-l4"><a class="reference internal" href="arcgis.apps.workforce.html#track">Track</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.apps.workforce.html#worker">Worker</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.apps.workforce.html#submodules">Submodules</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="arcgis.apps.storymap.html">arcgis.apps.storymap module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.apps.storymap.html#journalstorymap">JournalStoryMap</a></li>
 </ul>
 </li>
 </ul>
@@ -927,7 +965,41 @@ schema.</p>
 <dl class="method">
 <dt id="arcgis.gis.admin.CategoryManager.add">
 <code class="descname">add</code><span class="sig-paren">(</span><em>items</em>, <em>category</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.admin.CategoryManager.add" title="Permalink to this definition">¶</a></dt>
-<dd><p>adds a category to an existing item</p>
+<dd><p>Adds a category to an existing set of items</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="27%" />
+<col width="73%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><strong>Argument</strong></td>
+<td><strong>Description</strong></td>
+</tr>
+<tr class="row-even"><td>items</td>
+<td>Required Items. The content within a GIS that will be
+updated with a list of categories.</td>
+</tr>
+<tr class="row-odd"><td>category</td>
+<td>Required String. Assigns a category value to the items.</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">item</span> <span class="o">=</span> <span class="p">[</span><span class="n">gis</span><span class="o">.</span><span class="n">content</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;&lt;item id 1&gt;&quot;</span><span class="p">),</span>
+<span class="go">            gis.content.get(&quot;&lt;item id 2&gt;&quot;)]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">cs</span> <span class="o">=</span> <span class="n">gis</span><span class="o">.</span><span class="n">admin</span><span class="o">.</span><span class="n">category_schema</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">print</span><span class="p">(</span><span class="n">cs</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">items</span><span class="o">=</span><span class="p">[</span><span class="n">item</span><span class="p">],</span> <span class="n">category</span><span class="o">=</span><span class="s2">&quot;/Categories/TEST3&quot;</span><span class="p">))</span>
+<span class="go">[{&#39;results&#39;: [{&#39;itemId&#39;: &#39;&lt;item id 1&gt;&#39;, &#39;success&#39;: True}]},</span>
+<span class="go"> {&#39;results&#39;: [{&#39;itemId&#39;: &#39;&lt;item id 2&gt;&#39;, &#39;success&#39;: True}]}]</span>
+</pre></div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">dict</td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
 <dl class="method">
@@ -2061,6 +2133,221 @@ organizational users in ArcGIS Online</p>
 </dd></dl>
 
 </div>
+<div class="section" id="license">
+<h2>License<a class="headerlink" href="#license" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="arcgis.gis.admin.License">
+<em class="property">class </em><code class="descclassname">arcgis.gis.admin.</code><code class="descname">License</code><span class="sig-paren">(</span><em>gis</em>, <em>info</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.admin.License" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">object</span></code></p>
+<p>Represents a single entitlement for a given organization.</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="22%" />
+<col width="78%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><strong>Argument</strong></td>
+<td><strong>Description</strong></td>
+</tr>
+<tr class="row-even"><td>gis</td>
+<td>required GIS, the gis connection object</td>
+</tr>
+<tr class="row-odd"><td>info</td>
+<td>required dictionary, the information provided by
+the organization’s site containing the provision
+and listing information.</td>
+</tr>
+</tbody>
+</table>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">License Object</td>
+</tr>
+</tbody>
+</table>
+<dl class="method">
+<dt id="arcgis.gis.admin.License.all">
+<code class="descname">all</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.admin.License.all" title="Permalink to this definition">¶</a></dt>
+<dd><p>returns a list of all usernames and their entitlements for this license</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="arcgis.gis.admin.License.assign">
+<code class="descname">assign</code><span class="sig-paren">(</span><em>username</em>, <em>entitlements</em>, <em>suppress_email=True</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.admin.License.assign" title="Permalink to this definition">¶</a></dt>
+<dd><p>grants a user an entitlement.
+===============     ====================================================
+<strong>Argument</strong>        <strong>Description</strong>
+—————     —————————————————-
+username            required string, the name of the user you wish to</p>
+<blockquote>
+<div>assign an entitlement to.</div></blockquote>
+<p>—————     —————————————————-
+entitlments         required list, a list of entitlements values
+—————     —————————————————-
+suppress_email       optional boolean, if True, the org will not notify</p>
+<blockquote>
+<div>a user that their entitlements has changed (default)
+If False, the org will send an email notifying a
+user that their entitlements have changed.</div></blockquote>
+</dd></dl>
+
+<dl class="method">
+<dt id="arcgis.gis.admin.License.plot">
+<code class="descname">plot</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.admin.License.plot" title="Permalink to this definition">¶</a></dt>
+<dd><p>returns a simple bar chart of assigned and remaining entitlements</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="arcgis.gis.admin.License.properties">
+<code class="descname">properties</code><a class="headerlink" href="#arcgis.gis.admin.License.properties" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="arcgis.gis.admin.License.report">
+<code class="descname">report</code><a class="headerlink" href="#arcgis.gis.admin.License.report" title="Permalink to this definition">¶</a></dt>
+<dd><p>returns a Panda’s Dataframe of the licensing count.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="arcgis.gis.admin.License.revoke">
+<code class="descname">revoke</code><span class="sig-paren">(</span><em>username</em>, <em>entitlements</em>, <em>suppress_email=True</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.admin.License.revoke" title="Permalink to this definition">¶</a></dt>
+<dd><p>removes a specific license from a given entitlement</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="22%" />
+<col width="78%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><strong>Argument</strong></td>
+<td><strong>Description</strong></td>
+</tr>
+<tr class="row-even"><td>username</td>
+<td>required string, the name of the user you wish to
+assign an entitlement to.</td>
+</tr>
+<tr class="row-odd"><td>entitlments</td>
+<td>required list, a list of entitlements values,
+if * is given, all entitlements will be revoked</td>
+</tr>
+<tr class="row-even"><td>suppress_email</td>
+<td>optional boolean, if True, the org will not notify
+a user that their entitlements has changed (default)
+If False, the org will send an email notifying a
+user that their entitlements have changed.</td>
+</tr>
+</tbody>
+</table>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">boolean</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="arcgis.gis.admin.License.user_entitlement">
+<code class="descname">user_entitlement</code><span class="sig-paren">(</span><em>username</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.admin.License.user_entitlement" title="Permalink to this definition">¶</a></dt>
+<dd><p>checks if a user has the entitlement assigned to them</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="22%" />
+<col width="78%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><strong>Argument</strong></td>
+<td><strong>Description</strong></td>
+</tr>
+<tr class="row-even"><td>username</td>
+<td>required string, the name of the user you want to
+examine the entitlements for.</td>
+</tr>
+</tbody>
+</table>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">dictionary</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="licensemanager">
+<h2>LicenseManager<a class="headerlink" href="#licensemanager" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="arcgis.gis.admin.LicenseManager">
+<em class="property">class </em><code class="descclassname">arcgis.gis.admin.</code><code class="descname">LicenseManager</code><span class="sig-paren">(</span><em>url</em>, <em>gis=None</em>, <em>initialize=True</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.admin.LicenseManager" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">arcgis.gis.admin._base.BasePortalAdmin</span></code></p>
+<p>Provides tools to work and manage licenses in ArcGIS Online and
+ArcGIS Enterprise (Portal)</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="21%" />
+<col width="79%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><strong>Argument</strong></td>
+<td><strong>Description</strong></td>
+</tr>
+<tr class="row-even"><td>url</td>
+<td>required string, the web address of the site to
+manage licenses.
+example:
+<a class="reference external" href="https:/">https:/</a>/&lt;org url&gt;/&lt;wa&gt;/sharing/rest/portals/self/purchases</td>
+</tr>
+<tr class="row-odd"><td>gis</td>
+<td>required GIS, the gis connection object</td>
+</tr>
+</tbody>
+</table>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">LicenseManager Object</td>
+</tr>
+</tbody>
+</table>
+<dl class="method">
+<dt id="arcgis.gis.admin.LicenseManager.all">
+<code class="descname">all</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.admin.LicenseManager.all" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns all Licenses registered with an organization</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">list of Licnese objects</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="arcgis.gis.admin.LicenseManager.get">
+<code class="descname">get</code><span class="sig-paren">(</span><em>name</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.admin.LicenseManager.get" title="Permalink to this definition">¶</a></dt>
+<dd><p>retrieves a license by it’s name (title)
+===============     ====================================================
+<strong>Argument</strong>        <strong>Description</strong>
+—————     —————————————————-
+name                required string, name of the entitlement to locate</p>
+<blockquote>
+<div>on the organization.
+example:
+name=”arcgis pro”</div></blockquote>
+</dd></dl>
+
+</dd></dl>
+
+</div>
 <div class="section" id="identityprovidermanager">
 <h2>IdentityProviderManager<a class="headerlink" href="#identityprovidermanager" title="Permalink to this headline">¶</a></h2>
 <dl class="class">
@@ -2717,6 +3004,35 @@ banner is remove.</dd>
 </dd></dl>
 
 <dl class="attribute">
+<dt id="arcgis.gis.admin.UX.summary">
+<code class="descname">summary</code><a class="headerlink" href="#arcgis.gis.admin.UX.summary" title="Permalink to this definition">¶</a></dt>
+<dd><p>Allows the get/setting of a brief summary to describe your organization on the sign in page
+associated with its custom apps and sites. This summary has a maximum of 310 characters.</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="20%" />
+<col width="80%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><strong>Argument</strong></td>
+<td><strong>Description</strong></td>
+</tr>
+<tr class="row-even"><td>text</td>
+<td>Required string. The brief description of the organization.</td>
+</tr>
+</tbody>
+</table>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">string</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
 <dt id="arcgis.gis.admin.UX.vector_basemap">
 <code class="descname">vector_basemap</code><a class="headerlink" href="#arcgis.gis.admin.UX.vector_basemap" title="Permalink to this definition">¶</a></dt>
 <dd><p>gets/sets the default vector basemap</p>
@@ -2962,6 +3278,26 @@ query the logs, clean the logs, and edit log settings.</p>
 <dd><p>Deletes all the log files on the machine hosting Portal for ArcGIS.
 This operation allows you to free up disk space. The logs cannot be
 recovered after executing this operation.</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">USAGE</span><span class="p">:</span> <span class="n">Clean</span> <span class="n">logs</span> <span class="kn">from</span> <span class="nn">your</span> <span class="nn">Portal</span> <span class="nn">Admin</span> <span class="nn">API</span>
+
+<span class="kn">from</span> <span class="nn">arcgis.gis</span> <span class="kn">import</span> <span class="n">GIS</span>
+<span class="n">gis</span> <span class="o">=</span> <span class="n">GIS</span><span class="p">(</span><span class="s2">&quot;https://yourportal.com/portal&quot;</span><span class="p">,</span> <span class="s2">&quot;portaladmin&quot;</span><span class="p">,</span> <span class="s2">&quot;password&quot;</span><span class="p">)</span>
+<span class="n">logs</span> <span class="o">=</span> <span class="n">gis</span><span class="o">.</span><span class="n">admin</span><span class="o">.</span><span class="n">logs</span>
+<span class="n">resp</span> <span class="o">=</span> <span class="n">logs</span><span class="o">.</span><span class="n">clean</span><span class="p">()</span>
+<span class="k">print</span><span class="p">(</span><span class="n">resp</span><span class="p">)</span>
+
+<span class="c1"># Output</span>
+<span class="bp">True</span>
+</pre></div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">Boolean True or False depicting success</td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
 <dl class="method">
@@ -3059,6 +3395,31 @@ default is 1000</td>
 <dt id="arcgis.gis.admin.Logs.settings">
 <code class="descname">settings</code><a class="headerlink" href="#arcgis.gis.admin.Logs.settings" title="Permalink to this definition">¶</a></dt>
 <dd><p>Reads/writes the current log settings for the portal.</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">USAGE</span><span class="p">:</span> <span class="n">Print</span> <span class="n">out</span> <span class="n">the</span> <span class="n">Log</span> <span class="n">Settings</span>
+
+<span class="kn">from</span> <span class="nn">arcgis.gis</span> <span class="kn">import</span> <span class="n">GIS</span>
+<span class="n">gis</span> <span class="o">=</span> <span class="n">GIS</span><span class="p">(</span><span class="s2">&quot;https://yourportal.com/portal&quot;</span><span class="p">,</span> <span class="s2">&quot;portaladmin&quot;</span><span class="p">,</span> <span class="s2">&quot;password&quot;</span><span class="p">)</span>
+<span class="n">logs</span> <span class="o">=</span> <span class="n">gis</span><span class="o">.</span><span class="n">admin</span><span class="o">.</span><span class="n">logs</span>
+<span class="n">logsettings</span> <span class="o">=</span> <span class="n">logs</span><span class="o">.</span><span class="n">settings</span>
+<span class="k">for</span> <span class="n">key</span><span class="p">,</span> <span class="n">value</span> <span class="ow">in</span> <span class="nb">dict</span><span class="p">(</span><span class="n">logsettings</span><span class="p">)</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+    <span class="k">print</span><span class="p">(</span><span class="s2">&quot;{} : {}&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="n">value</span><span class="p">))</span>
+
+<span class="c1"># Output</span>
+<span class="n">logDir</span> <span class="p">:</span> <span class="n">C</span><span class="p">:</span>\<span class="n">arcgisportal</span>\<span class="n">logs</span>
+<span class="n">logLevel</span> <span class="p">:</span> <span class="n">INFO</span>
+<span class="n">maxErrorReportsCount</span> <span class="p">:</span> <span class="mi">10</span>
+<span class="n">maxLogFileAge</span> <span class="p">:</span> <span class="mi">90</span>
+<span class="n">usageMeteringEnabled</span> <span class="p">:</span> <span class="bp">False</span>
+</pre></div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">Dictionary of key/value pairs of log settings</td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
 </dd></dl>
@@ -3471,15 +3832,44 @@ parameter.</td>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">SSLCertificate</td>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">SSLCertificate Object</td>
 </tr>
 </tbody>
 </table>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">USAGE</span><span class="p">:</span> <span class="n">Print</span> <span class="n">out</span> <span class="n">information</span> <span class="n">about</span> <span class="n">a</span> <span class="n">specific</span> <span class="n">SSL</span> <span class="n">Certificate</span> <span class="n">by</span> <span class="n">alias</span> <span class="n">name</span>
+
+<span class="kn">from</span> <span class="nn">arcgis.gis</span> <span class="kn">import</span> <span class="n">GIS</span>
+<span class="n">gis</span> <span class="o">=</span> <span class="n">GIS</span><span class="p">(</span><span class="s2">&quot;https://yourportal.com/portal&quot;</span><span class="p">,</span> <span class="s2">&quot;portaladmin&quot;</span><span class="p">,</span> <span class="s2">&quot;password&quot;</span><span class="p">)</span>
+<span class="c1"># Get the SSL Certificate class</span>
+<span class="n">sslmgr</span> <span class="o">=</span> <span class="n">gis</span><span class="o">.</span><span class="n">admin</span><span class="o">.</span><span class="n">security</span><span class="o">.</span><span class="n">ssl</span>
+<span class="c1"># Get a specific certificate alias and print information</span>
+<span class="n">ssl</span> <span class="o">=</span> <span class="n">sslmgr</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;portal&#39;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">prop</span> <span class="ow">in</span> <span class="n">ssl</span><span class="o">.</span><span class="n">properties</span><span class="p">:</span>
+    <span class="k">print</span><span class="p">(</span><span class="n">prop</span><span class="p">,</span> <span class="n">ssl</span><span class="o">.</span><span class="n">properties</span><span class="p">[</span><span class="n">prop</span><span class="p">])]))</span>
+
+<span class="c1"># Output</span>
+<span class="n">aliasName</span> <span class="n">portal</span>
+<span class="n">issuer</span> <span class="n">CN</span><span class="o">=</span><span class="n">YOURPORTAL</span><span class="o">.</span><span class="n">COM</span><span class="p">,</span> <span class="n">OU</span><span class="o">=</span><span class="n">Self</span> <span class="n">Signed</span> <span class="n">Certificate</span>
+<span class="n">subject</span> <span class="n">CN</span><span class="o">=</span><span class="n">YOURPORTAL</span><span class="o">.</span><span class="n">COM</span><span class="p">,</span> <span class="n">OU</span><span class="o">=</span><span class="n">Self</span> <span class="n">Signed</span> <span class="n">Certificate</span>
+<span class="n">subjectAlternativeNames</span> <span class="p">[]</span>
+<span class="n">validFrom</span> <span class="n">Fri</span> <span class="n">Sep</span> <span class="mi">15</span> <span class="mo">07</span><span class="p">:</span><span class="mi">46</span><span class="p">:</span><span class="mi">45</span> <span class="n">EDT</span> <span class="mi">2017</span>
+<span class="n">validUntil</span> <span class="n">Sun</span> <span class="n">Jul</span> <span class="mi">24</span> <span class="mo">07</span><span class="p">:</span><span class="mi">46</span><span class="p">:</span><span class="mi">45</span> <span class="n">EDT</span> <span class="mi">2050</span>
+<span class="n">keyAlgorithm</span> <span class="n">RSA</span>
+<span class="n">keySize</span> <span class="mi">2048</span>
+<span class="n">serialNumber</span> <span class="mi">503</span><span class="n">b23c6</span>
+<span class="n">version</span> <span class="mi">3</span>
+<span class="n">signatureAlgorithm</span> <span class="n">SHA256withRSA</span>
+<span class="n">keyUsage</span> <span class="p">[]</span>
+<span class="n">md5Fingerprint</span> <span class="mi">76</span><span class="n">d695d72e46b30ea90013676d559faa</span>
+<span class="n">sha1Fingerprint</span> <span class="mi">6</span><span class="n">f36513757c28ad43c2df5e4c7cee581ad18dd1e</span>
+<span class="n">sha256Fingerprint</span> <span class="n">a051aab19d1ed8ceee7322572b3b1b2abd1ed680d0a1d81d0da84cf0e1a1b6cb</span>
+</pre></div>
+</div>
 </dd></dl>
 
 <dl class="method">
 <dt id="arcgis.gis.admin.SSLCertificates.import_certificate">
-<code class="descname">import_certificate</code><span class="sig-paren">(</span><em>certificate</em>, <em>alias</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.admin.SSLCertificates.import_certificate" title="Permalink to this definition">¶</a></dt>
+<code class="descname">import_certificate</code><span class="sig-paren">(</span><em>certificate</em>, <em>alias</em>, <em>norestart=False</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.admin.SSLCertificates.import_certificate" title="Permalink to this definition">¶</a></dt>
 <dd><p>This operation imports a certificate authority’s (CA) root and
 intermediate certificates into the keystore.
 To create a production quality CA-signed certificate, you need
@@ -3503,6 +3893,11 @@ have a custom CA or specific intermediate certificates.</p>
 <tr class="row-odd"><td>alias</td>
 <td>Required string. The name of the certificate</td>
 </tr>
+<tr class="row-even"><td>norestart</td>
+<td>Optional boolean. Determines if the portal should be prevented from
+restarting after importing the certificate. By default this is false
+and the portal will restart.  Added in 10.6.</td>
+</tr>
 </tbody>
 </table>
 <table class="docutils field-list" frame="void" rules="none">
@@ -3513,6 +3908,20 @@ have a custom CA or specific intermediate certificates.</p>
 </tr>
 </tbody>
 </table>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">USAGE</span><span class="p">:</span> <span class="n">Import</span> <span class="n">a</span> <span class="n">trusted</span> <span class="n">CA</span> <span class="ow">or</span> <span class="n">Intermediate</span> <span class="n">SSL</span> <span class="n">Certificate</span> <span class="n">into</span> <span class="n">Portal</span> <span class="n">Admin</span> <span class="n">API</span>
+
+<span class="kn">from</span> <span class="nn">arcgis.gis</span> <span class="kn">import</span> <span class="n">GIS</span>
+<span class="n">gis</span> <span class="o">=</span> <span class="n">GIS</span><span class="p">(</span><span class="s2">&quot;https://yourportal.com/portal&quot;</span><span class="p">,</span> <span class="s2">&quot;portaladmin&quot;</span><span class="p">,</span> <span class="s2">&quot;password&quot;</span><span class="p">)</span>
+<span class="c1"># Get the SSL Certificate class</span>
+<span class="n">sslmgr</span> <span class="o">=</span> <span class="n">gis</span><span class="o">.</span><span class="n">admin</span><span class="o">.</span><span class="n">security</span><span class="o">.</span><span class="n">ssl</span>
+<span class="c1"># Load a trust CA certificate and restart Portal</span>
+<span class="n">resp</span> <span class="o">=</span> <span class="n">sslmgr</span><span class="o">.</span><span class="n">import_certificate</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;c:\temp\myTrustedCA.crt&#39;</span><span class="p">,</span> <span class="s1">&#39;myroot&#39;</span><span class="p">,</span> <span class="n">norestart</span><span class="o">=</span><span class="bp">False</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">resp</span><span class="p">)</span>
+
+<span class="c1"># Output</span>
+<span class="bp">True</span>
+</pre></div>
+</div>
 </dd></dl>
 
 <dl class="method">
@@ -3556,7 +3965,34 @@ Intermediate Certificate operation.</p>
 <dl class="method">
 <dt id="arcgis.gis.admin.SSLCertificates.list">
 <code class="descname">list</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.admin.SSLCertificates.list" title="Permalink to this definition">¶</a></dt>
-<dd><p>list of certificates</p>
+<dd><p>List of SSL Certificates as represented in the Portal Admin API</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">List of SSLCertificate objects</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">USAGE</span><span class="p">:</span> <span class="n">Print</span> <span class="n">out</span> <span class="n">information</span> <span class="n">about</span> <span class="n">each</span> <span class="n">SSL</span> <span class="n">Certificate</span>
+
+<span class="kn">from</span> <span class="nn">arcgis.gis</span> <span class="kn">import</span> <span class="n">GIS</span>
+<span class="n">gis</span> <span class="o">=</span> <span class="n">GIS</span><span class="p">(</span><span class="s2">&quot;https://yourportal.com/portal&quot;</span><span class="p">,</span> <span class="s2">&quot;portaladmin&quot;</span><span class="p">,</span> <span class="s2">&quot;password&quot;</span><span class="p">)</span>
+<span class="c1"># Get the SSL Certificate class</span>
+<span class="n">sslmgr</span> <span class="o">=</span> <span class="n">gis</span><span class="o">.</span><span class="n">admin</span><span class="o">.</span><span class="n">security</span><span class="o">.</span><span class="n">ssl</span>
+<span class="c1"># Get a list of SSL Certificates</span>
+<span class="n">sslcerts</span> <span class="o">=</span> <span class="n">sslmgr</span><span class="o">.</span><span class="n">list</span><span class="p">()</span>
+<span class="c1"># For each certificate, print its alias and issuer</span>
+<span class="k">for</span> <span class="n">sslcert</span> <span class="ow">in</span> <span class="n">sslcerts</span><span class="p">:</span>
+    <span class="k">print</span><span class="p">(</span><span class="s2">&quot;{} : {}&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="nb">dict</span><span class="p">(</span><span class="n">sslcert</span><span class="p">)[</span><span class="s1">&#39;aliasName&#39;</span><span class="p">],</span> <span class="nb">dict</span><span class="p">(</span><span class="n">sslcert</span><span class="p">)[</span><span class="s1">&#39;issuer&#39;</span><span class="p">]))</span>
+
+<span class="c1"># Output</span>
+<span class="n">portal</span> <span class="p">:</span> <span class="n">CN</span><span class="o">=</span><span class="n">YOURPORTAL</span><span class="o">.</span><span class="n">COM</span><span class="p">,</span> <span class="n">OU</span><span class="o">=</span><span class="n">Self</span> <span class="n">Signed</span> <span class="n">Certificate</span>
+<span class="n">yourorgroot</span> <span class="p">:</span> <span class="n">CN</span><span class="o">=</span><span class="n">YourOrg</span> <span class="n">Enterprise</span> <span class="n">Root</span><span class="p">,</span> <span class="n">DC</span><span class="o">=</span><span class="n">empty</span><span class="p">,</span> <span class="n">DC</span><span class="o">=</span><span class="n">local</span>
+<span class="n">samlcert</span> <span class="p">:</span> <span class="n">CN</span><span class="o">=</span><span class="n">YOURPORTAL</span><span class="o">.</span><span class="n">COM</span><span class="p">,</span> <span class="n">OU</span><span class="o">=</span><span class="n">Self</span> <span class="n">Signed</span> <span class="n">Certificate</span>
+<span class="n">ca_signed</span> <span class="p">:</span> <span class="n">CN</span><span class="o">=</span><span class="n">YourOrg</span> <span class="n">Enterprise</span> <span class="n">Root</span><span class="p">,</span> <span class="n">DC</span><span class="o">=</span><span class="n">empty</span><span class="p">,</span> <span class="n">DC</span><span class="o">=</span><span class="n">local</span>
+</pre></div>
+</div>
 </dd></dl>
 
 <dl class="method">
@@ -3987,7 +4423,7 @@ store. You can narrow down the search using the filter parameter.</p>
 administrators can create, export, import, and join sites.</p>
 <dl class="staticmethod">
 <dt id="arcgis.gis.admin.Site.create">
-<em class="property">static </em><code class="descname">create</code><span class="sig-paren">(</span><em>url</em>, <em>username</em>, <em>password</em>, <em>full_name</em>, <em>email</em>, <em>content_store</em>, <em>description=''</em>, <em>question_idx=None</em>, <em>question_ans=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.admin.Site.create" title="Permalink to this definition">¶</a></dt>
+<em class="property">static </em><code class="descname">create</code><span class="sig-paren">(</span><em>con</em>, <em>url</em>, <em>username</em>, <em>password</em>, <em>full_name</em>, <em>email</em>, <em>content_store</em>, <em>description=''</em>, <em>question_idx=None</em>, <em>question_ans=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.admin.Site.create" title="Permalink to this definition">¶</a></dt>
 <dd><p>The create site operation initializes and configures Portal for
 ArcGIS for use. It must be the first operation invoked after
 installation. Creating a new site involves:</p>
@@ -4015,34 +4451,37 @@ restarted.</p>
 <tr class="row-odd"><td><strong>Argument</strong></td>
 <td><strong>Description</strong></td>
 </tr>
-<tr class="row-even"><td>url</td>
+<tr class="row-even"><td>con</td>
+<td>Required Connection. The connection object.</td>
+</tr>
+<tr class="row-odd"><td>url</td>
 <td>Required string. The portal administration url
 Ex: <a class="reference external" href="https://mysite.com">https://mysite.com</a>/&lt;web adaptor&gt;/portaladmin</td>
 </tr>
-<tr class="row-odd"><td>username</td>
+<tr class="row-even"><td>username</td>
 <td>Required string. The initial admin account name</td>
 </tr>
-<tr class="row-even"><td>password</td>
+<tr class="row-odd"><td>password</td>
 <td>Required string. The password for initial admin account</td>
 </tr>
-<tr class="row-odd"><td>full_name</td>
+<tr class="row-even"><td>full_name</td>
 <td>Required string. The full name of the admin account</td>
 </tr>
-<tr class="row-even"><td>email</td>
+<tr class="row-odd"><td>email</td>
 <td>Required string. The account email address</td>
 </tr>
-<tr class="row-odd"><td>content_store</td>
+<tr class="row-even"><td>content_store</td>
 <td>Required string. JSON string including the path to the location of
 the site’s content.</td>
 </tr>
-<tr class="row-even"><td>description</td>
+<tr class="row-odd"><td>description</td>
 <td>Optional string. The optional description for the account</td>
 </tr>
-<tr class="row-odd"><td>question_idx</td>
+<tr class="row-even"><td>question_idx</td>
 <td>Optional integer. The index of the secret question to retrieve a
 forgotten password</td>
 </tr>
-<tr class="row-even"><td>question_ans</td>
+<tr class="row-odd"><td>question_ans</td>
 <td>Optional string. The answer to the secret question</td>
 </tr>
 </tbody>
@@ -4055,7 +4494,6 @@ forgotten password</td>
 </tr>
 </tbody>
 </table>
-<p>Parameters:</p>
 </dd></dl>
 
 <dl class="method">
@@ -4096,6 +4534,19 @@ where the exported site configuration will be written.</td>
 </tr>
 </tbody>
 </table>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">USAGE</span><span class="p">:</span> <span class="n">Export</span> <span class="n">Portal</span> <span class="n">Site</span> <span class="n">to</span> <span class="n">a</span> <span class="n">location</span> <span class="n">the</span> <span class="n">Portal</span> <span class="n">server</span> <span class="n">has</span> <span class="n">access</span> <span class="n">to</span><span class="o">.</span>  <span class="o">**</span> <span class="n">This</span> <span class="n">can</span> <span class="n">be</span> <span class="n">a</span>
+       <span class="n">lengthy</span> <span class="n">operation</span><span class="o">.</span>
+
+<span class="kn">from</span> <span class="nn">arcgis.gis</span> <span class="kn">import</span> <span class="n">GIS</span>
+<span class="n">gis</span> <span class="o">=</span> <span class="n">GIS</span><span class="p">(</span><span class="s2">&quot;https://yourportal.com/portal&quot;</span><span class="p">,</span> <span class="s2">&quot;portaladmin&quot;</span><span class="p">,</span> <span class="s2">&quot;password&quot;</span><span class="p">)</span>
+<span class="n">sitemgr</span> <span class="o">=</span> <span class="n">gis</span><span class="o">.</span><span class="n">admin</span><span class="o">.</span><span class="n">site</span>
+<span class="n">response</span> <span class="o">=</span> <span class="n">sitemgr</span><span class="o">.</span><span class="n">export_site</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;c:\temp&#39;</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">response</span><span class="p">)</span>
+
+<span class="c1"># Output</span>
+<span class="p">{</span><span class="s1">&#39;status&#39;</span><span class="p">:</span> <span class="s1">&#39;success&#39;</span><span class="p">,</span> <span class="s1">&#39;location&#39;</span><span class="p">:</span> <span class="s1">&#39;C:\Temp\June-9-2018-5-22-29-PM-EDT-FULL.portalsite&#39;</span><span class="p">}</span>
+</pre></div>
+</div>
 </dd></dl>
 
 <dl class="method">
@@ -4291,6 +4742,45 @@ If the database and index do not match, indexing is either in
 progress or there is a problem with the index. It is recommended
 that you reindex to correct any issues. If indexing is in progress,
 you can monitor the status by refreshing the page.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">dict</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">USAGE</span><span class="p">:</span> <span class="n">Prints</span> <span class="n">out</span> <span class="n">current</span> <span class="n">Index</span> <span class="n">Status</span>
+
+<span class="kn">from</span> <span class="nn">arcgis.gis</span> <span class="kn">import</span> <span class="n">GIS</span>
+<span class="n">gis</span> <span class="o">=</span> <span class="n">GIS</span><span class="p">(</span><span class="s2">&quot;https://yourportal.com/portal&quot;</span><span class="p">,</span> <span class="s2">&quot;portaladmin&quot;</span><span class="p">,</span> <span class="s2">&quot;password&quot;</span><span class="p">)</span>
+<span class="n">sysmgr</span> <span class="o">=</span> <span class="n">gis</span><span class="o">.</span><span class="n">admin</span><span class="o">.</span><span class="n">system</span>
+<span class="n">idx_status</span> <span class="o">=</span> <span class="n">sysmgr</span><span class="o">.</span><span class="n">index_status</span>
+<span class="kn">import</span> <span class="nn">json</span>
+<span class="k">print</span><span class="p">(</span><span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">(</span><span class="n">idx_status</span><span class="p">,</span> <span class="n">indent</span><span class="o">=</span><span class="mi">2</span><span class="p">))</span>
+
+<span class="c1"># Output</span>
+<span class="p">{</span>
+  <span class="s2">&quot;indexes&quot;</span><span class="p">:</span> <span class="p">[</span>
+    <span class="p">{</span>
+      <span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;users&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;databaseCount&quot;</span><span class="p">:</span> <span class="mi">51</span><span class="p">,</span>
+      <span class="s2">&quot;indexCount&quot;</span><span class="p">:</span> <span class="mi">51</span>
+    <span class="p">},</span>
+    <span class="p">{</span>
+      <span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;groups&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;databaseCount&quot;</span><span class="p">:</span> <span class="mi">325</span><span class="p">,</span>
+      <span class="s2">&quot;indexCount&quot;</span><span class="p">:</span> <span class="mi">325</span>
+    <span class="p">},</span>
+    <span class="p">{</span>
+      <span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;search&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;databaseCount&quot;</span><span class="p">:</span> <span class="mi">8761</span><span class="p">,</span>
+      <span class="s2">&quot;indexCount&quot;</span><span class="p">:</span> <span class="mi">8761</span>
+    <span class="p">}</span>
+  <span class="p">]</span>
+<span class="p">}</span>
+</pre></div>
+</div>
 </dd></dl>
 
 <dl class="attribute">
@@ -4689,7 +5179,39 @@ Adaptor configured with the portal.</p>
 <dl class="method">
 <dt id="arcgis.gis.admin.WebAdaptors.list">
 <code class="descname">list</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.admin.WebAdaptors.list" title="Permalink to this definition">¶</a></dt>
-<dd><p>returns all instances of WebAdaptors</p>
+<dd><p>Returns all instances of WebAdaptors</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">USAGE</span><span class="p">:</span> <span class="n">Get</span> <span class="nb">all</span> <span class="n">Web</span> <span class="n">Adaptors</span> <span class="ow">and</span> <span class="nb">list</span> <span class="n">keys</span><span class="p">,</span><span class="n">values</span> <span class="n">of</span> <span class="n">first</span> <span class="n">Web</span> <span class="n">Adaptor</span> <span class="nb">object</span>
+
+<span class="kn">from</span> <span class="nn">arcgis.gis</span> <span class="kn">import</span> <span class="n">GIS</span>
+<span class="n">gis</span> <span class="o">=</span> <span class="n">GIS</span><span class="p">(</span><span class="s2">&quot;https://yourportal.com/portal&quot;</span><span class="p">,</span> <span class="s2">&quot;portaladmin&quot;</span><span class="p">,</span> <span class="s2">&quot;password&quot;</span><span class="p">)</span>
+
+<span class="c1"># Return a List of Web Adaptor objects</span>
+<span class="n">webadaptors</span> <span class="o">=</span> <span class="n">gis</span><span class="o">.</span><span class="n">admin</span><span class="o">.</span><span class="n">system</span><span class="o">.</span><span class="n">web_adaptors</span><span class="o">.</span><span class="n">list</span><span class="p">()</span>
+
+<span class="c1"># Get the first Web Adaptor object and print out each of its values</span>
+<span class="k">for</span> <span class="n">key</span><span class="p">,</span> <span class="n">value</span> <span class="ow">in</span> <span class="nb">dict</span><span class="p">(</span><span class="n">webadaptors</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+    <span class="k">print</span><span class="p">(</span><span class="s2">&quot;{} : {}&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="n">value</span><span class="p">))</span>
+
+<span class="c1"># Output</span>
+<span class="n">machineName</span> <span class="p">:</span> <span class="n">yourportal</span><span class="o">.</span><span class="n">com</span>
+<span class="n">machineIP</span> <span class="p">:</span> <span class="mf">10.11</span><span class="o">.</span><span class="mf">12.13</span>
+<span class="n">webAdaptorURL</span> <span class="p">:</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">yourwebserver</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">portal</span>
+<span class="nb">id</span> <span class="p">:</span> <span class="n">ac17d7b9</span><span class="o">-</span><span class="n">adbd</span><span class="o">-</span><span class="mi">4</span><span class="n">c45</span><span class="o">-</span><span class="n">ae13</span><span class="o">-</span><span class="mi">77</span><span class="n">b0ad6f14e8</span>
+<span class="n">description</span> <span class="p">:</span>
+<span class="n">httpPort</span> <span class="p">:</span> <span class="mi">80</span>
+<span class="n">httpsPort</span> <span class="p">:</span> <span class="mi">443</span>
+<span class="n">refreshServerListInterval</span> <span class="p">:</span> <span class="mi">1</span>
+<span class="n">reconnectServerOnFailureInterval</span> <span class="p">:</span> <span class="mi">1</span>
+</pre></div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">List of Web Adaptor objects.  Typically, only 1 Web Adaptor will exist for a Portal</td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
 </dd></dl>
@@ -4742,7 +5264,7 @@ Adaptor configured with the portal.</p>
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'./',
-            VERSION:'1.4.1',
+            VERSION:'1.5.0',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  true,
