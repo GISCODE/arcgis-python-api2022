@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>arcgis.geometry module &mdash; arcgis 1.4.1 documentation</title>
+  <title>arcgis.geometry module &mdash; arcgis 1.5.0 documentation</title>
   
 
   
@@ -37,7 +37,7 @@
         <link rel="index" title="Index"
               href="genindex.html"/>
         <link rel="search" title="Search" href="search.html"/>
-    <link rel="top" title="arcgis 1.4.1 documentation" href="index.html"/>
+    <link rel="top" title="arcgis 1.5.0 documentation" href="index.html"/>
         <link rel="next" title="arcgis.geometry.filters module" href="arcgis.geometry.filters.html"/>
         <link rel="prev" title="arcgis.geoenrichment module" href="arcgis.geoenrichment.html"/>
 <!-- This code block is inserted close near the <head> tag. See http://bit.ly/2BHUQzB -->
@@ -77,7 +77,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             
             
               <div class="version">
-                1.4.1
+                1.5.0
               </div>
             
           
@@ -126,6 +126,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <li class="toctree-l4"><a class="reference internal" href="arcgis.gis.admin.html#collaborationmanager">CollaborationManager</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.gis.admin.html#collaboration">Collaboration</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.gis.admin.html#creditmanager">CreditManager</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.gis.admin.html#license">License</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.gis.admin.html#licensemanager">LicenseManager</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.gis.admin.html#identityprovidermanager">IdentityProviderManager</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.gis.admin.html#passwordpolicy">PasswordPolicy</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.gis.admin.html#portalresourcemanager">PortalResourceManager</a></li>
@@ -186,6 +188,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <li class="toctree-l2"><a class="reference internal" href="arcgis.env.html#return-z">return_z</a></li>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.env.html#return-m">return_m</a></li>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.env.html#verbose">verbose</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.env.html#default-aggregation-styles">default_aggregation_styles</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="arcgis.features.toc.html">arcgis.features module</a><ul>
@@ -195,6 +198,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <li class="toctree-l2"><a class="reference internal" href="arcgis.features.toc.html#featurelayercollection">FeatureLayerCollection</a></li>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.features.toc.html#featureset">FeatureSet</a></li>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.features.toc.html#featurecollection">FeatureCollection</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.features.toc.html#arcgis-features-geoaccessor">arcgis.features.GeoAccessor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.features.toc.html#arcgis-features-geoseriesaccessor">arcgis.features.GeoSeriesAccessor</a></li>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.features.toc.html#spatialdataframe">SpatialDataFrame</a></li>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.features.toc.html#submodules">Submodules</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="arcgis.features.analysis.html">arcgis.features.analysis module</a><ul>
@@ -304,6 +309,10 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <li class="toctree-l4"><a class="reference internal" href="arcgis.raster.analytics.html#convert-feature-to-raster">convert_feature_to_raster</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.raster.analytics.html#convert-raster-to-feature">convert_raster_to_feature</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.raster.analytics.html#copy-raster">copy_raster</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.analytics.html#create-image-collection">create_image_collection</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.analytics.html#add-image">add_image</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.analytics.html#delete-image">delete_image</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.analytics.html#delete-image-collection">delete_image_collection</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="arcgis.raster.functions.html">arcgis.raster.functions module</a><ul>
@@ -448,6 +457,25 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.gbl.html#zonal-statistics">zonal_statistics</a></li>
 </ul>
 </li>
+<li class="toctree-l3"><a class="reference internal" href="arcgis.raster.orthomapping.html">arcgis.raster.orthomapping module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.orthomapping.html#is-supported">is_supported</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.orthomapping.html#compute-sensor-model">compute_sensor_model</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.orthomapping.html#alter-processing-states">alter_processing_states</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.orthomapping.html#get-processing-states">get_processing_states</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.orthomapping.html#match-control-points">match_control_points</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.orthomapping.html#color-correction">color_correction</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.orthomapping.html#compute-control-points">compute_control_points</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.orthomapping.html#compute-seamlines">compute_seamlines</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.orthomapping.html#edit-control-points">edit_control_points</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.orthomapping.html#generate-dem">generate_dem</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.orthomapping.html#generate-orthomosaic">generate_orthomosaic</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.orthomapping.html#generate-report">generate_report</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.orthomapping.html#query-camera-info">query_camera_info</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.orthomapping.html#query-control-points">query_control_points</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.orthomapping.html#reset-image-collection">reset_image_collection</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.orthomapping.html#compute-spatial-reference-factory-code">compute_spatial_reference_factory_code</a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -492,6 +520,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <li class="toctree-l3"><a class="reference internal" href="arcgis.geoanalytics.manage_data.html">arcgis.geoanalytics.manage_data module</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.geoanalytics.manage_data.html#append-data">append_data</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.geoanalytics.manage_data.html#calculate-fields">calculate_fields</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.geoanalytics.manage_data.html#clip-layer">clip_layer</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.geoanalytics.manage_data.html#copy-to-data-store">copy_to_data_store</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.geoanalytics.manage_data.html#overlay-data">overlay_data</a></li>
 </ul>
@@ -592,6 +621,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <li class="toctree-l2"><a class="reference internal" href="arcgis.mapping.html#mapimagelayer">MapImageLayer</a></li>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.mapping.html#mapimagelayermanager">MapImageLayerManager</a></li>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.mapping.html#vectortilelayer">VectorTileLayer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.mapping.html#scenelayer">SceneLayer</a></li>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.mapping.html#export-map">export_map</a></li>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.mapping.html#get-layout-templates">get_layout_templates</a></li>
 </ul>
@@ -609,6 +639,10 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="arcgis.apps.html">arcgis.apps module</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.apps.html#build-collector-url">build_collector_url</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.apps.html#build-explorer-url">build_explorer_url</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.apps.html#build-navigator-url">build_navigator_url</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.apps.html#build-survey123-url">build_survey123_url</a></li>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.apps.html#submodules">Submodules</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="arcgis.apps.workforce.html">arcgis.apps.workforce module</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.apps.workforce.html#assignment">Assignment</a></li>
@@ -619,6 +653,10 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <li class="toctree-l4"><a class="reference internal" href="arcgis.apps.workforce.html#track">Track</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.apps.workforce.html#worker">Worker</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.apps.workforce.html#submodules">Submodules</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="arcgis.apps.storymap.html">arcgis.apps.storymap module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.apps.storymap.html#journalstorymap">JournalStoryMap</a></li>
 </ul>
 </li>
 </ul>
@@ -699,46 +737,57 @@ geometries between different representations.</p>
 <p>Several functions accept geometries represented as dictionaries and the geometry objects in this module behave like them
 as well as support the ‘.’ (dot) notation providing attribute access.</p>
 <p>Example:</p>
-<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">pt</span> <span class="o">=</span> <span class="n">Point</span><span class="p">({</span><span class="s2">&quot;x&quot;</span> <span class="p">:</span> <span class="o">-</span><span class="mf">118.15</span><span class="p">,</span> <span class="s2">&quot;y&quot;</span> <span class="p">:</span> <span class="mf">33.80</span><span class="p">,</span> <span class="s2">&quot;spatialReference&quot;</span> <span class="p">:</span> <span class="p">{</span><span class="s2">&quot;wkid&quot;</span> <span class="p">:</span> <span class="mi">4326</span><span class="p">}})</span>
-<span class="k">print</span> <span class="p">(</span><span class="n">pt</span><span class="o">.</span><span class="n">is_valid</span><span class="p">)</span>
-<span class="k">print</span> <span class="p">(</span><span class="n">pt</span><span class="o">.</span><span class="n">type</span><span class="p">)</span> <span class="c1"># POINT</span>
-<span class="k">print</span> <span class="p">(</span><span class="n">pt</span><span class="p">)</span>
-<span class="k">print</span> <span class="p">(</span><span class="n">pt</span><span class="o">.</span><span class="n">x</span><span class="p">,</span> <span class="n">pt</span><span class="o">.</span><span class="n">y</span><span class="p">)</span>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">pt</span> <span class="o">=</span> <span class="n">Point</span><span class="p">({</span><span class="s2">&quot;x&quot;</span> <span class="p">:</span> <span class="o">-</span><span class="mf">118.15</span><span class="p">,</span> <span class="s2">&quot;y&quot;</span> <span class="p">:</span> <span class="mf">33.80</span><span class="p">,</span> <span class="s2">&quot;spatialReference&quot;</span> <span class="p">:</span> <span class="p">{</span><span class="s2">&quot;wkid&quot;</span> <span class="p">:</span> <span class="mi">4326</span><span class="p">}})</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">print</span> <span class="p">(</span><span class="n">pt</span><span class="o">.</span><span class="n">is_valid</span><span class="p">)</span>
+<span class="go">True</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">print</span> <span class="p">(</span><span class="n">pt</span><span class="o">.</span><span class="n">type</span><span class="p">)</span> <span class="c1"># POINT</span>
+<span class="go">&#39;POINT&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">print</span> <span class="p">(</span><span class="n">pt</span><span class="p">)</span>
+<span class="go">&#39;{&quot;x&quot; : -118.15, &quot;y&quot; : 33.80, &quot;spatialReference&quot; : {&quot;wkid&quot; : 4326}}&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">print</span> <span class="p">(</span><span class="n">pt</span><span class="o">.</span><span class="n">x</span><span class="p">,</span> <span class="n">pt</span><span class="o">.</span><span class="n">y</span><span class="p">)</span>
+<span class="go">(-118.15,33.80)</span>
 </pre></div>
 </div>
 <p>Example Polyline:</p>
-<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">line</span> <span class="o">=</span> <span class="p">{</span>
-  <span class="s2">&quot;paths&quot;</span> <span class="p">:</span> <span class="p">[[[</span><span class="o">-</span><span class="mf">97.06138</span><span class="p">,</span><span class="mf">32.837</span><span class="p">],[</span><span class="o">-</span><span class="mf">97.06133</span><span class="p">,</span><span class="mf">32.836</span><span class="p">],[</span><span class="o">-</span><span class="mf">97.06124</span><span class="p">,</span><span class="mf">32.834</span><span class="p">],[</span><span class="o">-</span><span class="mf">97.06127</span><span class="p">,</span><span class="mf">32.832</span><span class="p">]],</span>
-             <span class="p">[[</span><span class="o">-</span><span class="mf">97.06326</span><span class="p">,</span><span class="mf">32.759</span><span class="p">],[</span><span class="o">-</span><span class="mf">97.06298</span><span class="p">,</span><span class="mf">32.755</span><span class="p">]]],</span>
-  <span class="s2">&quot;spatialReference&quot;</span> <span class="p">:</span> <span class="p">{</span><span class="s2">&quot;wkid&quot;</span> <span class="p">:</span> <span class="mi">4326</span><span class="p">}</span>
-<span class="p">}</span>
-<span class="n">polyline</span> <span class="o">=</span> <span class="n">Polyline</span><span class="p">(</span><span class="n">line</span><span class="p">)</span>
-<span class="k">print</span><span class="p">(</span><span class="n">polyline</span><span class="p">)</span>
-<span class="k">print</span><span class="p">(</span><span class="n">polyline</span><span class="o">.</span><span class="n">is_valid</span><span class="p">)</span>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">line</span> <span class="o">=</span> <span class="p">{</span>
+<span class="go">  &quot;paths&quot; : [[[-97.06138,32.837],[-97.06133,32.836],[-97.06124,32.834],[-97.06127,32.832]],</span>
+<span class="go">             [[-97.06326,32.759],[-97.06298,32.755]]],</span>
+<span class="go">  &quot;spatialReference&quot; : {&quot;wkid&quot; : 4326}</span>
+<span class="go">}</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">polyline</span> <span class="o">=</span> <span class="n">Polyline</span><span class="p">(</span><span class="n">line</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">print</span><span class="p">(</span><span class="n">polyline</span><span class="p">)</span>
+<span class="go">&#39;{&quot;paths&quot; : [[[-97.06138,32.837],[-97.06133,32.836],[-97.06124,32.834],[-97.06127,32.832]],[[-97.06326,32.759],[-97.06298,32.755]]],&quot;spatialReference&quot; : {&quot;wkid&quot; : 4326}}&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">print</span><span class="p">(</span><span class="n">polyline</span><span class="o">.</span><span class="n">is_valid</span><span class="p">)</span>
+<span class="go">True</span>
 </pre></div>
 </div>
 <p>Example of invalid geometry:</p>
-<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">line</span> <span class="o">=</span> <span class="p">{</span>
-  <span class="s2">&quot;paths&quot;</span> <span class="p">:</span> <span class="p">[[[</span><span class="o">-</span><span class="mf">97.06138</span><span class="p">],[</span><span class="o">-</span><span class="mf">97.06133</span><span class="p">,</span><span class="mf">32.836</span><span class="p">],[</span><span class="o">-</span><span class="mf">97.06124</span><span class="p">,</span><span class="mf">32.834</span><span class="p">],[</span><span class="o">-</span><span class="mf">97.06127</span><span class="p">,</span><span class="mf">32.832</span><span class="p">]],</span>
-             <span class="p">[[</span><span class="o">-</span><span class="mf">97.06326</span><span class="p">,</span><span class="mf">32.759</span><span class="p">],[</span><span class="o">-</span><span class="mf">97.06298</span><span class="p">,</span><span class="mf">32.755</span><span class="p">]]],</span>
-  <span class="s2">&quot;spatialReference&quot;</span> <span class="p">:</span> <span class="p">{</span><span class="s2">&quot;wkid&quot;</span> <span class="p">:</span> <span class="mi">4326</span><span class="p">}</span>
-<span class="p">}</span>
-<span class="n">polyline</span> <span class="o">=</span> <span class="n">Polyline</span><span class="p">(</span><span class="n">line</span><span class="p">)</span>
-<span class="k">print</span><span class="p">(</span><span class="n">polyline</span><span class="p">)</span>
-<span class="k">print</span><span class="p">(</span><span class="n">polyline</span><span class="o">.</span><span class="n">is_valid</span><span class="p">)</span> <span class="c1"># False</span>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">line</span> <span class="o">=</span> <span class="p">{</span>
+<span class="go">  &quot;paths&quot; : [[[-97.06138],[-97.06133,32.836],[-97.06124,32.834],[-97.06127,32.832]],</span>
+<span class="go">             [[-97.06326,32.759],[-97.06298,32.755]]],</span>
+<span class="go">  &quot;spatialReference&quot; : {&quot;wkid&quot; : 4326}</span>
+<span class="go">}</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">polyline</span> <span class="o">=</span> <span class="n">Polyline</span><span class="p">(</span><span class="n">line</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">print</span><span class="p">(</span><span class="n">polyline</span><span class="p">)</span>
+<span class="go">&#39;&#39;&#39;{&quot;paths&quot; : [[[-97.06138],[-97.06133,32.836],[-97.06124,32.834],[-97.06127,32.832]],</span>
+<span class="go">[[-97.06326,32.759],[-97.06298,32.755]]],&quot;spatialReference&quot; : {&quot;wkid&quot; : 4326}}&#39;&#39;&#39;</span>
+<span class="go">&gt;&gt;&gt;print(polyline.is_valid)</span>
+<span class="go">False</span>
 </pre></div>
 </div>
 <p>The same pattern can be used repeated for Polygon, MultiPoint and SpatialReference.</p>
 <p>You can create a Geometry even when you don’t know the exact type. The Geometry constructor is able to figure out the
 geometry type and returns the correct type as the example below demonstrates:</p>
-<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">geom</span> <span class="o">=</span> <span class="n">Geometry</span><span class="p">({</span>
-  <span class="s2">&quot;rings&quot;</span> <span class="p">:</span> <span class="p">[[[</span><span class="o">-</span><span class="mf">97.06138</span><span class="p">,</span><span class="mf">32.837</span><span class="p">],[</span><span class="o">-</span><span class="mf">97.06133</span><span class="p">,</span><span class="mf">32.836</span><span class="p">],[</span><span class="o">-</span><span class="mf">97.06124</span><span class="p">,</span><span class="mf">32.834</span><span class="p">],[</span><span class="o">-</span><span class="mf">97.06127</span><span class="p">,</span><span class="mf">32.832</span><span class="p">],</span>
-              <span class="p">[</span><span class="o">-</span><span class="mf">97.06138</span><span class="p">,</span><span class="mf">32.837</span><span class="p">]],[[</span><span class="o">-</span><span class="mf">97.06326</span><span class="p">,</span><span class="mf">32.759</span><span class="p">],[</span><span class="o">-</span><span class="mf">97.06298</span><span class="p">,</span><span class="mf">32.755</span><span class="p">],[</span><span class="o">-</span><span class="mf">97.06153</span><span class="p">,</span><span class="mf">32.749</span><span class="p">],</span>
-              <span class="p">[</span><span class="o">-</span><span class="mf">97.06326</span><span class="p">,</span><span class="mf">32.759</span><span class="p">]]],</span>
-  <span class="s2">&quot;spatialReference&quot;</span> <span class="p">:</span> <span class="p">{</span><span class="s2">&quot;wkid&quot;</span> <span class="p">:</span> <span class="mi">4326</span><span class="p">}</span>
-<span class="p">})</span>
-<span class="k">print</span> <span class="p">(</span><span class="n">geom</span><span class="o">.</span><span class="n">type</span><span class="p">)</span> <span class="c1"># Polygon</span>
-<span class="k">print</span> <span class="p">(</span><span class="nb">isinstance</span><span class="p">(</span><span class="n">geom</span><span class="p">,</span> <span class="n">Polygon</span><span class="p">)</span> <span class="c1"># True</span>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">geom</span> <span class="o">=</span> <span class="n">Geometry</span><span class="p">({</span>
+<span class="go">  &quot;rings&quot; : [[[-97.06138,32.837],[-97.06133,32.836],[-97.06124,32.834],[-97.06127,32.832],</span>
+<span class="go">              [-97.06138,32.837]],[[-97.06326,32.759],[-97.06298,32.755],[-97.06153,32.749],</span>
+<span class="go">              [-97.06326,32.759]]],</span>
+<span class="go">  &quot;spatialReference&quot; : {&quot;wkid&quot; : 4326}</span>
+<span class="go">})</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">print</span> <span class="p">(</span><span class="n">geom</span><span class="o">.</span><span class="n">type</span><span class="p">)</span> <span class="c1"># Polygon</span>
+<span class="go">&#39;Polygon&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">print</span><span class="p">(</span><span class="nb">isinstance</span><span class="p">(</span><span class="n">geom</span><span class="p">,</span> <span class="n">Polygon</span><span class="p">)</span>
+<span class="go">True</span>
 </pre></div>
 </div>
 <div class="section" id="point">
@@ -881,9 +930,45 @@ or a “NaN” string.</p>
 </dd></dl>
 
 <dl class="attribute">
+<dt id="arcgis.geometry.Envelope.geohash">
+<code class="descname">geohash</code><a class="headerlink" href="#arcgis.geometry.Envelope.geohash" title="Permalink to this definition">¶</a></dt>
+<dd><p>A geohash string of the extent is returned.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="arcgis.geometry.Envelope.geohash_covers">
+<code class="descname">geohash_covers</code><a class="headerlink" href="#arcgis.geometry.Envelope.geohash_covers" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns a list of up to the four longest geohash strings that fit within the extent.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="arcgis.geometry.Envelope.geohash_neighbors">
+<code class="descname">geohash_neighbors</code><a class="headerlink" href="#arcgis.geometry.Envelope.geohash_neighbors" title="Permalink to this definition">¶</a></dt>
+<dd><p>A list of the geohash neighbor strings for the extent is returned.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="arcgis.geometry.Envelope.height">
+<code class="descname">height</code><a class="headerlink" href="#arcgis.geometry.Envelope.height" title="Permalink to this definition">¶</a></dt>
+<dd><p>The extent height value.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="arcgis.geometry.Envelope.polygon">
+<code class="descname">polygon</code><a class="headerlink" href="#arcgis.geometry.Envelope.polygon" title="Permalink to this definition">¶</a></dt>
+<dd><p>returns the envelope as a Polygon geometry</p>
+</dd></dl>
+
+<dl class="attribute">
 <dt id="arcgis.geometry.Envelope.type">
 <code class="descname">type</code><a class="headerlink" href="#arcgis.geometry.Envelope.type" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
+
+<dl class="attribute">
+<dt id="arcgis.geometry.Envelope.width">
+<code class="descname">width</code><a class="headerlink" href="#arcgis.geometry.Envelope.width" title="Permalink to this definition">¶</a></dt>
+<dd><p>The extent width value.</p>
+</dd></dl>
 
 </dd></dl>
 
@@ -1041,7 +1126,18 @@ an alternative, if desired.</td>
 <dl class="attribute">
 <dt id="arcgis.geometry.Geometry.area">
 <code class="descname">area</code><a class="headerlink" href="#arcgis.geometry.Geometry.area" title="Permalink to this definition">¶</a></dt>
-<dd><p>The area of a polygon feature. Empty for all other feature types.</p>
+<dd><p>The area of a polygon feature. None for all other feature types.
+The area is in the units of the spatial reference.</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">geom</span> <span class="o">=</span> <span class="n">Geometry</span><span class="p">({</span>
+<span class="go">  &quot;rings&quot; : [[[-97.06138,32.837],[-97.06133,32.836],[-97.06124,32.834],[-97.06127,32.832],</span>
+<span class="go">              [-97.06138,32.837]],[[-97.06326,32.759],[-97.06298,32.755],[-97.06153,32.749],</span>
+<span class="go">              [-97.06326,32.759]]],</span>
+<span class="go">  &quot;spatialReference&quot; : {&quot;wkid&quot; : 4326}</span>
+<span class="go">})</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">geom</span><span class="o">.</span><span class="n">area</span>
+<span class="go">-1.869999999973911e-06</span>
+</pre></div>
+</div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -1112,11 +1208,21 @@ A negative distance can only be specified against a polygon geometry.</td>
 <dt id="arcgis.geometry.Geometry.centroid">
 <code class="descname">centroid</code><a class="headerlink" href="#arcgis.geometry.Geometry.centroid" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns the center of the geometry</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">geom</span> <span class="o">=</span> <span class="n">Geometry</span><span class="p">({</span>
+<span class="go">  &quot;rings&quot; : [[[-97.06138,32.837],[-97.06133,32.836],[-97.06124,32.834],[-97.06127,32.832],</span>
+<span class="go">              [-97.06138,32.837]],[[-97.06326,32.759],[-97.06298,32.755],[-97.06153,32.749],</span>
+<span class="go">              [-97.06326,32.759]]],</span>
+<span class="go">  &quot;spatialReference&quot; : {&quot;wkid&quot; : 4326}</span>
+<span class="go">})</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">geom</span><span class="o">.</span><span class="n">centroid</span>
+<span class="go">(-97.06258999999994, 32.754333333000034)</span>
+</pre></div>
+</div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">a arcgis.geometry.Point</td>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">tuple(x,y)</td>
 </tr>
 </tbody>
 </table>
@@ -1421,6 +1527,16 @@ a 2D comparison only; M and Z values are ignored.</p>
 <dt id="arcgis.geometry.Geometry.extent">
 <code class="descname">extent</code><a class="headerlink" href="#arcgis.geometry.Geometry.extent" title="Permalink to this definition">¶</a></dt>
 <dd><p>The extent of the geometry as a tuple containing xmin, ymin, xmax, ymax</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">geom</span> <span class="o">=</span> <span class="n">Geometry</span><span class="p">({</span>
+<span class="go">  &quot;rings&quot; : [[[-97.06138,32.837],[-97.06133,32.836],[-97.06124,32.834],[-97.06127,32.832],</span>
+<span class="go">              [-97.06138,32.837]],[[-97.06326,32.759],[-97.06298,32.755],[-97.06153,32.749],</span>
+<span class="go">              [-97.06326,32.759]]],</span>
+<span class="go">  &quot;spatialReference&quot; : {&quot;wkid&quot; : 4326}</span>
+<span class="go">})</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">geom</span><span class="o">.</span><span class="n">extent</span>
+<span class="go">(-97.06326, 32.749, -97.06124, 32.837)</span>
+</pre></div>
+</div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -1435,6 +1551,16 @@ a 2D comparison only; M and Z values are ignored.</p>
 <dt id="arcgis.geometry.Geometry.first_point">
 <code class="descname">first_point</code><a class="headerlink" href="#arcgis.geometry.Geometry.first_point" title="Permalink to this definition">¶</a></dt>
 <dd><p>The first coordinate point of the geometry.</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">geom</span> <span class="o">=</span> <span class="n">Geometry</span><span class="p">({</span>
+<span class="go">  &quot;rings&quot; : [[[-97.06138,32.837],[-97.06133,32.836],[-97.06124,32.834],[-97.06127,32.832],</span>
+<span class="go">              [-97.06138,32.837]],[[-97.06326,32.759],[-97.06298,32.755],[-97.06153,32.749],</span>
+<span class="go">              [-97.06326,32.759]]],</span>
+<span class="go">  &quot;spatialReference&quot; : {&quot;wkid&quot; : 4326}</span>
+<span class="go">})</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">geom</span><span class="o">.</span><span class="n">first_point</span>
+<span class="go">{&#39;x&#39;: -97.06138, &#39;y&#39;: 32.837, &#39;spatialReference&#39;: {&#39;wkid&#39;: 4326, &#39;latestWkid&#39;: 4326}}</span>
+</pre></div>
+</div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -1478,6 +1604,11 @@ tolerance.</p>
 <dt id="arcgis.geometry.Geometry.geoextent">
 <code class="descname">geoextent</code><a class="headerlink" href="#arcgis.geometry.Geometry.geoextent" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns the current feature’s extent</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">g</span> <span class="o">=</span> <span class="n">Geometry</span><span class="p">({</span><span class="o">...</span><span class="p">})</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">g</span><span class="o">.</span><span class="n">geoextent</span>
+<span class="go">(1,2,3,4)</span>
+</pre></div>
+</div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -1492,6 +1623,16 @@ tolerance.</p>
 <dt id="arcgis.geometry.Geometry.geometry_type">
 <code class="descname">geometry_type</code><a class="headerlink" href="#arcgis.geometry.Geometry.geometry_type" title="Permalink to this definition">¶</a></dt>
 <dd><p>The geometry type: polygon, polyline, point, multipoint</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">geom</span> <span class="o">=</span> <span class="n">Geometry</span><span class="p">({</span>
+<span class="go">  &quot;rings&quot; : [[[-97.06138,32.837],[-97.06133,32.836],[-97.06124,32.834],[-97.06127,32.832],</span>
+<span class="go">              [-97.06138,32.837]],[[-97.06326,32.759],[-97.06298,32.755],[-97.06153,32.749],</span>
+<span class="go">              [-97.06326,32.759]]],</span>
+<span class="go">  &quot;spatialReference&quot; : {&quot;wkid&quot; : 4326}</span>
+<span class="go">})</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">geom</span><span class="o">.</span><span class="n">geometry_type</span>
+<span class="go">&#39;polygon&#39;</span>
+</pre></div>
+</div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -1611,6 +1752,16 @@ or an array containing a number of arrays, one for each part.</p>
 <code class="descname">hull_rectangle</code><a class="headerlink" href="#arcgis.geometry.Geometry.hull_rectangle" title="Permalink to this definition">¶</a></dt>
 <dd><p>A space-delimited string of the coordinate pairs of the convex hull
 rectangle.</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">geom</span> <span class="o">=</span> <span class="n">Geometry</span><span class="p">({</span>
+<span class="go">  &quot;rings&quot; : [[[-97.06138,32.837],[-97.06133,32.836],[-97.06124,32.834],[-97.06127,32.832],</span>
+<span class="go">              [-97.06138,32.837]],[[-97.06326,32.759],[-97.06298,32.755],[-97.06153,32.749],</span>
+<span class="go">              [-97.06326,32.759]]],</span>
+<span class="go">  &quot;spatialReference&quot; : {&quot;wkid&quot; : 4326}</span>
+<span class="go">})</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">geom</span><span class="o">.</span><span class="n">hull_rectangle</span>
+<span class="go">&#39;-97.06153 32.749 -97.0632940971127 32.7490060186843 -97.0629938635673 32.8370055061228 -97.0612297664546 32.8369994874385&#39;</span>
+</pre></div>
+</div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -1673,6 +1824,16 @@ resulting geometry.</p>
 <dt id="arcgis.geometry.Geometry.is_multipart">
 <code class="descname">is_multipart</code><a class="headerlink" href="#arcgis.geometry.Geometry.is_multipart" title="Permalink to this definition">¶</a></dt>
 <dd><p>True, if the number of parts for this geometry is more than one.</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">geom</span> <span class="o">=</span> <span class="n">Geometry</span><span class="p">({</span>
+<span class="go">  &quot;rings&quot; : [[[-97.06138,32.837],[-97.06133,32.836],[-97.06124,32.834],[-97.06127,32.832],</span>
+<span class="go">              [-97.06138,32.837]],[[-97.06326,32.759],[-97.06298,32.755],[-97.06153,32.749],</span>
+<span class="go">              [-97.06326,32.759]]],</span>
+<span class="go">  &quot;spatialReference&quot; : {&quot;wkid&quot; : 4326}</span>
+<span class="go">})</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">geom</span><span class="o">.</span><span class="n">is_multipart</span>
+<span class="go">True</span>
+</pre></div>
+</div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -1688,6 +1849,16 @@ resulting geometry.</p>
 <code class="descname">label_point</code><a class="headerlink" href="#arcgis.geometry.Geometry.label_point" title="Permalink to this definition">¶</a></dt>
 <dd><p>The point at which the label is located. The label_point is always
 located within or on a feature.</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">geom</span> <span class="o">=</span> <span class="n">Geometry</span><span class="p">({</span>
+<span class="go">  &quot;rings&quot; : [[[-97.06138,32.837],[-97.06133,32.836],[-97.06124,32.834],[-97.06127,32.832],</span>
+<span class="go">              [-97.06138,32.837]],[[-97.06326,32.759],[-97.06298,32.755],[-97.06153,32.749],</span>
+<span class="go">              [-97.06326,32.759]]],</span>
+<span class="go">  &quot;spatialReference&quot; : {&quot;wkid&quot; : 4326}</span>
+<span class="go">})</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">geom</span><span class="o">.</span><span class="n">label_point</span>
+<span class="go">{&#39;x&#39;: -97.06258999999994, &#39;y&#39;: 32.754333333000034, &#39;spatialReference&#39;: {&#39;wkid&#39;: 4326, &#39;latestWkid&#39;: 4326}}</span>
+</pre></div>
+</div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -1702,6 +1873,16 @@ located within or on a feature.</p>
 <dt id="arcgis.geometry.Geometry.last_point">
 <code class="descname">last_point</code><a class="headerlink" href="#arcgis.geometry.Geometry.last_point" title="Permalink to this definition">¶</a></dt>
 <dd><p>The last coordinate of the feature.</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">geom</span> <span class="o">=</span> <span class="n">Geometry</span><span class="p">({</span>
+<span class="go">  &quot;rings&quot; : [[[-97.06138,32.837],[-97.06133,32.836],[-97.06124,32.834],[-97.06127,32.832],</span>
+<span class="go">              [-97.06138,32.837]],[[-97.06326,32.759],[-97.06298,32.755],[-97.06153,32.749],</span>
+<span class="go">              [-97.06326,32.759]]],</span>
+<span class="go">  &quot;spatialReference&quot; : {&quot;wkid&quot; : 4326}</span>
+<span class="go">})</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">geom</span><span class="o">.</span><span class="n">last_point</span>
+<span class="go">{&#39;x&#39;: -97.06326, &#39;y&#39;: 32.759, &#39;spatialReference&#39;: {&#39;wkid&#39;: 4326, &#39;latestWkid&#39;: 4326}}</span>
+</pre></div>
+</div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -1715,7 +1896,18 @@ located within or on a feature.</p>
 <dl class="attribute">
 <dt id="arcgis.geometry.Geometry.length">
 <code class="descname">length</code><a class="headerlink" href="#arcgis.geometry.Geometry.length" title="Permalink to this definition">¶</a></dt>
-<dd><p>The length of the linear feature. Zero for point and multipoint feature types.</p>
+<dd><p>The length of the linear feature. Zero for point and multipoint feature types.
+The length units is the same as the spatial reference.</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">geom</span> <span class="o">=</span> <span class="n">Geometry</span><span class="p">({</span>
+<span class="go">  &quot;rings&quot; : [[[-97.06138,32.837],[-97.06133,32.836],[-97.06124,32.834],[-97.06127,32.832],</span>
+<span class="go">              [-97.06138,32.837]],[[-97.06326,32.759],[-97.06298,32.755],[-97.06153,32.749],</span>
+<span class="go">              [-97.06326,32.759]]],</span>
+<span class="go">  &quot;spatialReference&quot; : {&quot;wkid&quot; : 4326}</span>
+<span class="go">})</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">geom</span><span class="o">.</span><span class="n">length</span>
+<span class="go">0.03033576008004027</span>
+</pre></div>
+</div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -1730,7 +1922,18 @@ located within or on a feature.</p>
 <dt id="arcgis.geometry.Geometry.length3D">
 <code class="descname">length3D</code><a class="headerlink" href="#arcgis.geometry.Geometry.length3D" title="Permalink to this definition">¶</a></dt>
 <dd><p>The 3D length of the linear feature. Zero for point and multipoint
-feature types.</p>
+feature types. The length units is the same as the spatial
+reference.</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">geom</span> <span class="o">=</span> <span class="n">Geometry</span><span class="p">({</span>
+<span class="go">  &quot;rings&quot; : [[[-97.06138,32.837],[-97.06133,32.836],[-97.06124,32.834],[-97.06127,32.832],</span>
+<span class="go">              [-97.06138,32.837]],[[-97.06326,32.759],[-97.06298,32.755],[-97.06153,32.749],</span>
+<span class="go">              [-97.06326,32.759]]],</span>
+<span class="go">  &quot;spatialReference&quot; : {&quot;wkid&quot; : 4326}</span>
+<span class="go">})</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">geom</span><span class="o">.</span><span class="n">length3D</span>
+<span class="go">0.03033576008004027</span>
+</pre></div>
+</div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -1807,6 +2010,16 @@ either of the input geometries.</p>
 <dt id="arcgis.geometry.Geometry.part_count">
 <code class="descname">part_count</code><a class="headerlink" href="#arcgis.geometry.Geometry.part_count" title="Permalink to this definition">¶</a></dt>
 <dd><p>The number of geometry parts for the feature.</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">geom</span> <span class="o">=</span> <span class="n">Geometry</span><span class="p">({</span>
+<span class="go">  &quot;rings&quot; : [[[-97.06138,32.837],[-97.06133,32.836],[-97.06124,32.834],[-97.06127,32.832],</span>
+<span class="go">              [-97.06138,32.837]],[[-97.06326,32.759],[-97.06298,32.755],[-97.06153,32.749],</span>
+<span class="go">              [-97.06326,32.759]]],</span>
+<span class="go">  &quot;spatialReference&quot; : {&quot;wkid&quot; : 4326}</span>
+<span class="go">})</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">geom</span><span class="o">.</span><span class="n">part_count</span>
+<span class="go">1</span>
+</pre></div>
+</div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -1821,6 +2034,16 @@ either of the input geometries.</p>
 <dt id="arcgis.geometry.Geometry.point_count">
 <code class="descname">point_count</code><a class="headerlink" href="#arcgis.geometry.Geometry.point_count" title="Permalink to this definition">¶</a></dt>
 <dd><p>The total number of points for the feature.</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">geom</span> <span class="o">=</span> <span class="n">Geometry</span><span class="p">({</span>
+<span class="go">  &quot;rings&quot; : [[[-97.06138,32.837],[-97.06133,32.836],[-97.06124,32.834],[-97.06127,32.832],</span>
+<span class="go">              [-97.06138,32.837]],[[-97.06326,32.759],[-97.06298,32.755],[-97.06153,32.749],</span>
+<span class="go">              [-97.06326,32.759]]],</span>
+<span class="go">  &quot;spatialReference&quot; : {&quot;wkid&quot; : 4326}</span>
+<span class="go">})</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">geom</span><span class="o">.</span><span class="n">point_count</span>
+<span class="go">9</span>
+</pre></div>
+</div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -1991,13 +2214,68 @@ distance, True, measure will be a percentage</td>
 <dl class="method">
 <dt id="arcgis.geometry.Geometry.rotate">
 <code class="descname">rotate</code><span class="sig-paren">(</span><em>theta</em>, <em>inplace=False</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.geometry.Geometry.rotate" title="Permalink to this definition">¶</a></dt>
-<dd><p>rotates a shape by some degree theta</p>
+<dd><p>Rotates a geometry counter-clockwise by a given angle.</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="18%" />
+<col width="82%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><strong>Argument</strong></td>
+<td><strong>Description</strong></td>
+</tr>
+<tr class="row-even"><td>theta</td>
+<td>Required Float. The rotation angle.</td>
+</tr>
+<tr class="row-odd"><td>inplace</td>
+<td>Optional Boolean. If True, the value is updated in the object, False
+creates a new object</td>
+</tr>
+</tbody>
+</table>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">Geometry</td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
 <dl class="method">
 <dt id="arcgis.geometry.Geometry.scale">
 <code class="descname">scale</code><span class="sig-paren">(</span><em>x_scale=1</em>, <em>y_scale=1</em>, <em>inplace=False</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.geometry.Geometry.scale" title="Permalink to this definition">¶</a></dt>
-<dd><p>scales in either the x,y or both directions</p>
+<dd><p>Scales in either the x,y or both directions</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="18%" />
+<col width="82%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><strong>Argument</strong></td>
+<td><strong>Description</strong></td>
+</tr>
+<tr class="row-even"><td>x_scale</td>
+<td>Optional Float. The x-scale factor.</td>
+</tr>
+<tr class="row-odd"><td>y_scale</td>
+<td>Optional Float. The y-scale factor.</td>
+</tr>
+<tr class="row-even"><td>inplace</td>
+<td>Optional Boolean. If True, the value is updated in the object, False
+creates a new object</td>
+</tr>
+</tbody>
+</table>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">Geometry</td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
 <dl class="method">
@@ -2042,7 +2320,37 @@ expressed as a double from 0.0 (0 percent) to 1.0 (100 percent).</p>
 <dl class="method">
 <dt id="arcgis.geometry.Geometry.skew">
 <code class="descname">skew</code><span class="sig-paren">(</span><em>x_angle=0</em>, <em>y_angle=0</em>, <em>inplace=False</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.geometry.Geometry.skew" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>Create a skew transform along one or both axes.</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="18%" />
+<col width="82%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><strong>Argument</strong></td>
+<td><strong>Description</strong></td>
+</tr>
+<tr class="row-even"><td>x_angle</td>
+<td>optional Float. Angle to skew in the x coordinate</td>
+</tr>
+<tr class="row-odd"><td>y_angle</td>
+<td>Optional Float. Angle to skew in the y coordinate</td>
+</tr>
+<tr class="row-even"><td>inplace</td>
+<td>Optional Boolean. If True, the value is updated in the object, False
+creates a new object</td>
+</tr>
+</tbody>
+</table>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">Geometry</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
 
 <dl class="method">
 <dt id="arcgis.geometry.Geometry.snap_to_line">
@@ -2076,6 +2384,16 @@ expressed as a double from 0.0 (0 percent) to 1.0 (100 percent).</p>
 <dt id="arcgis.geometry.Geometry.spatial_reference">
 <code class="descname">spatial_reference</code><a class="headerlink" href="#arcgis.geometry.Geometry.spatial_reference" title="Permalink to this definition">¶</a></dt>
 <dd><p>The spatial reference of the geometry.</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">geom</span> <span class="o">=</span> <span class="n">Geometry</span><span class="p">({</span>
+<span class="go">  &quot;rings&quot; : [[[-97.06138,32.837],[-97.06133,32.836],[-97.06124,32.834],[-97.06127,32.832],</span>
+<span class="go">              [-97.06138,32.837]],[[-97.06326,32.759],[-97.06298,32.755],[-97.06153,32.749],</span>
+<span class="go">              [-97.06326,32.759]]],</span>
+<span class="go">  &quot;spatialReference&quot; : {&quot;wkid&quot; : 4326}</span>
+<span class="go">})</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">geom</span><span class="o">.</span><span class="n">spatial_reference</span>
+<span class="go">&lt;SpatialReference Class&gt;</span>
+</pre></div>
+</div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -2148,12 +2466,51 @@ instersection of those geometries.</p>
 <dt id="arcgis.geometry.Geometry.translate">
 <code class="descname">translate</code><span class="sig-paren">(</span><em>x_offset=0</em>, <em>y_offset=0</em>, <em>inplace=False</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.geometry.Geometry.translate" title="Permalink to this definition">¶</a></dt>
 <dd><p>moves a geometry in a given x and y distance</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="18%" />
+<col width="82%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><strong>Argument</strong></td>
+<td><strong>Description</strong></td>
+</tr>
+<tr class="row-even"><td>x_offset</td>
+<td>Optional Float. Translation x offset</td>
+</tr>
+<tr class="row-odd"><td>y_offset</td>
+<td>Optional Float. Translation y offset</td>
+</tr>
+<tr class="row-even"><td>inplace</td>
+<td>Optional Boolean. If False, updates the existing Geometry,else it
+creates a new Geometry object</td>
+</tr>
+</tbody>
+</table>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">Geometry</td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
 <dl class="attribute">
 <dt id="arcgis.geometry.Geometry.true_centroid">
 <code class="descname">true_centroid</code><a class="headerlink" href="#arcgis.geometry.Geometry.true_centroid" title="Permalink to this definition">¶</a></dt>
 <dd><p>The center of gravity for a feature.</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">geom</span> <span class="o">=</span> <span class="n">Geometry</span><span class="p">({</span>
+<span class="go">  &quot;rings&quot; : [[[-97.06138,32.837],[-97.06133,32.836],[-97.06124,32.834],[-97.06127,32.832],</span>
+<span class="go">              [-97.06138,32.837]],[[-97.06326,32.759],[-97.06298,32.755],[-97.06153,32.749],</span>
+<span class="go">              [-97.06326,32.759]]],</span>
+<span class="go">  &quot;spatialReference&quot; : {&quot;wkid&quot; : 4326}</span>
+<span class="go">})</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">geom</span><span class="o">.</span><span class="n">true_centroid</span>
+<span class="go">{&#39;x&#39;: -97.06272135472369, &#39;y&#39;: 32.746201426025, &#39;spatialReference&#39;: {&#39;wkid&#39;: 4326, &#39;latestWkid&#39;: 4326}}</span>
+</pre></div>
+</div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -3101,7 +3458,7 @@ spatial_ref - The well-known ID of the spatial reference or a spatial</p>
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'./',
-            VERSION:'1.4.1',
+            VERSION:'1.5.0',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  true,
