@@ -66,3 +66,23 @@ copy_raster
 -----------
 .. automethod:: arcgis.raster.analytics.copy_raster
 
+
+create_image_collection
+-----------
+.. automethod:: arcgis.raster.analytics.create_image_collection
+
+
+add_image
+---------
+.. automethod:: arcgis.raster.analytics.add_image
+
+
+delete_image
+------------
+.. automethod:: arcgis.raster.analytics.delete_image
+
+
+delete_image_collection
+-----------------------
+.. automethod:: arcgis.raster.analytics.delete_image_collection
+
