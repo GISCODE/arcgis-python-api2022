@@ -48,6 +48,20 @@ CreditManager
     :undoc-members:
     :show-inheritance:
 
+License
+---------------
+.. autoclass:: arcgis.gis.admin.License
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
+LicenseManager
+---------------
+.. autoclass:: arcgis.gis.admin.LicenseManager
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
 IdentityProviderManager
 ---------------
 .. autoclass:: arcgis.gis.admin.IdentityProviderManager

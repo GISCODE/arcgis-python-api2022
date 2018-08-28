@@ -45,6 +45,13 @@ VectorTileLayer
     :undoc-members:
     :show-inheritance:
 
+SceneLayer
+------------------
+.. autoclass:: arcgis.mapping.SceneLayer
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
 export_map
 ------------
 .. automethod:: arcgis.mapping.export_map
