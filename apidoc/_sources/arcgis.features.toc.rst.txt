@@ -47,12 +47,26 @@ FeatureCollection
     :members:
     :undoc-members:
 
+arcgis.features.GeoAccessor
+--------------
+.. autoclass:: arcgis.features.GeoAccessor
+    :inherited-members:
+    :members:
+    :undoc-members:
+
+arcgis.features.GeoSeriesAccessor
+--------------
+.. autoclass:: arcgis.features.GeoSeriesAccessor
+    :inherited-members:
+    :members:
+    :undoc-members:
+
 SpatialDataFrame
 --------------
 .. autoclass:: arcgis.features.SpatialDataFrame
     :members:
     :undoc-members:
-    
+
 Submodules
 --------------
 .. toctree::
