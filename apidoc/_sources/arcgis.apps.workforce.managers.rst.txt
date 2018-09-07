@@ -15,6 +15,12 @@ AssignmentAttachmentManager
     :members:
     :undoc-members:
 
+AssignmentIntegrationManager
+----------------------------
+.. autoclass:: arcgis.apps.workforce.managers.AssignmentIntegrationManager
+    :members:
+    :undoc-members:
+
 AssignmentTypeManager
 ---------------------
 .. autoclass:: arcgis.apps.workforce.managers.AssignmentTypeManager
