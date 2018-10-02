@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>arcgis.gis.server module &mdash; arcgis 1.4.0 documentation</title>
+  <title>arcgis.gis.server module &mdash; arcgis 1.5.0 documentation</title>
   
 
   
@@ -37,7 +37,7 @@
         <link rel="index" title="Index"
               href="genindex.html"/>
         <link rel="search" title="Search" href="search.html"/>
-    <link rel="top" title="arcgis 1.4.0 documentation" href="index.html"/>
+    <link rel="top" title="arcgis 1.5.0 documentation" href="index.html"/>
         <link rel="up" title="arcgis.gis module" href="arcgis.gis.toc.html"/>
         <link rel="next" title="arcgis.env module" href="arcgis.env.html"/>
         <link rel="prev" title="arcgis.gis.admin module" href="arcgis.gis.admin.html"/>
@@ -78,7 +78,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             
             
               <div class="version">
-                1.4.0
+                1.5.0
               </div>
             
           
@@ -127,6 +127,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <li class="toctree-l4"><a class="reference internal" href="arcgis.gis.admin.html#collaborationmanager">CollaborationManager</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.gis.admin.html#collaboration">Collaboration</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.gis.admin.html#creditmanager">CreditManager</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.gis.admin.html#license">License</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.gis.admin.html#licensemanager">LicenseManager</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.gis.admin.html#identityprovidermanager">IdentityProviderManager</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.gis.admin.html#passwordpolicy">PasswordPolicy</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.gis.admin.html#portalresourcemanager">PortalResourceManager</a></li>
@@ -187,6 +189,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <li class="toctree-l2"><a class="reference internal" href="arcgis.env.html#return-z">return_z</a></li>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.env.html#return-m">return_m</a></li>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.env.html#verbose">verbose</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.env.html#default-aggregation-styles">default_aggregation_styles</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="arcgis.features.toc.html">arcgis.features module</a><ul>
@@ -196,6 +199,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <li class="toctree-l2"><a class="reference internal" href="arcgis.features.toc.html#featurelayercollection">FeatureLayerCollection</a></li>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.features.toc.html#featureset">FeatureSet</a></li>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.features.toc.html#featurecollection">FeatureCollection</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.features.toc.html#arcgis-features-geoaccessor">arcgis.features.GeoAccessor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.features.toc.html#arcgis-features-geoseriesaccessor">arcgis.features.GeoSeriesAccessor</a></li>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.features.toc.html#spatialdataframe">SpatialDataFrame</a></li>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.features.toc.html#submodules">Submodules</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="arcgis.features.analysis.html">arcgis.features.analysis module</a><ul>
@@ -305,6 +310,10 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <li class="toctree-l4"><a class="reference internal" href="arcgis.raster.analytics.html#convert-feature-to-raster">convert_feature_to_raster</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.raster.analytics.html#convert-raster-to-feature">convert_raster_to_feature</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.raster.analytics.html#copy-raster">copy_raster</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.analytics.html#create-image-collection">create_image_collection</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.analytics.html#add-image">add_image</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.analytics.html#delete-image">delete_image</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.analytics.html#delete-image-collection">delete_image_collection</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="arcgis.raster.functions.html">arcgis.raster.functions module</a><ul>
@@ -449,6 +458,25 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.gbl.html#zonal-statistics">zonal_statistics</a></li>
 </ul>
 </li>
+<li class="toctree-l3"><a class="reference internal" href="arcgis.raster.orthomapping.html">arcgis.raster.orthomapping module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.orthomapping.html#is-supported">is_supported</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.orthomapping.html#compute-sensor-model">compute_sensor_model</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.orthomapping.html#alter-processing-states">alter_processing_states</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.orthomapping.html#get-processing-states">get_processing_states</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.orthomapping.html#match-control-points">match_control_points</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.orthomapping.html#color-correction">color_correction</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.orthomapping.html#compute-control-points">compute_control_points</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.orthomapping.html#compute-seamlines">compute_seamlines</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.orthomapping.html#edit-control-points">edit_control_points</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.orthomapping.html#generate-dem">generate_dem</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.orthomapping.html#generate-orthomosaic">generate_orthomosaic</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.orthomapping.html#generate-report">generate_report</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.orthomapping.html#query-camera-info">query_camera_info</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.orthomapping.html#query-control-points">query_control_points</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.orthomapping.html#reset-image-collection">reset_image_collection</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.orthomapping.html#compute-spatial-reference-factory-code">compute_spatial_reference_factory_code</a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -491,12 +519,16 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="arcgis.geoanalytics.manage_data.html">arcgis.geoanalytics.manage_data module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.geoanalytics.manage_data.html#append-data">append_data</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.geoanalytics.manage_data.html#calculate-fields">calculate_fields</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.geoanalytics.manage_data.html#clip-layer">clip_layer</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.geoanalytics.manage_data.html#copy-to-data-store">copy_to_data_store</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.geoanalytics.manage_data.html#overlay-data">overlay_data</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="arcgis.geoanalytics.summarize_data.html">arcgis.geoanalytics.summarize_data module</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.geoanalytics.summarize_data.html#aggregate-points">aggregate_points</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.geoanalytics.summarize_data.html#build-multivariable-grid">build_multivariable_grid</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.geoanalytics.summarize_data.html#join-features">join_features</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.geoanalytics.summarize_data.html#reconstruct-tracks">reconstruct_tracks</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.geoanalytics.summarize_data.html#summarize-attributes">summarize_attributes</a></li>
@@ -585,10 +617,12 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 </li>
 <li class="toctree-l1"><a class="reference internal" href="arcgis.mapping.html">arcgis.mapping module</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.mapping.html#webmap">WebMap</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.mapping.html#offlinemapareamanager">OfflineMapAreaManager</a></li>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.mapping.html#webscene">WebScene</a></li>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.mapping.html#mapimagelayer">MapImageLayer</a></li>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.mapping.html#mapimagelayermanager">MapImageLayerManager</a></li>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.mapping.html#vectortilelayer">VectorTileLayer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.mapping.html#scenelayer">SceneLayer</a></li>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.mapping.html#export-map">export_map</a></li>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.mapping.html#get-layout-templates">get_layout_templates</a></li>
 </ul>
@@ -603,6 +637,31 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 </li>
 <li class="toctree-l1"><a class="reference internal" href="arcgis.widgets.html">arcgis.widgets module</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.widgets.html#mapview">MapView</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.apps.html">arcgis.apps module</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.apps.html#build-collector-url">build_collector_url</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.apps.html#build-explorer-url">build_explorer_url</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.apps.html#build-navigator-url">build_navigator_url</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.apps.html#build-survey123-url">build_survey123_url</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.apps.html#submodules">Submodules</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="arcgis.apps.workforce.html">arcgis.apps.workforce module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.apps.workforce.html#assignment">Assignment</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.apps.workforce.html#assignmenttype">AssignmentType</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.apps.workforce.html#attachment">Attachment</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.apps.workforce.html#dispatcher">Dispatcher</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.apps.workforce.html#project">Project</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.apps.workforce.html#track">Track</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.apps.workforce.html#worker">Worker</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.apps.workforce.html#submodules">Submodules</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="arcgis.apps.storymap.html">arcgis.apps.storymap module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.apps.storymap.html#journalstorymap">JournalStoryMap</a></li>
+</ul>
+</li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -1085,6 +1144,28 @@ that have invalid certificates.</td>
 representation of the service, which includes the updates to the
 service properties. Editing a service causes the service to be
 restarted with updated properties.</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="18%" />
+<col width="82%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><strong>Argument</strong></td>
+<td><strong>Description</strong></td>
+</tr>
+<tr class="row-even"><td>service</td>
+<td>Required dict. The service JSON as a dictionary.</td>
+</tr>
+</tbody>
+</table>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">boolean</td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
 <dl class="attribute">
@@ -1097,6 +1178,28 @@ restarted with updated properties.</p>
 <dt id="arcgis.gis.server.Service.rename">
 <code class="descname">rename</code><span class="sig-paren">(</span><em>new_name</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.server.Service.rename" title="Permalink to this definition">¶</a></dt>
 <dd><p>Renames this service to the new name</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="18%" />
+<col width="82%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><strong>Argument</strong></td>
+<td><strong>Description</strong></td>
+</tr>
+<tr class="row-even"><td>new_name</td>
+<td>Required string. New name of the current service.</td>
+</tr>
+</tbody>
+</table>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">boolean</td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
 <dl class="method">
@@ -2011,15 +2114,32 @@ managing services.</p>
 <dl class="method">
 <dt id="arcgis.gis.server.ServiceManager.create_folder">
 <code class="descname">create_folder</code><span class="sig-paren">(</span><em>folder_name</em>, <em>description=''</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.server.ServiceManager.create_folder" title="Permalink to this definition">¶</a></dt>
-<dd><p>Creates a unique folder name on AGS
-Inputs:</p>
-<blockquote>
-<div>folder_name - name of folder on AGS
-description - describes the folder</div></blockquote>
-<dl class="docutils">
-<dt>Output:</dt>
-<dd>JSON message as dictionary</dd>
-</dl>
+<dd><p>Creates a unique folder name on AGS</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="18%" />
+<col width="82%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><strong>Argument</strong></td>
+<td><strong>Description</strong></td>
+</tr>
+<tr class="row-even"><td>folder_name</td>
+<td>Required string. Name of the new folder.</td>
+</tr>
+<tr class="row-odd"><td>description</td>
+<td>Optional string. Description of what the folder is.</td>
+</tr>
+</tbody>
+</table>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">boolean</td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
 <dl class="method">
@@ -2056,6 +2176,28 @@ describes the supported properties for each service.</div></blockquote>
 <div>on the service. The Extension Types section in the Help describes
 the supported out-of-the-box extensions for each service type.</div></blockquote>
 </div></blockquote>
+<table border="1" class="docutils">
+<colgroup>
+<col width="18%" />
+<col width="82%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><strong>Argument</strong></td>
+<td><strong>Description</strong></td>
+</tr>
+<tr class="row-even"><td>service</td>
+<td>Required dict. The service is the properties to create a service.</td>
+</tr>
+</tbody>
+</table>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">dict</td>
+</tr>
+</tbody>
+</table>
 <dl class="docutils">
 <dt>Output:</dt>
 <dd>dictionary status message</dd>
@@ -2065,14 +2207,29 @@ the supported out-of-the-box extensions for each service type.</div></blockquote
 <dl class="method">
 <dt id="arcgis.gis.server.ServiceManager.delete_folder">
 <code class="descname">delete_folder</code><span class="sig-paren">(</span><em>folder_name</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.server.ServiceManager.delete_folder" title="Permalink to this definition">¶</a></dt>
-<dd><p>deletes a folder on AGS
-Inputs:</p>
-<blockquote>
-<div>folder_name - name of folder to remove</div></blockquote>
-<dl class="docutils">
-<dt>Output:</dt>
-<dd>boolean</dd>
-</dl>
+<dd><p>Removes a folder on ArcGIS Server</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="18%" />
+<col width="82%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><strong>Argument</strong></td>
+<td><strong>Description</strong></td>
+</tr>
+<tr class="row-even"><td>folder_name</td>
+<td>Required string. Name of the folder.</td>
+</tr>
+</tbody>
+</table>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">boolean</td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
 <dl class="method">
@@ -2083,16 +2240,39 @@ exists. To test if a folder exists, supply only a folder_name. To
 test if a service exists in a root folder, supply both serviceName
 and service_type with folder_name=None. To test if a service exists
 in a folder, supply all three parameters.</p>
-<dl class="docutils">
-<dt>Inputs:</dt>
-<dd><p class="first">folder_name - a folder name
-name - a service name
-service_type - a service type. Allowed values:</p>
-<blockquote class="last">
-<div>GeometryServer | ImageServer | MapServer | GeocodeServer |
-GeoDataServer | GPServer | GlobeServer | SearchServer</div></blockquote>
-</dd>
+<table border="1" class="docutils">
+<colgroup>
+<col width="18%" />
+<col width="82%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><strong>Argument</strong></td>
+<td><strong>Description</strong></td>
+</tr>
+<tr class="row-even"><td>folder_name</td>
+<td>Required string. The folder name to check for.</td>
+</tr>
+<tr class="row-odd"><td>name</td>
+<td>Optional string. The service name to check for.</td>
+</tr>
+<tr class="row-even"><td>service_type</td>
+<td><dl class="first last docutils">
+<dt>Optional string. A service type. Allowed values:</dt>
+<dd>GeometryServer | ImageServer | MapServer | GeocodeServer |
+GeoDataServer | GPServer | GlobeServer | SearchServer</dd>
 </dl>
+</td>
+</tr>
+</tbody>
+</table>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">boolean</td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
 <dl class="attribute">
@@ -2105,16 +2285,47 @@ GeoDataServer | GPServer | GlobeServer | SearchServer</div></blockquote>
 <dt id="arcgis.gis.server.ServiceManager.list">
 <code class="descname">list</code><span class="sig-paren">(</span><em>folder=None</em>, <em>refresh=True</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.server.ServiceManager.list" title="Permalink to this definition">¶</a></dt>
 <dd><p>returns a list of services in the specified folder</p>
-<p>Parameters:
-:param folder: name of the folder to list services from
-:param refresh: Bool, default is False. If True, the list of services will be
-requested to the server, else the list will be returned from cache.</p>
+<blockquote>
+<div></div></blockquote>
+<p><strong>Argument</strong>        <strong>Description</strong>
+—————     ——————————————————————–
+folder              Required string. The name of the folder to list services from.
+—————     ——————————————————————–
+refresh             Optional boolean. Default is False. If True, the list of services will be</p>
+<blockquote>
+<div>requested to the server, else the list will be returned from cache.</div></blockquote>
 </dd></dl>
 
 <dl class="method">
 <dt id="arcgis.gis.server.ServiceManager.publish_sd">
 <code class="descname">publish_sd</code><span class="sig-paren">(</span><em>sd_file</em>, <em>folder=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.server.ServiceManager.publish_sd" title="Permalink to this definition">¶</a></dt>
 <dd><p>publishes a service definition file to arcgis server</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="18%" />
+<col width="82%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><strong>Argument</strong></td>
+<td><strong>Description</strong></td>
+</tr>
+<tr class="row-even"><td>sd_file</td>
+<td>Required string. File path to the .sd file</td>
+</tr>
+<tr class="row-odd"><td>folder</td>
+<td>Optional string. This parameter allows for the override of the
+folder option set in the SD file.</td>
+</tr>
+</tbody>
+</table>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">boolean</td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
 </dd></dl>
@@ -2828,12 +3039,12 @@ See <a class="reference external" href="http://resources.arcgis.com/en/help/arcg
 
 <dl class="method">
 <dt id="arcgis.gis.server.DataStoreManager.add_bigdata">
-<code class="descname">add_bigdata</code><span class="sig-paren">(</span><em>name</em>, <em>server_path=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.server.DataStoreManager.add_bigdata" title="Permalink to this definition">¶</a></dt>
+<code class="descname">add_bigdata</code><span class="sig-paren">(</span><em>name</em>, <em>server_path=None</em>, <em>connection_type='fileShare'</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.server.DataStoreManager.add_bigdata" title="Permalink to this definition">¶</a></dt>
 <dd><p>Registers a bigdata fileshare with the data store.</p>
 <table border="1" class="docutils">
 <colgroup>
-<col width="21%" />
-<col width="79%" />
+<col width="17%" />
+<col width="83%" />
 </colgroup>
 <tbody valign="top">
 <tr class="row-odd"><td><strong>Argument</strong></td>
@@ -2845,13 +3056,75 @@ See <a class="reference external" href="http://resources.arcgis.com/en/help/arcg
 <tr class="row-odd"><td>server_path</td>
 <td>Optional string. The path to the folder from the server.</td>
 </tr>
+<tr class="row-even"><td>connection_type</td>
+<td>Optional string. Allows for the setting of the types of big data store.
+The value ‘fileShare’ is used for local big data stores, and for
+cloud stores, the connection_type should be ‘dataStore’. The value
+‘fileShare’ is the default value.</td>
+</tr>
 </tbody>
 </table>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">The data item if successfully registered, None otherwise.</td>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">The big data fileshare if registered successfully, None otherwise.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="arcgis.gis.server.DataStoreManager.add_cloudstore">
+<code class="descname">add_cloudstore</code><span class="sig-paren">(</span><em>name</em>, <em>conn_str</em>, <em>object_store</em>, <em>provider</em>, <em>managed=False</em>, <em>folder=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.server.DataStoreManager.add_cloudstore" title="Permalink to this definition">¶</a></dt>
+<dd><p>Cloud Store data item represents a connection to a Amazon or Microsoft Azure store.
+Connection information for the data store item is stored within conn_str as a
+stringified JSON. ArcGIS Server encrypts connection string for storage. Connection
+strings that are encrypted will include a {crypt} prefix. You can get a data store
+item with decrypted connection string by passing a decrypt=true parameter in the request
+for a data store item. Data store with decrypted connection string will be returned only for
+requests made with https. The examples below show data stores with decrypted conn_str.
+A valid object_store (S3 bucket or Azure Blob store) is required. Folders within an object
+store are optional.</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="18%" />
+<col width="82%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><strong>Argument</strong></td>
+<td><strong>Description</strong></td>
+</tr>
+<tr class="row-even"><td>name</td>
+<td>Required string. The name of the cloud store.</td>
+</tr>
+<tr class="row-odd"><td>conn_str</td>
+<td>Required string. The connection information for the cloud storage
+product.</td>
+</tr>
+<tr class="row-even"><td>object_store</td>
+<td>Required string. This is the amazon bucket path or Azuze path.</td>
+</tr>
+<tr class="row-odd"><td>provider</td>
+<td>Required string. Values must be amazon or azure.</td>
+</tr>
+<tr class="row-even"><td>managed</td>
+<td>Optional boolean. When the data store is server only, the database
+is entirely managed and owned by the server and cannot be accessed
+by the publisher directly. When this option is chosen, the
+managed property should be set to true. Otherwise it is false.</td>
+</tr>
+<tr class="row-odd"><td>folder</td>
+<td>Optional string. For some Azure cloud stores, an optional folder
+can be specified.</td>
+</tr>
+</tbody>
+</table>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">DataStore</td>
 </tr>
 </tbody>
 </table>
@@ -3660,16 +3933,16 @@ operation to get explicit control over the cache.</p>
 <dl class="attribute">
 <dt id="arcgis.gis.server.SystemManager.deployment">
 <code class="descname">deployment</code><a class="headerlink" href="#arcgis.gis.server.SystemManager.deployment" title="Permalink to this definition">¶</a></dt>
-<dd><p>Gets the load balancing value for this site.  Load balancing is an 
+<dd><p>Gets the load balancing value for this site.  Load balancing is an
 ArcGIS Server deployment configuration resource that can
 control the load balancing functionality between GIS server
 machines. A value of True means that load balancing is disabled.</p>
 <p>singleClusterMode - At 10.4, in large sites with a single cluster,
 the site is configured to prevent load balancing between GIS
 server machines. This reduces network traffic between machines
-in the site and helps reduce load on your network. Upgrades 
-from earlier versions will  set this property to true if the 
-site uses a single cluster. Sites with multiple clusters cannot 
+in the site and helps reduce load on your network. Upgrades
+from earlier versions will  set this property to true if the
+site uses a single cluster. Sites with multiple clusters cannot
 use singleClusterMode.</p>
 <p>To prevent load balancing, the following criteria must be met:</p>
 <blockquote>
@@ -3724,10 +3997,16 @@ operations on the REST handler such as clearing the cache.</p>
 <dl class="attribute">
 <dt id="arcgis.gis.server.SystemManager.licenses">
 <code class="descname">licenses</code><a class="headerlink" href="#arcgis.gis.server.SystemManager.licenses" title="Permalink to this definition">¶</a></dt>
-<dd><p>Gets the license resource list.  The licenses resource lists the 
-current license level of ArcGIS for Server and all authorized 
-extensions. Contact Esri Customer Service if you have questions 
+<dd><p>Gets the license resource list.  The licenses resource lists the
+current license level of ArcGIS for Server and all authorized
+extensions. Contact Esri Customer Service if you have questions
 about license levels or expiration properties.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="arcgis.gis.server.SystemManager.platform_services">
+<code class="descname">platform_services</code><a class="headerlink" href="#arcgis.gis.server.SystemManager.platform_services" title="Permalink to this definition">¶</a></dt>
+<dd><p>Provides access to the platform services that are associated with GeoAnalytics.</p>
 </dd></dl>
 
 <dl class="attribute">
@@ -3821,7 +4100,7 @@ the web adaptor.</td>
 <dt id="arcgis.gis.server.SystemManager.update_web_adaptors_configuration">
 <code class="descname">update_web_adaptors_configuration</code><span class="sig-paren">(</span><em>config</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.server.SystemManager.update_web_adaptors_configuration" title="Permalink to this definition">¶</a></dt>
 <dd><p>You can use this operation to change the Web Adaptor configuration
-and the sharedkey attribute. The sharedkey attribute must be present 
+and the sharedkey attribute. The sharedkey attribute must be present
 in the request.</p>
 <table border="1" class="docutils">
 <colgroup>
@@ -4327,9 +4606,9 @@ GIS services.</p>
 <dl class="method">
 <dt id="arcgis.gis.server.DirectoryManager.edit_services_directory">
 <code class="descname">edit_services_directory</code><span class="sig-paren">(</span><em>allowedOrigins</em>, <em>arcgis_com_map</em>, <em>arcgis_com_map_text</em>, <em>jsapi_arcgis</em>, <em>jsapi_arcgis_css</em>, <em>jsapi_arcgis_css2</em>, <em>jsapi_arcgis_sdk</em>, <em>serviceDirEnabled</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.server.DirectoryManager.edit_services_directory" title="Permalink to this definition">¶</a></dt>
-<dd><p>Allows you to update the Services Directory configuration.  You can do such thing as 
-enable or disable the HTML view of ArcGIS REST API, or adjust the JavaScript and map viewer 
-previews of services in the Services Directory so that they work with your own locally 
+<dd><p>Allows you to update the Services Directory configuration.  You can do such thing as
+enable or disable the HTML view of ArcGIS REST API, or adjust the JavaScript and map viewer
+previews of services in the Services Directory so that they work with your own locally
 hosted JavaScript API and map viewer.</p>
 <table border="1" class="docutils">
 <colgroup>
@@ -4565,7 +4844,7 @@ available on network shares, accessible to every machine in the site.</p>
 <div><ul class="simple">
 <li>Output – Stores various information generated by services, such as map
 images. Instances: One or more</li>
-<li>Cache – Stores tile caches used by map, globe, and image services for 
+<li>Cache – Stores tile caches used by map, globe, and image services for
 rapid performance. Instances: One or more</li>
 <li>Jobs – Stores results and other information from geoprocessing
 services. Instances: One or more</li>
@@ -4755,7 +5034,7 @@ Values:</p>
 <li><p class="first">messageVersion – Defines the version supported by the services
 catalog in the server. Example: esriArcGISVersion101</p>
 </li>
-<li><p class="first">PushIdentityToDatabase – Propogates the credentials of the logged-in 
+<li><p class="first">PushIdentityToDatabase – Propogates the credentials of the logged-in
 user to make connections to an Oracle database. This
 property is only supported for use with Oracle databases.
 Values: True | False</p>
@@ -4776,7 +5055,7 @@ Values: True | False</p>
 </li>
 <li><p class="first">uploadFileExtensionWhitelist – This specifies what files are
 allowed to be uploaded through the file upload API by
-identifying the allowable extensions. It is a list of comma-separated 
+identifying the allowable extensions. It is a list of comma-separated
 extensions without dots. If this property is not
 specified, a default list is used. This is the default list: soe,
 sd, sde, odc, csv, txt, zshp, kmz, and geodatabase.</p>
@@ -4810,7 +5089,7 @@ Example: <a class="reference external" href="http://mycompany.com/gis">http://my
 <dl class="method">
 <dt id="arcgis.gis.server.ServerProperties.update">
 <code class="descname">update</code><span class="sig-paren">(</span><em>properties</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.server.ServerProperties.update" title="Permalink to this definition">¶</a></dt>
-<dd><p>This operation allows you to update the server properties. See the ServerProperties 
+<dd><p>This operation allows you to update the server properties. See the ServerProperties
 class description for all possible properties.</p>
 <table border="1" class="docutils">
 <colgroup>
@@ -4886,7 +5165,7 @@ class description for all possible properties.</p>
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'./',
-            VERSION:'1.4.0',
+            VERSION:'1.5.0',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  true,

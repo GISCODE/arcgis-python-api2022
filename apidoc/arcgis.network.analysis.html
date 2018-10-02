@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>arcgis.network.analysis module &mdash; arcgis 1.4.0 documentation</title>
+  <title>arcgis.network.analysis module &mdash; arcgis 1.5.0 documentation</title>
   
 
   
@@ -37,7 +37,7 @@
         <link rel="index" title="Index"
               href="genindex.html"/>
         <link rel="search" title="Search" href="search.html"/>
-    <link rel="top" title="arcgis 1.4.0 documentation" href="index.html"/>
+    <link rel="top" title="arcgis 1.5.0 documentation" href="index.html"/>
         <link rel="up" title="arcgis.network module" href="arcgis.network.toc.html"/>
         <link rel="next" title="arcgis.geoanalytics module" href="arcgis.geoanalytics.toc.html"/>
         <link rel="prev" title="arcgis.network module" href="arcgis.network.toc.html"/>
@@ -78,7 +78,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             
             
               <div class="version">
-                1.4.0
+                1.5.0
               </div>
             
           
@@ -127,6 +127,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <li class="toctree-l4"><a class="reference internal" href="arcgis.gis.admin.html#collaborationmanager">CollaborationManager</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.gis.admin.html#collaboration">Collaboration</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.gis.admin.html#creditmanager">CreditManager</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.gis.admin.html#license">License</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.gis.admin.html#licensemanager">LicenseManager</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.gis.admin.html#identityprovidermanager">IdentityProviderManager</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.gis.admin.html#passwordpolicy">PasswordPolicy</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.gis.admin.html#portalresourcemanager">PortalResourceManager</a></li>
@@ -187,6 +189,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <li class="toctree-l2"><a class="reference internal" href="arcgis.env.html#return-z">return_z</a></li>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.env.html#return-m">return_m</a></li>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.env.html#verbose">verbose</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.env.html#default-aggregation-styles">default_aggregation_styles</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="arcgis.features.toc.html">arcgis.features module</a><ul>
@@ -196,6 +199,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <li class="toctree-l2"><a class="reference internal" href="arcgis.features.toc.html#featurelayercollection">FeatureLayerCollection</a></li>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.features.toc.html#featureset">FeatureSet</a></li>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.features.toc.html#featurecollection">FeatureCollection</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.features.toc.html#arcgis-features-geoaccessor">arcgis.features.GeoAccessor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.features.toc.html#arcgis-features-geoseriesaccessor">arcgis.features.GeoSeriesAccessor</a></li>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.features.toc.html#spatialdataframe">SpatialDataFrame</a></li>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.features.toc.html#submodules">Submodules</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="arcgis.features.analysis.html">arcgis.features.analysis module</a><ul>
@@ -305,6 +310,10 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <li class="toctree-l4"><a class="reference internal" href="arcgis.raster.analytics.html#convert-feature-to-raster">convert_feature_to_raster</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.raster.analytics.html#convert-raster-to-feature">convert_raster_to_feature</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.raster.analytics.html#copy-raster">copy_raster</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.analytics.html#create-image-collection">create_image_collection</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.analytics.html#add-image">add_image</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.analytics.html#delete-image">delete_image</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.analytics.html#delete-image-collection">delete_image_collection</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="arcgis.raster.functions.html">arcgis.raster.functions module</a><ul>
@@ -449,6 +458,25 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.gbl.html#zonal-statistics">zonal_statistics</a></li>
 </ul>
 </li>
+<li class="toctree-l3"><a class="reference internal" href="arcgis.raster.orthomapping.html">arcgis.raster.orthomapping module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.orthomapping.html#is-supported">is_supported</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.orthomapping.html#compute-sensor-model">compute_sensor_model</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.orthomapping.html#alter-processing-states">alter_processing_states</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.orthomapping.html#get-processing-states">get_processing_states</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.orthomapping.html#match-control-points">match_control_points</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.orthomapping.html#color-correction">color_correction</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.orthomapping.html#compute-control-points">compute_control_points</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.orthomapping.html#compute-seamlines">compute_seamlines</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.orthomapping.html#edit-control-points">edit_control_points</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.orthomapping.html#generate-dem">generate_dem</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.orthomapping.html#generate-orthomosaic">generate_orthomosaic</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.orthomapping.html#generate-report">generate_report</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.orthomapping.html#query-camera-info">query_camera_info</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.orthomapping.html#query-control-points">query_control_points</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.orthomapping.html#reset-image-collection">reset_image_collection</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.orthomapping.html#compute-spatial-reference-factory-code">compute_spatial_reference_factory_code</a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -491,12 +519,16 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="arcgis.geoanalytics.manage_data.html">arcgis.geoanalytics.manage_data module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.geoanalytics.manage_data.html#append-data">append_data</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.geoanalytics.manage_data.html#calculate-fields">calculate_fields</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.geoanalytics.manage_data.html#clip-layer">clip_layer</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.geoanalytics.manage_data.html#copy-to-data-store">copy_to_data_store</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.geoanalytics.manage_data.html#overlay-data">overlay_data</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="arcgis.geoanalytics.summarize_data.html">arcgis.geoanalytics.summarize_data module</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.geoanalytics.summarize_data.html#aggregate-points">aggregate_points</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.geoanalytics.summarize_data.html#build-multivariable-grid">build_multivariable_grid</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.geoanalytics.summarize_data.html#join-features">join_features</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.geoanalytics.summarize_data.html#reconstruct-tracks">reconstruct_tracks</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.geoanalytics.summarize_data.html#summarize-attributes">summarize_attributes</a></li>
@@ -585,10 +617,12 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 </li>
 <li class="toctree-l1"><a class="reference internal" href="arcgis.mapping.html">arcgis.mapping module</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.mapping.html#webmap">WebMap</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.mapping.html#offlinemapareamanager">OfflineMapAreaManager</a></li>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.mapping.html#webscene">WebScene</a></li>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.mapping.html#mapimagelayer">MapImageLayer</a></li>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.mapping.html#mapimagelayermanager">MapImageLayerManager</a></li>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.mapping.html#vectortilelayer">VectorTileLayer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.mapping.html#scenelayer">SceneLayer</a></li>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.mapping.html#export-map">export_map</a></li>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.mapping.html#get-layout-templates">get_layout_templates</a></li>
 </ul>
@@ -603,6 +637,31 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 </li>
 <li class="toctree-l1"><a class="reference internal" href="arcgis.widgets.html">arcgis.widgets module</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.widgets.html#mapview">MapView</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.apps.html">arcgis.apps module</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.apps.html#build-collector-url">build_collector_url</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.apps.html#build-explorer-url">build_explorer_url</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.apps.html#build-navigator-url">build_navigator_url</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.apps.html#build-survey123-url">build_survey123_url</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.apps.html#submodules">Submodules</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="arcgis.apps.workforce.html">arcgis.apps.workforce module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.apps.workforce.html#assignment">Assignment</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.apps.workforce.html#assignmenttype">AssignmentType</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.apps.workforce.html#attachment">Attachment</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.apps.workforce.html#dispatcher">Dispatcher</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.apps.workforce.html#project">Project</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.apps.workforce.html#track">Track</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.apps.workforce.html#worker">Worker</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.apps.workforce.html#submodules">Submodules</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="arcgis.apps.storymap.html">arcgis.apps.storymap module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.apps.storymap.html#journalstorymap">JournalStoryMap</a></li>
+</ul>
+</li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -680,7 +739,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <h2>solve_vehicle_routing_problem<a class="headerlink" href="#solve-vehicle-routing-problem" title="Permalink to this headline">¶</a></h2>
 <dl class="method">
 <dt id="arcgis.network.analysis.solve_vehicle_routing_problem">
-<code class="descclassname">analysis.</code><code class="descname">solve_vehicle_routing_problem</code><span class="sig-paren">(</span><em>orders: arcgis.features.feature.FeatureSet</em>, <em>depots: arcgis.features.feature.FeatureSet</em>, <em>routes: arcgis.features.feature.FeatureSet</em>, <em>breaks: arcgis.features.feature.FeatureSet = None</em>, <em>time_units: str = 'Minutes'</em>, <em>distance_units: str = 'Miles'</em>, <em>analysis_region: str = None</em>, <em>default_date: datetime.datetime = None</em>, <em>uturn_policy: str = 'ALLOW_DEAD_ENDS_AND_INTERSECTIONS_ONLY'</em>, <em>time_window_factor: str = 'Medium'</em>, <em>spatially_cluster_routes: bool = True</em>, <em>route_zones: arcgis.features.feature.FeatureSet = None</em>, <em>route_renewals: arcgis.features.feature.FeatureSet = None</em>, <em>order_pairs: arcgis.features.feature.FeatureSet = None</em>, <em>excess_transit_factor: str = 'Medium'</em>, <em>point_barriers: arcgis.features.feature.FeatureSet = None</em>, <em>line_barriers: arcgis.features.feature.FeatureSet = None</em>, <em>polygon_barriers: arcgis.features.feature.FeatureSet = None</em>, <em>use_hierarchy_in_analysis: bool = True</em>, <em>restrictions: str = None</em>, <em>attribute_parameter_values: arcgis.features.feature.FeatureSet = None</em>, <em>populate_route_lines: bool = True</em>, <em>route_line_simplification_tolerance: arcgis.geoprocessing._types.LinearUnit = None</em>, <em>populate_directions: bool = False</em>, <em>directions_language: str = 'en'</em>, <em>directions_style_name: str = 'NA Desktop'</em>, <em>travel_mode: str = 'Custom'</em>, <em>impedance: str = 'Drive Time'</em>, <em>gis=None</em><span class="sig-paren">)</span> &#x2192; tuple<a class="headerlink" href="#arcgis.network.analysis.solve_vehicle_routing_problem" title="Permalink to this definition">¶</a></dt>
+<code class="descclassname">analysis.</code><code class="descname">solve_vehicle_routing_problem</code><span class="sig-paren">(</span><em>orders: arcgis.features.feature.FeatureSet</em>, <em>depots: arcgis.features.feature.FeatureSet</em>, <em>routes: arcgis.features.feature.FeatureSet</em>, <em>breaks: arcgis.features.feature.FeatureSet = None</em>, <em>time_units: str = 'Minutes'</em>, <em>distance_units: str = 'Miles'</em>, <em>analysis_region: str = None</em>, <em>default_date: datetime.datetime = None</em>, <em>uturn_policy: str = 'ALLOW_DEAD_ENDS_AND_INTERSECTIONS_ONLY'</em>, <em>time_window_factor: str = 'Medium'</em>, <em>spatially_cluster_routes: bool = True</em>, <em>route_zones: arcgis.features.feature.FeatureSet = None</em>, <em>route_renewals: arcgis.features.feature.FeatureSet = None</em>, <em>order_pairs: arcgis.features.feature.FeatureSet = None</em>, <em>excess_transit_factor: str = 'Medium'</em>, <em>point_barriers: arcgis.features.feature.FeatureSet = None</em>, <em>line_barriers: arcgis.features.feature.FeatureSet = None</em>, <em>polygon_barriers: arcgis.features.feature.FeatureSet = None</em>, <em>use_hierarchy_in_analysis: bool = True</em>, <em>restrictions: str = None</em>, <em>attribute_parameter_values: arcgis.features.feature.FeatureSet = None</em>, <em>populate_route_lines: bool = True</em>, <em>route_line_simplification_tolerance: arcgis.geoprocessing._types.LinearUnit = None</em>, <em>populate_directions: bool = False</em>, <em>directions_language: str = 'en'</em>, <em>directions_style_name: str = 'NA Desktop'</em>, <em>travel_mode: str = 'Custom'</em>, <em>impedance: str = 'Drive Time'</em>, <em>gis=None</em>, <em>time_zone_usage_for_time_fields: str = 'GEO_LOCAL'</em>, <em>save_output_layer: bool = False</em>, <em>overrides: str = None</em>, <em>save_route_data: bool = False</em><span class="sig-paren">)</span> &#x2192; tuple<a class="headerlink" href="#arcgis.network.analysis.solve_vehicle_routing_problem" title="Permalink to this definition">¶</a></dt>
 <dd><p>SolveVehicleRoutingProblem tool solves a vehicle routing problem (VRP) to find the best routes for a fleet of vehicles.
 A dispatcher managing a fleet of vehicles is often required to make decisions about vehicle routing. One such decision
 involves how to best assign a group of customers to a fleet of vehicles and to sequence and schedule their visits. The
@@ -2196,12 +2255,35 @@ everyone in your organization can rerun the analysis with the same settings.</p>
 </div></blockquote>
 <p>gis: Optional, the GIS on which this tool runs. If not specified, the active GIS is used.</p>
 <dl class="docutils">
+<dt>time_zone_usage_for_time_fields: Time Zone Usage for Time Fields (str). Optional parameter. Specifies the time zone for the input date-time fields supported by the tool. This parameter specifies the time zone           for the following fields: TimeWindowStart1, TimeWindowEnd1, TimeWindowStart2, TimeWindowEnd2, InboundArriveTime, and OutboundDepartTime on orders. TimeWindowStart1, TimeWindowEnd1, TimeWindowStart2, and         TimeWindowEnd2 on depots. EarliestStartTime and LatestStartTime on routes. TimeWindowStart and TimeWindowEnd on breaks. GEO_LOCAL — The date-time values associated with the orders or depots are in the           time zone in which the orders and depots are located. For routes, the date-time values are based on the time zone in which the starting depot for the route is located. If a route does not have a                 starting depot, all orders and depots across all the routes must be in a single time zone. For breaks, the date-time values are based on the time zone of the routes. For example, if your depot is                located in an area that follows eastern standard time and has the first time window values (specified as TimeWindowStart1 and TimeWindowEnd1) of 8 AM and 5 PM, the time window values will be treated as          8:00 a.m. and 5:00 p.m. eastern standard time. UTC — The date-time values associated with the orders or depots are in the in coordinated universal time (UTC) and are not based on the time zone in which          the orders or depots are located. For example, if your depot is located in an area that follows eastern standard time and has the first time window values (specified as TimeWindowStart1 and                      TimeWindowEnd1) of 8 AM and 5 PM, the time window values will be treated as 12:00 p.m. and 9:00 p.m. eastern standard time assuming the eastern standard time is obeying the daylight saving time.                 Specifying the date-time values in UTC is useful if you do not know the time zone in which the orders or depots are located or when you have orders and depots in multiple time zones, and you want all            the date-time values to start simultaneously. The UTC option is applicable only when your network dataset defines a time zone attribute. Otherwise, all the date-time values are always treated as                 GEO_LOCAL. </dt>
+<dd>Choice list:[‘UTC’, ‘GEO_LOCAL’]</dd>
+<dt>save_output_layer: Save Output Layer (bool). Optional parameter.  Specify if the tool should save the analysis settings as a network analysis layer file. You cannot directly work with this file even when you           open the file in an ArcGIS Desktop application like ArcMap. It is meant to be sent to Esri Technical Support to diagnose the quality of results returned from the tool. </dt>
+<dd><dl class="first last docutils">
+<dt>True:</dt>
+<dd>Save the network analysis layer file. The file is downloaded in a temporary directory on your machine. In ArcGIS Pro, the location of the downloaded file can be determined by viewing the value for the Output Network Analysis Layer parameter in the entry corresponding to the tool execution in the Geoprocessing history of your Project. In ArcMap, the location of the file can be determined by accessing the Copy Location option in the shortcut menu on the Output Network Analysis Layer parameter in the entry corresponding to the tool execution in the Geoprocessing Results window.</dd>
+<dt>False:</dt>
+<dd>Do not save the network analysis layer file. This is the default.</dd>
+</dl>
+</dd>
+</dl>
+<p>overrides: Overrides (str). Optional parameter. Specify additional settings that can influence the behavior of the solver when finding solutions for the network analysis problems. The value for this parameter          needs to be specified in JavaScript Object Notation (JSON). For example, a valid value is of the following form {“overrideSetting1” : “value1”, “overrideSetting2” : “value2”}. The override setting name          is always enclosed in double quotes. The values can be a number, Boolean, or string. The default value for this parameter is no value, which indicates not to override any solver settings. Overrides are          advanced settings that should be used only after careful analysis of the results obtained before and after applying the settings. A list of supported override settings for each solver and their                  acceptable values can be obtained by contacting Esri Technical Support.</p>
+<dl class="docutils">
+<dt>save_route_data: Save Route Data (bool). Optional parameter. Choose whether the output includes a zip file that contains a file geodatabase holding the inputs and outputs of the analysis in a format that can be        used to share route layers with ArcGIS Online or Portal for ArcGIS.</dt>
+<dd><dl class="first last docutils">
+<dt>True:</dt>
+<dd>Save the route data as a zip file. The file is downloaded in a temporary directory on your machine. In ArcGIS Pro, the location of the downloaded file can be determined by viewing the value for the Output Route Data parameter in the entry corresponding to the tool execution in the Geoprocessing history of your Project. In ArcMap, the location of the file can be determined by accessing the Copy Location option in the shortcut menu on the Output Route Data parameter in the entry corresponding to the tool execution in the Geoprocessing Results window.</dd>
+<dt>False:</dt>
+<dd>Do not save the route data. This is the default.</dd>
+</dl>
+</dd>
 <dt>Returns the following as a named tuple:</dt>
 <dd>out_unassigned_stops - Output Unassigned Stops as a FeatureSet
 out_stops - Output Stops as a FeatureSet
 out_routes - Output Routes as a FeatureSet
 out_directions - Output Directions as a FeatureSet
-solve_succeeded - Solve Succeeded as a bool</dd>
+solve_succeeded - Solve Succeeded as a bool
+out_network_analysis_layer - Output Network Analysis Layer as a file
+out_route_data - Output Route Data as a file</dd>
 </dl>
 <p class="last">See <a class="reference external" href="https://logistics.arcgis.com/arcgis/rest/directories/arcgisoutput/World/VehicleRoutingProblem_GPServer/World_VehicleRoutingProblem/SolveVehicleRoutingProblem.htm">https://logistics.arcgis.com/arcgis/rest/directories/arcgisoutput/World/VehicleRoutingProblem_GPServer/World_VehicleRoutingProblem/SolveVehicleRoutingProblem.htm</a> for additional help.</p>
 </dd>
@@ -5197,7 +5279,7 @@ default_travel_mode - Default Travel Mode as a str</dd>
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'./',
-            VERSION:'1.4.0',
+            VERSION:'1.5.0',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  true,

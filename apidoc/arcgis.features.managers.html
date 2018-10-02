@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>arcgis.features.managers module &mdash; arcgis 1.4.0 documentation</title>
+  <title>arcgis.features.managers module &mdash; arcgis 1.5.0 documentation</title>
   
 
   
@@ -37,7 +37,7 @@
         <link rel="index" title="Index"
               href="genindex.html"/>
         <link rel="search" title="Search" href="search.html"/>
-    <link rel="top" title="arcgis 1.4.0 documentation" href="index.html"/>
+    <link rel="top" title="arcgis 1.5.0 documentation" href="index.html"/>
         <link rel="up" title="arcgis.features module" href="arcgis.features.toc.html"/>
         <link rel="next" title="arcgis.raster module" href="arcgis.raster.toc.html"/>
         <link rel="prev" title="arcgis.features.elevation module" href="arcgis.features.elevation.html"/>
@@ -78,7 +78,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             
             
               <div class="version">
-                1.4.0
+                1.5.0
               </div>
             
           
@@ -127,6 +127,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <li class="toctree-l4"><a class="reference internal" href="arcgis.gis.admin.html#collaborationmanager">CollaborationManager</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.gis.admin.html#collaboration">Collaboration</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.gis.admin.html#creditmanager">CreditManager</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.gis.admin.html#license">License</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.gis.admin.html#licensemanager">LicenseManager</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.gis.admin.html#identityprovidermanager">IdentityProviderManager</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.gis.admin.html#passwordpolicy">PasswordPolicy</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.gis.admin.html#portalresourcemanager">PortalResourceManager</a></li>
@@ -187,6 +189,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <li class="toctree-l2"><a class="reference internal" href="arcgis.env.html#return-z">return_z</a></li>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.env.html#return-m">return_m</a></li>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.env.html#verbose">verbose</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.env.html#default-aggregation-styles">default_aggregation_styles</a></li>
 </ul>
 </li>
 <li class="toctree-l1 current"><a class="reference internal" href="arcgis.features.toc.html">arcgis.features module</a><ul class="current">
@@ -196,6 +199,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <li class="toctree-l2"><a class="reference internal" href="arcgis.features.toc.html#featurelayercollection">FeatureLayerCollection</a></li>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.features.toc.html#featureset">FeatureSet</a></li>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.features.toc.html#featurecollection">FeatureCollection</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.features.toc.html#arcgis-features-geoaccessor">arcgis.features.GeoAccessor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.features.toc.html#arcgis-features-geoseriesaccessor">arcgis.features.GeoSeriesAccessor</a></li>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.features.toc.html#spatialdataframe">SpatialDataFrame</a></li>
 <li class="toctree-l2 current"><a class="reference internal" href="arcgis.features.toc.html#submodules">Submodules</a><ul class="current">
 <li class="toctree-l3"><a class="reference internal" href="arcgis.features.analysis.html">arcgis.features.analysis module</a><ul>
@@ -305,6 +310,10 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <li class="toctree-l4"><a class="reference internal" href="arcgis.raster.analytics.html#convert-feature-to-raster">convert_feature_to_raster</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.raster.analytics.html#convert-raster-to-feature">convert_raster_to_feature</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.raster.analytics.html#copy-raster">copy_raster</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.analytics.html#create-image-collection">create_image_collection</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.analytics.html#add-image">add_image</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.analytics.html#delete-image">delete_image</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.analytics.html#delete-image-collection">delete_image_collection</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="arcgis.raster.functions.html">arcgis.raster.functions module</a><ul>
@@ -449,6 +458,25 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.gbl.html#zonal-statistics">zonal_statistics</a></li>
 </ul>
 </li>
+<li class="toctree-l3"><a class="reference internal" href="arcgis.raster.orthomapping.html">arcgis.raster.orthomapping module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.orthomapping.html#is-supported">is_supported</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.orthomapping.html#compute-sensor-model">compute_sensor_model</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.orthomapping.html#alter-processing-states">alter_processing_states</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.orthomapping.html#get-processing-states">get_processing_states</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.orthomapping.html#match-control-points">match_control_points</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.orthomapping.html#color-correction">color_correction</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.orthomapping.html#compute-control-points">compute_control_points</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.orthomapping.html#compute-seamlines">compute_seamlines</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.orthomapping.html#edit-control-points">edit_control_points</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.orthomapping.html#generate-dem">generate_dem</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.orthomapping.html#generate-orthomosaic">generate_orthomosaic</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.orthomapping.html#generate-report">generate_report</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.orthomapping.html#query-camera-info">query_camera_info</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.orthomapping.html#query-control-points">query_control_points</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.orthomapping.html#reset-image-collection">reset_image_collection</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.orthomapping.html#compute-spatial-reference-factory-code">compute_spatial_reference_factory_code</a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -491,12 +519,16 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="arcgis.geoanalytics.manage_data.html">arcgis.geoanalytics.manage_data module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.geoanalytics.manage_data.html#append-data">append_data</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.geoanalytics.manage_data.html#calculate-fields">calculate_fields</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.geoanalytics.manage_data.html#clip-layer">clip_layer</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.geoanalytics.manage_data.html#copy-to-data-store">copy_to_data_store</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.geoanalytics.manage_data.html#overlay-data">overlay_data</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="arcgis.geoanalytics.summarize_data.html">arcgis.geoanalytics.summarize_data module</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.geoanalytics.summarize_data.html#aggregate-points">aggregate_points</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.geoanalytics.summarize_data.html#build-multivariable-grid">build_multivariable_grid</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.geoanalytics.summarize_data.html#join-features">join_features</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.geoanalytics.summarize_data.html#reconstruct-tracks">reconstruct_tracks</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.geoanalytics.summarize_data.html#summarize-attributes">summarize_attributes</a></li>
@@ -585,10 +617,12 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 </li>
 <li class="toctree-l1"><a class="reference internal" href="arcgis.mapping.html">arcgis.mapping module</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.mapping.html#webmap">WebMap</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.mapping.html#offlinemapareamanager">OfflineMapAreaManager</a></li>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.mapping.html#webscene">WebScene</a></li>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.mapping.html#mapimagelayer">MapImageLayer</a></li>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.mapping.html#mapimagelayermanager">MapImageLayerManager</a></li>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.mapping.html#vectortilelayer">VectorTileLayer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.mapping.html#scenelayer">SceneLayer</a></li>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.mapping.html#export-map">export_map</a></li>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.mapping.html#get-layout-templates">get_layout_templates</a></li>
 </ul>
@@ -603,6 +637,31 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 </li>
 <li class="toctree-l1"><a class="reference internal" href="arcgis.widgets.html">arcgis.widgets module</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.widgets.html#mapview">MapView</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.apps.html">arcgis.apps module</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.apps.html#build-collector-url">build_collector_url</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.apps.html#build-explorer-url">build_explorer_url</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.apps.html#build-navigator-url">build_navigator_url</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.apps.html#build-survey123-url">build_survey123_url</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.apps.html#submodules">Submodules</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="arcgis.apps.workforce.html">arcgis.apps.workforce module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.apps.workforce.html#assignment">Assignment</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.apps.workforce.html#assignmenttype">AssignmentType</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.apps.workforce.html#attachment">Attachment</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.apps.workforce.html#dispatcher">Dispatcher</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.apps.workforce.html#project">Project</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.apps.workforce.html#track">Track</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.apps.workforce.html#worker">Worker</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.apps.workforce.html#submodules">Submodules</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="arcgis.apps.storymap.html">arcgis.apps.storymap module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.apps.storymap.html#journalstorymap">JournalStoryMap</a></li>
+</ul>
+</li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -716,14 +775,148 @@ attachment_id - integer - id of attachment to erase</div></blockquote>
 
 <dl class="method">
 <dt id="arcgis.features.managers.AttachmentManager.download">
-<code class="descname">download</code><span class="sig-paren">(</span><em>oid</em>, <em>attachment_id</em>, <em>save_path=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.features.managers.AttachmentManager.download" title="Permalink to this definition">¶</a></dt>
-<dd><p>downloads attachment and returns it’s path on disk</p>
+<code class="descname">download</code><span class="sig-paren">(</span><em>oid=None</em>, <em>attachment_id=None</em>, <em>save_path=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.features.managers.AttachmentManager.download" title="Permalink to this definition">¶</a></dt>
+<dd><p>downloads attachment and returns it’s path on disk.</p>
+<p>The download tool works as follows:</p>
+<blockquote>
+<div><dl class="docutils">
+<dt>1). if nothing is given, all attachments will be downloaded</dt>
+<dd><ul class="first last simple">
+<li>example: download()</li>
+</ul>
+</dd>
+</dl>
+<p>2). If a single oid and attachment_id are given, the single file will download
+3). If a list of oid values are given, all the attachments for those object ids will be saved locally.</p>
+</div></blockquote>
+<table border="1" class="docutils">
+<colgroup>
+<col width="28%" />
+<col width="72%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><strong>Arguement</strong></td>
+<td><strong>Description</strong></td>
+</tr>
+<tr class="row-even"><td>oid</td>
+<td>optional list/string. A list of object Ids or a single value
+to download data from.</td>
+</tr>
+<tr class="row-odd"><td>attachment_id</td>
+<td>optional string. Id of the attachment to download. This is only
+honored if return_all is False.</td>
+</tr>
+<tr class="row-even"><td>save_folder</td>
+<td>optional string. Path to save data to.</td>
+</tr>
+</tbody>
+</table>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">list of downloaded files</td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
 <dl class="method">
 <dt id="arcgis.features.managers.AttachmentManager.get_list">
 <code class="descname">get_list</code><span class="sig-paren">(</span><em>oid</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.features.managers.AttachmentManager.get_list" title="Permalink to this definition">¶</a></dt>
 <dd><p>returns the list of attachements for a given OBJECT ID</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="arcgis.features.managers.AttachmentManager.search">
+<code class="descname">search</code><span class="sig-paren">(</span><em>where='1=1'</em>, <em>object_ids=None</em>, <em>global_ids=None</em>, <em>attachment_types=None</em>, <em>size=None</em>, <em>keywords=None</em>, <em>show_images=False</em>, <em>as_df=False</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.features.managers.AttachmentManager.search" title="Permalink to this definition">¶</a></dt>
+<dd><p>The <cite>search</cite> method allows querying the layer for its attachments and returns the results as
+a Pandas DataFrame or dict</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="21%" />
+<col width="79%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><strong>Arguement</strong></td>
+<td><strong>Description</strong></td>
+</tr>
+<tr class="row-even"><td>where</td>
+<td><p class="first">required string.  The definition expression to be applied to
+the related layer/table. From the list of records that are
+related to the specified object Ids, only those records that
+conform to this expression will be returned.</p>
+<p class="last">Example: where=”STATE_NAME = ‘Alaska’”.
+The query results will return all attachments in Alaska.</p>
+</td>
+</tr>
+<tr class="row-odd"><td>object_ids</td>
+<td><p class="first">optional list/string. The object IDs of this layer/table to be
+queried.</p>
+<p>Syntax: objectIds=&lt;objectId1&gt;,&lt;objectId2&gt;</p>
+<p class="last">Example: objectIds=2. The query results will return attachments
+only for the specified object id.</p>
+</td>
+</tr>
+<tr class="row-even"><td>global_ids</td>
+<td><blockquote class="first">
+<div>optional list/string. The global IDs of this layer/table to be</div></blockquote>
+<p>queried.</p>
+<p>Syntax: globalIds=&lt;globalIds1&gt;,&lt;globalIds2&gt;</p>
+<p>Example: globalIds=6s430c5a-kb75-4d52-a0db-b30bg060f0b9,35f0d027-8fc0-4905-a2f6-373c9600d017</p>
+<p class="last">The query results will return attachments only for specified
+global id.</p>
+</td>
+</tr>
+<tr class="row-odd"><td>attachment_types</td>
+<td><p class="first">optional list/string. The file format that is supported by
+query attachment.</p>
+<p>Supported attachment types:
+bmp, ecw, emf, eps, ps, gif, img, jp2, jpc, j2k, jpf, jpg,
+jpeg, jpe, png, psd, raw, sid, tif, tiff, wmf, wps, avi, mpg,
+mpe, mpeg, mov, wmv, aif, mid, rmi, mp2, mp3, mp4, pma, mpv2,
+qt, ra, ram, wav, wma, doc, docx, dot, xls, xlsx, xlt, pdf, ppt,
+pptx, txt, zip, 7z, gz, gtar, tar, tgz, vrml, gml, json, xml,
+mdb, geodatabase</p>
+<p class="last">Example: attachment_types=’image/jpeg’</p>
+</td>
+</tr>
+<tr class="row-even"><td>size</td>
+<td><p class="first">optional tuple/list. The file size of the attachment is
+specified in bytes. You can enter a file size range
+(1000,15000) to query for attachments with the specified range.</p>
+<p class="last">Example: size=1000,15000.
+The query results will return all attachments within the
+specified file size range (1000 - 15000) bytes.</p>
+</td>
+</tr>
+<tr class="row-odd"><td>keywords</td>
+<td><p class="first">optional string.  When attachments are uploaded, keywords can
+be assigned to the uploaded file.  By passing a keyword value,
+the values will be searched.</p>
+<p class="last">Example: keywords=’airplanes’</p>
+</td>
+</tr>
+<tr class="row-even"><td>show_images</td>
+<td>optional bool. The default is False, when the value is True,
+the results will be displayed as a HTML table. If the as_df is
+set to False, this parameter will be ignored.</td>
+</tr>
+<tr class="row-odd"><td>as_df</td>
+<td>optional bool. Default is False, if True, the results will be
+a Pandas’ DataFrame.  If False, the values will be a list of
+dictionary values.</td>
+</tr>
+</tbody>
+</table>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">list of downloaded files</td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
 <dl class="method">
@@ -958,9 +1151,9 @@ individual feature service layer object.</dd>
 <dt id="arcgis.features.managers.FeatureLayerCollectionManager.create_view">
 <code class="descname">create_view</code><span class="sig-paren">(</span><em>name</em>, <em>spatial_reference=None</em>, <em>extent=None</em>, <em>allow_schema_changes=True</em>, <em>updateable=True</em>, <em>capabilities='Query'</em>, <em>view_layers=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.features.managers.FeatureLayerCollectionManager.create_view" title="Permalink to this definition">¶</a></dt>
 <dd><p>Creates a view of an existing feature service. You can create a view, if you need a different view of the data
-represented by a hosted feature layer—for example, you want to apply different editor settings, apply different
+represented by a hosted feature layer, for example, you want to apply different editor settings, apply different
 styles or filters, define which features or fields are available, or share the data to different groups than
-the hosted feature layer—create a hosted feature layer view of that hosted feature layer.</p>
+the hosted feature layer  create a hosted feature layer view of that hosted feature layer.</p>
 <p>When you create a feature layer view, a new hosted feature layer item is added to Content. This new layer is a
 view of the data in the hosted feature layer, which means updates made to the data appear in the hosted feature
 layer and all of its hosted feature layer views. However, since the view is a separate layer, you can change
@@ -1057,7 +1250,7 @@ FeatureService or layer.</dd>
 <dt id="arcgis.features.managers.FeatureLayerCollectionManager.overwrite">
 <code class="descname">overwrite</code><span class="sig-paren">(</span><em>data_file</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.features.managers.FeatureLayerCollectionManager.overwrite" title="Permalink to this definition">¶</a></dt>
 <dd><p>Overwrite all the features and layers in a hosted feature layer collection service. This operation removes
-all features but retains the properties (such as symbology, itemID) and capabilities configured on the service.
+all features but retains the properties (such as metadata, itemID) and capabilities configured on the service.
 There are some limits to using this operation:</p>
 <blockquote>
 <div><ol class="arabic simple">
@@ -1296,7 +1489,7 @@ individual feature service layer object.</dd>
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'./',
-            VERSION:'1.4.0',
+            VERSION:'1.5.0',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  true,
