@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>arcgis.gis.admin module &mdash; arcgis 1.4.0 documentation</title>
+  <title>arcgis.gis.admin module &mdash; arcgis 1.5.0 documentation</title>
   
 
   
@@ -37,7 +37,7 @@
         <link rel="index" title="Index"
               href="genindex.html"/>
         <link rel="search" title="Search" href="search.html"/>
-    <link rel="top" title="arcgis 1.4.0 documentation" href="index.html"/>
+    <link rel="top" title="arcgis 1.5.0 documentation" href="index.html"/>
         <link rel="up" title="arcgis.gis module" href="arcgis.gis.toc.html"/>
         <link rel="next" title="arcgis.gis.server module" href="arcgis.gis.server.html"/>
         <link rel="prev" title="arcgis.gis module" href="arcgis.gis.toc.html"/>
@@ -78,7 +78,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             
             
               <div class="version">
-                1.4.0
+                1.5.0
               </div>
             
           
@@ -127,6 +127,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <li class="toctree-l4"><a class="reference internal" href="#collaborationmanager">CollaborationManager</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#collaboration">Collaboration</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#creditmanager">CreditManager</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#license">License</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#licensemanager">LicenseManager</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#identityprovidermanager">IdentityProviderManager</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#passwordpolicy">PasswordPolicy</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#portalresourcemanager">PortalResourceManager</a></li>
@@ -187,6 +189,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <li class="toctree-l2"><a class="reference internal" href="arcgis.env.html#return-z">return_z</a></li>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.env.html#return-m">return_m</a></li>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.env.html#verbose">verbose</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.env.html#default-aggregation-styles">default_aggregation_styles</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="arcgis.features.toc.html">arcgis.features module</a><ul>
@@ -196,6 +199,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <li class="toctree-l2"><a class="reference internal" href="arcgis.features.toc.html#featurelayercollection">FeatureLayerCollection</a></li>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.features.toc.html#featureset">FeatureSet</a></li>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.features.toc.html#featurecollection">FeatureCollection</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.features.toc.html#arcgis-features-geoaccessor">arcgis.features.GeoAccessor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.features.toc.html#arcgis-features-geoseriesaccessor">arcgis.features.GeoSeriesAccessor</a></li>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.features.toc.html#spatialdataframe">SpatialDataFrame</a></li>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.features.toc.html#submodules">Submodules</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="arcgis.features.analysis.html">arcgis.features.analysis module</a><ul>
@@ -305,6 +310,10 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <li class="toctree-l4"><a class="reference internal" href="arcgis.raster.analytics.html#convert-feature-to-raster">convert_feature_to_raster</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.raster.analytics.html#convert-raster-to-feature">convert_raster_to_feature</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.raster.analytics.html#copy-raster">copy_raster</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.analytics.html#create-image-collection">create_image_collection</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.analytics.html#add-image">add_image</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.analytics.html#delete-image">delete_image</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.analytics.html#delete-image-collection">delete_image_collection</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="arcgis.raster.functions.html">arcgis.raster.functions module</a><ul>
@@ -449,6 +458,25 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.gbl.html#zonal-statistics">zonal_statistics</a></li>
 </ul>
 </li>
+<li class="toctree-l3"><a class="reference internal" href="arcgis.raster.orthomapping.html">arcgis.raster.orthomapping module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.orthomapping.html#is-supported">is_supported</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.orthomapping.html#compute-sensor-model">compute_sensor_model</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.orthomapping.html#alter-processing-states">alter_processing_states</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.orthomapping.html#get-processing-states">get_processing_states</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.orthomapping.html#match-control-points">match_control_points</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.orthomapping.html#color-correction">color_correction</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.orthomapping.html#compute-control-points">compute_control_points</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.orthomapping.html#compute-seamlines">compute_seamlines</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.orthomapping.html#edit-control-points">edit_control_points</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.orthomapping.html#generate-dem">generate_dem</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.orthomapping.html#generate-orthomosaic">generate_orthomosaic</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.orthomapping.html#generate-report">generate_report</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.orthomapping.html#query-camera-info">query_camera_info</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.orthomapping.html#query-control-points">query_control_points</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.orthomapping.html#reset-image-collection">reset_image_collection</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.orthomapping.html#compute-spatial-reference-factory-code">compute_spatial_reference_factory_code</a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -491,12 +519,16 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="arcgis.geoanalytics.manage_data.html">arcgis.geoanalytics.manage_data module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.geoanalytics.manage_data.html#append-data">append_data</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.geoanalytics.manage_data.html#calculate-fields">calculate_fields</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.geoanalytics.manage_data.html#clip-layer">clip_layer</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.geoanalytics.manage_data.html#copy-to-data-store">copy_to_data_store</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.geoanalytics.manage_data.html#overlay-data">overlay_data</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="arcgis.geoanalytics.summarize_data.html">arcgis.geoanalytics.summarize_data module</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.geoanalytics.summarize_data.html#aggregate-points">aggregate_points</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.geoanalytics.summarize_data.html#build-multivariable-grid">build_multivariable_grid</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.geoanalytics.summarize_data.html#join-features">join_features</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.geoanalytics.summarize_data.html#reconstruct-tracks">reconstruct_tracks</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.geoanalytics.summarize_data.html#summarize-attributes">summarize_attributes</a></li>
@@ -585,10 +617,12 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 </li>
 <li class="toctree-l1"><a class="reference internal" href="arcgis.mapping.html">arcgis.mapping module</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.mapping.html#webmap">WebMap</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.mapping.html#offlinemapareamanager">OfflineMapAreaManager</a></li>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.mapping.html#webscene">WebScene</a></li>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.mapping.html#mapimagelayer">MapImageLayer</a></li>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.mapping.html#mapimagelayermanager">MapImageLayerManager</a></li>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.mapping.html#vectortilelayer">VectorTileLayer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.mapping.html#scenelayer">SceneLayer</a></li>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.mapping.html#export-map">export_map</a></li>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.mapping.html#get-layout-templates">get_layout_templates</a></li>
 </ul>
@@ -603,6 +637,31 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 </li>
 <li class="toctree-l1"><a class="reference internal" href="arcgis.widgets.html">arcgis.widgets module</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.widgets.html#mapview">MapView</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.apps.html">arcgis.apps module</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.apps.html#build-collector-url">build_collector_url</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.apps.html#build-explorer-url">build_explorer_url</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.apps.html#build-navigator-url">build_navigator_url</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.apps.html#build-survey123-url">build_survey123_url</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.apps.html#submodules">Submodules</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="arcgis.apps.workforce.html">arcgis.apps.workforce module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.apps.workforce.html#assignment">Assignment</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.apps.workforce.html#assignmenttype">AssignmentType</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.apps.workforce.html#attachment">Attachment</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.apps.workforce.html#dispatcher">Dispatcher</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.apps.workforce.html#project">Project</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.apps.workforce.html#track">Track</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.apps.workforce.html#worker">Worker</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.apps.workforce.html#submodules">Submodules</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="arcgis.apps.storymap.html">arcgis.apps.storymap module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.apps.storymap.html#journalstorymap">JournalStoryMap</a></li>
+</ul>
+</li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -906,7 +965,41 @@ schema.</p>
 <dl class="method">
 <dt id="arcgis.gis.admin.CategoryManager.add">
 <code class="descname">add</code><span class="sig-paren">(</span><em>items</em>, <em>category</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.admin.CategoryManager.add" title="Permalink to this definition">¶</a></dt>
-<dd><p>adds a category to an existing item</p>
+<dd><p>Adds a category to an existing set of items</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="27%" />
+<col width="73%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><strong>Argument</strong></td>
+<td><strong>Description</strong></td>
+</tr>
+<tr class="row-even"><td>items</td>
+<td>Required Items. The content within a GIS that will be
+updated with a list of categories.</td>
+</tr>
+<tr class="row-odd"><td>category</td>
+<td>Required String. Assigns a category value to the items.</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">item</span> <span class="o">=</span> <span class="p">[</span><span class="n">gis</span><span class="o">.</span><span class="n">content</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;&lt;item id 1&gt;&quot;</span><span class="p">),</span>
+<span class="go">            gis.content.get(&quot;&lt;item id 2&gt;&quot;)]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">cs</span> <span class="o">=</span> <span class="n">gis</span><span class="o">.</span><span class="n">admin</span><span class="o">.</span><span class="n">category_schema</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">print</span><span class="p">(</span><span class="n">cs</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">items</span><span class="o">=</span><span class="p">[</span><span class="n">item</span><span class="p">],</span> <span class="n">category</span><span class="o">=</span><span class="s2">&quot;/Categories/TEST3&quot;</span><span class="p">))</span>
+<span class="go">[{&#39;results&#39;: [{&#39;itemId&#39;: &#39;&lt;item id 1&gt;&#39;, &#39;success&#39;: True}]},</span>
+<span class="go"> {&#39;results&#39;: [{&#39;itemId&#39;: &#39;&lt;item id 2&gt;&#39;, &#39;success&#39;: True}]}]</span>
+</pre></div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">dict</td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
 <dl class="method">
@@ -1048,50 +1141,63 @@ associated with the collaboration to local portal group(s). The
 guest must export a collaboration invitation response file and send
 it to the host. Once the host processes the response, content can
 be shared between the host and guest(s).</p>
-<dl class="docutils">
-<dt>Inputs:</dt>
-<dd><dl class="first docutils">
-<dt>:first_name:The first name of the contact person for the guest</dt>
-<dd>portal.</dd>
-</dl>
-<p>:last_name:last name of the contact person
-:email: email of the contact person
-:invitation_file: A multipart form parameter—file upload. Use</p>
-<blockquote>
-<div>either this parameter or invitation_JSON.</div></blockquote>
+<table border="1" class="docutils">
+<colgroup>
+<col width="28%" />
+<col width="72%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><strong>Argument</strong></td>
+<td><strong>Description</strong></td>
+</tr>
+<tr class="row-even"><td>first_name</td>
+<td>Required string. The first name of the contact person for the guest
+portal.</td>
+</tr>
+<tr class="row-odd"><td>last_name</td>
+<td>Required string. The last name of the contact person.</td>
+</tr>
+<tr class="row-even"><td>email</td>
+<td>Required string. The email of the contact person.</td>
+</tr>
+<tr class="row-odd"><td>invitation_file</td>
+<td>Optional string. The invite file to upload to portal. Use either
+this parameter or invitation_JSON.</td>
+</tr>
+<tr class="row-even"><td>invitation_JSON</td>
+<td>Optional string. The same contents as the invitation_file parameter
+but passed as a string. Use either this parameter or invitation_file.</td>
+</tr>
+<tr class="row-odd"><td>webauth_username</td>
+<td>Optional string. If the collaboration host requires web-tier
+authentication, optionally use this parameter to provide the host’s
+web-tier authentication user name.</td>
+</tr>
+<tr class="row-even"><td>webauth_password</td>
+<td>Optional string. If the collaboration host requires web-tier
+authentication, optionally use this parameter to provide the host’s
+web-tier authentication password.</td>
+</tr>
+<tr class="row-odd"><td>webauth_cert_file</td>
+<td>Optional string. If the collaboration host requires web-tier
+authentication, optionally use this parameter to provide the host’s
+web-tier authentication certificate file.</td>
+</tr>
+<tr class="row-even"><td>webauth_cert_password</td>
+<td>Optional string. If the collaboration host requires web-tier
+authentication, optionally use this parameter to provide the host’s
+web-tier authentication certificate password.</td>
+</tr>
+</tbody>
+</table>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name" colspan="2">invitation_JSON:</th></tr>
-<tr class="field-odd field"><td>&#160;</td><td class="field-body">the same contents as the invitationFile
-parameter but passed as a string. Use either this parameter or
-invitationFile.</td>
-</tr>
-<tr class="field-even field"><th class="field-name" colspan="2">webauth_username:</th></tr>
-<tr class="field-even field"><td>&#160;</td><td class="field-body">If the collaboration host requires web-tier
-authentication, optionally use this parameter to provide the
-host’s web-tier authentication user name.</td>
-</tr>
-<tr class="field-odd field"><th class="field-name" colspan="2">webauth_password:</th></tr>
-<tr class="field-odd field"><td>&#160;</td><td class="field-body">If the collaboration host requires web-tier
-authentication, optionally use this parameter to provide the
-host’s web-tier authentication password.</td>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">dict</td>
 </tr>
 </tbody>
 </table>
-<dl class="last docutils">
-<dt>:webauth_cert_file:If the collaboration host requires web-tier</dt>
-<dd>authentication, optionally use this parameter to provide the
-host’s web-tier authentication certificate file.</dd>
-<dt>:webauth_cert_password:If the collaboration host requires web-tier</dt>
-<dd>authentication, optionally use this parameter to provide the
-host’s web-tier authentication certificate password.</dd>
-</dl>
-</dd>
-<dt>Output:</dt>
-<dd>dictionary</dd>
-</dl>
 </dd></dl>
 
 <dl class="method">
@@ -1102,12 +1208,38 @@ wherever applicable and internally calls the <cite>create</cite>, <cite>accept_i
 This method will create a new group and a new workspace in both the host and guest GIS for this collaboration.
 Invitation and response files created during the collaborations will be downloaded to the current working
 directory.</p>
-<p>Use the other methods if you need fine-grained control over how the collaboration is set up.
-:param guest_gis: GIS object of the guest org or Enterprise 
-:param collaboration_name: A generic name for the collaboration. This name is used with prefixes such as 
-wksp_&lt;your_collab_name&gt;, grp_&lt;your_collab_name&gt; to create the collaboration workspace and groups.
-:param collaboration_description: A generic description for the collaboration.
-:return: returns True / False</p>
+<p><strong>Use the other methods if you need fine-grained control over how the collaboration is set up.</strong></p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="28%" />
+<col width="72%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><strong>Argument</strong></td>
+<td><strong>Description</strong></td>
+</tr>
+<tr class="row-even"><td>guest_gis</td>
+<td>Required GIS. GIS object of the guest org or Enterprise.</td>
+</tr>
+<tr class="row-odd"><td>collaboration_name</td>
+<td>Required string. A generic name for the collaboration. This name is
+used with prefixes such as wksp_&lt;your_collab_name&gt;,
+grp_&lt;your_collab_name&gt; to create the collaboration workspace and
+groups.</td>
+</tr>
+<tr class="row-even"><td>collaboration_description</td>
+<td>Optional string. A generic description for the collaboration.</td>
+</tr>
+</tbody>
+</table>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">boolean</td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
 <dl class="method">
@@ -1120,55 +1252,57 @@ the host portal is linked to the workspace. The access mode for the
 host portal is set. The contact information associated with the
 host can be specified; otherwise, the contact information for the
 administrator user performing the operation will be used.</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="28%" />
+<col width="72%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><strong>Argument</strong></td>
+<td><strong>Description</strong></td>
+</tr>
+<tr class="row-even"><td>name</td>
+<td>Required string. Name of the collaboration</td>
+</tr>
+<tr class="row-odd"><td>description</td>
+<td>Required string. Description of the collaboration</td>
+</tr>
+<tr class="row-even"><td>workspace_name</td>
+<td>Required string. The name of the initial workspace.</td>
+</tr>
+<tr class="row-odd"><td>workspace_description</td>
+<td>Required string. The description of the initial workspace.</td>
+</tr>
+<tr class="row-even"><td>portal_group_id</td>
+<td>Required string. ID of group in the portal that will be linked with
+the workspace.</td>
+</tr>
+<tr class="row-odd"><td>host_contact_first_name</td>
+<td>Required string. The first name of the contact person for the
+collaboration host portal.</td>
+</tr>
+<tr class="row-even"><td>host_contact_last_name</td>
+<td>Required string. The last name of the contact person for the
+collaboration host portal.</td>
+</tr>
+<tr class="row-odd"><td>host_contact_email_address</td>
+<td>Required string. The email address of the contact person for the
+collaboration host portal.</td>
+</tr>
+<tr class="row-even"><td>access_mode</td>
+<td>Required string. The organization’s access mode to the workspace.
+Values: send | receive | sendAndReceive (default)</td>
+</tr>
+</tbody>
+</table>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Inputs:</th><td class="field-body"><table class="first docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">name:</th><td class="field-body">name of the collaboration</td>
-</tr>
-<tr class="field-even field"><th class="field-name">description:</th><td class="field-body">A description of the collaboration that all
-participants will see.</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">workspace_name:</th><td class="field-body">The name of the initial workspace.</td>
-</tr>
-<tr class="field-even field"><th class="field-name" colspan="2">workspace_description:</th></tr>
-<tr class="field-even field"><td>&#160;</td><td class="field-body">The description of the initial workspace.</td>
-</tr>
-<tr class="field-odd field"><th class="field-name" colspan="2">portal_group_id:</th></tr>
-<tr class="field-odd field"><td>&#160;</td><td class="field-body">ID of group in the portal that will be linked
-with the workspace.</td>
-</tr>
-<tr class="field-even field"><th class="field-name" colspan="2">host_contact_first_name:</th></tr>
-<tr class="field-even field"><td>&#160;</td><td class="field-body">The first name of the contact person for
-the collaboration host portal.</td>
-</tr>
-<tr class="field-odd field"><th class="field-name" colspan="2">host_contact_last_name:</th></tr>
-<tr class="field-odd field"><td>&#160;</td><td class="field-body">The last name of the contact person for
-the collaboration host portal.</td>
-</tr>
-<tr class="field-even field"><th class="field-name" colspan="2">host_contact_email_address:</th></tr>
-<tr class="field-even field"><td>&#160;</td><td class="field-body">The email address of the contact
-person for the collaboration host portal.</td>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">the data item is registered successfully, None otherwise</td>
 </tr>
 </tbody>
 </table>
-<dl class="last docutils">
-<dt>:access_mode:The organization’s access mode to the workspace.</dt>
-<dd><p class="first last">Values: send | receive | sendAndReceive</p>
-</dd>
-</dl>
-</td>
-</tr>
-</tbody>
-</table>
-<dl class="docutils">
-<dt>Output:</dt>
-<dd>the data item is registered successfully, None otherwise</dd>
-</dl>
 </dd></dl>
 
 <dl class="method">
@@ -1185,50 +1319,63 @@ validate a collaboration invitation. The invitation file received
 securely from the collaboration host portal must be provided.
 Validation checks include checking that the invitation is for the
 intended recipient.</p>
-<dl class="docutils">
-<dt>Inputs:</dt>
-<dd><dl class="first docutils">
-<dt>:first_name:The first name of the contact person for the guest</dt>
-<dd>portal.</dd>
-</dl>
-<p>:last_name:last name of the contact person
-:email: email of the contact person
-:invitation_file: A multipart form parameter—file upload. Use</p>
-<blockquote>
-<div>either this parameter or invitation_JSON.</div></blockquote>
+<table border="1" class="docutils">
+<colgroup>
+<col width="28%" />
+<col width="72%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><strong>Argument</strong></td>
+<td><strong>Description</strong></td>
+</tr>
+<tr class="row-even"><td>first_name</td>
+<td>Required string. The first name of the contact person for the guest
+portal.</td>
+</tr>
+<tr class="row-odd"><td>last_name</td>
+<td>Required string. The last name of the contact person.</td>
+</tr>
+<tr class="row-even"><td>email</td>
+<td>Required string. The email of the contact person.</td>
+</tr>
+<tr class="row-odd"><td>invitation_file</td>
+<td>Optional string. The invite file to upload to portal. Use either
+this parameter or invitation_JSON.</td>
+</tr>
+<tr class="row-even"><td>invitation_JSON</td>
+<td>Optional string. The same contents as the invitation_file parameter
+but passed as a string. Use either this parameter or invitation_file.</td>
+</tr>
+<tr class="row-odd"><td>webauth_username</td>
+<td>Optional string. If the collaboration host requires web-tier
+authentication, optionally use this parameter to provide the host’s
+web-tier authentication user name.</td>
+</tr>
+<tr class="row-even"><td>webauth_password</td>
+<td>Optional string. If the collaboration host requires web-tier
+authentication, optionally use this parameter to provide the host’s
+web-tier authentication password.</td>
+</tr>
+<tr class="row-odd"><td>webauth_cert_file</td>
+<td>Optional string. If the collaboration host requires web-tier
+authentication, optionally use this parameter to provide the host’s
+web-tier authentication certificate file.</td>
+</tr>
+<tr class="row-even"><td>webauth_cert_password</td>
+<td>Optional string. If the collaboration host requires web-tier
+authentication, optionally use this parameter to provide the host’s
+web-tier authentication certificate password.</td>
+</tr>
+</tbody>
+</table>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name" colspan="2">invitation_JSON:</th></tr>
-<tr class="field-odd field"><td>&#160;</td><td class="field-body">the same contents as the invitationFile
-parameter but passed as a string. Use either this parameter or
-invitationFile.</td>
-</tr>
-<tr class="field-even field"><th class="field-name" colspan="2">webauth_username:</th></tr>
-<tr class="field-even field"><td>&#160;</td><td class="field-body">If the collaboration host requires web-tier
-authentication, optionally use this parameter to provide the
-host’s web-tier authentication user name.</td>
-</tr>
-<tr class="field-odd field"><th class="field-name" colspan="2">webauth_password:</th></tr>
-<tr class="field-odd field"><td>&#160;</td><td class="field-body">If the collaboration host requires web-tier
-authentication, optionally use this parameter to provide the
-host’s web-tier authentication password.</td>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">dict</td>
 </tr>
 </tbody>
 </table>
-<dl class="last docutils">
-<dt>:webauth_cert_file:If the collaboration host requires web-tier</dt>
-<dd>authentication, optionally use this parameter to provide the
-host’s web-tier authentication certificate file.</dd>
-<dt>:webauth_cert_password:If the collaboration host requires web-tier</dt>
-<dd>authentication, optionally use this parameter to provide the
-host’s web-tier authentication certificate password.</dd>
-</dl>
-</dd>
-<dt>Output:</dt>
-<dd>dictionary</dd>
-</dl>
 </dd></dl>
 
 </dd></dl>
@@ -1249,13 +1396,25 @@ with a specified ID.</p>
 <dt>This operation adds a group to a workspace that participates in a portal-to-portal collaboration. Content shared</dt>
 <dd>to the portal group is shared to other participants in the collaboration.</dd>
 </dl>
+<table border="1" class="docutils">
+<colgroup>
+<col width="28%" />
+<col width="72%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><strong>Argument</strong></td>
+<td><strong>Description</strong></td>
+</tr>
+<tr class="row-even"><td>portal_group</td>
+<td>Required Group of string. Group ID or object to add to the workspace.</td>
+</tr>
+</tbody>
+</table>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>portal_group</strong> – arcgis.gis.Group object or group id string</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"></td>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">dict</td>
 </tr>
 </tbody>
 </table>
@@ -1267,28 +1426,35 @@ with a specified ID.</p>
 <dd><p>The add_workspace resource adds a new workspace to a
 portal-to-portal collaboration. Only collaboration hosts can create
 new workspaces.</p>
-<dl class="docutils">
-<dt>Inputs:</dt>
-<dd><table class="first last docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
+<table border="1" class="docutils">
+<colgroup>
+<col width="28%" />
+<col width="72%" />
+</colgroup>
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">name:</th><td class="field-body">The name of the new workspace.</td>
+<tr class="row-odd"><td><strong>Argument</strong></td>
+<td><strong>Description</strong></td>
 </tr>
-<tr class="field-even field"><th class="field-name">description:</th><td class="field-body">The description of the new workspace.</td>
+<tr class="row-even"><td>name</td>
+<td>Required string. The name of the workspace.</td>
 </tr>
-<tr class="field-odd field"><th class="field-name">config:</th><td class="field-body">The configuration details of the new workspace.</td>
+<tr class="row-odd"><td>description</td>
+<td>Required string. Brief description of the workspace.</td>
 </tr>
-<tr class="field-even field"><th class="field-name" colspan="2">portal_group_id:</th></tr>
-<tr class="field-even field"><td>&#160;</td><td class="field-body">The ID of the portal group linked with the
+<tr class="row-even"><td>portal_group_id</td>
+<td>Required string. The ID of the portal group linked with the
 workspace.</td>
 </tr>
 </tbody>
 </table>
-</dd>
-<dt>Output:</dt>
-<dd>dictionary with status and ID or workspace and collaboration</dd>
-</dl>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">dict</td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
 <dl class="method">
@@ -1315,20 +1481,28 @@ administrator will then import your response file to complete the
 establishment of trust between your portals.
 It is important that the contents of this response file are not
 intercepted and tampered with by any unknown entity.</p>
-<dl class="docutils">
-<dt>inputs:</dt>
-<dd><table class="first last docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
+<table border="1" class="docutils">
+<colgroup>
+<col width="28%" />
+<col width="72%" />
+</colgroup>
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">out_folder:</th><td class="field-body">location to save the file to</td>
+<tr class="row-odd"><td><strong>Argument</strong></td>
+<td><strong>Description</strong></td>
+</tr>
+<tr class="row-even"><td>out_folder</td>
+<td>Required string. Save location of the file.</td>
 </tr>
 </tbody>
 </table>
-</dd>
-<dt>Output:</dt>
-<dd>file path</dd>
-</dl>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">string</td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
 <dl class="method">
@@ -1362,38 +1536,48 @@ performed on the portal that serves as the collaboration host. Once
 an invitation response is imported, trust between the host and the
 guest is established. Sharing of content between participants can
 proceed from this point.</p>
-<dl class="docutils">
-<dt>Inputs:</dt>
-<dd><table class="first last docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
+<table border="1" class="docutils">
+<colgroup>
+<col width="28%" />
+<col width="72%" />
+</colgroup>
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">response_file:</th><td class="field-body">A multipart form parameter—file upload.</td>
+<tr class="row-odd"><td><strong>Argument</strong></td>
+<td><strong>Description</strong></td>
 </tr>
-<tr class="field-even field"><th class="field-name" colspan="2">webauth_username:</th></tr>
-<tr class="field-even field"><td>&#160;</td><td class="field-body">If the collaboration guest requires web-tier
-authentication, optionally use this parameter to provide the
-guest’s web-tier authentication user name.</td>
+<tr class="row-even"><td>response_file</td>
+<td>Required string. File path to the response file.</td>
 </tr>
-<tr class="field-odd field"><th class="field-name" colspan="2">webauth_password:</th></tr>
-<tr class="field-odd field"><td>&#160;</td><td class="field-body">password for the webauth_username</td>
+<tr class="row-odd"><td>webauth_username</td>
+<td>Optional string. If the collaboration host requires web-tier
+authentication, optionally use this parameter to provide the host’s
+web-tier authentication user name.</td>
 </tr>
-<tr class="field-even field"><th class="field-name" colspan="2">webauth_cert_file:</th></tr>
-<tr class="field-even field"><td>&#160;</td><td class="field-body">If the collaboration guest requires web-tier
-authentication, optionally use this parameter to provide the
-guest’s web-tier authentication certificate file.</td>
+<tr class="row-even"><td>webauth_password</td>
+<td>Optional string. If the collaboration host requires web-tier
+authentication, optionally use this parameter to provide the host’s
+web-tier authentication password.</td>
 </tr>
-<tr class="field-odd field"><th class="field-name" colspan="2">webauth_cert_password:</th></tr>
-<tr class="field-odd field"><td>&#160;</td><td class="field-body">If the collaboration guest requires
-web-tier authentication, optionally use this parameter to provide
-the guest’s web-tier authentication certificate password.</td>
+<tr class="row-odd"><td>webauth_cert_file</td>
+<td>Optional string. If the collaboration host requires web-tier
+authentication, optionally use this parameter to provide the host’s
+web-tier authentication certificate file.</td>
+</tr>
+<tr class="row-even"><td>webauth_cert_password</td>
+<td>Optional string. If the collaboration host requires web-tier
+authentication, optionally use this parameter to provide the host’s
+web-tier authentication certificate password.</td>
 </tr>
 </tbody>
 </table>
-</dd>
-<dt>Output:</dt>
-<dd>JSON dictionary</dd>
-</dl>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">dict</td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
 <dl class="method">
@@ -1432,46 +1616,60 @@ importing the invitation file into their portal. Their acceptance
 is returned to you as another file that you must import into your
 portal using the import_invitation_response operation. This will
 establish trust between your portal and that of your participant.</p>
-<dl class="docutils">
-<dt>Inputs:</dt>
-<dd><table class="first last docutils field-list" frame="void" rules="none">
+<table border="1" class="docutils">
+<colgroup>
+<col width="28%" />
+<col width="72%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><strong>Argument</strong></td>
+<td><strong>Description</strong></td>
+</tr>
+<tr class="row-even"><td>config_json</td>
+<td><p class="first">Required dict. A dict containing a map of access modes for the
+participant in each of the collaboration workspaces.
+Defined as: send | receive | sendAndReceive</p>
+<table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">config_json:</th><td class="field-body"><p class="first">A JSON object containing a map of access modes for
-the participant in each of the collaboration workspaces.
-Defined as: send | receive | sendAndReceive
-:Example:
-config_json = [</p>
-<blockquote>
-<div><p>{“workspace_id” : “send”},
-{“workspace_id2” : “receive”},
-{“workspace_id3” : “sendAndReceive”}</p>
-</div></blockquote>
-<p>]</p>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">expiration:</th><td class="field-body"><p class="first">The time in UTC when the invitation to collaborate
-should expire.</p>
-</td>
-</tr>
-<tr class="field-odd field"><th class="field-name" colspan="2">guest_portal_url:</th></tr>
-<tr class="field-odd field"><td>&#160;</td><td class="field-body"><p class="first">The URL of the participating org or Enterprise that you want
-to invite to the collaboration.</p>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">guest_gis:</th><td class="field-body"><p class="first">GIS object to the guest collaboration site (optional)</p>
-</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">save_path:</th><td class="field-body"><p class="first last">Path to download the invitation file to.</p>
-</td>
+<tr class="field-odd field"><th class="field-name">Example:</th><td class="field-body"></td>
 </tr>
 </tbody>
 </table>
-</dd>
-<dt>Output:</dt>
-<dd>contents of a file that contains the invitation information</dd>
+<dl class="docutils">
+<dt>config_json = [</dt>
+<dd>{“workspace_id” : “send”},
+{“workspace_id2” : “receive”},
+{“workspace_id3” : “sendAndReceive”}</dd>
 </dl>
+<p class="last">]</p>
+</td>
+</tr>
+<tr class="row-odd"><td>expiration</td>
+<td>Optional integer. The time in UTC when the invitation to collaborate
+should expire.</td>
+</tr>
+<tr class="row-even"><td>guest_portal_url</td>
+<td>Optional string. The URL of the participating org or Enterprise that
+you want to invite to the collaboration.</td>
+</tr>
+<tr class="row-odd"><td>guest_gis</td>
+<td>Optional GIS. GIS object to the guest collaboration site.</td>
+</tr>
+<tr class="row-even"><td>save_path</td>
+<td>Optional string. Path to download the invitation file to.</td>
+</tr>
+</tbody>
+</table>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">contents of a file that contains the invitation information</td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
 <dl class="method">
@@ -1489,20 +1687,28 @@ portal-to-portal collaboration invitation. The new invitation file
 is provided via a multipart POST response. The expiration for the
 invitation is extended an additional 72 hours from the current
 time.</p>
-<dl class="docutils">
-<dt>Inputs:</dt>
-<dd><table class="first last docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
+<table border="1" class="docutils">
+<colgroup>
+<col width="28%" />
+<col width="72%" />
+</colgroup>
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">invitation_id:</th><td class="field-body">ID of the invitation to refresh</td>
+<tr class="row-odd"><td><strong>Argument</strong></td>
+<td><strong>Description</strong></td>
+</tr>
+<tr class="row-even"><td>invitation_id</td>
+<td>Required string. ID of the invitation to refresh</td>
 </tr>
 </tbody>
 </table>
-</dd>
-<dt>Output:</dt>
-<dd>dictionary</dd>
-</dl>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">dict</td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
 <dl class="method">
@@ -1510,6 +1716,28 @@ time.</p>
 <code class="descname">remove_participant</code><span class="sig-paren">(</span><em>portal_id</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.admin.Collaboration.remove_participant" title="Permalink to this definition">¶</a></dt>
 <dd><p>The remove operation allows a collaboration host to remove a
 participant from a portal-to-portal collaboration.</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="28%" />
+<col width="72%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><strong>Argument</strong></td>
+<td><strong>Description</strong></td>
+</tr>
+<tr class="row-even"><td>portal_id</td>
+<td>Required string. ID of the portal to remove.</td>
+</tr>
+</tbody>
+</table>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">dict</td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
 <dl class="method">
@@ -1528,20 +1756,28 @@ collaboration participants.</p>
 <dd><p>The remove_portal_group_link operation removes the link between a
 collaboration workspace and a portal group. Replication of content
 discontinues when the link is removed.</p>
-<dl class="docutils">
-<dt>Input:</dt>
-<dd><table class="first last docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
+<table border="1" class="docutils">
+<colgroup>
+<col width="28%" />
+<col width="72%" />
+</colgroup>
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">workspace_id:</th><td class="field-body">workspace in.</td>
+<tr class="row-odd"><td><strong>Argument</strong></td>
+<td><strong>Description</strong></td>
+</tr>
+<tr class="row-even"><td>workspace_id</td>
+<td>Required string. Workspace ID to remove from the link.</td>
 </tr>
 </tbody>
 </table>
-</dd>
-<dt>Output:</dt>
-<dd>dictionary</dd>
-</dl>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">dict</td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
 <dl class="method">
@@ -1550,14 +1786,29 @@ discontinues when the link is removed.</p>
 <dd><p>The delete operation deletes a collaboration workspace. This
 immediately disables further replication of data to and from the
 portal and the collaboration participants.</p>
-<dl class="docutils">
-<dt>Inputs:</dt>
-<dd><dl class="first last docutils">
-<dt>: workspace_id: uid of the workspace to remove from the</dt>
-<dd>collaboration.</dd>
-</dl>
-</dd>
-</dl>
+<table border="1" class="docutils">
+<colgroup>
+<col width="28%" />
+<col width="72%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><strong>Argument</strong></td>
+<td><strong>Description</strong></td>
+</tr>
+<tr class="row-even"><td>workspace_id</td>
+<td>Optional string. UID of the workspace to remove from the
+collaboration.</td>
+</tr>
+</tbody>
+</table>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">dict</td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
 <dl class="method">
@@ -1565,24 +1816,31 @@ portal and the collaboration participants.</p>
 <code class="descname">update_access_modes</code><span class="sig-paren">(</span><em>portal_id</em>, <em>workspace_access_json</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.admin.Collaboration.update_access_modes" title="Permalink to this definition">¶</a></dt>
 <dd><p>The update_access_modes operation updates the access mode for a
 specific participant in a portal-to-portal collaboration.</p>
-<dl class="docutils">
-<dt>Inputs:</dt>
-<dd><table class="first last docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
+<table border="1" class="docutils">
+<colgroup>
+<col width="28%" />
+<col width="72%" />
+</colgroup>
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">portal_id:</th><td class="field-body">ID of the portal</td>
+<tr class="row-odd"><td><strong>Argument</strong></td>
+<td><strong>Description</strong></td>
 </tr>
-<tr class="field-even field"><th class="field-name" colspan="2">workspace_access_json:</th></tr>
-<tr class="field-even field"><td>&#160;</td><td class="field-body">JSON describing the participant’s access
-mode.</td>
+<tr class="row-even"><td>portal_id</td>
+<td>Required string. UID of the Portal</td>
+</tr>
+<tr class="row-odd"><td>workspace_access_json</td>
+<td>Required dict/string. JSON describing the participant’s access mode.</td>
 </tr>
 </tbody>
 </table>
-</dd>
-<dt>Output:</dt>
-<dd>dictionary</dd>
-</dl>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">dict</td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
 <dl class="method">
@@ -1592,24 +1850,34 @@ mode.</td>
 collaboration, primarily its name, description, and configuration
 properties. The updates are propagated to guests when the next
 scheduled refresh of content occurs.</p>
-<dl class="docutils">
-<dt>Inputs:</dt>
-<dd><table class="first last docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
+<table border="1" class="docutils">
+<colgroup>
+<col width="28%" />
+<col width="72%" />
+</colgroup>
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">name:</th><td class="field-body">name of the collaboration</td>
+<tr class="row-odd"><td><strong>Argument</strong></td>
+<td><strong>Description</strong></td>
 </tr>
-<tr class="field-even field"><th class="field-name">description:</th><td class="field-body">description of the collaboration</td>
+<tr class="row-even"><td>name</td>
+<td>Optional string. Name of the collaboration</td>
 </tr>
-<tr class="field-odd field"><th class="field-name">config:</th><td class="field-body">configuration properties of the collaboration</td>
+<tr class="row-odd"><td>description</td>
+<td>Optional string. The description of the collaboration</td>
+</tr>
+<tr class="row-even"><td>config</td>
+<td>Optional dict. The configuration properties of the collaboration</td>
 </tr>
 </tbody>
 </table>
-</dd>
-<dt>Output:</dt>
-<dd>dictionary</dd>
-</dl>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">dict</td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
 <dl class="method">
@@ -1619,31 +1887,40 @@ scheduled refresh of content occurs.</p>
 workspace for a participant in a portal-to-portal collaboration.
 Content shared to the portal group is shared to other participants
 in the collaboration.</p>
-<dl class="docutils">
-<dt>Inputs:</dt>
-<dd><table class="first last docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
+<table border="1" class="docutils">
+<colgroup>
+<col width="28%" />
+<col width="72%" />
+</colgroup>
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">workspace_id:</th><td class="field-body">workspace ID to update the group link</td>
+<tr class="row-odd"><td><strong>Argument</strong></td>
+<td><strong>Description</strong></td>
 </tr>
-<tr class="field-even field"><th class="field-name">portal_id:</th><td class="field-body">the ID of the portal group link with the workspace</td>
+<tr class="row-even"><td>workspace_id</td>
+<td>Required string. UID of the workspace</td>
 </tr>
-<tr class="field-odd field"><th class="field-name" colspan="2">enable_realtime_sync:</th></tr>
-<tr class="field-odd field"><td>&#160;</td><td class="field-body">Determines whether the content shared with
-the group is shared to other collaboration participants in real
-time, updating whenever changes are made, or whether the content
-is shared based on a schedule set by the collaboration host.
-Values: true or false.</td>
+<tr class="row-odd"><td>portal_id</td>
+<td>Required string. UID of the Portal</td>
 </tr>
-<tr class="field-even field"><th class="field-name">interval_hours:</th><td class="field-body">sets the sharing schedule for the group</td>
+<tr class="row-even"><td>enable_realtime_sync</td>
+<td>Optional boolean. Determines whether the content shared with the
+group is shared to other collaboration participants in real time,
+updating whenever changes are made, or whether the content is
+shared based on a schedule set by the collaboration host.</td>
+</tr>
+<tr class="row-odd"><td>interval_hours</td>
+<td>Optional integer. sets the sharing schedule for the group</td>
 </tr>
 </tbody>
 </table>
-</dd>
-<dt>Output:</dt>
-<dd>dictionary with success status as boolean</dd>
-</dl>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">dict</td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
 <dl class="method">
@@ -1651,26 +1928,37 @@ Values: true or false.</td>
 <code class="descname">update_workspace</code><span class="sig-paren">(</span><em>workspace_id</em>, <em>name=None</em>, <em>description=None</em>, <em>config=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.admin.Collaboration.update_workspace" title="Permalink to this definition">¶</a></dt>
 <dd><p>The updateInfo operation updates certain collaboration workspace
 properties.</p>
-<dl class="docutils">
-<dt>Inputs:</dt>
-<dd><table class="first last docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
+<table border="1" class="docutils">
+<colgroup>
+<col width="28%" />
+<col width="72%" />
+</colgroup>
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">workspace_id:</th><td class="field-body">UID of the workspace</td>
+<tr class="row-odd"><td><strong>Argument</strong></td>
+<td><strong>Description</strong></td>
 </tr>
-<tr class="field-even field"><th class="field-name">name:</th><td class="field-body">name of new workspace</td>
+<tr class="row-even"><td>workspace_id</td>
+<td>Required string. UID of the workspace</td>
 </tr>
-<tr class="field-odd field"><th class="field-name">description:</th><td class="field-body">description of new workspace</td>
+<tr class="row-odd"><td>name</td>
+<td>Optional string. The name of the workspace</td>
 </tr>
-<tr class="field-even field"><th class="field-name">config:</th><td class="field-body">configuration details of the new workspace</td>
+<tr class="row-even"><td>description</td>
+<td>Optional string. A brief set of texts that explains the workspace</td>
+</tr>
+<tr class="row-odd"><td>config</td>
+<td>Optional dict. The configuration details of the new workspace</td>
 </tr>
 </tbody>
 </table>
-</dd>
-<dt>Output:</dt>
-<dd>dictionary</dd>
-</dl>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">dict</td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
 <dl class="method">
@@ -1680,20 +1968,28 @@ properties.</p>
 invitation response file can be validated by using the
 validate_invitation_response operation to check for the existence
 of the collaboration and validity of the invitation response file.</p>
-<dl class="docutils">
-<dt>Inputs:</dt>
-<dd><table class="first last docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
+<table border="1" class="docutils">
+<colgroup>
+<col width="28%" />
+<col width="72%" />
+</colgroup>
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">response_file:</th><td class="field-body">file upload</td>
+<tr class="row-odd"><td><strong>Argument</strong></td>
+<td><strong>Description</strong></td>
+</tr>
+<tr class="row-even"><td>response_file</td>
+<td>Required string. Path to the collaboration response file.</td>
 </tr>
 </tbody>
 </table>
-</dd>
-<dt>Output:</dt>
-<dd>dictionary</dd>
-</dl>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">dict</td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
 <dl class="attribute">
@@ -1720,10 +2016,32 @@ content. Workspaces can only be created by the collaboration owner.</p>
 <code class="descname">allocate</code><span class="sig-paren">(</span><em>username</em>, <em>credits=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.admin.CreditManager.allocate" title="Permalink to this definition">¶</a></dt>
 <dd><p>Allows organization administrators to allocate credits for
 organizational users in ArcGIS Online</p>
-<p>Parameters:
-:param username: name of the user to assign credits to
-:param credits: number of credits to assign to a user. If None is
-provided, it sets user to unlimited credits.</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="28%" />
+<col width="72%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><strong>Argument</strong></td>
+<td><strong>Description</strong></td>
+</tr>
+<tr class="row-even"><td>username</td>
+<td>Required string.The name of the user to assign credits to.</td>
+</tr>
+<tr class="row-odd"><td>credits</td>
+<td>Optional float. The number of credits to assign to a user. If None
+is provided, it sets user to unlimited credits.</td>
+</tr>
+</tbody>
+</table>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">boolean</td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
 <dl class="method">
@@ -1764,8 +2082,28 @@ at least 1 day previous than then start_time.</td>
 <code class="descname">deallocate</code><span class="sig-paren">(</span><em>username</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.admin.CreditManager.deallocate" title="Permalink to this definition">¶</a></dt>
 <dd><p>Allows organization administrators to remove credit allocation for
 organizational users in ArcGIS Online</p>
-<p>Parameters:
-:param username: name whose credit allocation to be removed</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="28%" />
+<col width="72%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><strong>Argument</strong></td>
+<td><strong>Description</strong></td>
+</tr>
+<tr class="row-even"><td>username</td>
+<td>Required string.The name of the user to remove all credit from.</td>
+</tr>
+</tbody>
+</table>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">boolean</td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
 <dl class="attribute">
@@ -1790,6 +2128,221 @@ organizational users in ArcGIS Online</p>
 <dt id="arcgis.gis.admin.CreditManager.is_enabled">
 <code class="descname">is_enabled</code><a class="headerlink" href="#arcgis.gis.admin.CreditManager.is_enabled" title="Permalink to this definition">¶</a></dt>
 <dd><p>boolean that show is credit credit assignment</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="license">
+<h2>License<a class="headerlink" href="#license" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="arcgis.gis.admin.License">
+<em class="property">class </em><code class="descclassname">arcgis.gis.admin.</code><code class="descname">License</code><span class="sig-paren">(</span><em>gis</em>, <em>info</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.admin.License" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">object</span></code></p>
+<p>Represents a single entitlement for a given organization.</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="22%" />
+<col width="78%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><strong>Argument</strong></td>
+<td><strong>Description</strong></td>
+</tr>
+<tr class="row-even"><td>gis</td>
+<td>required GIS, the gis connection object</td>
+</tr>
+<tr class="row-odd"><td>info</td>
+<td>required dictionary, the information provided by
+the organization’s site containing the provision
+and listing information.</td>
+</tr>
+</tbody>
+</table>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">License Object</td>
+</tr>
+</tbody>
+</table>
+<dl class="method">
+<dt id="arcgis.gis.admin.License.all">
+<code class="descname">all</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.admin.License.all" title="Permalink to this definition">¶</a></dt>
+<dd><p>returns a list of all usernames and their entitlements for this license</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="arcgis.gis.admin.License.assign">
+<code class="descname">assign</code><span class="sig-paren">(</span><em>username</em>, <em>entitlements</em>, <em>suppress_email=True</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.admin.License.assign" title="Permalink to this definition">¶</a></dt>
+<dd><p>grants a user an entitlement.
+===============     ====================================================
+<strong>Argument</strong>        <strong>Description</strong>
+—————     —————————————————-
+username            required string, the name of the user you wish to</p>
+<blockquote>
+<div>assign an entitlement to.</div></blockquote>
+<p>—————     —————————————————-
+entitlments         required list, a list of entitlements values
+—————     —————————————————-
+suppress_email       optional boolean, if True, the org will not notify</p>
+<blockquote>
+<div>a user that their entitlements has changed (default)
+If False, the org will send an email notifying a
+user that their entitlements have changed.</div></blockquote>
+</dd></dl>
+
+<dl class="method">
+<dt id="arcgis.gis.admin.License.plot">
+<code class="descname">plot</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.admin.License.plot" title="Permalink to this definition">¶</a></dt>
+<dd><p>returns a simple bar chart of assigned and remaining entitlements</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="arcgis.gis.admin.License.properties">
+<code class="descname">properties</code><a class="headerlink" href="#arcgis.gis.admin.License.properties" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="arcgis.gis.admin.License.report">
+<code class="descname">report</code><a class="headerlink" href="#arcgis.gis.admin.License.report" title="Permalink to this definition">¶</a></dt>
+<dd><p>returns a Panda’s Dataframe of the licensing count.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="arcgis.gis.admin.License.revoke">
+<code class="descname">revoke</code><span class="sig-paren">(</span><em>username</em>, <em>entitlements</em>, <em>suppress_email=True</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.admin.License.revoke" title="Permalink to this definition">¶</a></dt>
+<dd><p>removes a specific license from a given entitlement</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="22%" />
+<col width="78%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><strong>Argument</strong></td>
+<td><strong>Description</strong></td>
+</tr>
+<tr class="row-even"><td>username</td>
+<td>required string, the name of the user you wish to
+assign an entitlement to.</td>
+</tr>
+<tr class="row-odd"><td>entitlments</td>
+<td>required list, a list of entitlements values,
+if * is given, all entitlements will be revoked</td>
+</tr>
+<tr class="row-even"><td>suppress_email</td>
+<td>optional boolean, if True, the org will not notify
+a user that their entitlements has changed (default)
+If False, the org will send an email notifying a
+user that their entitlements have changed.</td>
+</tr>
+</tbody>
+</table>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">boolean</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="arcgis.gis.admin.License.user_entitlement">
+<code class="descname">user_entitlement</code><span class="sig-paren">(</span><em>username</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.admin.License.user_entitlement" title="Permalink to this definition">¶</a></dt>
+<dd><p>checks if a user has the entitlement assigned to them</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="22%" />
+<col width="78%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><strong>Argument</strong></td>
+<td><strong>Description</strong></td>
+</tr>
+<tr class="row-even"><td>username</td>
+<td>required string, the name of the user you want to
+examine the entitlements for.</td>
+</tr>
+</tbody>
+</table>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">dictionary</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="licensemanager">
+<h2>LicenseManager<a class="headerlink" href="#licensemanager" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="arcgis.gis.admin.LicenseManager">
+<em class="property">class </em><code class="descclassname">arcgis.gis.admin.</code><code class="descname">LicenseManager</code><span class="sig-paren">(</span><em>url</em>, <em>gis=None</em>, <em>initialize=True</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.admin.LicenseManager" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">arcgis.gis.admin._base.BasePortalAdmin</span></code></p>
+<p>Provides tools to work and manage licenses in ArcGIS Online and
+ArcGIS Enterprise (Portal)</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="21%" />
+<col width="79%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><strong>Argument</strong></td>
+<td><strong>Description</strong></td>
+</tr>
+<tr class="row-even"><td>url</td>
+<td>required string, the web address of the site to
+manage licenses.
+example:
+<a class="reference external" href="https:/">https:/</a>/&lt;org url&gt;/&lt;wa&gt;/sharing/rest/portals/self/purchases</td>
+</tr>
+<tr class="row-odd"><td>gis</td>
+<td>required GIS, the gis connection object</td>
+</tr>
+</tbody>
+</table>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">LicenseManager Object</td>
+</tr>
+</tbody>
+</table>
+<dl class="method">
+<dt id="arcgis.gis.admin.LicenseManager.all">
+<code class="descname">all</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.admin.LicenseManager.all" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns all Licenses registered with an organization</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">list of Licnese objects</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="arcgis.gis.admin.LicenseManager.get">
+<code class="descname">get</code><span class="sig-paren">(</span><em>name</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.admin.LicenseManager.get" title="Permalink to this definition">¶</a></dt>
+<dd><p>retrieves a license by it’s name (title)
+===============     ====================================================
+<strong>Argument</strong>        <strong>Description</strong>
+—————     —————————————————-
+name                required string, name of the entitlement to locate</p>
+<blockquote>
+<div>on the organization.
+example:
+name=”arcgis pro”</div></blockquote>
 </dd></dl>
 
 </dd></dl>
@@ -2451,6 +3004,35 @@ banner is remove.</dd>
 </dd></dl>
 
 <dl class="attribute">
+<dt id="arcgis.gis.admin.UX.summary">
+<code class="descname">summary</code><a class="headerlink" href="#arcgis.gis.admin.UX.summary" title="Permalink to this definition">¶</a></dt>
+<dd><p>Allows the get/setting of a brief summary to describe your organization on the sign in page
+associated with its custom apps and sites. This summary has a maximum of 310 characters.</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="20%" />
+<col width="80%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><strong>Argument</strong></td>
+<td><strong>Description</strong></td>
+</tr>
+<tr class="row-even"><td>text</td>
+<td>Required string. The brief description of the organization.</td>
+</tr>
+</tbody>
+</table>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">string</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
 <dt id="arcgis.gis.admin.UX.vector_basemap">
 <code class="descname">vector_basemap</code><a class="headerlink" href="#arcgis.gis.admin.UX.vector_basemap" title="Permalink to this definition">¶</a></dt>
 <dd><p>gets/sets the default vector basemap</p>
@@ -2471,15 +3053,19 @@ with Portal for ArcGIS.</p>
 <dt id="arcgis.gis.admin.Federation.federate">
 <code class="descname">federate</code><span class="sig-paren">(</span><em>url</em>, <em>admin_url</em>, <em>username</em>, <em>password</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.admin.Federation.federate" title="Permalink to this definition">¶</a></dt>
 <dd><p>This operation enables ArcGIS Servers to be federated with Portal
-for ArcGIS.
-Parameters:</p>
-<blockquote>
-<div><table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
+for ArcGIS.</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="28%" />
+<col width="72%" />
+</colgroup>
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">url:</th><td class="field-body">The URL of the GIS server used by external users when
-accessing the ArcGIS Server site. If the site includes the Web
+<tr class="row-odd"><td><strong>Argument</strong></td>
+<td><strong>Description</strong></td>
+</tr>
+<tr class="row-even"><td>url:</td>
+<td>Required string. The URL of the GIS server used by external users
+when accessing the ArcGIS Server site. If the site includes the Web
 Adaptor, the URL includes the Web Adaptor address, for example,
 <a class="reference external" href="https://webadaptor.domain.com/arcgis">https://webadaptor.domain.com/arcgis</a>. If you’ve added ArcGIS
 Server to your organization’s reverse proxy server, the URL is
@@ -2493,21 +3079,27 @@ not validated, as the URL may not be accessible from the server
 site, such as is the case when the server site is behind a
 firewall.</td>
 </tr>
-<tr class="field-even field"><th class="field-name">admin_url:</th><td class="field-body">The URL used for accessing ArcGIS Server when
+<tr class="row-odd"><td>admin_url</td>
+<td>Required string. The URL used for accessing ArcGIS Server when
 performing administrative operations on the internal network, for
 example, <a class="reference external" href="https://gisserver.domain.com:6443/arcgis">https://gisserver.domain.com:6443/arcgis</a>.</td>
 </tr>
-<tr class="field-odd field"><th class="field-name">username:</th><td class="field-body">The username of the primary site administrator account</td>
+<tr class="row-even"><td>username</td>
+<td>Required string. The username of the primary site administrator account</td>
 </tr>
-<tr class="field-even field"><th class="field-name">password:</th><td class="field-body">password of the username above.</td>
+<tr class="row-odd"><td>password</td>
+<td>Required string. password of the username above.</td>
 </tr>
 </tbody>
 </table>
-</div></blockquote>
-<dl class="docutils">
-<dt>Output:</dt>
-<dd>server response with server ID</dd>
-</dl>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">dict, server response with server ID</td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
 <dl class="attribute">
@@ -2523,18 +3115,28 @@ if the server is set as a hosting server.</p>
 <dt id="arcgis.gis.admin.Federation.unfederate">
 <code class="descname">unfederate</code><span class="sig-paren">(</span><em>server_id</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.admin.Federation.unfederate" title="Permalink to this definition">¶</a></dt>
 <dd><p>This operation unfederates an ArcGIS Server from Portal for ArcGIS.</p>
-<dl class="docutils">
-<dt>Parameters:</dt>
-<dd><table class="first last docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
+<table border="1" class="docutils">
+<colgroup>
+<col width="28%" />
+<col width="72%" />
+</colgroup>
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">server_id:</th><td class="field-body">unique ID of the server</td>
+<tr class="row-odd"><td><strong>Argument</strong></td>
+<td><strong>Description</strong></td>
+</tr>
+<tr class="row-even"><td>server_id</td>
+<td>Required string. The unique ID of the server</td>
 </tr>
 </tbody>
 </table>
-</dd>
-</dl>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">boolean</td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
 <dl class="method">
@@ -2547,6 +3149,39 @@ server status from an ArcGIS Server. You can also remove hosting
 server status from an ArcGIS Server. To set a hosting server, an
 enterprise geodatabase must be registered as a managed database
 with the ArcGIS Server.</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="28%" />
+<col width="72%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><strong>Argument</strong></td>
+<td><strong>Description</strong></td>
+</tr>
+<tr class="row-even"><td>server_id</td>
+<td>Required string. The unique ID of the server</td>
+</tr>
+<tr class="row-odd"><td>role</td>
+<td>Required string. Whether the server is a hosting server for the
+portal, a federated server, or a server with restricted access to
+publishing. The allowed values are:
+FEDERATED_SERVER, FEDERATED_SERVER_WITH_RESTRICTED_PUBLISHING,
+or HOSTING_SERVER.</td>
+</tr>
+<tr class="row-even"><td>function</td>
+<td>Optional string. This is the purpose of the ArcGIS Server.
+Values are: GeoAnalytics, RasterAnalytics, ImageHosting, or None</td>
+</tr>
+</tbody>
+</table>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">boolean</td>
+</tr>
+</tbody>
+</table>
 <dl class="docutils">
 <dt>Parameters:</dt>
 <dd><table class="first last docutils field-list" frame="void" rules="none">
@@ -2577,18 +3212,29 @@ or HOSTING_SERVER.</p>
 <dt id="arcgis.gis.admin.Federation.validate">
 <code class="descname">validate</code><span class="sig-paren">(</span><em>server_id</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.admin.Federation.validate" title="Permalink to this definition">¶</a></dt>
 <dd><p>This operation provides status information about a specific ArcGIS
-Server federated with Portal for ArcGIS.
-Parameters:</p>
-<blockquote>
-<div><table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
+Server federated with Portal for ArcGIS.</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="28%" />
+<col width="72%" />
+</colgroup>
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">server_id:</th><td class="field-body">unique id of the server</td>
+<tr class="row-odd"><td><strong>Argument</strong></td>
+<td><strong>Description</strong></td>
+</tr>
+<tr class="row-even"><td>server_id</td>
+<td>Required string. The unique ID of the server</td>
 </tr>
 </tbody>
 </table>
-</div></blockquote>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">dict</td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
 <dl class="method">
@@ -2632,6 +3278,26 @@ query the logs, clean the logs, and edit log settings.</p>
 <dd><p>Deletes all the log files on the machine hosting Portal for ArcGIS.
 This operation allows you to free up disk space. The logs cannot be
 recovered after executing this operation.</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">USAGE</span><span class="p">:</span> <span class="n">Clean</span> <span class="n">logs</span> <span class="kn">from</span> <span class="nn">your</span> <span class="nn">Portal</span> <span class="nn">Admin</span> <span class="nn">API</span>
+
+<span class="kn">from</span> <span class="nn">arcgis.gis</span> <span class="kn">import</span> <span class="n">GIS</span>
+<span class="n">gis</span> <span class="o">=</span> <span class="n">GIS</span><span class="p">(</span><span class="s2">&quot;https://yourportal.com/portal&quot;</span><span class="p">,</span> <span class="s2">&quot;portaladmin&quot;</span><span class="p">,</span> <span class="s2">&quot;password&quot;</span><span class="p">)</span>
+<span class="n">logs</span> <span class="o">=</span> <span class="n">gis</span><span class="o">.</span><span class="n">admin</span><span class="o">.</span><span class="n">logs</span>
+<span class="n">resp</span> <span class="o">=</span> <span class="n">logs</span><span class="o">.</span><span class="n">clean</span><span class="p">()</span>
+<span class="k">print</span><span class="p">(</span><span class="n">resp</span><span class="p">)</span>
+
+<span class="c1"># Output</span>
+<span class="bp">True</span>
+</pre></div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">Boolean True or False depicting success</td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
 <dl class="method">
@@ -2729,6 +3395,31 @@ default is 1000</td>
 <dt id="arcgis.gis.admin.Logs.settings">
 <code class="descname">settings</code><a class="headerlink" href="#arcgis.gis.admin.Logs.settings" title="Permalink to this definition">¶</a></dt>
 <dd><p>Reads/writes the current log settings for the portal.</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">USAGE</span><span class="p">:</span> <span class="n">Print</span> <span class="n">out</span> <span class="n">the</span> <span class="n">Log</span> <span class="n">Settings</span>
+
+<span class="kn">from</span> <span class="nn">arcgis.gis</span> <span class="kn">import</span> <span class="n">GIS</span>
+<span class="n">gis</span> <span class="o">=</span> <span class="n">GIS</span><span class="p">(</span><span class="s2">&quot;https://yourportal.com/portal&quot;</span><span class="p">,</span> <span class="s2">&quot;portaladmin&quot;</span><span class="p">,</span> <span class="s2">&quot;password&quot;</span><span class="p">)</span>
+<span class="n">logs</span> <span class="o">=</span> <span class="n">gis</span><span class="o">.</span><span class="n">admin</span><span class="o">.</span><span class="n">logs</span>
+<span class="n">logsettings</span> <span class="o">=</span> <span class="n">logs</span><span class="o">.</span><span class="n">settings</span>
+<span class="k">for</span> <span class="n">key</span><span class="p">,</span> <span class="n">value</span> <span class="ow">in</span> <span class="nb">dict</span><span class="p">(</span><span class="n">logsettings</span><span class="p">)</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+    <span class="k">print</span><span class="p">(</span><span class="s2">&quot;{} : {}&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="n">value</span><span class="p">))</span>
+
+<span class="c1"># Output</span>
+<span class="n">logDir</span> <span class="p">:</span> <span class="n">C</span><span class="p">:</span>\<span class="n">arcgisportal</span>\<span class="n">logs</span>
+<span class="n">logLevel</span> <span class="p">:</span> <span class="n">INFO</span>
+<span class="n">maxErrorReportsCount</span> <span class="p">:</span> <span class="mi">10</span>
+<span class="n">maxLogFileAge</span> <span class="p">:</span> <span class="mi">90</span>
+<span class="n">usageMeteringEnabled</span> <span class="p">:</span> <span class="bp">False</span>
+</pre></div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">Dictionary of key/value pairs of log settings</td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
 </dd></dl>
@@ -2814,20 +3505,31 @@ Portal site.</p>
 <code class="descname">test_identity_store</code><a class="headerlink" href="#arcgis.gis.admin.Security.test_identity_store" title="Permalink to this definition">¶</a></dt>
 <dd><p>This operation can be used to test the connection to a user or
 group store.</p>
-<dl class="docutils">
-<dt>Parameters:</dt>
-<dd><table class="first last docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
+<table border="1" class="docutils">
+<colgroup>
+<col width="28%" />
+<col width="72%" />
+</colgroup>
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">user_config:</th><td class="field-body">user store configuration</td>
+<tr class="row-odd"><td><strong>Argument</strong></td>
+<td><strong>Description</strong></td>
 </tr>
-<tr class="field-even field"><th class="field-name">group_config:</th><td class="field-body">group store configuration</td>
+<tr class="row-even"><td>user_config</td>
+<td>Optional dict. The user store configuration</td>
+</tr>
+<tr class="row-odd"><td>group_config</td>
+<td>Optional dict. The group store configuration</td>
 </tr>
 </tbody>
 </table>
-</dd>
-</dl>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">dict</td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
 <dl class="attribute">
@@ -2849,20 +3551,31 @@ configure your portal to connect to your enterprise authentication
 mechanism and group store, it must be configured to use an
 enterprise identity store such as Windows Active Directory or LDAP.</p>
 <p>See: <a class="reference external" href="http://resources.arcgis.com/en/help/arcgis-rest-api/index.html#/Update_Identity_Store/02r300000249000000/">http://resources.arcgis.com/en/help/arcgis-rest-api/index.html#/Update_Identity_Store/02r300000249000000/</a></p>
-<dl class="docutils">
-<dt>Parameters:</dt>
-<dd><table class="first last docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
+<table border="1" class="docutils">
+<colgroup>
+<col width="28%" />
+<col width="72%" />
+</colgroup>
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">user_config:</th><td class="field-body">user store configuration</td>
+<tr class="row-odd"><td><strong>Argument</strong></td>
+<td><strong>Description</strong></td>
 </tr>
-<tr class="field-even field"><th class="field-name">group_config:</th><td class="field-body">group store configuration</td>
+<tr class="row-even"><td>user_config</td>
+<td>Optional dict. The user store configuration</td>
+</tr>
+<tr class="row-odd"><td>group_config</td>
+<td>Optional dict. The group store configuration</td>
 </tr>
 </tbody>
 </table>
-</dd>
-</dl>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">dict</td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
 </dd></dl>
@@ -2896,11 +3609,31 @@ does not work if the application developer has programmed against a
 specific ID. This operation can, therefore, be used to change the
 client ID to another value as specified by the application
 developer.</p>
-<dl class="docutils">
-<dt>Parameters:</dt>
-<dd>:current_id:The current client ID of an existing application.
-:new_id: The new client ID to assign to the application.</dd>
-</dl>
+<table border="1" class="docutils">
+<colgroup>
+<col width="28%" />
+<col width="72%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><strong>Argument</strong></td>
+<td><strong>Description</strong></td>
+</tr>
+<tr class="row-even"><td>current_id</td>
+<td>Required string. The current client ID of an existing application.</td>
+</tr>
+<tr class="row-odd"><td>new_id</td>
+<td>Required string. The new client ID to assign to the application.</td>
+</tr>
+</tbody>
+</table>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">dict</td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
 </dd></dl>
@@ -2926,26 +3659,44 @@ SSL.</p>
 <dd><p>This operation downloads an SSL certificate. The file returned by
 the server is an X.509 certificate. The downloaded certificate can
 be imported into a client that is making HTTP requests.</p>
-<dl class="docutils">
-<dt>Parameters:</dt>
-<dd><table class="first last docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
+<table border="1" class="docutils">
+<colgroup>
+<col width="28%" />
+<col width="72%" />
+</colgroup>
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">out_path:</th><td class="field-body">folder save location</td>
+<tr class="row-odd"><td><strong>Argument</strong></td>
+<td><strong>Description</strong></td>
+</tr>
+<tr class="row-even"><td>out_path</td>
+<td>Required string. Save location of the certificate</td>
 </tr>
 </tbody>
 </table>
-</dd>
-</dl>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">string</td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
 <dl class="method">
 <dt id="arcgis.gis.admin.SSLCertificate.generate_csr">
-<code class="descname">generate_csr</code><span class="sig-paren">(</span><em>signing_request</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.admin.SSLCertificate.generate_csr" title="Permalink to this definition">¶</a></dt>
+<code class="descname">generate_csr</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.admin.SSLCertificate.generate_csr" title="Permalink to this definition">¶</a></dt>
 <dd><p>This operation generates a certificate signing request (CSR) for a
 self-signed certificate. A CSR is required by a CA to create a
 digitally signed version of your certificate.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">string</td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
 <dl class="method">
@@ -2953,18 +3704,28 @@ digitally signed version of your certificate.</p>
 <code class="descname">import_signed_certificate</code><span class="sig-paren">(</span><em>file_path</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.admin.SSLCertificate.import_signed_certificate" title="Permalink to this definition">¶</a></dt>
 <dd><p>imports a certificate authority (CA) signed SSL certificate into
 the key store.</p>
-<dl class="docutils">
-<dt>Parameters:</dt>
-<dd><table class="first last docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
+<table border="1" class="docutils">
+<colgroup>
+<col width="28%" />
+<col width="72%" />
+</colgroup>
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">file_path:</th><td class="field-body">location of the certificate on disk</td>
+<tr class="row-odd"><td><strong>Argument</strong></td>
+<td><strong>Description</strong></td>
+</tr>
+<tr class="row-even"><td>file_path</td>
+<td>Required string. The location of the certificate</td>
 </tr>
 </tbody>
 </table>
-</dd>
-</dl>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">dict</td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
 </dd></dl>
@@ -2983,67 +3744,132 @@ the key store.</p>
 starting point for getting a production-ready CA-signed
 certificate. The portal will generate a certificate for you and
 store it in its keystore.</p>
-<dl class="docutils">
-<dt>Parameters:</dt>
-<dd><table class="first last docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
+<table border="1" class="docutils">
+<colgroup>
+<col width="28%" />
+<col width="72%" />
+</colgroup>
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">alias:</th><td class="field-body">The name of the certificate. This is a required
+<tr class="row-odd"><td><strong>Argument</strong></td>
+<td><strong>Description</strong></td>
+</tr>
+<tr class="row-even"><td>alias</td>
+<td>Required string. The name of the certificate. This is a required
 parameter.</td>
 </tr>
-<tr class="field-even field"><th class="field-name">common_name:</th><td class="field-body">The common name used to identify the server for
+<tr class="row-odd"><td>common_name</td>
+<td>Required string. The common name used to identify the server for
 which the certificate is to be generated. This is a required
 parameter.</td>
 </tr>
-<tr class="field-odd field"><th class="field-name">organization:</th><td class="field-body">The name of the organization. This is a
-required parameter.</td>
+<tr class="row-even"><td>organization</td>
+<td>Required string. The name of the organization. This is a required
+parameter.</td>
 </tr>
-<tr class="field-even field"><th class="field-name">key_algorithm:</th><td class="field-body">The algorithm used to generate the key pairs.
-The default is RSA.</td>
+<tr class="row-odd"><td>key_algorithm</td>
+<td>Optional string. The algorithm used to generate the key pairs. The
+default is RSA.</td>
 </tr>
-<tr class="field-odd field"><th class="field-name">validity:</th><td class="field-body">The expiration time for the certificate in days.
+<tr class="row-even"><td>validity</td>
+<td>Optional integer. The expiration time for the certificate in days.
 The default is 90.</td>
 </tr>
-<tr class="field-even field"><th class="field-name">key_size:</th><td class="field-body">The size of the key. The default is 2048.</td>
+<tr class="row-odd"><td>key_size</td>
+<td>Optional integer. The size of the key. The default is 2048.</td>
 </tr>
-<tr class="field-odd field"><th class="field-name" colspan="2">signature_algorithm:</th></tr>
-<tr class="field-odd field"><td>&#160;</td><td class="field-body">The algorithm used to sign the
-self-signed certificates. The default is derived from the
-key_algorithm parameter.</td>
+<tr class="row-even"><td>signature_algorithm</td>
+<td>Optional string. The algorithm used to sign the self-signed
+certificates. The default is derived from the key_algorithm parameter.</td>
 </tr>
-<tr class="field-even field"><th class="field-name">unit:</th><td class="field-body">The department within which this server resides.</td>
+<tr class="row-odd"><td>unit</td>
+<td>Optional string. The department within which this server resides.</td>
 </tr>
-<tr class="field-odd field"><th class="field-name">city:</th><td class="field-body">name of the city</td>
+<tr class="row-even"><td>city</td>
+<td>Optional string. The name of the city</td>
 </tr>
-<tr class="field-even field"><th class="field-name">state:</th><td class="field-body">name of the state</td>
+<tr class="row-odd"><td>state</td>
+<td>Optional string. The name of the state</td>
 </tr>
-<tr class="field-odd field"><th class="field-name">country_code:</th><td class="field-body">two letter abbrevation of the country</td>
+<tr class="row-even"><td>country_code</td>
+<td>Optional string. The two letter abbrevation of the country</td>
 </tr>
-<tr class="field-even field"><th class="field-name">alt_name:</th><td class="field-body">The common name used to identify the server for
+<tr class="row-odd"><td>alt_name</td>
+<td>Optional string. The common name used to identify the server for
 which the certificate is to be generated. This is a required
 parameter.</td>
 </tr>
 </tbody>
 </table>
-</dd>
-</dl>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">boolean</td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
 <dl class="method">
 <dt id="arcgis.gis.admin.SSLCertificates.get">
 <code class="descname">get</code><span class="sig-paren">(</span><em>alias_name</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.admin.SSLCertificates.get" title="Permalink to this definition">¶</a></dt>
 <dd><p>gets a single SSLCertificate object by the alias name</p>
-<p>Parameters:
-:param alias_name: common name of the certificate
-Output:
-returns a single SSLCertificate object if it exists, else
-it returns None</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="28%" />
+<col width="72%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><strong>Argument</strong></td>
+<td><strong>Description</strong></td>
+</tr>
+<tr class="row-even"><td>alias_name</td>
+<td>Required string. The common name of the certificate.</td>
+</tr>
+</tbody>
+</table>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">SSLCertificate Object</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">USAGE</span><span class="p">:</span> <span class="n">Print</span> <span class="n">out</span> <span class="n">information</span> <span class="n">about</span> <span class="n">a</span> <span class="n">specific</span> <span class="n">SSL</span> <span class="n">Certificate</span> <span class="n">by</span> <span class="n">alias</span> <span class="n">name</span>
+
+<span class="kn">from</span> <span class="nn">arcgis.gis</span> <span class="kn">import</span> <span class="n">GIS</span>
+<span class="n">gis</span> <span class="o">=</span> <span class="n">GIS</span><span class="p">(</span><span class="s2">&quot;https://yourportal.com/portal&quot;</span><span class="p">,</span> <span class="s2">&quot;portaladmin&quot;</span><span class="p">,</span> <span class="s2">&quot;password&quot;</span><span class="p">)</span>
+<span class="c1"># Get the SSL Certificate class</span>
+<span class="n">sslmgr</span> <span class="o">=</span> <span class="n">gis</span><span class="o">.</span><span class="n">admin</span><span class="o">.</span><span class="n">security</span><span class="o">.</span><span class="n">ssl</span>
+<span class="c1"># Get a specific certificate alias and print information</span>
+<span class="n">ssl</span> <span class="o">=</span> <span class="n">sslmgr</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;portal&#39;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">prop</span> <span class="ow">in</span> <span class="n">ssl</span><span class="o">.</span><span class="n">properties</span><span class="p">:</span>
+    <span class="k">print</span><span class="p">(</span><span class="n">prop</span><span class="p">,</span> <span class="n">ssl</span><span class="o">.</span><span class="n">properties</span><span class="p">[</span><span class="n">prop</span><span class="p">])]))</span>
+
+<span class="c1"># Output</span>
+<span class="n">aliasName</span> <span class="n">portal</span>
+<span class="n">issuer</span> <span class="n">CN</span><span class="o">=</span><span class="n">YOURPORTAL</span><span class="o">.</span><span class="n">COM</span><span class="p">,</span> <span class="n">OU</span><span class="o">=</span><span class="n">Self</span> <span class="n">Signed</span> <span class="n">Certificate</span>
+<span class="n">subject</span> <span class="n">CN</span><span class="o">=</span><span class="n">YOURPORTAL</span><span class="o">.</span><span class="n">COM</span><span class="p">,</span> <span class="n">OU</span><span class="o">=</span><span class="n">Self</span> <span class="n">Signed</span> <span class="n">Certificate</span>
+<span class="n">subjectAlternativeNames</span> <span class="p">[]</span>
+<span class="n">validFrom</span> <span class="n">Fri</span> <span class="n">Sep</span> <span class="mi">15</span> <span class="mo">07</span><span class="p">:</span><span class="mi">46</span><span class="p">:</span><span class="mi">45</span> <span class="n">EDT</span> <span class="mi">2017</span>
+<span class="n">validUntil</span> <span class="n">Sun</span> <span class="n">Jul</span> <span class="mi">24</span> <span class="mo">07</span><span class="p">:</span><span class="mi">46</span><span class="p">:</span><span class="mi">45</span> <span class="n">EDT</span> <span class="mi">2050</span>
+<span class="n">keyAlgorithm</span> <span class="n">RSA</span>
+<span class="n">keySize</span> <span class="mi">2048</span>
+<span class="n">serialNumber</span> <span class="mi">503</span><span class="n">b23c6</span>
+<span class="n">version</span> <span class="mi">3</span>
+<span class="n">signatureAlgorithm</span> <span class="n">SHA256withRSA</span>
+<span class="n">keyUsage</span> <span class="p">[]</span>
+<span class="n">md5Fingerprint</span> <span class="mi">76</span><span class="n">d695d72e46b30ea90013676d559faa</span>
+<span class="n">sha1Fingerprint</span> <span class="mi">6</span><span class="n">f36513757c28ad43c2df5e4c7cee581ad18dd1e</span>
+<span class="n">sha256Fingerprint</span> <span class="n">a051aab19d1ed8ceee7322572b3b1b2abd1ed680d0a1d81d0da84cf0e1a1b6cb</span>
+</pre></div>
+</div>
 </dd></dl>
 
 <dl class="method">
 <dt id="arcgis.gis.admin.SSLCertificates.import_certificate">
-<code class="descname">import_certificate</code><span class="sig-paren">(</span><em>certificate</em>, <em>alias</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.admin.SSLCertificates.import_certificate" title="Permalink to this definition">¶</a></dt>
+<code class="descname">import_certificate</code><span class="sig-paren">(</span><em>certificate</em>, <em>alias</em>, <em>norestart=False</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.admin.SSLCertificates.import_certificate" title="Permalink to this definition">¶</a></dt>
 <dd><p>This operation imports a certificate authority’s (CA) root and
 intermediate certificates into the keystore.
 To create a production quality CA-signed certificate, you need
@@ -3052,20 +3878,50 @@ SSL mechanism to trust the CA (and the certificates it has
 signed). While most of the popular CA certificates are already
 available in the keystore, you can use this operation if you
 have a custom CA or specific intermediate certificates.</p>
-<dl class="docutils">
-<dt>Parameters:</dt>
-<dd><table class="first last docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
+<table border="1" class="docutils">
+<colgroup>
+<col width="28%" />
+<col width="72%" />
+</colgroup>
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">certificate:</th><td class="field-body">path to the file path</td>
+<tr class="row-odd"><td><strong>Argument</strong></td>
+<td><strong>Description</strong></td>
 </tr>
-<tr class="field-even field"><th class="field-name">alias:</th><td class="field-body">name of the certificate</td>
+<tr class="row-even"><td>certificate</td>
+<td>Required string. The file location of the certificate file</td>
+</tr>
+<tr class="row-odd"><td>alias</td>
+<td>Required string. The name of the certificate</td>
+</tr>
+<tr class="row-even"><td>norestart</td>
+<td>Optional boolean. Determines if the portal should be prevented from
+restarting after importing the certificate. By default this is false
+and the portal will restart.  Added in 10.6.</td>
 </tr>
 </tbody>
 </table>
-</dd>
-</dl>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">boolean</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">USAGE</span><span class="p">:</span> <span class="n">Import</span> <span class="n">a</span> <span class="n">trusted</span> <span class="n">CA</span> <span class="ow">or</span> <span class="n">Intermediate</span> <span class="n">SSL</span> <span class="n">Certificate</span> <span class="n">into</span> <span class="n">Portal</span> <span class="n">Admin</span> <span class="n">API</span>
+
+<span class="kn">from</span> <span class="nn">arcgis.gis</span> <span class="kn">import</span> <span class="n">GIS</span>
+<span class="n">gis</span> <span class="o">=</span> <span class="n">GIS</span><span class="p">(</span><span class="s2">&quot;https://yourportal.com/portal&quot;</span><span class="p">,</span> <span class="s2">&quot;portaladmin&quot;</span><span class="p">,</span> <span class="s2">&quot;password&quot;</span><span class="p">)</span>
+<span class="c1"># Get the SSL Certificate class</span>
+<span class="n">sslmgr</span> <span class="o">=</span> <span class="n">gis</span><span class="o">.</span><span class="n">admin</span><span class="o">.</span><span class="n">security</span><span class="o">.</span><span class="n">ssl</span>
+<span class="c1"># Load a trust CA certificate and restart Portal</span>
+<span class="n">resp</span> <span class="o">=</span> <span class="n">sslmgr</span><span class="o">.</span><span class="n">import_certificate</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;c:\temp\myTrustedCA.crt&#39;</span><span class="p">,</span> <span class="s1">&#39;myroot&#39;</span><span class="p">,</span> <span class="n">norestart</span><span class="o">=</span><span class="bp">False</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">resp</span><span class="p">)</span>
+
+<span class="c1"># Output</span>
+<span class="bp">True</span>
+</pre></div>
+</div>
 </dd></dl>
 
 <dl class="method">
@@ -3076,28 +3932,67 @@ in the PKCS #12 format, into the keystore. If the certificate
 is a CA signed certificate, you must first import the CA Root
 or Intermediate certificate using the Import Root or
 Intermediate Certificate operation.</p>
-<dl class="docutils">
-<dt>Parameters:</dt>
-<dd><table class="first last docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
+<table border="1" class="docutils">
+<colgroup>
+<col width="28%" />
+<col width="72%" />
+</colgroup>
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">alias:</th><td class="field-body">name of the certificate</td>
+<tr class="row-odd"><td><strong>Argument</strong></td>
+<td><strong>Description</strong></td>
 </tr>
-<tr class="field-even field"><th class="field-name">password:</th><td class="field-body">password for the certificate file</td>
+<tr class="row-even"><td>alias</td>
+<td>Required string. The name of the certificate</td>
 </tr>
-<tr class="field-odd field"><th class="field-name">certificate:</th><td class="field-body">certificate file</td>
+<tr class="row-odd"><td>password</td>
+<td>Required string. The password for the certificate</td>
+</tr>
+<tr class="row-even"><td>certificate</td>
+<td>Required string. The file location of the certificate file</td>
 </tr>
 </tbody>
 </table>
-</dd>
-</dl>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">boolean</td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
 <dl class="method">
 <dt id="arcgis.gis.admin.SSLCertificates.list">
 <code class="descname">list</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.admin.SSLCertificates.list" title="Permalink to this definition">¶</a></dt>
-<dd><p>list of certificates</p>
+<dd><p>List of SSL Certificates as represented in the Portal Admin API</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">List of SSLCertificate objects</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">USAGE</span><span class="p">:</span> <span class="n">Print</span> <span class="n">out</span> <span class="n">information</span> <span class="n">about</span> <span class="n">each</span> <span class="n">SSL</span> <span class="n">Certificate</span>
+
+<span class="kn">from</span> <span class="nn">arcgis.gis</span> <span class="kn">import</span> <span class="n">GIS</span>
+<span class="n">gis</span> <span class="o">=</span> <span class="n">GIS</span><span class="p">(</span><span class="s2">&quot;https://yourportal.com/portal&quot;</span><span class="p">,</span> <span class="s2">&quot;portaladmin&quot;</span><span class="p">,</span> <span class="s2">&quot;password&quot;</span><span class="p">)</span>
+<span class="c1"># Get the SSL Certificate class</span>
+<span class="n">sslmgr</span> <span class="o">=</span> <span class="n">gis</span><span class="o">.</span><span class="n">admin</span><span class="o">.</span><span class="n">security</span><span class="o">.</span><span class="n">ssl</span>
+<span class="c1"># Get a list of SSL Certificates</span>
+<span class="n">sslcerts</span> <span class="o">=</span> <span class="n">sslmgr</span><span class="o">.</span><span class="n">list</span><span class="p">()</span>
+<span class="c1"># For each certificate, print its alias and issuer</span>
+<span class="k">for</span> <span class="n">sslcert</span> <span class="ow">in</span> <span class="n">sslcerts</span><span class="p">:</span>
+    <span class="k">print</span><span class="p">(</span><span class="s2">&quot;{} : {}&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="nb">dict</span><span class="p">(</span><span class="n">sslcert</span><span class="p">)[</span><span class="s1">&#39;aliasName&#39;</span><span class="p">],</span> <span class="nb">dict</span><span class="p">(</span><span class="n">sslcert</span><span class="p">)[</span><span class="s1">&#39;issuer&#39;</span><span class="p">]))</span>
+
+<span class="c1"># Output</span>
+<span class="n">portal</span> <span class="p">:</span> <span class="n">CN</span><span class="o">=</span><span class="n">YOURPORTAL</span><span class="o">.</span><span class="n">COM</span><span class="p">,</span> <span class="n">OU</span><span class="o">=</span><span class="n">Self</span> <span class="n">Signed</span> <span class="n">Certificate</span>
+<span class="n">yourorgroot</span> <span class="p">:</span> <span class="n">CN</span><span class="o">=</span><span class="n">YourOrg</span> <span class="n">Enterprise</span> <span class="n">Root</span><span class="p">,</span> <span class="n">DC</span><span class="o">=</span><span class="n">empty</span><span class="p">,</span> <span class="n">DC</span><span class="o">=</span><span class="n">local</span>
+<span class="n">samlcert</span> <span class="p">:</span> <span class="n">CN</span><span class="o">=</span><span class="n">YOURPORTAL</span><span class="o">.</span><span class="n">COM</span><span class="p">,</span> <span class="n">OU</span><span class="o">=</span><span class="n">Self</span> <span class="n">Signed</span> <span class="n">Certificate</span>
+<span class="n">ca_signed</span> <span class="p">:</span> <span class="n">CN</span><span class="o">=</span><span class="n">YourOrg</span> <span class="n">Enterprise</span> <span class="n">Root</span><span class="p">,</span> <span class="n">DC</span><span class="o">=</span><span class="n">empty</span><span class="p">,</span> <span class="n">DC</span><span class="o">=</span><span class="n">local</span>
+</pre></div>
+</div>
 </dd></dl>
 
 <dl class="method">
@@ -3105,25 +4000,28 @@ Intermediate Certificate operation.</p>
 <code class="descname">update</code><span class="sig-paren">(</span><em>alias</em>, <em>protocols</em>, <em>cipher_suites</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.admin.SSLCertificates.update" title="Permalink to this definition">¶</a></dt>
 <dd><p>Use this operation to configure the web server certificate, SSL
 protocols, and cipher suites used by the portal.</p>
-<dl class="docutils">
-<dt>Parameters:</dt>
-<dd><dl class="first docutils">
-<dt>:alias:The name of the certificate. This is a required</dt>
-<dd>parameter. The certificate must be already present in the
-portal.</dd>
-</dl>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
+<table border="1" class="docutils">
+<colgroup>
+<col width="28%" />
+<col width="72%" />
+</colgroup>
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">protocols:</th><td class="field-body"><p class="first">The SSL protocols the portal will use. Valid
-options are TLSv1, TLSv1.1, and TLSv1.2; values must be comma
-separated. By default, these options are all enabled.</p>
-</td>
+<tr class="row-odd"><td><strong>Argument</strong></td>
+<td><strong>Description</strong></td>
 </tr>
-<tr class="field-even field"><th class="field-name">cipher_suites:</th><td class="field-body"><p class="first">The cipher suites the portal will use. Valid
+<tr class="row-even"><td>alias</td>
+<td>Required string. The name of the certificate. This is a required
+parameter. The certificate must be already present in the portal.</td>
+</tr>
+<tr class="row-odd"><td>protocols</td>
+<td>Required string. The SSL protocols the portal will use. Valid
+options are TLSv1, TLSv1.1, and TLSv1.2; values must be comma
+separated. By default, these options are all enabled.</td>
+</tr>
+<tr class="row-even"><td>cipher_suites</td>
+<td><p class="first">Required string. The cipher suites the portal will use. Valid
 options are:</p>
-<blockquote class="last">
+<blockquote>
 <div><ul class="simple">
 <li>TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256</li>
 <li>TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256</li>
@@ -3135,14 +4033,20 @@ options are:</p>
 <li>TLS_RSA_WITH_3DES_EDE_CBC_SHA</li>
 </ul>
 </div></blockquote>
+<p class="last">By default, all of the above options are enabled. Values must be
+comma separated.</p>
 </td>
 </tr>
 </tbody>
 </table>
-<p class="last">By default, all of the above options are enabled. Values must
-be comma separated.</p>
-</dd>
-</dl>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">dict</td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
 </dd></dl>
@@ -3162,42 +4066,61 @@ members in the system.</p>
 <dd><p>This operation is used to pre-create built-in or enterprise
 accounts within the portal. The provider parameter is used to
 indicate the type of user account.</p>
-<dl class="docutils">
-<dt>Parameters:</dt>
-<dd><table class="first last docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
+<table border="1" class="docutils">
+<colgroup>
+<col width="28%" />
+<col width="72%" />
+</colgroup>
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">username:</th><td class="field-body">name of the user account</td>
+<tr class="row-odd"><td><strong>Argument</strong></td>
+<td><strong>Description</strong></td>
 </tr>
-<tr class="field-even field"><th class="field-name">password:</th><td class="field-body">password of the user account</td>
+<tr class="row-even"><td>username</td>
+<td>Required string. The name of the user account</td>
 </tr>
-<tr class="field-odd field"><th class="field-name">first_name:</th><td class="field-body">first name for the account</td>
+<tr class="row-odd"><td>password</td>
+<td>Required string. The password of the user account</td>
 </tr>
-<tr class="field-even field"><th class="field-name">last_name:</th><td class="field-body">last name for the account</td>
+<tr class="row-even"><td>first_name</td>
+<td>Required string. The first name for the account</td>
 </tr>
-<tr class="field-odd field"><th class="field-name">email:</th><td class="field-body">email for the account</td>
+<tr class="row-odd"><td>last_name</td>
+<td>Required string. The last name for the account</td>
 </tr>
-<tr class="field-even field"><th class="field-name">role:</th><td class="field-body">The role for the user account. The default value is
+<tr class="row-even"><td>email</td>
+<td>Required string. The email for the account</td>
+</tr>
+<tr class="row-odd"><td>role</td>
+<td>Optional string. The role for the user account. The default value is
 org_user.
-Values: org_user | org_publisher | org_admin</td>
+Values org_user | org_publisher | org_admin</td>
 </tr>
-<tr class="field-odd field"><th class="field-name">level:</th><td class="field-body">account level to assign the user.
-Values: 1 or 2</td>
+<tr class="row-even"><td>level</td>
+<td>Optional integer. The account level to assign the user.
+Values 1 or 2</td>
 </tr>
-<tr class="field-even field"><th class="field-name">provider:</th><td class="field-body">The provider for the account. The default value is
-arcgis. Values: arcgis | enterprise</td>
+<tr class="row-odd"><td>provider</td>
+<td>Optional string. The provider for the account. The default value is
+arcgis. Values arcgis | enterprise</td>
 </tr>
-<tr class="field-odd field"><th class="field-name">idp_username:</th><td class="field-body">The name of the user as stored by the enterprise
+<tr class="row-even"><td>idp_username</td>
+<td>Optional string. The name of the user as stored by the enterprise
 user store. This parameter is only required if the provider
 parameter is enterprise.</td>
 </tr>
-<tr class="field-even field"><th class="field-name">description:</th><td class="field-body">optional description string</td>
+<tr class="row-odd"><td>description</td>
+<td>Optional string. A user description</td>
 </tr>
 </tbody>
 </table>
-</dd>
-</dl>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">boolean</td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
 <dl class="method">
@@ -3208,20 +4131,30 @@ address for a single user in the enterprise identity (user) store
 configured with the portal. The username parameter is used to
 specify the enterprise username. If the user does not exist, an
 error is returned.</p>
-<dl class="docutils">
-<dt>Parameters:</dt>
-<dd><table class="first last docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
+<table border="1" class="docutils">
+<colgroup>
+<col width="28%" />
+<col width="72%" />
+</colgroup>
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">username:</th><td class="field-body">Username of the enterprise account. For Windows Active
-Directory users, this can be either domainusername or just
+<tr class="row-odd"><td><strong>Argument</strong></td>
+<td><strong>Description</strong></td>
+</tr>
+<tr class="row-even"><td>username</td>
+<td>Required string. Username of the enterprise account. For Windows
+Active Directory users, this can be either domainusername or just
 username. For LDAP users, the format is always username.</td>
 </tr>
 </tbody>
 </table>
-</dd>
-</dl>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">dict</td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
 <dl class="method">
@@ -3235,18 +4168,28 @@ account. While portal automatically refreshes the memberships
 during a user login and during a periodic refresh (configured
 through the Update Identity Store operation), this operation allows
 an administrator to force a refresh.</p>
-<dl class="docutils">
-<dt>Parameters:</dt>
-<dd><table class="first last docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
+<table border="1" class="docutils">
+<colgroup>
+<col width="28%" />
+<col width="72%" />
+</colgroup>
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">users:</th><td class="field-body">comma seperated list of users.</td>
+<tr class="row-odd"><td><strong>Argument</strong></td>
+<td><strong>Description</strong></td>
+</tr>
+<tr class="row-even"><td>users</td>
+<td>Required string. A comma seperated list of users.</td>
 </tr>
 </tbody>
 </table>
-</dd>
-</dl>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">dict</td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
 <dl class="method">
@@ -3254,20 +4197,31 @@ an administrator to force a refresh.</p>
 <code class="descname">search</code><span class="sig-paren">(</span><em>query=''</em>, <em>max_count=255</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.admin.EnterpriseUsers.search" title="Permalink to this definition">¶</a></dt>
 <dd><p>This operation searches users in the configured enterprise user
 store. You can narrow down the search using the filter parameter.</p>
-<dl class="docutils">
-<dt>Parameters:</dt>
-<dd><table class="first last docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
+<table border="1" class="docutils">
+<colgroup>
+<col width="28%" />
+<col width="72%" />
+</colgroup>
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">query:</th><td class="field-body">search criteria</td>
+<tr class="row-odd"><td><strong>Argument</strong></td>
+<td><strong>Description</strong></td>
 </tr>
-<tr class="field-even field"><th class="field-name">max_count:</th><td class="field-body">maximum number of records returned</td>
+<tr class="row-even"><td>query</td>
+<td>Optional string. Where clause into parse down results</td>
+</tr>
+<tr class="row-odd"><td>max_count</td>
+<td>Optional integer. The maximum number of records to return</td>
 </tr>
 </tbody>
 </table>
-</dd>
-</dl>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">dict</td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
 <dl class="method">
@@ -3277,20 +4231,33 @@ store. You can narrow down the search using the filter parameter.</p>
 for an enterprise user in the portal. This is used when migrating
 from accounts used with web-tier authentication to SAML
 authentication.</p>
-<dl class="docutils">
-<dt>Parameters:</dt>
-<dd><table class="first last docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
+<table border="1" class="docutils">
+<colgroup>
+<col width="28%" />
+<col width="72%" />
+</colgroup>
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">username:</th><td class="field-body">username of the enterprise account</td>
+<tr class="row-odd"><td><strong>Argument</strong></td>
+<td><strong>Description</strong></td>
 </tr>
-<tr class="field-even field"><th class="field-name">idp_username:</th><td class="field-body">username used by the SAML identity provider</td>
+<tr class="row-even"><td>username</td>
+<td>Required string. Username of the enterprise account. For Windows
+Active Directory users, this can be either domainusername or just
+username. For LDAP users, the format is always username.</td>
+</tr>
+<tr class="row-odd"><td>idp_username</td>
+<td>Required string. The username used by the SAML identity provider</td>
 </tr>
 </tbody>
 </table>
-</dd>
-</dl>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">dict</td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
 </dd></dl>
@@ -3310,22 +4277,34 @@ number of groups in the system.</p>
 <dd><p>This operation returns the users that are currently assigned to the
 enterprise group within the enterprise user/group store. You can
 use the filter parameter to narrow down the user search.</p>
-<dl class="docutils">
-<dt>Parameters:</dt>
-<dd><table class="first last docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
+<table border="1" class="docutils">
+<colgroup>
+<col width="28%" />
+<col width="72%" />
+</colgroup>
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">name:</th><td class="field-body">name of the enterprise group</td>
+<tr class="row-odd"><td><strong>Argument</strong></td>
+<td><strong>Description</strong></td>
 </tr>
-<tr class="field-even field"><th class="field-name">query:</th><td class="field-body">optional filter to narror down the search</td>
+<tr class="row-even"><td>name</td>
+<td>Optional string. The name of the enterprise group</td>
 </tr>
-<tr class="field-odd field"><th class="field-name">max_count:</th><td class="field-body">maximum number of users</td>
+<tr class="row-odd"><td>query</td>
+<td>Optional string. Where clause into parse down results</td>
+</tr>
+<tr class="row-even"><td>max_count</td>
+<td>Optional integer. The maximum number of records to return</td>
 </tr>
 </tbody>
 </table>
-</dd>
-</dl>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">dict</td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
 <dl class="method">
@@ -3333,22 +4312,34 @@ use the filter parameter to narrow down the user search.</p>
 <code class="descname">get_user_groups</code><span class="sig-paren">(</span><em>username</em>, <em>query=''</em>, <em>max_count=255</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.admin.EnterpriseGroups.get_user_groups" title="Permalink to this definition">¶</a></dt>
 <dd><p>This operation lists the groups assigned to a user account in the
 configured enterprise group store.</p>
-<dl class="docutils">
-<dt>Parameters:</dt>
-<dd><table class="first last docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
+<table border="1" class="docutils">
+<colgroup>
+<col width="28%" />
+<col width="72%" />
+</colgroup>
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">username:</th><td class="field-body">name of the user account</td>
+<tr class="row-odd"><td><strong>Argument</strong></td>
+<td><strong>Description</strong></td>
 </tr>
-<tr class="field-even field"><th class="field-name">query:</th><td class="field-body">wildcard string used to filter the search</td>
+<tr class="row-even"><td>username</td>
+<td>Optional string. The name of the user account</td>
 </tr>
-<tr class="field-odd field"><th class="field-name">max_count:</th><td class="field-body">number of groups to return</td>
+<tr class="row-odd"><td>query</td>
+<td>Optional string. Where clause into parse down results</td>
+</tr>
+<tr class="row-even"><td>max_count</td>
+<td>Optional integer. The maximum number of records to return</td>
 </tr>
 </tbody>
 </table>
-</dd>
-</dl>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">dict</td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
 <dl class="method">
@@ -3362,18 +4353,29 @@ While portal automatically refreshes the memberships during a user
 login and during a periodic refresh configured through the Update
 Identity Store operation, this operation allows an administrator to
 force a refresh.</p>
-<dl class="docutils">
-<dt>Parameters:</dt>
-<dd><table class="first last docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
+<table border="1" class="docutils">
+<colgroup>
+<col width="28%" />
+<col width="72%" />
+</colgroup>
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">groups:</th><td class="field-body">comma seperated list of group names to be refreshed</td>
+<tr class="row-odd"><td><strong>Argument</strong></td>
+<td><strong>Description</strong></td>
+</tr>
+<tr class="row-even"><td>groups</td>
+<td>Required string. The comma seperated list of group names to be
+refreshed</td>
 </tr>
 </tbody>
 </table>
-</dd>
-</dl>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">dict</td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
 <dl class="method">
@@ -3381,20 +4383,31 @@ force a refresh.</p>
 <code class="descname">search</code><span class="sig-paren">(</span><em>query=''</em>, <em>max_count=255</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.admin.EnterpriseGroups.search" title="Permalink to this definition">¶</a></dt>
 <dd><p>This operation searches groups in the configured enterprise group
 store. You can narrow down the search using the filter parameter.</p>
-<dl class="docutils">
-<dt>Parameters:</dt>
-<dd><table class="first last docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
+<table border="1" class="docutils">
+<colgroup>
+<col width="28%" />
+<col width="72%" />
+</colgroup>
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">query:</th><td class="field-body">optional parameter to narrow group search</td>
+<tr class="row-odd"><td><strong>Argument</strong></td>
+<td><strong>Description</strong></td>
 </tr>
-<tr class="field-even field"><th class="field-name">max_count:</th><td class="field-body">max number of records to return</td>
+<tr class="row-even"><td>query</td>
+<td>Optional string. Where clause into parse down results</td>
+</tr>
+<tr class="row-odd"><td>max_count</td>
+<td>Optional integer. The maximum number of records to return</td>
 </tr>
 </tbody>
 </table>
-</dd>
-</dl>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">dict</td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
 </dd></dl>
@@ -3410,7 +4423,7 @@ store. You can narrow down the search using the filter parameter.</p>
 administrators can create, export, import, and join sites.</p>
 <dl class="staticmethod">
 <dt id="arcgis.gis.admin.Site.create">
-<em class="property">static </em><code class="descname">create</code><span class="sig-paren">(</span><em>url</em>, <em>username</em>, <em>password</em>, <em>full_name</em>, <em>email</em>, <em>content_store</em>, <em>description=''</em>, <em>question_idx=None</em>, <em>question_ans=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.admin.Site.create" title="Permalink to this definition">¶</a></dt>
+<em class="property">static </em><code class="descname">create</code><span class="sig-paren">(</span><em>con</em>, <em>url</em>, <em>username</em>, <em>password</em>, <em>full_name</em>, <em>email</em>, <em>content_store</em>, <em>description=''</em>, <em>question_idx=None</em>, <em>question_ans=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.admin.Site.create" title="Permalink to this definition">¶</a></dt>
 <dd><p>The create site operation initializes and configures Portal for
 ArcGIS for use. It must be the first operation invoked after
 installation. Creating a new site involves:</p>
@@ -3429,37 +4442,58 @@ directory is not empty, this operation attempts to migrate the
 database to the current version while keeping its data intact. At
 the end of this operation, the web server that hosts the API is
 restarted.</p>
-<dl class="docutils">
-<dt>Parameters:</dt>
-<dd><table class="first last docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
+<table border="1" class="docutils">
+<colgroup>
+<col width="28%" />
+<col width="72%" />
+</colgroup>
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">url:</th><td class="field-body">the portal administration url
+<tr class="row-odd"><td><strong>Argument</strong></td>
+<td><strong>Description</strong></td>
+</tr>
+<tr class="row-even"><td>con</td>
+<td>Required Connection. The connection object.</td>
+</tr>
+<tr class="row-odd"><td>url</td>
+<td>Required string. The portal administration url
 Ex: <a class="reference external" href="https://mysite.com">https://mysite.com</a>/&lt;web adaptor&gt;/portaladmin</td>
 </tr>
-<tr class="field-even field"><th class="field-name">username:</th><td class="field-body">initial admin account name</td>
+<tr class="row-even"><td>username</td>
+<td>Required string. The initial admin account name</td>
 </tr>
-<tr class="field-odd field"><th class="field-name">password:</th><td class="field-body">password for initial admin account</td>
+<tr class="row-odd"><td>password</td>
+<td>Required string. The password for initial admin account</td>
 </tr>
-<tr class="field-even field"><th class="field-name">full_name:</th><td class="field-body">full name of the admin account</td>
+<tr class="row-even"><td>full_name</td>
+<td>Required string. The full name of the admin account</td>
 </tr>
-<tr class="field-odd field"><th class="field-name">email:</th><td class="field-body">account email address</td>
+<tr class="row-odd"><td>email</td>
+<td>Required string. The account email address</td>
 </tr>
-<tr class="field-even field"><th class="field-name">content_store:</th><td class="field-body">JSON string including the path to the location of
+<tr class="row-even"><td>content_store</td>
+<td>Required string. JSON string including the path to the location of
 the site’s content.</td>
 </tr>
-<tr class="field-odd field"><th class="field-name">description:</th><td class="field-body">optional descript for the account</td>
+<tr class="row-odd"><td>description</td>
+<td>Optional string. The optional description for the account</td>
 </tr>
-<tr class="field-even field"><th class="field-name">question_idx:</th><td class="field-body">index of the secret question to retrieve a
+<tr class="row-even"><td>question_idx</td>
+<td>Optional integer. The index of the secret question to retrieve a
 forgotten password</td>
 </tr>
-<tr class="field-odd field"><th class="field-name">question_ans:</th><td class="field-body">answer to the secret question</td>
+<tr class="row-odd"><td>question_ans</td>
+<td>Optional string. The answer to the secret question</td>
 </tr>
 </tbody>
 </table>
-</dd>
-</dl>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">dict</td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
 <dl class="method">
@@ -3477,19 +4511,42 @@ you specify. The exported file includes the following information:</p>
 <dd>the database connection information</dd>
 </dl>
 </div></blockquote>
-<dl class="docutils">
-<dt>Parameters:</dt>
-<dd><table class="first last docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
+<table border="1" class="docutils">
+<colgroup>
+<col width="28%" />
+<col width="72%" />
+</colgroup>
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">location:</th><td class="field-body">path to the folder accessible to the portal where the
-exported site configuration will be written.</td>
+<tr class="row-odd"><td><strong>Argument</strong></td>
+<td><strong>Description</strong></td>
+</tr>
+<tr class="row-even"><td>location</td>
+<td>Required string. The path to the folder accessible to the portal
+where the exported site configuration will be written.</td>
 </tr>
 </tbody>
 </table>
-</dd>
-</dl>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">dict</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">USAGE</span><span class="p">:</span> <span class="n">Export</span> <span class="n">Portal</span> <span class="n">Site</span> <span class="n">to</span> <span class="n">a</span> <span class="n">location</span> <span class="n">the</span> <span class="n">Portal</span> <span class="n">server</span> <span class="n">has</span> <span class="n">access</span> <span class="n">to</span><span class="o">.</span>  <span class="o">**</span> <span class="n">This</span> <span class="n">can</span> <span class="n">be</span> <span class="n">a</span>
+       <span class="n">lengthy</span> <span class="n">operation</span><span class="o">.</span>
+
+<span class="kn">from</span> <span class="nn">arcgis.gis</span> <span class="kn">import</span> <span class="n">GIS</span>
+<span class="n">gis</span> <span class="o">=</span> <span class="n">GIS</span><span class="p">(</span><span class="s2">&quot;https://yourportal.com/portal&quot;</span><span class="p">,</span> <span class="s2">&quot;portaladmin&quot;</span><span class="p">,</span> <span class="s2">&quot;password&quot;</span><span class="p">)</span>
+<span class="n">sitemgr</span> <span class="o">=</span> <span class="n">gis</span><span class="o">.</span><span class="n">admin</span><span class="o">.</span><span class="n">site</span>
+<span class="n">response</span> <span class="o">=</span> <span class="n">sitemgr</span><span class="o">.</span><span class="n">export_site</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;c:\temp&#39;</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">response</span><span class="p">)</span>
+
+<span class="c1"># Output</span>
+<span class="p">{</span><span class="s1">&#39;status&#39;</span><span class="p">:</span> <span class="s1">&#39;success&#39;</span><span class="p">,</span> <span class="s1">&#39;location&#39;</span><span class="p">:</span> <span class="s1">&#39;C:\Temp\June-9-2018-5-22-29-PM-EDT-FULL.portalsite&#39;</span><span class="p">}</span>
+</pre></div>
+</div>
 </dd></dl>
 
 <dl class="method">
@@ -3504,18 +4561,28 @@ information included in the backup site configuration file. See the
 export_site operation documentation for details on what the backup
 file includes. The importSite operation also updates the portal
 content index.</p>
-<dl class="docutils">
-<dt>Parameters:</dt>
-<dd><table class="first last docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
+<table border="1" class="docutils">
+<colgroup>
+<col width="28%" />
+<col width="72%" />
+</colgroup>
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">location:</th><td class="field-body">A file path to an exported configuration.</td>
+<tr class="row-odd"><td><strong>Argument</strong></td>
+<td><strong>Description</strong></td>
+</tr>
+<tr class="row-even"><td>location</td>
+<td>Required string. A file path to an exported configuration.</td>
 </tr>
 </tbody>
 </table>
-</dd>
-</dl>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">dict</td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
 <dl class="method">
@@ -3545,25 +4612,37 @@ The operation is time-consuming as the database is configured on
 the machine and all configurations are applied from the active
 machine. After the operation is complete, the web server that hosts
 the API will be restarted.</p>
-<dl class="docutils">
-<dt>Parameters:</dt>
-<dd><table class="first last docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
+<table border="1" class="docutils">
+<colgroup>
+<col width="28%" />
+<col width="72%" />
+</colgroup>
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">admin_url:</th><td class="field-body">The admin URL of the existing portal site to which a
-machine will be joined</td>
+<tr class="row-odd"><td><strong>Argument</strong></td>
+<td><strong>Description</strong></td>
 </tr>
-<tr class="field-even field"><th class="field-name">username:</th><td class="field-body">username for the initial administrator account of the
-existing portal site.</td>
+<tr class="row-even"><td>admin_url</td>
+<td>Required string. The admin URL of the existing portal site to which
+a machine will be joined</td>
 </tr>
-<tr class="field-odd field"><th class="field-name">password:</th><td class="field-body">password for the initial administrator account of the
-existing portal site.</td>
+<tr class="row-odd"><td>username</td>
+<td>Required string. The username for the initial administrator account
+of the existing portal site.</td>
+</tr>
+<tr class="row-even"><td>password</td>
+<td>Required string. The password for the initial administrator account
+of the existing portal site.</td>
 </tr>
 </tbody>
 </table>
-</dd>
-</dl>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">dict</td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
 </dd></dl>
@@ -3579,6 +4658,43 @@ for your portal. This resource provides access to the ArcGIS Web
 Adaptor configuration, portal directories, database management server,
 indexing capabilities, license information, and the properties of your
 portal.</p>
+<dl class="attribute">
+<dt id="arcgis.gis.admin.System.content_discovery">
+<code class="descname">content_discovery</code><a class="headerlink" href="#arcgis.gis.admin.System.content_discovery" title="Permalink to this definition">¶</a></dt>
+<dd><p>This resource allows an administrator to enable or disable external content discovery from the portal website.
+Because some Esri-provided content requires external access to the internet, an administrator may choose to disable the content to prevent requests to ArcGIS Online resources. When disabling the content, a select group of items will be disabled:</p>
+<ul class="simple">
+<li>All basemaps owned by “esri_[lang]”</li>
+<li>All content owned by “esri_nav”</li>
+<li>All content owned by “esri”</li>
+</ul>
+<p>This resource will not disable ArcGIS Online utility services or Living Atlas content. For steps to disable these items, refer to the Portal Administrator guide.</p>
+<p>When external content is disabled, System Languages are also disabled.</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="21%" />
+<col width="79%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><strong>Argument</strong></td>
+<td><strong>Description</strong></td>
+</tr>
+<tr class="row-even"><td>value</td>
+<td>required Boolean. If true, external content is enabled, else it is
+disabled.</td>
+</tr>
+</tbody>
+</table>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">boolean</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
 <dl class="attribute">
 <dt id="arcgis.gis.admin.System.database">
 <code class="descname">database</code><a class="headerlink" href="#arcgis.gis.admin.System.database" title="Permalink to this definition">¶</a></dt>
@@ -3626,6 +4742,45 @@ If the database and index do not match, indexing is either in
 progress or there is a problem with the index. It is recommended
 that you reindex to correct any issues. If indexing is in progress,
 you can monitor the status by refreshing the page.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">dict</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">USAGE</span><span class="p">:</span> <span class="n">Prints</span> <span class="n">out</span> <span class="n">current</span> <span class="n">Index</span> <span class="n">Status</span>
+
+<span class="kn">from</span> <span class="nn">arcgis.gis</span> <span class="kn">import</span> <span class="n">GIS</span>
+<span class="n">gis</span> <span class="o">=</span> <span class="n">GIS</span><span class="p">(</span><span class="s2">&quot;https://yourportal.com/portal&quot;</span><span class="p">,</span> <span class="s2">&quot;portaladmin&quot;</span><span class="p">,</span> <span class="s2">&quot;password&quot;</span><span class="p">)</span>
+<span class="n">sysmgr</span> <span class="o">=</span> <span class="n">gis</span><span class="o">.</span><span class="n">admin</span><span class="o">.</span><span class="n">system</span>
+<span class="n">idx_status</span> <span class="o">=</span> <span class="n">sysmgr</span><span class="o">.</span><span class="n">index_status</span>
+<span class="kn">import</span> <span class="nn">json</span>
+<span class="k">print</span><span class="p">(</span><span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">(</span><span class="n">idx_status</span><span class="p">,</span> <span class="n">indent</span><span class="o">=</span><span class="mi">2</span><span class="p">))</span>
+
+<span class="c1"># Output</span>
+<span class="p">{</span>
+  <span class="s2">&quot;indexes&quot;</span><span class="p">:</span> <span class="p">[</span>
+    <span class="p">{</span>
+      <span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;users&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;databaseCount&quot;</span><span class="p">:</span> <span class="mi">51</span><span class="p">,</span>
+      <span class="s2">&quot;indexCount&quot;</span><span class="p">:</span> <span class="mi">51</span>
+    <span class="p">},</span>
+    <span class="p">{</span>
+      <span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;groups&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;databaseCount&quot;</span><span class="p">:</span> <span class="mi">325</span><span class="p">,</span>
+      <span class="s2">&quot;indexCount&quot;</span><span class="p">:</span> <span class="mi">325</span>
+    <span class="p">},</span>
+    <span class="p">{</span>
+      <span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;search&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;databaseCount&quot;</span><span class="p">:</span> <span class="mi">8761</span><span class="p">,</span>
+      <span class="s2">&quot;indexCount&quot;</span><span class="p">:</span> <span class="mi">8761</span>
+    <span class="p">}</span>
+  <span class="p">]</span>
+<span class="p">}</span>
+</pre></div>
+</div>
 </dd></dl>
 
 <dl class="attribute">
@@ -3698,23 +4853,34 @@ content; such as users, groups, and items stored in the database
 Portal for ArcGIS, you are required to update the indexes by
 running this operation. You can check the status of your indexes
 using the status resource.</p>
-<dl class="docutils">
-<dt>Parameters:</dt>
-<dd><table class="first last docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
+<table border="1" class="docutils">
+<colgroup>
+<col width="28%" />
+<col width="72%" />
+</colgroup>
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">mode:</th><td class="field-body">mode in which the indexer should run.
-Values: USER_MODE | GROUP_MODE | SEARCH_MODE | FULL</td>
+<tr class="row-odd"><td><strong>Argument</strong></td>
+<td><strong>Description</strong></td>
 </tr>
-<tr class="field-even field"><th class="field-name">includes:</th><td class="field-body">An optional comma separated list of elements to include
-in the index. This is useful if you want to only index certain
-items or user accounts.</td>
+<tr class="row-even"><td>mode</td>
+<td>Optional string. The mode in which the indexer should run.
+Values USER_MODE | GROUP_MODE | SEARCH_MODE | FULL</td>
+</tr>
+<tr class="row-odd"><td>includes</td>
+<td>Optional string. An optional comma separated list of elements to
+include in the index. This is useful if you want to only index
+certain items or user accounts.</td>
 </tr>
 </tbody>
 </table>
-</dd>
-</dl>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">boolean</td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
 <dl class="attribute">
@@ -3752,18 +4918,31 @@ them when their start dates become effective. It’s possible that
 all entitlements imported using the Import Entitlements operation
 are effective immediately and no entitlements are added to the
 queue. In this case, the operation returns an empty result.</p>
-<dl class="docutils">
-<dt>Parameters:</dt>
-<dd><table class="first last docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
+<table border="1" class="docutils">
+<colgroup>
+<col width="28%" />
+<col width="72%" />
+</colgroup>
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">app:</th><td class="field-body">application lookup</td>
+<tr class="row-odd"><td><strong>Argument</strong></td>
+<td><strong>Description</strong></td>
+</tr>
+<tr class="row-even"><td>app</td>
+<td>Required string. The application lookup.
+Allowed values: appstudioweb,arcgisprodesktop,busanalystonline_2,
+drone2map,geoplanner,arcgisInsights,LRReporter,
+navigator, or RoadwayReporter</td>
 </tr>
 </tbody>
 </table>
-</dd>
-</dl>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">dict</td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
 <dl class="method">
@@ -3785,22 +4964,31 @@ they become effective. You can use the Get Entitlements operation
 to see the parts that are in the queue.
 Each time this operation is invoked, it overwrites all existing
 entitlements, even the ones that are in the queue.</p>
-<dl class="docutils">
-<dt>Parmeters:</dt>
-<dd><table class="first last docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
+<table border="1" class="docutils">
+<colgroup>
+<col width="28%" />
+<col width="72%" />
+</colgroup>
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">file:</th><td class="field-body">entitlement file</td>
+<tr class="row-odd"><td><strong>Argument</strong></td>
+<td><strong>Description</strong></td>
 </tr>
-<tr class="field-even field"><th class="field-name">application:</th><td class="field-body">application identifier to be imported</td>
+<tr class="row-even"><td>file</td>
+<td>Required string. The entitlement file to load into Enterprise.</td>
+</tr>
+<tr class="row-odd"><td>application</td>
+<td>Required string. The application identifier to be imported</td>
 </tr>
 </tbody>
 </table>
-</dd>
-<dt>Returns:</dt>
-<dd>JSON response</dd>
-</dl>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">dict</td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
 <dl class="method">
@@ -3836,6 +5024,31 @@ the website.</p>
 <dt id="arcgis.gis.admin.Licenses.remove_entitlement">
 <code class="descname">remove_entitlement</code><span class="sig-paren">(</span><em>app='arcgisprodesktop'</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.admin.Licenses.remove_entitlement" title="Permalink to this definition">¶</a></dt>
 <dd><p>deletes an entitlement from a site</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="28%" />
+<col width="72%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><strong>Argument</strong></td>
+<td><strong>Description</strong></td>
+</tr>
+<tr class="row-even"><td>app</td>
+<td>Required string. The application lookup.
+Allowed values: appstudioweb,arcgisprodesktop,busanalystonline_2,
+drone2map,geoplanner,arcgisInsights,LRReporter,
+navigator, or RoadwayReporter</td>
+</tr>
+</tbody>
+</table>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">dict</td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
 <dl class="method">
@@ -3855,19 +5068,30 @@ you need to make sure that the backup license manager has been
 authorized with the same organizational entitlements. After
 configuring the backup license manager, Portal for ArcGIS is
 restarted automatically. When the restart completes, the portal is
-configured with the backup license server you specified.
-Parameter:</p>
-<blockquote>
-<div><table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
+configured with the backup license server you specified.</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="28%" />
+<col width="72%" />
+</colgroup>
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">info:</th><td class="field-body">JSON representation of the license server connection
-information.</td>
+<tr class="row-odd"><td><strong>Argument</strong></td>
+<td><strong>Description</strong></td>
+</tr>
+<tr class="row-even"><td>info</td>
+<td>Required string. The JSON representation of the license server
+connection information.</td>
 </tr>
 </tbody>
 </table>
-</div></blockquote>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">dict</td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
 </dd></dl>
@@ -3955,7 +5179,39 @@ Adaptor configured with the portal.</p>
 <dl class="method">
 <dt id="arcgis.gis.admin.WebAdaptors.list">
 <code class="descname">list</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.admin.WebAdaptors.list" title="Permalink to this definition">¶</a></dt>
-<dd><p>returns all instances of WebAdaptors</p>
+<dd><p>Returns all instances of WebAdaptors</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">USAGE</span><span class="p">:</span> <span class="n">Get</span> <span class="nb">all</span> <span class="n">Web</span> <span class="n">Adaptors</span> <span class="ow">and</span> <span class="nb">list</span> <span class="n">keys</span><span class="p">,</span><span class="n">values</span> <span class="n">of</span> <span class="n">first</span> <span class="n">Web</span> <span class="n">Adaptor</span> <span class="nb">object</span>
+
+<span class="kn">from</span> <span class="nn">arcgis.gis</span> <span class="kn">import</span> <span class="n">GIS</span>
+<span class="n">gis</span> <span class="o">=</span> <span class="n">GIS</span><span class="p">(</span><span class="s2">&quot;https://yourportal.com/portal&quot;</span><span class="p">,</span> <span class="s2">&quot;portaladmin&quot;</span><span class="p">,</span> <span class="s2">&quot;password&quot;</span><span class="p">)</span>
+
+<span class="c1"># Return a List of Web Adaptor objects</span>
+<span class="n">webadaptors</span> <span class="o">=</span> <span class="n">gis</span><span class="o">.</span><span class="n">admin</span><span class="o">.</span><span class="n">system</span><span class="o">.</span><span class="n">web_adaptors</span><span class="o">.</span><span class="n">list</span><span class="p">()</span>
+
+<span class="c1"># Get the first Web Adaptor object and print out each of its values</span>
+<span class="k">for</span> <span class="n">key</span><span class="p">,</span> <span class="n">value</span> <span class="ow">in</span> <span class="nb">dict</span><span class="p">(</span><span class="n">webadaptors</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+    <span class="k">print</span><span class="p">(</span><span class="s2">&quot;{} : {}&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="n">value</span><span class="p">))</span>
+
+<span class="c1"># Output</span>
+<span class="n">machineName</span> <span class="p">:</span> <span class="n">yourportal</span><span class="o">.</span><span class="n">com</span>
+<span class="n">machineIP</span> <span class="p">:</span> <span class="mf">10.11</span><span class="o">.</span><span class="mf">12.13</span>
+<span class="n">webAdaptorURL</span> <span class="p">:</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">yourwebserver</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">portal</span>
+<span class="nb">id</span> <span class="p">:</span> <span class="n">ac17d7b9</span><span class="o">-</span><span class="n">adbd</span><span class="o">-</span><span class="mi">4</span><span class="n">c45</span><span class="o">-</span><span class="n">ae13</span><span class="o">-</span><span class="mi">77</span><span class="n">b0ad6f14e8</span>
+<span class="n">description</span> <span class="p">:</span>
+<span class="n">httpPort</span> <span class="p">:</span> <span class="mi">80</span>
+<span class="n">httpsPort</span> <span class="p">:</span> <span class="mi">443</span>
+<span class="n">refreshServerListInterval</span> <span class="p">:</span> <span class="mi">1</span>
+<span class="n">reconnectServerOnFailureInterval</span> <span class="p">:</span> <span class="mi">1</span>
+</pre></div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">List of Web Adaptor objects.  Typically, only 1 Web Adaptor will exist for a Portal</td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
 </dd></dl>
@@ -4008,7 +5264,7 @@ Adaptor configured with the portal.</p>
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'./',
-            VERSION:'1.4.0',
+            VERSION:'1.5.0',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  true,
