@@ -28,3 +28,17 @@ FeatureLayerManager
     :inherited-members:
     :members:
     :undoc-members:
+
+VersionManager
+--------------
+.. autoclass:: arcgis.features._version.VersionManager
+    :inherited-members:
+    :members:
+    :undoc-members:
+
+Version
+--------------
+.. autoclass:: arcgis.features._version.Version
+    :inherited-members:
+    :members:
+    :undoc-members:

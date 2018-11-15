@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>arcgis.geoanalytics.summarize_data module &mdash; arcgis 1.5.0 documentation</title>
+  <title>arcgis.geoanalytics.summarize_data module &mdash; arcgis 1.5.1 documentation</title>
   
 
   
@@ -24,23 +24,13 @@
 
   
 
-  
-  
-    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
-  
-
-  
-    <link rel="stylesheet" href="_static/theme_overrides.css" type="text/css" />
-  
-
-  
-        <link rel="index" title="Index"
-              href="genindex.html"/>
-        <link rel="search" title="Search" href="search.html"/>
-    <link rel="top" title="arcgis 1.5.0 documentation" href="index.html"/>
-        <link rel="up" title="arcgis.geoanalytics module" href="arcgis.geoanalytics.toc.html"/>
-        <link rel="next" title="arcgis.geoanalytics.use_proximity module" href="arcgis.geoanalytics.use_proximity.html"/>
-        <link rel="prev" title="arcgis.geoanalytics.manage_data module" href="arcgis.geoanalytics.manage_data.html"/>
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/theme_overrides.css" type="text/css" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="arcgis.geoanalytics.use_proximity module" href="arcgis.geoanalytics.use_proximity.html" />
+    <link rel="prev" title="arcgis.geoanalytics.manage_data module" href="arcgis.geoanalytics.manage_data.html" />
 <!-- This code block is inserted close near the <head> tag. See http://bit.ly/2BHUQzB -->
 <!-- The point of this code block is to send us google analytics on website views -->
 <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
@@ -56,7 +46,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
 </head>
 
-<body class="wy-body-for-nav" role="document">
+<body class="wy-body-for-nav">
 
    
   <div class="wy-grid-for-nav">
@@ -78,7 +68,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             
             
               <div class="version">
-                1.5.0
+                1.5.1
               </div>
             
           
@@ -284,6 +274,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <li class="toctree-l4"><a class="reference internal" href="arcgis.features.managers.html#syncmanager">SyncManager</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.features.managers.html#featurelayercollectionmanager">FeatureLayerCollectionManager</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.features.managers.html#featurelayermanager">FeatureLayerManager</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.features.managers.html#versionmanager">VersionManager</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.features.managers.html#version">Version</a></li>
 </ul>
 </li>
 </ul>
@@ -394,9 +386,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#minus">minus</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#ml-classify">ml_classify</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#mod">mod</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#mode">mode</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#msavi">msavi</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#multiply">MULTIPLY</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#ndvi">ndvi</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#negate">negate</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#not-equal">not_equal</a></li>
@@ -523,6 +513,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <li class="toctree-l4"><a class="reference internal" href="arcgis.geoanalytics.manage_data.html#calculate-fields">calculate_fields</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.geoanalytics.manage_data.html#clip-layer">clip_layer</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.geoanalytics.manage_data.html#copy-to-data-store">copy_to_data_store</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.geoanalytics.manage_data.html#dissolve-boundaries">dissolve_boundaries</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.geoanalytics.manage_data.html#merge-layers">merge_layers</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.geoanalytics.manage_data.html#overlay-data">overlay_data</a></li>
 </ul>
 </li>
@@ -625,6 +617,10 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <li class="toctree-l2"><a class="reference internal" href="arcgis.mapping.html#scenelayer">SceneLayer</a></li>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.mapping.html#export-map">export_map</a></li>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.mapping.html#get-layout-templates">get_layout_templates</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.mapping.html#module-arcgis.mapping.symbol">Symbology</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.mapping.html#renderers">Renderers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.mapping.html#generate-renderer">generate_renderer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.mapping.html#visual-variables">visual_variables</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="arcgis.realtime.html">arcgis.realtime module</a><ul>
@@ -675,7 +671,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
 
       
-      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+      <nav class="wy-nav-top" aria-label="top navigation">
         
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
           <a href="index.html">arcgis</a>
@@ -683,9 +679,10 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       </nav>
 
 
-      
       <div class="wy-nav-content">
+        
         <div class="rst-content">
+        
           
 
 
@@ -744,7 +741,7 @@ summarize_within calculates statistics for area features and attributes that ove
 <h2>aggregate_points<a class="headerlink" href="#aggregate-points" title="Permalink to this headline">¶</a></h2>
 <dl class="method">
 <dt id="arcgis.geoanalytics.summarize_data.aggregate_points">
-<code class="descclassname">summarize_data.</code><code class="descname">aggregate_points</code><span class="sig-paren">(</span><em>point_layer</em>, <em>bin_type: str = None</em>, <em>bin_size: float = None</em>, <em>bin_size_unit: str = None</em>, <em>polygon_layer=None</em>, <em>time_step_interval: int = None</em>, <em>time_step_interval_unit: str = None</em>, <em>time_step_repeat_interval: int = None</em>, <em>time_step_repeat_interval_unit: str = None</em>, <em>time_step_reference: datetime.datetime = None</em>, <em>summary_fields: str = None</em>, <em>output_name: str = None</em>, <em>gis=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.geoanalytics.summarize_data.aggregate_points" title="Permalink to this definition">¶</a></dt>
+<code class="descclassname">summarize_data.</code><code class="descname">aggregate_points</code><span class="sig-paren">(</span><em>bin_type: str = None</em>, <em>bin_size: float = None</em>, <em>bin_size_unit: str = None</em>, <em>polygon_layer=None</em>, <em>time_step_interval: int = None</em>, <em>time_step_interval_unit: str = None</em>, <em>time_step_repeat_interval: int = None</em>, <em>time_step_repeat_interval_unit: str = None</em>, <em>time_step_reference: datetime.datetime = None</em>, <em>summary_fields: str = None</em>, <em>output_name: str = None</em>, <em>gis=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.geoanalytics.summarize_data.aggregate_points" title="Permalink to this definition">¶</a></dt>
 <dd><p>Using a layer of point features and either a layer of area features or bins defined by a specified distance, this tool determines which points fall within each area or bin and calculates statistics about all the points within each area or bin. You may optionally apply time slicing with this tool.</p>
 <p>For example</p>
 <ul class="simple">
@@ -843,7 +840,7 @@ for instructions to query a feature layer for field names.</p>
 <blockquote>
 <div><strong>Returns:</strong> Output Features as Item</div></blockquote>
 <p><em>Example</em></p>
-<div class="highlight-python"><div class="highlight"><pre><span></span><span class="c1"># Usage Example: Using summary_fields on a layer.</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Usage Example: Using summary_fields on a layer.</span>
 
 <span class="n">agg_pts_item</span> <span class="o">=</span> <span class="n">aggregate_points</span><span class="p">(</span><span class="n">input_points_layer</span><span class="p">,</span>
                   <span class="n">bin_size</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span>
@@ -860,7 +857,7 @@ for instructions to query a feature layer for field names.</p>
 <h2>build_multivariable_grid<a class="headerlink" href="#build-multivariable-grid" title="Permalink to this headline">¶</a></h2>
 <dl class="method">
 <dt id="arcgis.geoanalytics.summarize_data.build_multivariable_grid">
-<code class="descclassname">summarize_data.</code><code class="descname">build_multivariable_grid</code><span class="sig-paren">(</span><em>input_layers</em>, <em>variable_calculations</em>, <em>bin_size</em>, <em>bin_unit='Meters'</em>, <em>bin_type='Square'</em>, <em>output_name=None</em>, <em>gis=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.geoanalytics.summarize_data.build_multivariable_grid" title="Permalink to this definition">¶</a></dt>
+<code class="descclassname">summarize_data.</code><code class="descname">build_multivariable_grid</code><span class="sig-paren">(</span><em>variable_calculations</em>, <em>bin_size</em>, <em>bin_unit='Meters'</em>, <em>bin_type='Square'</em>, <em>output_name=None</em>, <em>gis=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.geoanalytics.summarize_data.build_multivariable_grid" title="Permalink to this definition">¶</a></dt>
 <dd><p>Only available at ArcGIS Enterprise 10.6.1 and later.</p>
 <p>The Build Multi-Variable Grid task works with one or more layers of point, line, or polygon
 features. The task generates a grid of square or hexagonal bins and compiles information about
@@ -970,7 +967,7 @@ options are the following:</p>
 <h2>join_features<a class="headerlink" href="#join-features" title="Permalink to this headline">¶</a></h2>
 <dl class="method">
 <dt id="arcgis.geoanalytics.summarize_data.join_features">
-<code class="descclassname">summarize_data.</code><code class="descname">join_features</code><span class="sig-paren">(</span><em>target_layer</em>, <em>join_layer</em>, <em>join_operation: str = 'JoinOneToOne'</em>, <em>join_fields: str = None</em>, <em>summary_fields: str = None</em>, <em>spatial_relationship: str = None</em>, <em>spatial_near_distance: float = None</em>, <em>spatial_near_distance_unit: str = None</em>, <em>temporal_relationship: str = None</em>, <em>temporal_near_distance: int = None</em>, <em>temporal_near_distance_unit: str = None</em>, <em>attribute_relationship: str = None</em>, <em>join_condition: str = None</em>, <em>output_name: str = None</em>, <em>gis=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.geoanalytics.summarize_data.join_features" title="Permalink to this definition">¶</a></dt>
+<code class="descclassname">summarize_data.</code><code class="descname">join_features</code><span class="sig-paren">(</span><em>join_layer</em>, <em>join_operation: str = 'JoinOneToOne'</em>, <em>join_fields: str = None</em>, <em>summary_fields: str = None</em>, <em>spatial_relationship: str = None</em>, <em>spatial_near_distance: float = None</em>, <em>spatial_near_distance_unit: str = None</em>, <em>temporal_relationship: str = None</em>, <em>temporal_near_distance: int = None</em>, <em>temporal_near_distance_unit: str = None</em>, <em>attribute_relationship: str = None</em>, <em>join_condition: str = None</em>, <em>output_name: str = None</em>, <em>gis=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.geoanalytics.summarize_data.join_features" title="Permalink to this definition">¶</a></dt>
 <dd><blockquote>
 <div><p>Using either feature layers or tabular data, you can join features and records based on specific relationships between the input layers or tables. Joins will be determined by spatial, temporal, and attribute relationships, and summary statistics can be optionally calculated.</p>
 <p>For example</p>
@@ -1023,7 +1020,7 @@ options are the following:</p>
 <h2>reconstruct_tracks<a class="headerlink" href="#reconstruct-tracks" title="Permalink to this headline">¶</a></h2>
 <dl class="method">
 <dt id="arcgis.geoanalytics.summarize_data.reconstruct_tracks">
-<code class="descclassname">summarize_data.</code><code class="descname">reconstruct_tracks</code><span class="sig-paren">(</span><em>input_layer</em>, <em>track_fields: str</em>, <em>method: str = 'Planar'</em>, <em>buffer_field: str = None</em>, <em>summary_fields: str = None</em>, <em>time_split: int = None</em>, <em>time_split_unit: str = None</em>, <em>distance_split=None</em>, <em>distance_split_unit=None</em>, <em>output_name: str = None</em>, <em>gis=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.geoanalytics.summarize_data.reconstruct_tracks" title="Permalink to this definition">¶</a></dt>
+<code class="descclassname">summarize_data.</code><code class="descname">reconstruct_tracks</code><span class="sig-paren">(</span><em>track_fields: str</em>, <em>method: str = 'Planar'</em>, <em>buffer_field: str = None</em>, <em>summary_fields: str = None</em>, <em>time_split: int = None</em>, <em>time_split_unit: str = None</em>, <em>distance_split=None</em>, <em>distance_split_unit=None</em>, <em>output_name: str = None</em>, <em>gis=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.geoanalytics.summarize_data.reconstruct_tracks" title="Permalink to this definition">¶</a></dt>
 <dd><blockquote>
 <div><blockquote>
 <div><p>Using a time-enabled layer of point or polygon features that represent an instant in time, this tool determines which input features belong in a track and will order the inputs sequentially in time. Statistics are optionally calculated for the input features within each track.</p>
@@ -1076,7 +1073,7 @@ For example, suppose you have GPS measurements of hurricanes every 10 minutes. E
 <h2>summarize_attributes<a class="headerlink" href="#summarize-attributes" title="Permalink to this headline">¶</a></h2>
 <dl class="method">
 <dt id="arcgis.geoanalytics.summarize_data.summarize_attributes">
-<code class="descclassname">summarize_data.</code><code class="descname">summarize_attributes</code><span class="sig-paren">(</span><em>input_layer</em>, <em>fields: str = None</em>, <em>summary_fields: str = None</em>, <em>output_name: str = None</em>, <em>gis=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.geoanalytics.summarize_data.summarize_attributes" title="Permalink to this definition">¶</a></dt>
+<code class="descclassname">summarize_data.</code><code class="descname">summarize_attributes</code><span class="sig-paren">(</span><em>fields: str = None</em>, <em>summary_fields: str = None</em>, <em>output_name: str = None</em>, <em>gis=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.geoanalytics.summarize_data.summarize_attributes" title="Permalink to this definition">¶</a></dt>
 <dd><blockquote>
 <div><blockquote>
 <div><p>Using either feature or tabular data, this tool summarizes statistics for specified fields.</p>
@@ -1106,7 +1103,7 @@ For example, suppose you have GPS measurements of hurricanes every 10 minutes. E
 <h2>summarize_within<a class="headerlink" href="#summarize-within" title="Permalink to this headline">¶</a></h2>
 <dl class="method">
 <dt id="arcgis.geoanalytics.summarize_data.summarize_within">
-<code class="descclassname">summarize_data.</code><code class="descname">summarize_within</code><span class="sig-paren">(</span><em>summarized_layer</em>, <em>summary_polygons=None</em>, <em>bin_type: str = None</em>, <em>bin_size: float = None</em>, <em>bin_size_unit: str = None</em>, <em>standard_summary_fields: str = None</em>, <em>weighted_summary_fields: str = None</em>, <em>sum_shape: bool = True</em>, <em>shape_units: str = None</em>, <em>group_by_field: str = None</em>, <em>minority_majority: bool = False</em>, <em>percent_shape: bool = False</em>, <em>output_name: str = None</em>, <em>gis=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.geoanalytics.summarize_data.summarize_within" title="Permalink to this definition">¶</a></dt>
+<code class="descclassname">summarize_data.</code><code class="descname">summarize_within</code><span class="sig-paren">(</span><em>summary_polygons=None</em>, <em>bin_type: str = None</em>, <em>bin_size: float = None</em>, <em>bin_size_unit: str = None</em>, <em>standard_summary_fields: str = None</em>, <em>weighted_summary_fields: str = None</em>, <em>sum_shape: bool = True</em>, <em>shape_units: str = None</em>, <em>group_by_field: str = None</em>, <em>minority_majority: bool = False</em>, <em>percent_shape: bool = False</em>, <em>output_name: str = None</em>, <em>gis=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.geoanalytics.summarize_data.summarize_within" title="Permalink to this definition">¶</a></dt>
 <dd><blockquote>
 <div><blockquote>
 <div><p>Finds areas (and portions of areas) that overlap between two layers and calculates statistics about the overlap.</p>
@@ -1153,9 +1150,7 @@ For example, suppose you have GPS measurements of hurricanes every 10 minutes. E
 
 
            </div>
-           <div class="articleComments">
-            
-           </div>
+           
           </div>
           <footer>
   
@@ -1177,7 +1172,7 @@ For example, suppose you have GPS measurements of hurricanes every 10 minutes. E
 
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
 
 </footer>
 
@@ -1195,7 +1190,8 @@ For example, suppose you have GPS measurements of hurricanes every 10 minutes. E
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'./',
-            VERSION:'1.5.0',
+            VERSION:'1.5.1',
+            LANGUAGE:'None',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  true,
@@ -1208,19 +1204,13 @@ For example, suppose you have GPS measurements of hurricanes every 10 minutes. E
 
   
 
-  
-  
-    <script type="text/javascript" src="_static/js/theme.js"></script>
-  
+  <script type="text/javascript" src="_static/js/theme.js"></script>
 
-  
-  
   <script type="text/javascript">
       jQuery(function () {
-          SphinxRtdTheme.StickyNav.enable();
+          SphinxRtdTheme.Navigation.enable(true);
       });
-  </script>
-   
+  </script> 
 
 </body>
 </html>
