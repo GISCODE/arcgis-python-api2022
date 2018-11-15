@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>arcgis.gis.server module &mdash; arcgis 1.5.0 documentation</title>
+  <title>arcgis.gis.server module &mdash; arcgis 1.5.1 documentation</title>
   
 
   
@@ -37,7 +37,7 @@
         <link rel="index" title="Index"
               href="genindex.html"/>
         <link rel="search" title="Search" href="search.html"/>
-    <link rel="top" title="arcgis 1.5.0 documentation" href="index.html"/>
+    <link rel="top" title="arcgis 1.5.1 documentation" href="index.html"/>
         <link rel="up" title="arcgis.gis module" href="arcgis.gis.toc.html"/>
         <link rel="next" title="arcgis.env module" href="arcgis.env.html"/>
         <link rel="prev" title="arcgis.gis.admin module" href="arcgis.gis.admin.html"/>
@@ -78,7 +78,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             
             
               <div class="version">
-                1.5.0
+                1.5.1
               </div>
             
           
@@ -190,6 +190,10 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <li class="toctree-l2"><a class="reference internal" href="arcgis.env.html#return-m">return_m</a></li>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.env.html#verbose">verbose</a></li>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.env.html#default-aggregation-styles">default_aggregation_styles</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.env.html#snap-raster">snap_raster</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.env.html#cell-size">cell_size</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.env.html#mask">mask</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.env.html#parallel-processing-factor">parallel_processing_factor</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="arcgis.features.toc.html">arcgis.features module</a><ul>
@@ -284,6 +288,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <li class="toctree-l4"><a class="reference internal" href="arcgis.features.managers.html#syncmanager">SyncManager</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.features.managers.html#featurelayercollectionmanager">FeatureLayerCollectionManager</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.features.managers.html#featurelayermanager">FeatureLayerManager</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.features.managers.html#versionmanager">VersionManager</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.features.managers.html#version">Version</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.features.managers.html#parcelfabricmanager">ParcelFabricManager</a></li>
 </ul>
 </li>
 </ul>
@@ -394,9 +401,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#minus">minus</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#ml-classify">ml_classify</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#mod">mod</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#mode">mode</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#msavi">msavi</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#multiply">MULTIPLY</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#ndvi">ndvi</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#negate">negate</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#not-equal">not_equal</a></li>
@@ -523,6 +528,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <li class="toctree-l4"><a class="reference internal" href="arcgis.geoanalytics.manage_data.html#calculate-fields">calculate_fields</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.geoanalytics.manage_data.html#clip-layer">clip_layer</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.geoanalytics.manage_data.html#copy-to-data-store">copy_to_data_store</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.geoanalytics.manage_data.html#dissolve-boundaries">dissolve_boundaries</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.geoanalytics.manage_data.html#merge-layers">merge_layers</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.geoanalytics.manage_data.html#overlay-data">overlay_data</a></li>
 </ul>
 </li>
@@ -625,6 +632,10 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <li class="toctree-l2"><a class="reference internal" href="arcgis.mapping.html#scenelayer">SceneLayer</a></li>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.mapping.html#export-map">export_map</a></li>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.mapping.html#get-layout-templates">get_layout_templates</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.mapping.html#module-arcgis.mapping.symbol">Symbology</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.mapping.html#renderers">Renderers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.mapping.html#generate-renderer">generate_renderer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.mapping.html#visual-variables">visual_variables</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="arcgis.realtime.html">arcgis.realtime module</a><ul>
@@ -1241,20 +1252,20 @@ restarted with updated properties.</p>
 <dt id="arcgis.gis.server.Machine">
 <em class="property">class </em><code class="descclassname">arcgis.gis.server.</code><code class="descname">Machine</code><span class="sig-paren">(</span><em>url</em>, <em>gis</em>, <em>initialize=False</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.server.Machine" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">arcgis.gis.server._common._base.BaseServer</span></code></p>
-<p>A resource to provide administrative tools for managing this machine  
+<p>A resource to provide administrative tools for managing this machine
 and the required SSL Certificate.</p>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
 <p>The Machine</p>
 <p class="last">A server machine represents a machine on which ArcGIS Server
-software has been installed and licensed. A site is made up of one 
-or more machines that must be registered with the site.  The site’s 
-machines work together to host GIS services and data, and provide 
-administrative capabilities for the site. Each server machine is  
-capable of performing all these administrative tasks and hence a  
-site can be thought of as a distributed peer-to-peer network of 
-machines. The server machine communicates with its peers over a 
-range of TCP and UDP ports that can be configured using the edit operation 
+software has been installed and licensed. A site is made up of one
+or more machines that must be registered with the site.  The site’s
+machines work together to host GIS services and data, and provide
+administrative capabilities for the site. Each server machine is
+capable of performing all these administrative tasks and hence a
+site can be thought of as a distributed peer-to-peer network of
+machines. The server machine communicates with its peers over a
+range of TCP and UDP ports that can be configured using the edit operation
 (<a class="reference external" href="http://resources.arcgis.com/en/help/arcgis-rest-api/index.html#/Edit_Machine/02r3000001st000000/">http://resources.arcgis.com/en/help/arcgis-rest-api/index.html#/Edit_Machine/02r3000001st000000/</a> ).</p>
 </div>
 <div class="admonition note">
@@ -1262,17 +1273,17 @@ range of TCP and UDP ports that can be configured using the edit operation
 <p>SSL Certificates</p>
 <p>A certificate represents a key pair that has been digitally signed
 and acknowledged by a Certifying Authority (CA). It is the most
-fundamental component in enabling SSL on your server. Before you 
-enable SSL on your server, you need to generate a certificate and  
+fundamental component in enabling SSL on your server. Before you
+enable SSL on your server, you need to generate a certificate and
 get it signed by a trusted CA.</p>
 <p>The Generate Certificate
-(<a class="reference external" href="http://resources.arcgis.com/en/help/arcgis-rest-api/index.html#/Generate_Certificate/02r3000001tt000000/">http://resources.arcgis.com/en/help/arcgis-rest-api/index.html#/Generate_Certificate/02r3000001tt000000/</a> ) 
-operation creates a new self-signed certificate and adds it to 
+(<a class="reference external" href="http://resources.arcgis.com/en/help/arcgis-rest-api/index.html#/Generate_Certificate/02r3000001tt000000/">http://resources.arcgis.com/en/help/arcgis-rest-api/index.html#/Generate_Certificate/02r3000001tt000000/</a> )
+operation creates a new self-signed certificate and adds it to
 the keystore. For your convenience, the server is capable of generating
 self-signed certificates that can be used during development or
 staging. However, it is critical that you obtain CA-signed
-certificates when standing up a production server. Even though 
-a self-signed certificate can be used to enable SSL, it is recommended 
+certificates when standing up a production server. Even though
+a self-signed certificate can be used to enable SSL, it is recommended
 that you use these only on staging or development servers.</p>
 <p class="last">In order to get a certificate signed by a CA, you need to generate
 a CSR (certificate signing request) and then submit it to your CA.
@@ -1281,10 +1292,38 @@ imported into the server by using the import CA signed certificate
 operation.</p>
 </div>
 <dl class="method">
+<dt id="arcgis.gis.server.Machine.delete_certificate">
+<code class="descname">delete_certificate</code><span class="sig-paren">(</span><em>certificate</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.server.Machine.delete_certificate" title="Permalink to this definition">¶</a></dt>
+<dd><p>Deletes a SSL certificate using the certificate alias.</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="21%" />
+<col width="79%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><strong>Argument</strong></td>
+<td><strong>Description</strong></td>
+</tr>
+<tr class="row-even"><td>certificate</td>
+<td>Required string. The name of the certificate to delete</td>
+</tr>
+</tbody>
+</table>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">boolean</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
 <dt id="arcgis.gis.server.Machine.export_certificate">
 <code class="descname">export_certificate</code><span class="sig-paren">(</span><em>certificate</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.server.Machine.export_certificate" title="Permalink to this definition">¶</a></dt>
-<dd><p>Downloads an SSL certificate. The file returned by the 
-server is an X.509 certificate. The downloaded certificate can then 
+<dd><p>Downloads an SSL certificate. The file returned by the
+server is an X.509 certificate. The downloaded certificate can then
 be imported into a client that is making HTTP requests.</p>
 <table border="1" class="docutils">
 <colgroup>
@@ -1315,7 +1354,7 @@ be imported into a client that is making HTTP requests.</p>
 <code class="descname">generate_CSR</code><span class="sig-paren">(</span><em>certificate</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.server.Machine.generate_CSR" title="Permalink to this definition">¶</a></dt>
 <dd><p>Generates a certificate signing request (CSR) for a
 self-signed certificate. A CSR is required by a CA to create a
-digitally signed version of your certificate.  Supply the certificate 
+digitally signed version of your certificate.  Supply the certificate
 object that was created with method ssl_certificate.</p>
 <table border="1" class="docutils">
 <colgroup>
@@ -1415,7 +1454,7 @@ identifies it.</td>
 <dl class="method">
 <dt id="arcgis.gis.server.Machine.import_root_certificate">
 <code class="descname">import_root_certificate</code><span class="sig-paren">(</span><em>alias</em>, <em>root_CA_certificate</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.server.Machine.import_root_certificate" title="Permalink to this definition">¶</a></dt>
-<dd><p>Imports a certificate authority’s (CA) root and intermediate 
+<dd><p>Imports a certificate authority’s (CA) root and intermediate
 certificates into the keystore.</p>
 <p>To create a production quality CA-signed certificate, you need to
 add the CA’s certificates into the keystore that enables the SSL
@@ -1456,8 +1495,8 @@ CA or specific intermediate certificates.</p>
 <dd><p>Provides the self-signed certificate object.</p>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
-<p class="last">Even though a self-signed certificate can be used to enable SSL, it 
-is recommended that you use a self-signed certificate only on staging 
+<p class="last">Even though a self-signed certificate can be used to enable SSL, it
+is recommended that you use a self-signed certificate only on staging
 or development servers.</p>
 </div>
 <table border="1" class="docutils">
@@ -1496,7 +1535,7 @@ certificates inside a key store within the configuration store.</p>
 <dl class="method">
 <dt id="arcgis.gis.server.Machine.start">
 <code class="descname">start</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.server.Machine.start" title="Permalink to this definition">¶</a></dt>
-<dd><p>Starts this server machine. Starting the machine enables its 
+<dd><p>Starts this server machine. Starting the machine enables its
 ability to host GIS services.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -1517,7 +1556,7 @@ ability to host GIS services.</p>
 <dl class="method">
 <dt id="arcgis.gis.server.Machine.stop">
 <code class="descname">stop</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.server.Machine.stop" title="Permalink to this definition">¶</a></dt>
-<dd><p>Stops this server machine. Stopping the machine disables its 
+<dd><p>Stops this server machine. Stopping the machine disables its
 ability to host GIS services.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -1532,9 +1571,9 @@ ability to host GIS services.</p>
 <dl class="method">
 <dt id="arcgis.gis.server.Machine.unregister">
 <code class="descname">unregister</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.server.Machine.unregister" title="Permalink to this definition">¶</a></dt>
-<dd><p>Removes this machine from the site.  This server machine will no 
+<dd><p>Removes this machine from the site.  This server machine will no
 longer participate in the site or run any of the GIS services.  All
-resources that were acquired by the server machine (memory, files, 
+resources that were acquired by the server machine (memory, files,
 and so forth) will be released.</p>
 <p>Typically, you should only invoke this operation if the machine
 is going to be shut down for extended periods of time, or if it
@@ -2341,10 +2380,10 @@ folder option set in the SD file.</td>
 have been registered with the site. In other words, it represents the
 total computing power of your site. A site will continue to run as long
 as there is at least one server machine online.</p>
-<p>For a server machine to start hosting GIS services, it must be in a cluster 
-(note that clusters have been deprecated, see 
-<a class="reference external" href="http://server.arcgis.com/en/server/latest/administer/windows/about-single-cluster-mode.htm">http://server.arcgis.com/en/server/latest/administer/windows/about-single-cluster-mode.htm</a> ). 
-When you create a new site, a cluster called ‘default’ (deployed with 
+<p>For a server machine to start hosting GIS services, it must be in a cluster
+(note that clusters have been deprecated, see
+<a class="reference external" href="http://server.arcgis.com/en/server/latest/administer/windows/about-single-cluster-mode.htm">http://server.arcgis.com/en/server/latest/administer/windows/about-single-cluster-mode.htm</a> ).
+When you create a new site, a cluster called ‘default’ (deployed with
 singleClusterMode set to true) is created for you.</p>
 <p>The list of server machines in your site can be dynamic. You can
 register additional server machines when you need to increase the
@@ -2400,7 +2439,7 @@ registered with the site. The server machine must have ArcGIS
 Server software installed and authorized.</p>
 <p>Registering machines this way is a “pull” approach to growing
 the site and is a convenient way when a large number of machines
-need to be added to a site. A server machine can also 
+need to be added to a site. A server machine can also
 choose to join a site.</p>
 <table border="1" class="docutils">
 <colgroup>
@@ -4693,6 +4732,20 @@ services directory.</td>
 </table>
 </dd></dl>
 
+<dl class="attribute">
+<dt id="arcgis.gis.server.DirectoryManager.properties">
+<code class="descname">properties</code><a class="headerlink" href="#arcgis.gis.server.DirectoryManager.properties" title="Permalink to this definition">¶</a></dt>
+<dd><p>returns the current service directory properties for the server.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">dict</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
 </dd></dl>
 
 </div>
@@ -5165,7 +5218,7 @@ class description for all possible properties.</p>
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'./',
-            VERSION:'1.5.0',
+            VERSION:'1.5.1',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  true,

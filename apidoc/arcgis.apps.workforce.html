@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>arcgis.apps.workforce module &mdash; arcgis 1.5.0 documentation</title>
+  <title>arcgis.apps.workforce module &mdash; arcgis 1.5.1 documentation</title>
   
 
   
@@ -37,7 +37,7 @@
         <link rel="index" title="Index"
               href="genindex.html"/>
         <link rel="search" title="Search" href="search.html"/>
-    <link rel="top" title="arcgis 1.5.0 documentation" href="index.html"/>
+    <link rel="top" title="arcgis 1.5.1 documentation" href="index.html"/>
         <link rel="up" title="arcgis.apps module" href="arcgis.apps.html"/>
         <link rel="next" title="arcgis.apps.workforce.managers module" href="arcgis.apps.workforce.managers.html"/>
         <link rel="prev" title="arcgis.apps module" href="arcgis.apps.html"/>
@@ -78,7 +78,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             
             
               <div class="version">
-                1.5.0
+                1.5.1
               </div>
             
           
@@ -190,6 +190,10 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <li class="toctree-l2"><a class="reference internal" href="arcgis.env.html#return-m">return_m</a></li>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.env.html#verbose">verbose</a></li>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.env.html#default-aggregation-styles">default_aggregation_styles</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.env.html#snap-raster">snap_raster</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.env.html#cell-size">cell_size</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.env.html#mask">mask</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.env.html#parallel-processing-factor">parallel_processing_factor</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="arcgis.features.toc.html">arcgis.features module</a><ul>
@@ -284,6 +288,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <li class="toctree-l4"><a class="reference internal" href="arcgis.features.managers.html#syncmanager">SyncManager</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.features.managers.html#featurelayercollectionmanager">FeatureLayerCollectionManager</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.features.managers.html#featurelayermanager">FeatureLayerManager</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.features.managers.html#versionmanager">VersionManager</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.features.managers.html#version">Version</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.features.managers.html#parcelfabricmanager">ParcelFabricManager</a></li>
 </ul>
 </li>
 </ul>
@@ -394,9 +401,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#minus">minus</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#ml-classify">ml_classify</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#mod">mod</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#mode">mode</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#msavi">msavi</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#multiply">MULTIPLY</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#ndvi">ndvi</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#negate">negate</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#not-equal">not_equal</a></li>
@@ -523,6 +528,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <li class="toctree-l4"><a class="reference internal" href="arcgis.geoanalytics.manage_data.html#calculate-fields">calculate_fields</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.geoanalytics.manage_data.html#clip-layer">clip_layer</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.geoanalytics.manage_data.html#copy-to-data-store">copy_to_data_store</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.geoanalytics.manage_data.html#dissolve-boundaries">dissolve_boundaries</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.geoanalytics.manage_data.html#merge-layers">merge_layers</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.geoanalytics.manage_data.html#overlay-data">overlay_data</a></li>
 </ul>
 </li>
@@ -625,6 +632,10 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <li class="toctree-l2"><a class="reference internal" href="arcgis.mapping.html#scenelayer">SceneLayer</a></li>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.mapping.html#export-map">export_map</a></li>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.mapping.html#get-layout-templates">get_layout_templates</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.mapping.html#module-arcgis.mapping.symbol">Symbology</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.mapping.html#renderers">Renderers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.mapping.html#generate-renderer">generate_renderer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.mapping.html#visual-variables">visual_variables</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="arcgis.realtime.html">arcgis.realtime module</a><ul>
@@ -751,7 +762,7 @@ It can be used as shown in the following code example.</p>
 <h2>Assignment<a class="headerlink" href="#assignment" title="Permalink to this headline">¶</a></h2>
 <dl class="class">
 <dt id="arcgis.apps.workforce.Assignment">
-<em class="property">class </em><code class="descclassname">arcgis.apps.workforce.</code><code class="descname">Assignment</code><span class="sig-paren">(</span><em>project</em>, <em>feature=None</em>, <em>geometry=None</em>, <em>assignment_type=None</em>, <em>assigned_date=None</em>, <em>assignment_read=None</em>, <em>completed_date=None</em>, <em>declined_comment=None</em>, <em>declined_date=None</em>, <em>description=None</em>, <em>dispatcher=None</em>, <em>due_date=None</em>, <em>in_progress_date=None</em>, <em>location=None</em>, <em>notes=None</em>, <em>paused_date=None</em>, <em>priority=None</em>, <em>status=None</em>, <em>work_order_id=None</em>, <em>worker=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.apps.workforce.Assignment" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descclassname">arcgis.apps.workforce.</code><code class="descname">Assignment</code><span class="sig-paren">(</span><em>project</em>, <em>feature=None</em>, <em>geometry=None</em>, <em>assignment_type=None</em>, <em>assigned_date=None</em>, <em>assignment_read=None</em>, <em>completed_date=None</em>, <em>declined_comment=None</em>, <em>declined_date=None</em>, <em>description=None</em>, <em>dispatcher=None</em>, <em>due_date=None</em>, <em>in_progress_date=None</em>, <em>location=None</em>, <em>notes=None</em>, <em>paused_date=None</em>, <em>priority='none'</em>, <em>status=None</em>, <em>work_order_id=None</em>, <em>worker=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.apps.workforce.Assignment" title="Permalink to this definition">¶</a></dt>
 <dd><p>Represents an assignment</p>
 <table border="1" class="docutils">
 <colgroup>
@@ -1815,7 +1826,7 @@ A dictionary containing the assignment geometry</td>
 <h2>Worker<a class="headerlink" href="#worker" title="Permalink to this headline">¶</a></h2>
 <dl class="class">
 <dt id="arcgis.apps.workforce.Worker">
-<em class="property">class </em><code class="descclassname">arcgis.apps.workforce.</code><code class="descname">Worker</code><span class="sig-paren">(</span><em>project</em>, <em>feature=None</em>, <em>geometry=None</em>, <em>contact_number=None</em>, <em>name=None</em>, <em>notes=None</em>, <em>status=None</em>, <em>title=None</em>, <em>user_id=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.apps.workforce.Worker" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descclassname">arcgis.apps.workforce.</code><code class="descname">Worker</code><span class="sig-paren">(</span><em>project</em>, <em>feature=None</em>, <em>geometry=None</em>, <em>contact_number=None</em>, <em>name=None</em>, <em>notes=None</em>, <em>status='not_working'</em>, <em>title=None</em>, <em>user_id=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.apps.workforce.Worker" title="Permalink to this definition">¶</a></dt>
 <dd><p>Represents a worker in a Workforce Project</p>
 <table border="1" class="docutils">
 <colgroup>
@@ -2064,7 +2075,7 @@ internal usage. If supplied, other parameters are ignored.</td>
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'./',
-            VERSION:'1.5.0',
+            VERSION:'1.5.1',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  true,

@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>arcgis.raster.orthomapping module &mdash; arcgis 1.5.0 documentation</title>
+  <title>arcgis.raster.orthomapping module &mdash; arcgis 1.5.1 documentation</title>
   
 
   
@@ -37,7 +37,7 @@
         <link rel="index" title="Index"
               href="genindex.html"/>
         <link rel="search" title="Search" href="search.html"/>
-    <link rel="top" title="arcgis 1.5.0 documentation" href="index.html"/>
+    <link rel="top" title="arcgis 1.5.1 documentation" href="index.html"/>
         <link rel="up" title="arcgis.raster module" href="arcgis.raster.toc.html"/>
         <link rel="next" title="arcgis.network module" href="arcgis.network.toc.html"/>
         <link rel="prev" title="arcgis.raster.functions.gbl module" href="arcgis.raster.functions.gbl.html"/>
@@ -78,7 +78,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             
             
               <div class="version">
-                1.5.0
+                1.5.1
               </div>
             
           
@@ -190,6 +190,10 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <li class="toctree-l2"><a class="reference internal" href="arcgis.env.html#return-m">return_m</a></li>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.env.html#verbose">verbose</a></li>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.env.html#default-aggregation-styles">default_aggregation_styles</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.env.html#snap-raster">snap_raster</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.env.html#cell-size">cell_size</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.env.html#mask">mask</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.env.html#parallel-processing-factor">parallel_processing_factor</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="arcgis.features.toc.html">arcgis.features module</a><ul>
@@ -284,6 +288,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <li class="toctree-l4"><a class="reference internal" href="arcgis.features.managers.html#syncmanager">SyncManager</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.features.managers.html#featurelayercollectionmanager">FeatureLayerCollectionManager</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.features.managers.html#featurelayermanager">FeatureLayerManager</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.features.managers.html#versionmanager">VersionManager</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.features.managers.html#version">Version</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.features.managers.html#parcelfabricmanager">ParcelFabricManager</a></li>
 </ul>
 </li>
 </ul>
@@ -394,9 +401,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#minus">minus</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#ml-classify">ml_classify</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#mod">mod</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#mode">mode</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#msavi">msavi</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#multiply">MULTIPLY</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#ndvi">ndvi</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#negate">negate</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#not-equal">not_equal</a></li>
@@ -523,6 +528,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <li class="toctree-l4"><a class="reference internal" href="arcgis.geoanalytics.manage_data.html#calculate-fields">calculate_fields</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.geoanalytics.manage_data.html#clip-layer">clip_layer</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.geoanalytics.manage_data.html#copy-to-data-store">copy_to_data_store</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.geoanalytics.manage_data.html#dissolve-boundaries">dissolve_boundaries</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.geoanalytics.manage_data.html#merge-layers">merge_layers</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.geoanalytics.manage_data.html#overlay-data">overlay_data</a></li>
 </ul>
 </li>
@@ -625,6 +632,10 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <li class="toctree-l2"><a class="reference internal" href="arcgis.mapping.html#scenelayer">SceneLayer</a></li>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.mapping.html#export-map">export_map</a></li>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.mapping.html#get-layout-templates">get_layout_templates</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.mapping.html#module-arcgis.mapping.symbol">Symbology</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.mapping.html#renderers">Renderers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.mapping.html#generate-renderer">generate_renderer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.mapping.html#visual-variables">visual_variables</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="arcgis.realtime.html">arcgis.realtime module</a><ul>
@@ -854,13 +865,15 @@ done on the image collection.</p>
 <td><p class="first">Required dictionary. The state to set on the image_collection</p>
 <p>This a dictionary of states that should be set on the image collection
 The new states that can be set on the image collection are:
-adjustment, dem, gcp, seamlines, colorcorrection</p>
+blockadjustment, dem, gcp, seamlines, colorcorrection, adjust_index, imagetype</p>
 <p>Example:
-{“adjustment”: “raw”,</p>
+{“blockadjustment”: “raw”,</p>
 <blockquote class="last">
 <div>“dem”: “Dense_Natual_Neighbor”,
 “seamlines”:”VORONOI”,
-“colorcorrection”:”SingleColor”}</div></blockquote>
+“colorcorrection”:”SingleColor”,
+“imagetype”: “UAV/UAS”,
+“adjust_index”: 0}</div></blockquote>
 </td>
 </tr>
 <tr class="row-even"><td>gis</td>
@@ -921,8 +934,9 @@ adjustment, dem, gcp, seamlines, colorcorrection</p>
 <dl class="method">
 <dt id="arcgis.raster.orthomapping.match_control_points">
 <code class="descclassname">orthomapping.</code><code class="descname">match_control_points</code><span class="sig-paren">(</span><em>image_collection</em>, <em>control_points</em>, <em>similarity=None</em>, <em>context=None</em>, <em>gis=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.raster.orthomapping.match_control_points" title="Permalink to this definition">¶</a></dt>
-<dd><p>Compute the matching tie points, given collection of ground control points, 
-and at least one of the ground control points has matching tie points.</p>
+<dd><p>If each of the ground control point has at least one matching tie point. 
+Then, this function will help find all remaining tie points on all other image items of the 
+image collection.</p>
 <table border="1" class="docutils">
 <colgroup>
 <col width="15%" />
@@ -939,49 +953,72 @@ and at least one of the ground control points has matching tie points.</p>
 </td>
 </tr>
 <tr class="row-odd"><td>control_points</td>
-<td><p class="first">Required list. a list of control point objects.
-A control point object is a dictionary with key-value
-pairs as described below:</p>
+<td><p class="first">Required, a list of control point sets objects.</p>
 <p>The schema of control points follows the schema
-of the mosaic dataset control point table. The following are
-required when defining control points:</p>
-<ul>
-<li><p class="first">The control points must contain a Point geometry object</p>
-</li>
-<li><p class="first">There must be one attribute set, describing the attributes of the control point.</p>
-<p>The control point attributes is a dictionary that must contain the following</p>
-<p>key-value pairs:</p>
-<p>– imageID (int) - Image identification using the ObjectID from the mosaic dataset footprint table.</p>
-<p>– pointID (int) - The ID of the point within the control point table</p>
+of the mosaic dataset control point table.</p>
+<p>The control point object should contain the point geometry, pointID, type, status and the
+imagePoints. (the imagePoints attribute inside the control points object lists the imageIDs)</p>
+<p>– pointID (int) - The ID of the point within the control point table.</p>
 <dl class="docutils">
 <dt>– type (int)    - The type of the control point as determined by its numeric value</dt>
-<dd><p class="first last">1: Tie Point
+<dd>1: Tie Point
 2: Ground Control Point.
-3: Check Point</p>
-</dd>
+3: Check Point</dd>
 <dt>– status (int)  - The status of the point. A value of 0 indicates that the point will</dt>
-<dd><p class="first last">not be used in computation. A non-zero value indicates otherwise.</p>
-</dd>
+<dd>not be used in computation. A non-zero value indicates otherwise.</dd>
 </dl>
-</li>
-</ul>
+<p>– imageID (int) - Image identification using the ObjectID from the mosaic dataset footprint table.</p>
 <p>Example:
-{“geometry”: {</p>
-<blockquote>
-<div><p>“x”:-118.15,”y”:33.80,”z”:10.0,
-“spatialReference”:{“wkid”:4326}},
-“attributes”: {</p>
-<blockquote>
-<div><blockquote>
-<div>“imageID”: 22,
-“pointID”: 2,
+[{
+“status”: 1,
 “type”: 2,
-“status”: 1,</div></blockquote>
-<p>},</p>
-</div></blockquote>
-</div></blockquote>
-<p class="last">&lt;more points&gt;
-}</p>
+“x”: -117.0926538,
+“y”: 34.00704253,
+“z”: 634.2175,
+“spatialReference”: {</p>
+<blockquote>
+<div>“wkid”: 4326</div></blockquote>
+<p>}, // default WGS84
+“imagePointSpatialReference”: {}, // default ICS
+“pointId”: 1,
+“xyAccuracy”: “0.008602325”,
+“zAccuracy”: “0.015”,
+“imagePoints”: [{</p>
+<blockquote>
+<div>“imageID”: 1,
+“x”: 2986.5435987557084,
+“y”: -2042.5193648409431,
+“u”: 3057.4580682832734,
+“v”: -1909.1506872159698</div></blockquote>
+<p>},
+{</p>
+<blockquote>
+<div>“imageID”: 2,
+“x”: 1838.2814361401108,
+“y”: -2594.5280063817972,
+“u”: 3059.4079724863363,
+“v”: -2961.292545463305</div></blockquote>
+<p>},
+{</p>
+<blockquote>
+<div>“imageID”: 12,
+“x”: 5332.855578204663,
+“y”: -2533.2805429751907,
+“u”: 614.2338676573158,
+“v”: -165.10836768947297</div></blockquote>
+<p>},
+{</p>
+<blockquote>
+<div>“imageID”: 13,
+“x”: 4932.0895715254455,
+“y”: -1833.8401744114287,
+“u”: 616.9396928182223,
+“v”: -1243.1445126959693</div></blockquote>
+<p class="last">}]
+},
+…
+…
+]</p>
 </td>
 </tr>
 <tr class="row-even"><td>similarity</td>
@@ -1170,11 +1207,10 @@ It can be a portal Item or an image service URL or a URI</td>
 <tr class="row-even"><td>image_location_accuracy</td>
 <td><p class="first">Optional string. This option allows users to specify the location accuracy of the
 imagery.
-VERYLOW, LOW, MEDIUM, HIGH
-LOW-Images have a large shift and a large rotation (&gt; 5 degrees).</p>
-<blockquote>
-<div>The SIFT algorithm will be used in the point matching computation.</div></blockquote>
+VERYLOW, LOW, MEDIUM, HIGH</p>
 <dl class="docutils">
+<dt>LOW-Images have a large shift and a large rotation (&gt; 5 degrees).</dt>
+<dd>The SIFT algorithm will be used in the point matching computation.</dd>
 <dt>MEDIUM-Images have a medium shift and a small rotation (&lt;5 degrees).</dt>
 <dd>The Harris algorithm will be used in the point matching computation.</dd>
 <dt>HIGH-Images have a small shift and a small rotation.</dt>
@@ -1291,8 +1327,8 @@ Example:
 <dt id="arcgis.raster.orthomapping.edit_control_points">
 <code class="descclassname">orthomapping.</code><code class="descname">edit_control_points</code><span class="sig-paren">(</span><em>image_collection</em>, <em>control_points</em>, <em>gis=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.raster.orthomapping.edit_control_points" title="Permalink to this definition">¶</a></dt>
 <dd><p>This service can be used to append additional ground control point sets to
-the image collection’s control points. A complete ground control point (GCP)
-set should have one ground control point and multiple (more than 3) tie points.
+the image collection’s control points. It is recommended that a ground control point (GCP) set 
+should contain one ground control point and multiple tie points. 
 The service tool can also be used to edit tie point sets. 
 The input control points dictionary will always replace the points in the tie points
 table if the point IDs already exist.</p>
@@ -1311,51 +1347,72 @@ The image_collection can be a portal Item or an image service URL or a URI
 The image_collection must exist.</td>
 </tr>
 <tr class="row-odd"><td>control_points</td>
-<td><p class="first">Required, a list of control point objects.
-A control point object is a dictionary with key-value
-pairs as described below:</p>
+<td><p class="first">Required, a list of control point sets objects.</p>
 <p>The schema of control points follows the schema
-of the mosaic dataset control point table. The following are
-required when defining control points:</p>
-<ul class="simple">
-<li>The control points must contain a Point geometry object</li>
-<li>There must be one attribute set, describing the attributes of the control point.</li>
-</ul>
-<p>The control point attributes is a dictionary that must contain the following
-key-value pairs:</p>
-<p>– imageID (int) - Image identification using the ObjectID from the mosaic dataset footprint table.</p>
-<p>– pointID (int) - The ID of the point within the control point table</p>
+of the mosaic dataset control point table.</p>
+<p>The control point object should contain the point geometry, pointID, type, status and the
+imagePoints. (the imagePoints attribute inside the control points object lists the imageIDs)</p>
+<p>– pointID (int) - The ID of the point within the control point table.</p>
 <dl class="docutils">
 <dt>– type (int)    - The type of the control point as determined by its numeric value</dt>
-<dd><blockquote class="first">
-<div>1: Tie Point
+<dd>1: Tie Point
 2: Ground Control Point.
-3: Check Point</div></blockquote>
-<dl class="last docutils">
+3: Check Point</dd>
 <dt>– status (int)  - The status of the point. A value of 0 indicates that the point will</dt>
 <dd>not be used in computation. A non-zero value indicates otherwise.</dd>
 </dl>
-</dd>
-</dl>
+<p>– imageID (int) - Image identification using the ObjectID from the mosaic dataset footprint table.</p>
 <p>Example:
-{“geometry”: {</p>
-<blockquote>
-<div><blockquote>
-<div><p>“x”:-118.15,”y”:33.80,”z”:10.0,
-“spatialReference”:{“wkid”:4326}},
-“attributes”: {</p>
-<blockquote>
-<div><blockquote>
-<div>“imageID”: 22,
-“pointID”: 2,
+[{
+“status”: 1,
 “type”: 2,
-“status”: 1,</div></blockquote>
-<p>},</p>
-</div></blockquote>
-</div></blockquote>
-<p>&lt;more points&gt;</p>
-</div></blockquote>
-<p class="last">}</p>
+“x”: -117.0926538,
+“y”: 34.00704253,
+“z”: 634.2175,
+“spatialReference”: {</p>
+<blockquote>
+<div>“wkid”: 4326</div></blockquote>
+<p>}, // default WGS84
+“imagePointSpatialReference”: {}, // default ICS
+“pointId”: 1,
+“xyAccuracy”: “0.008602325”,
+“zAccuracy”: “0.015”,
+“imagePoints”: [{</p>
+<blockquote>
+<div>“imageID”: 1,
+“x”: 2986.5435987557084,
+“y”: -2042.5193648409431,
+“u”: 3057.4580682832734,
+“v”: -1909.1506872159698</div></blockquote>
+<p>},
+{</p>
+<blockquote>
+<div>“imageID”: 2,
+“x”: 1838.2814361401108,
+“y”: -2594.5280063817972,
+“u”: 3059.4079724863363,
+“v”: -2961.292545463305</div></blockquote>
+<p>},
+{</p>
+<blockquote>
+<div>“imageID”: 12,
+“x”: 5332.855578204663,
+“y”: -2533.2805429751907,
+“u”: 614.2338676573158,
+“v”: -165.10836768947297</div></blockquote>
+<p>},
+{</p>
+<blockquote>
+<div>“imageID”: 13,
+“x”: 4932.0895715254455,
+“y”: -1833.8401744114287,
+“u”: 616.9396928182223,
+“v”: -1243.1445126959693</div></blockquote>
+<p class="last">}]
+},
+…
+…
+]</p>
 </td>
 </tr>
 <tr class="row-even"><td>gis</td>
@@ -1639,8 +1696,7 @@ database.</td>
 <dt id="arcgis.raster.orthomapping.query_control_points">
 <code class="descclassname">orthomapping.</code><code class="descname">query_control_points</code><span class="sig-paren">(</span><em>image_collection</em>, <em>query</em>, <em>gis=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.raster.orthomapping.query_control_points" title="Permalink to this definition">¶</a></dt>
 <dd><p>Query for control points in an image collection. It allows users to query 
-certain control points from image collection’s control point table with 
-a SQL query (or a feature/image service in the future).</p>
+among certain control point sets that has ground control points inside.</p>
 <table border="1" class="docutils">
 <colgroup>
 <col width="17%" />
@@ -1778,7 +1834,7 @@ longitude : longitude value in decimal degress that will be used to compute UTM 
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'./',
-            VERSION:'1.5.0',
+            VERSION:'1.5.1',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  true,

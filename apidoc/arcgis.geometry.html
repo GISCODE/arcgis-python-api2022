@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>arcgis.geometry module &mdash; arcgis 1.5.0 documentation</title>
+  <title>arcgis.geometry module &mdash; arcgis 1.5.1 documentation</title>
   
 
   
@@ -37,7 +37,7 @@
         <link rel="index" title="Index"
               href="genindex.html"/>
         <link rel="search" title="Search" href="search.html"/>
-    <link rel="top" title="arcgis 1.5.0 documentation" href="index.html"/>
+    <link rel="top" title="arcgis 1.5.1 documentation" href="index.html"/>
         <link rel="next" title="arcgis.geometry.filters module" href="arcgis.geometry.filters.html"/>
         <link rel="prev" title="arcgis.geoenrichment module" href="arcgis.geoenrichment.html"/>
 <!-- This code block is inserted close near the <head> tag. See http://bit.ly/2BHUQzB -->
@@ -77,7 +77,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             
             
               <div class="version">
-                1.5.0
+                1.5.1
               </div>
             
           
@@ -189,6 +189,10 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <li class="toctree-l2"><a class="reference internal" href="arcgis.env.html#return-m">return_m</a></li>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.env.html#verbose">verbose</a></li>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.env.html#default-aggregation-styles">default_aggregation_styles</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.env.html#snap-raster">snap_raster</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.env.html#cell-size">cell_size</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.env.html#mask">mask</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.env.html#parallel-processing-factor">parallel_processing_factor</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="arcgis.features.toc.html">arcgis.features module</a><ul>
@@ -283,6 +287,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <li class="toctree-l4"><a class="reference internal" href="arcgis.features.managers.html#syncmanager">SyncManager</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.features.managers.html#featurelayercollectionmanager">FeatureLayerCollectionManager</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.features.managers.html#featurelayermanager">FeatureLayerManager</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.features.managers.html#versionmanager">VersionManager</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.features.managers.html#version">Version</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.features.managers.html#parcelfabricmanager">ParcelFabricManager</a></li>
 </ul>
 </li>
 </ul>
@@ -393,9 +400,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#minus">minus</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#ml-classify">ml_classify</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#mod">mod</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#mode">mode</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#msavi">msavi</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#multiply">MULTIPLY</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#ndvi">ndvi</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#negate">negate</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#not-equal">not_equal</a></li>
@@ -522,6 +527,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <li class="toctree-l4"><a class="reference internal" href="arcgis.geoanalytics.manage_data.html#calculate-fields">calculate_fields</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.geoanalytics.manage_data.html#clip-layer">clip_layer</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.geoanalytics.manage_data.html#copy-to-data-store">copy_to_data_store</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.geoanalytics.manage_data.html#dissolve-boundaries">dissolve_boundaries</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.geoanalytics.manage_data.html#merge-layers">merge_layers</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.geoanalytics.manage_data.html#overlay-data">overlay_data</a></li>
 </ul>
 </li>
@@ -624,6 +631,10 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <li class="toctree-l2"><a class="reference internal" href="arcgis.mapping.html#scenelayer">SceneLayer</a></li>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.mapping.html#export-map">export_map</a></li>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.mapping.html#get-layout-templates">get_layout_templates</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.mapping.html#module-arcgis.mapping.symbol">Symbology</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.mapping.html#renderers">Renderers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.mapping.html#generate-renderer">generate_renderer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.mapping.html#visual-variables">visual_variables</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="arcgis.realtime.html">arcgis.realtime module</a><ul>
@@ -794,7 +805,7 @@ geometry type and returns the correct type as the example below demonstrates:</p
 <h2>Point<a class="headerlink" href="#point" title="Permalink to this headline">¶</a></h2>
 <dl class="class">
 <dt id="arcgis.geometry.Point">
-<em class="property">class </em><code class="descclassname">arcgis.geometry.</code><code class="descname">Point</code><span class="sig-paren">(</span><em>iterable=None</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.geometry.Point" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descclassname">arcgis.geometry.</code><code class="descname">Point</code><span class="sig-paren">(</span><em>iterable=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.geometry.Point" title="Permalink to this definition">¶</a></dt>
 <dd><p>A point contains x and y fields along with a spatialReference field. A
 point can also contain m and z fields. A point is empty when its x
 field is present and has the value null or the string “NaN”. An empty
@@ -803,6 +814,19 @@ point has no location in space.</p>
 <dt id="arcgis.geometry.Point.coordinates">
 <code class="descname">coordinates</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.geometry.Point.coordinates" title="Permalink to this definition">¶</a></dt>
 <dd><p>returns the coordinates as a np.array</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="arcgis.geometry.Point.svg">
+<code class="descname">svg</code><span class="sig-paren">(</span><em>scale_factor=1</em>, <em>fill_color=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.geometry.Point.svg" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns SVG circle element for the Point geometry.</p>
+<dl class="docutils">
+<dt>scale_factor <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
+<dd>Multiplication factor for the SVG circle diameter.  Default is 1.</dd>
+<dt>fill_color <span class="classifier-delimiter">:</span> <span class="classifier">str, optional</span></dt>
+<dd>Hex string for fill color. Default is to use “#66cc99” if
+geometry is valid, and “#ff3333” if invalid.</dd>
+</dl>
 </dd></dl>
 
 <dl class="attribute">
@@ -840,6 +864,19 @@ are ignored.</p>
 <dd><p>returns the coordinates as a np.array</p>
 </dd></dl>
 
+<dl class="method">
+<dt id="arcgis.geometry.MultiPoint.svg">
+<code class="descname">svg</code><span class="sig-paren">(</span><em>scale_factor=1.0</em>, <em>fill_color=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.geometry.MultiPoint.svg" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns a group of SVG circle elements for the MultiPoint geometry.</p>
+<dl class="docutils">
+<dt>scale_factor <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
+<dd>Multiplication factor for the SVG circle diameters.  Default is 1.</dd>
+<dt>fill_color <span class="classifier-delimiter">:</span> <span class="classifier">str, optional</span></dt>
+<dd>Hex string for fill color. Default is to use “#66cc99” if
+geometry is valid, and “#ff3333” if invalid.</dd>
+</dl>
+</dd></dl>
+
 <dl class="attribute">
 <dt id="arcgis.geometry.MultiPoint.type">
 <code class="descname">type</code><a class="headerlink" href="#arcgis.geometry.MultiPoint.type" title="Permalink to this definition">¶</a></dt>
@@ -868,6 +905,19 @@ stream for polylines/polygons is a syntax error.</p>
 <dt id="arcgis.geometry.Polyline.coordinates">
 <code class="descname">coordinates</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.geometry.Polyline.coordinates" title="Permalink to this definition">¶</a></dt>
 <dd><p>returns the coordinates as a np.array</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="arcgis.geometry.Polyline.svg">
+<code class="descname">svg</code><span class="sig-paren">(</span><em>scale_factor=1</em>, <em>stroke_color=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.geometry.Polyline.svg" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns SVG polyline element for the LineString geometry.</p>
+<dl class="docutils">
+<dt>scale_factor <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
+<dd>Multiplication factor for the SVG stroke-width.  Default is 1.</dd>
+<dt>stroke_color <span class="classifier-delimiter">:</span> <span class="classifier">str, optional</span></dt>
+<dd>Hex string for stroke color. Default is to use “#66cc99” if
+geometry is valid, and “#ff3333” if invalid.</dd>
+</dl>
 </dd></dl>
 
 <dl class="attribute">
@@ -904,6 +954,11 @@ ring orientation is not as described above.</p>
 <code class="descname">coordinates</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.geometry.Polygon.coordinates" title="Permalink to this definition">¶</a></dt>
 <dd><p>returns the coordinates as a np.array</p>
 </dd></dl>
+
+<dl class="method">
+<dt id="arcgis.geometry.Polygon.svg">
+<code class="descname">svg</code><span class="sig-paren">(</span><em>scale_factor=1</em>, <em>fill_color=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.geometry.Polygon.svg" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
 
 <dl class="attribute">
 <dt id="arcgis.geometry.Polygon.type">
@@ -959,6 +1014,11 @@ or a “NaN” string.</p>
 <dd><p>returns the envelope as a Polygon geometry</p>
 </dd></dl>
 
+<dl class="method">
+<dt id="arcgis.geometry.Envelope.svg">
+<code class="descname">svg</code><span class="sig-paren">(</span><em>scale_factor=1</em>, <em>fill_color=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.geometry.Envelope.svg" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
 <dl class="attribute">
 <dt id="arcgis.geometry.Envelope.type">
 <code class="descname">type</code><a class="headerlink" href="#arcgis.geometry.Envelope.type" title="Permalink to this definition">¶</a></dt>
@@ -1011,6 +1071,12 @@ Starting at 10.3, Image Service supports image coordinate systems.</p>
 <dt id="arcgis.geometry.SpatialReference.as_arcpy">
 <code class="descname">as_arcpy</code><a class="headerlink" href="#arcgis.geometry.SpatialReference.as_arcpy" title="Permalink to this definition">¶</a></dt>
 <dd><p>returns the class as an arcpy SpatialReference object</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="arcgis.geometry.SpatialReference.svg">
+<code class="descname">svg</code><span class="sig-paren">(</span><em>scale_factor=1</em>, <em>fill_color=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.geometry.SpatialReference.svg" title="Permalink to this definition">¶</a></dt>
+<dd><p>represents the SVG of the object</p>
 </dd></dl>
 
 <dl class="attribute">
@@ -1151,8 +1217,7 @@ The area is in the units of the spatial reference.</p>
 <dl class="attribute">
 <dt id="arcgis.geometry.Geometry.as_arcpy">
 <code class="descname">as_arcpy</code><a class="headerlink" href="#arcgis.geometry.Geometry.as_arcpy" title="Permalink to this definition">¶</a></dt>
-<dd><p>returns the arcpy.Geometry object</p>
-</dd></dl>
+<dd></dd></dl>
 
 <dl class="attribute">
 <dt id="arcgis.geometry.Geometry.as_shapely">
@@ -1569,6 +1634,28 @@ a 2D comparison only; M and Z values are ignored.</p>
 </tr>
 </tbody>
 </table>
+</dd></dl>
+
+<dl class="classmethod">
+<dt id="arcgis.geometry.Geometry.from_shapely">
+<em class="property">classmethod </em><code class="descname">from_shapely</code><span class="sig-paren">(</span><em>shapely_geometry</em>, <em>spatial_reference=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.geometry.Geometry.from_shapely" title="Permalink to this definition">¶</a></dt>
+<dd><p>Creates a Python API Geometry object from a Shapely geometry object.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">arcgis.geometry.Geometry</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="c1"># Usage Example: importing shapely geometry object and setting spatial reference to WGS84</span>
+
+<span class="n">Geometry</span><span class="o">.</span><span class="n">from_shapely</span><span class="p">(</span>
+    <span class="n">shapely_geometry</span><span class="o">=</span><span class="n">shapely_geometry_object</span><span class="p">,</span>
+    <span class="n">spatial_reference</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;wkid&#39;</span><span class="p">:</span> <span class="mi">4326</span><span class="p">}</span>
+<span class="p">)</span>
+</pre></div>
+</div>
 </dd></dl>
 
 <dl class="method">
@@ -2284,37 +2371,31 @@ creates a new object</td>
 <dd><p>Returns a Polyline between start and end measures. Similar to
 Polyline.positionAlongLine but will return a polyline segment between
 two points on the polyline instead of a single point.</p>
-<dl class="docutils">
-<dt>Parameters:</dt>
-<dd><table class="first last docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
+<table border="1" class="docutils">
+<colgroup>
+<col width="18%" />
+<col width="82%" />
+</colgroup>
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">start_measure:</th><td class="field-body"><ul class="first simple">
-<li>The starting distance from the beginning of the</li>
-</ul>
-<p>line.</p>
-</td>
+<tr class="row-odd"><td><strong>Argument</strong></td>
+<td><strong>Description</strong></td>
 </tr>
-<tr class="field-even field"><th class="field-name">end_measure:</th><td class="field-body"><ul class="first simple">
-<li>The ending distance from the beginning of the</li>
-</ul>
-<p>line.</p>
-</td>
+<tr class="row-even"><td>start_measure</td>
+<td>Required Float. The starting distance from the beginning of the line.</td>
 </tr>
-<tr class="field-odd field"><th class="field-name">use_percentage:</th><td class="field-body"><ul class="first simple">
-<li>The start and end measures may be specified as</li>
-</ul>
-<p class="last">fixed units or as a ratio. If True, start_measure and end_measure
-are used as a percentage; if False, start_measure and end_measure
-are used as a distance. For percentages, the measures should be
-expressed as a double from 0.0 (0 percent) to 1.0 (100 percent).</p>
-</td>
+<tr class="row-odd"><td>end_measure</td>
+<td>Required Float. The ending distance from the beginning of the line.</td>
+</tr>
+<tr class="row-even"><td>use_percentage</td>
+<td>Optional Boolean. The start and end measures may be specified as
+fixed units or as a ratio.
+If True, start_measure and end_measure are used as a percentage; if
+False, start_measure and end_measure are used as a distance. For
+percentages, the measures should be expressed as a double from 0.0
+(0 percent) to 1.0 (100 percent).</td>
 </tr>
 </tbody>
 </table>
-</dd>
-</dl>
 </dd></dl>
 
 <dl class="method">
@@ -3151,7 +3232,7 @@ geometries. The default is false.</dd>
 <h2>project<a class="headerlink" href="#project" title="Permalink to this headline">¶</a></h2>
 <dl class="method">
 <dt id="arcgis.geometry.project">
-<code class="descclassname">geometry.</code><code class="descname">project</code><span class="sig-paren">(</span><em>geometries</em>, <em>in_sr</em>, <em>out_sr</em>, <em>transformation=''</em>, <em>transform_foward=False</em>, <em>gis=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.geometry.project" title="Permalink to this definition">¶</a></dt>
+<code class="descclassname">geometry.</code><code class="descname">project</code><span class="sig-paren">(</span><em>geometries</em>, <em>in_sr</em>, <em>out_sr</em>, <em>transformation=''</em>, <em>transform_forward=False</em>, <em>gis=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.geometry.project" title="Permalink to this definition">¶</a></dt>
 <dd><p>The project function is performed on a geometry service resource.
 This function projects an array of input geometries from the input
 spatial reference to the output spatial reference.</p>
@@ -3458,7 +3539,7 @@ spatial_ref - The well-known ID of the spatial reference or a spatial</p>
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'./',
-            VERSION:'1.5.0',
+            VERSION:'1.5.1',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  true,

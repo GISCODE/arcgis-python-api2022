@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>arcgis.raster.analytics module &mdash; arcgis 1.5.0 documentation</title>
+  <title>arcgis.raster.analytics module &mdash; arcgis 1.5.1 documentation</title>
   
 
   
@@ -37,7 +37,7 @@
         <link rel="index" title="Index"
               href="genindex.html"/>
         <link rel="search" title="Search" href="search.html"/>
-    <link rel="top" title="arcgis 1.5.0 documentation" href="index.html"/>
+    <link rel="top" title="arcgis 1.5.1 documentation" href="index.html"/>
         <link rel="up" title="arcgis.raster module" href="arcgis.raster.toc.html"/>
         <link rel="next" title="arcgis.raster.functions module" href="arcgis.raster.functions.html"/>
         <link rel="prev" title="arcgis.raster module" href="arcgis.raster.toc.html"/>
@@ -78,7 +78,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             
             
               <div class="version">
-                1.5.0
+                1.5.1
               </div>
             
           
@@ -190,6 +190,10 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <li class="toctree-l2"><a class="reference internal" href="arcgis.env.html#return-m">return_m</a></li>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.env.html#verbose">verbose</a></li>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.env.html#default-aggregation-styles">default_aggregation_styles</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.env.html#snap-raster">snap_raster</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.env.html#cell-size">cell_size</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.env.html#mask">mask</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.env.html#parallel-processing-factor">parallel_processing_factor</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="arcgis.features.toc.html">arcgis.features module</a><ul>
@@ -284,6 +288,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <li class="toctree-l4"><a class="reference internal" href="arcgis.features.managers.html#syncmanager">SyncManager</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.features.managers.html#featurelayercollectionmanager">FeatureLayerCollectionManager</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.features.managers.html#featurelayermanager">FeatureLayerManager</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.features.managers.html#versionmanager">VersionManager</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.features.managers.html#version">Version</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.features.managers.html#parcelfabricmanager">ParcelFabricManager</a></li>
 </ul>
 </li>
 </ul>
@@ -394,9 +401,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#minus">minus</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#ml-classify">ml_classify</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#mod">mod</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#mode">mode</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#msavi">msavi</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#multiply">MULTIPLY</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#ndvi">ndvi</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#negate">negate</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#not-equal">not_equal</a></li>
@@ -523,6 +528,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <li class="toctree-l4"><a class="reference internal" href="arcgis.geoanalytics.manage_data.html#calculate-fields">calculate_fields</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.geoanalytics.manage_data.html#clip-layer">clip_layer</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.geoanalytics.manage_data.html#copy-to-data-store">copy_to_data_store</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.geoanalytics.manage_data.html#dissolve-boundaries">dissolve_boundaries</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.geoanalytics.manage_data.html#merge-layers">merge_layers</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.geoanalytics.manage_data.html#overlay-data">overlay_data</a></li>
 </ul>
 </li>
@@ -625,6 +632,10 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <li class="toctree-l2"><a class="reference internal" href="arcgis.mapping.html#scenelayer">SceneLayer</a></li>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.mapping.html#export-map">export_map</a></li>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.mapping.html#get-layout-templates">get_layout_templates</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.mapping.html#module-arcgis.mapping.symbol">Symbology</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.mapping.html#renderers">Renderers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.mapping.html#generate-renderer">generate_renderer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.mapping.html#visual-variables">visual_variables</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="arcgis.realtime.html">arcgis.realtime module</a><ul>
@@ -1194,14 +1205,14 @@ input geometries.</p>
 <tr class="row-odd"><td>context</td>
 <td><dl class="first last docutils">
 <dt>Optional, The context parameter is used to provide additional input parameters</dt>
-<dd><p class="first">{“image_collection_properties”: {“imageCollectionType”:”Satellite”},”use_by_ref”:True}</p>
+<dd><p class="first">{“image_collection_properties”: {“imageCollectionType”:”Satellite”},”byref”:True}</p>
 <p>use image_collection_properties key to set value for imageCollectionType.
 Note: the “imageCollectionType” property is important for image collection that will later on be adjusted by orthomapping system service.
 Based on the image collection type, the orthomapping system service will choose different algorithm for adjustment.
 Therefore, if the image collection is created by reference, the requester should set this
 property based on the type of images in the image collection using the following keywords.
 If the imageCollectionType is not set, it defaults to “UAV/UAS”</p>
-<p class="last">If use_input_rasters_by_ref is set to True, the data will not be uploaded. If it is not set, the default is False</p>
+<p class="last">If byref is set to True, the data will not be uploaded. If it is not set, the default is False</p>
 </dd>
 </dl>
 </td>
@@ -1270,14 +1281,14 @@ controlled by specifying additional raster type arguments.</p>
 <tr class="row-even"><td>context</td>
 <td><dl class="first last docutils">
 <dt>Optional, The context parameter is used to provide additional input parameters</dt>
-<dd><p class="first">{“image_collection_properties”: {“imageCollectionType”:”Satellite”},”use_by_ref”:True}</p>
+<dd><p class="first">{“image_collection_properties”: {“imageCollectionType”:”Satellite”},”byref”:True}</p>
 <p>use image_collection_properties key to set value for imageCollectionType.
 Note: the “imageCollectionType” property is important for image collection that will later on be adjusted by orthomapping system service.
 Based on the image collection type, the orthomapping system service will choose different algorithm for adjustment.
 Therefore, if the image collection is created by reference, the requester should set this
 property based on the type of images in the image collection using the following keywords.
 If the imageCollectionType is not set, it defaults to “UAV/UAS”</p>
-<p class="last">If use_input_rasters_by_ref is set to True, the data will not be uploaded. If it is not set, the default is False</p>
+<p class="last">If byref is set to True, the data will not be uploaded. If it is not set, the default is False</p>
 </dd>
 </dl>
 </td>
@@ -1304,8 +1315,8 @@ If the imageCollectionType is not set, it defaults to “UAV/UAS”</p>
 <dt id="arcgis.raster.analytics.delete_image">
 <code class="descclassname">analytics.</code><code class="descname">delete_image</code><span class="sig-paren">(</span><em>image_collection</em>, <em>where</em>, <em>gis=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.raster.analytics.delete_image" title="Permalink to this definition">¶</a></dt>
 <dd><p>delete_image allows users to remove existing images from the image collection (mosaic dataset). 
-The function will not only delete the raster item in the mosaic dataset but also remove the 
-source image from the server.</p>
+The function will only delete the raster item in the mosaic dataset and will not remove the
+source image.</p>
 <table border="1" class="docutils">
 <colgroup>
 <col width="17%" />
@@ -1346,7 +1357,8 @@ to be deleted from the image collection</td>
 <dt id="arcgis.raster.analytics.delete_image_collection">
 <code class="descclassname">analytics.</code><code class="descname">delete_image_collection</code><span class="sig-paren">(</span><em>image_collection</em>, <em>gis=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.raster.analytics.delete_image_collection" title="Permalink to this definition">¶</a></dt>
 <dd><p>Delete the image collection. This service tool will delete the image collection
-image service, portal item and all the source image data it references to.</p>
+image service, that is, the portal-hosted image layer item. It will not delete 
+the source images that the image collection references.</p>
 <table border="1" class="docutils">
 <colgroup>
 <col width="17%" />
@@ -1425,7 +1437,7 @@ image service, portal item and all the source image data it references to.</p>
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'./',
-            VERSION:'1.5.0',
+            VERSION:'1.5.1',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  true,

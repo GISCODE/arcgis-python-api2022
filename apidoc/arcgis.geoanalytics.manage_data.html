@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>arcgis.geoanalytics.manage_data module &mdash; arcgis 1.5.0 documentation</title>
+  <title>arcgis.geoanalytics.manage_data module &mdash; arcgis 1.5.1 documentation</title>
   
 
   
@@ -37,7 +37,7 @@
         <link rel="index" title="Index"
               href="genindex.html"/>
         <link rel="search" title="Search" href="search.html"/>
-    <link rel="top" title="arcgis 1.5.0 documentation" href="index.html"/>
+    <link rel="top" title="arcgis 1.5.1 documentation" href="index.html"/>
         <link rel="up" title="arcgis.geoanalytics module" href="arcgis.geoanalytics.toc.html"/>
         <link rel="next" title="arcgis.geoanalytics.summarize_data module" href="arcgis.geoanalytics.summarize_data.html"/>
         <link rel="prev" title="arcgis.geoanalytics.find_locations module" href="arcgis.geoanalytics.find_locations.html"/>
@@ -78,7 +78,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             
             
               <div class="version">
-                1.5.0
+                1.5.1
               </div>
             
           
@@ -190,6 +190,10 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <li class="toctree-l2"><a class="reference internal" href="arcgis.env.html#return-m">return_m</a></li>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.env.html#verbose">verbose</a></li>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.env.html#default-aggregation-styles">default_aggregation_styles</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.env.html#snap-raster">snap_raster</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.env.html#cell-size">cell_size</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.env.html#mask">mask</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.env.html#parallel-processing-factor">parallel_processing_factor</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="arcgis.features.toc.html">arcgis.features module</a><ul>
@@ -284,6 +288,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <li class="toctree-l4"><a class="reference internal" href="arcgis.features.managers.html#syncmanager">SyncManager</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.features.managers.html#featurelayercollectionmanager">FeatureLayerCollectionManager</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.features.managers.html#featurelayermanager">FeatureLayerManager</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.features.managers.html#versionmanager">VersionManager</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.features.managers.html#version">Version</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.features.managers.html#parcelfabricmanager">ParcelFabricManager</a></li>
 </ul>
 </li>
 </ul>
@@ -394,9 +401,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#minus">minus</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#ml-classify">ml_classify</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#mod">mod</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#mode">mode</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#msavi">msavi</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#multiply">MULTIPLY</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#ndvi">ndvi</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#negate">negate</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#not-equal">not_equal</a></li>
@@ -523,6 +528,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <li class="toctree-l4"><a class="reference internal" href="#calculate-fields">calculate_fields</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#clip-layer">clip_layer</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#copy-to-data-store">copy_to_data_store</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#dissolve-boundaries">dissolve_boundaries</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#merge-layers">merge_layers</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#overlay-data">overlay_data</a></li>
 </ul>
 </li>
@@ -625,6 +632,10 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <li class="toctree-l2"><a class="reference internal" href="arcgis.mapping.html#scenelayer">SceneLayer</a></li>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.mapping.html#export-map">export_map</a></li>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.mapping.html#get-layout-templates">get_layout_templates</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.mapping.html#module-arcgis.mapping.symbol">Symbology</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.mapping.html#renderers">Renderers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.mapping.html#generate-renderer">generate_renderer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.mapping.html#visual-variables">visual_variables</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="arcgis.realtime.html">arcgis.realtime module</a><ul>
@@ -899,6 +910,194 @@ specified, the active GIS is used.</td>
 </dd></dl>
 
 </div>
+<div class="section" id="dissolve-boundaries">
+<h2>dissolve_boundaries<a class="headerlink" href="#dissolve-boundaries" title="Permalink to this headline">¶</a></h2>
+<dl class="method">
+<dt id="arcgis.geoanalytics.manage_data.dissolve_boundaries">
+<code class="descclassname">manage_data.</code><code class="descname">dissolve_boundaries</code><span class="sig-paren">(</span><em>input_layer</em>, <em>dissolve_fields=None</em>, <em>summary_fields=None</em>, <em>multipart=False</em>, <em>output_name=None</em>, <em>gis=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.geoanalytics.manage_data.dissolve_boundaries" title="Permalink to this definition">¶</a></dt>
+<dd><p>The Dissolve Boundaries task finds polygons that intersect or have the same field values and merges them together to form a single polygon.</p>
+<p>Examples:</p>
+<blockquote>
+<div>A city council wants to control liquor sales by refusing new licenses to stores within 1,000 feet of schools, libraries, and parks. After creating a 1,000-foot buffer around the schools, libraries, and parks, the buffered layers can be joined together and the boundaries can be dissolved to create a single layer of restricted areas.</div></blockquote>
+<p>Usage Notes:</p>
+<p>Only available at ArcGIS Enterprise 10.7 and later.</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="13%" />
+<col width="87%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><strong>Argument</strong></td>
+<td><strong>Description</strong></td>
+</tr>
+<tr class="row-even"><td>input_layer</td>
+<td>required FeatureLayer. The point, line or polygon features.</td>
+</tr>
+<tr class="row-odd"><td>dissolve_fields</td>
+<td>Optional string. A comma seperated list of strings for each
+field that you want to dissolve on.</td>
+</tr>
+<tr class="row-even"><td>summary_fields</td>
+<td><p class="first">Optional list. Calculate one or more statistics for the
+dissolved areas by using the summary_fields parameter. The
+input is a list of key/value pairs in the following format:</p>
+<blockquote>
+<div>[{“statisticType” : “&lt;stat&gt;”, “onStatisticField” : “&lt;field name&gt;”}]</div></blockquote>
+<p>Allows statistics are:</p>
+<blockquote>
+<div><ul class="simple">
+<li>Any (string fields only)</li>
+<li>Count</li>
+<li>Sum</li>
+<li>Minimum</li>
+<li>Maximum</li>
+<li>Average</li>
+<li>Variance</li>
+<li>Standard Deviation</li>
+</ul>
+</div></blockquote>
+<p>Example:</p>
+<blockquote class="last">
+<div><dl class="docutils">
+<dt>summary_fields = [{“statisticType” <span class="classifier-delimiter">:</span> <span class="classifier">“Sum”, “onStatisticField”</span> <span class="classifier-delimiter">:</span> <span class="classifier">“quadrat_area_km2”},</span></dt>
+<dd>{“statisticType” : “Mean”, “onStatisticField” : “soil_depth_cm”},
+{“statisticType” : “Any”, “onStatisticField” : “quadrat_desc”}]</dd>
+</dl>
+</div></blockquote>
+</td>
+</tr>
+<tr class="row-odd"><td>multipart</td>
+<td>Optional boolean. If True, the output service can contain
+multipart features. If False (default):, the output service
+will only contain single-part features, and individual features
+will be created for each part.</td>
+</tr>
+<tr class="row-even"><td>output_name</td>
+<td>optional string. The task will create a feature service of the results. You define the name of the service.</td>
+</tr>
+<tr class="row-odd"><td>gis</td>
+<td>optional GIS. The GIS object where the analysis will take place.</td>
+</tr>
+</tbody>
+</table>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">FeatureLayer</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+<div class="section" id="merge-layers">
+<h2>merge_layers<a class="headerlink" href="#merge-layers" title="Permalink to this headline">¶</a></h2>
+<dl class="method">
+<dt id="arcgis.geoanalytics.manage_data.merge_layers">
+<code class="descclassname">manage_data.</code><code class="descname">merge_layers</code><span class="sig-paren">(</span><em>input_layer</em>, <em>merge_layer</em>, <em>merge_attributes=None</em>, <em>output_name=None</em>, <em>gis=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.geoanalytics.manage_data.merge_layers" title="Permalink to this definition">¶</a></dt>
+<dd><p>The Merge Layers task combines two feature layers to create a single output layer. The tool
+requires that both layers have the same geometry type (tabular, point, line, or polygon). If
+time is enabled on one layer, the other must also be time enabled and have the same time type
+(instant or interval). The result will always contain all fields from the input layer. All
+fields from the merge layer will be included by default, or you can specify custom merge rules
+to define the resulting schema. For example:</p>
+<ul class="simple">
+<li>I have three layers for England, Wales, and Scotland and I want a single layer of Great
+Britain. I can use Merge Layers to combine the areas and maintain all fields from each area.</li>
+<li>I have two layers containing parcel information for contiguous townships. I want to join them
+together into a single layer, keeping only the fields that have the same name and type in the
+two layers.</li>
+</ul>
+<p>Only available at <strong>ArcGIS Enterprise 10.7</strong> and later.</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="3%" />
+<col width="97%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><strong>Argument</strong></td>
+<td><strong>Description</strong></td>
+</tr>
+<tr class="row-even"><td>input_layer</td>
+<td>Required FeatureLayer. The point, line or polygon features.</td>
+</tr>
+<tr class="row-odd"><td>merge_layer</td>
+<td>Required FeatureLayer. The point, line, or polygon features to
+merge with the input_layer. The merge_layer must contain the
+same geometry type (tabular, point, line, or polygon) and the
+same time type (none, instant, or interval) as the input_layer.
+All fields in the merge_layer will be included in the result
+layer by default or you can define merge_attributes to
+customize the resulting schema.</td>
+</tr>
+<tr class="row-even"><td>merge_attributes</td>
+<td><p class="first">Optional list. Defines how the fields in mergeLayer will be
+modified. By default, all fields from both inputs will be
+included in the output layer.</p>
+<p>If a field exists in one layer but not the other, the output
+layer will still contain the field. The output field will
+contain null values for the input features that did not have the
+field. For example, if the input_layer contains a field named
+TYPE but the merge_layer does not contain TYPE, the output will
+contain TYPE, but its values will be null for all the features
+copied from the merge_layer.</p>
+<p>You can control how fields in the merge_layer are written to the
+output layer using the following merge types that operate on a
+specified merge_layer field:</p>
+<ul class="simple">
+<li>Remove - The field in the merge_layer will be removed from the output layer.</li>
+<li>Rename - The field in the merge_layer will be renamed in the output layer. You cannot rename a field in the merge_layer to a field in the inputLayer. If you want to make field names equivalent, use Match.</li>
+<li>Match - A field in the merge_layer is made equivalent to a field in the input_layer specified by mergeValue. For example, the input_layer has a field named CODE and the merge_layer has a field named STATUS. You can match STATUS to CODE, and the output will contain the CODE field with values of the STATUS field used for features copied from the merge_layer. Type casting is supported (for example, double to integer, integer to string) except for string to numeric.</li>
+</ul>
+<p>REST web example:</p>
+<dl class="docutils">
+<dt>Syntax: This example matches Average_Sales to Mean_Sales,</dt>
+<dd>removesBonus, and renamesField4 to Errors.</dd>
+</dl>
+<p><a href="#id3"><span class="problematic" id="id4">``</span></a><a href="#id5"><span class="problematic" id="id6">`</span></a></p>
+<blockquote>
+<div><dl class="docutils">
+<dt>[{</dt>
+<dd>“mergeLayerField”: “Mean_Sales”,
+“mergeType”: “Match”,
+“mergeValue”: “Average_Sales”</dd>
+</dl>
+<p>},
+{</p>
+<blockquote>
+<div>“mergeLayerField”: “Bonus”,
+“mergeType”: “Remove”,</div></blockquote>
+<p>},
+{</p>
+<blockquote>
+<div>“mergeLayerField”: “Field4”,
+“mergeType”: “Rename”,
+“mergeValue”: “Errors”</div></blockquote>
+<p>}]</p>
+</div></blockquote>
+<p class="last"><a href="#id7"><span class="problematic" id="id8">``</span></a><a href="#id9"><span class="problematic" id="id10">`</span></a></p>
+</td>
+</tr>
+<tr class="row-odd"><td>output_name</td>
+<td>Optional string. The task will create a feature service of the results. You define the name of the service.</td>
+</tr>
+<tr class="row-even"><td>gis</td>
+<td>Optional GIS. The GIS object where the analysis will take place.</td>
+</tr>
+</tbody>
+</table>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">FeatureLayer</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
 <div class="section" id="overlay-data">
 <h2>overlay_data<a class="headerlink" href="#overlay-data" title="Permalink to this headline">¶</a></h2>
 <dl class="method">
@@ -995,7 +1194,7 @@ Values: intersect, erase</p>
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'./',
-            VERSION:'1.5.0',
+            VERSION:'1.5.1',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  true,
