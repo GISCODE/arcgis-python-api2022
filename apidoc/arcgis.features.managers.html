@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>arcgis.features.managers module &mdash; arcgis 1.5.0 documentation</title>
+  <title>arcgis.features.managers module &mdash; arcgis 1.5.1 documentation</title>
   
 
   
@@ -37,7 +37,7 @@
         <link rel="index" title="Index"
               href="genindex.html"/>
         <link rel="search" title="Search" href="search.html"/>
-    <link rel="top" title="arcgis 1.5.0 documentation" href="index.html"/>
+    <link rel="top" title="arcgis 1.5.1 documentation" href="index.html"/>
         <link rel="up" title="arcgis.features module" href="arcgis.features.toc.html"/>
         <link rel="next" title="arcgis.raster module" href="arcgis.raster.toc.html"/>
         <link rel="prev" title="arcgis.features.elevation module" href="arcgis.features.elevation.html"/>
@@ -78,7 +78,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             
             
               <div class="version">
-                1.5.0
+                1.5.1
               </div>
             
           
@@ -190,6 +190,10 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <li class="toctree-l2"><a class="reference internal" href="arcgis.env.html#return-m">return_m</a></li>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.env.html#verbose">verbose</a></li>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.env.html#default-aggregation-styles">default_aggregation_styles</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.env.html#snap-raster">snap_raster</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.env.html#cell-size">cell_size</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.env.html#mask">mask</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.env.html#parallel-processing-factor">parallel_processing_factor</a></li>
 </ul>
 </li>
 <li class="toctree-l1 current"><a class="reference internal" href="arcgis.features.toc.html">arcgis.features module</a><ul class="current">
@@ -284,6 +288,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <li class="toctree-l4"><a class="reference internal" href="#syncmanager">SyncManager</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#featurelayercollectionmanager">FeatureLayerCollectionManager</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#featurelayermanager">FeatureLayerManager</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#versionmanager">VersionManager</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#version">Version</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#parcelfabricmanager">ParcelFabricManager</a></li>
 </ul>
 </li>
 </ul>
@@ -394,9 +401,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#minus">minus</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#ml-classify">ml_classify</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#mod">mod</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#mode">mode</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#msavi">msavi</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#multiply">MULTIPLY</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#ndvi">ndvi</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#negate">negate</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#not-equal">not_equal</a></li>
@@ -523,6 +528,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <li class="toctree-l4"><a class="reference internal" href="arcgis.geoanalytics.manage_data.html#calculate-fields">calculate_fields</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.geoanalytics.manage_data.html#clip-layer">clip_layer</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.geoanalytics.manage_data.html#copy-to-data-store">copy_to_data_store</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.geoanalytics.manage_data.html#dissolve-boundaries">dissolve_boundaries</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.geoanalytics.manage_data.html#merge-layers">merge_layers</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.geoanalytics.manage_data.html#overlay-data">overlay_data</a></li>
 </ul>
 </li>
@@ -625,6 +632,10 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <li class="toctree-l2"><a class="reference internal" href="arcgis.mapping.html#scenelayer">SceneLayer</a></li>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.mapping.html#export-map">export_map</a></li>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.mapping.html#get-layout-templates">get_layout_templates</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.mapping.html#module-arcgis.mapping.symbol">Symbology</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.mapping.html#renderers">Renderers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.mapping.html#generate-renderer">generate_renderer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.mapping.html#visual-variables">visual_variables</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="arcgis.realtime.html">arcgis.realtime module</a><ul>
@@ -1180,28 +1191,19 @@ feature layer view with the public.</p>
 <td>Optional dict. Specify the extent of the view</td>
 </tr>
 <tr class="row-odd"><td>allow_schema_changes</td>
-<td><dl class="first last docutils">
-<dt>Optional bool. Default is True. Determines if a view can alter a</dt>
-<dd>service’s schema.</dd>
-</dl>
-</td>
+<td>Optional bool. Default is True. Determines if a view can alter a
+service’s schema.</td>
 </tr>
 <tr class="row-even"><td>updateable</td>
 <td>Optional bool. Default is True. Determines if view can update values</td>
 </tr>
 <tr class="row-odd"><td>capabilities</td>
-<td><dl class="first last docutils">
-<dt>Optional string. Specify capabilities as a comma separated string.</dt>
-<dd>For example “Query, Update, Delete”. Default is ‘Query’.</dd>
-</dl>
-</td>
+<td>Optional string. Specify capabilities as a comma separated string.
+For example “Query, Update, Delete”. Default is ‘Query’.</td>
 </tr>
 <tr class="row-even"><td>view_layers</td>
-<td><dl class="first last docutils">
-<dt>Optional list. Specify list of layers present in the FeatureLayerCollection</dt>
-<dd>that you want in the view.</dd>
-</dl>
-</td>
+<td>Optional list. Specify list of layers present in the FeatureLayerCollection
+that you want in the view.</td>
 </tr>
 </tbody>
 </table>
@@ -1442,6 +1444,1017 @@ individual feature service layer object.</dd>
 </dd></dl>
 
 </div>
+<div class="section" id="versionmanager">
+<h2>VersionManager<a class="headerlink" href="#versionmanager" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="arcgis.features._version.VersionManager">
+<em class="property">class </em><code class="descclassname">arcgis.features._version.</code><code class="descname">VersionManager</code><span class="sig-paren">(</span><em>url</em>, <em>gis</em>, <em>flc=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.features._version.VersionManager" title="Permalink to this definition">¶</a></dt>
+<dd><p>VersionManager allows users to manage the branch versioning for FeatureLayerCollection
+services. The Version Management Service is responsible for exposing the management
+capabilities necessary to support feature services that work with branch versioned
+datasets.</p>
+<p>See the following for more information: <a class="reference external" href="https://developers.arcgis.com/rest/services-reference/version-management-service.htm">https://developers.arcgis.com/rest/services-reference/version-management-service.htm</a></p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="18%" />
+<col width="82%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><strong>Argument</strong></td>
+<td><strong>Description</strong></td>
+</tr>
+<tr class="row-even"><td>url</td>
+<td>Required String.  The URI to the web resource.</td>
+</tr>
+<tr class="row-odd"><td>gis</td>
+<td>Required GIS. The enterprise connection to the Portal site.</td>
+</tr>
+<tr class="row-even"><td>flc</td>
+<td>Optional FeatureLayerCollection. This is the parent container that
+the branch versioning is enabled on.</td>
+</tr>
+</tbody>
+</table>
+<dl class="attribute">
+<dt id="arcgis.features._version.VersionManager.all">
+<code class="descname">all</code><a class="headerlink" href="#arcgis.features._version.VersionManager.all" title="Permalink to this definition">¶</a></dt>
+<dd><p>returns all visible versions on a service</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="arcgis.features._version.VersionManager.create">
+<code class="descname">create</code><span class="sig-paren">(</span><em>name</em>, <em>permission='public'</em>, <em>description=''</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.features._version.VersionManager.create" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create the named version off of DEFAULT. The version is associated
+with the specified feature service. During creation, the description
+and access (default is public) may be optionally set.</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="18%" />
+<col width="82%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><strong>Argument</strong></td>
+<td><strong>Description</strong></td>
+</tr>
+<tr class="row-even"><td>name</td>
+<td>Required String. The name of the version</td>
+</tr>
+<tr class="row-odd"><td>permission</td>
+<td><p class="first">Optional String. The access permissions of the new version. The
+default access permission is public.</p>
+<p class="last">Values: private, public, protected, or hidden</p>
+</td>
+</tr>
+<tr class="row-even"><td>description</td>
+<td>Optional String. The description of the new version</td>
+</tr>
+</tbody>
+</table>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">Boolean</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="arcgis.features._version.VersionManager.get">
+<code class="descname">get</code><span class="sig-paren">(</span><em>version</em>, <em>mode=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.features._version.VersionManager.get" title="Permalink to this definition">¶</a></dt>
+<dd><p>Finds and Locations a Version by it’s name</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="18%" />
+<col width="82%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><strong>Argument</strong></td>
+<td><strong>Description</strong></td>
+</tr>
+<tr class="row-even"><td>version</td>
+<td>Required String. This is the name of the version to locate.</td>
+</tr>
+<tr class="row-odd"><td>mode</td>
+<td><p class="first">Optional String. This allows users to get a version in a specific
+state of edit or read.  If None is provided (default) the version
+is created without entering a mode.</p>
+<p>Values:</p>
+<blockquote class="last">
+<div><ul class="simple">
+<li>edit - starts editting mode</li>
+<li>read - starts reading mode</li>
+<li>None - no mode is started.  This is default.</li>
+</ul>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="arcgis.features._version.VersionManager.locks">
+<code class="descname">locks</code><a class="headerlink" href="#arcgis.features._version.VersionManager.locks" title="Permalink to this definition">¶</a></dt>
+<dd><p>For the specified feature service, return the locks for the
+administrator or the owner of the versions that have locks.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="arcgis.features._version.VersionManager.properties">
+<code class="descname">properties</code><a class="headerlink" href="#arcgis.features._version.VersionManager.properties" title="Permalink to this definition">¶</a></dt>
+<dd><p>returns the service properties</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="arcgis.features._version.VersionManager.purge">
+<code class="descname">purge</code><span class="sig-paren">(</span><em>version</em>, <em>owner</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.features._version.VersionManager.purge" title="Permalink to this definition">¶</a></dt>
+<dd><p>Removes a lock from a version</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="18%" />
+<col width="82%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><strong>Argument</strong></td>
+<td><strong>Description</strong></td>
+</tr>
+<tr class="row-even"><td>version</td>
+<td>Required String. The name of the version that is locked.</td>
+</tr>
+<tr class="row-odd"><td>owner</td>
+<td>Required String. The owner of the lock.</td>
+</tr>
+</tbody>
+</table>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">Boolean</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="arcgis.features._version.VersionManager.search">
+<code class="descname">search</code><span class="sig-paren">(</span><em>owner=None</em>, <em>show_hidden=False</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.features._version.VersionManager.search" title="Permalink to this definition">¶</a></dt>
+<dd><p>For the specified feature service, return the info of all versions
+that the client has access to. If the client is the service owner
+(the user that published the service), all versions are accessible
+and will be returned.</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="18%" />
+<col width="82%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><strong>Argument</strong></td>
+<td><strong>Description</strong></td>
+</tr>
+<tr class="row-even"><td>owner</td>
+<td>Optional String. A filter the versions by the owner.</td>
+</tr>
+<tr class="row-odd"><td>show_hidden</td>
+<td>Optional Boolean. If False (default) hidden versions will not be
+returned.</td>
+</tr>
+</tbody>
+</table>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">dict</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="version">
+<h2>Version<a class="headerlink" href="#version" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="arcgis.features._version.Version">
+<em class="property">class </em><code class="descclassname">arcgis.features._version.</code><code class="descname">Version</code><span class="sig-paren">(</span><em>url</em>, <em>flc</em>, <em>gis=None</em>, <em>session_guid=None</em>, <em>mode=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.features._version.Version" title="Permalink to this definition">¶</a></dt>
+<dd><p>A <cite>Version</cite> represents a single branch in the version tree.</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="18%" />
+<col width="82%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><strong>Argument</strong></td>
+<td><strong>Description</strong></td>
+</tr>
+<tr class="row-even"><td>url</td>
+<td>Required String.  The URI to the web resource.</td>
+</tr>
+<tr class="row-odd"><td>gis</td>
+<td>Required GIS. The enterprise connection to the Portal site.</td>
+</tr>
+<tr class="row-even"><td>flc</td>
+<td>Optional FeatureLayerCollection. This is the parent container that
+the branch versioning is enabled on.</td>
+</tr>
+<tr class="row-odd"><td>session_guid</td>
+<td>Optional String. If a GUID is known for specific version, a user
+can specify it.</td>
+</tr>
+<tr class="row-even"><td>mode</td>
+<td><p class="first">Optional String. If a user wants to start either editing or reading
+on creation of the Version, it can be specified here.  This is useful
+when a user is using the <cite>Version</cite> with a <cite>with</cite> statement.</p>
+<p>Allowed Values:</p>
+<blockquote class="last">
+<div><ul class="simple">
+<li>edit - starts an edit session</li>
+<li>read - starts a read session</li>
+</ul>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+<dl class="method">
+<dt id="arcgis.features._version.Version.alter">
+<code class="descname">alter</code><span class="sig-paren">(</span><em>owner=None</em>, <em>version=None</em>, <em>description=None</em>, <em>permission=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.features._version.Version.alter" title="Permalink to this definition">¶</a></dt>
+<dd><p>The <code class="docutils literal"><span class="pre">`alter`</span></code> operation changes the geodatabase version’s name,
+description, and access permissions.</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="18%" />
+<col width="82%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><strong>Argument</strong></td>
+<td><strong>Description</strong></td>
+</tr>
+<tr class="row-even"><td>owner</td>
+<td>Optional String. The new name of the owner.</td>
+</tr>
+<tr class="row-odd"><td>version</td>
+<td>Optional String. The new name of the version.</td>
+</tr>
+<tr class="row-even"><td>permission</td>
+<td><p class="first">Optional String. The new access level of the version.</p>
+<p class="last">Values: private, public, protected, or hidden</p>
+</td>
+</tr>
+<tr class="row-odd"><td>description</td>
+<td>Optional String. The description of the new version</td>
+</tr>
+</tbody>
+</table>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">Boolean</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="arcgis.features._version.Version.conflicts">
+<code class="descname">conflicts</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.features._version.Version.conflicts" title="Permalink to this definition">¶</a></dt>
+<dd><p>The <code class="docutils literal"><span class="pre">`conflicts`</span></code> operation allows you to view the conflicts by layer
+and type (update-update, update-delete, delete-update) that were
+identified during the last Reconcile operation. The features that
+are in conflicts will also be returned as they existed in the branch,
+ancestor, and default versions.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="arcgis.features._version.Version.delete">
+<code class="descname">delete</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.features._version.Version.delete" title="Permalink to this definition">¶</a></dt>
+<dd><p>Deletes the current version</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">Boolean</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="arcgis.features._version.Version.delete_forward_edits">
+<code class="descname">delete_forward_edits</code><span class="sig-paren">(</span><em>moment</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.features._version.Version.delete_forward_edits" title="Permalink to this definition">¶</a></dt>
+<dd><p>If the input moment does not match a specific moment (a moment
+corresponding to an edit operation), the call will return an error.
+The client app must correctly manage the edit session’s edit
+operations moments (for example, the undo/redo stack) and not
+blindly pass in a timestamp that could mistakenly delete all the
+forward moments. Thus, the input moment must be equal to a moment
+in which an edit operation for the version was applied. The call
+will also fail if the session does not have a write lock on the
+version.</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="18%" />
+<col width="82%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><strong>Argument</strong></td>
+<td><strong>Description</strong></td>
+</tr>
+<tr class="row-even"><td>moment</td>
+<td>Required String. Moment representing the new tail of the version;
+all forward moments will be trimmed.</td>
+</tr>
+</tbody>
+</table>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">Boolean</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="arcgis.features._version.Version.differences">
+<code class="descname">differences</code><span class="sig-paren">(</span><em>result_type</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.features._version.Version.differences" title="Permalink to this definition">¶</a></dt>
+<dd><p>The <code class="docutils literal"><span class="pre">`differences`</span></code> operation allows you to view differences between
+the current version and the default version. The two versions can
+be compared to check for the following conditions.</p>
+<ul class="simple">
+<li>Inserts - features that are present in the current version but not the default version</li>
+<li>Updates - features that have different attributes or geometry in the current version than the default version</li>
+<li>Deletions - features that are present in the default version but not in the current version</li>
+</ul>
+<p>Both differences and conflicts will be returned. It is the clients
+responsibility to determine which are differences, and which are conflicts.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">dict</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="arcgis.features._version.Version.edit">
+<code class="descname">edit</code><span class="sig-paren">(</span><em>layer</em>, <em>adds=None</em>, <em>updates=None</em>, <em>deletes=None</em>, <em>use_global_ids=False</em>, <em>rollback_on_failure=True</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.features._version.Version.edit" title="Permalink to this definition">¶</a></dt>
+<dd><p>The <cite>edit</cite> operation allows users to apply changes to the current version. The edit
+session must be in the mode of <cite>edit</cite> or an exception will be raised.</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="32%" />
+<col width="68%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><strong>Inputs</strong></td>
+<td><strong>Description</strong></td>
+</tr>
+<tr class="row-even"><td>layer</td>
+<td>Required FeatureLayer. The layer to perform
+the edit on.</td>
+</tr>
+<tr class="row-odd"><td>adds</td>
+<td>Optional FeatureSet/List. The array of
+features to be added.</td>
+</tr>
+<tr class="row-even"><td>updates</td>
+<td>Optional FeatureSet/List. The array of
+features to be updateded.</td>
+</tr>
+<tr class="row-odd"><td>deletes</td>
+<td>Optional FeatureSet/List. string of OIDs to
+remove from service</td>
+</tr>
+<tr class="row-even"><td>use_global_ids</td>
+<td>Optional boolean. Instead of referencing
+the default Object ID field, the service
+will look at a GUID field to track changes.
+This means the GUIDs will be passed instead
+of OIDs for delete, update or add features.</td>
+</tr>
+<tr class="row-odd"><td>rollback_on_failure</td>
+<td>Optional boolean. Optional parameter to
+specify if the edits should be applied only
+if all submitted edits succeed. If false, the
+server will apply the edits that succeed
+even if some of the submitted edits fail.
+If true, the server will apply the edits
+only if all edits succeed. The default
+value is true.</td>
+</tr>
+</tbody>
+</table>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">dictionary</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="arcgis.features._version.Version.inspect">
+<code class="descname">inspect</code><span class="sig-paren">(</span><em>conflicts</em>, <em>inspect_all=False</em>, <em>set_inspected=False</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.features._version.Version.inspect" title="Permalink to this definition">¶</a></dt>
+<dd><p>The <code class="docutils literal"><span class="pre">`inspect`</span></code> operation allows the client to annotate conflicts
+from the conflict set that was obtained during the last reconcile
+operation. Users can mark the conflicts as being inspected;
+additionally, a description or note can be associated with the
+conflict.</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="18%" />
+<col width="82%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><strong>Argument</strong></td>
+<td><strong>Description</strong></td>
+</tr>
+<tr class="row-even"><td>conflicts</td>
+<td><p class="first">Required List.  The conflicts that are being inspected (removed)
+from the conflict set.</p>
+<p>Parameter Format:</p>
+<dl class="docutils">
+<dt>[</dt>
+<dd><dl class="first docutils">
+<dt>{</dt>
+<dd><p class="first">“layerId” : &lt;layerId&gt;,
+“features” : [</p>
+<blockquote>
+<div><dl class="docutils">
+<dt>{</dt>
+<dd>“objectId” : &lt;objectId&gt;,
+“note” : string</dd>
+</dl>
+<p>}</p>
+</div></blockquote>
+<p class="last">]</p>
+</dd>
+</dl>
+<p class="last">}</p>
+</dd>
+</dl>
+<p>]</p>
+<p class="last">The objectId key is required. The note parameter is optional.</p>
+</td>
+</tr>
+<tr class="row-odd"><td>inspect_all</td>
+<td>Optional Boolean. This parameter, if true, will mark all conflicts
+as being inspected.</td>
+</tr>
+<tr class="row-even"><td>set_inspected</td>
+<td>Optional Boolean. If True, the examined values will be set to
+inspected. If <code class="docutils literal"><span class="pre">`inspect_all`</span></code> is True, this parameter is ignored.</td>
+</tr>
+</tbody>
+</table>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">Boolean</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="arcgis.features._version.Version.layers">
+<code class="descname">layers</code><a class="headerlink" href="#arcgis.features._version.Version.layers" title="Permalink to this definition">¶</a></dt>
+<dd><p>returns the layers in the FeatureLayerCollection</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="arcgis.features._version.Version.mode">
+<code class="descname">mode</code><a class="headerlink" href="#arcgis.features._version.Version.mode" title="Permalink to this definition">¶</a></dt>
+<dd><p>The <cite>mode</cite> allows versoin editors to start and stop edit, read, or
+view mode.</p>
+<p>Allowed Values:</p>
+<blockquote>
+<div><ul class="simple">
+<li>edit - calls the <cite>start_editing</cite> method and creates a lock</li>
+<li>read - calls the <cite>start_reading</cite> method and creates a lock</li>
+<li>None - terminates all sessions and lets a user view the version information (default)</li>
+</ul>
+</div></blockquote>
+</dd></dl>
+
+<dl class="method">
+<dt id="arcgis.features._version.Version.post">
+<code class="descname">post</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.features._version.Version.post" title="Permalink to this definition">¶</a></dt>
+<dd><p>The Post operation allows the client to post the changes in their
+branch to the default version. The client can only post changes if
+the branch version has not been modified since the last reconcile.
+If the default version has been modified in the interim, the client
+will have to reconcile again before posting.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">Boolean</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="arcgis.features._version.Version.properties">
+<code class="descname">properties</code><a class="headerlink" href="#arcgis.features._version.Version.properties" title="Permalink to this definition">¶</a></dt>
+<dd><p>returns the service properties</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="arcgis.features._version.Version.reconcile">
+<code class="descname">reconcile</code><span class="sig-paren">(</span><em>end_with_conflict=False</em>, <em>with_post=False</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.features._version.Version.reconcile" title="Permalink to this definition">¶</a></dt>
+<dd><p>Reconcile a version against the DEFAULT version. The reconcile
+operation requires that you are the only user currently editing the
+version and the only user able to edit the version throughout the
+reconcile process until you save or post. The reconcile operation
+requires that you have full permissions to all the feature classes
+that have been modified in the version being edited. The reconcile
+operation detects differences between the branch version and the
+default version and flags these differences as conflicts. If
+conflicts exist, they should be resolved.</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="21%" />
+<col width="79%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><strong>Argument</strong></td>
+<td><strong>Description</strong></td>
+</tr>
+<tr class="row-even"><td>end_with_conflict</td>
+<td>Optional Boolean. Specifies if the reconcile should abort when
+conflicts are found. The default is False</td>
+</tr>
+<tr class="row-odd"><td>with_post</td>
+<td>Optional Boolean. If True the with_post causes a post of the current
+version following the reconcile.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="arcgis.features._version.Version.save_edits">
+<code class="descname">save_edits</code><a class="headerlink" href="#arcgis.features._version.Version.save_edits" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get/Set the Property to Save the Changes.</p>
+<p>When set to true, any edits performed on the version will be saved.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="arcgis.features._version.Version.start_editing">
+<code class="descname">start_editing</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.features._version.Version.start_editing" title="Permalink to this definition">¶</a></dt>
+<dd><p>Starts an edit session for the current user.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">boolean</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="arcgis.features._version.Version.start_reading">
+<code class="descname">start_reading</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.features._version.Version.start_reading" title="Permalink to this definition">¶</a></dt>
+<dd><p>Start reading represents a long-term service session. When <cite>start_reading</cite>
+is enabled, it will prevent other users from editing or reconciling the
+version.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">Boolean</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="arcgis.features._version.Version.stop_editing">
+<code class="descname">stop_editing</code><span class="sig-paren">(</span><em>save=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.features._version.Version.stop_editing" title="Permalink to this definition">¶</a></dt>
+<dd><p>Starts an edit session for the current user.</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="18%" />
+<col width="82%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><strong>Argument</strong></td>
+<td><strong>Description</strong></td>
+</tr>
+<tr class="row-even"><td>save</td>
+<td>Optional Boolean. States if the values should be saved. If the value
+is set, the <cite>save_edits</cite> property will be overrided.</td>
+</tr>
+</tbody>
+</table>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">boolean</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="arcgis.features._version.Version.stop_reading">
+<code class="descname">stop_reading</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.features._version.Version.stop_reading" title="Permalink to this definition">¶</a></dt>
+<dd><p>Stops and releases a reading session.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">Boolean</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="parcelfabricmanager">
+<h2>ParcelFabricManager<a class="headerlink" href="#parcelfabricmanager" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="arcgis.features._parcel.ParcelFabricManager">
+<em class="property">class </em><code class="descclassname">arcgis.features._parcel.</code><code class="descname">ParcelFabricManager</code><span class="sig-paren">(</span><em>url</em>, <em>gis</em>, <em>version</em>, <em>flc</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.features._parcel.ParcelFabricManager" title="Permalink to this definition">¶</a></dt>
+<dd><p>The Parcel Fabric Server is responsible for exposing parcel management
+capabilities to support a variety of workflows from different clients
+and systems.</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="23%" />
+<col width="77%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><strong>Argument</strong></td>
+<td><strong>Description</strong></td>
+</tr>
+<tr class="row-even"><td>url</td>
+<td>Required String. The URI to the service endpoint.</td>
+</tr>
+<tr class="row-odd"><td>gis</td>
+<td>Required GIS. The enterprise connection.</td>
+</tr>
+<tr class="row-even"><td>version</td>
+<td>Required Version. This is the version object where the modification
+will occur.</td>
+</tr>
+<tr class="row-odd"><td>flc</td>
+<td>Required FeatureLayerCollection. This is the parent container for
+ParcelFabricManager.</td>
+</tr>
+</tbody>
+</table>
+<dl class="method">
+<dt id="arcgis.features._parcel.ParcelFabricManager.build">
+<code class="descname">build</code><span class="sig-paren">(</span><em>extent=None</em>, <em>moment=None</em>, <em>return_errors=False</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.features._parcel.ParcelFabricManager.build" title="Permalink to this definition">¶</a></dt>
+<dd><p>A <cite>build</cite> will fix known parcel fabric errors.</p>
+<p>For example, if a parcel polygon exists without lines, then build will
+construct the missing lines. If lines are missing, the polygon row(s)
+are created. When constructing this objects, build will attribute the
+related keys as appropriate. Build also maintains <cite>lineage</cite> and <cite>record</cite>
+features. The parcel fabric must have sufficient information for build
+to work correctly. Ie, source reference document, and connected lines.</p>
+<p>Build provides options to increase performance. The process can just
+work on specific parcels, geometry types or only respond to parcel point
+movement in the case of an adjustment.</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="22%" />
+<col width="78%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><strong>Argument</strong></td>
+<td><strong>Description</strong></td>
+</tr>
+<tr class="row-even"><td>extent</td>
+<td><p class="first">Optional Envelope. The extent to build.</p>
+<dl class="last docutils">
+<dt>Syntax: {“xmin”:X min,”ymin”: y min, “xmax”: x max, “ymax”: y max,</dt>
+<dd>“spatialReference”: &lt;wkt of spatial reference&gt;}</dd>
+</dl>
+</td>
+</tr>
+<tr class="row-odd"><td>moment</td>
+<td>Optional String. This should only be specified by the client when
+they do not want to use the current moment</td>
+</tr>
+<tr class="row-even"><td>return_errors</td>
+<td>Optional Boolean. If True, a verbose response will be given if errors
+occured.  The default is False</td>
+</tr>
+</tbody>
+</table>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">Boolean</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="arcgis.features._parcel.ParcelFabricManager.change_type">
+<code class="descname">change_type</code><span class="sig-paren">(</span><em>parcels</em>, <em>target_type</em>, <em>parcel_subtype=0</em>, <em>moment=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.features._parcel.ParcelFabricManager.change_type" title="Permalink to this definition">¶</a></dt>
+<dd><p>Changes a set of parcels to a new parcel type. It creates new
+polygons and lines and deletes them from the source type. This
+is used when a parcel was associated in the wrong parcel type subtype
+and/or when creating multiple parcels as part of a build process.
+Example: when lot parcels are created as part of a subdivision, the
+road parcel is moved to the encumbrance (easement) parcel type.</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="25%" />
+<col width="75%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><strong>Argument</strong></td>
+<td><strong>Description</strong></td>
+</tr>
+<tr class="row-even"><td>parcels</td>
+<td>Required List. Parcels list that will change type</td>
+</tr>
+<tr class="row-odd"><td>target_type</td>
+<td>Required String. The target parcel layer</td>
+</tr>
+<tr class="row-even"><td>target_subtype</td>
+<td>Optional Integer. Target parcel subtype. The default is 0 meaning
+no subtype required.</td>
+</tr>
+<tr class="row-odd"><td>moment</td>
+<td>Optional String. This parameter represents the session moment (the
+default is the version current moment). This should only be
+specified by the client when they do not want to use the current
+moment.</td>
+</tr>
+</tbody>
+</table>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">Dictionary</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="arcgis.features._parcel.ParcelFabricManager.clip">
+<code class="descname">clip</code><span class="sig-paren">(</span><em>parent_parcels</em>, <em>clip_record=None</em>, <em>clipping_parcels=None</em>, <em>geometry=None</em>, <em>moment=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.features._parcel.ParcelFabricManager.clip" title="Permalink to this definition">¶</a></dt>
+<dd><p>Clip cuts a new child parcel into existing parent parcels. Commonly
+it retires the parent parcel(s) it cuts into to generate a reminder
+child parcel. This type of split is often part of a <cite>parcel split
+metes and bounds</cite> record driven workflow.</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="23%" />
+<col width="77%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><strong>Argument</strong></td>
+<td><strong>Description</strong></td>
+</tr>
+<tr class="row-even"><td>parent_parcels</td>
+<td>parent parcels that will be clipped into.
+Syntax:  parentParcels= &lt;parcel (guid)+layer (name)…&gt;</td>
+</tr>
+<tr class="row-odd"><td>clip_record</td>
+<td>Optional String. It is the GUID for the active legal record.</td>
+</tr>
+<tr class="row-even"><td>clipping_parcels</td>
+<td><p class="first">Optional List. A list of child parcels that will be used to clip
+into the parent parcels. Parcel lineage is created if the child
+‘clipping_parcels’ and the parcels being clipped are of the same
+parcel type.</p>
+<p>Syntax: clippingParcels= &lt; id : parcel guid, layered: &lt;layer id&gt;…&gt;</p>
+<p>Example:</p>
+<p>[{“id”:”{D01D3F47-5FE2-4E39-8C07-E356B46DBC78}”,”layerId”:”16”}]</p>
+<p class="last"><strong>Either clipping_parcels or geometry is required.</strong></p>
+</td>
+</tr>
+<tr class="row-odd"><td>geometry</td>
+<td><p class="first">Optional Polygon. Allows for the clipping a parcel based on geometry instead of
+‘clippingParcels’ geometry. No parcel lineage is created.</p>
+<p class="last"><strong>Either clipping_parcels or geometry is required.</strong></p>
+</td>
+</tr>
+<tr class="row-even"><td>moment</td>
+<td>Optional String. This should only be specified by the client when
+they do not want to use the current moment</td>
+</tr>
+</tbody>
+</table>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">Dictionary</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="arcgis.features._parcel.ParcelFabricManager.copy_lines_to_parcel_type">
+<code class="descname">copy_lines_to_parcel_type</code><span class="sig-paren">(</span><em>parent_parcels</em>, <em>record</em>, <em>target_type</em>, <em>moment=None</em>, <em>mark_historic=False</em>, <em>use_source_attributes=False</em>, <em>attribute_overrides=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.features._parcel.ParcelFabricManager.copy_lines_to_parcel_type" title="Permalink to this definition">¶</a></dt>
+<dd><p>Copy lines to parcel type is used when the construction of the
+child parcel is based on parent parcel geometry. It creates a
+copy of the parent parcels lines that the user can modify (insert,
+delete, update) before they build the child parcels. If the source
+parcel type and the target parcel type are identical (common)
+parcel lineage is created.</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="25%" />
+<col width="75%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><strong>Argument</strong></td>
+<td><strong>Description</strong></td>
+</tr>
+<tr class="row-even"><td>parent_parcels</td>
+<td>Required String. Parcel parcels from which lines are copied.</td>
+</tr>
+<tr class="row-odd"><td>record</td>
+<td>Required String. The unique identifier (guid) of the active legal
+record.</td>
+</tr>
+<tr class="row-even"><td>target_type</td>
+<td>Required String. The target parcel layer to which the lines will be
+copied to.</td>
+</tr>
+<tr class="row-odd"><td>moment</td>
+<td>Optional String. This parameter represents the session moment (the
+default is the version current moment). This should only be
+specified by the client when they do not want to use the current
+moment.</td>
+</tr>
+<tr class="row-even"><td>mark_historic</td>
+<td>Optional Boolean. Mark the parent parcels historic. The default is
+False.</td>
+</tr>
+<tr class="row-odd"><td>use_source_attributes</td>
+<td>Optional Boolean. If the source and the target line schema match,
+attributes from the parent parcel lines will be copied to the new
+child parcel lines when it is set to  True. The default is False.</td>
+</tr>
+<tr class="row-even"><td>attribute_overrides</td>
+<td><p class="first">Optional Dictionary. To set fields on the child parcel lines with a
+specific value. Uses a key/value pair of FieldName/Value.</p>
+<p>Example:</p>
+<p class="last">{‘type’ : “PropertySet”, “propertySetItems” : []}</p>
+</td>
+</tr>
+</tbody>
+</table>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">boolean</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="arcgis.features._parcel.ParcelFabricManager.delete">
+<code class="descname">delete</code><span class="sig-paren">(</span><em>parcels</em>, <em>moment=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.features._parcel.ParcelFabricManager.delete" title="Permalink to this definition">¶</a></dt>
+<dd><p>Delete a set of parcels, removing associated or unused lines, and
+connected points.</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="25%" />
+<col width="75%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><strong>Argument</strong></td>
+<td><strong>Description</strong></td>
+</tr>
+<tr class="row-even"><td>parcels</td>
+<td>Required List. The parcels to erase.</td>
+</tr>
+<tr class="row-odd"><td>moment</td>
+<td>Optional String. This parameter represents the session moment (the
+default is the version current moment). This should only be
+specified by the client when they do not want to use the current
+moment.</td>
+</tr>
+</tbody>
+</table>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">Boolean</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="arcgis.features._parcel.ParcelFabricManager.layer">
+<code class="descname">layer</code><a class="headerlink" href="#arcgis.features._parcel.ParcelFabricManager.layer" title="Permalink to this definition">¶</a></dt>
+<dd><p>returns the Parcel Layer for the service</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="arcgis.features._parcel.ParcelFabricManager.merge">
+<code class="descname">merge</code><span class="sig-paren">(</span><em>parent_parcels</em>, <em>target_parcel_type</em>, <em>attribute_overrides=None</em>, <em>child_name=None</em>, <em>default_area_unit=None</em>, <em>merge_record=None</em>, <em>merge_into=None</em>, <em>moment=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.features._parcel.ParcelFabricManager.merge" title="Permalink to this definition">¶</a></dt>
+<dd><p>Merge combines 2 or more parent parcels into onenew child parcel. Merge
+sums up legal areas of parent parcels to the new child parcel legal
+area (using default area units as dictated by client). The child parcel
+lines arecomposed from the outer boundaries of the parent parcels.
+Merge can create multipart parcels as well as proportion lines (partial
+overlap of parent parcels). Record footprint is updated to match the
+child parcel.</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="17%" />
+<col width="83%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><strong>Argument</strong></td>
+<td><strong>Description</strong></td>
+</tr>
+<tr class="row-even"><td>parent_parcels</td>
+<td>Required String. It is the parcel(guid)+layer(name) identifiers to
+merge.</td>
+</tr>
+<tr class="row-odd"><td>target_parcel_type</td>
+<td>Required String. Layer where parcel is merged to.  History is
+created when parents and child are of the same parcel type</td>
+</tr>
+<tr class="row-even"><td>attribute_overrides</td>
+<td><p class="first">Optional List. A list of attributes to set on the child parcel, if
+they exist. Pairs of field name and value.</p>
+<p>Syntax: attributeOverrides= [{ “type”:”PropertySet”,”propertySetItems”:[&lt;field name&gt;,&lt;field value&gt;]}]</p>
+<ul class="last simple">
+<li>to set subtype, include subtype value in this list.</li>
+</ul>
+</td>
+</tr>
+<tr class="row-odd"><td>child_name</td>
+<td>Optional String. A descript of the child layer.</td>
+</tr>
+<tr class="row-even"><td>default_area_unit</td>
+<td>Optional String. The area units of the child parcel.</td>
+</tr>
+<tr class="row-odd"><td>merge_record</td>
+<td>Optional String. Record identifier (guid).  If missing, no history
+is created.</td>
+</tr>
+<tr class="row-even"><td>merge_into</td>
+<td>Optional String. A parcel identifier (guid). Invalid to have a
+record id.</td>
+</tr>
+<tr class="row-odd"><td>moment</td>
+<td>Optional String. This parameter represents the session moment (the
+default is the version current moment). This should only be
+specified by the client when they do not want to use the current
+moment.</td>
+</tr>
+</tbody>
+</table>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">Dictionary</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="arcgis.features._parcel.ParcelFabricManager.properties">
+<code class="descname">properties</code><a class="headerlink" href="#arcgis.features._parcel.ParcelFabricManager.properties" title="Permalink to this definition">¶</a></dt>
+<dd><p>returns the properties of the service</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
 </div>
 
 
@@ -1489,7 +2502,7 @@ individual feature service layer object.</dd>
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'./',
-            VERSION:'1.5.0',
+            VERSION:'1.5.1',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  true,

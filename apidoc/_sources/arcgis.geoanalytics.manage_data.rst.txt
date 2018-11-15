@@ -19,6 +19,14 @@ copy_to_data_store
 --------------
 .. automethod:: arcgis.geoanalytics.manage_data.copy_to_data_store
 
+dissolve_boundaries
+--------------
+.. automethod:: arcgis.geoanalytics.manage_data.dissolve_boundaries
+
+merge_layers
+--------------
+.. automethod:: arcgis.geoanalytics.manage_data.merge_layers
+
 overlay_data
 --------------
 .. automethod:: arcgis.geoanalytics.manage_data.overlay_data

@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>arcgis.raster.functions module &mdash; arcgis 1.5.0 documentation</title>
+  <title>arcgis.raster.functions module &mdash; arcgis 1.5.1 documentation</title>
   
 
   
@@ -37,7 +37,7 @@
         <link rel="index" title="Index"
               href="genindex.html"/>
         <link rel="search" title="Search" href="search.html"/>
-    <link rel="top" title="arcgis 1.5.0 documentation" href="index.html"/>
+    <link rel="top" title="arcgis 1.5.1 documentation" href="index.html"/>
         <link rel="up" title="arcgis.raster module" href="arcgis.raster.toc.html"/>
         <link rel="next" title="arcgis.raster.functions.gbl module" href="arcgis.raster.functions.gbl.html"/>
         <link rel="prev" title="arcgis.raster.analytics module" href="arcgis.raster.analytics.html"/>
@@ -78,7 +78,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             
             
               <div class="version">
-                1.5.0
+                1.5.1
               </div>
             
           
@@ -190,6 +190,10 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <li class="toctree-l2"><a class="reference internal" href="arcgis.env.html#return-m">return_m</a></li>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.env.html#verbose">verbose</a></li>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.env.html#default-aggregation-styles">default_aggregation_styles</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.env.html#snap-raster">snap_raster</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.env.html#cell-size">cell_size</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.env.html#mask">mask</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.env.html#parallel-processing-factor">parallel_processing_factor</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="arcgis.features.toc.html">arcgis.features module</a><ul>
@@ -284,6 +288,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <li class="toctree-l4"><a class="reference internal" href="arcgis.features.managers.html#syncmanager">SyncManager</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.features.managers.html#featurelayercollectionmanager">FeatureLayerCollectionManager</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.features.managers.html#featurelayermanager">FeatureLayerManager</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.features.managers.html#versionmanager">VersionManager</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.features.managers.html#version">Version</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.features.managers.html#parcelfabricmanager">ParcelFabricManager</a></li>
 </ul>
 </li>
 </ul>
@@ -394,9 +401,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <li class="toctree-l4"><a class="reference internal" href="#minus">minus</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#ml-classify">ml_classify</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#mod">mod</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#mode">mode</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#msavi">msavi</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#multiply">MULTIPLY</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#ndvi">ndvi</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#negate">negate</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#not-equal">not_equal</a></li>
@@ -523,6 +528,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <li class="toctree-l4"><a class="reference internal" href="arcgis.geoanalytics.manage_data.html#calculate-fields">calculate_fields</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.geoanalytics.manage_data.html#clip-layer">clip_layer</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.geoanalytics.manage_data.html#copy-to-data-store">copy_to_data_store</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.geoanalytics.manage_data.html#dissolve-boundaries">dissolve_boundaries</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.geoanalytics.manage_data.html#merge-layers">merge_layers</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.geoanalytics.manage_data.html#overlay-data">overlay_data</a></li>
 </ul>
 </li>
@@ -625,6 +632,10 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <li class="toctree-l2"><a class="reference internal" href="arcgis.mapping.html#scenelayer">SceneLayer</a></li>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.mapping.html#export-map">export_map</a></li>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.mapping.html#get-layout-templates">get_layout_templates</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.mapping.html#module-arcgis.mapping.symbol">Symbology</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.mapping.html#renderers">Renderers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.mapping.html#generate-renderer">generate_renderer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.mapping.html#visual-variables">visual_variables</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="arcgis.realtime.html">arcgis.realtime module</a><ul>
@@ -2298,7 +2309,7 @@ GVITM = -0.2848*Band1-0.2435*Band2-0.5436*Band3+0.7243*Band4+0.0840*Band5-1.1800
 <h2>hillshade<a class="headerlink" href="#hillshade" title="Permalink to this headline">¶</a></h2>
 <dl class="method">
 <dt id="arcgis.raster.functions.hillshade">
-<code class="descclassname">functions.</code><code class="descname">hillshade</code><span class="sig-paren">(</span><em>dem</em>, <em>azimuth=215.0</em>, <em>altitude=75.0</em>, <em>z_factor=0.3</em>, <em>slope_type=1</em>, <em>ps_power=None</em>, <em>psz_factor=None</em>, <em>remove_edge_effect=None</em>, <em>astype=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.raster.functions.hillshade" title="Permalink to this definition">¶</a></dt>
+<code class="descclassname">functions.</code><code class="descname">hillshade</code><span class="sig-paren">(</span><em>dem</em>, <em>azimuth=215.0</em>, <em>altitude=75.0</em>, <em>z_factor=0.3</em>, <em>slope_type=1</em>, <em>ps_power=None</em>, <em>psz_factor=None</em>, <em>remove_edge_effect=None</em>, <em>astype=None</em>, <em>hillshade_type=0</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.raster.functions.hillshade" title="Permalink to this definition">¶</a></dt>
 <dd><p>A hillshade is a grayscale 3D model of the surface taking the sun’s relative position into account to shade the image.
 For more information, see
 &lt;a href=’<a class="reference external" href="http://desktop.arcgis.com/en/arcmap/latest/manage-data/raster-and-images/hillshade-function.htm'">http://desktop.arcgis.com/en/arcmap/latest/manage-data/raster-and-images/hillshade-function.htm’</a>&gt;hillshade
@@ -2318,6 +2329,7 @@ The arguments for the hillshade function are as follows:</p>
 <li><strong>psz_factor</strong> – new at 10.2. double, used together with SCALED slope type</li>
 <li><strong>remove_edge_effect</strong> – new at 10.2. boolean, true of false</li>
 <li><strong>astype</strong> – output pixel type</li>
+<li><strong>hillshade_type</strong> – new at 10.5.1 0 = traditional, 1 = multi - directional; default is 0</li>
 </ul>
 </td>
 </tr>
@@ -2856,9 +2868,6 @@ The arguments for the ml_classify function are as follows:</dd>
 </dd></dl>
 
 </div>
-<div class="section" id="mode">
-<h2>mode<a class="headerlink" href="#mode" title="Permalink to this headline">¶</a></h2>
-</div>
 <div class="section" id="msavi">
 <h2>msavi<a class="headerlink" href="#msavi" title="Permalink to this headline">¶</a></h2>
 <dl class="method">
@@ -2884,9 +2893,6 @@ MSAVI2 = (1/2)*(2(NIR+1)-sqrt((2*NIR+1)^2-8(NIR-Red)))</p>
 </table>
 </dd></dl>
 
-</div>
-<div class="section" id="multiply">
-<h2>MULTIPLY<a class="headerlink" href="#multiply" title="Permalink to this headline">¶</a></h2>
 </div>
 <div class="section" id="ndvi">
 <h2>ndvi<a class="headerlink" href="#ndvi" title="Permalink to this headline">¶</a></h2>
@@ -4235,7 +4241,7 @@ It can be any positive or negative decimal value.</li>
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'./',
-            VERSION:'1.5.0',
+            VERSION:'1.5.1',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  true,

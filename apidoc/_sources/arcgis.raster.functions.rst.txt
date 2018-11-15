@@ -310,17 +310,9 @@ mod
 ___
 .. automethod:: arcgis.raster.functions.mod
 
-mode
-____
-.. automethod:: arcgis.raster.functions.mode
-
 msavi
 _____
 .. automethod:: arcgis.raster.functions.msavi
-
-MULTIPLY
-________
-.. automethod:: arcgis.raster.functions.MULTIPLY
 
 ndvi
 ____
