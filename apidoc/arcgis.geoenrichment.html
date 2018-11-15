@@ -24,22 +24,13 @@
 
   
 
-  
-  
-    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
-  
-
-  
-    <link rel="stylesheet" href="_static/theme_overrides.css" type="text/css" />
-  
-
-  
-        <link rel="index" title="Index"
-              href="genindex.html"/>
-        <link rel="search" title="Search" href="search.html"/>
-    <link rel="top" title="arcgis 1.5.1 documentation" href="index.html"/>
-        <link rel="next" title="arcgis.geometry module" href="arcgis.geometry.html"/>
-        <link rel="prev" title="arcgis.geocoding module" href="arcgis.geocoding.html"/>
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/theme_overrides.css" type="text/css" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="arcgis.geometry module" href="arcgis.geometry.html" />
+    <link rel="prev" title="arcgis.geocoding module" href="arcgis.geocoding.html" />
 <!-- This code block is inserted close near the <head> tag. See http://bit.ly/2BHUQzB -->
 <!-- The point of this code block is to send us google analytics on website views -->
 <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
@@ -55,7 +46,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
 </head>
 
-<body class="wy-body-for-nav" role="document">
+<body class="wy-body-for-nav">
 
    
   <div class="wy-grid-for-nav">
@@ -189,10 +180,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <li class="toctree-l2"><a class="reference internal" href="arcgis.env.html#return-m">return_m</a></li>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.env.html#verbose">verbose</a></li>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.env.html#default-aggregation-styles">default_aggregation_styles</a></li>
-<li class="toctree-l2"><a class="reference internal" href="arcgis.env.html#snap-raster">snap_raster</a></li>
-<li class="toctree-l2"><a class="reference internal" href="arcgis.env.html#cell-size">cell_size</a></li>
-<li class="toctree-l2"><a class="reference internal" href="arcgis.env.html#mask">mask</a></li>
-<li class="toctree-l2"><a class="reference internal" href="arcgis.env.html#parallel-processing-factor">parallel_processing_factor</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="arcgis.features.toc.html">arcgis.features module</a><ul>
@@ -289,7 +276,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <li class="toctree-l4"><a class="reference internal" href="arcgis.features.managers.html#featurelayermanager">FeatureLayerManager</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.features.managers.html#versionmanager">VersionManager</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.features.managers.html#version">Version</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.features.managers.html#parcelfabricmanager">ParcelFabricManager</a></li>
 </ul>
 </li>
 </ul>
@@ -685,7 +671,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
 
       
-      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+      <nav class="wy-nav-top" aria-label="top navigation">
         
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
           <a href="index.html">arcgis</a>
@@ -693,9 +679,10 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       </nav>
 
 
-      
       <div class="wy-nav-content">
+        
         <div class="rst-content">
+        
           
 
 
@@ -859,14 +846,14 @@ can be queried using Country.levels properties.</td>
 supported subgeography levels within it, and the value of those attributes are dictionaries containing the named
 places within that level of geography. This allows for interactive selection of places using intellisense and a
 notation such as the following:</p>
-<div class="highlight-python"><div class="highlight"><pre><span></span><span class="c1"># Usage Example 1</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Usage Example 1</span>
 
 <span class="n">usa</span> <span class="o">=</span> <span class="n">Country</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;USA&#39;</span><span class="p">)</span>
 <span class="n">usa</span><span class="o">.</span><span class="n">subgeographies</span><span class="o">.</span><span class="n">states</span><span class="p">[</span><span class="s1">&#39;California&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">counties</span><span class="p">[</span><span class="s1">&#39;San_Bernardino_County&#39;</span><span class="p">]</span>
 </pre></div>
 </div>
 </div></blockquote>
-<div class="highlight-python"><div class="highlight"><pre><span></span><span class="c1"># Usage Example 2</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Usage Example 2</span>
 
 <span class="n">india</span><span class="o">.</span><span class="n">named_places</span><span class="o">.</span><span class="n">states</span><span class="p">[</span><span class="s1">&#39;Bihar&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">districts</span><span class="p">[</span><span class="s1">&#39;Aurangabad&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">subdistricts</span><span class="p">[</span><span class="s1">&#39;Barun&#39;</span><span class="p">]</span>
 </pre></div>
@@ -880,7 +867,7 @@ notation such as the following:</p>
 <h2>get_countries<a class="headerlink" href="#get-countries" title="Permalink to this headline">¶</a></h2>
 <dl class="method">
 <dt id="arcgis.geoenrichment.get_countries">
-<code class="descclassname">geoenrichment.</code><code class="descname">get_countries</code><span class="sig-paren">(</span><em>gis=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.geoenrichment.get_countries" title="Permalink to this definition">¶</a></dt>
+<code class="descclassname">geoenrichment.</code><code class="descname">get_countries</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.geoenrichment.get_countries" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns the countries for which there is GeoEnrichment data.</p>
 </dd></dl>
 
@@ -889,7 +876,7 @@ notation such as the following:</p>
 <h2>create_report<a class="headerlink" href="#create-report" title="Permalink to this headline">¶</a></h2>
 <dl class="method">
 <dt id="arcgis.geoenrichment.create_report">
-<code class="descclassname">geoenrichment.</code><code class="descname">create_report</code><span class="sig-paren">(</span><em>study_areas</em>, <em>report=None</em>, <em>export_format='pdf'</em>, <em>report_fields=None</em>, <em>options=None</em>, <em>return_type=None</em>, <em>use_data=None</em>, <em>in_sr=4326</em>, <em>out_name=None</em>, <em>out_folder=None</em>, <em>gis=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.geoenrichment.create_report" title="Permalink to this definition">¶</a></dt>
+<code class="descclassname">geoenrichment.</code><code class="descname">create_report</code><span class="sig-paren">(</span><em>report=None</em>, <em>export_format='pdf'</em>, <em>report_fields=None</em>, <em>options=None</em>, <em>return_type=None</em>, <em>use_data=None</em>, <em>in_sr=4326</em>, <em>out_name=None</em>, <em>out_folder=None</em>, <em>gis=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.geoenrichment.create_report" title="Permalink to this definition">¶</a></dt>
 <dd><p>The Create Report method allows you to create many types of high quality reports for a
 variety of use cases describing the input area. If a point is used as a study area, the
 service will create a 1-mile ring buffer around the point to collect and append enrichment
@@ -999,7 +986,7 @@ The default is 4326</td>
 <h2>enrich<a class="headerlink" href="#enrich" title="Permalink to this headline">¶</a></h2>
 <dl class="method">
 <dt id="arcgis.geoenrichment.enrich">
-<code class="descclassname">geoenrichment.</code><code class="descname">enrich</code><span class="sig-paren">(</span><em>study_areas</em>, <em>data_collections=None</em>, <em>analysis_variables=None</em>, <em>comparison_levels=None</em>, <em>add_derivative_variables=None</em>, <em>intersecting_geographies=None</em>, <em>return_geometry=True</em>, <em>gis=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.geoenrichment.enrich" title="Permalink to this definition">¶</a></dt>
+<code class="descclassname">geoenrichment.</code><code class="descname">enrich</code><span class="sig-paren">(</span><em>data_collections=None</em>, <em>analysis_variables=None</em>, <em>comparison_levels=None</em>, <em>add_derivative_variables=None</em>, <em>intersecting_geographies=None</em>, <em>return_geometry=True</em>, <em>gis=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.geoenrichment.enrich" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns demographic and other requested information for the specified study areas.
 Study areas define the location of the point or area that you want to enrich
 with additional information or creare reports about. If one or many points are input as
@@ -1107,7 +1094,7 @@ return_geometry=False</p>
 <h2>find_businesses<a class="headerlink" href="#find-businesses" title="Permalink to this headline">¶</a></h2>
 <dl class="method">
 <dt id="arcgis.geoenrichment.find_businesses">
-<code class="descclassname">geoenrichment.</code><code class="descname">find_businesses</code><span class="sig-paren">(</span><em>type_filters=None</em>, <em>feature_limit=1000</em>, <em>feature_offset=0</em>, <em>exact_match=False</em>, <em>search_string=None</em>, <em>spatial_filter=None</em>, <em>simple_search=False</em>, <em>dataset_id=None</em>, <em>full_error_message=False</em>, <em>out_sr=4326</em>, <em>return_geometry=False</em>, <em>as_featureset=False</em>, <em>gis=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.geoenrichment.find_businesses" title="Permalink to this definition">¶</a></dt>
+<code class="descclassname">geoenrichment.</code><code class="descname">find_businesses</code><span class="sig-paren">(</span><em>feature_limit=1000</em>, <em>feature_offset=0</em>, <em>exact_match=False</em>, <em>search_string=None</em>, <em>spatial_filter=None</em>, <em>simple_search=False</em>, <em>dataset_id=None</em>, <em>full_error_message=False</em>, <em>out_sr=4326</em>, <em>return_geometry=False</em>, <em>as_featureset=False</em>, <em>gis=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.geoenrichment.find_businesses" title="Permalink to this definition">¶</a></dt>
 <dd><div class="deprecated">
 <p><span class="versionmodified">Deprecated since version 1.4.1: </span>This will be removed in 1.5.0. Method will be removed due to changes in the GeoEnrichment API</p>
 </div>
@@ -1187,7 +1174,7 @@ have the ability to consume credits</td>
 <h2>standard_geography_query<a class="headerlink" href="#standard-geography-query" title="Permalink to this headline">¶</a></h2>
 <dl class="method">
 <dt id="arcgis.geoenrichment.standard_geography_query">
-<code class="descclassname">geoenrichment.</code><code class="descname">standard_geography_query</code><span class="sig-paren">(</span><em>source_country=None</em>, <em>country_dataset=None</em>, <em>layers=None</em>, <em>ids=None</em>, <em>geoquery=None</em>, <em>return_sub_geography=False</em>, <em>sub_geography_layer=None</em>, <em>sub_geography_query=None</em>, <em>out_sr=4326</em>, <em>return_geometry=False</em>, <em>return_centroids=False</em>, <em>generalization_level=0</em>, <em>use_fuzzy_search=False</em>, <em>feature_limit=1000</em>, <em>as_featureset=False</em>, <em>gis=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.geoenrichment.standard_geography_query" title="Permalink to this definition">¶</a></dt>
+<code class="descclassname">geoenrichment.</code><code class="descname">standard_geography_query</code><span class="sig-paren">(</span><em>country_dataset=None</em>, <em>layers=None</em>, <em>ids=None</em>, <em>geoquery=None</em>, <em>return_sub_geography=False</em>, <em>sub_geography_layer=None</em>, <em>sub_geography_query=None</em>, <em>out_sr=4326</em>, <em>return_geometry=False</em>, <em>return_centroids=False</em>, <em>generalization_level=0</em>, <em>use_fuzzy_search=False</em>, <em>feature_limit=1000</em>, <em>as_featureset=False</em>, <em>gis=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.geoenrichment.standard_geography_query" title="Permalink to this definition">¶</a></dt>
 <dd><p>This method allows you to search and query standard geography areas so that they can be used to
 obtain facts about the location using the enrich() method or create reports about.</p>
 <p>GeoEnrichment uses the concept of a study area to define the location of the point
@@ -1338,9 +1325,7 @@ have the ability to consume credits</td>
 
 
            </div>
-           <div class="articleComments">
-            
-           </div>
+           
           </div>
           <footer>
   
@@ -1362,7 +1347,7 @@ have the ability to consume credits</td>
 
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
 
 </footer>
 
@@ -1381,6 +1366,7 @@ have the ability to consume credits</td>
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'./',
             VERSION:'1.5.1',
+            LANGUAGE:'None',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  true,
@@ -1393,19 +1379,13 @@ have the ability to consume credits</td>
 
   
 
-  
-  
-    <script type="text/javascript" src="_static/js/theme.js"></script>
-  
+  <script type="text/javascript" src="_static/js/theme.js"></script>
 
-  
-  
   <script type="text/javascript">
       jQuery(function () {
-          SphinxRtdTheme.StickyNav.enable();
+          SphinxRtdTheme.Navigation.enable(true);
       });
-  </script>
-   
+  </script> 
 
 </body>
 </html>
