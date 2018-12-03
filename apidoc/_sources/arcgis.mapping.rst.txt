@@ -52,10 +52,31 @@ SceneLayer
     :undoc-members:
     :show-inheritance:
 
+
 export_map
 ------------
 .. automethod:: arcgis.mapping.export_map
-    
+
 get_layout_templates
 -----------
 .. automethod:: arcgis.mapping.get_layout_templates
+
+
+Symbology
+-------------------
+.. automodule:: arcgis.mapping.symbol
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
+Renderers
+-------------------
+
+generate_renderer
+-----------
+.. automethod:: arcgis.mapping.renderer.generate_renderer
+
+visual_variables
+-----------
+.. automethod:: arcgis.mapping.renderer.visual_variables
+
