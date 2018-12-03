@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>arcgis.features module &mdash; arcgis 1.5.0 documentation</title>
+  <title>arcgis.features module &mdash; arcgis 1.5.1 documentation</title>
   
 
   
@@ -24,22 +24,13 @@
 
   
 
-  
-  
-    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
-  
-
-  
-    <link rel="stylesheet" href="_static/theme_overrides.css" type="text/css" />
-  
-
-  
-        <link rel="index" title="Index"
-              href="genindex.html"/>
-        <link rel="search" title="Search" href="search.html"/>
-    <link rel="top" title="arcgis 1.5.0 documentation" href="index.html"/>
-        <link rel="next" title="arcgis.features.analysis module" href="arcgis.features.analysis.html"/>
-        <link rel="prev" title="arcgis.env module" href="arcgis.env.html"/>
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/theme_overrides.css" type="text/css" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="arcgis.features.analysis module" href="arcgis.features.analysis.html" />
+    <link rel="prev" title="arcgis.env module" href="arcgis.env.html" />
 <!-- This code block is inserted close near the <head> tag. See http://bit.ly/2BHUQzB -->
 <!-- The point of this code block is to send us google analytics on website views -->
 <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
@@ -55,7 +46,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
 </head>
 
-<body class="wy-body-for-nav" role="document">
+<body class="wy-body-for-nav">
 
    
   <div class="wy-grid-for-nav">
@@ -77,7 +68,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             
             
               <div class="version">
-                1.5.0
+                1.5.1
               </div>
             
           
@@ -283,6 +274,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <li class="toctree-l4"><a class="reference internal" href="arcgis.features.managers.html#syncmanager">SyncManager</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.features.managers.html#featurelayercollectionmanager">FeatureLayerCollectionManager</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.features.managers.html#featurelayermanager">FeatureLayerManager</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.features.managers.html#versionmanager">VersionManager</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.features.managers.html#version">Version</a></li>
 </ul>
 </li>
 </ul>
@@ -393,9 +386,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#minus">minus</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#ml-classify">ml_classify</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#mod">mod</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#mode">mode</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#msavi">msavi</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#multiply">MULTIPLY</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#ndvi">ndvi</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#negate">negate</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#not-equal">not_equal</a></li>
@@ -522,6 +513,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <li class="toctree-l4"><a class="reference internal" href="arcgis.geoanalytics.manage_data.html#calculate-fields">calculate_fields</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.geoanalytics.manage_data.html#clip-layer">clip_layer</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.geoanalytics.manage_data.html#copy-to-data-store">copy_to_data_store</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.geoanalytics.manage_data.html#dissolve-boundaries">dissolve_boundaries</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.geoanalytics.manage_data.html#merge-layers">merge_layers</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.geoanalytics.manage_data.html#overlay-data">overlay_data</a></li>
 </ul>
 </li>
@@ -624,6 +617,10 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <li class="toctree-l2"><a class="reference internal" href="arcgis.mapping.html#scenelayer">SceneLayer</a></li>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.mapping.html#export-map">export_map</a></li>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.mapping.html#get-layout-templates">get_layout_templates</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.mapping.html#module-arcgis.mapping.symbol">Symbology</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.mapping.html#renderers">Renderers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.mapping.html#generate-renderer">generate_renderer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.mapping.html#visual-variables">visual_variables</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="arcgis.realtime.html">arcgis.realtime module</a><ul>
@@ -659,6 +656,11 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <li class="toctree-l4"><a class="reference internal" href="arcgis.apps.storymap.html#journalstorymap">JournalStoryMap</a></li>
 </ul>
 </li>
+<li class="toctree-l3"><a class="reference internal" href="arcgis.apps.survey123.html">arcgis.apps.survey123 module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.apps.survey123.html#surveymanager">SurveyManager</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.apps.survey123.html#survey">Survey</a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -674,7 +676,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
 
       
-      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+      <nav class="wy-nav-top" aria-label="top navigation">
         
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
           <a href="index.html">arcgis</a>
@@ -682,9 +684,10 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       </nav>
 
 
-      
       <div class="wy-nav-content">
+        
         <div class="rst-content">
+        
           
 
 
@@ -752,7 +755,7 @@ representation and user experience - on a map, in a 3D scene, as entities with a
 <dt id="arcgis.features.Feature">
 <em class="property">class </em><code class="descclassname">arcgis.features.</code><code class="descname">Feature</code><span class="sig-paren">(</span><em>geometry=None</em>, <em>attributes=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.features.Feature" title="Permalink to this definition">¶</a></dt>
 <dd><p>Entities located in space with a set of properties can be represented as features.</p>
-<div class="highlight-python"><div class="highlight"><pre><span></span><span class="c1"># Obtain a feature from a feature layer:</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Obtain a feature from a feature layer:</span>
 
 <span class="n">feat_set</span> <span class="o">=</span> <span class="n">feature_layer</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="n">where</span><span class="o">=</span><span class="s2">&quot;OBJECTID=1&quot;</span><span class="p">)</span>
 <span class="n">feat</span> <span class="o">=</span> <span class="n">feat_set</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
@@ -901,7 +904,7 @@ representation and user experience - on a map, in a 3D scene, as entities with a
 <td><div class="first last line-block">
 <div class="line">Required String. The name of the field to get the value for.</div>
 <div class="line"><br /></div>
-<div class="line"><code class="docutils literal"><span class="pre">feature.fields</span></code> will return a list of all field names.</div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">feature.fields</span></code> will return a list of all field names.</div>
 </div>
 </td>
 </tr>
@@ -1108,13 +1111,13 @@ Values: standard, native</td>
 </tbody>
 </table>
 </div></blockquote>
-<div class="highlight-python"><div class="highlight"><pre><span></span><span class="c1"># Usage Example 1:</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Usage Example 1:</span>
 
 <span class="k">print</span><span class="p">(</span><span class="n">fl</span><span class="o">.</span><span class="n">calculate</span><span class="p">(</span><span class="n">where</span><span class="o">=</span><span class="s2">&quot;OBJECTID &lt; 2&quot;</span><span class="p">,</span>
                    <span class="n">calc_expression</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;field&quot;</span><span class="p">:</span> <span class="s2">&quot;ZONE&quot;</span><span class="p">,</span> <span class="s2">&quot;value&quot;</span> <span class="p">:</span> <span class="s2">&quot;R1&quot;</span><span class="p">}))</span>
 </pre></div>
 </div>
-<div class="highlight-python"><div class="highlight"><pre><span></span><span class="c1"># Usage Example 2:</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Usage Example 2:</span>
 
 <span class="k">print</span><span class="p">(</span><span class="n">fl</span><span class="o">.</span><span class="n">calculate</span><span class="p">(</span><span class="n">where</span><span class="o">=</span><span class="s2">&quot;OBJECTID &lt; 2001&quot;</span><span class="p">,</span>
                    <span class="n">calc_expression</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;field&quot;</span><span class="p">:</span> <span class="s2">&quot;A&quot;</span><span class="p">,</span>  <span class="s2">&quot;sqlExpression&quot;</span> <span class="p">:</span> <span class="s2">&quot;B*3&quot;</span><span class="p">}))</span>
@@ -1314,6 +1317,36 @@ authored by the user using ArcGIS for Desktop.</p>
 </dd></dl>
 
 <dl class="attribute">
+<dt id="arcgis.features.FeatureLayer.metadata">
+<code class="descname">metadata</code><a class="headerlink" href="#arcgis.features.FeatureLayer.metadata" title="Permalink to this definition">¶</a></dt>
+<dd><p>The <cite>metadata</cite> property allows for the setting and downloading of the
+Feature Layer’s metadata.  If metadata is disabled on the GIS or the
+layer does not support metdata, None value will be returned.</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="20%" />
+<col width="80%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><strong>Argument</strong></td>
+<td><strong>Description</strong></td>
+</tr>
+<tr class="row-even"><td>value</td>
+<td>Required String. (SET) Path to the metadata file.</td>
+</tr>
+</tbody>
+</table>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">String (GET)</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
 <dt id="arcgis.features.FeatureLayer.properties">
 <code class="descname">properties</code><a class="headerlink" href="#arcgis.features.FeatureLayer.properties" title="Permalink to this definition">¶</a></dt>
 <dd><p>The properties of this object</p>
@@ -1321,7 +1354,7 @@ authored by the user using ArcGIS for Desktop.</p>
 
 <dl class="method">
 <dt id="arcgis.features.FeatureLayer.query">
-<code class="descname">query</code><span class="sig-paren">(</span><em>where='1=1'</em>, <em>out_fields='*'</em>, <em>time_filter=None</em>, <em>geometry_filter=None</em>, <em>return_geometry=True</em>, <em>return_count_only=False</em>, <em>return_ids_only=False</em>, <em>return_distinct_values=False</em>, <em>return_extent_only=False</em>, <em>group_by_fields_for_statistics=None</em>, <em>statistic_filter=None</em>, <em>result_offset=None</em>, <em>result_record_count=None</em>, <em>object_ids=None</em>, <em>distance=None</em>, <em>units=None</em>, <em>max_allowable_offset=None</em>, <em>out_sr=None</em>, <em>geometry_precision=None</em>, <em>gdb_version=None</em>, <em>order_by_fields=None</em>, <em>out_statistics=None</em>, <em>return_z=False</em>, <em>return_m=False</em>, <em>multipatch_option=None</em>, <em>quantization_parameters=None</em>, <em>return_centroid=False</em>, <em>return_all_records=True</em>, <em>result_type=None</em>, <em>historic_moment=None</em>, <em>sql_format=None</em>, <em>return_true_curves=False</em>, <em>return_exceeded_limit_features=None</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.features.FeatureLayer.query" title="Permalink to this definition">¶</a></dt>
+<code class="descname">query</code><span class="sig-paren">(</span><em>where='1=1'</em>, <em>out_fields='*'</em>, <em>time_filter=None</em>, <em>geometry_filter=None</em>, <em>return_geometry=True</em>, <em>return_count_only=False</em>, <em>return_ids_only=False</em>, <em>return_distinct_values=False</em>, <em>return_extent_only=False</em>, <em>group_by_fields_for_statistics=None</em>, <em>statistic_filter=None</em>, <em>result_offset=None</em>, <em>result_record_count=None</em>, <em>object_ids=None</em>, <em>distance=None</em>, <em>units=None</em>, <em>max_allowable_offset=None</em>, <em>out_sr=None</em>, <em>geometry_precision=None</em>, <em>gdb_version=None</em>, <em>order_by_fields=None</em>, <em>out_statistics=None</em>, <em>return_z=False</em>, <em>return_m=False</em>, <em>multipatch_option=None</em>, <em>quantization_parameters=None</em>, <em>return_centroid=False</em>, <em>return_all_records=True</em>, <em>result_type=None</em>, <em>historic_moment=None</em>, <em>sql_format=None</em>, <em>return_true_curves=False</em>, <em>return_exceeded_limit_features=None</em>, <em>as_df=False</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.features.FeatureLayer.query" title="Permalink to this definition">¶</a></dt>
 <dd><p>Queries a feature layer based on a sql statement</p>
 <table border="1" class="docutils">
 <colgroup>
@@ -1336,7 +1369,9 @@ authored by the user using ArcGIS for Desktop.</p>
 <td>Optional string. The default is 1=1. The selection sql statement.</td>
 </tr>
 <tr class="row-odd"><td>out_fields</td>
-<td>Optional string. The attribute fields to return. The default is “*”.</td>
+<td>Optional List of field names to return. Field names can be specified
+either as a List of field names or as a comma separated string.
+The default is “*”, which returns all the fields.</td>
 </tr>
 <tr class="row-even"><td>object_ids</td>
 <td>Optional string. The object IDs of this layer or table to be queried.
@@ -1544,7 +1579,11 @@ This allows a client to find the resolution in which the transfer
 limit is no longer exceeded without making multiple calls.</p>
 </td>
 </tr>
-<tr class="row-even"><td>kwargs</td>
+<tr class="row-even"><td>as_df</td>
+<td>Optional boolean.  If True, the results are returned as a DataFrame
+instead of a FeatureSet.</td>
+</tr>
+<tr class="row-odd"><td>kwargs</td>
 <td>Optional dict. Optional parameters that can be passed to the Query
 function.  This will allow users to pass additional parameters not
 explicitly implemented on the function. A complete list of functions
@@ -1642,6 +1681,34 @@ The default is false.</td>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">dict</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="arcgis.features.FeatureLayer.update_metadata">
+<code class="descname">update_metadata</code><span class="sig-paren">(</span><em>file_path</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.features.FeatureLayer.update_metadata" title="Permalink to this definition">¶</a></dt>
+<dd><p>Updates a Layer’s metadata from an xml file.</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="19%" />
+<col width="81%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><strong>Argument</strong></td>
+<td><strong>Description</strong></td>
+</tr>
+<tr class="row-even"><td>file_path</td>
+<td>Required String.  The path to the .xml file that contains the metadata.</td>
+</tr>
+</tbody>
+</table>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">boolean</td>
 </tr>
 </tbody>
 </table>
@@ -1864,13 +1931,13 @@ Values: standard, native</td>
 </tbody>
 </table>
 </div></blockquote>
-<div class="highlight-python"><div class="highlight"><pre><span></span><span class="c1"># Usage Example 1:</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Usage Example 1:</span>
 
 <span class="k">print</span><span class="p">(</span><span class="n">fl</span><span class="o">.</span><span class="n">calculate</span><span class="p">(</span><span class="n">where</span><span class="o">=</span><span class="s2">&quot;OBJECTID &lt; 2&quot;</span><span class="p">,</span>
                    <span class="n">calc_expression</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;field&quot;</span><span class="p">:</span> <span class="s2">&quot;ZONE&quot;</span><span class="p">,</span> <span class="s2">&quot;value&quot;</span> <span class="p">:</span> <span class="s2">&quot;R1&quot;</span><span class="p">}))</span>
 </pre></div>
 </div>
-<div class="highlight-python"><div class="highlight"><pre><span></span><span class="c1"># Usage Example 2:</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Usage Example 2:</span>
 
 <span class="k">print</span><span class="p">(</span><span class="n">fl</span><span class="o">.</span><span class="n">calculate</span><span class="p">(</span><span class="n">where</span><span class="o">=</span><span class="s2">&quot;OBJECTID &lt; 2001&quot;</span><span class="p">,</span>
                    <span class="n">calc_expression</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;field&quot;</span><span class="p">:</span> <span class="s2">&quot;A&quot;</span><span class="p">,</span>  <span class="s2">&quot;sqlExpression&quot;</span> <span class="p">:</span> <span class="s2">&quot;B*3&quot;</span><span class="p">}))</span>
@@ -1986,9 +2053,9 @@ value is true.</td>
 <p>Output: dictionary</p>
 </dd></dl>
 
-<dl class="method">
+<dl class="classmethod">
 <dt id="arcgis.features.Table.fromitem">
-<code class="descname">fromitem</code><span class="sig-paren">(</span><em>item</em>, <em>layer_id=0</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.features.Table.fromitem" title="Permalink to this definition">¶</a></dt>
+<em class="property">classmethod </em><code class="descname">fromitem</code><span class="sig-paren">(</span><em>item</em>, <em>layer_id=0</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.features.Table.fromitem" title="Permalink to this definition">¶</a></dt>
 <dd><p>Creates a feature layer from a GIS Item.
 The type of item should be a ‘Feature Service’ that represents a FeatureLayerCollection.
 The layer_id is the id of the layer in feature layer collection (feature service).</p>
@@ -2070,6 +2137,36 @@ authored by the user using ArcGIS for Desktop.</p>
 </dd></dl>
 
 <dl class="attribute">
+<dt id="arcgis.features.Table.metadata">
+<code class="descname">metadata</code><a class="headerlink" href="#arcgis.features.Table.metadata" title="Permalink to this definition">¶</a></dt>
+<dd><p>The <cite>metadata</cite> property allows for the setting and downloading of the
+Feature Layer’s metadata.  If metadata is disabled on the GIS or the
+layer does not support metdata, None value will be returned.</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="20%" />
+<col width="80%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><strong>Argument</strong></td>
+<td><strong>Description</strong></td>
+</tr>
+<tr class="row-even"><td>value</td>
+<td>Required String. (SET) Path to the metadata file.</td>
+</tr>
+</tbody>
+</table>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">String (GET)</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
 <dt id="arcgis.features.Table.properties">
 <code class="descname">properties</code><a class="headerlink" href="#arcgis.features.Table.properties" title="Permalink to this definition">¶</a></dt>
 <dd><p>The properties of this object</p>
@@ -2077,7 +2174,7 @@ authored by the user using ArcGIS for Desktop.</p>
 
 <dl class="method">
 <dt id="arcgis.features.Table.query">
-<code class="descname">query</code><span class="sig-paren">(</span><em>where='1=1'</em>, <em>out_fields='*'</em>, <em>time_filter=None</em>, <em>geometry_filter=None</em>, <em>return_geometry=True</em>, <em>return_count_only=False</em>, <em>return_ids_only=False</em>, <em>return_distinct_values=False</em>, <em>return_extent_only=False</em>, <em>group_by_fields_for_statistics=None</em>, <em>statistic_filter=None</em>, <em>result_offset=None</em>, <em>result_record_count=None</em>, <em>object_ids=None</em>, <em>distance=None</em>, <em>units=None</em>, <em>max_allowable_offset=None</em>, <em>out_sr=None</em>, <em>geometry_precision=None</em>, <em>gdb_version=None</em>, <em>order_by_fields=None</em>, <em>out_statistics=None</em>, <em>return_z=False</em>, <em>return_m=False</em>, <em>multipatch_option=None</em>, <em>quantization_parameters=None</em>, <em>return_centroid=False</em>, <em>return_all_records=True</em>, <em>result_type=None</em>, <em>historic_moment=None</em>, <em>sql_format=None</em>, <em>return_true_curves=False</em>, <em>return_exceeded_limit_features=None</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.features.Table.query" title="Permalink to this definition">¶</a></dt>
+<code class="descname">query</code><span class="sig-paren">(</span><em>where='1=1'</em>, <em>out_fields='*'</em>, <em>time_filter=None</em>, <em>geometry_filter=None</em>, <em>return_geometry=True</em>, <em>return_count_only=False</em>, <em>return_ids_only=False</em>, <em>return_distinct_values=False</em>, <em>return_extent_only=False</em>, <em>group_by_fields_for_statistics=None</em>, <em>statistic_filter=None</em>, <em>result_offset=None</em>, <em>result_record_count=None</em>, <em>object_ids=None</em>, <em>distance=None</em>, <em>units=None</em>, <em>max_allowable_offset=None</em>, <em>out_sr=None</em>, <em>geometry_precision=None</em>, <em>gdb_version=None</em>, <em>order_by_fields=None</em>, <em>out_statistics=None</em>, <em>return_z=False</em>, <em>return_m=False</em>, <em>multipatch_option=None</em>, <em>quantization_parameters=None</em>, <em>return_centroid=False</em>, <em>return_all_records=True</em>, <em>result_type=None</em>, <em>historic_moment=None</em>, <em>sql_format=None</em>, <em>return_true_curves=False</em>, <em>return_exceeded_limit_features=None</em>, <em>as_df=False</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.features.Table.query" title="Permalink to this definition">¶</a></dt>
 <dd><p>Queries a feature layer based on a sql statement</p>
 <table border="1" class="docutils">
 <colgroup>
@@ -2092,7 +2189,9 @@ authored by the user using ArcGIS for Desktop.</p>
 <td>Optional string. The default is 1=1. The selection sql statement.</td>
 </tr>
 <tr class="row-odd"><td>out_fields</td>
-<td>Optional string. The attribute fields to return. The default is “*”.</td>
+<td>Optional List of field names to return. Field names can be specified
+either as a List of field names or as a comma separated string.
+The default is “*”, which returns all the fields.</td>
 </tr>
 <tr class="row-even"><td>object_ids</td>
 <td>Optional string. The object IDs of this layer or table to be queried.
@@ -2300,7 +2399,11 @@ This allows a client to find the resolution in which the transfer
 limit is no longer exceeded without making multiple calls.</p>
 </td>
 </tr>
-<tr class="row-even"><td>kwargs</td>
+<tr class="row-even"><td>as_df</td>
+<td>Optional boolean.  If True, the results are returned as a DataFrame
+instead of a FeatureSet.</td>
+</tr>
+<tr class="row-odd"><td>kwargs</td>
 <td>Optional dict. Optional parameters that can be passed to the Query
 function.  This will allow users to pass additional parameters not
 explicitly implemented on the function. A complete list of functions
@@ -2404,6 +2507,34 @@ The default is false.</td>
 </dd></dl>
 
 <dl class="method">
+<dt id="arcgis.features.Table.update_metadata">
+<code class="descname">update_metadata</code><span class="sig-paren">(</span><em>file_path</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.features.Table.update_metadata" title="Permalink to this definition">¶</a></dt>
+<dd><p>Updates a Layer’s metadata from an xml file.</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="19%" />
+<col width="81%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><strong>Argument</strong></td>
+<td><strong>Description</strong></td>
+</tr>
+<tr class="row-even"><td>file_path</td>
+<td>Required String.  The path to the .xml file that contains the metadata.</td>
+</tr>
+</tbody>
+</table>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">boolean</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
 <dt id="arcgis.features.Table.validate_sql">
 <code class="descname">validate_sql</code><span class="sig-paren">(</span><em>sql</em>, <em>sql_type='where'</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.features.Table.validate_sql" title="Permalink to this definition">¶</a></dt>
 <dd><p>The validate_sql operation validates an SQL-92 expression or WHERE
@@ -2481,8 +2612,169 @@ replicas for disconnected editing of the feature layer collection.</p>
 <p>Note: You can use the <cite>layers</cite> and <cite>tables</cite> property to get to the individual layers and tables in this
 feature layer collection.</p>
 <dl class="method">
+<dt id="arcgis.features.FeatureLayerCollection.extract_changes">
+<code class="descname">extract_changes</code><span class="sig-paren">(</span><em>layers</em>, <em>servergen</em>, <em>queries=None</em>, <em>geometry=None</em>, <em>geometry_type=None</em>, <em>version=None</em>, <em>return_inserts=False</em>, <em>return_updates=False</em>, <em>return_deletes=False</em>, <em>return_ids_only=False</em>, <em>return_extent_only=False</em>, <em>return_attachements=False</em>, <em>attachments_by_url=False</em>, <em>data_format='json'</em>, <em>change_extent_grid_cell=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.features.FeatureLayerCollection.extract_changes" title="Permalink to this definition">¶</a></dt>
+<dd><p>Feature service change tracking is an efficient change tracking
+mechanism for applications. Applications can use change tracking to
+query changes that have been made to the layers and tables in the
+service. For enterprise geodatabase based feature services published
+from ArcGIS Pro 2.2 or higher, the ChangeTracking capability
+requires all layers and tables to be either archive enabled or
+branch versioned and have globalid columns. Change tracking can also
+be enabled for ArcGIS Online hosted feature services. If all layers
+and tables in the service have the ChangeTracking capability, the
+<cite>extract_changes</cite> operation can be used to get changes.</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="31%" />
+<col width="69%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><strong>Argument</strong></td>
+<td><strong>Description</strong></td>
+</tr>
+<tr class="row-even"><td>layers</td>
+<td>Required List.  The list of layers and tables to include in the
+replica.</td>
+</tr>
+<tr class="row-odd"><td>servergen</td>
+<td><p class="first">Required List.   The servergens allows a client to specify the last
+layer generation numbers for the changes received from the server.</p>
+<blockquote>
+<div><ul class="simple">
+<li>minServerGen: It is the min generation of the server data changes.
+clients with layerServerGens that is less than minServerGen cannot
+extract changes and would need to make a full server/layers query
+instead of extracting changes.</li>
+<li>serverGen: It is the current server generation number of the
+changes. Every changed feature has a version or a generation number
+that is changed every time the feature is updated.</li>
+</ul>
+</div></blockquote>
+<dl class="last docutils">
+<dt>Syntax: servergen = [{“id”: &lt;layerId1&gt;, “serverGen”: &lt;genNum1&gt;},</dt>
+<dd>{“id”: &lt;layerId2&gt;, “serverGen”: &lt;genNum2&gt;}]</dd>
+<dt>Example: servergen= [{“id”: 0, “serverGen”: 10500},</dt>
+<dd>{“id”: 1, “serverGen”: 1100},
+{“id”: 2, “serverGen”: 1200}]</dd>
+</dl>
+</td>
+</tr>
+<tr class="row-even"><td>queries</td>
+<td><p class="first">Optional Dictionary. In addition to the layers and geometry
+parameters, the <cite>queries</cite> parameter can be used to further define
+what changes to return. This parameter allows you to set query
+properties on a per-layer or per-table basis. If a layer’s ID is
+present in the layers parameter and missing from layer <cite>queries</cite>,
+it’s changed features that intersect with the filter geometry are
+returned.</p>
+<p>The properties include the following:</p>
+<blockquote>
+<div><ul class="simple">
+<li>where - Defines an attribute query for a layer or table. The
+default is no where clause.</li>
+<li>useGeometry - Determines whether or not to apply the geometry
+for the layer. The default is true. If set to false, features
+from the layer that intersect the geometry are not added.</li>
+<li>includeRelated - Determines whether or not to add related
+rows. The defualt is true. The value true is honored only
+for queryOption=none. This is only applicable if your data
+has relationship classes. Relationships are only processed
+in a forward direction from origin to destination.</li>
+<li>queryOption - Defines whether or how filters will be applied
+to a layer. The queryOption was added in 10.2. See the
+Compatibility notes topic for more information.</li>
+</ul>
+</div></blockquote>
+<p>Values: None, useFilter, or all</p>
+<p>When is value is none, no feature are returned based on where and
+filter geometry. if includeRelated is false, no features are
+returned. If includeRelated is true, features in this layer (that
+are related to the features in other layers in the replica) are
+returned.</p>
+<p>When the value is useFilter, features that satisfy filtering based
+on geometry and where are returned. The value of includeRelated is
+ignored.</p>
+<p class="last">Syntax: queries={Layer_or_tableID1:{“where”:”attribute query”,
+“useGeometry”: true | false, “includeRelated”: true | false},
+Layer_or_tableID2: {.}}</p>
+</td>
+</tr>
+<tr class="row-odd"><td>geometry</td>
+<td>Option Geometry/Extent. The geometry to apply as the spatial filter
+for the changes. All the changed features in layers intersecting
+this geometry will be returned. The structure of the geometry is the
+same as the structure of the JSON geometry objects returned by the
+ArcGIS REST API. In addition to the JSON structures, for envelopes
+and points, you can specify the geometry with a simpler
+comma-separated syntax.</td>
+</tr>
+<tr class="row-even"><td>geometry_type</td>
+<td><p class="first">Optional String. The type of geometry specified by the geometry
+parameter. The geometry type can be an envelope, point, line or
+polygon. The default geometry type is an envelope.</p>
+<dl class="last docutils">
+<dt>Values: esriGeometryPoint, esriGeometryMultipoint,</dt>
+<dd>esriGeometryPolyline, esriGeometryPolygon,
+esriGeometryEnvelope</dd>
+</dl>
+</td>
+</tr>
+<tr class="row-odd"><td>in_sr</td>
+<td>Optional Integer. The spatial reference of the input geometry.</td>
+</tr>
+<tr class="row-even"><td>out_sr</td>
+<td>Optional Integer/String. The output spatial reference of the
+returned changes.</td>
+</tr>
+<tr class="row-odd"><td>version</td>
+<td>Optional String. If branch versioning is enabled, a user can specify
+the branch version name to extract changes from.</td>
+</tr>
+<tr class="row-even"><td>return_inserts</td>
+<td>Optional Boolean.  If true, newly inserted features will be
+returned. The default is false.</td>
+</tr>
+<tr class="row-odd"><td>return_updates</td>
+<td>Optional Boolean. If true, updated features will be returned. The
+default is false.</td>
+</tr>
+<tr class="row-even"><td>return_deletes</td>
+<td>Optional Boolean. If true, deleted features will be returned. The
+default is false.</td>
+</tr>
+<tr class="row-odd"><td>return_ids_only</td>
+<td>Optional Boolean. If true, the response includes an array of object
+IDs only. The default is false.</td>
+</tr>
+<tr class="row-even"><td>return_attachements</td>
+<td>Optional Boolean.  If true, attachments changes are returned in the
+response. Otherwise, attachments are not included. The default is
+false. This parameter is only applicable if the feature service has
+attachments.</td>
+</tr>
+<tr class="row-odd"><td>attachments_by_url</td>
+<td>Optional Boolean.  If true, a reference to a URL will be provided
+for each attachment returned. Otherwise, attachments are embedded in
+the response. The default is true.</td>
+</tr>
+<tr class="row-even"><td>data_format</td>
+<td>Optional String. The format of the changes returned in the response.
+The default is json. Values: sqllite or json</td>
+</tr>
+<tr class="row-odd"><td>change_extent_grid_cell</td>
+<td>Optional String. To optimize localizing changes extent, the value
+medium is an 8x8 grid that bound the changes extent. Used only when
+<cite>return_extent_only</cite> is true. The default is none.
+Values: None, large, medium, or small</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="classmethod">
 <dt id="arcgis.features.FeatureLayerCollection.fromitem">
-<code class="descname">fromitem</code><span class="sig-paren">(</span><em>item</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.features.FeatureLayerCollection.fromitem" title="Permalink to this definition">¶</a></dt>
+<em class="property">classmethod </em><code class="descname">fromitem</code><span class="sig-paren">(</span><em>item</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.features.FeatureLayerCollection.fromitem" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="attribute">
@@ -2618,6 +2910,13 @@ successfully, the JSON structure of the uploaded item is returned.</p>
 </tr>
 </tbody>
 </table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="arcgis.features.FeatureLayerCollection.versions">
+<code class="descname">versions</code><a class="headerlink" href="#arcgis.features.FeatureLayerCollection.versions" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns a <cite>VersionManager</cite> to create, update and use versions on a <cite>FeatureLayerCollection</cite>.
+If versioning is not enabled on the service, None is returned.</p>
 </dd></dl>
 
 </dd></dl>
@@ -2847,7 +3146,7 @@ This includes visualization, spatial indexing, IO and dataset level properties.<
 </tr>
 </tbody>
 </table>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">df</span><span class="o">.</span><span class="n">spatial</span><span class="o">.</span><span class="n">area</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">df</span><span class="o">.</span><span class="n">spatial</span><span class="o">.</span><span class="n">area</span>
 <span class="go">143.23427</span>
 </pre></div>
 </div>
@@ -2865,7 +3164,7 @@ This includes visualization, spatial indexing, IO and dataset level properties.<
 </tr>
 </tbody>
 </table>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">df</span><span class="o">.</span><span class="n">spatial</span><span class="o">.</span><span class="n">bbox</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">df</span><span class="o">.</span><span class="n">spatial</span><span class="o">.</span><span class="n">bbox</span>
 <span class="go">{&#39;rings&#39; : [[[1,2], [2,3], [3,3],....]], &#39;spatialReference&#39; {&#39;wkid&#39;: 4326}}</span>
 </pre></div>
 </div>
@@ -2883,7 +3182,7 @@ This includes visualization, spatial indexing, IO and dataset level properties.<
 </tr>
 </tbody>
 </table>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">df</span><span class="o">.</span><span class="n">spatial</span><span class="o">.</span><span class="n">centroid</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">df</span><span class="o">.</span><span class="n">spatial</span><span class="o">.</span><span class="n">centroid</span>
 <span class="go">(-14.23427, 39)</span>
 </pre></div>
 </div>
@@ -2936,14 +3235,135 @@ the GIS to which the geocoder belongs.</p>
 
 <dl class="staticmethod">
 <dt id="arcgis.features.GeoAccessor.from_featureclass">
-<em class="property">static </em><code class="descname">from_featureclass</code><span class="sig-paren">(</span><em>location</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.features.GeoAccessor.from_featureclass" title="Permalink to this definition">¶</a></dt>
-<dd><p>import a geo enabled dataframe to a feature class.</p>
+<em class="property">static </em><code class="descname">from_featureclass</code><span class="sig-paren">(</span><em>location</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.features.GeoAccessor.from_featureclass" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns a Spatially enbaled <cite>pandas.DataFrame</cite> from a feature class.</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="26%" />
+<col width="74%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><strong>Argument</strong></td>
+<td><strong>Description</strong></td>
+</tr>
+<tr class="row-even"><td>location</td>
+<td>Required String. The full qualified path to the feature
+class.</td>
+</tr>
+</tbody>
+</table>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">Pandas’ <cite>DataFrame</cite></td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
 <dl class="staticmethod">
 <dt id="arcgis.features.GeoAccessor.from_layer">
 <em class="property">static </em><code class="descname">from_layer</code><span class="sig-paren">(</span><em>layer</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.features.GeoAccessor.from_layer" title="Permalink to this definition">¶</a></dt>
-<dd><p>imports a FeatureLayer to a Spatially Enabled DataFrame</p>
+<dd><p>Imports a FeatureLayer to a Spatially Enabled DataFrame</p>
+<p>This operation converts a FeatureLayer or TableLayer to a Pandas’ DataFrame</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="25%" />
+<col width="75%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><strong>Argument</strong></td>
+<td><strong>Description</strong></td>
+</tr>
+<tr class="row-even"><td>layer</td>
+<td>Required FeatureLayer or TableLayer. The service to convert
+to a Spatially enabled DataFrame.</td>
+</tr>
+</tbody>
+</table>
+<p>Usage:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">arcgis.features</span> <span class="k">import</span> <span class="n">FeatureLayer</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">mylayer</span> <span class="o">=</span> <span class="n">FeatureLayer</span><span class="p">((</span><span class="s2">&quot;https://sampleserver6.arcgisonline.com/arcgis/rest&quot;</span>
+<span class="go">                    &quot;/services/CommercialDamageAssessment/FeatureServer/0&quot;))</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">df</span> <span class="o">=</span> <span class="n">from_layer</span><span class="p">(</span><span class="n">mylayer</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">())</span>
+</pre></div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">Pandas’ <cite>DataFrame</cite></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="staticmethod">
+<dt id="arcgis.features.GeoAccessor.from_table">
+<em class="property">static </em><code class="descname">from_table</code><span class="sig-paren">(</span><em>filename</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.features.GeoAccessor.from_table" title="Permalink to this definition">¶</a></dt>
+<dd><p>Allows a user to read from a non-spatial table</p>
+<p><strong>Note: ArcPy is Required for this method</strong></p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="22%" />
+<col width="78%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><strong>Argument</strong></td>
+<td><strong>Description</strong></td>
+</tr>
+<tr class="row-even"><td>filename</td>
+<td>Required string. The path to the table.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Keyword Arguments</strong></p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="22%" />
+<col width="78%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><strong>Argument</strong></td>
+<td><strong>Description</strong></td>
+</tr>
+<tr class="row-even"><td>fields</td>
+<td><p class="first">Optional List/Tuple. A list (or tuple) of field
+names. For a single field, you can use a string
+instead of a list of strings.</p>
+<p>Use an asterisk (*) instead of a list of fields if
+you want to access all fields from the input table
+(raster and BLOB fields are excluded). However, for
+faster performance and reliable field order, it is
+recommended that the list of fields be narrowed to
+only those that are actually needed.</p>
+<p class="last">Geometry, raster, and BLOB fields are not supported.</p>
+</td>
+</tr>
+<tr class="row-odd"><td>where</td>
+<td>Optional String. An optional expression that limits
+the records returned.</td>
+</tr>
+<tr class="row-even"><td>skip_nulls</td>
+<td>Optional Boolean. This controls whether records
+using nulls are skipped.</td>
+</tr>
+<tr class="row-odd"><td>null_value</td>
+<td>Optional String/Integer/Float. Replaces null values
+from the input with a new value.</td>
+</tr>
+</tbody>
+</table>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">pd.DataFrame</td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
 <dl class="staticmethod">
@@ -2996,7 +3416,7 @@ the GIS to which the geocoder belongs.</p>
 </tr>
 </tbody>
 </table>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">df</span><span class="o">.</span><span class="n">spatial</span><span class="o">.</span><span class="n">full_extent</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">df</span><span class="o">.</span><span class="n">spatial</span><span class="o">.</span><span class="n">full_extent</span>
 <span class="go">(-118, 32, -97, 33)</span>
 </pre></div>
 </div>
@@ -3080,7 +3500,7 @@ the field.</td>
 </tr>
 </tbody>
 </table>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">df</span><span class="o">.</span><span class="n">spatial</span><span class="o">.</span><span class="n">length</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">df</span><span class="o">.</span><span class="n">spatial</span><span class="o">.</span><span class="n">length</span>
 <span class="go">1.23427</span>
 </pre></div>
 </div>
@@ -3866,7 +4286,7 @@ SpatialReference object or the coordinate system name.</td>
 
 <dl class="method">
 <dt id="arcgis.features.GeoAccessor.set_geometry">
-<code class="descname">set_geometry</code><span class="sig-paren">(</span><em>col</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.features.GeoAccessor.set_geometry" title="Permalink to this definition">¶</a></dt>
+<code class="descname">set_geometry</code><span class="sig-paren">(</span><em>col</em>, <em>sr=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.features.GeoAccessor.set_geometry" title="Permalink to this definition">¶</a></dt>
 <dd><p>Assigns the Geometry Column by Name or by List</p>
 </dd></dl>
 
@@ -3977,6 +4397,39 @@ words for the service.</td>
 <dd><p>Converts a spatial dataframe to a feature set object</p>
 </dd></dl>
 
+<dl class="method">
+<dt id="arcgis.features.GeoAccessor.to_table">
+<code class="descname">to_table</code><span class="sig-paren">(</span><em>location</em>, <em>overwrite=True</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.features.GeoAccessor.to_table" title="Permalink to this definition">¶</a></dt>
+<dd><p>Exports a geo enabled dataframe to a table.</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="28%" />
+<col width="72%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><strong>Argument</strong></td>
+<td><strong>Description</strong></td>
+</tr>
+<tr class="row-even"><td>location</td>
+<td>Required string. The output of the table.</td>
+</tr>
+<tr class="row-odd"><td>overwrite</td>
+<td>Optional Boolean.  If True and if the table exists, it will be
+deleted and overwritten.  This is default.  If False, the table and
+the table exists, and exception will be raised.</td>
+</tr>
+</tbody>
+</table>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">String</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
 <dl class="attribute">
 <dt id="arcgis.features.GeoAccessor.true_centroid">
 <code class="descname">true_centroid</code><a class="headerlink" href="#arcgis.features.GeoAccessor.true_centroid" title="Permalink to this definition">¶</a></dt>
@@ -3989,7 +4442,7 @@ words for the service.</td>
 </tr>
 </tbody>
 </table>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">df</span><span class="o">.</span><span class="n">spatial</span><span class="o">.</span><span class="n">true_centroid</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">df</span><span class="o">.</span><span class="n">spatial</span><span class="o">.</span><span class="n">true_centroid</span>
 <span class="go">(1.23427, 34)</span>
 </pre></div>
 </div>
@@ -4012,17 +4465,44 @@ words for the service.</td>
 <dd><dl class="attribute">
 <dt id="arcgis.features.GeoSeriesAccessor.JSON">
 <code class="descname">JSON</code><a class="headerlink" href="#arcgis.features.GeoSeriesAccessor.JSON" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>Returns JSON string  of Geometry</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">Series of strings</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
 
 <dl class="attribute">
 <dt id="arcgis.features.GeoSeriesAccessor.WKB">
 <code class="descname">WKB</code><a class="headerlink" href="#arcgis.features.GeoSeriesAccessor.WKB" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>Returns the Geometry as WKB</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">Series of Bytes</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
 
 <dl class="attribute">
 <dt id="arcgis.features.GeoSeriesAccessor.WKT">
 <code class="descname">WKT</code><a class="headerlink" href="#arcgis.features.GeoSeriesAccessor.WKT" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>Returns the Geometry as WKT</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">Series of String</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
 
 <dl class="method">
 <dt id="arcgis.features.GeoSeriesAccessor.angle_distance_to">
@@ -4063,17 +4543,44 @@ an alternative, if desired.</td>
 <dl class="attribute">
 <dt id="arcgis.features.GeoSeriesAccessor.area">
 <code class="descname">area</code><a class="headerlink" href="#arcgis.features.GeoSeriesAccessor.area" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>Returns the features area</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">float in a series</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
 
 <dl class="attribute">
 <dt id="arcgis.features.GeoSeriesAccessor.as_arcpy">
 <code class="descname">as_arcpy</code><a class="headerlink" href="#arcgis.features.GeoSeriesAccessor.as_arcpy" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>Returns the features as ArcPy Geometry</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">arcpy.Geometry in a series</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
 
 <dl class="attribute">
 <dt id="arcgis.features.GeoSeriesAccessor.as_shapely">
 <code class="descname">as_shapely</code><a class="headerlink" href="#arcgis.features.GeoSeriesAccessor.as_shapely" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>Returns the features as Shapely Geometry</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">shapely.Geometry in a series</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
 
 <dl class="method">
 <dt id="arcgis.features.GeoSeriesAccessor.boundary">
@@ -4122,7 +4629,16 @@ A negative distance can only be specified against a polygon geometry.</td>
 <dl class="attribute">
 <dt id="arcgis.features.GeoSeriesAccessor.centroid">
 <code class="descname">centroid</code><a class="headerlink" href="#arcgis.features.GeoSeriesAccessor.centroid" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>Returns the feature’s centroid</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">tuple (x,y) in series</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
 
 <dl class="method">
 <dt id="arcgis.features.GeoSeriesAccessor.clip">
@@ -4422,12 +4938,30 @@ a 2D comparison only; M and Z values are ignored.</p>
 <dl class="attribute">
 <dt id="arcgis.features.GeoSeriesAccessor.extent">
 <code class="descname">extent</code><a class="headerlink" href="#arcgis.features.GeoSeriesAccessor.extent" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>Returns the feature’s extent</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">tuple (xmin,ymin,xmax,ymax) in series</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
 
 <dl class="attribute">
 <dt id="arcgis.features.GeoSeriesAccessor.first_point">
 <code class="descname">first_point</code><a class="headerlink" href="#arcgis.features.GeoSeriesAccessor.first_point" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>Returns the feature’s first point</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">Geometry</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
 
 <dl class="method">
 <dt id="arcgis.features.GeoSeriesAccessor.generalize">
@@ -4461,12 +4995,30 @@ tolerance.</p>
 <dl class="attribute">
 <dt id="arcgis.features.GeoSeriesAccessor.geoextent">
 <code class="descname">geoextent</code><a class="headerlink" href="#arcgis.features.GeoSeriesAccessor.geoextent" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>A returns the geometry’s extents</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">Series of Floats</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
 
 <dl class="attribute">
 <dt id="arcgis.features.GeoSeriesAccessor.geometry_type">
 <code class="descname">geometry_type</code><a class="headerlink" href="#arcgis.features.GeoSeriesAccessor.geometry_type" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>A returns the geometry types</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">Series of strings</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
 
 <dl class="method">
 <dt id="arcgis.features.GeoSeriesAccessor.get_area">
@@ -4576,7 +5128,16 @@ or an array containing a number of arrays, one for each part.</p>
 <dl class="attribute">
 <dt id="arcgis.features.GeoSeriesAccessor.hull_rectangle">
 <code class="descname">hull_rectangle</code><a class="headerlink" href="#arcgis.features.GeoSeriesAccessor.hull_rectangle" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>A space-delimited string of the coordinate pairs of the convex hull</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">Series of strings</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
 
 <dl class="method">
 <dt id="arcgis.features.GeoSeriesAccessor.intersect">
@@ -4623,37 +5184,100 @@ resulting geometry.</p>
 <dl class="attribute">
 <dt id="arcgis.features.GeoSeriesAccessor.is_empty">
 <code class="descname">is_empty</code><a class="headerlink" href="#arcgis.features.GeoSeriesAccessor.is_empty" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>Returns True/False if feature is empty</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">Series of Booleans</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
 
 <dl class="attribute">
 <dt id="arcgis.features.GeoSeriesAccessor.is_multipart">
 <code class="descname">is_multipart</code><a class="headerlink" href="#arcgis.features.GeoSeriesAccessor.is_multipart" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>Returns True/False if features has multiple parts</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">Series of Booleans</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
 
 <dl class="attribute">
 <dt id="arcgis.features.GeoSeriesAccessor.is_valid">
 <code class="descname">is_valid</code><a class="headerlink" href="#arcgis.features.GeoSeriesAccessor.is_valid" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>Returns True/False if features geometry is valid</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">Series of Booleans</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
 
 <dl class="attribute">
 <dt id="arcgis.features.GeoSeriesAccessor.label_point">
 <code class="descname">label_point</code><a class="headerlink" href="#arcgis.features.GeoSeriesAccessor.label_point" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>Returns the geometry point for the optimal label location</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">Series of Geometries</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
 
 <dl class="attribute">
 <dt id="arcgis.features.GeoSeriesAccessor.last_point">
 <code class="descname">last_point</code><a class="headerlink" href="#arcgis.features.GeoSeriesAccessor.last_point" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>Returns the Geometry of the last point in a feature.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">Series of Geometry</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
 
 <dl class="attribute">
 <dt id="arcgis.features.GeoSeriesAccessor.length">
 <code class="descname">length</code><a class="headerlink" href="#arcgis.features.GeoSeriesAccessor.length" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>Returns the length of the features</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">Series of float</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
 
 <dl class="attribute">
 <dt id="arcgis.features.GeoSeriesAccessor.length3D">
 <code class="descname">length3D</code><a class="headerlink" href="#arcgis.features.GeoSeriesAccessor.length3D" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>Returns the length of the features</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">Series of float</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
 
 <dl class="method">
 <dt id="arcgis.features.GeoSeriesAccessor.measure_on_line">
@@ -4720,12 +5344,30 @@ either of the input geometries.</p>
 <dl class="attribute">
 <dt id="arcgis.features.GeoSeriesAccessor.part_count">
 <code class="descname">part_count</code><a class="headerlink" href="#arcgis.features.GeoSeriesAccessor.part_count" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>Returns the number of parts in a feature’s geometry</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">Series of Integer</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
 
 <dl class="attribute">
 <dt id="arcgis.features.GeoSeriesAccessor.point_count">
 <code class="descname">point_count</code><a class="headerlink" href="#arcgis.features.GeoSeriesAccessor.point_count" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>Returns the number of points in a feature’s geometry</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">Series of Integer</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
 
 <dl class="method">
 <dt id="arcgis.features.GeoSeriesAccessor.point_from_angle_and_distance">
@@ -4941,7 +5583,16 @@ percentages, the measures should be expressed as a double from 0.0
 <dl class="attribute">
 <dt id="arcgis.features.GeoSeriesAccessor.spatial_reference">
 <code class="descname">spatial_reference</code><a class="headerlink" href="#arcgis.features.GeoSeriesAccessor.spatial_reference" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>Returns the Spatial Reference of the Geometry</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">Series of SpatialReference</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
 
 <dl class="method">
 <dt id="arcgis.features.GeoSeriesAccessor.symmetric_difference">
@@ -5004,7 +5655,16 @@ instersection of those geometries.</p>
 <dl class="attribute">
 <dt id="arcgis.features.GeoSeriesAccessor.true_centroid">
 <code class="descname">true_centroid</code><a class="headerlink" href="#arcgis.features.GeoSeriesAccessor.true_centroid" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>Returns the true centroid of the Geometry</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">Series of Points</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
 
 <dl class="method">
 <dt id="arcgis.features.GeoSeriesAccessor.union">
@@ -6490,14 +7150,14 @@ key : string</p>
 <p>mode : optional, {‘a’, ‘w’, ‘r+’}, default ‘a’</p>
 <blockquote>
 <div><dl class="docutils">
-<dt><code class="docutils literal"><span class="pre">'w'</span></code></dt>
+<dt><code class="docutils literal notranslate"><span class="pre">'w'</span></code></dt>
 <dd>Write; a new file is created (an existing file with the same
 name would be deleted).</dd>
-<dt><code class="docutils literal"><span class="pre">'a'</span></code></dt>
+<dt><code class="docutils literal notranslate"><span class="pre">'a'</span></code></dt>
 <dd>Append; an existing file is opened for reading and writing,
 and if the file does not exist it is created.</dd>
-<dt><code class="docutils literal"><span class="pre">'r+'</span></code></dt>
-<dd>It is similar to <code class="docutils literal"><span class="pre">'a'</span></code>, but the file must already exist.</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">'r+'</span></code></dt>
+<dd>It is similar to <code class="docutils literal notranslate"><span class="pre">'a'</span></code>, but the file must already exist.</dd>
 </dl>
 </div></blockquote>
 <dl class="docutils">
@@ -6620,6 +7280,8 @@ in the store wherever possible</dd>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.features.managers.html#syncmanager">SyncManager</a></li>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.features.managers.html#featurelayercollectionmanager">FeatureLayerCollectionManager</a></li>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.features.managers.html#featurelayermanager">FeatureLayerManager</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.features.managers.html#versionmanager">VersionManager</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.features.managers.html#version">Version</a></li>
 </ul>
 </li>
 </ul>
@@ -6630,9 +7292,7 @@ in the store wherever possible</dd>
 
 
            </div>
-           <div class="articleComments">
-            
-           </div>
+           
           </div>
           <footer>
   
@@ -6654,7 +7314,7 @@ in the store wherever possible</dd>
 
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
 
 </footer>
 
@@ -6672,7 +7332,8 @@ in the store wherever possible</dd>
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'./',
-            VERSION:'1.5.0',
+            VERSION:'1.5.1',
+            LANGUAGE:'None',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  true,
@@ -6685,19 +7346,13 @@ in the store wherever possible</dd>
 
   
 
-  
-  
-    <script type="text/javascript" src="_static/js/theme.js"></script>
-  
+  <script type="text/javascript" src="_static/js/theme.js"></script>
 
-  
-  
   <script type="text/javascript">
       jQuery(function () {
-          SphinxRtdTheme.StickyNav.enable();
+          SphinxRtdTheme.Navigation.enable(true);
       });
-  </script>
-   
+  </script> 
 
 </body>
 </html>

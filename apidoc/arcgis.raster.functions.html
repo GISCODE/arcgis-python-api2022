@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>arcgis.raster.functions module &mdash; arcgis 1.5.0 documentation</title>
+  <title>arcgis.raster.functions module &mdash; arcgis 1.5.1 documentation</title>
   
 
   
@@ -24,23 +24,13 @@
 
   
 
-  
-  
-    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
-  
-
-  
-    <link rel="stylesheet" href="_static/theme_overrides.css" type="text/css" />
-  
-
-  
-        <link rel="index" title="Index"
-              href="genindex.html"/>
-        <link rel="search" title="Search" href="search.html"/>
-    <link rel="top" title="arcgis 1.5.0 documentation" href="index.html"/>
-        <link rel="up" title="arcgis.raster module" href="arcgis.raster.toc.html"/>
-        <link rel="next" title="arcgis.raster.functions.gbl module" href="arcgis.raster.functions.gbl.html"/>
-        <link rel="prev" title="arcgis.raster.analytics module" href="arcgis.raster.analytics.html"/>
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/theme_overrides.css" type="text/css" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="arcgis.raster.functions.gbl module" href="arcgis.raster.functions.gbl.html" />
+    <link rel="prev" title="arcgis.raster.analytics module" href="arcgis.raster.analytics.html" />
 <!-- This code block is inserted close near the <head> tag. See http://bit.ly/2BHUQzB -->
 <!-- The point of this code block is to send us google analytics on website views -->
 <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
@@ -56,7 +46,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
 </head>
 
-<body class="wy-body-for-nav" role="document">
+<body class="wy-body-for-nav">
 
    
   <div class="wy-grid-for-nav">
@@ -78,7 +68,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             
             
               <div class="version">
-                1.5.0
+                1.5.1
               </div>
             
           
@@ -284,6 +274,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <li class="toctree-l4"><a class="reference internal" href="arcgis.features.managers.html#syncmanager">SyncManager</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.features.managers.html#featurelayercollectionmanager">FeatureLayerCollectionManager</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.features.managers.html#featurelayermanager">FeatureLayerManager</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.features.managers.html#versionmanager">VersionManager</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.features.managers.html#version">Version</a></li>
 </ul>
 </li>
 </ul>
@@ -394,9 +386,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <li class="toctree-l4"><a class="reference internal" href="#minus">minus</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#ml-classify">ml_classify</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#mod">mod</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#mode">mode</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#msavi">msavi</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#multiply">MULTIPLY</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#ndvi">ndvi</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#negate">negate</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#not-equal">not_equal</a></li>
@@ -523,6 +513,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <li class="toctree-l4"><a class="reference internal" href="arcgis.geoanalytics.manage_data.html#calculate-fields">calculate_fields</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.geoanalytics.manage_data.html#clip-layer">clip_layer</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.geoanalytics.manage_data.html#copy-to-data-store">copy_to_data_store</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.geoanalytics.manage_data.html#dissolve-boundaries">dissolve_boundaries</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.geoanalytics.manage_data.html#merge-layers">merge_layers</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.geoanalytics.manage_data.html#overlay-data">overlay_data</a></li>
 </ul>
 </li>
@@ -625,6 +617,10 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <li class="toctree-l2"><a class="reference internal" href="arcgis.mapping.html#scenelayer">SceneLayer</a></li>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.mapping.html#export-map">export_map</a></li>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.mapping.html#get-layout-templates">get_layout_templates</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.mapping.html#module-arcgis.mapping.symbol">Symbology</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.mapping.html#renderers">Renderers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.mapping.html#generate-renderer">generate_renderer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.mapping.html#visual-variables">visual_variables</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="arcgis.realtime.html">arcgis.realtime module</a><ul>
@@ -675,7 +671,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
 
       
-      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+      <nav class="wy-nav-top" aria-label="top navigation">
         
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
           <a href="index.html">arcgis</a>
@@ -683,9 +679,10 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       </nav>
 
 
-      
       <div class="wy-nav-content">
+        
         <div class="rst-content">
+        
           
 
 
@@ -747,7 +744,7 @@ processed product on disk, for which raster analytics tools like arcgis.raster.a
 <h2>abs<a class="headerlink" href="#abs" title="Permalink to this headline">¶</a></h2>
 <dl class="method">
 <dt id="arcgis.raster.functions.abs">
-<code class="descclassname">functions.</code><code class="descname">abs</code><span class="sig-paren">(</span><em>rasters</em>, <em>extent_type='FirstOf'</em>, <em>cellsize_type='FirstOf'</em>, <em>astype=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.raster.functions.abs" title="Permalink to this definition">¶</a></dt>
+<code class="descclassname">functions.</code><code class="descname">abs</code><span class="sig-paren">(</span><em>extent_type='FirstOf'</em>, <em>cellsize_type='FirstOf'</em>, <em>astype=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.raster.functions.abs" title="Permalink to this definition">¶</a></dt>
 <dd><p>The Abs operation</p>
 <p>The arguments for this function are as follows:</p>
 <table class="docutils field-list" frame="void" rules="none">
@@ -774,7 +771,7 @@ processed product on disk, for which raster analytics tools like arcgis.raster.a
 <h2>acos<a class="headerlink" href="#acos" title="Permalink to this headline">¶</a></h2>
 <dl class="method">
 <dt id="arcgis.raster.functions.acos">
-<code class="descclassname">functions.</code><code class="descname">acos</code><span class="sig-paren">(</span><em>rasters</em>, <em>extent_type='FirstOf'</em>, <em>cellsize_type='FirstOf'</em>, <em>astype=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.raster.functions.acos" title="Permalink to this definition">¶</a></dt>
+<code class="descclassname">functions.</code><code class="descname">acos</code><span class="sig-paren">(</span><em>extent_type='FirstOf'</em>, <em>cellsize_type='FirstOf'</em>, <em>astype=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.raster.functions.acos" title="Permalink to this definition">¶</a></dt>
 <dd><p>The acos operation</p>
 <p>The arguments for this function are as follows:</p>
 <table class="docutils field-list" frame="void" rules="none">
@@ -801,7 +798,7 @@ processed product on disk, for which raster analytics tools like arcgis.raster.a
 <h2>acosh<a class="headerlink" href="#acosh" title="Permalink to this headline">¶</a></h2>
 <dl class="method">
 <dt id="arcgis.raster.functions.acosh">
-<code class="descclassname">functions.</code><code class="descname">acosh</code><span class="sig-paren">(</span><em>rasters</em>, <em>extent_type='FirstOf'</em>, <em>cellsize_type='FirstOf'</em>, <em>astype=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.raster.functions.acosh" title="Permalink to this definition">¶</a></dt>
+<code class="descclassname">functions.</code><code class="descname">acosh</code><span class="sig-paren">(</span><em>extent_type='FirstOf'</em>, <em>cellsize_type='FirstOf'</em>, <em>astype=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.raster.functions.acosh" title="Permalink to this definition">¶</a></dt>
 <dd><p>The ACosH operation</p>
 <p>The arguments for this function are as follows:</p>
 <table class="docutils field-list" frame="void" rules="none">
@@ -828,7 +825,7 @@ processed product on disk, for which raster analytics tools like arcgis.raster.a
 <h2>apply<a class="headerlink" href="#apply" title="Permalink to this headline">¶</a></h2>
 <dl class="method">
 <dt id="arcgis.raster.functions.apply">
-<code class="descclassname">functions.</code><code class="descname">apply</code><span class="sig-paren">(</span><em>raster</em>, <em>fn_name</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.raster.functions.apply" title="Permalink to this definition">¶</a></dt>
+<code class="descclassname">functions.</code><code class="descname">apply</code><span class="sig-paren">(</span><em>fn_name</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.raster.functions.apply" title="Permalink to this definition">¶</a></dt>
 <dd><p>Applies a server side raster function template defined by the imagery layer (image service)
 The name of the raster function template is available in the imagery layer properties.rasterFunctionInfos.</p>
 <p>Function arguments are optional; argument names and default values are created by the author of the raster function
@@ -859,7 +856,7 @@ For more information about authoring server-side raster function templates, see
 <h2>arg_max<a class="headerlink" href="#arg-max" title="Permalink to this headline">¶</a></h2>
 <dl class="method">
 <dt id="arcgis.raster.functions.arg_max">
-<code class="descclassname">functions.</code><code class="descname">arg_max</code><span class="sig-paren">(</span><em>rasters</em>, <em>undefined_class=None</em>, <em>astype=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.raster.functions.arg_max" title="Permalink to this definition">¶</a></dt>
+<code class="descclassname">functions.</code><code class="descname">arg_max</code><span class="sig-paren">(</span><em>undefined_class=None</em>, <em>astype=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.raster.functions.arg_max" title="Permalink to this definition">¶</a></dt>
 <dd><p>In the ArgMax method, all raster bands from every input raster are assigned a 0-based incremental band index,
 which is first ordered by the input raster index, as shown in the table below, and then by the relative band order
 within each input raster.</p>
@@ -886,7 +883,7 @@ within each input raster.</p>
 <h2>arg_median<a class="headerlink" href="#arg-median" title="Permalink to this headline">¶</a></h2>
 <dl class="method">
 <dt id="arcgis.raster.functions.arg_median">
-<code class="descclassname">functions.</code><code class="descname">arg_median</code><span class="sig-paren">(</span><em>rasters</em>, <em>undefined_class=None</em>, <em>astype=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.raster.functions.arg_median" title="Permalink to this definition">¶</a></dt>
+<code class="descclassname">functions.</code><code class="descname">arg_median</code><span class="sig-paren">(</span><em>undefined_class=None</em>, <em>astype=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.raster.functions.arg_median" title="Permalink to this definition">¶</a></dt>
 <dd><p>The ArgMedian method returns the Band index for which the given pixel attains the median value of values
 from all bands.</p>
 <p>Consider values from all bands as an array. After sorting the array in ascending order, the median is the
@@ -915,7 +912,7 @@ array has n values, the median is the ith (0-based) value, where: i = ( (n-1) / 
 <h2>arg_min<a class="headerlink" href="#arg-min" title="Permalink to this headline">¶</a></h2>
 <dl class="method">
 <dt id="arcgis.raster.functions.arg_min">
-<code class="descclassname">functions.</code><code class="descname">arg_min</code><span class="sig-paren">(</span><em>rasters</em>, <em>undefined_class=None</em>, <em>astype=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.raster.functions.arg_min" title="Permalink to this definition">¶</a></dt>
+<code class="descclassname">functions.</code><code class="descname">arg_min</code><span class="sig-paren">(</span><em>undefined_class=None</em>, <em>astype=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.raster.functions.arg_min" title="Permalink to this definition">¶</a></dt>
 <dd><p>ArgMin is the argument of the minimum, which returns the Band index for which the given pixel attains
 its minimum value.</p>
 <p>See <a class="reference external" href="http://desktop.arcgis.com/en/arcmap/latest/manage-data/raster-and-images/argstatistics-function.htm">http://desktop.arcgis.com/en/arcmap/latest/manage-data/raster-and-images/argstatistics-function.htm</a></p>
@@ -941,7 +938,7 @@ its minimum value.</p>
 <h2>arg_statistics<a class="headerlink" href="#arg-statistics" title="Permalink to this headline">¶</a></h2>
 <dl class="method">
 <dt id="arcgis.raster.functions.arg_statistics">
-<code class="descclassname">functions.</code><code class="descname">arg_statistics</code><span class="sig-paren">(</span><em>rasters</em>, <em>stat_type=None</em>, <em>min_value=None</em>, <em>max_value=None</em>, <em>undefined_class=None</em>, <em>astype=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.raster.functions.arg_statistics" title="Permalink to this definition">¶</a></dt>
+<code class="descclassname">functions.</code><code class="descname">arg_statistics</code><span class="sig-paren">(</span><em>stat_type=None</em>, <em>min_value=None</em>, <em>max_value=None</em>, <em>undefined_class=None</em>, <em>astype=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.raster.functions.arg_statistics" title="Permalink to this definition">¶</a></dt>
 <dd><p>The arg_statistics function produces an output with a pixel value that represents a statistical metric from all
 bands of input rasters. The statistics can be the band index of the maximum, minimum, or median value, or the
 duration (number of bands) between a minimum and maximum value</p>
@@ -971,7 +968,7 @@ duration (number of bands) between a minimum and maximum value</p>
 <h2>arithmetic<a class="headerlink" href="#arithmetic" title="Permalink to this headline">¶</a></h2>
 <dl class="method">
 <dt id="arcgis.raster.functions.arithmetic">
-<code class="descclassname">functions.</code><code class="descname">arithmetic</code><span class="sig-paren">(</span><em>raster1</em>, <em>raster2</em>, <em>extent_type='FirstOf'</em>, <em>cellsize_type='FirstOf'</em>, <em>astype=None</em>, <em>operation_type=1</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.raster.functions.arithmetic" title="Permalink to this definition">¶</a></dt>
+<code class="descclassname">functions.</code><code class="descname">arithmetic</code><span class="sig-paren">(</span><em>raster2</em>, <em>extent_type='FirstOf'</em>, <em>cellsize_type='FirstOf'</em>, <em>astype=None</em>, <em>operation_type=1</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.raster.functions.arithmetic" title="Permalink to this definition">¶</a></dt>
 <dd><p>The Arithmetic function performs an arithmetic operation between two rasters or a raster and a scalar, and vice versa.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -998,7 +995,7 @@ duration (number of bands) between a minimum and maximum value</p>
 <h2>asin<a class="headerlink" href="#asin" title="Permalink to this headline">¶</a></h2>
 <dl class="method">
 <dt id="arcgis.raster.functions.asin">
-<code class="descclassname">functions.</code><code class="descname">asin</code><span class="sig-paren">(</span><em>rasters</em>, <em>extent_type='FirstOf'</em>, <em>cellsize_type='FirstOf'</em>, <em>astype=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.raster.functions.asin" title="Permalink to this definition">¶</a></dt>
+<code class="descclassname">functions.</code><code class="descname">asin</code><span class="sig-paren">(</span><em>extent_type='FirstOf'</em>, <em>cellsize_type='FirstOf'</em>, <em>astype=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.raster.functions.asin" title="Permalink to this definition">¶</a></dt>
 <dd><p>The asin operation</p>
 <p>The arguments for this function are as follows:</p>
 <table class="docutils field-list" frame="void" rules="none">
@@ -1025,7 +1022,7 @@ duration (number of bands) between a minimum and maximum value</p>
 <h2>asinh<a class="headerlink" href="#asinh" title="Permalink to this headline">¶</a></h2>
 <dl class="method">
 <dt id="arcgis.raster.functions.asinh">
-<code class="descclassname">functions.</code><code class="descname">asinh</code><span class="sig-paren">(</span><em>rasters</em>, <em>extent_type='FirstOf'</em>, <em>cellsize_type='FirstOf'</em>, <em>astype=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.raster.functions.asinh" title="Permalink to this definition">¶</a></dt>
+<code class="descclassname">functions.</code><code class="descname">asinh</code><span class="sig-paren">(</span><em>extent_type='FirstOf'</em>, <em>cellsize_type='FirstOf'</em>, <em>astype=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.raster.functions.asinh" title="Permalink to this definition">¶</a></dt>
 <dd><p>The ASinH operation</p>
 <p>The arguments for this function are as follows:</p>
 <table class="docutils field-list" frame="void" rules="none">
@@ -1052,7 +1049,7 @@ duration (number of bands) between a minimum and maximum value</p>
 <h2>aspect<a class="headerlink" href="#aspect" title="Permalink to this headline">¶</a></h2>
 <dl class="method">
 <dt id="arcgis.raster.functions.aspect">
-<code class="descclassname">functions.</code><code class="descname">aspect</code><span class="sig-paren">(</span><em>raster</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.raster.functions.aspect" title="Permalink to this definition">¶</a></dt>
+<code class="descclassname">functions.</code><code class="descname">aspect</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.raster.functions.aspect" title="Permalink to this definition">¶</a></dt>
 <dd><p>aspect identifies the downslope direction of the maximum rate of change in value from each cell to its neighbors.
 Aspect can be thought of as the slope direction. The values of the output raster will be the compass direction of
 the aspect. For more information, see
@@ -1075,7 +1072,7 @@ and &lt;a href=”<a class="reference external" href="http://desktop.arcgis.com/
 <h2>atan<a class="headerlink" href="#atan" title="Permalink to this headline">¶</a></h2>
 <dl class="method">
 <dt id="arcgis.raster.functions.atan">
-<code class="descclassname">functions.</code><code class="descname">atan</code><span class="sig-paren">(</span><em>rasters</em>, <em>extent_type='FirstOf'</em>, <em>cellsize_type='FirstOf'</em>, <em>astype=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.raster.functions.atan" title="Permalink to this definition">¶</a></dt>
+<code class="descclassname">functions.</code><code class="descname">atan</code><span class="sig-paren">(</span><em>extent_type='FirstOf'</em>, <em>cellsize_type='FirstOf'</em>, <em>astype=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.raster.functions.atan" title="Permalink to this definition">¶</a></dt>
 <dd><p>The ATan operation</p>
 <p>The arguments for this function are as follows:</p>
 <table class="docutils field-list" frame="void" rules="none">
@@ -1102,7 +1099,7 @@ and &lt;a href=”<a class="reference external" href="http://desktop.arcgis.com/
 <h2>atan2<a class="headerlink" href="#atan2" title="Permalink to this headline">¶</a></h2>
 <dl class="method">
 <dt id="arcgis.raster.functions.atan2">
-<code class="descclassname">functions.</code><code class="descname">atan2</code><span class="sig-paren">(</span><em>rasters</em>, <em>extent_type='FirstOf'</em>, <em>cellsize_type='FirstOf'</em>, <em>astype=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.raster.functions.atan2" title="Permalink to this definition">¶</a></dt>
+<code class="descclassname">functions.</code><code class="descname">atan2</code><span class="sig-paren">(</span><em>extent_type='FirstOf'</em>, <em>cellsize_type='FirstOf'</em>, <em>astype=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.raster.functions.atan2" title="Permalink to this definition">¶</a></dt>
 <dd><p>The ATan2 operation</p>
 <p>The arguments for this function are as follows:</p>
 <table class="docutils field-list" frame="void" rules="none">
@@ -1129,7 +1126,7 @@ and &lt;a href=”<a class="reference external" href="http://desktop.arcgis.com/
 <h2>atanh<a class="headerlink" href="#atanh" title="Permalink to this headline">¶</a></h2>
 <dl class="method">
 <dt id="arcgis.raster.functions.atanh">
-<code class="descclassname">functions.</code><code class="descname">atanh</code><span class="sig-paren">(</span><em>rasters</em>, <em>extent_type='FirstOf'</em>, <em>cellsize_type='FirstOf'</em>, <em>astype=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.raster.functions.atanh" title="Permalink to this definition">¶</a></dt>
+<code class="descclassname">functions.</code><code class="descname">atanh</code><span class="sig-paren">(</span><em>extent_type='FirstOf'</em>, <em>cellsize_type='FirstOf'</em>, <em>astype=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.raster.functions.atanh" title="Permalink to this definition">¶</a></dt>
 <dd><p>The ATanH operation</p>
 <p>The arguments for this function are as follows:</p>
 <table class="docutils field-list" frame="void" rules="none">
@@ -1156,7 +1153,7 @@ and &lt;a href=”<a class="reference external" href="http://desktop.arcgis.com/
 <h2>band_arithmetic<a class="headerlink" href="#band-arithmetic" title="Permalink to this headline">¶</a></h2>
 <dl class="method">
 <dt id="arcgis.raster.functions.band_arithmetic">
-<code class="descclassname">functions.</code><code class="descname">band_arithmetic</code><span class="sig-paren">(</span><em>raster</em>, <em>band_indexes=None</em>, <em>astype=None</em>, <em>method=0</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.raster.functions.band_arithmetic" title="Permalink to this definition">¶</a></dt>
+<code class="descclassname">functions.</code><code class="descname">band_arithmetic</code><span class="sig-paren">(</span><em>band_indexes=None</em>, <em>astype=None</em>, <em>method=0</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.raster.functions.band_arithmetic" title="Permalink to this definition">¶</a></dt>
 <dd><p>The band_arithmetic function performs an arithmetic operation on the bands of a raster. For more information,
 see Band Arithmetic function at <a class="reference external" href="http://desktop.arcgis.com/en/arcmap/latest/manage-data/raster-and-images/band-arithmetic-function.htm">http://desktop.arcgis.com/en/arcmap/latest/manage-data/raster-and-images/band-arithmetic-function.htm</a></p>
 <table class="docutils field-list" frame="void" rules="none">
@@ -1183,7 +1180,7 @@ see Band Arithmetic function at <a class="reference external" href="http://deskt
 <h2>bitwise_and<a class="headerlink" href="#bitwise-and" title="Permalink to this headline">¶</a></h2>
 <dl class="method">
 <dt id="arcgis.raster.functions.bitwise_and">
-<code class="descclassname">functions.</code><code class="descname">bitwise_and</code><span class="sig-paren">(</span><em>rasters</em>, <em>extent_type='FirstOf'</em>, <em>cellsize_type='FirstOf'</em>, <em>astype=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.raster.functions.bitwise_and" title="Permalink to this definition">¶</a></dt>
+<code class="descclassname">functions.</code><code class="descname">bitwise_and</code><span class="sig-paren">(</span><em>extent_type='FirstOf'</em>, <em>cellsize_type='FirstOf'</em>, <em>astype=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.raster.functions.bitwise_and" title="Permalink to this definition">¶</a></dt>
 <dd><p>The BitwiseAnd operation</p>
 <p>The arguments for this function are as follows:</p>
 <table class="docutils field-list" frame="void" rules="none">
@@ -1210,7 +1207,7 @@ see Band Arithmetic function at <a class="reference external" href="http://deskt
 <h2>bitwise_left_shift<a class="headerlink" href="#bitwise-left-shift" title="Permalink to this headline">¶</a></h2>
 <dl class="method">
 <dt id="arcgis.raster.functions.bitwise_left_shift">
-<code class="descclassname">functions.</code><code class="descname">bitwise_left_shift</code><span class="sig-paren">(</span><em>rasters</em>, <em>extent_type='FirstOf'</em>, <em>cellsize_type='FirstOf'</em>, <em>astype=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.raster.functions.bitwise_left_shift" title="Permalink to this definition">¶</a></dt>
+<code class="descclassname">functions.</code><code class="descname">bitwise_left_shift</code><span class="sig-paren">(</span><em>extent_type='FirstOf'</em>, <em>cellsize_type='FirstOf'</em>, <em>astype=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.raster.functions.bitwise_left_shift" title="Permalink to this definition">¶</a></dt>
 <dd><p>The BitwiseLeftShift operation</p>
 <p>The arguments for this function are as follows:</p>
 <table class="docutils field-list" frame="void" rules="none">
@@ -1237,7 +1234,7 @@ see Band Arithmetic function at <a class="reference external" href="http://deskt
 <h2>bitwise_not<a class="headerlink" href="#bitwise-not" title="Permalink to this headline">¶</a></h2>
 <dl class="method">
 <dt id="arcgis.raster.functions.bitwise_not">
-<code class="descclassname">functions.</code><code class="descname">bitwise_not</code><span class="sig-paren">(</span><em>rasters</em>, <em>extent_type='FirstOf'</em>, <em>cellsize_type='FirstOf'</em>, <em>astype=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.raster.functions.bitwise_not" title="Permalink to this definition">¶</a></dt>
+<code class="descclassname">functions.</code><code class="descname">bitwise_not</code><span class="sig-paren">(</span><em>extent_type='FirstOf'</em>, <em>cellsize_type='FirstOf'</em>, <em>astype=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.raster.functions.bitwise_not" title="Permalink to this definition">¶</a></dt>
 <dd><p>The BitwiseNot operation</p>
 <p>The arguments for this function are as follows:</p>
 <table class="docutils field-list" frame="void" rules="none">
@@ -1264,7 +1261,7 @@ see Band Arithmetic function at <a class="reference external" href="http://deskt
 <h2>bitwise_or<a class="headerlink" href="#bitwise-or" title="Permalink to this headline">¶</a></h2>
 <dl class="method">
 <dt id="arcgis.raster.functions.bitwise_or">
-<code class="descclassname">functions.</code><code class="descname">bitwise_or</code><span class="sig-paren">(</span><em>rasters</em>, <em>extent_type='FirstOf'</em>, <em>cellsize_type='FirstOf'</em>, <em>astype=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.raster.functions.bitwise_or" title="Permalink to this definition">¶</a></dt>
+<code class="descclassname">functions.</code><code class="descname">bitwise_or</code><span class="sig-paren">(</span><em>extent_type='FirstOf'</em>, <em>cellsize_type='FirstOf'</em>, <em>astype=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.raster.functions.bitwise_or" title="Permalink to this definition">¶</a></dt>
 <dd><p>The BitwiseOr operation</p>
 <p>The arguments for this function are as follows:</p>
 <table class="docutils field-list" frame="void" rules="none">
@@ -1291,7 +1288,7 @@ see Band Arithmetic function at <a class="reference external" href="http://deskt
 <h2>bitwise_right_shift<a class="headerlink" href="#bitwise-right-shift" title="Permalink to this headline">¶</a></h2>
 <dl class="method">
 <dt id="arcgis.raster.functions.bitwise_right_shift">
-<code class="descclassname">functions.</code><code class="descname">bitwise_right_shift</code><span class="sig-paren">(</span><em>rasters</em>, <em>extent_type='FirstOf'</em>, <em>cellsize_type='FirstOf'</em>, <em>astype=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.raster.functions.bitwise_right_shift" title="Permalink to this definition">¶</a></dt>
+<code class="descclassname">functions.</code><code class="descname">bitwise_right_shift</code><span class="sig-paren">(</span><em>extent_type='FirstOf'</em>, <em>cellsize_type='FirstOf'</em>, <em>astype=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.raster.functions.bitwise_right_shift" title="Permalink to this definition">¶</a></dt>
 <dd><p>The BitwiseRightShift operation</p>
 <p>The arguments for this function are as follows:</p>
 <table class="docutils field-list" frame="void" rules="none">
@@ -1318,7 +1315,7 @@ see Band Arithmetic function at <a class="reference external" href="http://deskt
 <h2>bitwise_xor<a class="headerlink" href="#bitwise-xor" title="Permalink to this headline">¶</a></h2>
 <dl class="method">
 <dt id="arcgis.raster.functions.bitwise_xor">
-<code class="descclassname">functions.</code><code class="descname">bitwise_xor</code><span class="sig-paren">(</span><em>rasters</em>, <em>extent_type='FirstOf'</em>, <em>cellsize_type='FirstOf'</em>, <em>astype=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.raster.functions.bitwise_xor" title="Permalink to this definition">¶</a></dt>
+<code class="descclassname">functions.</code><code class="descname">bitwise_xor</code><span class="sig-paren">(</span><em>extent_type='FirstOf'</em>, <em>cellsize_type='FirstOf'</em>, <em>astype=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.raster.functions.bitwise_xor" title="Permalink to this definition">¶</a></dt>
 <dd><p>The BitwiseXOr operation</p>
 <p>The arguments for this function are as follows:</p>
 <table class="docutils field-list" frame="void" rules="none">
@@ -1345,7 +1342,7 @@ see Band Arithmetic function at <a class="reference external" href="http://deskt
 <h2>boolean_and<a class="headerlink" href="#boolean-and" title="Permalink to this headline">¶</a></h2>
 <dl class="method">
 <dt id="arcgis.raster.functions.boolean_and">
-<code class="descclassname">functions.</code><code class="descname">boolean_and</code><span class="sig-paren">(</span><em>rasters</em>, <em>extent_type='FirstOf'</em>, <em>cellsize_type='FirstOf'</em>, <em>astype=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.raster.functions.boolean_and" title="Permalink to this definition">¶</a></dt>
+<code class="descclassname">functions.</code><code class="descname">boolean_and</code><span class="sig-paren">(</span><em>extent_type='FirstOf'</em>, <em>cellsize_type='FirstOf'</em>, <em>astype=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.raster.functions.boolean_and" title="Permalink to this definition">¶</a></dt>
 <dd><p>The BooleanAnd operation</p>
 <p>The arguments for this function are as follows:</p>
 <table class="docutils field-list" frame="void" rules="none">
@@ -1372,7 +1369,7 @@ see Band Arithmetic function at <a class="reference external" href="http://deskt
 <h2>boolean_not<a class="headerlink" href="#boolean-not" title="Permalink to this headline">¶</a></h2>
 <dl class="method">
 <dt id="arcgis.raster.functions.boolean_not">
-<code class="descclassname">functions.</code><code class="descname">boolean_not</code><span class="sig-paren">(</span><em>rasters</em>, <em>extent_type='FirstOf'</em>, <em>cellsize_type='FirstOf'</em>, <em>astype=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.raster.functions.boolean_not" title="Permalink to this definition">¶</a></dt>
+<code class="descclassname">functions.</code><code class="descname">boolean_not</code><span class="sig-paren">(</span><em>extent_type='FirstOf'</em>, <em>cellsize_type='FirstOf'</em>, <em>astype=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.raster.functions.boolean_not" title="Permalink to this definition">¶</a></dt>
 <dd><p>The BooleanNot operation</p>
 <p>The arguments for this function are as follows:</p>
 <table class="docutils field-list" frame="void" rules="none">
@@ -1399,7 +1396,7 @@ see Band Arithmetic function at <a class="reference external" href="http://deskt
 <h2>boolean_or<a class="headerlink" href="#boolean-or" title="Permalink to this headline">¶</a></h2>
 <dl class="method">
 <dt id="arcgis.raster.functions.boolean_or">
-<code class="descclassname">functions.</code><code class="descname">boolean_or</code><span class="sig-paren">(</span><em>rasters</em>, <em>extent_type='FirstOf'</em>, <em>cellsize_type='FirstOf'</em>, <em>astype=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.raster.functions.boolean_or" title="Permalink to this definition">¶</a></dt>
+<code class="descclassname">functions.</code><code class="descname">boolean_or</code><span class="sig-paren">(</span><em>extent_type='FirstOf'</em>, <em>cellsize_type='FirstOf'</em>, <em>astype=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.raster.functions.boolean_or" title="Permalink to this definition">¶</a></dt>
 <dd><p>The BooleanOr operation</p>
 <p>The arguments for this function are as follows:</p>
 <table class="docutils field-list" frame="void" rules="none">
@@ -1426,7 +1423,7 @@ see Band Arithmetic function at <a class="reference external" href="http://deskt
 <h2>boolean_xor<a class="headerlink" href="#boolean-xor" title="Permalink to this headline">¶</a></h2>
 <dl class="method">
 <dt id="arcgis.raster.functions.boolean_xor">
-<code class="descclassname">functions.</code><code class="descname">boolean_xor</code><span class="sig-paren">(</span><em>rasters</em>, <em>extent_type='FirstOf'</em>, <em>cellsize_type='FirstOf'</em>, <em>astype=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.raster.functions.boolean_xor" title="Permalink to this definition">¶</a></dt>
+<code class="descclassname">functions.</code><code class="descname">boolean_xor</code><span class="sig-paren">(</span><em>extent_type='FirstOf'</em>, <em>cellsize_type='FirstOf'</em>, <em>astype=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.raster.functions.boolean_xor" title="Permalink to this definition">¶</a></dt>
 <dd><p>The BooleanXOr operation</p>
 <p>The arguments for this function are as follows:</p>
 <table class="docutils field-list" frame="void" rules="none">
@@ -1453,7 +1450,7 @@ see Band Arithmetic function at <a class="reference external" href="http://deskt
 <h2>classify<a class="headerlink" href="#classify" title="Permalink to this headline">¶</a></h2>
 <dl class="method">
 <dt id="arcgis.raster.functions.classify">
-<code class="descclassname">functions.</code><code class="descname">classify</code><span class="sig-paren">(</span><em>raster1</em>, <em>raster2=None</em>, <em>classifier_definition=None</em>, <em>astype=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.raster.functions.classify" title="Permalink to this definition">¶</a></dt>
+<code class="descclassname">functions.</code><code class="descname">classify</code><span class="sig-paren">(</span><em>raster2=None</em>, <em>classifier_definition=None</em>, <em>astype=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.raster.functions.classify" title="Permalink to this definition">¶</a></dt>
 <dd><p>classifies a segmented raster to a categorical raster.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -1479,7 +1476,7 @@ imagery layers filtered by where clause, spatial and temporal filters</li>
 <h2>clip<a class="headerlink" href="#clip" title="Permalink to this headline">¶</a></h2>
 <dl class="method">
 <dt id="arcgis.raster.functions.clip">
-<code class="descclassname">functions.</code><code class="descname">clip</code><span class="sig-paren">(</span><em>raster</em>, <em>geometry=None</em>, <em>clip_outside=True</em>, <em>astype=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.raster.functions.clip" title="Permalink to this definition">¶</a></dt>
+<code class="descclassname">functions.</code><code class="descname">clip</code><span class="sig-paren">(</span><em>geometry=None</em>, <em>clip_outside=True</em>, <em>astype=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.raster.functions.clip" title="Permalink to this definition">¶</a></dt>
 <dd><p>Clips a raster using a rectangular shape according to the extents defined or will clip a raster to the shape of an
 input polygon. The shape defining the clip can clip the extent of the raster or clip out an area within the raster.</p>
 <table class="docutils field-list" frame="void" rules="none">
@@ -1507,7 +1504,7 @@ clipping_geometry will be removed.</li>
 <h2>colormap<a class="headerlink" href="#colormap" title="Permalink to this headline">¶</a></h2>
 <dl class="method">
 <dt id="arcgis.raster.functions.colormap">
-<code class="descclassname">functions.</code><code class="descname">colormap</code><span class="sig-paren">(</span><em>raster</em>, <em>colormap_name=None</em>, <em>colormap=None</em>, <em>colorramp=None</em>, <em>astype=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.raster.functions.colormap" title="Permalink to this definition">¶</a></dt>
+<code class="descclassname">functions.</code><code class="descname">colormap</code><span class="sig-paren">(</span><em>colormap_name=None</em>, <em>colormap=None</em>, <em>colorramp=None</em>, <em>astype=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.raster.functions.colormap" title="Permalink to this definition">¶</a></dt>
 <dd><p>Transforms the pixel values to display the raster data as a color (RGB) image, based on specific colors in
 a color map. For more information, see Colormap function at
 <a class="reference external" href="http://desktop.arcgis.com/en/arcmap/latest/manage-data/raster-and-images/colormap-function.htm">http://desktop.arcgis.com/en/arcmap/latest/manage-data/raster-and-images/colormap-function.htm</a></p>
@@ -1543,7 +1540,7 @@ For more information about colorramp object, see color ramp object at
 <h2>colormap_to_rgb<a class="headerlink" href="#colormap-to-rgb" title="Permalink to this headline">¶</a></h2>
 <dl class="method">
 <dt id="arcgis.raster.functions.colormap_to_rgb">
-<code class="descclassname">functions.</code><code class="descname">colormap_to_rgb</code><span class="sig-paren">(</span><em>raster</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.raster.functions.colormap_to_rgb" title="Permalink to this definition">¶</a></dt>
+<code class="descclassname">functions.</code><code class="descname">colormap_to_rgb</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.raster.functions.colormap_to_rgb" title="Permalink to this definition">¶</a></dt>
 <dd><p>”
 The function is designed to work with single band image service that has
 internal colormap. It will convert the image into a three-band 8-bit RGB
@@ -1570,7 +1567,7 @@ or png format. For more information, see
 <h2>colorspace_conversion<a class="headerlink" href="#colorspace-conversion" title="Permalink to this headline">¶</a></h2>
 <dl class="method">
 <dt id="arcgis.raster.functions.colorspace_conversion">
-<code class="descclassname">functions.</code><code class="descname">colorspace_conversion</code><span class="sig-paren">(</span><em>raster</em>, <em>conversion_type='rgb_to_hsv'</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.raster.functions.colorspace_conversion" title="Permalink to this definition">¶</a></dt>
+<code class="descclassname">functions.</code><code class="descname">colorspace_conversion</code><span class="sig-paren">(</span><em>conversion_type='rgb_to_hsv'</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.raster.functions.colorspace_conversion" title="Permalink to this definition">¶</a></dt>
 <dd><p>The ColorspaceConversion function converts the color model of a three-band
 unsigned 8-bit image from either the hue, saturation, and value (HSV)
 to red, green, and blue (RGB) or vice versa. An ExtractBand function and/or
@@ -1599,7 +1596,7 @@ input of ColorspaceConversion function. For more information, see
 <h2>complex<a class="headerlink" href="#complex" title="Permalink to this headline">¶</a></h2>
 <dl class="method">
 <dt id="arcgis.raster.functions.complex">
-<code class="descclassname">functions.</code><code class="descname">complex</code><span class="sig-paren">(</span><em>raster</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.raster.functions.complex" title="Permalink to this definition">¶</a></dt>
+<code class="descclassname">functions.</code><code class="descname">complex</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.raster.functions.complex" title="Permalink to this definition">¶</a></dt>
 <dd><p>Complex function computes magnitude from complex values. It is used when
 input raster has complex pixel type. It computes magnitude from complex
 value to convert the pixel type to floating point for each pixel. It takes
@@ -1622,7 +1619,7 @@ no argument but an optional input raster. For more information, see
 <h2>composite_band<a class="headerlink" href="#composite-band" title="Permalink to this headline">¶</a></h2>
 <dl class="method">
 <dt id="arcgis.raster.functions.composite_band">
-<code class="descclassname">functions.</code><code class="descname">composite_band</code><span class="sig-paren">(</span><em>rasters</em>, <em>astype=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.raster.functions.composite_band" title="Permalink to this definition">¶</a></dt>
+<code class="descclassname">functions.</code><code class="descname">composite_band</code><span class="sig-paren">(</span><em>astype=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.raster.functions.composite_band" title="Permalink to this definition">¶</a></dt>
 <dd><p>Combines multiple images to form a multiband image.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -1646,7 +1643,7 @@ no argument but an optional input raster. For more information, see
 <h2>con<a class="headerlink" href="#con" title="Permalink to this headline">¶</a></h2>
 <dl class="method">
 <dt id="arcgis.raster.functions.con">
-<code class="descclassname">functions.</code><code class="descname">con</code><span class="sig-paren">(</span><em>rasters</em>, <em>extent_type='FirstOf'</em>, <em>cellsize_type='FirstOf'</em>, <em>astype=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.raster.functions.con" title="Permalink to this definition">¶</a></dt>
+<code class="descclassname">functions.</code><code class="descname">con</code><span class="sig-paren">(</span><em>extent_type='FirstOf'</em>, <em>cellsize_type='FirstOf'</em>, <em>astype=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.raster.functions.con" title="Permalink to this definition">¶</a></dt>
 <dd><dl class="docutils">
 <dt>The con operation.Performs a conditional if/else evaluation on each of the input cells of an input raster.</dt>
 <dd>For more information see, <a class="reference external" href="http://desktop.arcgis.com/en/arcmap/latest/tools/spatial-analyst-toolbox/con-.htm">http://desktop.arcgis.com/en/arcmap/latest/tools/spatial-analyst-toolbox/con-.htm</a></dd>
@@ -1676,7 +1673,7 @@ no argument but an optional input raster. For more information, see
 <h2>contrast_brightness<a class="headerlink" href="#contrast-brightness" title="Permalink to this headline">¶</a></h2>
 <dl class="method">
 <dt id="arcgis.raster.functions.contrast_brightness">
-<code class="descclassname">functions.</code><code class="descname">contrast_brightness</code><span class="sig-paren">(</span><em>raster</em>, <em>contrast_offset=2</em>, <em>brightness_offset=1</em>, <em>astype=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.raster.functions.contrast_brightness" title="Permalink to this definition">¶</a></dt>
+<code class="descclassname">functions.</code><code class="descname">contrast_brightness</code><span class="sig-paren">(</span><em>contrast_offset=2</em>, <em>brightness_offset=1</em>, <em>astype=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.raster.functions.contrast_brightness" title="Permalink to this definition">¶</a></dt>
 <dd><p>The ContrastBrightness function enhances the appearance of raster data (imagery) by modifying the brightness or
 contrast within the image. This function works on 8-bit input raster only.</p>
 <table class="docutils field-list" frame="void" rules="none">
@@ -1703,7 +1700,7 @@ contrast within the image. This function works on 8-bit input raster only.</p>
 <h2>convolution<a class="headerlink" href="#convolution" title="Permalink to this headline">¶</a></h2>
 <dl class="method">
 <dt id="arcgis.raster.functions.convolution">
-<code class="descclassname">functions.</code><code class="descname">convolution</code><span class="sig-paren">(</span><em>raster</em>, <em>kernel=None</em>, <em>astype=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.raster.functions.convolution" title="Permalink to this definition">¶</a></dt>
+<code class="descclassname">functions.</code><code class="descname">convolution</code><span class="sig-paren">(</span><em>kernel=None</em>, <em>astype=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.raster.functions.convolution" title="Permalink to this definition">¶</a></dt>
 <dd><p>The Convolution function performs filtering on the pixel values in an image, which can be used for sharpening an
 image, blurring an image, detecting edges within an image, or other kernel-based enhancements. For more information,</p>
 <blockquote>
@@ -1731,7 +1728,7 @@ image, blurring an image, detecting edges within an image, or other kernel-based
 <h2>cos<a class="headerlink" href="#cos" title="Permalink to this headline">¶</a></h2>
 <dl class="method">
 <dt id="arcgis.raster.functions.cos">
-<code class="descclassname">functions.</code><code class="descname">cos</code><span class="sig-paren">(</span><em>rasters</em>, <em>extent_type='FirstOf'</em>, <em>cellsize_type='FirstOf'</em>, <em>astype=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.raster.functions.cos" title="Permalink to this definition">¶</a></dt>
+<code class="descclassname">functions.</code><code class="descname">cos</code><span class="sig-paren">(</span><em>extent_type='FirstOf'</em>, <em>cellsize_type='FirstOf'</em>, <em>astype=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.raster.functions.cos" title="Permalink to this definition">¶</a></dt>
 <dd><p>The Cos operation</p>
 <p>The arguments for this function are as follows:</p>
 <table class="docutils field-list" frame="void" rules="none">
@@ -1758,7 +1755,7 @@ image, blurring an image, detecting edges within an image, or other kernel-based
 <h2>cosh<a class="headerlink" href="#cosh" title="Permalink to this headline">¶</a></h2>
 <dl class="method">
 <dt id="arcgis.raster.functions.cosh">
-<code class="descclassname">functions.</code><code class="descname">cosh</code><span class="sig-paren">(</span><em>rasters</em>, <em>extent_type='FirstOf'</em>, <em>cellsize_type='FirstOf'</em>, <em>astype=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.raster.functions.cosh" title="Permalink to this definition">¶</a></dt>
+<code class="descclassname">functions.</code><code class="descname">cosh</code><span class="sig-paren">(</span><em>extent_type='FirstOf'</em>, <em>cellsize_type='FirstOf'</em>, <em>astype=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.raster.functions.cosh" title="Permalink to this definition">¶</a></dt>
 <dd><p>The CosH operation</p>
 <p>The arguments for this function are as follows:</p>
 <table class="docutils field-list" frame="void" rules="none">
@@ -1785,7 +1782,7 @@ image, blurring an image, detecting edges within an image, or other kernel-based
 <h2>curvature<a class="headerlink" href="#curvature" title="Permalink to this headline">¶</a></h2>
 <dl class="method">
 <dt id="arcgis.raster.functions.curvature">
-<code class="descclassname">functions.</code><code class="descname">curvature</code><span class="sig-paren">(</span><em>raster</em>, <em>curvature_type='standard'</em>, <em>z_factor=1</em>, <em>astype=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.raster.functions.curvature" title="Permalink to this definition">¶</a></dt>
+<code class="descclassname">functions.</code><code class="descname">curvature</code><span class="sig-paren">(</span><em>curvature_type='standard'</em>, <em>z_factor=1</em>, <em>astype=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.raster.functions.curvature" title="Permalink to this definition">¶</a></dt>
 <dd><p>The Curvature function displays the shape or curvature of the slope. A part of a surface can be concave or convex;
 you can tell that by looking at the curvature value. The curvature is calculated by computing the second derivative
 of the surface. Refer to this conceptual help on how it works.</p>
@@ -1814,7 +1811,7 @@ of the surface. Refer to this conceptual help on how it works.</p>
 <h2>divide<a class="headerlink" href="#divide" title="Permalink to this headline">¶</a></h2>
 <dl class="method">
 <dt id="arcgis.raster.functions.divide">
-<code class="descclassname">functions.</code><code class="descname">divide</code><span class="sig-paren">(</span><em>rasters</em>, <em>extent_type='FirstOf'</em>, <em>cellsize_type='FirstOf'</em>, <em>astype=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.raster.functions.divide" title="Permalink to this definition">¶</a></dt>
+<code class="descclassname">functions.</code><code class="descname">divide</code><span class="sig-paren">(</span><em>extent_type='FirstOf'</em>, <em>cellsize_type='FirstOf'</em>, <em>astype=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.raster.functions.divide" title="Permalink to this definition">¶</a></dt>
 <dd><p>The Divide operation</p>
 <p>The arguments for this function are as follows:</p>
 <table class="docutils field-list" frame="void" rules="none">
@@ -1841,7 +1838,7 @@ of the surface. Refer to this conceptual help on how it works.</p>
 <h2>duration<a class="headerlink" href="#duration" title="Permalink to this headline">¶</a></h2>
 <dl class="method">
 <dt id="arcgis.raster.functions.duration">
-<code class="descclassname">functions.</code><code class="descname">duration</code><span class="sig-paren">(</span><em>rasters</em>, <em>min_value=None</em>, <em>max_value=None</em>, <em>undefined_class=None</em>, <em>astype=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.raster.functions.duration" title="Permalink to this definition">¶</a></dt>
+<code class="descclassname">functions.</code><code class="descname">duration</code><span class="sig-paren">(</span><em>min_value=None</em>, <em>max_value=None</em>, <em>undefined_class=None</em>, <em>astype=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.raster.functions.duration" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns the duration (number of bands) between a minimum and maximum value.
 The Duration method finds the longest consecutive elements in the array, where each element has a value greater
 than or equal to min_value and less than or equal to max_value, and then returns its length.</p>
@@ -1868,7 +1865,7 @@ than or equal to min_value and less than or equal to max_value, and then returns
 <h2>elevation_void_fill<a class="headerlink" href="#elevation-void-fill" title="Permalink to this headline">¶</a></h2>
 <dl class="method">
 <dt id="arcgis.raster.functions.elevation_void_fill">
-<code class="descclassname">functions.</code><code class="descname">elevation_void_fill</code><span class="sig-paren">(</span><em>raster</em>, <em>max_void_width=0</em>, <em>astype=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.raster.functions.elevation_void_fill" title="Permalink to this definition">¶</a></dt>
+<code class="descclassname">functions.</code><code class="descname">elevation_void_fill</code><span class="sig-paren">(</span><em>max_void_width=0</em>, <em>astype=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.raster.functions.elevation_void_fill" title="Permalink to this definition">¶</a></dt>
 <dd><p>The elevation_void_fill function is used to create pixels where holes exist in your elevation. Refer to
 &lt;a href=”<a class="reference external" href="http://desktop.arcgis.com/en/arcmap/latest/manage-data/raster-and-images/elevation-void-fill-function.htm">http://desktop.arcgis.com/en/arcmap/latest/manage-data/raster-and-images/elevation-void-fill-function.htm</a>”&gt;
 this conceptual help&lt;/a&gt; on how it works. The arguments for the elevation_void_fill function are as follows:</p>
@@ -1895,7 +1892,7 @@ this conceptual help&lt;/a&gt; on how it works. The arguments for the elevation_
 <h2>equal_to<a class="headerlink" href="#equal-to" title="Permalink to this headline">¶</a></h2>
 <dl class="method">
 <dt id="arcgis.raster.functions.equal_to">
-<code class="descclassname">functions.</code><code class="descname">equal_to</code><span class="sig-paren">(</span><em>rasters</em>, <em>extent_type='FirstOf'</em>, <em>cellsize_type='FirstOf'</em>, <em>astype=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.raster.functions.equal_to" title="Permalink to this definition">¶</a></dt>
+<code class="descclassname">functions.</code><code class="descname">equal_to</code><span class="sig-paren">(</span><em>extent_type='FirstOf'</em>, <em>cellsize_type='FirstOf'</em>, <em>astype=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.raster.functions.equal_to" title="Permalink to this definition">¶</a></dt>
 <dd><p>The EqualTo operation</p>
 <p>The arguments for this function are as follows:</p>
 <table class="docutils field-list" frame="void" rules="none">
@@ -1922,7 +1919,7 @@ this conceptual help&lt;/a&gt; on how it works. The arguments for the elevation_
 <h2>exp<a class="headerlink" href="#exp" title="Permalink to this headline">¶</a></h2>
 <dl class="method">
 <dt id="arcgis.raster.functions.exp">
-<code class="descclassname">functions.</code><code class="descname">exp</code><span class="sig-paren">(</span><em>rasters</em>, <em>extent_type='FirstOf'</em>, <em>cellsize_type='FirstOf'</em>, <em>astype=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.raster.functions.exp" title="Permalink to this definition">¶</a></dt>
+<code class="descclassname">functions.</code><code class="descname">exp</code><span class="sig-paren">(</span><em>extent_type='FirstOf'</em>, <em>cellsize_type='FirstOf'</em>, <em>astype=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.raster.functions.exp" title="Permalink to this definition">¶</a></dt>
 <dd><p>The Exp operation</p>
 <p>The arguments for this function are as follows:</p>
 <table class="docutils field-list" frame="void" rules="none">
@@ -1949,7 +1946,7 @@ this conceptual help&lt;/a&gt; on how it works. The arguments for the elevation_
 <h2>exp10<a class="headerlink" href="#exp10" title="Permalink to this headline">¶</a></h2>
 <dl class="method">
 <dt id="arcgis.raster.functions.exp10">
-<code class="descclassname">functions.</code><code class="descname">exp10</code><span class="sig-paren">(</span><em>rasters</em>, <em>extent_type='FirstOf'</em>, <em>cellsize_type='FirstOf'</em>, <em>astype=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.raster.functions.exp10" title="Permalink to this definition">¶</a></dt>
+<code class="descclassname">functions.</code><code class="descname">exp10</code><span class="sig-paren">(</span><em>extent_type='FirstOf'</em>, <em>cellsize_type='FirstOf'</em>, <em>astype=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.raster.functions.exp10" title="Permalink to this definition">¶</a></dt>
 <dd><p>The Exp10 operation</p>
 <p>The arguments for this function are as follows:</p>
 <table class="docutils field-list" frame="void" rules="none">
@@ -1976,7 +1973,7 @@ this conceptual help&lt;/a&gt; on how it works. The arguments for the elevation_
 <h2>exp2<a class="headerlink" href="#exp2" title="Permalink to this headline">¶</a></h2>
 <dl class="method">
 <dt id="arcgis.raster.functions.exp2">
-<code class="descclassname">functions.</code><code class="descname">exp2</code><span class="sig-paren">(</span><em>rasters</em>, <em>extent_type='FirstOf'</em>, <em>cellsize_type='FirstOf'</em>, <em>astype=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.raster.functions.exp2" title="Permalink to this definition">¶</a></dt>
+<code class="descclassname">functions.</code><code class="descname">exp2</code><span class="sig-paren">(</span><em>extent_type='FirstOf'</em>, <em>cellsize_type='FirstOf'</em>, <em>astype=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.raster.functions.exp2" title="Permalink to this definition">¶</a></dt>
 <dd><p>The Exp2 operation</p>
 <p>The arguments for this function are as follows:</p>
 <table class="docutils field-list" frame="void" rules="none">
@@ -2003,7 +2000,7 @@ this conceptual help&lt;/a&gt; on how it works. The arguments for the elevation_
 <h2>expression<a class="headerlink" href="#expression" title="Permalink to this headline">¶</a></h2>
 <dl class="method">
 <dt id="arcgis.raster.functions.expression">
-<code class="descclassname">functions.</code><code class="descname">expression</code><span class="sig-paren">(</span><em>raster</em>, <em>expression='(B3 - B1 / B3 + B1)'</em>, <em>astype=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.raster.functions.expression" title="Permalink to this definition">¶</a></dt>
+<code class="descclassname">functions.</code><code class="descname">expression</code><span class="sig-paren">(</span><em>expression='(B3 - B1 / B3 + B1)'</em>, <em>astype=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.raster.functions.expression" title="Permalink to this definition">¶</a></dt>
 <dd><p>Use a single-line algebraic formula to create a single-band output. The supported operators are -, +, /, <a href="#id1"><span class="problematic" id="id2">*</span></a>, and unary -.
 To identify the bands, prepend the band number with a B or b. For example: “BandIndexes”:”(B1 + B2) / (B3 * B5)”</p>
 <table class="docutils field-list" frame="void" rules="none">
@@ -2032,7 +2029,7 @@ To identify the bands, prepend the band number with a B or b. For example: “Ba
 <h2>extract_band<a class="headerlink" href="#extract-band" title="Permalink to this headline">¶</a></h2>
 <dl class="method">
 <dt id="arcgis.raster.functions.extract_band">
-<code class="descclassname">functions.</code><code class="descname">extract_band</code><span class="sig-paren">(</span><em>raster</em>, <em>band_ids=None</em>, <em>band_names=None</em>, <em>band_wavelengths=None</em>, <em>missing_band_action=None</em>, <em>wavelength_match_tolerance=None</em>, <em>astype=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.raster.functions.extract_band" title="Permalink to this definition">¶</a></dt>
+<code class="descclassname">functions.</code><code class="descname">extract_band</code><span class="sig-paren">(</span><em>band_ids=None</em>, <em>band_names=None</em>, <em>band_wavelengths=None</em>, <em>missing_band_action=None</em>, <em>wavelength_match_tolerance=None</em>, <em>astype=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.raster.functions.extract_band" title="Permalink to this definition">¶</a></dt>
 <dd><p>The extract_band function allows you to extract one or more bands from a raster, or it can reorder the bands in a
 multiband image. The arguments for the extract_band function are as follows:</p>
 <table class="docutils field-list" frame="void" rules="none">
@@ -2062,7 +2059,7 @@ multiband image. The arguments for the extract_band function are as follows:</p>
 <h2>FLOAT<a class="headerlink" href="#float" title="Permalink to this headline">¶</a></h2>
 <dl class="method">
 <dt id="arcgis.raster.functions.FLOAT">
-<code class="descclassname">functions.</code><code class="descname">FLOAT</code><span class="sig-paren">(</span><em>rasters</em>, <em>extent_type='FirstOf'</em>, <em>cellsize_type='FirstOf'</em>, <em>astype=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.raster.functions.FLOAT" title="Permalink to this definition">¶</a></dt>
+<code class="descclassname">functions.</code><code class="descname">FLOAT</code><span class="sig-paren">(</span><em>extent_type='FirstOf'</em>, <em>cellsize_type='FirstOf'</em>, <em>astype=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.raster.functions.FLOAT" title="Permalink to this definition">¶</a></dt>
 <dd><p>The Float operation</p>
 <p>The arguments for this function are as follows:</p>
 <table class="docutils field-list" frame="void" rules="none">
@@ -2089,7 +2086,7 @@ multiband image. The arguments for the extract_band function are as follows:</p>
 <h2>float_divide<a class="headerlink" href="#float-divide" title="Permalink to this headline">¶</a></h2>
 <dl class="method">
 <dt id="arcgis.raster.functions.float_divide">
-<code class="descclassname">functions.</code><code class="descname">float_divide</code><span class="sig-paren">(</span><em>rasters</em>, <em>extent_type='FirstOf'</em>, <em>cellsize_type='FirstOf'</em>, <em>astype=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.raster.functions.float_divide" title="Permalink to this definition">¶</a></dt>
+<code class="descclassname">functions.</code><code class="descname">float_divide</code><span class="sig-paren">(</span><em>extent_type='FirstOf'</em>, <em>cellsize_type='FirstOf'</em>, <em>astype=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.raster.functions.float_divide" title="Permalink to this definition">¶</a></dt>
 <dd><p>The FloatDivide operation</p>
 <p>The arguments for this function are as follows:</p>
 <table class="docutils field-list" frame="void" rules="none">
@@ -2116,7 +2113,7 @@ multiband image. The arguments for the extract_band function are as follows:</p>
 <h2>floor_divide<a class="headerlink" href="#floor-divide" title="Permalink to this headline">¶</a></h2>
 <dl class="method">
 <dt id="arcgis.raster.functions.floor_divide">
-<code class="descclassname">functions.</code><code class="descname">floor_divide</code><span class="sig-paren">(</span><em>rasters</em>, <em>extent_type='FirstOf'</em>, <em>cellsize_type='FirstOf'</em>, <em>astype=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.raster.functions.floor_divide" title="Permalink to this definition">¶</a></dt>
+<code class="descclassname">functions.</code><code class="descname">floor_divide</code><span class="sig-paren">(</span><em>extent_type='FirstOf'</em>, <em>cellsize_type='FirstOf'</em>, <em>astype=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.raster.functions.floor_divide" title="Permalink to this definition">¶</a></dt>
 <dd><p>The FloorDivide operation</p>
 <p>The arguments for this function are as follows:</p>
 <table class="docutils field-list" frame="void" rules="none">
@@ -2143,7 +2140,7 @@ multiband image. The arguments for the extract_band function are as follows:</p>
 <h2>gemi<a class="headerlink" href="#gemi" title="Permalink to this headline">¶</a></h2>
 <dl class="method">
 <dt id="arcgis.raster.functions.gemi">
-<code class="descclassname">functions.</code><code class="descname">gemi</code><span class="sig-paren">(</span><em>raster</em>, <em>band_indexes='4 3'</em>, <em>astype=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.raster.functions.gemi" title="Permalink to this definition">¶</a></dt>
+<code class="descclassname">functions.</code><code class="descname">gemi</code><span class="sig-paren">(</span><em>band_indexes='4 3'</em>, <em>astype=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.raster.functions.gemi" title="Permalink to this definition">¶</a></dt>
 <dd><p>Global Environmental Monitoring Index
 GEMI = eta*(1-0.25*eta)-((Red-0.125)/(1-Red))
 where eta = (2*(NIR^2-Red^2)+1.5*NIR+0.5*Red)/(NIR+Red+0.5)</p>
@@ -2165,7 +2162,7 @@ where eta = (2*(NIR^2-Red^2)+1.5*NIR+0.5*Red)/(NIR+Red+0.5)</p>
 <h2>geometric<a class="headerlink" href="#geometric" title="Permalink to this headline">¶</a></h2>
 <dl class="method">
 <dt id="arcgis.raster.functions.geometric">
-<code class="descclassname">functions.</code><code class="descname">geometric</code><span class="sig-paren">(</span><em>raster</em>, <em>geodata_transforms=None</em>, <em>append_geodata_xform=None</em>, <em>z_factor=None</em>, <em>z_offset=None</em>, <em>constant_z=None</em>, <em>correct_geoid=None</em>, <em>astype=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.raster.functions.geometric" title="Permalink to this definition">¶</a></dt>
+<code class="descclassname">functions.</code><code class="descname">geometric</code><span class="sig-paren">(</span><em>geodata_transforms=None</em>, <em>append_geodata_xform=None</em>, <em>z_factor=None</em>, <em>z_offset=None</em>, <em>constant_z=None</em>, <em>correct_geoid=None</em>, <em>astype=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.raster.functions.geometric" title="Permalink to this definition">¶</a></dt>
 <dd><p>The geometric function transforms the image (for example, orthorectification) based on a sensor definition and a
 terrain model.This function was added at 10.1.The arguments for the geometric function are as follows:</p>
 <table class="docutils field-list" frame="void" rules="none">
@@ -2196,7 +2193,7 @@ terrain model.This function was added at 10.1.The arguments for the geometric fu
 <h2>grayscale<a class="headerlink" href="#grayscale" title="Permalink to this headline">¶</a></h2>
 <dl class="method">
 <dt id="arcgis.raster.functions.grayscale">
-<code class="descclassname">functions.</code><code class="descname">grayscale</code><span class="sig-paren">(</span><em>raster</em>, <em>conversion_parameters=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.raster.functions.grayscale" title="Permalink to this definition">¶</a></dt>
+<code class="descclassname">functions.</code><code class="descname">grayscale</code><span class="sig-paren">(</span><em>conversion_parameters=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.raster.functions.grayscale" title="Permalink to this definition">¶</a></dt>
 <dd><p>The Grayscale function converts a multi-band image into a single-band grayscale
 image. Specified weights are applied to each of the input bands, and a 
 normalization is applied for output. For more information, see
@@ -2223,7 +2220,7 @@ normalization is applied for output. For more information, see
 <h2>greater_than<a class="headerlink" href="#greater-than" title="Permalink to this headline">¶</a></h2>
 <dl class="method">
 <dt id="arcgis.raster.functions.greater_than">
-<code class="descclassname">functions.</code><code class="descname">greater_than</code><span class="sig-paren">(</span><em>rasters</em>, <em>extent_type='FirstOf'</em>, <em>cellsize_type='FirstOf'</em>, <em>astype=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.raster.functions.greater_than" title="Permalink to this definition">¶</a></dt>
+<code class="descclassname">functions.</code><code class="descname">greater_than</code><span class="sig-paren">(</span><em>extent_type='FirstOf'</em>, <em>cellsize_type='FirstOf'</em>, <em>astype=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.raster.functions.greater_than" title="Permalink to this definition">¶</a></dt>
 <dd><p>The GreaterThan operation</p>
 <p>The arguments for this function are as follows:</p>
 <table class="docutils field-list" frame="void" rules="none">
@@ -2250,7 +2247,7 @@ normalization is applied for output. For more information, see
 <h2>greater_than_equal<a class="headerlink" href="#greater-than-equal" title="Permalink to this headline">¶</a></h2>
 <dl class="method">
 <dt id="arcgis.raster.functions.greater_than_equal">
-<code class="descclassname">functions.</code><code class="descname">greater_than_equal</code><span class="sig-paren">(</span><em>rasters</em>, <em>extent_type='FirstOf'</em>, <em>cellsize_type='FirstOf'</em>, <em>astype=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.raster.functions.greater_than_equal" title="Permalink to this definition">¶</a></dt>
+<code class="descclassname">functions.</code><code class="descname">greater_than_equal</code><span class="sig-paren">(</span><em>extent_type='FirstOf'</em>, <em>cellsize_type='FirstOf'</em>, <em>astype=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.raster.functions.greater_than_equal" title="Permalink to this definition">¶</a></dt>
 <dd><p>The GreaterThanEqual operation</p>
 <p>The arguments for this function are as follows:</p>
 <table class="docutils field-list" frame="void" rules="none">
@@ -2277,7 +2274,7 @@ normalization is applied for output. For more information, see
 <h2>gvitm<a class="headerlink" href="#gvitm" title="Permalink to this headline">¶</a></h2>
 <dl class="method">
 <dt id="arcgis.raster.functions.gvitm">
-<code class="descclassname">functions.</code><code class="descname">gvitm</code><span class="sig-paren">(</span><em>raster</em>, <em>band_indexes='1 2 3 4 5 6'</em>, <em>astype=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.raster.functions.gvitm" title="Permalink to this definition">¶</a></dt>
+<code class="descclassname">functions.</code><code class="descname">gvitm</code><span class="sig-paren">(</span><em>band_indexes='1 2 3 4 5 6'</em>, <em>astype=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.raster.functions.gvitm" title="Permalink to this definition">¶</a></dt>
 <dd><p>Green Vegetation Index - Landsat TM
 GVITM = -0.2848*Band1-0.2435*Band2-0.5436*Band3+0.7243*Band4+0.0840*Band5-1.1800*Band7</p>
 <table class="docutils field-list" frame="void" rules="none">
@@ -2298,7 +2295,7 @@ GVITM = -0.2848*Band1-0.2435*Band2-0.5436*Band3+0.7243*Band4+0.0840*Band5-1.1800
 <h2>hillshade<a class="headerlink" href="#hillshade" title="Permalink to this headline">¶</a></h2>
 <dl class="method">
 <dt id="arcgis.raster.functions.hillshade">
-<code class="descclassname">functions.</code><code class="descname">hillshade</code><span class="sig-paren">(</span><em>dem</em>, <em>azimuth=215.0</em>, <em>altitude=75.0</em>, <em>z_factor=0.3</em>, <em>slope_type=1</em>, <em>ps_power=None</em>, <em>psz_factor=None</em>, <em>remove_edge_effect=None</em>, <em>astype=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.raster.functions.hillshade" title="Permalink to this definition">¶</a></dt>
+<code class="descclassname">functions.</code><code class="descname">hillshade</code><span class="sig-paren">(</span><em>azimuth=215.0</em>, <em>altitude=75.0</em>, <em>z_factor=0.3</em>, <em>slope_type=1</em>, <em>ps_power=None</em>, <em>psz_factor=None</em>, <em>remove_edge_effect=None</em>, <em>astype=None</em>, <em>hillshade_type=0</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.raster.functions.hillshade" title="Permalink to this definition">¶</a></dt>
 <dd><p>A hillshade is a grayscale 3D model of the surface taking the sun’s relative position into account to shade the image.
 For more information, see
 &lt;a href=’<a class="reference external" href="http://desktop.arcgis.com/en/arcmap/latest/manage-data/raster-and-images/hillshade-function.htm'">http://desktop.arcgis.com/en/arcmap/latest/manage-data/raster-and-images/hillshade-function.htm’</a>&gt;hillshade
@@ -2318,6 +2315,7 @@ The arguments for the hillshade function are as follows:</p>
 <li><strong>psz_factor</strong> – new at 10.2. double, used together with SCALED slope type</li>
 <li><strong>remove_edge_effect</strong> – new at 10.2. boolean, true of false</li>
 <li><strong>astype</strong> – output pixel type</li>
+<li><strong>hillshade_type</strong> – new at 10.5.1 0 = traditional, 1 = multi - directional; default is 0</li>
 </ul>
 </td>
 </tr>
@@ -2333,7 +2331,7 @@ The arguments for the hillshade function are as follows:</p>
 <h2>identity<a class="headerlink" href="#identity" title="Permalink to this headline">¶</a></h2>
 <dl class="method">
 <dt id="arcgis.raster.functions.identity">
-<code class="descclassname">functions.</code><code class="descname">identity</code><span class="sig-paren">(</span><em>raster</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.raster.functions.identity" title="Permalink to this definition">¶</a></dt>
+<code class="descclassname">functions.</code><code class="descname">identity</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.raster.functions.identity" title="Permalink to this definition">¶</a></dt>
 <dd><p>”
 The function is used to define the source raster as part of the default
 mosaicking behavior of the mosaic dataset. This function is a no-op function
@@ -2356,7 +2354,7 @@ and takes no arguments except a raster. For more information, see
 <h2>INT<a class="headerlink" href="#int" title="Permalink to this headline">¶</a></h2>
 <dl class="method">
 <dt id="arcgis.raster.functions.INT">
-<code class="descclassname">functions.</code><code class="descname">INT</code><span class="sig-paren">(</span><em>rasters</em>, <em>extent_type='FirstOf'</em>, <em>cellsize_type='FirstOf'</em>, <em>astype=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.raster.functions.INT" title="Permalink to this definition">¶</a></dt>
+<code class="descclassname">functions.</code><code class="descname">INT</code><span class="sig-paren">(</span><em>extent_type='FirstOf'</em>, <em>cellsize_type='FirstOf'</em>, <em>astype=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.raster.functions.INT" title="Permalink to this definition">¶</a></dt>
 <dd><p>The Int operation</p>
 <p>The arguments for this function are as follows:</p>
 <table class="docutils field-list" frame="void" rules="none">
@@ -2383,7 +2381,7 @@ and takes no arguments except a raster. For more information, see
 <h2>is_null<a class="headerlink" href="#is-null" title="Permalink to this headline">¶</a></h2>
 <dl class="method">
 <dt id="arcgis.raster.functions.is_null">
-<code class="descclassname">functions.</code><code class="descname">is_null</code><span class="sig-paren">(</span><em>rasters</em>, <em>extent_type='FirstOf'</em>, <em>cellsize_type='FirstOf'</em>, <em>astype=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.raster.functions.is_null" title="Permalink to this definition">¶</a></dt>
+<code class="descclassname">functions.</code><code class="descname">is_null</code><span class="sig-paren">(</span><em>extent_type='FirstOf'</em>, <em>cellsize_type='FirstOf'</em>, <em>astype=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.raster.functions.is_null" title="Permalink to this definition">¶</a></dt>
 <dd><p>The IsNull operation</p>
 <p>The arguments for this function are as follows:</p>
 <table class="docutils field-list" frame="void" rules="none">
@@ -2410,7 +2408,7 @@ and takes no arguments except a raster. For more information, see
 <h2>less_than<a class="headerlink" href="#less-than" title="Permalink to this headline">¶</a></h2>
 <dl class="method">
 <dt id="arcgis.raster.functions.less_than">
-<code class="descclassname">functions.</code><code class="descname">less_than</code><span class="sig-paren">(</span><em>rasters</em>, <em>extent_type='FirstOf'</em>, <em>cellsize_type='FirstOf'</em>, <em>astype=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.raster.functions.less_than" title="Permalink to this definition">¶</a></dt>
+<code class="descclassname">functions.</code><code class="descname">less_than</code><span class="sig-paren">(</span><em>extent_type='FirstOf'</em>, <em>cellsize_type='FirstOf'</em>, <em>astype=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.raster.functions.less_than" title="Permalink to this definition">¶</a></dt>
 <dd><p>The LessThan operation</p>
 <p>The arguments for this function are as follows:</p>
 <table class="docutils field-list" frame="void" rules="none">
@@ -2437,7 +2435,7 @@ and takes no arguments except a raster. For more information, see
 <h2>less_than_equal<a class="headerlink" href="#less-than-equal" title="Permalink to this headline">¶</a></h2>
 <dl class="method">
 <dt id="arcgis.raster.functions.less_than_equal">
-<code class="descclassname">functions.</code><code class="descname">less_than_equal</code><span class="sig-paren">(</span><em>rasters</em>, <em>extent_type='FirstOf'</em>, <em>cellsize_type='FirstOf'</em>, <em>astype=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.raster.functions.less_than_equal" title="Permalink to this definition">¶</a></dt>
+<code class="descclassname">functions.</code><code class="descname">less_than_equal</code><span class="sig-paren">(</span><em>extent_type='FirstOf'</em>, <em>cellsize_type='FirstOf'</em>, <em>astype=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.raster.functions.less_than_equal" title="Permalink to this definition">¶</a></dt>
 <dd><p>The LessThanEqual operation</p>
 <p>The arguments for this function are as follows:</p>
 <table class="docutils field-list" frame="void" rules="none">
@@ -2464,7 +2462,7 @@ and takes no arguments except a raster. For more information, see
 <h2>ln<a class="headerlink" href="#ln" title="Permalink to this headline">¶</a></h2>
 <dl class="method">
 <dt id="arcgis.raster.functions.ln">
-<code class="descclassname">functions.</code><code class="descname">ln</code><span class="sig-paren">(</span><em>rasters</em>, <em>extent_type='FirstOf'</em>, <em>cellsize_type='FirstOf'</em>, <em>astype=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.raster.functions.ln" title="Permalink to this definition">¶</a></dt>
+<code class="descclassname">functions.</code><code class="descname">ln</code><span class="sig-paren">(</span><em>extent_type='FirstOf'</em>, <em>cellsize_type='FirstOf'</em>, <em>astype=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.raster.functions.ln" title="Permalink to this definition">¶</a></dt>
 <dd><p>The Ln operation</p>
 <p>The arguments for this function are as follows:</p>
 <table class="docutils field-list" frame="void" rules="none">
@@ -2491,7 +2489,7 @@ and takes no arguments except a raster. For more information, see
 <h2>local<a class="headerlink" href="#local" title="Permalink to this headline">¶</a></h2>
 <dl class="method">
 <dt id="arcgis.raster.functions.local">
-<code class="descclassname">functions.</code><code class="descname">local</code><span class="sig-paren">(</span><em>rasters</em>, <em>operation</em>, <em>extent_type='FirstOf'</em>, <em>cellsize_type='FirstOf'</em>, <em>astype=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.raster.functions.local" title="Permalink to this definition">¶</a></dt>
+<code class="descclassname">functions.</code><code class="descname">local</code><span class="sig-paren">(</span><em>operation</em>, <em>extent_type='FirstOf'</em>, <em>cellsize_type='FirstOf'</em>, <em>astype=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.raster.functions.local" title="Permalink to this definition">¶</a></dt>
 <dd><p>The local function allows you to perform bitwise, conditional, logical, mathematical, and statistical operations on
 a pixel-by-pixel basis. For more information, see
 &lt;a href=”<a class="reference external" href="http://desktop.arcgis.com/en/arcmap/latest/manage-data/raster-and-images/local-function.htm">http://desktop.arcgis.com/en/arcmap/latest/manage-data/raster-and-images/local-function.htm</a>”&gt;local function&lt;/a&gt;.</p>
@@ -2526,7 +2524,7 @@ At versions prior to 10.5, the hosting ArcGIS Server needs to have a Spatial Ana
 <h2>log10<a class="headerlink" href="#log10" title="Permalink to this headline">¶</a></h2>
 <dl class="method">
 <dt id="arcgis.raster.functions.log10">
-<code class="descclassname">functions.</code><code class="descname">log10</code><span class="sig-paren">(</span><em>rasters</em>, <em>extent_type='FirstOf'</em>, <em>cellsize_type='FirstOf'</em>, <em>astype=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.raster.functions.log10" title="Permalink to this definition">¶</a></dt>
+<code class="descclassname">functions.</code><code class="descname">log10</code><span class="sig-paren">(</span><em>extent_type='FirstOf'</em>, <em>cellsize_type='FirstOf'</em>, <em>astype=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.raster.functions.log10" title="Permalink to this definition">¶</a></dt>
 <dd><p>The Log10 operation</p>
 <p>The arguments for this function are as follows:</p>
 <table class="docutils field-list" frame="void" rules="none">
@@ -2553,7 +2551,7 @@ At versions prior to 10.5, the hosting ArcGIS Server needs to have a Spatial Ana
 <h2>log2<a class="headerlink" href="#log2" title="Permalink to this headline">¶</a></h2>
 <dl class="method">
 <dt id="arcgis.raster.functions.log2">
-<code class="descclassname">functions.</code><code class="descname">log2</code><span class="sig-paren">(</span><em>rasters</em>, <em>extent_type='FirstOf'</em>, <em>cellsize_type='FirstOf'</em>, <em>astype=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.raster.functions.log2" title="Permalink to this definition">¶</a></dt>
+<code class="descclassname">functions.</code><code class="descname">log2</code><span class="sig-paren">(</span><em>extent_type='FirstOf'</em>, <em>cellsize_type='FirstOf'</em>, <em>astype=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.raster.functions.log2" title="Permalink to this definition">¶</a></dt>
 <dd><p>The Log2 operation</p>
 <p>The arguments for this function are as follows:</p>
 <table class="docutils field-list" frame="void" rules="none">
@@ -2580,7 +2578,7 @@ At versions prior to 10.5, the hosting ArcGIS Server needs to have a Spatial Ana
 <h2>majority<a class="headerlink" href="#majority" title="Permalink to this headline">¶</a></h2>
 <dl class="method">
 <dt id="arcgis.raster.functions.majority">
-<code class="descclassname">functions.</code><code class="descname">majority</code><span class="sig-paren">(</span><em>rasters</em>, <em>extent_type='FirstOf'</em>, <em>cellsize_type='FirstOf'</em>, <em>ignore_nodata=False</em>, <em>astype=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.raster.functions.majority" title="Permalink to this definition">¶</a></dt>
+<code class="descclassname">functions.</code><code class="descname">majority</code><span class="sig-paren">(</span><em>extent_type='FirstOf'</em>, <em>cellsize_type='FirstOf'</em>, <em>ignore_nodata=False</em>, <em>astype=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.raster.functions.majority" title="Permalink to this definition">¶</a></dt>
 <dd><p>The Majority operation</p>
 <p>The arguments for this function are as follows:</p>
 <table class="docutils field-list" frame="void" rules="none">
@@ -2608,7 +2606,7 @@ At versions prior to 10.5, the hosting ArcGIS Server needs to have a Spatial Ana
 <h2>mask<a class="headerlink" href="#mask" title="Permalink to this headline">¶</a></h2>
 <dl class="method">
 <dt id="arcgis.raster.functions.mask">
-<code class="descclassname">functions.</code><code class="descname">mask</code><span class="sig-paren">(</span><em>raster</em>, <em>no_data_values=None</em>, <em>included_ranges=None</em>, <em>no_data_interpretation=None</em>, <em>astype=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.raster.functions.mask" title="Permalink to this definition">¶</a></dt>
+<code class="descclassname">functions.</code><code class="descname">mask</code><span class="sig-paren">(</span><em>no_data_values=None</em>, <em>included_ranges=None</em>, <em>no_data_interpretation=None</em>, <em>astype=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.raster.functions.mask" title="Permalink to this definition">¶</a></dt>
 <dd><p>The mask function changes the image by specifying a certain pixel value or a range of pixel values as no data.
 The arguments for the mask function are as follows:</p>
 <table class="docutils field-list" frame="void" rules="none">
@@ -2636,7 +2634,7 @@ The arguments for the mask function are as follows:</p>
 <h2>max<a class="headerlink" href="#max" title="Permalink to this headline">¶</a></h2>
 <dl class="method">
 <dt id="arcgis.raster.functions.max">
-<code class="descclassname">functions.</code><code class="descname">max</code><span class="sig-paren">(</span><em>rasters</em>, <em>extent_type='FirstOf'</em>, <em>cellsize_type='FirstOf'</em>, <em>ignore_nodata=False</em>, <em>astype=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.raster.functions.max" title="Permalink to this definition">¶</a></dt>
+<code class="descclassname">functions.</code><code class="descname">max</code><span class="sig-paren">(</span><em>extent_type='FirstOf'</em>, <em>cellsize_type='FirstOf'</em>, <em>ignore_nodata=False</em>, <em>astype=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.raster.functions.max" title="Permalink to this definition">¶</a></dt>
 <dd><p>The Max operation</p>
 <p>The arguments for this function are as follows:</p>
 <table class="docutils field-list" frame="void" rules="none">
@@ -2663,7 +2661,7 @@ The arguments for the mask function are as follows:</p>
 <h2>mean<a class="headerlink" href="#mean" title="Permalink to this headline">¶</a></h2>
 <dl class="method">
 <dt id="arcgis.raster.functions.mean">
-<code class="descclassname">functions.</code><code class="descname">mean</code><span class="sig-paren">(</span><em>rasters</em>, <em>extent_type='FirstOf'</em>, <em>cellsize_type='FirstOf'</em>, <em>ignore_nodata=False</em>, <em>astype=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.raster.functions.mean" title="Permalink to this definition">¶</a></dt>
+<code class="descclassname">functions.</code><code class="descname">mean</code><span class="sig-paren">(</span><em>extent_type='FirstOf'</em>, <em>cellsize_type='FirstOf'</em>, <em>ignore_nodata=False</em>, <em>astype=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.raster.functions.mean" title="Permalink to this definition">¶</a></dt>
 <dd><p>The Mean operation</p>
 <p>The arguments for this function are as follows:</p>
 <table class="docutils field-list" frame="void" rules="none">
@@ -2691,7 +2689,7 @@ The arguments for the mask function are as follows:</p>
 <h2>med<a class="headerlink" href="#med" title="Permalink to this headline">¶</a></h2>
 <dl class="method">
 <dt id="arcgis.raster.functions.med">
-<code class="descclassname">functions.</code><code class="descname">med</code><span class="sig-paren">(</span><em>rasters</em>, <em>extent_type='FirstOf'</em>, <em>cellsize_type='FirstOf'</em>, <em>ignore_nodata=False</em>, <em>astype=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.raster.functions.med" title="Permalink to this definition">¶</a></dt>
+<code class="descclassname">functions.</code><code class="descname">med</code><span class="sig-paren">(</span><em>extent_type='FirstOf'</em>, <em>cellsize_type='FirstOf'</em>, <em>ignore_nodata=False</em>, <em>astype=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.raster.functions.med" title="Permalink to this definition">¶</a></dt>
 <dd><p>The Med operation</p>
 <p>The arguments for this function are as follows:</p>
 <table class="docutils field-list" frame="void" rules="none">
@@ -2719,7 +2717,7 @@ The arguments for the mask function are as follows:</p>
 <h2>min<a class="headerlink" href="#min" title="Permalink to this headline">¶</a></h2>
 <dl class="method">
 <dt id="arcgis.raster.functions.min">
-<code class="descclassname">functions.</code><code class="descname">min</code><span class="sig-paren">(</span><em>rasters</em>, <em>extent_type='FirstOf'</em>, <em>cellsize_type='FirstOf'</em>, <em>ignore_nodata=False</em>, <em>astype=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.raster.functions.min" title="Permalink to this definition">¶</a></dt>
+<code class="descclassname">functions.</code><code class="descname">min</code><span class="sig-paren">(</span><em>extent_type='FirstOf'</em>, <em>cellsize_type='FirstOf'</em>, <em>ignore_nodata=False</em>, <em>astype=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.raster.functions.min" title="Permalink to this definition">¶</a></dt>
 <dd><p>The Min operation</p>
 <p>The arguments for this function are as follows:</p>
 <table class="docutils field-list" frame="void" rules="none">
@@ -2747,7 +2745,7 @@ The arguments for the mask function are as follows:</p>
 <h2>minority<a class="headerlink" href="#minority" title="Permalink to this headline">¶</a></h2>
 <dl class="method">
 <dt id="arcgis.raster.functions.minority">
-<code class="descclassname">functions.</code><code class="descname">minority</code><span class="sig-paren">(</span><em>rasters</em>, <em>extent_type='FirstOf'</em>, <em>cellsize_type='FirstOf'</em>, <em>ignore_nodata=False</em>, <em>astype=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.raster.functions.minority" title="Permalink to this definition">¶</a></dt>
+<code class="descclassname">functions.</code><code class="descname">minority</code><span class="sig-paren">(</span><em>extent_type='FirstOf'</em>, <em>cellsize_type='FirstOf'</em>, <em>ignore_nodata=False</em>, <em>astype=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.raster.functions.minority" title="Permalink to this definition">¶</a></dt>
 <dd><p>The Minority operation</p>
 <p>The arguments for this function are as follows:</p>
 <table class="docutils field-list" frame="void" rules="none">
@@ -2775,7 +2773,7 @@ The arguments for the mask function are as follows:</p>
 <h2>minus<a class="headerlink" href="#minus" title="Permalink to this headline">¶</a></h2>
 <dl class="method">
 <dt id="arcgis.raster.functions.minus">
-<code class="descclassname">functions.</code><code class="descname">minus</code><span class="sig-paren">(</span><em>rasters</em>, <em>extent_type='FirstOf'</em>, <em>cellsize_type='FirstOf'</em>, <em>astype=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.raster.functions.minus" title="Permalink to this definition">¶</a></dt>
+<code class="descclassname">functions.</code><code class="descname">minus</code><span class="sig-paren">(</span><em>extent_type='FirstOf'</em>, <em>cellsize_type='FirstOf'</em>, <em>astype=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.raster.functions.minus" title="Permalink to this definition">¶</a></dt>
 <dd><p>The binary Minus (subtraction,-) operation</p>
 <p>The arguments for this function are as follows:</p>
 <table class="docutils field-list" frame="void" rules="none">
@@ -2802,7 +2800,7 @@ The arguments for the mask function are as follows:</p>
 <h2>ml_classify<a class="headerlink" href="#ml-classify" title="Permalink to this headline">¶</a></h2>
 <dl class="method">
 <dt id="arcgis.raster.functions.ml_classify">
-<code class="descclassname">functions.</code><code class="descname">ml_classify</code><span class="sig-paren">(</span><em>raster</em>, <em>signature</em>, <em>astype=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.raster.functions.ml_classify" title="Permalink to this definition">¶</a></dt>
+<code class="descclassname">functions.</code><code class="descname">ml_classify</code><span class="sig-paren">(</span><em>signature</em>, <em>astype=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.raster.functions.ml_classify" title="Permalink to this definition">¶</a></dt>
 <dd><dl class="docutils">
 <dt>The ml_classify function allows you to perform a supervised classification using the maximum likelihood classification</dt>
 <dd>algorithm. The hosting ArcGIS Server needs to have a Spatial Analyst license.LicenseLicense:At 10.5, you must license
@@ -2833,7 +2831,7 @@ The arguments for the ml_classify function are as follows:</dd>
 <h2>mod<a class="headerlink" href="#mod" title="Permalink to this headline">¶</a></h2>
 <dl class="method">
 <dt id="arcgis.raster.functions.mod">
-<code class="descclassname">functions.</code><code class="descname">mod</code><span class="sig-paren">(</span><em>rasters</em>, <em>extent_type='FirstOf'</em>, <em>cellsize_type='FirstOf'</em>, <em>astype=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.raster.functions.mod" title="Permalink to this definition">¶</a></dt>
+<code class="descclassname">functions.</code><code class="descname">mod</code><span class="sig-paren">(</span><em>extent_type='FirstOf'</em>, <em>cellsize_type='FirstOf'</em>, <em>astype=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.raster.functions.mod" title="Permalink to this definition">¶</a></dt>
 <dd><p>The Mod operation</p>
 <p>The arguments for this function are as follows:</p>
 <table class="docutils field-list" frame="void" rules="none">
@@ -2856,14 +2854,11 @@ The arguments for the ml_classify function are as follows:</dd>
 </dd></dl>
 
 </div>
-<div class="section" id="mode">
-<h2>mode<a class="headerlink" href="#mode" title="Permalink to this headline">¶</a></h2>
-</div>
 <div class="section" id="msavi">
 <h2>msavi<a class="headerlink" href="#msavi" title="Permalink to this headline">¶</a></h2>
 <dl class="method">
 <dt id="arcgis.raster.functions.msavi">
-<code class="descclassname">functions.</code><code class="descname">msavi</code><span class="sig-paren">(</span><em>raster</em>, <em>band_indexes='4 3'</em>, <em>astype=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.raster.functions.msavi" title="Permalink to this definition">¶</a></dt>
+<code class="descclassname">functions.</code><code class="descname">msavi</code><span class="sig-paren">(</span><em>band_indexes='4 3'</em>, <em>astype=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.raster.functions.msavi" title="Permalink to this definition">¶</a></dt>
 <dd><p>Modified Soil Adjusted Vegetation Index
 MSAVI2 = (1/2)*(2(NIR+1)-sqrt((2*NIR+1)^2-8(NIR-Red)))</p>
 <table class="docutils field-list" frame="void" rules="none">
@@ -2885,14 +2880,11 @@ MSAVI2 = (1/2)*(2(NIR+1)-sqrt((2*NIR+1)^2-8(NIR-Red)))</p>
 </dd></dl>
 
 </div>
-<div class="section" id="multiply">
-<h2>MULTIPLY<a class="headerlink" href="#multiply" title="Permalink to this headline">¶</a></h2>
-</div>
 <div class="section" id="ndvi">
 <h2>ndvi<a class="headerlink" href="#ndvi" title="Permalink to this headline">¶</a></h2>
 <dl class="method">
 <dt id="arcgis.raster.functions.ndvi">
-<code class="descclassname">functions.</code><code class="descname">ndvi</code><span class="sig-paren">(</span><em>raster</em>, <em>band_indexes='4 3'</em>, <em>astype=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.raster.functions.ndvi" title="Permalink to this definition">¶</a></dt>
+<code class="descclassname">functions.</code><code class="descname">ndvi</code><span class="sig-paren">(</span><em>band_indexes='4 3'</em>, <em>astype=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.raster.functions.ndvi" title="Permalink to this definition">¶</a></dt>
 <dd><p>Normalized Difference Vegetation Index
 NDVI = ((NIR - Red)/(NIR + Red))</p>
 <table class="docutils field-list" frame="void" rules="none">
@@ -2918,7 +2910,7 @@ NDVI = ((NIR - Red)/(NIR + Red))</p>
 <h2>negate<a class="headerlink" href="#negate" title="Permalink to this headline">¶</a></h2>
 <dl class="method">
 <dt id="arcgis.raster.functions.negate">
-<code class="descclassname">functions.</code><code class="descname">negate</code><span class="sig-paren">(</span><em>rasters</em>, <em>extent_type='FirstOf'</em>, <em>cellsize_type='FirstOf'</em>, <em>astype=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.raster.functions.negate" title="Permalink to this definition">¶</a></dt>
+<code class="descclassname">functions.</code><code class="descname">negate</code><span class="sig-paren">(</span><em>extent_type='FirstOf'</em>, <em>cellsize_type='FirstOf'</em>, <em>astype=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.raster.functions.negate" title="Permalink to this definition">¶</a></dt>
 <dd><p>The Negate operation</p>
 <p>The arguments for this function are as follows:</p>
 <table class="docutils field-list" frame="void" rules="none">
@@ -2945,7 +2937,7 @@ NDVI = ((NIR - Red)/(NIR + Red))</p>
 <h2>not_equal<a class="headerlink" href="#not-equal" title="Permalink to this headline">¶</a></h2>
 <dl class="method">
 <dt id="arcgis.raster.functions.not_equal">
-<code class="descclassname">functions.</code><code class="descname">not_equal</code><span class="sig-paren">(</span><em>rasters</em>, <em>extent_type='FirstOf'</em>, <em>cellsize_type='FirstOf'</em>, <em>astype=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.raster.functions.not_equal" title="Permalink to this definition">¶</a></dt>
+<code class="descclassname">functions.</code><code class="descname">not_equal</code><span class="sig-paren">(</span><em>extent_type='FirstOf'</em>, <em>cellsize_type='FirstOf'</em>, <em>astype=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.raster.functions.not_equal" title="Permalink to this definition">¶</a></dt>
 <dd><p>The NotEqual operation</p>
 <p>The arguments for this function are as follows:</p>
 <table class="docutils field-list" frame="void" rules="none">
@@ -2972,7 +2964,7 @@ NDVI = ((NIR - Red)/(NIR + Red))</p>
 <h2>pansharpen<a class="headerlink" href="#pansharpen" title="Permalink to this headline">¶</a></h2>
 <dl class="method">
 <dt id="arcgis.raster.functions.pansharpen">
-<code class="descclassname">functions.</code><code class="descname">pansharpen</code><span class="sig-paren">(</span><em>pan_raster, ms_raster, ir_raster=None, fourth_band_of_ms_is_ir=True, weights=[0.166, 0.167, 0.167, 0.5], type='ESRI', sensor=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.raster.functions.pansharpen" title="Permalink to this definition">¶</a></dt>
+<code class="descclassname">functions.</code><code class="descname">pansharpen</code><span class="sig-paren">(</span><em>ms_raster, ir_raster=None, fourth_band_of_ms_is_ir=True, weights=[0.166, 0.167, 0.167, 0.5], type='ESRI', sensor=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.raster.functions.pansharpen" title="Permalink to this definition">¶</a></dt>
 <dd><p>The Pansharpening function uses a higher-resolution panchromatic raster to
 fuse with a lower-resolution, multiband raster. It can generate colorized 
 multispectral image with higher resolution. For more information, see 
@@ -3004,7 +2996,7 @@ multispectral image with higher resolution. For more information, see
 <h2>plus<a class="headerlink" href="#plus" title="Permalink to this headline">¶</a></h2>
 <dl class="method">
 <dt id="arcgis.raster.functions.plus">
-<code class="descclassname">functions.</code><code class="descname">plus</code><span class="sig-paren">(</span><em>rasters</em>, <em>extent_type='FirstOf'</em>, <em>cellsize_type='FirstOf'</em>, <em>astype=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.raster.functions.plus" title="Permalink to this definition">¶</a></dt>
+<code class="descclassname">functions.</code><code class="descname">plus</code><span class="sig-paren">(</span><em>extent_type='FirstOf'</em>, <em>cellsize_type='FirstOf'</em>, <em>astype=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.raster.functions.plus" title="Permalink to this definition">¶</a></dt>
 <dd><p>The binary Plus (addition,+) operation</p>
 <p>The arguments for this function are as follows:</p>
 <table class="docutils field-list" frame="void" rules="none">
@@ -3031,7 +3023,7 @@ multispectral image with higher resolution. For more information, see
 <h2>power<a class="headerlink" href="#power" title="Permalink to this headline">¶</a></h2>
 <dl class="method">
 <dt id="arcgis.raster.functions.power">
-<code class="descclassname">functions.</code><code class="descname">power</code><span class="sig-paren">(</span><em>rasters</em>, <em>extent_type='FirstOf'</em>, <em>cellsize_type='FirstOf'</em>, <em>astype=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.raster.functions.power" title="Permalink to this definition">¶</a></dt>
+<code class="descclassname">functions.</code><code class="descname">power</code><span class="sig-paren">(</span><em>extent_type='FirstOf'</em>, <em>cellsize_type='FirstOf'</em>, <em>astype=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.raster.functions.power" title="Permalink to this definition">¶</a></dt>
 <dd><p>The Power operation</p>
 <p>The arguments for this function are as follows:</p>
 <table class="docutils field-list" frame="void" rules="none">
@@ -3058,7 +3050,7 @@ multispectral image with higher resolution. For more information, see
 <h2>pvi<a class="headerlink" href="#pvi" title="Permalink to this headline">¶</a></h2>
 <dl class="method">
 <dt id="arcgis.raster.functions.pvi">
-<code class="descclassname">functions.</code><code class="descname">pvi</code><span class="sig-paren">(</span><em>raster</em>, <em>band_indexes='4 3 0.3 0.5'</em>, <em>astype=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.raster.functions.pvi" title="Permalink to this definition">¶</a></dt>
+<code class="descclassname">functions.</code><code class="descname">pvi</code><span class="sig-paren">(</span><em>band_indexes='4 3 0.3 0.5'</em>, <em>astype=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.raster.functions.pvi" title="Permalink to this definition">¶</a></dt>
 <dd><p>Perpendicular Vegetation Index
 PVI = (NIR-a*Red-b)/(sqrt(1+a^2))</p>
 <table class="docutils field-list" frame="void" rules="none">
@@ -3079,7 +3071,7 @@ PVI = (NIR-a*Red-b)/(sqrt(1+a^2))</p>
 <h2>cellstats_range<a class="headerlink" href="#cellstats-range" title="Permalink to this headline">¶</a></h2>
 <dl class="method">
 <dt id="arcgis.raster.functions.cellstats_range">
-<code class="descclassname">functions.</code><code class="descname">cellstats_range</code><span class="sig-paren">(</span><em>rasters</em>, <em>extent_type='FirstOf'</em>, <em>cellsize_type='FirstOf'</em>, <em>ignore_nodata=False</em>, <em>astype=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.raster.functions.cellstats_range" title="Permalink to this definition">¶</a></dt>
+<code class="descclassname">functions.</code><code class="descname">cellstats_range</code><span class="sig-paren">(</span><em>extent_type='FirstOf'</em>, <em>cellsize_type='FirstOf'</em>, <em>ignore_nodata=False</em>, <em>astype=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.raster.functions.cellstats_range" title="Permalink to this definition">¶</a></dt>
 <dd><p>The Range operation</p>
 <p>The arguments for this function are as follows:</p>
 <table class="docutils field-list" frame="void" rules="none">
@@ -3107,7 +3099,7 @@ PVI = (NIR-a*Red-b)/(sqrt(1+a^2))</p>
 <h2>raster_calculator<a class="headerlink" href="#raster-calculator" title="Permalink to this headline">¶</a></h2>
 <dl class="method">
 <dt id="arcgis.raster.functions.raster_calculator">
-<code class="descclassname">functions.</code><code class="descname">raster_calculator</code><span class="sig-paren">(</span><em>rasters</em>, <em>input_names</em>, <em>expression</em>, <em>extent_type='FirstOf'</em>, <em>cellsize_type='FirstOf'</em>, <em>astype=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.raster.functions.raster_calculator" title="Permalink to this definition">¶</a></dt>
+<code class="descclassname">functions.</code><code class="descname">raster_calculator</code><span class="sig-paren">(</span><em>input_names</em>, <em>expression</em>, <em>extent_type='FirstOf'</em>, <em>cellsize_type='FirstOf'</em>, <em>astype=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.raster.functions.raster_calculator" title="Permalink to this definition">¶</a></dt>
 <dd><p>The RasterCalculator function provides access to all existing math functions
 so you can make calls to them when building your expressions. The calculator
 function requires single-band inputs. If you need to perform expressions on
@@ -3141,7 +3133,7 @@ For more info including operators supported, see Calculator function
 <h2>remap<a class="headerlink" href="#remap" title="Permalink to this headline">¶</a></h2>
 <dl class="method">
 <dt id="arcgis.raster.functions.remap">
-<code class="descclassname">functions.</code><code class="descname">remap</code><span class="sig-paren">(</span><em>raster</em>, <em>input_ranges=None</em>, <em>output_values=None</em>, <em>geometry_type=None</em>, <em>geometries=None</em>, <em>no_data_ranges=None</em>, <em>allow_unmatched=None</em>, <em>astype=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.raster.functions.remap" title="Permalink to this definition">¶</a></dt>
+<code class="descclassname">functions.</code><code class="descname">remap</code><span class="sig-paren">(</span><em>input_ranges=None</em>, <em>output_values=None</em>, <em>geometry_type=None</em>, <em>geometries=None</em>, <em>no_data_ranges=None</em>, <em>allow_unmatched=None</em>, <em>astype=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.raster.functions.remap" title="Permalink to this definition">¶</a></dt>
 <dd><p>The remap function allows you to change or reclassify the pixel values of the raster data. For more information,
 see &lt;a href=”<a class="reference external" href="http://desktop.arcgis.com/en/arcmap/latest/manage-data/raster-and-images/remap-function.htm">http://desktop.arcgis.com/en/arcmap/latest/manage-data/raster-and-images/remap-function.htm</a>”&gt;remap function&lt;/a&gt;.</p>
 <p>The arguments for the remap function are as follows:</p>
@@ -3173,7 +3165,7 @@ see &lt;a href=”<a class="reference external" href="http://desktop.arcgis.com/
 <h2>resample<a class="headerlink" href="#resample" title="Permalink to this headline">¶</a></h2>
 <dl class="method">
 <dt id="arcgis.raster.functions.resample">
-<code class="descclassname">functions.</code><code class="descname">resample</code><span class="sig-paren">(</span><em>raster</em>, <em>resampling_type=None</em>, <em>input_cellsize=None</em>, <em>output_cellsize=None</em>, <em>astype=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.raster.functions.resample" title="Permalink to this definition">¶</a></dt>
+<code class="descclassname">functions.</code><code class="descname">resample</code><span class="sig-paren">(</span><em>resampling_type=None</em>, <em>input_cellsize=None</em>, <em>output_cellsize=None</em>, <em>astype=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.raster.functions.resample" title="Permalink to this definition">¶</a></dt>
 <dd><p>The resample function resamples pixel values from a given resolution.The arguments for the resample function are as follows:</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -3201,7 +3193,7 @@ BilinearGaussBlurPlus, Average, Minimum, Maximum,VectorAverage(require two bands
 <h2>round_down<a class="headerlink" href="#round-down" title="Permalink to this headline">¶</a></h2>
 <dl class="method">
 <dt id="arcgis.raster.functions.round_down">
-<code class="descclassname">functions.</code><code class="descname">round_down</code><span class="sig-paren">(</span><em>rasters</em>, <em>extent_type='FirstOf'</em>, <em>cellsize_type='FirstOf'</em>, <em>astype=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.raster.functions.round_down" title="Permalink to this definition">¶</a></dt>
+<code class="descclassname">functions.</code><code class="descname">round_down</code><span class="sig-paren">(</span><em>extent_type='FirstOf'</em>, <em>cellsize_type='FirstOf'</em>, <em>astype=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.raster.functions.round_down" title="Permalink to this definition">¶</a></dt>
 <dd><p>The RoundDown operation</p>
 <p>The arguments for this function are as follows:</p>
 <table class="docutils field-list" frame="void" rules="none">
@@ -3228,7 +3220,7 @@ BilinearGaussBlurPlus, Average, Minimum, Maximum,VectorAverage(require two bands
 <h2>round_up<a class="headerlink" href="#round-up" title="Permalink to this headline">¶</a></h2>
 <dl class="method">
 <dt id="arcgis.raster.functions.round_up">
-<code class="descclassname">functions.</code><code class="descname">round_up</code><span class="sig-paren">(</span><em>rasters</em>, <em>extent_type='FirstOf'</em>, <em>cellsize_type='FirstOf'</em>, <em>astype=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.raster.functions.round_up" title="Permalink to this definition">¶</a></dt>
+<code class="descclassname">functions.</code><code class="descname">round_up</code><span class="sig-paren">(</span><em>extent_type='FirstOf'</em>, <em>cellsize_type='FirstOf'</em>, <em>astype=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.raster.functions.round_up" title="Permalink to this definition">¶</a></dt>
 <dd><p>The RoundUp operation</p>
 <p>The arguments for this function are as follows:</p>
 <table class="docutils field-list" frame="void" rules="none">
@@ -3255,7 +3247,7 @@ BilinearGaussBlurPlus, Average, Minimum, Maximum,VectorAverage(require two bands
 <h2>savi<a class="headerlink" href="#savi" title="Permalink to this headline">¶</a></h2>
 <dl class="method">
 <dt id="arcgis.raster.functions.savi">
-<code class="descclassname">functions.</code><code class="descname">savi</code><span class="sig-paren">(</span><em>raster</em>, <em>band_indexes='4 3 0.33'</em>, <em>astype=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.raster.functions.savi" title="Permalink to this definition">¶</a></dt>
+<code class="descclassname">functions.</code><code class="descname">savi</code><span class="sig-paren">(</span><em>band_indexes='4 3 0.33'</em>, <em>astype=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.raster.functions.savi" title="Permalink to this definition">¶</a></dt>
 <dd><p>Soil-Adjusted Vegetation Index
 SAVI = ((NIR - Red) / (NIR + Red + L)) x (1 + L)
 where L represents amount of green vegetative cover, e.g., 0.5</p>
@@ -3282,7 +3274,7 @@ where L represents amount of green vegetative cover, e.g., 0.5</p>
 <h2>segment_mean_shift<a class="headerlink" href="#segment-mean-shift" title="Permalink to this headline">¶</a></h2>
 <dl class="method">
 <dt id="arcgis.raster.functions.segment_mean_shift">
-<code class="descclassname">functions.</code><code class="descname">segment_mean_shift</code><span class="sig-paren">(</span><em>raster</em>, <em>spectral_detail=None</em>, <em>spatial_detail=None</em>, <em>spectral_radius=None</em>, <em>spatial_radius=None</em>, <em>min_num_pixels_per_segment=None</em>, <em>astype=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.raster.functions.segment_mean_shift" title="Permalink to this definition">¶</a></dt>
+<code class="descclassname">functions.</code><code class="descname">segment_mean_shift</code><span class="sig-paren">(</span><em>spectral_detail=None</em>, <em>spatial_detail=None</em>, <em>spectral_radius=None</em>, <em>spatial_radius=None</em>, <em>min_num_pixels_per_segment=None</em>, <em>astype=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.raster.functions.segment_mean_shift" title="Permalink to this definition">¶</a></dt>
 <dd><p>The segment_mean_shift function produces a segmented output. Pixel values in the output image represent the
 converged RGB colors of the segment. The input raster needs to be a 3-band 8-bit image. If the imagery layer is not
 a 3-band 8-bit unsigned image, you can use the Stretch function before the segment_mean_shift function.</p>
@@ -3320,7 +3312,7 @@ SpatialRadius = 21 - SpectralRadius</p>
 <h2>set_null<a class="headerlink" href="#set-null" title="Permalink to this headline">¶</a></h2>
 <dl class="method">
 <dt id="arcgis.raster.functions.set_null">
-<code class="descclassname">functions.</code><code class="descname">set_null</code><span class="sig-paren">(</span><em>rasters</em>, <em>extent_type='FirstOf'</em>, <em>cellsize_type='FirstOf'</em>, <em>astype=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.raster.functions.set_null" title="Permalink to this definition">¶</a></dt>
+<code class="descclassname">functions.</code><code class="descname">set_null</code><span class="sig-paren">(</span><em>extent_type='FirstOf'</em>, <em>cellsize_type='FirstOf'</em>, <em>astype=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.raster.functions.set_null" title="Permalink to this definition">¶</a></dt>
 <dd><p>The SetNull operation</p>
 <p>The arguments for this function are as follows:</p>
 <table class="docutils field-list" frame="void" rules="none">
@@ -3347,7 +3339,7 @@ SpatialRadius = 21 - SpectralRadius</p>
 <h2>shaded_relief<a class="headerlink" href="#shaded-relief" title="Permalink to this headline">¶</a></h2>
 <dl class="method">
 <dt id="arcgis.raster.functions.shaded_relief">
-<code class="descclassname">functions.</code><code class="descname">shaded_relief</code><span class="sig-paren">(</span><em>raster</em>, <em>azimuth=None</em>, <em>altitude=None</em>, <em>z_factor=None</em>, <em>colormap=None</em>, <em>slope_type=None</em>, <em>ps_power=None</em>, <em>psz_factor=None</em>, <em>remove_edge_effect=None</em>, <em>astype=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.raster.functions.shaded_relief" title="Permalink to this definition">¶</a></dt>
+<code class="descclassname">functions.</code><code class="descname">shaded_relief</code><span class="sig-paren">(</span><em>azimuth=None</em>, <em>altitude=None</em>, <em>z_factor=None</em>, <em>colormap=None</em>, <em>slope_type=None</em>, <em>ps_power=None</em>, <em>psz_factor=None</em>, <em>remove_edge_effect=None</em>, <em>astype=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.raster.functions.shaded_relief" title="Permalink to this definition">¶</a></dt>
 <dd><p>Shaded relief is a color 3D model of the terrain, created by merging the images from the Elevation-coded and
 Hillshade methods. For more information, see
 &lt;a href=”<a class="reference external" href="http://desktop.arcgis.com/en/arcmap/latest/manage-data/raster-and-images/shaded-relief-function.htm">http://desktop.arcgis.com/en/arcmap/latest/manage-data/raster-and-images/shaded-relief-function.htm</a>”&gt;Shaded relief&lt;/a&gt; function.</p>
@@ -3382,7 +3374,7 @@ Hillshade methods. For more information, see
 <h2>sin<a class="headerlink" href="#sin" title="Permalink to this headline">¶</a></h2>
 <dl class="method">
 <dt id="arcgis.raster.functions.sin">
-<code class="descclassname">functions.</code><code class="descname">sin</code><span class="sig-paren">(</span><em>rasters</em>, <em>extent_type='FirstOf'</em>, <em>cellsize_type='FirstOf'</em>, <em>astype=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.raster.functions.sin" title="Permalink to this definition">¶</a></dt>
+<code class="descclassname">functions.</code><code class="descname">sin</code><span class="sig-paren">(</span><em>extent_type='FirstOf'</em>, <em>cellsize_type='FirstOf'</em>, <em>astype=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.raster.functions.sin" title="Permalink to this definition">¶</a></dt>
 <dd><p>The Sin operation</p>
 <p>The arguments for this function are as follows:</p>
 <table class="docutils field-list" frame="void" rules="none">
@@ -3409,7 +3401,7 @@ Hillshade methods. For more information, see
 <h2>sinh<a class="headerlink" href="#sinh" title="Permalink to this headline">¶</a></h2>
 <dl class="method">
 <dt id="arcgis.raster.functions.sinh">
-<code class="descclassname">functions.</code><code class="descname">sinh</code><span class="sig-paren">(</span><em>rasters</em>, <em>extent_type='FirstOf'</em>, <em>cellsize_type='FirstOf'</em>, <em>astype=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.raster.functions.sinh" title="Permalink to this definition">¶</a></dt>
+<code class="descclassname">functions.</code><code class="descname">sinh</code><span class="sig-paren">(</span><em>extent_type='FirstOf'</em>, <em>cellsize_type='FirstOf'</em>, <em>astype=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.raster.functions.sinh" title="Permalink to this definition">¶</a></dt>
 <dd><p>The SinH operation</p>
 <p>The arguments for this function are as follows:</p>
 <table class="docutils field-list" frame="void" rules="none">
@@ -3436,7 +3428,7 @@ Hillshade methods. For more information, see
 <h2>slope<a class="headerlink" href="#slope" title="Permalink to this headline">¶</a></h2>
 <dl class="method">
 <dt id="arcgis.raster.functions.slope">
-<code class="descclassname">functions.</code><code class="descname">slope</code><span class="sig-paren">(</span><em>dem</em>, <em>z_factor=None</em>, <em>slope_type=None</em>, <em>ps_power=None</em>, <em>psz_factor=None</em>, <em>remove_edge_effect=None</em>, <em>astype=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.raster.functions.slope" title="Permalink to this definition">¶</a></dt>
+<code class="descclassname">functions.</code><code class="descname">slope</code><span class="sig-paren">(</span><em>z_factor=None</em>, <em>slope_type=None</em>, <em>ps_power=None</em>, <em>psz_factor=None</em>, <em>remove_edge_effect=None</em>, <em>astype=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.raster.functions.slope" title="Permalink to this definition">¶</a></dt>
 <dd><p>slope represents the rate of change of elevation for each pixel. For more information, see
 &lt;a href=”<a class="reference external" href="http://desktop.arcgis.com/en/arcmap/latest/manage-data/raster-and-images/slope-function.htm">http://desktop.arcgis.com/en/arcmap/latest/manage-data/raster-and-images/slope-function.htm</a>”&gt;slope function&lt;/a&gt;
 and &lt;a href=”<a class="reference external" href="http://desktop.arcgis.com/en/arcmap/latest/tools/spatial-analyst-toolbox/how-slope-works.htm">http://desktop.arcgis.com/en/arcmap/latest/tools/spatial-analyst-toolbox/how-slope-works.htm</a>”&gt;How slope works&lt;/a&gt;.
@@ -3468,7 +3460,7 @@ The arguments for the slope function are as follows:</p>
 <h2>spectral_conversion<a class="headerlink" href="#spectral-conversion" title="Permalink to this headline">¶</a></h2>
 <dl class="method">
 <dt id="arcgis.raster.functions.spectral_conversion">
-<code class="descclassname">functions.</code><code class="descname">spectral_conversion</code><span class="sig-paren">(</span><em>raster</em>, <em>conversion_matrix</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.raster.functions.spectral_conversion" title="Permalink to this definition">¶</a></dt>
+<code class="descclassname">functions.</code><code class="descname">spectral_conversion</code><span class="sig-paren">(</span><em>conversion_matrix</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.raster.functions.spectral_conversion" title="Permalink to this definition">¶</a></dt>
 <dd><p>The SpectralConversion function applies a matrix to a multi-band image to
 affect the spectral values of the output. In the matrix, different weights
 can be assigned to all the input bands to calculate each of the output 
@@ -3497,7 +3489,7 @@ raster. For more information, see Spectral Conversion function
 <h2>speckle<a class="headerlink" href="#speckle" title="Permalink to this headline">¶</a></h2>
 <dl class="method">
 <dt id="arcgis.raster.functions.speckle">
-<code class="descclassname">functions.</code><code class="descname">speckle</code><span class="sig-paren">(</span><em>raster</em>, <em>filter_type='Lee'</em>, <em>filter_size='3x3'</em>, <em>noise_model='Multiplicative'</em>, <em>noise_var=None</em>, <em>additive_noise_mean=None</em>, <em>multiplicative_noise_mean=1</em>, <em>nlooks=1</em>, <em>damp_factor=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.raster.functions.speckle" title="Permalink to this definition">¶</a></dt>
+<code class="descclassname">functions.</code><code class="descname">speckle</code><span class="sig-paren">(</span><em>filter_type='Lee'</em>, <em>filter_size='3x3'</em>, <em>noise_model='Multiplicative'</em>, <em>noise_var=None</em>, <em>additive_noise_mean=None</em>, <em>multiplicative_noise_mean=1</em>, <em>nlooks=1</em>, <em>damp_factor=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.raster.functions.speckle" title="Permalink to this definition">¶</a></dt>
 <dd><p>The Speckle function filters the speckled radar dataset to smooth out the 
 noise while retaining the edges or sharp features in the image. Four speckle
 reduction filtering algorithms are provided through this function. For more
@@ -3533,7 +3525,7 @@ the default parameter values, see Speckle function
 <h2>sqrt<a class="headerlink" href="#sqrt" title="Permalink to this headline">¶</a></h2>
 <dl class="method">
 <dt id="arcgis.raster.functions.sqrt">
-<code class="descclassname">functions.</code><code class="descname">sqrt</code><span class="sig-paren">(</span><em>rasters</em>, <em>extent_type='FirstOf'</em>, <em>cellsize_type='FirstOf'</em>, <em>astype=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.raster.functions.sqrt" title="Permalink to this definition">¶</a></dt>
+<code class="descclassname">functions.</code><code class="descname">sqrt</code><span class="sig-paren">(</span><em>extent_type='FirstOf'</em>, <em>cellsize_type='FirstOf'</em>, <em>astype=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.raster.functions.sqrt" title="Permalink to this definition">¶</a></dt>
 <dd><p>The Square Root operation</p>
 <p>The arguments for this function are as follows:</p>
 <table class="docutils field-list" frame="void" rules="none">
@@ -3560,7 +3552,7 @@ the default parameter values, see Speckle function
 <h2>square<a class="headerlink" href="#square" title="Permalink to this headline">¶</a></h2>
 <dl class="method">
 <dt id="arcgis.raster.functions.square">
-<code class="descclassname">functions.</code><code class="descname">square</code><span class="sig-paren">(</span><em>rasters</em>, <em>extent_type='FirstOf'</em>, <em>cellsize_type='FirstOf'</em>, <em>astype=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.raster.functions.square" title="Permalink to this definition">¶</a></dt>
+<code class="descclassname">functions.</code><code class="descname">square</code><span class="sig-paren">(</span><em>extent_type='FirstOf'</em>, <em>cellsize_type='FirstOf'</em>, <em>astype=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.raster.functions.square" title="Permalink to this definition">¶</a></dt>
 <dd><p>The Square operation</p>
 <p>The arguments for this function are as follows:</p>
 <table class="docutils field-list" frame="void" rules="none">
@@ -3587,7 +3579,7 @@ the default parameter values, see Speckle function
 <h2>focal_statistics<a class="headerlink" href="#focal-statistics" title="Permalink to this headline">¶</a></h2>
 <dl class="method">
 <dt id="arcgis.raster.functions.focal_statistics">
-<code class="descclassname">functions.</code><code class="descname">focal_statistics</code><span class="sig-paren">(</span><em>raster</em>, <em>kernel_columns=None</em>, <em>kernel_rows=None</em>, <em>stat_type=None</em>, <em>columns=None</em>, <em>rows=None</em>, <em>fill_no_data_only=None</em>, <em>astype=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.raster.functions.focal_statistics" title="Permalink to this definition">¶</a></dt>
+<code class="descclassname">functions.</code><code class="descname">focal_statistics</code><span class="sig-paren">(</span><em>kernel_columns=None</em>, <em>kernel_rows=None</em>, <em>stat_type=None</em>, <em>columns=None</em>, <em>rows=None</em>, <em>fill_no_data_only=None</em>, <em>astype=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.raster.functions.focal_statistics" title="Permalink to this definition">¶</a></dt>
 <dd><p>The focal_statistics function calculates focal statistics for each pixel of an image based on a defined focal neighborhood.
 For more information, see
 &lt;a href=”<a class="reference external" href="http://desktop.arcgis.com/en/arcmap/latest/manage-data/raster-and-images/statistics-function.htm">http://desktop.arcgis.com/en/arcmap/latest/manage-data/raster-and-images/statistics-function.htm</a>”&gt;statistics function&lt;/a&gt;.
@@ -3629,7 +3621,7 @@ The arguments for the statistics function are as follows:</p>
 <h2>statistics_histogram<a class="headerlink" href="#statistics-histogram" title="Permalink to this headline">¶</a></h2>
 <dl class="method">
 <dt id="arcgis.raster.functions.statistics_histogram">
-<code class="descclassname">functions.</code><code class="descname">statistics_histogram</code><span class="sig-paren">(</span><em>raster</em>, <em>statistics=None</em>, <em>histograms=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.raster.functions.statistics_histogram" title="Permalink to this definition">¶</a></dt>
+<code class="descclassname">functions.</code><code class="descname">statistics_histogram</code><span class="sig-paren">(</span><em>statistics=None</em>, <em>histograms=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.raster.functions.statistics_histogram" title="Permalink to this definition">¶</a></dt>
 <dd><p>”
 The function is used to define the statistics and histogram of a raster.
 It is normally used for control the default display of exported image. 
@@ -3658,7 +3650,7 @@ For more information, see Statistics and Histogram function,
 <h2>std<a class="headerlink" href="#std" title="Permalink to this headline">¶</a></h2>
 <dl class="method">
 <dt id="arcgis.raster.functions.std">
-<code class="descclassname">functions.</code><code class="descname">std</code><span class="sig-paren">(</span><em>rasters</em>, <em>extent_type='FirstOf'</em>, <em>cellsize_type='FirstOf'</em>, <em>ignore_nodata=False</em>, <em>astype=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.raster.functions.std" title="Permalink to this definition">¶</a></dt>
+<code class="descclassname">functions.</code><code class="descname">std</code><span class="sig-paren">(</span><em>extent_type='FirstOf'</em>, <em>cellsize_type='FirstOf'</em>, <em>ignore_nodata=False</em>, <em>astype=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.raster.functions.std" title="Permalink to this definition">¶</a></dt>
 <dd><p>The Std operation</p>
 <p>The arguments for this function are as follows:</p>
 <table class="docutils field-list" frame="void" rules="none">
@@ -3686,7 +3678,7 @@ For more information, see Statistics and Histogram function,
 <h2>stretch<a class="headerlink" href="#stretch" title="Permalink to this headline">¶</a></h2>
 <dl class="method">
 <dt id="arcgis.raster.functions.stretch">
-<code class="descclassname">functions.</code><code class="descname">stretch</code><span class="sig-paren">(</span><em>raster</em>, <em>stretch_type=0</em>, <em>min=None</em>, <em>max=None</em>, <em>num_stddev=None</em>, <em>statistics=None</em>, <em>dra=None</em>, <em>min_percent=None</em>, <em>max_percent=None</em>, <em>gamma=None</em>, <em>compute_gamma=None</em>, <em>sigmoid_strength_level=None</em>, <em>astype=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.raster.functions.stretch" title="Permalink to this definition">¶</a></dt>
+<code class="descclassname">functions.</code><code class="descname">stretch</code><span class="sig-paren">(</span><em>stretch_type=0</em>, <em>min=None</em>, <em>max=None</em>, <em>num_stddev=None</em>, <em>statistics=None</em>, <em>dra=None</em>, <em>min_percent=None</em>, <em>max_percent=None</em>, <em>gamma=None</em>, <em>compute_gamma=None</em>, <em>sigmoid_strength_level=None</em>, <em>astype=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.raster.functions.stretch" title="Permalink to this definition">¶</a></dt>
 <dd><p>The stretch function enhances an image through multiple stretch types. For more information, see
 &lt;a href=”<a class="reference external" href="http://desktop.arcgis.com/en/arcmap/latest/manage-data/raster-and-images/stretch-function.htm">http://desktop.arcgis.com/en/arcmap/latest/manage-data/raster-and-images/stretch-function.htm</a>”&gt;stretch function&lt;/a&gt;.</p>
 <p>Gamma stretch works with all stretch types. The Gamma parameter is needed when UseGamma is set to true. Min and Max
@@ -3733,7 +3725,7 @@ Stretch type Sigmoid does not require other parameters.</p>
 <h2>sultan<a class="headerlink" href="#sultan" title="Permalink to this headline">¶</a></h2>
 <dl class="method">
 <dt id="arcgis.raster.functions.sultan">
-<code class="descclassname">functions.</code><code class="descname">sultan</code><span class="sig-paren">(</span><em>raster</em>, <em>band_indexes='1 2 3 4 5 6'</em>, <em>astype=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.raster.functions.sultan" title="Permalink to this definition">¶</a></dt>
+<code class="descclassname">functions.</code><code class="descname">sultan</code><span class="sig-paren">(</span><em>band_indexes='1 2 3 4 5 6'</em>, <em>astype=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.raster.functions.sultan" title="Permalink to this definition">¶</a></dt>
 <dd><dl class="docutils">
 <dt>Sultan’s Formula (transform to 3 band 8 bit image)</dt>
 <dd>Band 1 = (Band5 / Band6) x 100
@@ -3758,7 +3750,7 @@ Band 3 = (Band3 / Band4) x (Band5 / Band4) x 100</dd>
 <h2>sum<a class="headerlink" href="#sum" title="Permalink to this headline">¶</a></h2>
 <dl class="method">
 <dt id="arcgis.raster.functions.sum">
-<code class="descclassname">functions.</code><code class="descname">sum</code><span class="sig-paren">(</span><em>rasters</em>, <em>extent_type='FirstOf'</em>, <em>cellsize_type='FirstOf'</em>, <em>ignore_nodata=False</em>, <em>astype=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.raster.functions.sum" title="Permalink to this definition">¶</a></dt>
+<code class="descclassname">functions.</code><code class="descname">sum</code><span class="sig-paren">(</span><em>extent_type='FirstOf'</em>, <em>cellsize_type='FirstOf'</em>, <em>ignore_nodata=False</em>, <em>astype=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.raster.functions.sum" title="Permalink to this definition">¶</a></dt>
 <dd><p>The Sum operation</p>
 <p>The arguments for this function are as follows:</p>
 <table class="docutils field-list" frame="void" rules="none">
@@ -3786,7 +3778,7 @@ Band 3 = (Band3 / Band4) x (Band5 / Band4) x 100</dd>
 <h2>tan<a class="headerlink" href="#tan" title="Permalink to this headline">¶</a></h2>
 <dl class="method">
 <dt id="arcgis.raster.functions.tan">
-<code class="descclassname">functions.</code><code class="descname">tan</code><span class="sig-paren">(</span><em>rasters</em>, <em>extent_type='FirstOf'</em>, <em>cellsize_type='FirstOf'</em>, <em>astype=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.raster.functions.tan" title="Permalink to this definition">¶</a></dt>
+<code class="descclassname">functions.</code><code class="descname">tan</code><span class="sig-paren">(</span><em>extent_type='FirstOf'</em>, <em>cellsize_type='FirstOf'</em>, <em>astype=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.raster.functions.tan" title="Permalink to this definition">¶</a></dt>
 <dd><p>The Tan operation</p>
 <p>The arguments for this function are as follows:</p>
 <table class="docutils field-list" frame="void" rules="none">
@@ -3813,7 +3805,7 @@ Band 3 = (Band3 / Band4) x (Band5 / Band4) x 100</dd>
 <h2>tanh<a class="headerlink" href="#tanh" title="Permalink to this headline">¶</a></h2>
 <dl class="method">
 <dt id="arcgis.raster.functions.tanh">
-<code class="descclassname">functions.</code><code class="descname">tanh</code><span class="sig-paren">(</span><em>rasters</em>, <em>extent_type='FirstOf'</em>, <em>cellsize_type='FirstOf'</em>, <em>astype=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.raster.functions.tanh" title="Permalink to this definition">¶</a></dt>
+<code class="descclassname">functions.</code><code class="descname">tanh</code><span class="sig-paren">(</span><em>extent_type='FirstOf'</em>, <em>cellsize_type='FirstOf'</em>, <em>astype=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.raster.functions.tanh" title="Permalink to this definition">¶</a></dt>
 <dd><p>The TanH operation</p>
 <p>The arguments for this function are as follows:</p>
 <table class="docutils field-list" frame="void" rules="none">
@@ -3840,7 +3832,7 @@ Band 3 = (Band3 / Band4) x (Band5 / Band4) x 100</dd>
 <h2>tasseled_cap<a class="headerlink" href="#tasseled-cap" title="Permalink to this headline">¶</a></h2>
 <dl class="method">
 <dt id="arcgis.raster.functions.tasseled_cap">
-<code class="descclassname">functions.</code><code class="descname">tasseled_cap</code><span class="sig-paren">(</span><em>raster</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.raster.functions.tasseled_cap" title="Permalink to this definition">¶</a></dt>
+<code class="descclassname">functions.</code><code class="descname">tasseled_cap</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.raster.functions.tasseled_cap" title="Permalink to this definition">¶</a></dt>
 <dd><p>”
 The function is designed to analyze and map vegetation and urban development
 changes detected by various satellite sensor systems. It is known as the 
@@ -3874,7 +3866,7 @@ Cap function. For more information, see
 <h2>threshold<a class="headerlink" href="#threshold" title="Permalink to this headline">¶</a></h2>
 <dl class="method">
 <dt id="arcgis.raster.functions.threshold">
-<code class="descclassname">functions.</code><code class="descname">threshold</code><span class="sig-paren">(</span><em>raster</em>, <em>astype=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.raster.functions.threshold" title="Permalink to this definition">¶</a></dt>
+<code class="descclassname">functions.</code><code class="descname">threshold</code><span class="sig-paren">(</span><em>astype=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.raster.functions.threshold" title="Permalink to this definition">¶</a></dt>
 <dd><dl class="docutils">
 <dt>The binary threshold function produces the binary image. It uses the Otsu method and assumes the input image to have</dt>
 <dd>a bi-modal histogram. The arguments for the threshold function are as follows:</dd>
@@ -3901,7 +3893,7 @@ Cap function. For more information, see
 <h2>times<a class="headerlink" href="#times" title="Permalink to this headline">¶</a></h2>
 <dl class="method">
 <dt id="arcgis.raster.functions.times">
-<code class="descclassname">functions.</code><code class="descname">times</code><span class="sig-paren">(</span><em>rasters</em>, <em>extent_type='FirstOf'</em>, <em>cellsize_type='FirstOf'</em>, <em>astype=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.raster.functions.times" title="Permalink to this definition">¶</a></dt>
+<code class="descclassname">functions.</code><code class="descname">times</code><span class="sig-paren">(</span><em>extent_type='FirstOf'</em>, <em>cellsize_type='FirstOf'</em>, <em>astype=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.raster.functions.times" title="Permalink to this definition">¶</a></dt>
 <dd><p>The Times (multiplication,*) operation</p>
 <p>The arguments for this function are as follows:</p>
 <table class="docutils field-list" frame="void" rules="none">
@@ -3928,7 +3920,7 @@ Cap function. For more information, see
 <h2>transpose_bits<a class="headerlink" href="#transpose-bits" title="Permalink to this headline">¶</a></h2>
 <dl class="method">
 <dt id="arcgis.raster.functions.transpose_bits">
-<code class="descclassname">functions.</code><code class="descname">transpose_bits</code><span class="sig-paren">(</span><em>raster</em>, <em>input_bit_positions=None</em>, <em>output_bit_positions=None</em>, <em>constant_fill_check=None</em>, <em>constant_fill_value=None</em>, <em>fill_raster=None</em>, <em>astype=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.raster.functions.transpose_bits" title="Permalink to this definition">¶</a></dt>
+<code class="descclassname">functions.</code><code class="descname">transpose_bits</code><span class="sig-paren">(</span><em>input_bit_positions=None</em>, <em>output_bit_positions=None</em>, <em>constant_fill_check=None</em>, <em>constant_fill_value=None</em>, <em>fill_raster=None</em>, <em>astype=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.raster.functions.transpose_bits" title="Permalink to this definition">¶</a></dt>
 <dd><p>The transpose_bits function performs a bit operation. It extracts bit values from the source data and assigns them
 to new bits in the output data.The arguments for the transpose_bits function are as follows:</p>
 <p>If constant_fill_check is False, it assumes there is an input fill_raster. If an input fill_raster is not given,
@@ -3972,7 +3964,7 @@ confidence levels by mapping them to 0-3:
 <h2>tsavi<a class="headerlink" href="#tsavi" title="Permalink to this headline">¶</a></h2>
 <dl class="method">
 <dt id="arcgis.raster.functions.tsavi">
-<code class="descclassname">functions.</code><code class="descname">tsavi</code><span class="sig-paren">(</span><em>raster</em>, <em>band_indexes='4 3 0.33 0.50 1.50'</em>, <em>astype=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.raster.functions.tsavi" title="Permalink to this definition">¶</a></dt>
+<code class="descclassname">functions.</code><code class="descname">tsavi</code><span class="sig-paren">(</span><em>band_indexes='4 3 0.33 0.50 1.50'</em>, <em>astype=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.raster.functions.tsavi" title="Permalink to this definition">¶</a></dt>
 <dd><p>Transformed Soil Adjusted Vegetation Index
 TSAVI = (s(NIR-s*Red-a))/(a*NIR+Red-a*s+X*(1+s^2))</p>
 <table class="docutils field-list" frame="void" rules="none">
@@ -3998,7 +3990,7 @@ TSAVI = (s(NIR-s*Red-a))/(a*NIR+Red-a*s+X*(1+s^2))</p>
 <h2>unit_conversion<a class="headerlink" href="#unit-conversion" title="Permalink to this headline">¶</a></h2>
 <dl class="method">
 <dt id="arcgis.raster.functions.unit_conversion">
-<code class="descclassname">functions.</code><code class="descname">unit_conversion</code><span class="sig-paren">(</span><em>raster</em>, <em>from_unit=None</em>, <em>to_unit=None</em>, <em>astype=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.raster.functions.unit_conversion" title="Permalink to this definition">¶</a></dt>
+<code class="descclassname">functions.</code><code class="descname">unit_conversion</code><span class="sig-paren">(</span><em>from_unit=None</em>, <em>to_unit=None</em>, <em>astype=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.raster.functions.unit_conversion" title="Permalink to this definition">¶</a></dt>
 <dd><p>The unit_conversion function performs unit conversions.The arguments for the unit_conversion function are as follows:
 from_unit and to_unit take the following str values:
 Speed Units: MetersPerSecond, KilometersPerHour, Knots, FeetPerSecond, MilesPerHour
@@ -4028,7 +4020,7 @@ Distance Units: str, one of Inches, Feet, Yards, Miles, NauticalMiles, Millimete
 <h2>variety<a class="headerlink" href="#variety" title="Permalink to this headline">¶</a></h2>
 <dl class="method">
 <dt id="arcgis.raster.functions.variety">
-<code class="descclassname">functions.</code><code class="descname">variety</code><span class="sig-paren">(</span><em>rasters</em>, <em>extent_type='FirstOf'</em>, <em>cellsize_type='FirstOf'</em>, <em>ignore_nodata=False</em>, <em>astype=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.raster.functions.variety" title="Permalink to this definition">¶</a></dt>
+<code class="descclassname">functions.</code><code class="descname">variety</code><span class="sig-paren">(</span><em>extent_type='FirstOf'</em>, <em>cellsize_type='FirstOf'</em>, <em>ignore_nodata=False</em>, <em>astype=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.raster.functions.variety" title="Permalink to this definition">¶</a></dt>
 <dd><p>The Variety operation</p>
 <p>The arguments for this function are as follows:</p>
 <table class="docutils field-list" frame="void" rules="none">
@@ -4056,7 +4048,7 @@ Distance Units: str, one of Inches, Feet, Yards, Miles, NauticalMiles, Millimete
 <h2>vector_field<a class="headerlink" href="#vector-field" title="Permalink to this headline">¶</a></h2>
 <dl class="method">
 <dt id="arcgis.raster.functions.vector_field">
-<code class="descclassname">functions.</code><code class="descname">vector_field</code><span class="sig-paren">(</span><em>raster_u_mag</em>, <em>raster_v_dir</em>, <em>input_data_type='Vector-UV'</em>, <em>angle_reference_system='Geographic'</em>, <em>output_data_type='Vector-UV'</em>, <em>astype=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.raster.functions.vector_field" title="Permalink to this definition">¶</a></dt>
+<code class="descclassname">functions.</code><code class="descname">vector_field</code><span class="sig-paren">(</span><em>raster_v_dir</em>, <em>input_data_type='Vector-UV'</em>, <em>angle_reference_system='Geographic'</em>, <em>output_data_type='Vector-UV'</em>, <em>astype=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.raster.functions.vector_field" title="Permalink to this definition">¶</a></dt>
 <dd><p>The VectorField function is used to composite two single-band rasters (each raster represents U/V or Magnitude/Direction)
 into a two-band raster (each band represents U/V or Magnitude/Direction). Data combination type (U-V or Magnitude-Direction)
 can also be converted interchangeably with this function.
@@ -4087,7 +4079,7 @@ For more information, see Vector Field function
 <h2>vector_field_renderer<a class="headerlink" href="#vector-field-renderer" title="Permalink to this headline">¶</a></h2>
 <dl class="method">
 <dt id="arcgis.raster.functions.vector_field_renderer">
-<code class="descclassname">functions.</code><code class="descname">vector_field_renderer</code><span class="sig-paren">(</span><em>raster</em>, <em>is_uv_components=None</em>, <em>reference_system=None</em>, <em>mass_flow_angle_representation=None</em>, <em>calculation_method='Vector Average'</em>, <em>symbology_name='Single Arrow'</em>, <em>astype=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.raster.functions.vector_field_renderer" title="Permalink to this definition">¶</a></dt>
+<code class="descclassname">functions.</code><code class="descname">vector_field_renderer</code><span class="sig-paren">(</span><em>is_uv_components=None</em>, <em>reference_system=None</em>, <em>mass_flow_angle_representation=None</em>, <em>calculation_method='Vector Average'</em>, <em>symbology_name='Single Arrow'</em>, <em>astype=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.raster.functions.vector_field_renderer" title="Permalink to this definition">¶</a></dt>
 <dd><p>The vector_field_renderer function symbolizes a U-V or Magnitude-Direction raster.The arguments for the vector_field_renderer function are as follows:</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -4116,7 +4108,7 @@ For more information, see Vector Field function
 <h2>weighted_overlay<a class="headerlink" href="#weighted-overlay" title="Permalink to this headline">¶</a></h2>
 <dl class="method">
 <dt id="arcgis.raster.functions.weighted_overlay">
-<code class="descclassname">functions.</code><code class="descname">weighted_overlay</code><span class="sig-paren">(</span><em>rasters</em>, <em>fields</em>, <em>influences</em>, <em>remaps</em>, <em>eval_from</em>, <em>eval_to</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.raster.functions.weighted_overlay" title="Permalink to this definition">¶</a></dt>
+<code class="descclassname">functions.</code><code class="descname">weighted_overlay</code><span class="sig-paren">(</span><em>fields</em>, <em>influences</em>, <em>remaps</em>, <em>eval_from</em>, <em>eval_to</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.raster.functions.weighted_overlay" title="Permalink to this definition">¶</a></dt>
 <dd><dl class="docutils">
 <dt>The WeightedOverlay function allows you to overlay several rasters using a common </dt>
 <dd>measurement scale and weights each according to its importance. For more information, see</dd>
@@ -4162,7 +4154,7 @@ its influence. The sum of the influence weights must equal 1</li>
 <h2>weighted_sum<a class="headerlink" href="#weighted-sum" title="Permalink to this headline">¶</a></h2>
 <dl class="method">
 <dt id="arcgis.raster.functions.weighted_sum">
-<code class="descclassname">functions.</code><code class="descname">weighted_sum</code><span class="sig-paren">(</span><em>rasters</em>, <em>fields</em>, <em>weights</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.raster.functions.weighted_sum" title="Permalink to this definition">¶</a></dt>
+<code class="descclassname">functions.</code><code class="descname">weighted_sum</code><span class="sig-paren">(</span><em>fields</em>, <em>weights</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.raster.functions.weighted_sum" title="Permalink to this definition">¶</a></dt>
 <dd><dl class="docutils">
 <dt>The WeightedSum function allows you to overlay several rasters, multiplying each by their </dt>
 <dd>given weight and summing them together.  For more information, see</dd>
@@ -4193,9 +4185,7 @@ It can be any positive or negative decimal value.</li>
 
 
            </div>
-           <div class="articleComments">
-            
-           </div>
+           
           </div>
           <footer>
   
@@ -4217,7 +4207,7 @@ It can be any positive or negative decimal value.</li>
 
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
 
 </footer>
 
@@ -4235,7 +4225,8 @@ It can be any positive or negative decimal value.</li>
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'./',
-            VERSION:'1.5.0',
+            VERSION:'1.5.1',
+            LANGUAGE:'None',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  true,
@@ -4248,19 +4239,13 @@ It can be any positive or negative decimal value.</li>
 
   
 
-  
-  
-    <script type="text/javascript" src="_static/js/theme.js"></script>
-  
+  <script type="text/javascript" src="_static/js/theme.js"></script>
 
-  
-  
   <script type="text/javascript">
       jQuery(function () {
-          SphinxRtdTheme.StickyNav.enable();
+          SphinxRtdTheme.Navigation.enable(true);
       });
-  </script>
-   
+  </script> 
 
 </body>
 </html>
