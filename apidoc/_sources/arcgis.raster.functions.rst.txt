@@ -207,6 +207,10 @@ floor_divide
 ____________
 .. automethod:: arcgis.raster.functions.floor_divide
 
+..focal_stats
+..___________
+.. automethod:: arcgis.raster.functions.focal_stats
+
 gemi
 ____
 .. automethod:: arcgis.raster.functions.gemi
@@ -270,6 +274,10 @@ _____
 log2
 ____
 .. automethod:: arcgis.raster.functions.log2
+
+..lookup
+.._____
+.. automethod:: arcgis.raster.functions.lookup
 
 majority
 ________

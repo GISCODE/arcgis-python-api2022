@@ -18,6 +18,14 @@ PortalAdminManager
     :undoc-members:
     :show-inheritance:
 
+Bundle
+---------------
+.. autoclass:: arcgis.gis.admin.Bundle
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
+
 CategoryManager
 ---------------
 .. autoclass:: arcgis.gis.admin.CategoryManager
