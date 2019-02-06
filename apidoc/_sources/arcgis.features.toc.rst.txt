@@ -47,14 +47,14 @@ FeatureCollection
     :members:
     :undoc-members:
 
-arcgis.features.GeoAccessor
+GeoAccessor
 --------------
 .. autoclass:: arcgis.features.GeoAccessor
     :inherited-members:
     :members:
     :undoc-members:
 
-arcgis.features.GeoSeriesAccessor
+GeoSeriesAccessor
 --------------
 .. autoclass:: arcgis.features.GeoSeriesAccessor
     :inherited-members:

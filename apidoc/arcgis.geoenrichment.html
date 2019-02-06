@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>arcgis.geoenrichment module &mdash; arcgis 1.5.1 documentation</title>
+  <title>arcgis.geoenrichment module &mdash; arcgis 1.5.3 documentation</title>
   
 
   
@@ -68,7 +68,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             
             
               <div class="version">
-                1.5.1
+                1.5.3
               </div>
             
           
@@ -113,6 +113,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <li class="toctree-l3"><a class="reference internal" href="arcgis.gis.admin.html">arcgis.gis.admin module</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.gis.admin.html#agoladminmanager">AGOLAdminManager</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.gis.admin.html#portaladminmanager">PortalAdminManager</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.gis.admin.html#bundle">Bundle</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.gis.admin.html#categorymanager">CategoryManager</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.gis.admin.html#collaborationmanager">CollaborationManager</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.gis.admin.html#collaboration">Collaboration</a></li>
@@ -180,6 +181,10 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <li class="toctree-l2"><a class="reference internal" href="arcgis.env.html#return-m">return_m</a></li>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.env.html#verbose">verbose</a></li>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.env.html#default-aggregation-styles">default_aggregation_styles</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.env.html#snap-raster">snap_raster</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.env.html#cell-size">cell_size</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.env.html#mask">mask</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.env.html#parallel-processing-factor">parallel_processing_factor</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="arcgis.features.toc.html">arcgis.features module</a><ul>
@@ -189,8 +194,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <li class="toctree-l2"><a class="reference internal" href="arcgis.features.toc.html#featurelayercollection">FeatureLayerCollection</a></li>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.features.toc.html#featureset">FeatureSet</a></li>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.features.toc.html#featurecollection">FeatureCollection</a></li>
-<li class="toctree-l2"><a class="reference internal" href="arcgis.features.toc.html#arcgis-features-geoaccessor">arcgis.features.GeoAccessor</a></li>
-<li class="toctree-l2"><a class="reference internal" href="arcgis.features.toc.html#arcgis-features-geoseriesaccessor">arcgis.features.GeoSeriesAccessor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.features.toc.html#geoaccessor">GeoAccessor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.features.toc.html#geoseriesaccessor">GeoSeriesAccessor</a></li>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.features.toc.html#spatialdataframe">SpatialDataFrame</a></li>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.features.toc.html#submodules">Submodules</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="arcgis.features.analysis.html">arcgis.features.analysis module</a><ul>
@@ -276,6 +281,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <li class="toctree-l4"><a class="reference internal" href="arcgis.features.managers.html#featurelayermanager">FeatureLayerManager</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.features.managers.html#versionmanager">VersionManager</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.features.managers.html#version">Version</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.features.managers.html#parcelfabricmanager">ParcelFabricManager</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.features.managers.html#utilitynetworkmanager">UtilityNetworkManager</a></li>
 </ul>
 </li>
 </ul>
@@ -656,6 +663,11 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <li class="toctree-l4"><a class="reference internal" href="arcgis.apps.storymap.html#journalstorymap">JournalStoryMap</a></li>
 </ul>
 </li>
+<li class="toctree-l3"><a class="reference internal" href="arcgis.apps.survey123.html">arcgis.apps.survey123 module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.apps.survey123.html#surveymanager">SurveyManager</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.apps.survey123.html#survey">Survey</a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -1008,10 +1020,10 @@ features.</p>
 <td><strong>Description</strong></td>
 </tr>
 <tr class="row-even"><td>study_areas</td>
-<td><p class="first">Required list, FeatureSet or SpatialDataFrame containing the input
-areas to be enriched.</p>
-<p class="last">study_areas can be a SpatialDataFrame, FeatureSet or a lists of the
-following types:
+<td><p class="first">Required list, FeatureSet or SpatiallyEnabledDataFrame containing
+the input areas to be enriched.</p>
+<p class="last">study_areas can be a SpatiallyEnabledDataFrame, FeatureSet or a
+lists of the following types:
 * addresses, points of interest, place names or other
 supported locations as strings.
 * dicts such as [{“address”:{“Address”:”380 New York St.”,
@@ -1343,7 +1355,7 @@ have the ability to consume credits</td>
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 2016-2017, Esri.
+        &copy; Copyright 2016-2019, Esri.
 
     </p>
   </div>
@@ -1365,7 +1377,7 @@ have the ability to consume credits</td>
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'./',
-            VERSION:'1.5.1',
+            VERSION:'1.5.3',
             LANGUAGE:'None',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',

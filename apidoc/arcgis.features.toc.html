@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>arcgis.features module &mdash; arcgis 1.5.1 documentation</title>
+  <title>arcgis.features module &mdash; arcgis 1.5.3 documentation</title>
   
 
   
@@ -68,7 +68,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             
             
               <div class="version">
-                1.5.1
+                1.5.3
               </div>
             
           
@@ -113,6 +113,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <li class="toctree-l3"><a class="reference internal" href="arcgis.gis.admin.html">arcgis.gis.admin module</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.gis.admin.html#agoladminmanager">AGOLAdminManager</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.gis.admin.html#portaladminmanager">PortalAdminManager</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.gis.admin.html#bundle">Bundle</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.gis.admin.html#categorymanager">CategoryManager</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.gis.admin.html#collaborationmanager">CollaborationManager</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.gis.admin.html#collaboration">Collaboration</a></li>
@@ -180,6 +181,10 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <li class="toctree-l2"><a class="reference internal" href="arcgis.env.html#return-m">return_m</a></li>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.env.html#verbose">verbose</a></li>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.env.html#default-aggregation-styles">default_aggregation_styles</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.env.html#snap-raster">snap_raster</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.env.html#cell-size">cell_size</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.env.html#mask">mask</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.env.html#parallel-processing-factor">parallel_processing_factor</a></li>
 </ul>
 </li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">arcgis.features module</a><ul>
@@ -189,8 +194,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <li class="toctree-l2"><a class="reference internal" href="#featurelayercollection">FeatureLayerCollection</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#featureset">FeatureSet</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#featurecollection">FeatureCollection</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#arcgis-features-geoaccessor">arcgis.features.GeoAccessor</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#arcgis-features-geoseriesaccessor">arcgis.features.GeoSeriesAccessor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#geoaccessor">GeoAccessor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#geoseriesaccessor">GeoSeriesAccessor</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#spatialdataframe">SpatialDataFrame</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#submodules">Submodules</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="arcgis.features.analysis.html">arcgis.features.analysis module</a><ul>
@@ -276,6 +281,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <li class="toctree-l4"><a class="reference internal" href="arcgis.features.managers.html#featurelayermanager">FeatureLayerManager</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.features.managers.html#versionmanager">VersionManager</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.features.managers.html#version">Version</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.features.managers.html#parcelfabricmanager">ParcelFabricManager</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.features.managers.html#utilitynetworkmanager">UtilityNetworkManager</a></li>
 </ul>
 </li>
 </ul>
@@ -968,7 +975,7 @@ GIS. Feature layer objects can be obtained through the layers attribute on featu
 <dl class="method">
 <dt id="arcgis.features.FeatureLayer.append">
 <code class="descname">append</code><span class="sig-paren">(</span><em>item_id=None</em>, <em>upload_format='featureCollection'</em>, <em>source_table_name=None</em>, <em>field_mappings=None</em>, <em>edits=None</em>, <em>source_info=None</em>, <em>upsert=True</em>, <em>skip_updates=False</em>, <em>use_globalids=False</em>, <em>update_geometry=True</em>, <em>append_fields=None</em>, <em>rollback=False</em>, <em>skip_inserts=None</em>, <em>upsert_matching_field=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.features.FeatureLayer.append" title="Permalink to this definition">¶</a></dt>
-<dd><p>Only available in AGOL</p>
+<dd><p>Only available in ArcGIS Online</p>
 <p>Update an existing hosted feature layer using append.</p>
 <table border="1" class="docutils">
 <colgroup>
@@ -981,8 +988,8 @@ GIS. Feature layer objects can be obtained through the layers attribute on featu
 </tr>
 <tr class="row-even"><td>source_table_name</td>
 <td>optional string. Required only when the source data contains more
-than one tables, e.g., for filegdb.
-Example: source_tabl_name=  “Building”</td>
+than one tables, e.g., for file geodatabase.
+Example: source_table_name=  “Building”</td>
 </tr>
 <tr class="row-odd"><td>item_id</td>
 <td>optional string. The ID for the Portal item that contains the source
@@ -1201,7 +1208,7 @@ features to be added.</td>
 </tr>
 <tr class="row-odd"><td>updates</td>
 <td>Optional FeatureSet/List. The array of
-features to be updateded.</td>
+features to be updated.</td>
 </tr>
 <tr class="row-even"><td>deletes</td>
 <td>Optional FeatureSet/List. string of OIDs to
@@ -1261,7 +1268,7 @@ classes and no symbols.</p>
 </tr>
 <tr class="row-even"><td>definition</td>
 <td>required dict. The definition using the renderer that is generated.
-Use either class breaks or unique value classificatoin definitions.
+Use either class breaks or unique value classification definitions.
 See: <a class="reference external" href="https://resources.arcgis.com/en/help/rest/apiref/ms_classification.html">https://resources.arcgis.com/en/help/rest/apiref/ms_classification.html</a></td>
 </tr>
 <tr class="row-odd"><td>where</td>
@@ -1305,6 +1312,31 @@ authored by the user using ArcGIS for Desktop.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">string</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="arcgis.features.FeatureLayer.get_unique_values">
+<code class="descname">get_unique_values</code><span class="sig-paren">(</span><em>attribute</em>, <em>query_string='1=1'</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.features.FeatureLayer.get_unique_values" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return a list of unique values for a given attribute</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="31%" />
+<col width="69%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><strong>Argument</strong></td>
+<td><strong>Description</strong></td>
+</tr>
+<tr class="row-even"><td>attribute</td>
+<td>Required string. The feature layer attribute to query.</td>
+</tr>
+<tr class="row-odd"><td>query_string</td>
+<td>Optional string. SQL Query that will be used to filter attributes
+before unique values are returned.
+ex. “name_2 like ‘%K%’”</td>
 </tr>
 </tbody>
 </table>
@@ -1375,7 +1407,7 @@ The default is “*”, which returns all the fields.</td>
 </tr>
 <tr class="row-even"><td>object_ids</td>
 <td>Optional string. The object IDs of this layer or table to be queried.
-The object ID values are comma seperate string.</td>
+The object ID values should be a comma-separated string.</td>
 </tr>
 <tr class="row-odd"><td>distance</td>
 <td>Optional integer. The buffer distance for the input geometries.
@@ -1788,7 +1820,7 @@ have a geometry, and tables ignore any geometry related operation.</p>
 <dl class="method">
 <dt id="arcgis.features.Table.append">
 <code class="descname">append</code><span class="sig-paren">(</span><em>item_id=None</em>, <em>upload_format='featureCollection'</em>, <em>source_table_name=None</em>, <em>field_mappings=None</em>, <em>edits=None</em>, <em>source_info=None</em>, <em>upsert=True</em>, <em>skip_updates=False</em>, <em>use_globalids=False</em>, <em>update_geometry=True</em>, <em>append_fields=None</em>, <em>rollback=False</em>, <em>skip_inserts=None</em>, <em>upsert_matching_field=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.features.Table.append" title="Permalink to this definition">¶</a></dt>
-<dd><p>Only available in AGOL</p>
+<dd><p>Only available in ArcGIS Online</p>
 <p>Update an existing hosted feature layer using append.</p>
 <table border="1" class="docutils">
 <colgroup>
@@ -1801,8 +1833,8 @@ have a geometry, and tables ignore any geometry related operation.</p>
 </tr>
 <tr class="row-even"><td>source_table_name</td>
 <td>optional string. Required only when the source data contains more
-than one tables, e.g., for filegdb.
-Example: source_tabl_name=  “Building”</td>
+than one tables, e.g., for file geodatabase.
+Example: source_table_name=  “Building”</td>
 </tr>
 <tr class="row-odd"><td>item_id</td>
 <td>optional string. The ID for the Portal item that contains the source
@@ -2021,7 +2053,7 @@ features to be added.</td>
 </tr>
 <tr class="row-odd"><td>updates</td>
 <td>Optional FeatureSet/List. The array of
-features to be updateded.</td>
+features to be updated.</td>
 </tr>
 <tr class="row-even"><td>deletes</td>
 <td>Optional FeatureSet/List. string of OIDs to
@@ -2081,7 +2113,7 @@ classes and no symbols.</p>
 </tr>
 <tr class="row-even"><td>definition</td>
 <td>required dict. The definition using the renderer that is generated.
-Use either class breaks or unique value classificatoin definitions.
+Use either class breaks or unique value classification definitions.
 See: <a class="reference external" href="https://resources.arcgis.com/en/help/rest/apiref/ms_classification.html">https://resources.arcgis.com/en/help/rest/apiref/ms_classification.html</a></td>
 </tr>
 <tr class="row-odd"><td>where</td>
@@ -2125,6 +2157,31 @@ authored by the user using ArcGIS for Desktop.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">string</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="arcgis.features.Table.get_unique_values">
+<code class="descname">get_unique_values</code><span class="sig-paren">(</span><em>attribute</em>, <em>query_string='1=1'</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.features.Table.get_unique_values" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return a list of unique values for a given attribute</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="31%" />
+<col width="69%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><strong>Argument</strong></td>
+<td><strong>Description</strong></td>
+</tr>
+<tr class="row-even"><td>attribute</td>
+<td>Required string. The feature layer attribute to query.</td>
+</tr>
+<tr class="row-odd"><td>query_string</td>
+<td>Optional string. SQL Query that will be used to filter attributes
+before unique values are returned.
+ex. “name_2 like ‘%K%’”</td>
 </tr>
 </tbody>
 </table>
@@ -2195,7 +2252,7 @@ The default is “*”, which returns all the fields.</td>
 </tr>
 <tr class="row-even"><td>object_ids</td>
 <td>Optional string. The object IDs of this layer or table to be queried.
-The object ID values are comma seperate string.</td>
+The object ID values should be a comma-separated string.</td>
 </tr>
 <tr class="row-odd"><td>distance</td>
 <td>Optional integer. The buffer distance for the input geometries.
@@ -2613,7 +2670,7 @@ replicas for disconnected editing of the feature layer collection.</p>
 feature layer collection.</p>
 <dl class="method">
 <dt id="arcgis.features.FeatureLayerCollection.extract_changes">
-<code class="descname">extract_changes</code><span class="sig-paren">(</span><em>layers</em>, <em>servergen</em>, <em>queries=None</em>, <em>geometry=None</em>, <em>geometry_type=None</em>, <em>version=None</em>, <em>return_inserts=False</em>, <em>return_updates=False</em>, <em>return_deletes=False</em>, <em>return_ids_only=False</em>, <em>return_extent_only=False</em>, <em>return_attachements=False</em>, <em>attachments_by_url=False</em>, <em>data_format='json'</em>, <em>change_extent_grid_cell=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.features.FeatureLayerCollection.extract_changes" title="Permalink to this definition">¶</a></dt>
+<code class="descname">extract_changes</code><span class="sig-paren">(</span><em>layers</em>, <em>servergen</em>, <em>queries=None</em>, <em>geometry=None</em>, <em>geometry_type=None</em>, <em>version=None</em>, <em>return_inserts=False</em>, <em>return_updates=False</em>, <em>return_deletes=False</em>, <em>return_ids_only=False</em>, <em>return_extent_only=False</em>, <em>return_attachments=False</em>, <em>attachments_by_url=False</em>, <em>data_format='json'</em>, <em>change_extent_grid_cell=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.features.FeatureLayerCollection.extract_changes" title="Permalink to this definition">¶</a></dt>
 <dd><p>Feature service change tracking is an efficient change tracking
 mechanism for applications. Applications can use change tracking to
 query changes that have been made to the layers and tables in the
@@ -2624,152 +2681,6 @@ branch versioned and have globalid columns. Change tracking can also
 be enabled for ArcGIS Online hosted feature services. If all layers
 and tables in the service have the ChangeTracking capability, the
 <cite>extract_changes</cite> operation can be used to get changes.</p>
-<table border="1" class="docutils">
-<colgroup>
-<col width="31%" />
-<col width="69%" />
-</colgroup>
-<tbody valign="top">
-<tr class="row-odd"><td><strong>Argument</strong></td>
-<td><strong>Description</strong></td>
-</tr>
-<tr class="row-even"><td>layers</td>
-<td>Required List.  The list of layers and tables to include in the
-replica.</td>
-</tr>
-<tr class="row-odd"><td>servergen</td>
-<td><p class="first">Required List.   The servergens allows a client to specify the last
-layer generation numbers for the changes received from the server.</p>
-<blockquote>
-<div><ul class="simple">
-<li>minServerGen: It is the min generation of the server data changes.
-clients with layerServerGens that is less than minServerGen cannot
-extract changes and would need to make a full server/layers query
-instead of extracting changes.</li>
-<li>serverGen: It is the current server generation number of the
-changes. Every changed feature has a version or a generation number
-that is changed every time the feature is updated.</li>
-</ul>
-</div></blockquote>
-<dl class="last docutils">
-<dt>Syntax: servergen = [{“id”: &lt;layerId1&gt;, “serverGen”: &lt;genNum1&gt;},</dt>
-<dd>{“id”: &lt;layerId2&gt;, “serverGen”: &lt;genNum2&gt;}]</dd>
-<dt>Example: servergen= [{“id”: 0, “serverGen”: 10500},</dt>
-<dd>{“id”: 1, “serverGen”: 1100},
-{“id”: 2, “serverGen”: 1200}]</dd>
-</dl>
-</td>
-</tr>
-<tr class="row-even"><td>queries</td>
-<td><p class="first">Optional Dictionary. In addition to the layers and geometry
-parameters, the <cite>queries</cite> parameter can be used to further define
-what changes to return. This parameter allows you to set query
-properties on a per-layer or per-table basis. If a layer’s ID is
-present in the layers parameter and missing from layer <cite>queries</cite>,
-it’s changed features that intersect with the filter geometry are
-returned.</p>
-<p>The properties include the following:</p>
-<blockquote>
-<div><ul class="simple">
-<li>where - Defines an attribute query for a layer or table. The
-default is no where clause.</li>
-<li>useGeometry - Determines whether or not to apply the geometry
-for the layer. The default is true. If set to false, features
-from the layer that intersect the geometry are not added.</li>
-<li>includeRelated - Determines whether or not to add related
-rows. The defualt is true. The value true is honored only
-for queryOption=none. This is only applicable if your data
-has relationship classes. Relationships are only processed
-in a forward direction from origin to destination.</li>
-<li>queryOption - Defines whether or how filters will be applied
-to a layer. The queryOption was added in 10.2. See the
-Compatibility notes topic for more information.</li>
-</ul>
-</div></blockquote>
-<p>Values: None, useFilter, or all</p>
-<p>When is value is none, no feature are returned based on where and
-filter geometry. if includeRelated is false, no features are
-returned. If includeRelated is true, features in this layer (that
-are related to the features in other layers in the replica) are
-returned.</p>
-<p>When the value is useFilter, features that satisfy filtering based
-on geometry and where are returned. The value of includeRelated is
-ignored.</p>
-<p class="last">Syntax: queries={Layer_or_tableID1:{“where”:”attribute query”,
-“useGeometry”: true | false, “includeRelated”: true | false},
-Layer_or_tableID2: {.}}</p>
-</td>
-</tr>
-<tr class="row-odd"><td>geometry</td>
-<td>Option Geometry/Extent. The geometry to apply as the spatial filter
-for the changes. All the changed features in layers intersecting
-this geometry will be returned. The structure of the geometry is the
-same as the structure of the JSON geometry objects returned by the
-ArcGIS REST API. In addition to the JSON structures, for envelopes
-and points, you can specify the geometry with a simpler
-comma-separated syntax.</td>
-</tr>
-<tr class="row-even"><td>geometry_type</td>
-<td><p class="first">Optional String. The type of geometry specified by the geometry
-parameter. The geometry type can be an envelope, point, line or
-polygon. The default geometry type is an envelope.</p>
-<dl class="last docutils">
-<dt>Values: esriGeometryPoint, esriGeometryMultipoint,</dt>
-<dd>esriGeometryPolyline, esriGeometryPolygon,
-esriGeometryEnvelope</dd>
-</dl>
-</td>
-</tr>
-<tr class="row-odd"><td>in_sr</td>
-<td>Optional Integer. The spatial reference of the input geometry.</td>
-</tr>
-<tr class="row-even"><td>out_sr</td>
-<td>Optional Integer/String. The output spatial reference of the
-returned changes.</td>
-</tr>
-<tr class="row-odd"><td>version</td>
-<td>Optional String. If branch versioning is enabled, a user can specify
-the branch version name to extract changes from.</td>
-</tr>
-<tr class="row-even"><td>return_inserts</td>
-<td>Optional Boolean.  If true, newly inserted features will be
-returned. The default is false.</td>
-</tr>
-<tr class="row-odd"><td>return_updates</td>
-<td>Optional Boolean. If true, updated features will be returned. The
-default is false.</td>
-</tr>
-<tr class="row-even"><td>return_deletes</td>
-<td>Optional Boolean. If true, deleted features will be returned. The
-default is false.</td>
-</tr>
-<tr class="row-odd"><td>return_ids_only</td>
-<td>Optional Boolean. If true, the response includes an array of object
-IDs only. The default is false.</td>
-</tr>
-<tr class="row-even"><td>return_attachements</td>
-<td>Optional Boolean.  If true, attachments changes are returned in the
-response. Otherwise, attachments are not included. The default is
-false. This parameter is only applicable if the feature service has
-attachments.</td>
-</tr>
-<tr class="row-odd"><td>attachments_by_url</td>
-<td>Optional Boolean.  If true, a reference to a URL will be provided
-for each attachment returned. Otherwise, attachments are embedded in
-the response. The default is true.</td>
-</tr>
-<tr class="row-even"><td>data_format</td>
-<td>Optional String. The format of the changes returned in the response.
-The default is json. Values: sqllite or json</td>
-</tr>
-<tr class="row-odd"><td>change_extent_grid_cell</td>
-<td>Optional String. To optimize localizing changes extent, the value
-medium is an 8x8 grid that bound the changes extent. Used only when
-<cite>return_extent_only</cite> is true. The default is none.
-Values: None, large, medium, or small</td>
-</tr>
-</tbody>
-</table>
 </dd></dl>
 
 <dl class="classmethod">
@@ -3127,8 +3038,8 @@ Filtering by where clause is not supported for feature collections</p>
 </dd></dl>
 
 </div>
-<div class="section" id="arcgis-features-geoaccessor">
-<h2>arcgis.features.GeoAccessor<a class="headerlink" href="#arcgis-features-geoaccessor" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="geoaccessor">
+<h2>GeoAccessor<a class="headerlink" href="#geoaccessor" title="Permalink to this headline">¶</a></h2>
 <dl class="class">
 <dt id="arcgis.features.GeoAccessor">
 <em class="property">class </em><code class="descclassname">arcgis.features.</code><code class="descname">GeoAccessor</code><span class="sig-paren">(</span><em>obj</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.features.GeoAccessor" title="Permalink to this definition">¶</a></dt>
@@ -4457,8 +4368,8 @@ the table exists, and exception will be raised.</td>
 </dd></dl>
 
 </div>
-<div class="section" id="arcgis-features-geoseriesaccessor">
-<h2>arcgis.features.GeoSeriesAccessor<a class="headerlink" href="#arcgis-features-geoseriesaccessor" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="geoseriesaccessor">
+<h2>GeoSeriesAccessor<a class="headerlink" href="#geoseriesaccessor" title="Permalink to this headline">¶</a></h2>
 <dl class="class">
 <dt id="arcgis.features.GeoSeriesAccessor">
 <em class="property">class </em><code class="descclassname">arcgis.features.</code><code class="descname">GeoSeriesAccessor</code><span class="sig-paren">(</span><em>obj</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.features.GeoSeriesAccessor" title="Permalink to this definition">¶</a></dt>
@@ -5009,7 +4920,7 @@ tolerance.</p>
 <dl class="attribute">
 <dt id="arcgis.features.GeoSeriesAccessor.geometry_type">
 <code class="descname">geometry_type</code><a class="headerlink" href="#arcgis.features.GeoSeriesAccessor.geometry_type" title="Permalink to this definition">¶</a></dt>
-<dd><p>A returns the geometry types</p>
+<dd><p>returns the geometry types</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -5438,7 +5349,7 @@ For percentages, the value should be expressed as a double from
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">arcgis.gis.Geometry</td>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">Geometry</td>
 </tr>
 </tbody>
 </table>
@@ -7282,6 +7193,8 @@ in the store wherever possible</dd>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.features.managers.html#featurelayermanager">FeatureLayerManager</a></li>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.features.managers.html#versionmanager">VersionManager</a></li>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.features.managers.html#version">Version</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.features.managers.html#parcelfabricmanager">ParcelFabricManager</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.features.managers.html#utilitynetworkmanager">UtilityNetworkManager</a></li>
 </ul>
 </li>
 </ul>
@@ -7310,7 +7223,7 @@ in the store wherever possible</dd>
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 2016-2017, Esri.
+        &copy; Copyright 2016-2019, Esri.
 
     </p>
   </div>
@@ -7332,7 +7245,7 @@ in the store wherever possible</dd>
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'./',
-            VERSION:'1.5.1',
+            VERSION:'1.5.3',
             LANGUAGE:'None',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',

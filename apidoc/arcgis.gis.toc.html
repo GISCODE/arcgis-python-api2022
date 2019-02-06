@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>arcgis.gis module &mdash; arcgis 1.5.1 documentation</title>
+  <title>arcgis.gis module &mdash; arcgis 1.5.3 documentation</title>
   
 
   
@@ -68,7 +68,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             
             
               <div class="version">
-                1.5.1
+                1.5.3
               </div>
             
           
@@ -113,6 +113,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <li class="toctree-l3"><a class="reference internal" href="arcgis.gis.admin.html">arcgis.gis.admin module</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.gis.admin.html#agoladminmanager">AGOLAdminManager</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.gis.admin.html#portaladminmanager">PortalAdminManager</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.gis.admin.html#bundle">Bundle</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.gis.admin.html#categorymanager">CategoryManager</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.gis.admin.html#collaborationmanager">CollaborationManager</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.gis.admin.html#collaboration">Collaboration</a></li>
@@ -180,6 +181,10 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <li class="toctree-l2"><a class="reference internal" href="arcgis.env.html#return-m">return_m</a></li>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.env.html#verbose">verbose</a></li>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.env.html#default-aggregation-styles">default_aggregation_styles</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.env.html#snap-raster">snap_raster</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.env.html#cell-size">cell_size</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.env.html#mask">mask</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.env.html#parallel-processing-factor">parallel_processing_factor</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="arcgis.features.toc.html">arcgis.features module</a><ul>
@@ -189,8 +194,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <li class="toctree-l2"><a class="reference internal" href="arcgis.features.toc.html#featurelayercollection">FeatureLayerCollection</a></li>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.features.toc.html#featureset">FeatureSet</a></li>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.features.toc.html#featurecollection">FeatureCollection</a></li>
-<li class="toctree-l2"><a class="reference internal" href="arcgis.features.toc.html#arcgis-features-geoaccessor">arcgis.features.GeoAccessor</a></li>
-<li class="toctree-l2"><a class="reference internal" href="arcgis.features.toc.html#arcgis-features-geoseriesaccessor">arcgis.features.GeoSeriesAccessor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.features.toc.html#geoaccessor">GeoAccessor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.features.toc.html#geoseriesaccessor">GeoSeriesAccessor</a></li>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.features.toc.html#spatialdataframe">SpatialDataFrame</a></li>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.features.toc.html#submodules">Submodules</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="arcgis.features.analysis.html">arcgis.features.analysis module</a><ul>
@@ -276,6 +281,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <li class="toctree-l4"><a class="reference internal" href="arcgis.features.managers.html#featurelayermanager">FeatureLayerManager</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.features.managers.html#versionmanager">VersionManager</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.features.managers.html#version">Version</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.features.managers.html#parcelfabricmanager">ParcelFabricManager</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.features.managers.html#utilitynetworkmanager">UtilityNetworkManager</a></li>
 </ul>
 </li>
 </ul>
@@ -656,6 +663,11 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <li class="toctree-l4"><a class="reference internal" href="arcgis.apps.storymap.html#journalstorymap">JournalStoryMap</a></li>
 </ul>
 </li>
+<li class="toctree-l3"><a class="reference internal" href="arcgis.apps.survey123.html">arcgis.apps.survey123 module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.apps.survey123.html#surveymanager">SurveyManager</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.apps.survey123.html#survey">Survey</a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -895,7 +907,7 @@ zoom level. If an address is provided, it is geocoded
 using the GIS’s configured geocoders and if a match is found, the geographic
 extent of the matched address is used as the map extent. If a zoomlevel is also
 provided, the map is centered at the matched address instead and the map is zoomed
-to the specified zoomlevel. See <a class="reference internal" href="arcgis.widgets.html#module-arcgis.widgets" title="arcgis.widgets"><code class="xref py py-class docutils literal notranslate"><span class="pre">widgets</span></code></a> for more inforomation.</p>
+to the specified zoomlevel. See <a class="reference internal" href="arcgis.widgets.html#module-arcgis.widgets" title="arcgis.widgets"><code class="xref py py-class docutils literal notranslate"><span class="pre">widgets</span></code></a> for more information.</p>
 <p>Note: The map widget is only supported within Jupyter Notebook.</p>
 <table border="1" class="docutils">
 <colgroup>
@@ -994,6 +1006,12 @@ refer to the Portal parameters section at <a class="reference external" href="ht
 <dt id="arcgis.gis.GIS.users">
 <code class="descname">users</code><a class="headerlink" href="#arcgis.gis.GIS.users" title="Permalink to this definition">¶</a></dt>
 <dd><p>The resource manager for GIS users. See <a class="reference internal" href="#arcgis.gis.UserManager" title="arcgis.gis.UserManager"><code class="xref py py-class docutils literal notranslate"><span class="pre">UserManager</span></code></a>.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="arcgis.gis.GIS.version">
+<code class="descname">version</code><a class="headerlink" href="#arcgis.gis.GIS.version" title="Permalink to this definition">¶</a></dt>
+<dd><p>returns the GIS version number</p>
 </dd></dl>
 
 </dd></dl>
@@ -1962,6 +1980,20 @@ for more information on this parameter.</td>
 </table>
 </dd></dl>
 
+<dl class="attribute">
+<dt id="arcgis.gis.Item.resources">
+<code class="descname">resources</code><a class="headerlink" href="#arcgis.gis.Item.resources" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the Item’s Resource Manager</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">ResourceManager</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
 <dl class="method">
 <dt id="arcgis.gis.Item.share">
 <code class="descname">share</code><span class="sig-paren">(</span><em>everyone=False</em>, <em>org=False</em>, <em>groups=None</em>, <em>allow_members_to_edit=False</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.Item.share" title="Permalink to this definition">¶</a></dt>
@@ -2265,10 +2297,10 @@ usage for a given item.</p>
 <td>Past 24 hours</td>
 </tr>
 <tr class="row-even"><td>7D</td>
-<td>Past 7 days</td>
+<td>Past 7 days (default)</td>
 </tr>
 <tr class="row-odd"><td>14D</td>
-<td>Past 14 days (default)</td>
+<td>Past 14 days</td>
 </tr>
 <tr class="row-even"><td>30D</td>
 <td>Past 30 days</td>
@@ -2422,16 +2454,32 @@ as a dictionary when False</td>
 </tr>
 </tbody>
 </table>
+<dl class="attribute">
+<dt id="arcgis.gis.User.bundles">
+<code class="descname">bundles</code><a class="headerlink" href="#arcgis.gis.User.bundles" title="Permalink to this definition">¶</a></dt>
+<dd><p>Provides the current user’s assigned application bundles.</p>
+<p>Available in ArcGIS Online and Portal 10.7+</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">List of Bundle objects</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
 <dl class="method">
 <dt id="arcgis.gis.User.delete">
 <code class="descname">delete</code><span class="sig-paren">(</span><em>reassign_to=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.User.delete" title="Permalink to this definition">¶</a></dt>
 <dd><p>Deletes this user from the portal, optionally deleting or reassigning groups and items.</p>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
-<p class="last">You can not delete a user in Portal if that user owns groups or items.  If you
-specify someone in the reassign_to argument, then items and groups will be
-transferred to that user.  If that argument is not set then the method
-will fail if the user has items or groups that need to be reassigned.</p>
+<p class="last">You can not delete a user in Portal if that user owns groups or items and/or is
+assigned an application bundle.  If you specify someone in the reassign_to
+argument, then items and groups will be transferred to that user.  If that
+argument is not set then the method will fail if the user has items or groups
+that need to be reassigned.</p>
 </div>
 <table border="1" class="docutils">
 <colgroup>
@@ -2656,6 +2704,21 @@ account.</td>
 <dt id="arcgis.gis.User.notifications">
 <code class="descname">notifications</code><a class="headerlink" href="#arcgis.gis.User.notifications" title="Permalink to this definition">¶</a></dt>
 <dd><p>Gets the list of notifications available for the given user.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="arcgis.gis.User.provisions">
+<code class="descname">provisions</code><a class="headerlink" href="#arcgis.gis.User.provisions" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns a list of all provisioned licenses for the current user.</p>
+<p>Available in 10.7+</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">List</td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
 <dl class="method">
@@ -2899,8 +2962,6 @@ be reassigned to other users through the Reassign Item and Reassign
 Group operations before downgrading them. The operation will also
 fail if the user being updated has got licenses assigned to premium
 apps that are not allowed at the targeting level.</p>
-<p>Level 1PlusEdit has all the features of level one, plus it can edit
-Feature Layer data.</p>
 <table border="1" class="docutils">
 <colgroup>
 <col width="27%" />
@@ -2911,12 +2972,11 @@ Feature Layer data.</p>
 <td><strong>Description</strong></td>
 </tr>
 <tr class="row-even"><td>level</td>
-<td><p class="first">Required string. The values of 1, 11, or 2. This
+<td><p class="first">Required string. The values of 1 or 2. This
 is the user level for the given user.</p>
 <blockquote class="last">
 <div><ul class="simple">
 <li>1 - View only</li>
-<li>11 - View Plus edit</li>
 <li>2 - Content creator</li>
 </ul>
 </div></blockquote>
@@ -2935,9 +2995,43 @@ is the user level for the given user.</p>
 </dd></dl>
 
 <dl class="method">
+<dt id="arcgis.gis.User.update_license_type">
+<code class="descname">update_license_type</code><span class="sig-paren">(</span><em>user_type</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.User.update_license_type" title="Permalink to this definition">¶</a></dt>
+<dd><p>Allows for the updating of the user’s licensing type. This allows
+administrators to change a user from a creator to a viewer or any
+other custom user license type.</p>
+<p><strong>Available in ArcGIS Online and Portal 10.7+</strong></p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="27%" />
+<col width="73%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><strong>Argument</strong></td>
+<td><strong>Description</strong></td>
+</tr>
+<tr class="row-even"><td>user_type</td>
+<td><p class="first">Required string. The user license type to assign a user.</p>
+<p class="last">Built-in Types: creator or viewer</p>
+</td>
+</tr>
+</tbody>
+</table>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">Boolean</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
 <dt id="arcgis.gis.User.update_role">
 <code class="descname">update_role</code><span class="sig-paren">(</span><em>role</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.User.update_role" title="Permalink to this definition">¶</a></dt>
-<dd><p>Updates this user’s role to org_user, org_publisher, org_admin, or a custom role.</p>
+<dd><p>Updates this user’s role to org_user, org_publisher, org_admin, viewer, view_only,
+viewplusedit, or a custom role.</p>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
 <p class="last">There are four types of roles in Portal - user, publisher, administrator and custom roles.
@@ -2956,7 +3050,7 @@ do everything that is possible in Portal. A custom roles privileges can be custo
 </tr>
 <tr class="row-even"><td>role</td>
 <td>Required string. Value must be either org_user,
-org_publisher, org_admin,
+org_publisher, org_admin, viewer, view_only, viewplusedit
 or a custom role object (from gis.users.roles).</td>
 </tr>
 </tbody>
@@ -2969,6 +3063,13 @@ or a custom role object (from gis.users.roles).</td>
 </tr>
 </tbody>
 </table>
+</dd></dl>
+
+<dl class="method">
+<dt id="arcgis.gis.User.user_types">
+<code class="descname">user_types</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.User.user_types" title="Permalink to this definition">¶</a></dt>
+<dd><p>Notes: Available in 10.7+
+returns the user type and assigned applications</p>
 </dd></dl>
 
 </dd></dl>
@@ -4614,6 +4715,93 @@ used together with categories to search in a request.</p>
 </table>
 </dd></dl>
 
+<dl class="method">
+<dt id="arcgis.gis.ContentManager.share_items">
+<code class="descname">share_items</code><span class="sig-paren">(</span><em>items</em>, <em>everyone=False</em>, <em>org=False</em>, <em>groups=None</em>, <em>allow_members_to_edit=False</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.ContentManager.share_items" title="Permalink to this definition">¶</a></dt>
+<dd><p>Shares a batch of items with everyone, members of the organization, or specified list of groups.
+Users can only share items with groups to which they belong.</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="24%" />
+<col width="76%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><strong>Argument</strong></td>
+<td><strong>Description</strong></td>
+</tr>
+<tr class="row-even"><td>items</td>
+<td>Required List. A list of Item or item ids to modify sharing on.</td>
+</tr>
+<tr class="row-odd"><td>everyone</td>
+<td>Optional boolean. Default is False, don’t share with everyone.</td>
+</tr>
+<tr class="row-even"><td>org</td>
+<td>Optional boolean. Default is False, don’t share with the
+organization.</td>
+</tr>
+<tr class="row-odd"><td>groups</td>
+<td>Optional list of group names as strings, or a list of
+arcgis.gis.Group objects, or a comma-separated list of group IDs.</td>
+</tr>
+<tr class="row-even"><td>allow_members_to_edit</td>
+<td>Optional boolean. Default is False, to allow item to be shared with
+groups that allow shared update</td>
+</tr>
+</tbody>
+</table>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">dict</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="arcgis.gis.ContentManager.unshare_items">
+<code class="descname">unshare_items</code><span class="sig-paren">(</span><em>items</em>, <em>groups=None</em>, <em>everyone=None</em>, <em>org=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.ContentManager.unshare_items" title="Permalink to this definition">¶</a></dt>
+<dd><p>Unshares a batch of items with the specified list of groups, everyone, or organization.
+Each item’s current sharing will be overwritten with this method.</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="23%" />
+<col width="77%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><strong>Argument</strong></td>
+<td><strong>Description</strong></td>
+</tr>
+<tr class="row-even"><td>items</td>
+<td>Required List. A list of Item or item ids to modify sharing on.</td>
+</tr>
+<tr class="row-odd"><td>everyone</td>
+<td>Required Boolean. If provided, the everyone sharing property will be
+updated.  True means it will share the items with anyone. False means
+the item will not be shared with all users.</td>
+</tr>
+<tr class="row-even"><td>org</td>
+<td>Required Boolean. A true value means that the items will be shared
+with all members of the organization.  A false value means that the
+item will not be shared with all organization users.</td>
+</tr>
+<tr class="row-odd"><td>groups</td>
+<td>Required list of group names as strings, or a list of
+arcgis.gis.Group objects, or a list of group IDs.</td>
+</tr>
+</tbody>
+</table>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">dict</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
 </dd></dl>
 
 </div>
@@ -4627,12 +4815,68 @@ used together with categories to search in a request.</p>
 An instance of this class, called ‘users’, is available as a property of the Gis object.
 Users call methods on this ‘users’ object to manipulate (create, get, search, etc) users.</p>
 <dl class="method">
+<dt id="arcgis.gis.UserManager.counts">
+<code class="descname">counts</code><span class="sig-paren">(</span><em>type='bundles'</em>, <em>as_df=True</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.UserManager.counts" title="Permalink to this definition">¶</a></dt>
+<dd><p>This method returns a simple report on the number of licenses currently used
+for a given <cite>type</cite>.  A <cite>type</cite> can be a role, app, bundle or user license type.</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="17%" />
+<col width="83%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><strong>Argument</strong></td>
+<td><strong>Description</strong></td>
+</tr>
+<tr class="row-even"><td>type</td>
+<td><p class="first">Required String. The type of data to return.  The following values are valid:</p>
+<blockquote class="last">
+<div><ul class="simple">
+<li>role - returns counts on user roles</li>
+<li>app - returns counts on registered applications</li>
+<li>bundles - returns counts on application bundles</li>
+<li>user_type - returns counts on the user license types</li>
+</ul>
+</div></blockquote>
+</td>
+</tr>
+<tr class="row-odd"><td>as_df</td>
+<td>Optional boolean. If true, the results are returned as a pandas DataFrame, else
+it is returned as a list of dictionaries.</td>
+</tr>
+</tbody>
+</table>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">Pandas DataFrame if as_df is True. If False, the result is a list of dictionaries.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Example as_df=True</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">df</span> <span class="o">=</span> <span class="n">gis</span><span class="o">.</span><span class="n">um</span><span class="o">.</span><span class="n">counts</span><span class="p">(</span><span class="s1">&#39;user_type&#39;</span><span class="p">,</span> <span class="kc">True</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">df</span>
+<span class="go">    count        key</span>
+<span class="go"> 0     12  creatorUT</span>
+<span class="go"> 1      2   viewerUT</span>
+</pre></div>
+</div>
+<p><strong>Example as_df=False</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">df</span> <span class="o">=</span> <span class="n">gis</span><span class="o">.</span><span class="n">um</span><span class="o">.</span><span class="n">counts</span><span class="p">(</span><span class="s1">&#39;user_type&#39;</span><span class="p">,</span> <span class="kc">False</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">df</span>
+<span class="go">[{&#39;key&#39;: &#39;creatorUT&#39;, &#39;count&#39;: 12}, {&#39;key&#39;: &#39;viewerUT&#39;, &#39;count&#39;: 2}]</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
 <dt id="arcgis.gis.UserManager.create">
-<code class="descname">create</code><span class="sig-paren">(</span><em>username</em>, <em>password</em>, <em>firstname</em>, <em>lastname</em>, <em>email</em>, <em>description=None</em>, <em>role='org_user'</em>, <em>provider='arcgis'</em>, <em>idp_username=None</em>, <em>level=2</em>, <em>thumbnail=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.UserManager.create" title="Permalink to this definition">¶</a></dt>
+<code class="descname">create</code><span class="sig-paren">(</span><em>username</em>, <em>password</em>, <em>firstname</em>, <em>lastname</em>, <em>email</em>, <em>description=None</em>, <em>role='org_user'</em>, <em>provider='arcgis'</em>, <em>idp_username=None</em>, <em>level=2</em>, <em>thumbnail=None</em>, <em>user_type='creator'</em>, <em>credits=-1</em>, <em>groups=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.UserManager.create" title="Permalink to this definition">¶</a></dt>
 <dd><p>This operation is used to pre-create built-in or enterprise accounts within the portal,
 or built-in users in an ArcGIS Online organization account. Only an administrator
 can call this method.</p>
-<p>To create a viewer account, choose role=’org_viewer’ and level=1</p>
+<p>To create a viewer account, choose role=’org_viewer’ and level=’viewer’</p>
 <table border="1" class="docutils">
 <colgroup>
 <col width="16%" />
@@ -4670,7 +4914,8 @@ the user set their password by clicking on a link that is emailed to him/her.</t
 </tr>
 <tr class="row-odd"><td>role</td>
 <td>Optional string. The role for the user account. The default value is org_user.
-Other possible values are org_publisher, org_admin, org_viewer.</td>
+Other possible values are org_user, org_publisher, org_admin, viewer,
+view_only, viewplusedit or a custom role object (from gis.users.roles).</td>
 </tr>
 <tr class="row-even"><td>provider</td>
 <td>Optional string. The provider for the account. The default value is arcgis.
@@ -4681,8 +4926,22 @@ The other possible value is enterprise.</td>
 This parameter is only required if the provider parameter is enterprise.</td>
 </tr>
 <tr class="row-even"><td>level</td>
-<td>Optional string. The account level.
+<td>Optional string. The account level. (Pre 10.7 Portal)
 See <a class="reference external" href="http://server.arcgis.com/en/portal/latest/administer/linux/roles.htm">http://server.arcgis.com/en/portal/latest/administer/linux/roles.htm</a></td>
+</tr>
+<tr class="row-odd"><td>user_type</td>
+<td>Required string. The account user type. This can be creator or viewer.  The
+type effects what applications a user can use and what actions they can do in
+the organization. (10.7+)
+See <a class="reference external" href="http://server.arcgis.com/en/portal/latest/administer/linux/roles.htm">http://server.arcgis.com/en/portal/latest/administer/linux/roles.htm</a></td>
+</tr>
+<tr class="row-even"><td>credits</td>
+<td>Optional Float. The number of credits to assign a user.  The default is None,
+which means unlimited. (10.7+)</td>
+</tr>
+<tr class="row-odd"><td>groups</td>
+<td>Optional List. An array of Group objects to provide access to for a given
+user. (10.7+)</td>
 </tr>
 </tbody>
 </table>
@@ -4819,7 +5078,7 @@ must approve of the individual joining the organization. The default is False.</
 </tr>
 <tr class="row-odd"><td>expiration</td>
 <td>Optional string.  The default is ‘1 Day’. This is the time the emailed user has
-to accept the invitiation request until it expires.
+to accept the invitation request until it expires.
 The values are: 1 Day (default), 3 Days, 1 Week, or 2 Weeks.</td>
 </tr>
 <tr class="row-even"><td>validate_email</td>
@@ -4852,7 +5111,7 @@ is properly formatted. If false, no check will occur</td>
 
 <dl class="method">
 <dt id="arcgis.gis.UserManager.search">
-<code class="descname">search</code><span class="sig-paren">(</span><em>query=None</em>, <em>sort_field='username'</em>, <em>sort_order='asc'</em>, <em>max_users=100</em>, <em>outside_org=False</em>, <em>exclude_system=False</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.UserManager.search" title="Permalink to this definition">¶</a></dt>
+<code class="descname">search</code><span class="sig-paren">(</span><em>query=None</em>, <em>sort_field='username'</em>, <em>sort_order='asc'</em>, <em>max_users=100</em>, <em>outside_org=False</em>, <em>exclude_system=False</em>, <em>user_type=None</em>, <em>role=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.UserManager.search" title="Permalink to this definition">¶</a></dt>
 <dd><p>Searches portal users.</p>
 <p>Returns a list of users matching the specified query</p>
 <div class="admonition note">
@@ -4907,6 +5166,14 @@ within your organization).</td>
 returned or not.  True means built-in account are not
 returned, where as False means that they are.</td>
 </tr>
+<tr class="row-even"><td>user_type</td>
+<td>Optional String. This parameters allows for the filtering
+of the users by their assigned type.</td>
+</tr>
+<tr class="row-odd"><td>role</td>
+<td>Optional String.  This parameter allows for the filting
+of the users based on a role.</td>
+</tr>
 </tbody>
 </table>
 <table class="docutils field-list" frame="void" rules="none">
@@ -4914,6 +5181,54 @@ returned, where as False means that they are.</td>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">A list of users.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="arcgis.gis.UserManager.send_notification">
+<code class="descname">send_notification</code><span class="sig-paren">(</span><em>users</em>, <em>subject</em>, <em>message</em>, <em>type='builtin'</em>, <em>client_id=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.UserManager.send_notification" title="Permalink to this definition">¶</a></dt>
+<dd><p>Creates a user notifcations for a list of users.</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="17%" />
+<col width="83%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><strong>Argument</strong></td>
+<td><strong>Description</strong></td>
+</tr>
+<tr class="row-even"><td>users</td>
+<td>Required List. A list of strings or User objects to send notifcations to.</td>
+</tr>
+<tr class="row-odd"><td>subject</td>
+<td>Required String. The notifcation subject line.</td>
+</tr>
+<tr class="row-even"><td>message</td>
+<td>Required String. The notifcation content. This should be in plain text.</td>
+</tr>
+<tr class="row-odd"><td>type</td>
+<td><p class="first">Optional String.  The notification can be sent various ways. These include:</p>
+<blockquote class="last">
+<div><ul class="simple">
+<li>builtin - The enterprise built-in system</li>
+<li>push - The push notifcation to send a message to</li>
+<li>email - a notification sent to the user’s email account</li>
+</ul>
+</div></blockquote>
+</td>
+</tr>
+<tr class="row-even"><td>client_id</td>
+<td>Optional String. The client id for push notification.</td>
+</tr>
+</tbody>
+</table>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">Boolean</td>
 </tr>
 </tbody>
 </table>
@@ -4955,6 +5270,14 @@ and at least 4 characters.</td>
 </tr>
 </tbody>
 </table>
+</dd></dl>
+
+<dl class="method">
+<dt id="arcgis.gis.UserManager.user_groups">
+<code class="descname">user_groups</code><span class="sig-paren">(</span><em>users</em>, <em>max_results=-1</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.UserManager.user_groups" title="Permalink to this definition">¶</a></dt>
+<dd><p>Givens a List of Users, the <cite>user_groups</cite> will report back all group ids
+that each user belongs to.  This method is designed to be a reporting
+tool for administrators so they can easily manage a user or users groups.</p>
 </dd></dl>
 
 </dd></dl>
@@ -5896,6 +6219,7 @@ used together with file_name.</td>
 <li class="toctree-l1"><a class="reference internal" href="arcgis.gis.admin.html">arcgis.gis.admin module</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.gis.admin.html#agoladminmanager">AGOLAdminManager</a></li>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.gis.admin.html#portaladminmanager">PortalAdminManager</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.gis.admin.html#bundle">Bundle</a></li>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.gis.admin.html#categorymanager">CategoryManager</a></li>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.gis.admin.html#collaborationmanager">CollaborationManager</a></li>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.gis.admin.html#collaboration">Collaboration</a></li>
@@ -5975,7 +6299,7 @@ used together with file_name.</td>
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 2016-2017, Esri.
+        &copy; Copyright 2016-2019, Esri.
 
     </p>
   </div>
@@ -5997,7 +6321,7 @@ used together with file_name.</td>
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'./',
-            VERSION:'1.5.1',
+            VERSION:'1.5.3',
             LANGUAGE:'None',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
