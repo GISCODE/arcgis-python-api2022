@@ -1,1 +1,7 @@
-print("hello teardown!")
+from misc._common import *
+
+print("-*-*-*-*-*-*-*-*-*-*-*Teardown begins*-*-*-*-*-*-*-*-*-*-*-*-")
+
+delete_for_users()
+
+print("-*-*-*-*-*-*-*-*-*-*-*Teardown ends*-*-*-*-*-*-*-*-*-*-*-*-*-")
