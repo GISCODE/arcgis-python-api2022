@@ -17,20 +17,28 @@ target_accounts = ['arcgis_python']
 gis = GIS("https://pythonapi.playground.esri.com/portal","temp_execution", "temp_execution123")
 
 
+def delete_depending_items(dependent_item):
+    depending_items = dependent_item.dependent_to()
+    if depending_items['list']:
+        for item in depending_items['list']:
+            delete_depending_items(item)
+    else:
+        if dependent_item.protected:
+            dependent_item.protect(False)
+        try:
+            print("=== deleting the item: %s" % dependent_item.id)
+            dependent_item.delete()
+        except:
+            print("=== could not delete non-dependent item %s" % dependent_item.id)
+
+
 def delete_items(user):
     """deletes the user items"""
     folders = [None] + user.folders
     for folder in folders:
         print("=== deleting inside folder: %s" % folder)
         for item in user.items(folder=folder, max_items=255):
-            print("=== deleting the item: %s" % item.id)
-            if item.protected:
-                item.protect(False)
-            depending_items = item.dependent_to()
-            if not depending_items['list']:
-                item.delete()
-            else:
-                print("=== could not delete dependent item %s" % item.id)
+            delete_depending_items(item)
     print("=== finished deleting items owned by " + user.username)
 
 
