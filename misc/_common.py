@@ -26,10 +26,10 @@ def delete_depending_items(dependent_item):
         if dependent_item.protected:
             dependent_item.protect(False)
         try:
-            print("=== deleting the item: %s" % dependent_item.id)
+            print("=== deleting the item: %s" % dependent_item.homepage)
             dependent_item.delete()
         except:
-            print("=== could not delete non-dependent item %s" % dependent_item.id)
+            print("=== could not delete non-dependent item %s" % dependent_item.homepage)
 
 
 def delete_items(user):
@@ -66,27 +66,14 @@ def delete_groups(user):
 def delete_for_users():
     """deletes items and groups for users in target_accounts, and ignore others"""
     for user in gis.users.search():
-        if user.username not in ignore_accounts and \
-           user.username.find("esri_") == -1:
-            print("-*-*-*-*-*-*-*-Delete User for %s -*-*-*-*-*-*-*-*-*-" % user.username)
-            if user.lastLogin == -1 and \
-               user.roleId == 'org_user' and \
-               len(user.items()) == 0 and \
-               len(user.groups) == 0:
+        if user.username not in ignore_accounts:
+            print("-*-*-*-*-*-*-Delete groups & items & user for %s -*-*-*-*-*-" % user.username)
+            delete_items(user)
+            delete_groups(user)
+            try:
                 user.delete()
-            elif user.lastLogin == -1:
-                print("%s never logged in" % user.username)
-            elif user.lastLogin > 0:
-                print('removing user: %s' % user.username)
-                dt = datetime.datetime.fromtimestamp(user.lastLogin/1000)
-                if (datetime.datetime.now() - dt).days > 90:
-
-                    delete_items(user)
-                    delete_groups(user)
-                try:
-                    user.delete()
-                except:
-                    print("could not delete user %s" % user.username)
+            except:
+                print("could not delete user %s" % user.username)
 
         elif user.username in target_accounts:
             print("-*-*-*-*-*-*-Delete groups & items for %s -*-*-*-*-*-*-*-*-" % user.username)
