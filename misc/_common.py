@@ -13,23 +13,23 @@ ignore_accounts = ['andrew', 'andrew.chapkowski', 'dvitale', 'david.vitale',
 target_accounts = ['arcgis_python']
 
 """create GIS connection via admin credentials"""
-# gis = GIS(profile='your_portal_profile', verify_cert=False)
+# gis = GIS(profile='your_entp_admin_profile', verify_cert=False)
 gis = GIS("https://pythonapi.playground.esri.com/portal","temp_execution", "temp_execution123")
 
 
 def delete_depending_items(dependent_item):
+    """deletes the item's depending items, and then the item"""
     depending_items = dependent_item.dependent_to()
     if depending_items['list']:
         for item in depending_items['list']:
             delete_depending_items(item)
-    else:
-        if dependent_item.protected:
-            dependent_item.protect(False)
-        try:
-            print("=== deleting the item: %s" % dependent_item.homepage)
-            dependent_item.delete()
-        except:
-            print("=== could not delete non-dependent item %s" % dependent_item.homepage)
+    if dependent_item.protected:
+        dependent_item.protect(False)
+    try:
+        print("=== deleting the item: %s" % dependent_item.homepage)
+        dependent_item.delete()
+    except:
+        print("=== could not delete non-dependent item %s" % dependent_item.homepage)
 
 
 def delete_items(user):
@@ -43,7 +43,7 @@ def delete_items(user):
 
 
 def delete_groups(user):
-    """deletes the user groups"""
+    """deletes the user groups, and removes user from groups where user is a member of"""
     groups_for_deletion = gis.groups.get('query=owner:' + user.username)
     if groups_for_deletion is not None:
         for group in groups_for_deletion:
@@ -66,7 +66,7 @@ def delete_groups(user):
 def delete_for_users():
     """deletes items and groups for users in target_accounts, and ignore others"""
     for user in gis.users.search():
-        if user.username not in ignore_accounts:
+        if user.username not in ignore_accounts and not user.username.startswith("esri_"):
             print("-*-*-*-*-*-*-Delete groups & items & user for %s -*-*-*-*-*-" % user.username)
             delete_items(user)
             delete_groups(user)
