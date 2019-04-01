@@ -1,4 +1,4 @@
-from misc._common import *
+from ._common import *
 
 print("-*-*-*-*-*-*-*-*-*-*-*Teardown begins*-*-*-*-*-*-*-*-*-*-*-*-")
 
