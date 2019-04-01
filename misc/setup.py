@@ -1,4 +1,4 @@
-from ._common import *
+from _common import *
 
 print("-*-*-*-*-*-*-*-*-*-*-*Setup begins*-*-*-*-*-*-*-*-*-*-*-*-*-")
 
