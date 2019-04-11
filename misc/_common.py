@@ -17,6 +17,9 @@ ignore_accounts_playground = ['andrew', 'andrew.chapkowski', 'dvitale', 'david.v
 target_accounts_online = ['arcgis_python']
 target_accounts_playground = ['arcgis_python']
 
+"""data to publish"""
+data_paths = [r'\\archive\crdata\Geosaurus_datasets\data_prep\csv\Trailheads.csv']
+
 """create GIS connection via admin credentials"""
 gis_online = GIS(profile="your_online_admin_profile")
 gis_playground = GIS(profile='your_ent_admin_profile')
@@ -90,3 +93,10 @@ def delete_for_users(gis, ignore_accounts, target_accounts):
 
         else:
             print("-*-*-*-*-*-*-*-*-No Delete for %s -*-*-*-*-*-*-*-*-*-*-" % user.username)
+
+def publish_data(gis, paths):
+    """publish sample data"""
+    for path in paths:
+        item = gis.content.add({}, path)
+        item.share(everyone=True)
+        lyr = item.publish()
