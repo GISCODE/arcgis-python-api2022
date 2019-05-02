@@ -2,7 +2,7 @@ from arcgis.gis import GIS
 import datetime
 
 """accounts to keep from user/groups/items deletion"""
-ignore_accounts = ['andrew', 'andrew.chapkowski', 'dvitale', 'david.vitale',
+ignore_accounts = ['andrew', 'andrew.chapkowski', 'apulver', 'dvitale', 'david.vitale',
                    'atma.mani', 'john.yaist', 'bill.major', 'YJiang',
                    'rohit.singh', 'rohitgeo', 'gbochenek_python',
                    'system_publisher', 'admin', 'portaladmin',
@@ -82,3 +82,30 @@ def delete_for_users():
 
         else:
             print("-*-*-*-*-*-*-*-*-No Delete for %s -*-*-*-*-*-*-*-*-*-*-" % user.username)
+
+
+def clean_up_location_tracking():
+    # disable location tracking
+    if gis.admin.location_tracking.status != "disabled":
+        gis.admin.location_tracking.disable()
+
+    roles = gis.users.roles.all()
+    for role in roles:
+        if role.name == "Track Viewer":
+            role.delete()
+            break
+
+
+def setup_tracker_user():
+    # create the track_viewer account
+    tracker_demo = gis.users.get('tracker_demo')
+    if tracker_demo is None:
+        tracker_demo = gis.users.create(username='tracker_demo',
+                         password='b0cb0c9f63e',
+                         firstname='Tracker',
+                         lastname='Demo',
+                         email='python@esri.com',
+                         description='demo track viewer account',
+                         role='org_user')
+    else:
+        tracker_demo.update_role('org_user')
