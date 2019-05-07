@@ -2,7 +2,11 @@ from arcgis.gis import GIS
 import datetime
 
 """accounts to keep from user/groups/items deletion"""
-ignore_accounts = ['andrew', 'andrew.chapkowski', 'dvitale', 'david.vitale',
+ignore_accounts_online = ['DavidJVitale', 'yjiang_geosaurus', 'amani_geosaurus', 'api_data_owner',
+                   'bmajor_geosaurus', 'rsingh_geosaurus', 'rohitgeo', 'andrew887',
+                   'cwhitmore_geosaurus', 'ArcGISPyAPIBot', 'jyaist_geosaurus', 'cpeng_geosaurus']
+
+ignore_accounts_playground = ['andrew', 'andrew.chapkowski', 'dvitale', 'david.vitale',
                    'atma.mani', 'john.yaist', 'bill.major', 'YJiang',
                    'rohit.singh', 'rohitgeo', 'gbochenek_python',
                    'system_publisher', 'admin', 'portaladmin',
@@ -10,19 +14,27 @@ ignore_accounts = ['andrew', 'andrew.chapkowski', 'dvitale', 'david.vitale',
                    'api_data_owner', 'arcgis_python', 'temp_execution']
 
 """accounts that you want to delete groups and items, but keep user"""
-target_accounts = ['arcgis_python']
+target_accounts_online = ['arcgis_python']
+target_accounts_playground = ['arcgis_python']
+
+"""data to publish"""
+data_paths = [r'\\archive\crdata\Geosaurus_datasets\data_prep\csv\Trailheads.csv']
 
 """create GIS connection via admin credentials"""
-# gis = GIS(profile='your_entp_admin_profile', verify_cert=False)
-gis = GIS("https://pythonapi.playground.esri.com/portal","temp_execution", "temp_execution123")
-
+gis_online = GIS(profile="your_online_admin_profile")
+gis_playground = GIS(profile='your_ent_admin_profile')
 
 def delete_depending_items(dependent_item):
     """deletes the item's depending items, and then the item"""
-    depending_items = dependent_item.dependent_to()
-    if depending_items['list']:
-        for item in depending_items['list']:
-            delete_depending_items(item)
+    depending_items = None
+    try:
+        depending_items = dependent_item.dependent_to()
+        if depending_items['list']:
+            for item in depending_items['list']:
+                delete_depending_items(item)
+    except:
+        print("=== could not get item list %s" % dependent_item.homepage)
+
     if dependent_item.protected:
         dependent_item.protect(False)
     try:
@@ -42,7 +54,7 @@ def delete_items(user):
     print("=== finished deleting items owned by " + user.username)
 
 
-def delete_groups(user):
+def delete_groups(gis, user):
     """deletes the user groups, and removes user from groups where user is a member of"""
     groups_for_deletion = gis.groups.get('query=owner:' + user.username)
     if groups_for_deletion is not None:
@@ -63,22 +75,28 @@ def delete_groups(user):
     print("=== finished deleting groups owned by " + user.username)
 
 
-def delete_for_users():
+def delete_for_users(gis, ignore_accounts, target_accounts):
     """deletes items and groups for users in target_accounts, and ignore others"""
     for user in gis.users.search():
         if user.username not in ignore_accounts and not user.username.startswith("esri_"):
             print("-*-*-*-*-*-*-Delete groups & items & user for %s -*-*-*-*-*-" % user.username)
             delete_items(user)
-            delete_groups(user)
+            delete_groups(gis, user)
             try:
                 user.delete()
             except:
                 print("could not delete user %s" % user.username)
-
         elif user.username in target_accounts:
             print("-*-*-*-*-*-*-Delete groups & items for %s -*-*-*-*-*-*-*-*-" % user.username)
             delete_items(user)
-            delete_groups(user)
+            delete_groups(gis, user)
 
         else:
             print("-*-*-*-*-*-*-*-*-No Delete for %s -*-*-*-*-*-*-*-*-*-*-" % user.username)
+
+def publish_data(gis, paths):
+    """publish sample data"""
+    for path in paths:
+        item = gis.content.add({}, path)
+        item.share(everyone=True)
+        lyr = item.publish()
