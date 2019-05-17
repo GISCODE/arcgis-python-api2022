@@ -11,6 +11,10 @@ build_multivariable_grid
 --------------
 .. automethod:: arcgis.geoanalytics.summarize_data.build_multivariable_grid
 
+describe_dataset
+--------------
+.. automethod:: arcgis.geoanalytics.summarize_data.describe_dataset
+
 join_features
 --------------
 .. automethod:: arcgis.geoanalytics.summarize_data.join_features
