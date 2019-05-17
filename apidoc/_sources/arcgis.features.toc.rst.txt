@@ -74,10 +74,12 @@ Submodules
 
    arcgis.features.analysis
    arcgis.features.analyze_patterns
+   arcgis.features.elevation
    arcgis.features.enrich_data
    arcgis.features.find_locations
+   arcgis.features.hydrology
    arcgis.features.manage_data
+   arcgis.features.managers
    arcgis.features.summarize_data
    arcgis.features.use_proximity
-   arcgis.features.elevation
-   arcgis.features.managers
+

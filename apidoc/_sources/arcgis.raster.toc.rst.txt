@@ -47,3 +47,4 @@ Submodules
    arcgis.raster.functions
    arcgis.raster.functions.gbl
    arcgis.raster.orthomapping
+   arcgis.raster.functions.RFT
