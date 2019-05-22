@@ -4,7 +4,7 @@ import datetime
 """accounts to keep from user/groups/items deletion"""
 ignore_accounts_online = ['DavidJVitale', 'yjiang_geosaurus', 'amani_geosaurus', 'api_data_owner',
                    'bmajor_geosaurus', 'rsingh_geosaurus', 'rohitgeo', 'andrew887',
-                   'cwhitmore_geosaurus', 'ArcGISPyAPIBot', 'jyaist_geosaurus', 'cpeng_geosaurus']
+                   'cwhitmore_geosaurus', 'ArcGISPyAPIBot', 'jyaist_geosaurus', 'cpeng_geosaurus', 'MMajumdar_geosaurus']
 
 ignore_accounts_playground = ['andrew', 'andrew.chapkowski', 'dvitale', 'david.vitale',
                    'atma.mani', 'john.yaist', 'bill.major', 'YJiang',
