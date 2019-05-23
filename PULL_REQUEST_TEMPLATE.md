@@ -19,3 +19,4 @@ Please go through each entry in the below checklist and mark an 'X' if that cond
 - [ ] Consistent voice/tense/narrative style? Thoroughly checked for typos?
 - [ ] All images used like `<img src="base64str_here">` instead of `<img src="https://some.url">`? All map widgets contain a static image preview? (Call `mapview_inst.take_screenshot()` to do so)
 - [ ] All file paths are constructed in an OS-agnostic fashion with `os.path.join()`? (Instead of `r"\foo\bar"`, `os.path.join(os.path.sep, "foo", "bar")`, etc.)
+- [ ] **IF YOU WANT THIS SAMPLE TO BE DISPLAYED ON THE DEVELOPERS.ARCGIS.COM WEBSITE**, ping @ DavidJVitale so he can add it to the list for the next deploy 
