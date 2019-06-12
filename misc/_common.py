@@ -1,12 +1,11 @@
 from arcgis.gis import GIS
-import datetime
 
 """accounts to keep from user/groups/items deletion"""
 ignore_accounts_online = ['DavidJVitale', 'yjiang_geosaurus', 'amani_geosaurus', 'api_data_owner',
                    'bmajor_geosaurus', 'rsingh_geosaurus', 'rohitgeo', 'andrew887',
                    'cwhitmore_geosaurus', 'ArcGISPyAPIBot', 'jyaist_geosaurus', 'cpeng_geosaurus', 'MMajumdar_geosaurus']
 
-ignore_accounts_playground = ['andrew', 'andrew.chapkowski', 'dvitale', 'david.vitale',
+ignore_accounts_playground = ['andrew', 'andrew.chapkowski', 'apulver', 'dvitale', 'david.vitale',
                    'atma.mani', 'john.yaist', 'bill.major', 'YJiang',
                    'rohit.singh', 'rohitgeo', 'gbochenek_python',
                    'system_publisher', 'admin', 'portaladmin',
@@ -23,6 +22,7 @@ data_paths = [r'\\archive\crdata\Geosaurus_datasets\data_prep\csv\Trailheads.csv
 """create GIS connection via admin credentials"""
 gis_online = GIS(profile="your_online_admin_profile")
 gis_playground = GIS(profile='your_ent_admin_profile')
+
 
 def delete_depending_items(dependent_item):
     """deletes the item's depending items, and then the item"""
@@ -94,9 +94,37 @@ def delete_for_users(gis, ignore_accounts, target_accounts):
         else:
             print("-*-*-*-*-*-*-*-*-No Delete for %s -*-*-*-*-*-*-*-*-*-*-" % user.username)
 
+
 def publish_data(gis, paths):
     """publish sample data"""
     for path in paths:
         item = gis.content.add({}, path)
         item.share(everyone=True)
         lyr = item.publish()
+
+
+def clean_up_location_tracking(gis):
+    # disable location tracking
+    if gis.admin.location_tracking.status != "disabled":
+        gis.admin.location_tracking.disable()
+
+    roles = gis.users.roles.all()
+    for role in roles:
+        if role.name == "Track Viewer":
+            role.delete()
+            break
+
+
+def setup_tracker_user(gis):
+    # create the track_viewer account
+    tracker_demo = gis.users.get('tracker_demo')
+    if tracker_demo is None:
+        tracker_demo = gis.users.create(username='tracker_demo',
+                         password='b0cb0c9f63e',
+                         firstname='Tracker',
+                         lastname='Demo',
+                         email='python@esri.com',
+                         description='demo track viewer account',
+                         role='org_user')
+    else:
+        tracker_demo.update_role('org_user')
