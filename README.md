@@ -1,23 +1,22 @@
-# ArcGIS Python API
-Documentation and samples for the ArcGIS Python API https://developers.arcgis.com/python/ 
+# ArcGIS API for Python
+ArcGIS API for Python is a Python library for working with maps and geospatial data, powered by web GIS. It provides simple and efficient tools for deep learning, sophisticated vector and raster analysis, geocoding, map making, routing and directions, as well as for organizing and managing a GIS with users, groups and information items. In addition to working with your own data, the library enables access to ready to use maps and curated geographic data from Esri and other authoritative sources. It also integrates well with the scientific Python ecosystem and includes rich support for Pandas, Scikit-Learn, Fast.ai, etc. and Jupyter notebook.
 
-[ArcGIS Python API](https://developers.arcgis.com/python/)
-
-[Join the conversation](https://geonet.esri.com/groups/arcgis-python-api/)
+To learn more about the API, visit the product page [here](https://developers.arcgis.com/python/). You can get in touch with the developers of the API and other users like you at the community page [here](https://geonet.esri.com/groups/arcgis-python-api/).
 
 ## What's included
+This SDK repository contains the following items:
+* API Reference Documentation. A hosted version of this can be found [here](https://esri.github.io/arcgis-python-api/apidoc/html/).
+* Samples as Jupyter Notebooks.
+* Guides chapters as Jupyter Notebooks.
 
-* Documentation
-* Sample Notebooks
-* Guides
+You have multiple ways of executing these notebooks as listed below:
 
-## Requirements
-
-* [See ArcGIS Python API - Install and Set Up](https://developers.arcgis.com/python/guide/install-and-set-up/)
-
-## Resources
-
-* [ArcGIS for Developers](https://developers.arcgis.com/python/)
+ - Execute locally on your computer by installing anaconda and the API. See help [here](https://developers.arcgis.com/python/guide/install-and-set-up/#Get-Conda-with-Anaconda-for-Python-Distribution)
+ - Execute with ArcGIS Pro. See help [here](https://developers.arcgis.com/python/guide/install-and-set-up/#Get-Conda-with-ArcGIS-Pro)
+ - Execute with ArcGIS Hosted Notebooks. See [here](https://www.esri.com/en-us/arcgis/products/arcgis-notebook-server)
+ - Execute on a hosted sandbox environment. Go to [notebooks.esri.com](http://notebooks.esri.com/)
+ - Execute in a Dockerised environment. See help [here](https://developers.arcgis.com/python/guide/install-and-set-up/#Install-as-a-Docker-image)
+ - Execute with Binder. See help [here](https://mybinder.org/)
 
 ## Issues
 
@@ -25,10 +24,10 @@ Find a bug or want to request a new feature?  Please let us know by submitting a
 
 ## Contributing
 
-Anyone and everyone is welcome to contribute. Please see our [guidelines for contributing](https://github.com/esri/contributing).
+Anyone and everyone is welcome to contribute. Please see our contribution guideline [here](https://github.com/Esri/arcgis-python-api/wiki/How-to-contribute-samples-and-guide-chapters).
 
 ## Licensing
-Copyright 2016-2017 Esri
+Copyright 2018-2019 Esri
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.

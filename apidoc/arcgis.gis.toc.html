@@ -8,10 +8,12 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>arcgis.gis module &mdash; arcgis 1.4.0 documentation</title>
+  <title>arcgis.gis module &mdash; arcgis 1.6.1 documentation</title>
   
 
   
+  
+    <link rel="shortcut icon" href="_static/favicon.ico"/>
   
   
   
@@ -37,7 +39,7 @@
         <link rel="index" title="Index"
               href="genindex.html"/>
         <link rel="search" title="Search" href="search.html"/>
-    <link rel="top" title="arcgis 1.4.0 documentation" href="index.html"/>
+    <link rel="top" title="arcgis 1.6.1 documentation" href="index.html"/>
         <link rel="next" title="arcgis.gis.admin module" href="arcgis.gis.admin.html"/>
         <link rel="prev" title="API Reference for the ArcGIS API for Python" href="index.html"/>
 <!-- This code block is inserted close near the <head> tag. See http://bit.ly/2BHUQzB -->
@@ -71,13 +73,16 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
           
 
           
+            
+            <img src="_static/python_api_logo.png" class="logo" />
+          
           </a>
 
           
             
             
               <div class="version">
-                1.4.0
+                1.6.1
               </div>
             
           
@@ -112,6 +117,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <li class="toctree-l2"><a class="reference internal" href="#role">Role</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#layer">Layer</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#groupapplication">GroupApplication</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#categoryschemamanager">CategorySchemaManager</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#contentmanager">ContentManager</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#usermanager">UserManager</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#groupmanager">GroupManager</a></li>
@@ -119,491 +125,27 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <li class="toctree-l2"><a class="reference internal" href="#rolemanager">RoleManager</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#resourcemanager">ResourceManager</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#submodules">Submodules</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="arcgis.gis.admin.html">arcgis.gis.admin module</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.gis.admin.html#agoladminmanager">AGOLAdminManager</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.gis.admin.html#portaladminmanager">PortalAdminManager</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.gis.admin.html#categorymanager">CategoryManager</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.gis.admin.html#collaborationmanager">CollaborationManager</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.gis.admin.html#collaboration">Collaboration</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.gis.admin.html#creditmanager">CreditManager</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.gis.admin.html#identityprovidermanager">IdentityProviderManager</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.gis.admin.html#passwordpolicy">PasswordPolicy</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.gis.admin.html#portalresourcemanager">PortalResourceManager</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.gis.admin.html#ux">UX</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.gis.admin.html#federation">Federation</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.gis.admin.html#logs">Logs</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.gis.admin.html#machines">Machines</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.gis.admin.html#security">Security</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.gis.admin.html#oauth">OAuth</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.gis.admin.html#sslcertificate">SSLCertificate</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.gis.admin.html#sslcertificates">SSLCertificates</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.gis.admin.html#enterpriseusers">EnterpriseUsers</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.gis.admin.html#enterprisegroups">EnterpriseGroups</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.gis.admin.html#site">Site</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.gis.admin.html#system">System</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.gis.admin.html#licenses">Licenses</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.gis.admin.html#directory">Directory</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.gis.admin.html#webadaptor">WebAdaptor</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.gis.admin.html#webadaptors">WebAdaptors</a></li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="arcgis.gis.server.html">arcgis.gis.server module</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.gis.server.html#server">Server</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.gis.server.html#module-arcgis.gis.server.catalog">ServicesDirectory</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.gis.server.html#service">Service</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.gis.server.html#machine">Machine</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.gis.server.html#report">Report</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.gis.server.html#datastore">Datastore</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.gis.server.html#user">User</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.gis.server.html#role">Role</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.gis.server.html#servermanager">ServerManager</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.gis.server.html#servicemanager">ServiceManager</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.gis.server.html#machinemanager">MachineManager</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.gis.server.html#logmanager">LogManager</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.gis.server.html#reportmanager">ReportManager</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.gis.server.html#datastoremanager">DataStoreManager</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.gis.server.html#usermanager">UserManager</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.gis.server.html#rolemanager">RoleManager</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.gis.server.html#systemmanager">SystemManager</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.gis.server.html#sitemanager">SiteManager</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.gis.server.html#directorymanager">DirectoryManager</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.gis.server.html#configurationstore">ConfigurationStore</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.gis.server.html#jobs">Jobs</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.gis.server.html#serverdirectory">ServerDirectory</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.gis.server.html#serverproperties">ServerProperties</a></li>
+<li class="toctree-l3"><a class="reference internal" href="arcgis.gis.admin.html">arcgis.gis.admin module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="arcgis.gis.server.html">arcgis.gis.server module</a></li>
 </ul>
 </li>
 </ul>
 </li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="arcgis.env.html">arcgis.env module</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="arcgis.env.html#active-gis">active_gis</a></li>
-<li class="toctree-l2"><a class="reference internal" href="arcgis.env.html#analysis-extent">analysis_extent</a></li>
-<li class="toctree-l2"><a class="reference internal" href="arcgis.env.html#out-spatial-reference">out_spatial_reference</a></li>
-<li class="toctree-l2"><a class="reference internal" href="arcgis.env.html#process-spatial-reference">process_spatial_reference</a></li>
-<li class="toctree-l2"><a class="reference internal" href="arcgis.env.html#output-datastore">output_datastore</a></li>
-<li class="toctree-l2"><a class="reference internal" href="arcgis.env.html#return-z">return_z</a></li>
-<li class="toctree-l2"><a class="reference internal" href="arcgis.env.html#return-m">return_m</a></li>
-<li class="toctree-l2"><a class="reference internal" href="arcgis.env.html#verbose">verbose</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="arcgis.features.toc.html">arcgis.features module</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="arcgis.features.toc.html#feature">Feature</a></li>
-<li class="toctree-l2"><a class="reference internal" href="arcgis.features.toc.html#featurelayer">FeatureLayer</a></li>
-<li class="toctree-l2"><a class="reference internal" href="arcgis.features.toc.html#table">Table</a></li>
-<li class="toctree-l2"><a class="reference internal" href="arcgis.features.toc.html#featurelayercollection">FeatureLayerCollection</a></li>
-<li class="toctree-l2"><a class="reference internal" href="arcgis.features.toc.html#featureset">FeatureSet</a></li>
-<li class="toctree-l2"><a class="reference internal" href="arcgis.features.toc.html#featurecollection">FeatureCollection</a></li>
-<li class="toctree-l2"><a class="reference internal" href="arcgis.features.toc.html#spatialdataframe">SpatialDataFrame</a></li>
-<li class="toctree-l2"><a class="reference internal" href="arcgis.features.toc.html#submodules">Submodules</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="arcgis.features.analysis.html">arcgis.features.analysis module</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.features.analysis.html#aggregate-points">aggregate_points</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.features.analysis.html#calculate-density">calculate_density</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.features.analysis.html#connect-origins-to-destinations">connect_origins_to_destinations</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.features.analysis.html#create-buffers">create_buffers</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.features.analysis.html#create-drive-time-areas">create_drive_time_areas</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.features.analysis.html#create-route-layers">create_route_layers</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.features.analysis.html#create-viewshed">create_viewshed</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.features.analysis.html#create-watersheds">create_watersheds</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.features.analysis.html#derive-new-locations">derive_new_locations</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.features.analysis.html#dissolve-boundaries">dissolve_boundaries</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.features.analysis.html#enrich-layer">enrich_layer</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.features.analysis.html#extract-data">extract_data</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.features.analysis.html#find-existing-locations">find_existing_locations</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.features.analysis.html#find-hot-spots">find_hot_spots</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.features.analysis.html#find-nearest">find_nearest</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.features.analysis.html#find-similar-locations">find_similar_locations</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.features.analysis.html#interpolate-points">interpolate_points</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.features.analysis.html#join-features">join_features</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.features.analysis.html#merge-layers">merge_layers</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.features.analysis.html#overlay-layers">overlay_layers</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.features.analysis.html#plan-routes">plan_routes</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.features.analysis.html#summarize-nearby">summarize_nearby</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.features.analysis.html#summarize-within">summarize_within</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.features.analysis.html#trace-downstream">trace_downstream</a></li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="arcgis.features.analyze_patterns.html">arcgis.features.analyze_patterns module</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.features.analyze_patterns.html#calculate-density">calculate_density</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.features.analyze_patterns.html#find-hot-spots">find_hot_spots</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.features.analyze_patterns.html#find-outliers">find_outliers</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.features.analyze_patterns.html#interpolate-points">interpolate_points</a></li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="arcgis.features.enrich_data.html">arcgis.features.enrich_data module</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.features.enrich_data.html#enrich-layer">enrich_layer</a></li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="arcgis.features.find_locations.html">arcgis.features.find_locations module</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.features.find_locations.html#find-existing-locations">find_existing_locations</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.features.find_locations.html#derive-new-locations">derive_new_locations</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.features.find_locations.html#find-similar-locations">find_similar_locations</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.features.find_locations.html#choose-best-facilities">choose_best_facilities</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.features.find_locations.html#create-viewshed">create_viewshed</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.features.find_locations.html#create-watersheds">create_watersheds</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.features.find_locations.html#trace-downstream">trace_downstream</a></li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="arcgis.features.manage_data.html">arcgis.features.manage_data module</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.features.manage_data.html#dissolve-boundaries">dissolve_boundaries</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.features.manage_data.html#extract-data">extract_data</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.features.manage_data.html#merge-layers">merge_layers</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.features.manage_data.html#overlay-layers">overlay_layers</a></li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="arcgis.features.summarize_data.html">arcgis.features.summarize_data module</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.features.summarize_data.html#aggregate-points">aggregate_points</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.features.summarize_data.html#join-features">join_features</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.features.summarize_data.html#summarize-nearby">summarize_nearby</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.features.summarize_data.html#summarize-within">summarize_within</a></li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="arcgis.features.use_proximity.html">arcgis.features.use_proximity module</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.features.use_proximity.html#connect-origins-to-destinations">connect_origins_to_destinations</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.features.use_proximity.html#create-buffers">create_buffers</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.features.use_proximity.html#create-drive-time-areas">create_drive_time_areas</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.features.use_proximity.html#find-nearest">find_nearest</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.features.use_proximity.html#plan-routes">plan_routes</a></li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="arcgis.features.elevation.html">arcgis.features.elevation module</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.features.elevation.html#profile">profile</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.features.elevation.html#viewshed">viewshed</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.features.elevation.html#summarize-elevation">summarize_elevation</a></li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="arcgis.features.managers.html">arcgis.features.managers module</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.features.managers.html#attachmentmanager">AttachmentManager</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.features.managers.html#syncmanager">SyncManager</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.features.managers.html#featurelayercollectionmanager">FeatureLayerCollectionManager</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.features.managers.html#featurelayermanager">FeatureLayerManager</a></li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="arcgis.raster.toc.html">arcgis.raster module</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="arcgis.raster.toc.html#imagerylayer">ImageryLayer</a></li>
-<li class="toctree-l2"><a class="reference internal" href="arcgis.raster.toc.html#rastercatalogitem">RasterCatalogItem</a></li>
-<li class="toctree-l2"><a class="reference internal" href="arcgis.raster.toc.html#rastermanager">RasterManager</a></li>
-<li class="toctree-l2"><a class="reference internal" href="arcgis.raster.toc.html#imagerytilemanager">ImageryTileManager</a></li>
-<li class="toctree-l2"><a class="reference internal" href="arcgis.raster.toc.html#submodules">Submodules</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="arcgis.raster.analytics.html">arcgis.raster.analytics module</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.analytics.html#get-datastores">get_datastores</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.analytics.html#is-supported">is_supported</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.analytics.html#generate-raster">generate_raster</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.analytics.html#interpolate-points">interpolate_points</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.analytics.html#create-viewshed">create_viewshed</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.analytics.html#summarize-raster-within">summarize_raster_within</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.analytics.html#calculate-density">calculate_density</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.analytics.html#classify">classify</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.analytics.html#segment">segment</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.analytics.html#train-classifier">train_classifier</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.analytics.html#convert-feature-to-raster">convert_feature_to_raster</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.analytics.html#convert-raster-to-feature">convert_raster_to_feature</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.analytics.html#copy-raster">copy_raster</a></li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="arcgis.raster.functions.html">arcgis.raster.functions module</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#abs">abs</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#acos">acos</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#acosh">acosh</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#apply">apply</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#arg-max">arg_max</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#arg-median">arg_median</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#arg-min">arg_min</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#arg-statistics">arg_statistics</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#arithmetic">arithmetic</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#asin">asin</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#asinh">asinh</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#aspect">aspect</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#atan">atan</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#atan2">atan2</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#atanh">atanh</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#band-arithmetic">band_arithmetic</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#bitwise-and">bitwise_and</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#bitwise-left-shift">bitwise_left_shift</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#bitwise-not">bitwise_not</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#bitwise-or">bitwise_or</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#bitwise-right-shift">bitwise_right_shift</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#bitwise-xor">bitwise_xor</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#boolean-and">boolean_and</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#boolean-not">boolean_not</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#boolean-or">boolean_or</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#boolean-xor">boolean_xor</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#classify">classify</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#clip">clip</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#colormap">colormap</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#colormap-to-rgb">colormap_to_rgb</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#colorspace-conversion">colorspace_conversion</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#complex">complex</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#composite-band">composite_band</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#con">con</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#contrast-brightness">contrast_brightness</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#convolution">convolution</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#cos">cos</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#cosh">cosh</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#curvature">curvature</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#divide">divide</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#duration">duration</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#elevation-void-fill">elevation_void_fill</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#equal-to">equal_to</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#exp">exp</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#exp10">exp10</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#exp2">exp2</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#expression">expression</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#extract-band">extract_band</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#float">FLOAT</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#float-divide">float_divide</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#floor-divide">floor_divide</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#gemi">gemi</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#geometric">geometric</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#grayscale">grayscale</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#greater-than">greater_than</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#greater-than-equal">greater_than_equal</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#gvitm">gvitm</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#hillshade">hillshade</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#identity">identity</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#int">INT</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#is-null">is_null</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#less-than">less_than</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#less-than-equal">less_than_equal</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#ln">ln</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#local">local</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#log10">log10</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#log2">log2</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#majority">majority</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#mask">mask</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#max">max</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#mean">mean</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#med">med</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#min">min</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#minority">minority</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#minus">minus</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#ml-classify">ml_classify</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#mod">mod</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#mode">mode</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#msavi">msavi</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#multiply">MULTIPLY</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#ndvi">ndvi</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#negate">negate</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#not-equal">not_equal</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#pansharpen">pansharpen</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#plus">plus</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#power">power</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#pvi">pvi</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#cellstats-range">cellstats_range</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#raster-calculator">raster_calculator</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#remap">remap</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#resample">resample</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#round-down">round_down</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#round-up">round_up</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#savi">savi</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#segment-mean-shift">segment_mean_shift</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#set-null">set_null</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#shaded-relief">shaded_relief</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#sin">sin</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#sinh">sinh</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#slope">slope</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#spectral-conversion">spectral_conversion</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#speckle">speckle</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#sqrt">sqrt</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#square">square</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#focal-statistics">focal_statistics</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#statistics-histogram">statistics_histogram</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#std">std</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#stretch">stretch</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#sultan">sultan</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#sum">sum</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#tan">tan</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#tanh">tanh</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#tasseled-cap">tasseled_cap</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#threshold">threshold</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#times">times</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#transpose-bits">transpose_bits</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#tsavi">tsavi</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#unit-conversion">unit_conversion</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#variety">variety</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#vector-field">vector_field</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#vector-field-renderer">vector_field_renderer</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#weighted-overlay">weighted_overlay</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#weighted-sum">weighted_sum</a></li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="arcgis.raster.functions.gbl.html">arcgis.raster.functions.gbl module</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.gbl.html#cost-allocation">cost_allocation</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.gbl.html#cost-distance">cost_distance</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.gbl.html#euclidean-allocation">euclidean_allocation</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.gbl.html#euclidean-distance">euclidean_distance</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.gbl.html#fill">fill</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.gbl.html#flow-accumulation">flow_accumulation</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.gbl.html#flow-distance">flow_distance</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.gbl.html#flow-direction">flow_direction</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.gbl.html#least-cost-path">least_cost_path</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.gbl.html#nibble">nibble</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.gbl.html#stream-link">stream_link</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.gbl.html#watershed">watershed</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.gbl.html#zonal-statistics">zonal_statistics</a></li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="arcgis.network.toc.html">arcgis.network module</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="arcgis.network.toc.html#networklayer">NetworkLayer</a></li>
-<li class="toctree-l2"><a class="reference internal" href="arcgis.network.toc.html#routelayer">RouteLayer</a></li>
-<li class="toctree-l2"><a class="reference internal" href="arcgis.network.toc.html#servicearealayer">ServiceAreaLayer</a></li>
-<li class="toctree-l2"><a class="reference internal" href="arcgis.network.toc.html#closestfacilitylayer">ClosestFacilityLayer</a></li>
-<li class="toctree-l2"><a class="reference internal" href="arcgis.network.toc.html#networkdataset">NetworkDataset</a></li>
-<li class="toctree-l2"><a class="reference internal" href="arcgis.network.toc.html#submodules">Submodules</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="arcgis.network.analysis.html">arcgis.network.analysis module</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.network.analysis.html#solve-vehicle-routing-problem">solve_vehicle_routing_problem</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.network.analysis.html#find-closest-facilities">find_closest_facilities</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.network.analysis.html#solve-location-allocation">solve_location_allocation</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.network.analysis.html#generate-origin-destination-cost-matrix">generate_origin_destination_cost_matrix</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.network.analysis.html#find-routes">find_routes</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.network.analysis.html#generate-service-areas">generate_service_areas</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.network.analysis.html#get-travel-modes">get_travel_modes</a></li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="arcgis.geoanalytics.toc.html">arcgis.geoanalytics module</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="arcgis.geoanalytics.toc.html#get-datastores">get_datastores</a></li>
-<li class="toctree-l2"><a class="reference internal" href="arcgis.geoanalytics.toc.html#is-supported">is_supported</a></li>
-<li class="toctree-l2"><a class="reference internal" href="arcgis.geoanalytics.toc.html#submodules">Submodules</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="arcgis.geoanalytics.analyze_patterns.html">arcgis.geoanalytics.analyze_patterns module</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.geoanalytics.analyze_patterns.html#calculate-density">calculate_density</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.geoanalytics.analyze_patterns.html#find-hot-spots">find_hot_spots</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.geoanalytics.analyze_patterns.html#create-space-time-cube">create_space_time_cube</a></li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="arcgis.geoanalytics.find_locations.html">arcgis.geoanalytics.find_locations module</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.geoanalytics.find_locations.html#detect-incidents">detect_incidents</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.geoanalytics.find_locations.html#find-similar-locations">find_similar_locations</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.geoanalytics.find_locations.html#geocode-locations">geocode_locations</a></li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="arcgis.geoanalytics.manage_data.html">arcgis.geoanalytics.manage_data module</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.geoanalytics.manage_data.html#calculate-fields">calculate_fields</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.geoanalytics.manage_data.html#copy-to-data-store">copy_to_data_store</a></li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="arcgis.geoanalytics.summarize_data.html">arcgis.geoanalytics.summarize_data module</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.geoanalytics.summarize_data.html#aggregate-points">aggregate_points</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.geoanalytics.summarize_data.html#join-features">join_features</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.geoanalytics.summarize_data.html#reconstruct-tracks">reconstruct_tracks</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.geoanalytics.summarize_data.html#summarize-attributes">summarize_attributes</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.geoanalytics.summarize_data.html#summarize-within">summarize_within</a></li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="arcgis.geoanalytics.use_proximity.html">arcgis.geoanalytics.use_proximity module</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.geoanalytics.use_proximity.html#create-buffers">create_buffers</a></li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="arcgis.geocoding.html">arcgis.geocoding module</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="arcgis.geocoding.html#geocoder">Geocoder</a></li>
-<li class="toctree-l2"><a class="reference internal" href="arcgis.geocoding.html#get-geocoders">get_geocoders</a></li>
-<li class="toctree-l2"><a class="reference internal" href="arcgis.geocoding.html#geocode">geocode</a></li>
-<li class="toctree-l2"><a class="reference internal" href="arcgis.geocoding.html#geocode-from-items">geocode_from_items</a></li>
-<li class="toctree-l2"><a class="reference internal" href="arcgis.geocoding.html#analyze-geocode-input">analyze_geocode_input</a></li>
-<li class="toctree-l2"><a class="reference internal" href="arcgis.geocoding.html#reverse-geocode">reverse_geocode</a></li>
-<li class="toctree-l2"><a class="reference internal" href="arcgis.geocoding.html#batch-geocode">batch_geocode</a></li>
-<li class="toctree-l2"><a class="reference internal" href="arcgis.geocoding.html#suggest">suggest</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="arcgis.geoenrichment.html">arcgis.geoenrichment module</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="arcgis.geoenrichment.html#country">Country</a></li>
-<li class="toctree-l2"><a class="reference internal" href="arcgis.geoenrichment.html#get-countries">get_countries</a></li>
-<li class="toctree-l2"><a class="reference internal" href="arcgis.geoenrichment.html#create-report">create_report</a></li>
-<li class="toctree-l2"><a class="reference internal" href="arcgis.geoenrichment.html#enrich">enrich</a></li>
-<li class="toctree-l2"><a class="reference internal" href="arcgis.geoenrichment.html#find-businesses">find_businesses</a></li>
-<li class="toctree-l2"><a class="reference internal" href="arcgis.geoenrichment.html#standard-geography-query">standard_geography_query</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="arcgis.geometry.html">arcgis.geometry module</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="arcgis.geometry.html#point">Point</a></li>
-<li class="toctree-l2"><a class="reference internal" href="arcgis.geometry.html#multipoint">MultiPoint</a></li>
-<li class="toctree-l2"><a class="reference internal" href="arcgis.geometry.html#polyline">Polyline</a></li>
-<li class="toctree-l2"><a class="reference internal" href="arcgis.geometry.html#polygon">Polygon</a></li>
-<li class="toctree-l2"><a class="reference internal" href="arcgis.geometry.html#envelope">Envelope</a></li>
-<li class="toctree-l2"><a class="reference internal" href="arcgis.geometry.html#spatialreference">SpatialReference</a></li>
-<li class="toctree-l2"><a class="reference internal" href="arcgis.geometry.html#geometry">Geometry</a></li>
-<li class="toctree-l2"><a class="reference internal" href="arcgis.geometry.html#areas-and-lengths">areas_and_lengths</a></li>
-<li class="toctree-l2"><a class="reference internal" href="arcgis.geometry.html#auto-complete">auto_complete</a></li>
-<li class="toctree-l2"><a class="reference internal" href="arcgis.geometry.html#buffer">buffer</a></li>
-<li class="toctree-l2"><a class="reference internal" href="arcgis.geometry.html#convex-hull">convex_hull</a></li>
-<li class="toctree-l2"><a class="reference internal" href="arcgis.geometry.html#cut">cut</a></li>
-<li class="toctree-l2"><a class="reference internal" href="arcgis.geometry.html#density">density</a></li>
-<li class="toctree-l2"><a class="reference internal" href="arcgis.geometry.html#difference">difference</a></li>
-<li class="toctree-l2"><a class="reference internal" href="arcgis.geometry.html#distance">distance</a></li>
-<li class="toctree-l2"><a class="reference internal" href="arcgis.geometry.html#find-transformation">find_transformation</a></li>
-<li class="toctree-l2"><a class="reference internal" href="arcgis.geometry.html#from-geo-coordinate-string">from_geo_coordinate_string</a></li>
-<li class="toctree-l2"><a class="reference internal" href="arcgis.geometry.html#generalize">generalize</a></li>
-<li class="toctree-l2"><a class="reference internal" href="arcgis.geometry.html#intersect">intersect</a></li>
-<li class="toctree-l2"><a class="reference internal" href="arcgis.geometry.html#label-points">label_points</a></li>
-<li class="toctree-l2"><a class="reference internal" href="arcgis.geometry.html#lengths">lengths</a></li>
-<li class="toctree-l2"><a class="reference internal" href="arcgis.geometry.html#offset">offset</a></li>
-<li class="toctree-l2"><a class="reference internal" href="arcgis.geometry.html#project">project</a></li>
-<li class="toctree-l2"><a class="reference internal" href="arcgis.geometry.html#relation">relation</a></li>
-<li class="toctree-l2"><a class="reference internal" href="arcgis.geometry.html#reshape">reshape</a></li>
-<li class="toctree-l2"><a class="reference internal" href="arcgis.geometry.html#to-geo-coordinate-string">to_geo_coordinate_string</a></li>
-<li class="toctree-l2"><a class="reference internal" href="arcgis.geometry.html#trim-extend">trim_extend</a></li>
-<li class="toctree-l2"><a class="reference internal" href="arcgis.geometry.html#union">union</a></li>
-<li class="toctree-l2"><a class="reference internal" href="arcgis.geometry.html#submodules">Submodules</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="arcgis.geometry.filters.html">arcgis.geometry.filters module</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.geometry.filters.html#intersects">intersects</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.geometry.filters.html#contains">contains</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.geometry.filters.html#crosses">crosses</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.geometry.filters.html#envelope-intersects">envelope_intersects</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.geometry.filters.html#index-intersects">index_intersects</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.geometry.filters.html#overlaps">overlaps</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.geometry.filters.html#touches">touches</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.geometry.filters.html#within">within</a></li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="arcgis.geoprocessing.html">arcgis.geoprocessing module</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="arcgis.geoprocessing.html#import-toolbox">import_toolbox</a></li>
-<li class="toctree-l2"><a class="reference internal" href="arcgis.geoprocessing.html#datafile">DataFile</a></li>
-<li class="toctree-l2"><a class="reference internal" href="arcgis.geoprocessing.html#linearunit">LinearUnit</a></li>
-<li class="toctree-l2"><a class="reference internal" href="arcgis.geoprocessing.html#rasterdata">RasterData</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="arcgis.mapping.html">arcgis.mapping module</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="arcgis.mapping.html#webmap">WebMap</a></li>
-<li class="toctree-l2"><a class="reference internal" href="arcgis.mapping.html#webscene">WebScene</a></li>
-<li class="toctree-l2"><a class="reference internal" href="arcgis.mapping.html#mapimagelayer">MapImageLayer</a></li>
-<li class="toctree-l2"><a class="reference internal" href="arcgis.mapping.html#mapimagelayermanager">MapImageLayerManager</a></li>
-<li class="toctree-l2"><a class="reference internal" href="arcgis.mapping.html#vectortilelayer">VectorTileLayer</a></li>
-<li class="toctree-l2"><a class="reference internal" href="arcgis.mapping.html#export-map">export_map</a></li>
-<li class="toctree-l2"><a class="reference internal" href="arcgis.mapping.html#get-layout-templates">get_layout_templates</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="arcgis.realtime.html">arcgis.realtime module</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="arcgis.realtime.html#streamlayer">StreamLayer</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="arcgis.schematics.html">arcgis.schematics module</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="arcgis.schematics.html#schematiclayers">SchematicLayers</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="arcgis.widgets.html">arcgis.widgets module</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="arcgis.widgets.html#mapview">MapView</a></li>
-</ul>
-</li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.env.html">arcgis.env module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.features.toc.html">arcgis.features module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.raster.toc.html">arcgis.raster module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.network.toc.html">arcgis.network module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.geoanalytics.toc.html">arcgis.geoanalytics module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.geocoding.html">arcgis.geocoding module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.geoenrichment.html">arcgis.geoenrichment module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.geometry.html">arcgis.geometry module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.geoprocessing.html">arcgis.geoprocessing module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.mapping.html">arcgis.mapping module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.realtime.html">arcgis.realtime module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.schematics.html">arcgis.schematics module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.widgets.html">arcgis.widgets module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.apps.html">arcgis.apps module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.learn.html">arcgis.learn module</a></li>
 </ul>
 
             
@@ -703,8 +245,8 @@ file/password manager by that profile name. Multiple profiles can be created and
 <p>See <a class="reference external" href="https://developers.arcgis.com/python/guide/working-with-different-authentication-schemes/">https://developers.arcgis.com/python/guide/working-with-different-authentication-schemes/</a> for examples.</p>
 <table border="1" class="docutils">
 <colgroup>
-<col width="18%" />
-<col width="82%" />
+<col width="17%" />
+<col width="83%" />
 </colgroup>
 <tbody valign="top">
 <tr class="row-odd"><td><strong>Argument</strong></td>
@@ -731,7 +273,8 @@ authentication</td>
 </tr>
 <tr class="row-even"><td>cert_file</td>
 <td>Optional string. The file path to a user’s certificate file for PKI
-authentication</td>
+authentication. If a PFX or P12 certificate is used, a password is required.
+If a PEM file is used, the key_file is required.</td>
 </tr>
 <tr class="row-odd"><td>verify_cert</td>
 <td>Optional boolean. If a site has an invalid SSL certificate or is
@@ -747,7 +290,7 @@ will be used as the default GIS object throughout the whole
 scripting session.</td>
 </tr>
 <tr class="row-odd"><td>client_id</td>
-<td>Optional string. Used for OAuth athentication.  This is the
+<td>Optional string. Used for OAuth authentication.  This is the
 client ID value.</td>
 </tr>
 <tr class="row-even"><td>profile</td>
@@ -769,8 +312,10 @@ arguments:</p>
 <td><strong>Description</strong></td>
 </tr>
 <tr class="row-even"><td>proxy_host</td>
-<td>Optional string. The host name of the proxy server used to allow HTTP/S
-access in the network where the script is run.</td>
+<td><p class="first">Optional string. The host name of the proxy server used to allow HTTP/S
+access in the network where the script is run.</p>
+<p class="last">ex: 127.0.0.1</p>
+</td>
 </tr>
 <tr class="row-odd"><td>proxy_port</td>
 <td>Optional integer. The proxy host port.  The default is 80.</td>
@@ -804,28 +349,44 @@ is None and the security for the site uses BUILT-IN security.</td>
           <span class="n">password</span><span class="o">=</span><span class="s2">&quot;password1&quot;</span><span class="p">,</span> <span class="n">verify_cert</span><span class="o">=</span><span class="bp">False</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>gis = GIS(proxy_host=‘127.0.0.1’, proxy_port=8888)</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="c1"># Usage Example 5: Anonymous ArcGIS Online Login with Proxy</span>
+
+<span class="n">gis</span> <span class="o">=</span> <span class="n">GIS</span><span class="p">(</span><span class="n">proxy_host</span><span class="o">=</span><span class="s1">&#39;127.0.0.1&#39;</span><span class="p">,</span> <span class="n">proxy_port</span><span class="o">=</span><span class="mi">8888</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="c1"># Usage Example 6: PKI Login to ArcGIS Enterprise, using PKCS12 user certificate</span>
+
+<span class="n">gis</span> <span class="o">=</span> <span class="n">GIS</span><span class="p">(</span><span class="n">url</span><span class="o">=</span><span class="s2">&quot;https://pkienterprise.esri.com/portal&quot;</span><span class="p">,</span>
+          <span class="n">cert_file</span><span class="o">=</span><span class="s2">&quot;C:\users\someuser\mycert.pfx&quot;</span><span class="p">,</span> <span class="n">password</span><span class="o">=</span><span class="s2">&quot;password1&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
 <dl class="attribute">
 <dt id="arcgis.gis.GIS.content">
 <code class="descname">content</code><a class="headerlink" href="#arcgis.gis.GIS.content" title="Permalink to this definition">¶</a></dt>
-<dd><p>The resource manager for GIS content.</p>
+<dd><p>The resource manager for GIS content. See <a class="reference internal" href="#arcgis.gis.ContentManager" title="arcgis.gis.ContentManager"><code class="xref py py-class docutils literal"><span class="pre">ContentManager</span></code></a>.</p>
 </dd></dl>
 
 <dl class="attribute">
 <dt id="arcgis.gis.GIS.groups">
 <code class="descname">groups</code><a class="headerlink" href="#arcgis.gis.GIS.groups" title="Permalink to this definition">¶</a></dt>
-<dd><p>The resource manager for GIS groups.</p>
+<dd><p>The resource manager for GIS groups. See <a class="reference internal" href="#arcgis.gis.GroupManager" title="arcgis.gis.GroupManager"><code class="xref py py-class docutils literal"><span class="pre">GroupManager</span></code></a>.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="arcgis.gis.GIS.hub">
+<code class="descname">hub</code><a class="headerlink" href="#arcgis.gis.GIS.hub" title="Permalink to this definition">¶</a></dt>
+<dd><p>The resource manager for GIS hub. See <a class="reference internal" href="arcgis.apps.hub.toc.html#arcgis.apps.hub.Hub" title="arcgis.apps.hub.Hub"><code class="xref py py-class docutils literal"><span class="pre">Hub</span></code></a>.</p>
 </dd></dl>
 
 <dl class="method">
 <dt id="arcgis.gis.GIS.map">
-<code class="descname">map</code><span class="sig-paren">(</span><em>location=None</em>, <em>zoomlevel=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.GIS.map" title="Permalink to this definition">¶</a></dt>
+<code class="descname">map</code><span class="sig-paren">(</span><em>location=None</em>, <em>zoomlevel=None</em>, <em>mode='2D'</em>, <em>geocoder=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.GIS.map" title="Permalink to this definition">¶</a></dt>
 <dd><p>Creates a map widget centered at the declared location with the specified
 zoom level. If an address is provided, it is geocoded
 using the GIS’s configured geocoders and if a match is found, the geographic
 extent of the matched address is used as the map extent. If a zoomlevel is also
 provided, the map is centered at the matched address instead and the map is zoomed
-to the specified zoomlevel.</p>
+to the specified zoomlevel. See <a class="reference internal" href="arcgis.widgets.html#module-arcgis.widgets" title="arcgis.widgets"><code class="xref py py-class docutils literal"><span class="pre">widgets</span></code></a> for more information.</p>
 <p>Note: The map widget is only supported within Jupyter Notebook.</p>
 <table border="1" class="docutils">
 <colgroup>
@@ -841,6 +402,12 @@ to the specified zoomlevel.</p>
 </tr>
 <tr class="row-odd"><td>zoomlevel</td>
 <td>Optional integer. The desired zoom level.</td>
+</tr>
+<tr class="row-even"><td>mode</td>
+<td>Optional string of either ‘2D’ or ‘3D’ to specify map mode. Defaults to ‘2D’.</td>
+</tr>
+<tr class="row-odd"><td>geocoder</td>
+<td>Optional Geocoder. Allows users to specify a geocoder to find a given location.</td>
 </tr>
 </tbody>
 </table>
@@ -863,7 +430,8 @@ to the specified zoomlevel.</p>
 <dl class="method">
 <dt id="arcgis.gis.GIS.update_properties">
 <code class="descname">update_properties</code><span class="sig-paren">(</span><em>properties_dict</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.GIS.update_properties" title="Permalink to this definition">¶</a></dt>
-<dd><p>Updates the GIS’s properties from those in properties_dict.</p>
+<dd><p>Updates the GIS’s properties from those in properties_dict. This method can be useful
+for updating the utility services used by the GIS.</p>
 <table border="1" class="docutils">
 <colgroup>
 <col width="18%" />
@@ -883,16 +451,49 @@ values that are to be updated.</td>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">The item if successfully added, None if unsuccessful.</td>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">True if successfully updated, False if unsuccessful.</td>
 </tr>
 </tbody>
 </table>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">For examples of the property names and key/values to use when updating utility services,
+refer to the Portal parameters section at <a class="reference external" href="https://developers.arcgis.com/rest/users-groups-and-items/common-parameters.htm">https://developers.arcgis.com/rest/users-groups-and-items/common-parameters.htm</a></p>
+</div>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="c1"># Usage Example: Update the geocode service</span>
+
+<span class="n">gis</span> <span class="o">=</span> <span class="n">GIS</span><span class="p">(</span><span class="n">profile</span><span class="o">=</span><span class="s1">&#39;xyz&#39;</span><span class="p">)</span>
+<span class="n">upd</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;geocodeService&#39;</span><span class="p">:</span> <span class="p">[{</span>
+  <span class="s2">&quot;singleLineFieldName&quot;</span><span class="p">:</span> <span class="s2">&quot;Single Line Input&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;AtlantaLocator&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;url&quot;</span><span class="p">:</span> <span class="s2">&quot;https://some.server.com/server/rest/services/GeoAnalytics/AtlantaLocator/GeocodeServer&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;itemId&quot;</span><span class="p">:</span> <span class="s2">&quot;abc6e1fc691542938917893c8944606d&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;placeholder&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;placefinding&quot;</span><span class="p">:</span> <span class="s2">&quot;true&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;batch&quot;</span><span class="p">:</span> <span class="s2">&quot;true&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;zoomScale&quot;</span><span class="p">:</span> <span class="mi">10000</span><span class="p">}]}</span>
+
+<span class="n">gis</span><span class="o">.</span><span class="n">update_properties</span><span class="p">(</span><span class="n">upd</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="arcgis.gis.GIS.url">
+<code class="descname">url</code><a class="headerlink" href="#arcgis.gis.GIS.url" title="Permalink to this definition">¶</a></dt>
+<dd><p>Readonly URL of the GIS you are connected to.</p>
 </dd></dl>
 
 <dl class="attribute">
 <dt id="arcgis.gis.GIS.users">
 <code class="descname">users</code><a class="headerlink" href="#arcgis.gis.GIS.users" title="Permalink to this definition">¶</a></dt>
-<dd><p>The resource manager for GIS users.</p>
+<dd><p>The resource manager for GIS users. See <a class="reference internal" href="#arcgis.gis.UserManager" title="arcgis.gis.UserManager"><code class="xref py py-class docutils literal"><span class="pre">UserManager</span></code></a>.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="arcgis.gis.GIS.version">
+<code class="descname">version</code><a class="headerlink" href="#arcgis.gis.GIS.version" title="Permalink to this definition">¶</a></dt>
+<dd><p>returns the GIS version number</p>
 </dd></dl>
 
 </dd></dl>
@@ -969,8 +570,9 @@ type.</p>
 <tr class="row-odd"><td>rel_type</td>
 <td>Required string.  The type of the related item; is one of
 [‘Map2Service’, ‘WMA2Code’, ‘Map2FeatureCollection’, ‘MobileApp2Code’,
-‘Service2Data’, ‘Service2Service’]. See Relationship types in
-REST API help for more information on this parameter.</td>
+‘Service2Data’, ‘Service2Service’]. See
+<a class="reference external" href="https://bit.ly/2LAHNoK">Relationship Types</a>. in the REST API help
+for more information on this parameter.</td>
 </tr>
 </tbody>
 </table>
@@ -979,6 +581,23 @@ REST API help for more information on this parameter.</td>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">Returns True if the relationship was added, False if the add failed.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="arcgis.gis.Item.app_info">
+<code class="descname">app_info</code><a class="headerlink" href="#arcgis.gis.Item.app_info" title="Permalink to this definition">¶</a></dt>
+<dd><p>If the parent item is registered using the register app operation,
+this resource returns information pertaining to the registered app.
+Every registered app gets an App ID and App Secret which in OAuth
+speak are known as client_id and client_secret respectively.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">dict</td>
 </tr>
 </tbody>
 </table>
@@ -1009,8 +628,79 @@ should be either this information or not.</p>
 <td><p class="first">Optional string or None.  Defines if an Item is deprecated or
 authoritative.
 If a value of None is given, then the value will be reset.</p>
-<p class="last">Allowsed Values: authoritative, deprecated, or None</p>
+<p class="last">Allowed Values: authoritative, deprecated, or None</p>
 </td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="arcgis.gis.Item.copy">
+<code class="descname">copy</code><span class="sig-paren">(</span><em>title=None</em>, <em>tags=None</em>, <em>snippet=None</em>, <em>description=None</em>, <em>layers=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.Item.copy" title="Permalink to this definition">¶</a></dt>
+<dd><p>Copy allows for the creation of an item that is derived from the current item.</p>
+<p>For layers, <cite>copy</cite> will create a new item that uses the URL as a reference.
+For non-layer based items, these will be copied and the exact same data will be
+provided.</p>
+<p>If title, tags, snippet of description is not provided the values from <cite>item</cite> will be used.</p>
+<p>Copy use example:</p>
+<blockquote>
+<div><ul class="simple">
+<li>Vector tile service sprite customization</li>
+<li>Limiting feature service exposure</li>
+<li>Sharing content by reference with groups</li>
+<li>Creating backup items.</li>
+</ul>
+</div></blockquote>
+<p><strong>Usage Example</strong></p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">item</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+<span class="go">&lt;Item title:&quot;gisslideshow - Copy 94452b&quot; type:Microsoft Powerpoint owner:geoguy&gt;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">item</span><span class="o">.</span><span class="n">copy</span><span class="p">(</span><span class="n">title</span><span class="o">=</span><span class="s2">&quot;GIS_Tutorial&quot;</span><span class="p">)</span>
+<span class="go">&lt;Item title:&quot;GIS_Tutorial&quot; type:Microsoft Powerpoint owner:geoguy&gt;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">item</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+<span class="go">&lt;Item title:&quot;NZTiles - Copy 021a06&quot; type:Vector Tile Layer owner:geoguy&gt;</span>
+</pre></div>
+</div>
+<table border="1" class="docutils">
+<colgroup>
+<col width="27%" />
+<col width="73%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><strong>Argument</strong></td>
+<td><strong>Description</strong></td>
+</tr>
+<tr class="row-even"><td>title</td>
+<td>Optional string. The name of the new item.</td>
+</tr>
+<tr class="row-odd"><td>tags</td>
+<td>Optional list of string. Descriptive words that help in the
+searching and locating of the published information.</td>
+</tr>
+<tr class="row-even"><td>snippet</td>
+<td>Optional string. A brief summary of the information being
+published.</td>
+</tr>
+<tr class="row-odd"><td>description</td>
+<td>Optional string. A long description of the Item being
+published.</td>
+</tr>
+<tr class="row-even"><td>layers</td>
+<td><p class="first">Optional list of integers.  If you have a layer with multiple
+and you only want specific layers, an index can be provided
+those layers.  If nothing is provided, all layers will be
+visible.</p>
+<p class="last">Example: layers=[0,3]
+Example 2: layers=[9]</p>
+</td>
+</tr>
+</tbody>
+</table>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">Item</td>
 </tr>
 </tbody>
 </table>
@@ -1071,6 +761,37 @@ want the service to be owned by another user, pass in this value.</td>
 </dd></dl>
 
 <dl class="method">
+<dt id="arcgis.gis.Item.create_thumbnail">
+<code class="descname">create_thumbnail</code><span class="sig-paren">(</span><em>update=True</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.Item.create_thumbnail" title="Permalink to this definition">¶</a></dt>
+<dd><p>Creates a Thumbnail for a feature service portal item using the service’s symbology
+and the print service registered for the enterprise.</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="18%" />
+<col width="82%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><strong>Argument</strong></td>
+<td><strong>Description</strong></td>
+</tr>
+<tr class="row-even"><td>update</td>
+<td>Optional boolean. When set to True, the item will be updated with the
+thumbnail generated in this call, else it will not update the item.
+The default is True.</td>
+</tr>
+</tbody>
+</table>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">DataFile</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
 <dt id="arcgis.gis.Item.create_tile_service">
 <code class="descname">create_tile_service</code><span class="sig-paren">(</span><em>title</em>, <em>min_scale</em>, <em>max_scale</em>, <em>cache_info=None</em>, <em>build_cache=False</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.Item.create_tile_service" title="Permalink to this definition">¶</a></dt>
 <dd><p>Allows publishers and administrators to publish hosted feature
@@ -1119,16 +840,75 @@ to publish the service.</td>
 
 <dl class="method">
 <dt id="arcgis.gis.Item.delete">
-<code class="descname">delete</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.Item.delete" title="Permalink to this definition">¶</a></dt>
-<dd><p>Deletes an item.</p>
+<code class="descname">delete</code><span class="sig-paren">(</span><em>force=False</em>, <em>dry_run=False</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.Item.delete" title="Permalink to this definition">¶</a></dt>
+<dd><p>Deletes the item. If unable to delete, raises a RuntimeException. To know if you can safely delete the item,
+use the optional parameter ‘dry_run’</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="18%" />
+<col width="82%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><strong>Argument</strong></td>
+<td><strong>Description</strong></td>
+</tr>
+<tr class="row-even"><td>force</td>
+<td>Optional bool. Available in ArcGIS Enterprise 10.6.1 and higher.
+Force deletion is applicable only to items that were orphaned when
+a server federated to the ArcGIS Enterprise was removed accidentally
+before properly unfederating it. When called on other items, it has
+no effect.</td>
+</tr>
+<tr class="row-odd"><td>dry_run</td>
+<td>Optional bool. Available in ArcGIS Enterprise 10.6.1 and higher.If
+True, checks if the item can be safely deleted and gives you back
+either a dictionary with details. If dependent items are preventing
+deletion, a list of such Item objects are provided.</td>
+</tr>
+</tbody>
+</table>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">A boolean indicating success (True) or failure (False).</td>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">A bool containing True (for success) or False (for failure). When dry_run is used, a dictionary with
+details is returned.</td>
 </tr>
 </tbody>
 </table>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">USAGE</span> <span class="n">EXAMPLE</span><span class="p">:</span> <span class="n">Successful</span> <span class="n">deletion</span> <span class="n">of</span> <span class="n">an</span> <span class="n">item</span>
+
+<span class="n">item1</span> <span class="o">=</span> <span class="n">gis</span><span class="o">.</span><span class="n">content</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;itemId12345&#39;</span><span class="p">)</span>
+<span class="n">item1</span><span class="o">.</span><span class="n">delete</span><span class="p">()</span>
+
+<span class="o">&gt;&gt;</span> <span class="bp">True</span>
+</pre></div>
+</div>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">USAGE</span> <span class="n">EXAMPLE</span><span class="p">:</span> <span class="n">Failed</span> <span class="n">deletion</span> <span class="n">of</span> <span class="n">an</span> <span class="n">item</span>
+
+<span class="n">item1</span> <span class="o">=</span> <span class="n">gis</span><span class="o">.</span><span class="n">content</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;itemId12345&#39;</span><span class="p">)</span>
+<span class="n">item1</span><span class="o">.</span><span class="n">delete</span><span class="p">()</span>
+
+<span class="o">&gt;&gt;</span> <span class="ne">RuntimeError</span><span class="p">:</span> <span class="n">Unable</span> <span class="n">to</span> <span class="n">delete</span> <span class="n">item</span><span class="o">.</span> <span class="n">This</span> <span class="n">service</span> <span class="n">item</span> <span class="n">has</span> <span class="n">a</span> <span class="n">related</span> <span class="n">Service</span> <span class="n">item</span>
+<span class="o">&gt;&gt;</span> <span class="p">(</span><span class="n">Error</span> <span class="n">Code</span><span class="p">:</span> <span class="mi">400</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">USAGE</span> <span class="n">EXAMPLE</span><span class="p">:</span> <span class="n">Dry</span> <span class="n">run</span> <span class="n">to</span> <span class="n">check</span> <span class="n">deletion</span> <span class="n">of</span> <span class="n">an</span> <span class="n">item</span>
+
+<span class="n">item1</span> <span class="o">=</span> <span class="n">gis</span><span class="o">.</span><span class="n">content</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;itemId12345abcde&#39;</span><span class="p">)</span>
+<span class="n">item1</span><span class="o">.</span><span class="n">delete</span><span class="p">(</span><span class="n">dry_run</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+
+<span class="o">&gt;&gt;</span> <span class="p">{</span><span class="s1">&#39;can_delete&#39;</span><span class="p">:</span> <span class="bp">False</span><span class="p">,</span>
+<span class="o">&gt;&gt;</span> <span class="s1">&#39;details&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;code&#39;</span><span class="p">:</span> <span class="mi">400</span><span class="p">,</span>
+<span class="o">&gt;&gt;</span> <span class="s1">&#39;message&#39;</span><span class="p">:</span> <span class="s1">&#39;Unable to delete item. This service item has a related Service item&#39;</span><span class="p">,</span>
+<span class="o">&gt;&gt;</span> <span class="s1">&#39;offending_items&#39;</span><span class="p">:</span> <span class="p">[</span><span class="o">&lt;</span><span class="n">Item</span> <span class="n">title</span><span class="p">:</span><span class="s2">&quot;Chicago_accidents_WFS&quot;</span> <span class="nb">type</span><span class="p">:</span><span class="n">WFS</span> <span class="n">owner</span><span class="p">:</span><span class="n">sharing1</span><span class="o">&gt;</span><span class="p">]}}</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">During the dry run, if you receive a list of offending items, attempt to delete them first before deleting
+the current item. You can in turn call ‘dry_run’ on those items to ensure they can be deleted safely.</p>
+</div>
 </dd></dl>
 
 <dl class="method">
@@ -1156,8 +936,9 @@ to publish the service.</td>
 <tr class="row-odd"><td>rel_type</td>
 <td>Required string.  The type of the related item; is one of
 [‘Map2Service’, ‘WMA2Code’, ‘Map2FeatureCollection’, ‘MobileApp2Code’,
-‘Service2Data’, ‘Service2Service’]. See Relationship types in
-REST API help for more information on this parameter.</td>
+‘Service2Data’, ‘Service2Service’]. See
+<a class="reference external" href="https://bit.ly/2LAHNoK">Relationship Types</a>. in the REST API help
+for more information on this parameter.</td>
 </tr>
 </tbody>
 </table>
@@ -1171,21 +952,29 @@ REST API help for more information on this parameter.</td>
 </table>
 </dd></dl>
 
+<dl class="attribute">
+<dt id="arcgis.gis.Item.dependencies">
+<code class="descname">dependencies</code><a class="headerlink" href="#arcgis.gis.Item.dependencies" title="Permalink to this definition">¶</a></dt>
+<dd><p>returns a class to management Item dependencies</p>
+</dd></dl>
+
 <dl class="method">
 <dt id="arcgis.gis.Item.dependent_to">
 <code class="descname">dependent_to</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.Item.dependent_to" title="Permalink to this definition">¶</a></dt>
-<dd><p>Returns items, urls, etc that are dependent to this item.</p>
+<dd><p>Returns items, urls, etc that are dependent to this item. This capability (item dependencies)
+is not yet available on ArcGIS Online. Currently it is available only with an ArcGIS Enterprise.</p>
 </dd></dl>
 
 <dl class="method">
 <dt id="arcgis.gis.Item.dependent_upon">
 <code class="descname">dependent_upon</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.Item.dependent_upon" title="Permalink to this definition">¶</a></dt>
-<dd><p>Returns items, urls, etc that this item is dependent on.</p>
+<dd><p>Returns items, urls, etc that this item is dependent on. This capability (item dependencies)
+is not yet available on ArcGIS Online. Currently it is available only with an ArcGIS Enterprise.</p>
 </dd></dl>
 
 <dl class="method">
 <dt id="arcgis.gis.Item.download">
-<code class="descname">download</code><span class="sig-paren">(</span><em>save_path=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.Item.download" title="Permalink to this definition">¶</a></dt>
+<code class="descname">download</code><span class="sig-paren">(</span><em>save_path=None</em>, <em>file_name=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.Item.download" title="Permalink to this definition">¶</a></dt>
 <dd><p>Downloads the data to the specified folder or a temporary folder if a folder is not provided.</p>
 <table border="1" class="docutils">
 <colgroup>
@@ -1198,6 +987,9 @@ REST API help for more information on this parameter.</td>
 </tr>
 <tr class="row-even"><td>save_path</td>
 <td>Optional string. Folder location to download the file to.</td>
+</tr>
+<tr class="row-odd"><td>file_name</td>
+<td>Optional string. The name of the file.</td>
 </tr>
 </tbody>
 </table>
@@ -1317,7 +1109,11 @@ the item is returned when wait=False.</td>
 <dl class="method">
 <dt id="arcgis.gis.Item.get_data">
 <code class="descname">get_data</code><span class="sig-paren">(</span><em>try_json=True</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.Item.get_data" title="Permalink to this definition">¶</a></dt>
-<dd><p>Retrieves the data component of an item and returns the data associated with an item.</p>
+<dd><p>Retrieves the data associated with an item. Note that this call may
+return different results for different item types: some item types may
+even return <em>None</em>. See
+<a class="reference external" href="https://developers.arcgis.com/rest/users-groups-and-items/working-with-users-groups-and-items.htm">this REST API page</a>
+for more information.</p>
 <table border="1" class="docutils">
 <colgroup>
 <col width="18%" />
@@ -1473,10 +1269,10 @@ available to the item owner and the organization administrator.</p>
 Publishers can create feature, tiled map, vector tile and scene services.</p>
 <p>Feature services can be created using input files of type csv, shapefile, serviceDefinition, featureCollection, and fileGeodatabase.
 CSV files that contain location fields (i.e. address fields or XY fields) are spatially enabled during the process of publishing.
-Shapefiles and file geodatabases should be packaged as <a href="#id2"><span class="problematic" id="id3">*</span></a>.zip files.</p>
-<p>Tiled map services can be created from service definition (<a href="#id4"><span class="problematic" id="id5">*</span></a>.sd) files, tile packages, and existing feature services.</p>
-<p>Vector tile services can be created from vector tile package (<a href="#id6"><span class="problematic" id="id7">*</span></a>.vtpk) files.</p>
-<p>Scene services can be created from scene layer package (<a href="#id8"><span class="problematic" id="id9">*</span></a>.spk, <a href="#id10"><span class="problematic" id="id11">*</span></a>.slpk) files.</p>
+Shapefiles and file geodatabases should be packaged as <a href="#id3"><span class="problematic" id="id4">*</span></a>.zip files.</p>
+<p>Tiled map services can be created from service definition (<a href="#id5"><span class="problematic" id="id6">*</span></a>.sd) files, tile packages, and existing feature services.</p>
+<p>Vector tile services can be created from vector tile package (<a href="#id7"><span class="problematic" id="id8">*</span></a>.vtpk) files.</p>
+<p>Scene services can be created from scene layer package (<a href="#id9"><span class="problematic" id="id10">*</span></a>.spk, <a href="#id11"><span class="problematic" id="id12">*</span></a>.slpk) files.</p>
 <p>Service definitions are authored in ArcGIS for Desktop and contain both the cartographic definition for a map
 as well as its packaged data together with the definition of the geo-service to be created.</p>
 <div class="admonition note">
@@ -1580,10 +1376,70 @@ user.reassign_to() method.  This method only moves one item at a time.</p>
 </dd></dl>
 
 <dl class="method">
+<dt id="arcgis.gis.Item.register">
+<code class="descname">register</code><span class="sig-paren">(</span><em>app_type</em>, <em>redirect_uris=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.Item.register" title="Permalink to this definition">¶</a></dt>
+<dd><p>The register method registers an app item with the enterprise. App
+registration results in an APPID and APPSECRET (also known as
+client_id and client_secret in OAuth speak, respectively) being
+generated for that app. Upon successful registration, a Registered
+App type keyword gets appended to the app item.</p>
+<p><strong>Available to the item owner.</strong></p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="18%" />
+<col width="82%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><strong>Argument</strong></td>
+<td><strong>Description</strong></td>
+</tr>
+<tr class="row-even"><td>app_type</td>
+<td>Required string. The type of app that was registered indicating
+whether it’s a browser app, native app, server app, or a multiple
+interface app.
+Values: browser, native, server, or multiple</td>
+</tr>
+<tr class="row-odd"><td>redirect_uris</td>
+<td><p class="first">Optional list.  The URIs where the access_token or authorization
+code will be delivered upon successful authorization. The
+redirect_uri specified during authorization must match one of the
+registered URIs, otherwise authorization will be rejected.</p>
+<p>A special value of <a class="reference external" href="urn:ietf:wg:oauth:2.0:oob">urn:ietf:wg:oauth:2.0:oob</a> can also be specified
+for authorization grants. This will result in the authorization
+code being delivered to a portal URL (/oauth2/approval). This
+value is typically used by apps that don’t have a web server or a
+custom URI scheme where the code can be delivered.</p>
+<p>The value is a JSON string array.</p>
+<p>Example:</p>
+<dl class="docutils">
+<dt>[</dt>
+<dd>“<a class="reference external" href="https://app.example.com">https://app.example.com</a>”,
+“<a class="reference external" href="urn:ietf:wg:oauth:2.0:oob">urn:ietf:wg:oauth:2.0:oob</a>”</dd>
+</dl>
+<p class="last">]</p>
+</td>
+</tr>
+</tbody>
+</table>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">dict</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
 <dt id="arcgis.gis.Item.related_items">
 <code class="descname">related_items</code><span class="sig-paren">(</span><em>rel_type</em>, <em>direction='forward'</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.Item.related_items" title="Permalink to this definition">¶</a></dt>
 <dd><p>Retrieves the items related to this item. Relationships can be added and deleted using
 item.add_relationship() and item.delete_relationship(), respectively.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">With WebMaps items, relationships are only available on local enterprises.</p>
+</div>
 <table border="1" class="docutils">
 <colgroup>
 <col width="18%" />
@@ -1596,8 +1452,9 @@ item.add_relationship() and item.delete_relationship(), respectively.</p>
 <tr class="row-even"><td>rel_type</td>
 <td>Required string.  The type of the related item; is one of
 [‘Map2Service’, ‘WMA2Code’, ‘Map2FeatureCollection’, ‘MobileApp2Code’,
-‘Service2Data’, ‘Service2Service’]. See Relationship types in
-REST API help for more information on this parameter.</td>
+‘Service2Data’, ‘Service2Service’]. See
+<a class="reference external" href="https://bit.ly/2LAHNoK">Relationship Types</a>. in the REST API help
+for more information on this parameter.</td>
 </tr>
 <tr class="row-odd"><td>direction</td>
 <td>Required string. One of [‘forward’, ‘reverse’]</td>
@@ -1609,6 +1466,20 @@ REST API help for more information on this parameter.</td>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">The list of related items.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="arcgis.gis.Item.resources">
+<code class="descname">resources</code><a class="headerlink" href="#arcgis.gis.Item.resources" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the Item’s Resource Manager</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">ResourceManager</td>
 </tr>
 </tbody>
 </table>
@@ -1636,7 +1507,7 @@ everyone.</td>
 the organization.</td>
 </tr>
 <tr class="row-even"><td>groups</td>
-<td>Optional list of group names as strings, or a list of
+<td>Optional list of group ids as strings, or a list of
 arcgis.gis.Group objects, or a comma-separated list of
 group IDs.</td>
 </tr>
@@ -1651,6 +1522,28 @@ shared with groups that allow shared update</td>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">A dictionary with key “notSharedWith” containing array of groups with which the item could not be shared.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="arcgis.gis.Item.shared_with">
+<code class="descname">shared_with</code><a class="headerlink" href="#arcgis.gis.Item.shared_with" title="Permalink to this definition">¶</a></dt>
+<dd><p>Reveals the privacy or sharing status of the current item. An item can be private or shared with one or more of
+the following: A specified list of groups, to all members in the organization or to everyone (including
+anonymous users). If the return is False for <cite>org</cite>, <cite>everyone</cite> and contains an empty list of <cite>groups</cite>, then the
+item is private and visible only to the owner.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">Dictionary of the following kind
+{
+‘groups’: [],  # one or more Group objects
+‘everyone’: True | False,
+‘org’: True | False
+}</td>
 </tr>
 </tbody>
 </table>
@@ -1689,6 +1582,23 @@ below. Values: <cite>publish</cite>, generateFeatures, export, and createService
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">The status of a publishing item.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="arcgis.gis.Item.unregister">
+<code class="descname">unregister</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.Item.unregister" title="Permalink to this definition">¶</a></dt>
+<dd><p>The unregister app removes the application registration from an app
+item along with the Registered App type keyword.</p>
+<p>The operation is available to item owner and organization administrators.</p>
+<p><strong>Available to the item owner.</strong></p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">boolean</td>
 </tr>
 </tbody>
 </table>
@@ -1790,28 +1700,31 @@ item’s description, then only provide the description argument in item_propert
 <td>Optional string. Tags listed as comma-separated values, or a list of strings.
 Used for searches on items.</td>
 </tr>
-<tr class="row-even"><td>snippet</td>
+<tr class="row-even"><td>text</td>
+<td>Optional string. For text based items such as Feature Collections &amp; WebMaps</td>
+</tr>
+<tr class="row-odd"><td>snippet</td>
 <td>Optional string. Provide a short summary (limit to max 250 characters) of the what the item is.</td>
 </tr>
-<tr class="row-odd"><td>extent</td>
+<tr class="row-even"><td>extent</td>
 <td>Optional string. Provide comma-separated values for min x, min y, max x, max y.</td>
 </tr>
-<tr class="row-even"><td>spatialReference</td>
+<tr class="row-odd"><td>spatialReference</td>
 <td>Optional string. Coordinate system that the item is in.</td>
 </tr>
-<tr class="row-odd"><td>accessInformation</td>
+<tr class="row-even"><td>accessInformation</td>
 <td>Optional string. Information on the source of the content.</td>
 </tr>
-<tr class="row-even"><td>licenseInfo</td>
+<tr class="row-odd"><td>licenseInfo</td>
 <td>Optional string.  Any license information or restrictions regarding the content.</td>
 </tr>
-<tr class="row-odd"><td>culture</td>
+<tr class="row-even"><td>culture</td>
 <td>Optional string. Locale, country and language information.</td>
 </tr>
-<tr class="row-even"><td>access</td>
+<tr class="row-odd"><td>access</td>
 <td>Optional string. Valid values are private, shared, org, or public.</td>
 </tr>
-<tr class="row-odd"><td>commentsEnabled</td>
+<tr class="row-even"><td>commentsEnabled</td>
 <td>Optional boolean. Default is true, controls whether comments are allowed (true)
 or not allowed (false).</td>
 </tr>
@@ -1828,6 +1741,90 @@ or not allowed (false).</td>
 </table>
 </dd></dl>
 
+<dl class="method">
+<dt id="arcgis.gis.Item.usage">
+<code class="descname">usage</code><span class="sig-paren">(</span><em>date_range='7D'</em>, <em>as_df=True</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.Item.usage" title="Permalink to this definition">¶</a></dt>
+<dd><p>ArcGIS Enterprise 10.7+ and ArcGIS Online Only</p>
+<p>For item owners and administrators, usage provides usage details about an item that help you
+gauge its popularity. Usage details show how many times the item has been used for the time
+period you select. Historical usage information is available for the past year. Depending on
+the item type, usage details can include the number of views, requests, or downloads, and
+the average number of views, requests, or downloads per day.</p>
+<p>Views refers to the number of times the item has been viewed or opened. For maps, scenes,
+nonhosted layers, and web apps, the view count is increased by one when you open the item
+page or open the item in Map Viewer. For example, if you opened the item page for a map
+image layer and clicked Open in Map Viewer, the count would increase by two. For other items
+such as mobile apps, KML, and so on, the view count is increased by one when you open the
+item; the count does not increase when you open the item details page.</p>
+<p>For hosted web layers (feature, tile, and scene), the number of requests is provided instead
+of views. Requests refers to the number of times a request is made for the data within the
+layer. For example, someone might open an app that contains a hosted feature layer. Opening
+the app counts as one view for the application, but multiple requests may be necessary to
+draw all the features in the hosted layer and are counted as such.</p>
+<p>For downloadable file item types such as CSV, SHP, and so on, the number of downloads is
+displayed. For registered apps, the Usage tab also displays the number of times users have
+logged in to the app. Apps that allow access to subscriber content through the organization
+subscription show usage by credits. You can change the time frame for the credit usage
+reporting period.</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="18%" />
+<col width="82%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><strong>Argument</strong></td>
+<td><strong>Description</strong></td>
+</tr>
+<tr class="row-even"><td>date_range</td>
+<td><p class="first">Optional string.  The default is 7d.  This is the period to query
+usage for a given item.</p>
+<table border="1" class="last docutils">
+<colgroup>
+<col width="22%" />
+<col width="78%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td>24H</td>
+<td>Past 24 hours</td>
+</tr>
+<tr class="row-even"><td>7D</td>
+<td>Past 7 days (default)</td>
+</tr>
+<tr class="row-odd"><td>14D</td>
+<td>Past 14 days</td>
+</tr>
+<tr class="row-even"><td>30D</td>
+<td>Past 30 days</td>
+</tr>
+<tr class="row-odd"><td>60D</td>
+<td>Past 60 days</td>
+</tr>
+<tr class="row-even"><td>6M</td>
+<td>Past 6 months</td>
+</tr>
+<tr class="row-odd"><td>1Y</td>
+<td>Past 12 months</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+<tr class="row-even"><td>as_df</td>
+<td>Optional boolean.  Returns a Pandas DataFrame when True, returns data
+as a dictionary when False</td>
+</tr>
+</tbody>
+</table>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">Pandas DataFrame or Dictionary</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
 </dd></dl>
 
 </div>
@@ -1838,16 +1835,142 @@ or not allowed (false).</td>
 <em class="property">class </em><code class="descclassname">arcgis.gis.</code><code class="descname">User</code><span class="sig-paren">(</span><em>gis</em>, <em>username</em>, <em>userdict=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.User" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">dict</span></code></p>
 <p>Represents a registered user of the GIS (ArcGIS Online, or Portal for ArcGIS).</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="7%" />
+<col width="93%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><strong>Property</strong></td>
+<td><strong>Details</strong></td>
+</tr>
+<tr class="row-even"><td>username</td>
+<td>The username of the user.</td>
+</tr>
+<tr class="row-odd"><td>fullName</td>
+<td>The user’s full name</td>
+</tr>
+<tr class="row-even"><td>availableCredits</td>
+<td>The number of credits available to the user.</td>
+</tr>
+<tr class="row-odd"><td>assignedCredits</td>
+<td>The number of credits allocated to the user.</td>
+</tr>
+<tr class="row-even"><td>firstName</td>
+<td>The user’s first name.</td>
+</tr>
+<tr class="row-odd"><td>lastName</td>
+<td>The user’s last name.</td>
+</tr>
+<tr class="row-even"><td>preferredView</td>
+<td>The user’s preferred view for content, either web or GIS.</td>
+</tr>
+<tr class="row-odd"><td>description</td>
+<td>A description of the user.</td>
+</tr>
+<tr class="row-even"><td>email</td>
+<td>The user’s e-mail address.</td>
+</tr>
+<tr class="row-odd"><td>idpUsername</td>
+<td>The original username if using enterprise logins.</td>
+</tr>
+<tr class="row-even"><td>favGroupId</td>
+<td>The user’s favorites group and is created automatically for each user.</td>
+</tr>
+<tr class="row-odd"><td>lastLogin</td>
+<td>The last login date of the user as a UNIX timestamp.</td>
+</tr>
+<tr class="row-even"><td>mfaEnabled</td>
+<td>Indicates if the user’s account has multifactor authentication set up.</td>
+</tr>
+<tr class="row-odd"><td>access</td>
+<td>Indicates the level of access of the user: private, org, or public. If private, the user descriptive information will not be available to others nor will the username be searchable.</td>
+</tr>
+<tr class="row-even"><td>storageUsage</td>
+<td>The amount of storage used for the user’s subscription.</td>
+</tr>
+<tr class="row-odd"><td>storageQuota</td>
+<td>Applicable to public users as it sets the total amount of storage available for a subscription. The maximum quota is 2GB.</td>
+</tr>
+<tr class="row-even"><td>orgId</td>
+<td>The ID of the organization the user belongs to.</td>
+</tr>
+<tr class="row-odd"><td>role</td>
+<td>Defines the user’s role in the organization.&lt;br&gt;&lt;br&gt;Values: org_admin (organization administrator or custom role with administrative privileges) , org_publisher (organization publisher or custom role with publisher privileges) , org_user (organization user or custom role with user privileges)</td>
+</tr>
+<tr class="row-even"><td>privileges</td>
+<td>A JSON array of strings with predefined permissions in each. For a complete listing, see Privileges.</td>
+</tr>
+<tr class="row-odd"><td>roleId</td>
+<td>(Optional) The ID of the user’s role if it is a custom one.</td>
+</tr>
+<tr class="row-even"><td>level</td>
+<td>The level of the user.</td>
+</tr>
+<tr class="row-odd"><td>disabled</td>
+<td>Disables access to the organization by the user.</td>
+</tr>
+<tr class="row-even"><td>units</td>
+<td>User-defined units for measurement.</td>
+</tr>
+<tr class="row-odd"><td>tags</td>
+<td>User-defined tags that describe the user.</td>
+</tr>
+<tr class="row-even"><td>culture</td>
+<td>The user locale information (language and country).</td>
+</tr>
+<tr class="row-odd"><td>cultureFormat</td>
+<td>The user preferred number and date format defined in CLDR (only applicable for English and Spanish, i.e. when culture is en or es).&lt;br&gt;&lt;br&gt;See Languages for supported formats. It will inherit from organization cultureFormat if undefined.</td>
+</tr>
+<tr class="row-even"><td>region</td>
+<td>The user preferred region, used to set the featured maps on the home page, content in the gallery, and the default extent of new maps in the Viewer.</td>
+</tr>
+<tr class="row-odd"><td>thumbnail</td>
+<td>The file name of the thumbnail used for the user.</td>
+</tr>
+<tr class="row-even"><td>created</td>
+<td>The date the user was created. Shown in UNIX time.</td>
+</tr>
+<tr class="row-odd"><td>modified</td>
+<td>The date the user was last modified. Shown in UNIX time.</td>
+</tr>
+<tr class="row-even"><td>groups</td>
+<td>A JSON array of groups the user belongs to. See Group for properties of a group.</td>
+</tr>
+<tr class="row-odd"><td>provider</td>
+<td>The identity provider for the organization.&lt;br&gt;Values: arcgis (for built-in users) ,enterprise (for external users managed by an enterprise identity store), facebook (for public accounts in ArcGIS Online), google (for public accounts in ArcGIS Online)</td>
+</tr>
+<tr class="row-even"><td>id</td>
+<td>(optional) The unique identifier of the user used on AGOL/ArcGIS Enterprise 10.7+</td>
+</tr>
+</tbody>
+</table>
+<dl class="attribute">
+<dt id="arcgis.gis.User.bundles">
+<code class="descname">bundles</code><a class="headerlink" href="#arcgis.gis.User.bundles" title="Permalink to this definition">¶</a></dt>
+<dd><p>Provides the current user’s assigned application bundles.</p>
+<p>Available in ArcGIS Online and Portal 10.7+</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">List of Bundle objects</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
 <dl class="method">
 <dt id="arcgis.gis.User.delete">
 <code class="descname">delete</code><span class="sig-paren">(</span><em>reassign_to=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.User.delete" title="Permalink to this definition">¶</a></dt>
 <dd><p>Deletes this user from the portal, optionally deleting or reassigning groups and items.</p>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
-<p class="last">You can not delete a user in Portal if that user owns groups or items.  If you
-specify someone in the reassign_to argument, then items and groups will be
-transferred to that user.  If that argument is not set then the method
-will fail if the user has items or groups that need to be reassigned.</p>
+<p class="last">You can not delete a user in Portal if that user owns groups or items and/or is
+assigned an application bundle.  If you specify someone in the reassign_to
+argument, then items and groups will be transferred to that user.  If that
+argument is not set then the method will fail if the user has items or groups
+that need to be reassigned.</p>
 </div>
 <table border="1" class="docutils">
 <colgroup>
@@ -1927,13 +2050,15 @@ It is only available to the administrator of the organization.</p>
 <dl class="attribute">
 <dt id="arcgis.gis.User.esri_access">
 <code class="descname">esri_access</code><a class="headerlink" href="#arcgis.gis.User.esri_access" title="Permalink to this definition">¶</a></dt>
-<dd><p>Enable or disable ‘Esri access’. Administrator privileges required.
-A member whose account has Esri access enabled can use My Esri and
+<dd><p>When getting, will return a string describing the current user’s esri access
+When setting, supply a <em>bool</em> to enable or disable esri_access for that user (Administrator privileges required)</p>
+<p>A member whose account has Esri access enabled can use My Esri and
 Community and Forums (GeoNet), access e-Learning on the Training
 website, and manage email communications from Esri. The member
 cannot enable or disable their own access to these Esri resources.</p>
+<p><strong>Trial</strong> accounts cannot modify esri_access property.</p>
 <p>Please see: <a class="reference external" href="http://doc.arcgis.com/en/arcgis-online/administer/manage-members.htm#ESRI_SECTION1_7CE845E428034AE8A40EF8C1085E2A23">http://doc.arcgis.com/en/arcgis-online/administer/manage-members.htm#ESRI_SECTION1_7CE845E428034AE8A40EF8C1085E2A23</a>
-for more information.</p>
+or <a class="reference external" href="https://bit.ly/2JsJV1i">https://bit.ly/2JsJV1i</a> for more information.</p>
 </dd></dl>
 
 <dl class="attribute">
@@ -1981,6 +2106,12 @@ for more information.</p>
 <dt id="arcgis.gis.User.groups">
 <code class="descname">groups</code><a class="headerlink" href="#arcgis.gis.User.groups" title="Permalink to this definition">¶</a></dt>
 <dd><p>Gets a list of Group objects the current user belongs to.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="arcgis.gis.User.homepage">
+<code class="descname">homepage</code><a class="headerlink" href="#arcgis.gis.User.homepage" title="Permalink to this definition">¶</a></dt>
+<dd><p>Gets the URL to the HTML page for the user.</p>
 </dd></dl>
 
 <dl class="method">
@@ -2064,6 +2195,21 @@ account.</td>
 <dt id="arcgis.gis.User.notifications">
 <code class="descname">notifications</code><a class="headerlink" href="#arcgis.gis.User.notifications" title="Permalink to this definition">¶</a></dt>
 <dd><p>Gets the list of notifications available for the given user.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="arcgis.gis.User.provisions">
+<code class="descname">provisions</code><a class="headerlink" href="#arcgis.gis.User.provisions" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns a list of all provisioned licenses for the current user.</p>
+<p>Available in 10.7+</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">List</td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
 <dl class="method">
@@ -2293,7 +2439,7 @@ other tasks.</p>
 before allowing the update.</p>
 <p>Built-in roles including organization administrator, publisher, and
 user are assigned as Level 2, members with custom roles can be
-assigned as Level 1 or Level 2.</p>
+assigned as Level 1, 1PlusEdit, or Level 2.</p>
 <p>Level 1 membership allows for limited capabilities given through a
 maximum of 8 privileges: <cite>portal:user:joinGroup,
 portal:user:viewOrgGroups, portal:user:viewOrgItems,
@@ -2317,8 +2463,15 @@ apps that are not allowed at the targeting level.</p>
 <td><strong>Description</strong></td>
 </tr>
 <tr class="row-even"><td>level</td>
-<td>Required integer. The values of 1 or 2. This is the user
-level for the given user.</td>
+<td><p class="first">Required string. The values of 1 or 2. This
+is the user level for the given user.</p>
+<blockquote class="last">
+<div><ul class="simple">
+<li>1 - View only</li>
+<li>2 - Content creator</li>
+</ul>
+</div></blockquote>
+</td>
 </tr>
 </tbody>
 </table>
@@ -2333,9 +2486,43 @@ level for the given user.</td>
 </dd></dl>
 
 <dl class="method">
+<dt id="arcgis.gis.User.update_license_type">
+<code class="descname">update_license_type</code><span class="sig-paren">(</span><em>user_type</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.User.update_license_type" title="Permalink to this definition">¶</a></dt>
+<dd><p>Allows for the updating of the user’s licensing type. This allows
+administrators to change a user from a creator to a viewer or any
+other custom user license type.</p>
+<p><strong>Available in ArcGIS Online and Portal 10.7+</strong></p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="27%" />
+<col width="73%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><strong>Argument</strong></td>
+<td><strong>Description</strong></td>
+</tr>
+<tr class="row-even"><td>user_type</td>
+<td><p class="first">Required string. The user license type to assign a user.</p>
+<p class="last">Built-in Types: creator or viewer</p>
+</td>
+</tr>
+</tbody>
+</table>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">Boolean</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
 <dt id="arcgis.gis.User.update_role">
 <code class="descname">update_role</code><span class="sig-paren">(</span><em>role</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.User.update_role" title="Permalink to this definition">¶</a></dt>
-<dd><p>Updates this user’s role to org_user, org_publisher, org_admin, or a custom role.</p>
+<dd><p>Updates this user’s role to org_user, org_publisher, org_admin, viewer, view_only,
+viewplusedit, or a custom role.</p>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
 <p class="last">There are four types of roles in Portal - user, publisher, administrator and custom roles.
@@ -2354,7 +2541,7 @@ do everything that is possible in Portal. A custom roles privileges can be custo
 </tr>
 <tr class="row-even"><td>role</td>
 <td>Required string. Value must be either org_user,
-org_publisher, org_admin,
+org_publisher, org_admin, viewer, view_only, viewplusedit
 or a custom role object (from gis.users.roles).</td>
 </tr>
 </tbody>
@@ -2367,6 +2554,13 @@ or a custom role object (from gis.users.roles).</td>
 </tr>
 </tbody>
 </table>
+</dd></dl>
+
+<dl class="method">
+<dt id="arcgis.gis.User.user_types">
+<code class="descname">user_types</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.User.user_types" title="Permalink to this definition">¶</a></dt>
+<dd><p>Notes: Available in 10.7+
+returns the user type and assigned applications</p>
 </dd></dl>
 
 </dd></dl>
@@ -2420,6 +2614,12 @@ The list of usernames or single username to be added.</td>
 <dd><p>Gets the group applications for the given group as a list. Available to
 administrators of the group or administrators of an organization if
 the group is part of one.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="arcgis.gis.Group.categories">
+<code class="descname">categories</code><a class="headerlink" href="#arcgis.gis.Group.categories" title="Permalink to this definition">¶</a></dt>
+<dd><p>The category manager for groups. See <a class="reference internal" href="#arcgis.gis.CategorySchemaManager" title="arcgis.gis.CategorySchemaManager"><code class="xref py py-class docutils literal"><span class="pre">CategorySchemaManager</span></code></a>.</p>
 </dd></dl>
 
 <dl class="method">
@@ -2562,10 +2762,59 @@ the group is part of one.</p>
 <dd><p>URL to the thumbnail image</p>
 </dd></dl>
 
+<dl class="attribute">
+<dt id="arcgis.gis.Group.homepage">
+<code class="descname">homepage</code><a class="headerlink" href="#arcgis.gis.Group.homepage" title="Permalink to this definition">¶</a></dt>
+<dd><p>Gets the URL to the HTML page for the group.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="arcgis.gis.Group.invite_by_email">
+<code class="descname">invite_by_email</code><span class="sig-paren">(</span><em>email</em>, <em>message</em>, <em>role='member'</em>, <em>expiration='1 Day'</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.Group.invite_by_email" title="Permalink to this definition">¶</a></dt>
+<dd><div class="deprecated">
+<p><span class="versionmodified">Deprecated since version v1.5.1: </span>Use <cite>Group.invite</cite> instead.</p>
+</div>
+<p>** Deprecated: This function is not supported **</p>
+<p>Invites a user by email to the existing group.</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="22%" />
+<col width="78%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><strong>Argument</strong></td>
+<td><strong>Description</strong></td>
+</tr>
+<tr class="row-even"><td>email</td>
+<td>Required string. The user to send join email to.</td>
+</tr>
+<tr class="row-odd"><td>message</td>
+<td>Required string. The message to send to the user.</td>
+</tr>
+<tr class="row-even"><td>role</td>
+<td>Optional string. Either member (the default) or admin.</td>
+</tr>
+<tr class="row-odd"><td>expiration</td>
+<td>Optional string.  The is the time out of the invite.
+The values are: 1 Day (default), 3 Days, 1 Week, or
+2 Weeks.</td>
+</tr>
+</tbody>
+</table>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">boolean</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
 <dl class="method">
 <dt id="arcgis.gis.Group.invite_users">
 <code class="descname">invite_users</code><span class="sig-paren">(</span><em>usernames</em>, <em>role='group_member'</em>, <em>expiration=10080</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.Group.invite_users" title="Permalink to this definition">¶</a></dt>
-<dd><p>Invites users to this group. The user executing this command must be the group owner.</p>
+<dd><p>Invites existing users to this group. The user executing this command must be the group owner.</p>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
 <p class="last">A user who is invited to this group will see a list of invitations
@@ -2582,7 +2831,7 @@ can either accept or reject the invitation.</p>
 <td><strong>Description</strong></td>
 </tr>
 <tr class="row-even"><td>usernames</td>
-<td>Required string. The users to invite as a list.</td>
+<td>Required list of strings. The users to invite.</td>
 </tr>
 <tr class="row-odd"><td>role</td>
 <td>Optional string. Either group_member (the default) or group_admin.</td>
@@ -2642,20 +2891,78 @@ that the user be logged in.</p>
 </dd></dl>
 
 <dl class="method">
+<dt id="arcgis.gis.Group.notify">
+<code class="descname">notify</code><span class="sig-paren">(</span><em>users</em>, <em>subject</em>, <em>message</em>, <em>method='email'</em>, <em>client_id=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.Group.notify" title="Permalink to this definition">¶</a></dt>
+<dd><p>Creates a group notification that sends a message to all users within
+the group.</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="24%" />
+<col width="76%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><strong>Argument</strong></td>
+<td><strong>Description</strong></td>
+</tr>
+<tr class="row-even"><td>users</td>
+<td>Required List. A list of users or user names.</td>
+</tr>
+<tr class="row-odd"><td>subject</td>
+<td>Required String. The subject of the notification.</td>
+</tr>
+<tr class="row-even"><td>message</td>
+<td>Required String. The message body that will be sent to
+the group’s users.</td>
+</tr>
+<tr class="row-odd"><td>method</td>
+<td><p class="first">Optional String. This is the form for which users will be
+contacted.  The allowed values are: email, push, and
+builtin.</p>
+<ul class="last simple">
+<li>email - sent a message via smtp.</li>
+<li>push - pushes a message out.</li>
+<li>builtin - creates a user notification.</li>
+</ul>
+</td>
+</tr>
+<tr class="row-even"><td>client_id</td>
+<td>Optional String. The client id of the application for the
+push operation.</td>
+</tr>
+</tbody>
+</table>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">Boolean</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="arcgis.gis.Group.protected">
+<code class="descname">protected</code><a class="headerlink" href="#arcgis.gis.Group.protected" title="Permalink to this definition">¶</a></dt>
+<dd><p>Indicates if the group is protected from deletion.
+Default value is false.</p>
+</dd></dl>
+
+<dl class="method">
 <dt id="arcgis.gis.Group.reassign_to">
 <code class="descname">reassign_to</code><span class="sig-paren">(</span><em>target_owner</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.Group.reassign_to" title="Permalink to this definition">¶</a></dt>
 <dd><p>Reassigns this group to another owner.</p>
 <table border="1" class="docutils">
 <colgroup>
-<col width="22%" />
-<col width="78%" />
+<col width="21%" />
+<col width="79%" />
 </colgroup>
 <tbody valign="top">
 <tr class="row-odd"><td><strong>Argument</strong></td>
 <td><strong>Description</strong></td>
 </tr>
 <tr class="row-even"><td>target_owner</td>
-<td>Required string.  The username of the new group owner.</td>
+<td>Required string or User.  The username of the new group owner.</td>
 </tr>
 </tbody>
 </table>
@@ -2994,6 +3301,12 @@ is accessible to every server node in the site.</p>
 <p>Layers can be added to and visualized using maps. They act as inputs to and outputs from analysis tools.</p>
 <p>Layers are created by publishing data to a GIS, and are exposed as a broader resource (Item) in the
 GIS. Layer objects can be obtained through the layers attribute on layer Items in the GIS.</p>
+<dl class="attribute">
+<dt id="arcgis.gis.Layer.filter">
+<code class="descname">filter</code><em class="property"> = None</em><a class="headerlink" href="#arcgis.gis.Layer.filter" title="Permalink to this definition">¶</a></dt>
+<dd><p>optional attribute query string to select features to process by geoanalytics or spatial analysis tools</p>
+</dd></dl>
+
 <dl class="classmethod">
 <dt id="arcgis.gis.Layer.fromitem">
 <em class="property">classmethod </em><code class="descname">fromitem</code><span class="sig-paren">(</span><em>item</em>, <em>index=0</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.Layer.fromitem" title="Permalink to this definition">¶</a></dt>
@@ -3085,6 +3398,151 @@ group owners and admins.</p>
 </dd></dl>
 
 </div>
+<div class="section" id="categoryschemamanager">
+<h2>CategorySchemaManager<a class="headerlink" href="#categoryschemamanager" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="arcgis.gis.CategorySchemaManager">
+<em class="property">class </em><code class="descclassname">arcgis.gis.</code><code class="descname">CategorySchemaManager</code><span class="sig-paren">(</span><em>base_url</em>, <em>gis=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.CategorySchemaManager" title="Permalink to this definition">¶</a></dt>
+<dd><p>Helper class for managing category schemas. This class is not created
+by users directly. An instance of this class, called <cite>categories</cite>, is
+available as a property on <cite>gis.content</cite> or on <cite>gis.groups</cite>.</p>
+<dl class="method">
+<dt id="arcgis.gis.CategorySchemaManager.assign_to_items">
+<code class="descname">assign_to_items</code><span class="sig-paren">(</span><em>items</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.CategorySchemaManager.assign_to_items" title="Permalink to this definition">¶</a></dt>
+<dd><p>This function adds group content categories to the portal items
+specified in the <cite>items</cite> argument (see below). For assigning categories
+to items in a group, you must be the group owner/manager. For assigning
+organization content categories on items, you must be the item owner
+or an administrator who has the <cite>portal:admin:updateItems</cite> privilege.
+A maximum of 100 items can be bulk updated per request.</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="14%" />
+<col width="86%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><strong>Argument</strong></td>
+<td><strong>Description</strong></td>
+</tr>
+<tr class="row-even"><td>items</td>
+<td><p class="first">Required List. A JSON array of item objects. Each is
+specified with the item ID that consists of a categories
+object. categories is specified with an array that lists
+all content categories to update on the item, each with
+full hierarchical path prefixed with /.</p>
+<p>Each item can be categorized to a maximum of 20
+categories.</p>
+<table class="last docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Example:</th><td class="field-body"><dl class="first docutils">
+<dt>[{</dt>
+<dd><dl class="first docutils">
+<dt>“2678d3002eea4e4a825e3bdf10016e61”: {</dt>
+<dd><p class="first last">“categories”: [“/Categories/Geology”, “/Categories/Elevation”]</p>
+</dd>
+</dl>
+<p class="last">}</p>
+</dd>
+<dt>}, {</dt>
+<dd><dl class="first docutils">
+<dt>“c3ad4ed8bcf04d619537cfe252a1760d”: {</dt>
+<dd><p class="first last">“categories”: [“/Categories/Geology”, “/Categories/Land cover/Forest/Deciduous Forest”]</p>
+</dd>
+</dl>
+<p class="last">}</p>
+</dd>
+<dt>}, {</dt>
+<dd><dl class="first docutils">
+<dt>“9ced00fdce3e4b20bb4b05155acbe817”: {</dt>
+<dd><p class="first last">“categories”: []</p>
+</dd>
+</dl>
+<p class="last">}</p>
+</dd>
+</dl>
+<p class="last">}]</p>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">A <cite>dict</cite> of <cite>item_id</cite> : <cite>status</cite>, with <cite>status</cite> being</td>
+</tr>
+</tbody>
+</table>
+<p>whether the content categories were successfully added</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="arcgis.gis.CategorySchemaManager.delete">
+<code class="descname">delete</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.CategorySchemaManager.delete" title="Permalink to this definition">¶</a></dt>
+<dd><p>This function allows group owner or managers to remove the
+category schema set on a group.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">Boolean</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="arcgis.gis.CategorySchemaManager.properties">
+<code class="descname">properties</code><a class="headerlink" href="#arcgis.gis.CategorySchemaManager.properties" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the properties of the schema.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="arcgis.gis.CategorySchemaManager.schema">
+<code class="descname">schema</code><a class="headerlink" href="#arcgis.gis.CategorySchemaManager.schema" title="Permalink to this definition">¶</a></dt>
+<dd><p>This property allows group owners/managers to manage the content
+categories for a group. These content categories are a hierarchical
+set of classes to help organize and browse group content.</p>
+<p>Each group can have a maximum of 5 category trees with each
+category schema can have up to 4 hierarchical levels. The maximum
+number of categories a group can have in total is 200 with each
+category of less than 100 characters title and 300 characters
+description.</p>
+<p>When getting this property, returns the content category schema
+set on a group.</p>
+<p>When setting this property, will update the group category schema
+based on the <cite>dict</cite> this property is set to. See below.</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="24%" />
+<col width="76%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><strong>Argument</strong></td>
+<td><strong>Description</strong></td>
+</tr>
+<tr class="row-even"><td>categories</td>
+<td>Required Dict. A category schema object consists of an
+array of dict objects representing top level categories.
+Each object has title, description and categories
+properties where categories consists of an array of
+objects with each having the same properties and
+represents the descendant categories or subcategories and
+so on.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+</div>
 <div class="section" id="contentmanager">
 <h2>ContentManager<a class="headerlink" href="#contentmanager" title="Permalink to this headline">¶</a></h2>
 <dl class="class">
@@ -3155,6 +3613,12 @@ snippet, and description be provided.</p>
 <tr class="row-even"><td>type</td>
 <td>Optional string. Indicates type of item, see URL 1 below for valid values.</td>
 </tr>
+<tr class="row-odd"><td>dataUrl</td>
+<td>Optional string. The Url of the data stored on cloud storage. If given, filename is required.</td>
+</tr>
+<tr class="row-even"><td>filename</td>
+<td>Optional string. The name of the file on cloud storage.  This is required is dataUrl is used.</td>
+</tr>
 <tr class="row-odd"><td>typeKeywords</td>
 <td>Optional string. Provide a lists all sub-types, see URL 1 below for valid values.</td>
 </tr>
@@ -3192,14 +3656,11 @@ Used for searches on items.</td>
 <tr class="row-even"><td>culture</td>
 <td>Optional string. Locale, country and language information.</td>
 </tr>
-<tr class="row-odd"><td>access</td>
-<td>Optional string. Valid values are private, shared, org, or public.</td>
-</tr>
-<tr class="row-even"><td>commentsEnabled</td>
+<tr class="row-odd"><td>commentsEnabled</td>
 <td>Optional boolean. Default is true, controls whether comments are allowed (true)
 or not allowed (false).</td>
 </tr>
-<tr class="row-odd"><td>culture</td>
+<tr class="row-even"><td>culture</td>
 <td>Optional string. Language and country information.</td>
 </tr>
 </tbody>
@@ -3279,8 +3740,52 @@ Values for Excel: coordinates | address | none</p>
 </dd></dl>
 
 <dl class="method">
+<dt id="arcgis.gis.ContentManager.bulk_update">
+<code class="descname">bulk_update</code><span class="sig-paren">(</span><em>itemids</em>, <em>properties</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.ContentManager.bulk_update" title="Permalink to this definition">¶</a></dt>
+<dd><p>Updates a collection of items’ properties.</p>
+<p>Example:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">itemsids</span> <span class="o">=</span> <span class="n">gis</span><span class="o">.</span><span class="n">content</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="s2">&quot;owner: TestUser12399&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">properties</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;categories&#39;</span> <span class="p">:</span> <span class="p">[</span><span class="s2">&quot;clothes&quot;</span><span class="p">,</span><span class="s2">&quot;formal_wear/socks&quot;</span><span class="p">]}</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">gis</span><span class="o">.</span><span class="n">content</span><span class="o">.</span><span class="n">_bulk_update</span><span class="p">(</span><span class="n">itemids</span><span class="p">,</span> <span class="n">properties</span><span class="p">)</span>
+<span class="go">[{&#39;results&#39; : [{&#39;itemid&#39; : &#39;id&#39;, &#39;success&#39; : &quot;True/False&quot; }]}]</span>
+</pre></div>
+</div>
+<table border="1" class="docutils">
+<colgroup>
+<col width="19%" />
+<col width="81%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><strong>Argument</strong></td>
+<td><strong>Description</strong></td>
+</tr>
+<tr class="row-even"><td>itemids</td>
+<td>Required list of string or Item. The collection of Items to update.</td>
+</tr>
+<tr class="row-odd"><td>properties</td>
+<td>Required dictionary. The Item’s properties to update.</td>
+</tr>
+</tbody>
+</table>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">list of results</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="arcgis.gis.ContentManager.categories">
+<code class="descname">categories</code><a class="headerlink" href="#arcgis.gis.ContentManager.categories" title="Permalink to this definition">¶</a></dt>
+<dd><p>The category manager for items. See <a class="reference internal" href="#arcgis.gis.CategorySchemaManager" title="arcgis.gis.CategorySchemaManager"><code class="xref py py-class docutils literal"><span class="pre">CategorySchemaManager</span></code></a>.</p>
+</dd></dl>
+
+<dl class="method">
 <dt id="arcgis.gis.ContentManager.clone_items">
-<code class="descname">clone_items</code><span class="sig-paren">(</span><em>items</em>, <em>folder=None</em>, <em>item_extent=None</em>, <em>use_org_basemap=False</em>, <em>copy_data=True</em>, <em>search_existing_items=True</em>, <em>item_mapping=None</em>, <em>group_mapping=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.ContentManager.clone_items" title="Permalink to this definition">¶</a></dt>
+<code class="descname">clone_items</code><span class="sig-paren">(</span><em>items</em>, <em>folder=None</em>, <em>item_extent=None</em>, <em>use_org_basemap=False</em>, <em>copy_data=True</em>, <em>search_existing_items=True</em>, <em>item_mapping=None</em>, <em>group_mapping=None</em>, <em>owner=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.ContentManager.clone_items" title="Permalink to this definition">¶</a></dt>
 <dd><p>Clone content to the GIS by creating new items.</p>
 <p>Cloning an item will create a copy of the item and for certain
 item types a copy of the item dependencies in the GIS.</p>
@@ -3333,6 +3838,9 @@ be used rather than cloning the source item.</td>
 <td>Optional dictionary. Can be used to associate a group id in the source
 GIS (key) to a group id in the target GIS (value). The target group will
 be used rather than cloning the source group.</td>
+</tr>
+<tr class="row-even"><td>owner</td>
+<td>Optional string. Defaults to the logged in user.</td>
 </tr>
 </tbody>
 </table>
@@ -3790,8 +4298,97 @@ available for use or not.</p>
 </dd></dl>
 
 <dl class="method">
+<dt id="arcgis.gis.ContentManager.rename_folder">
+<code class="descname">rename_folder</code><span class="sig-paren">(</span><em>old_folder</em>, <em>new_folder</em>, <em>owner=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.ContentManager.rename_folder" title="Permalink to this definition">¶</a></dt>
+<dd><p>Renames an existing folder from it’s existing name to a new name.
+If owner is not specified, owner is set as the logged in user.</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="18%" />
+<col width="82%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><strong>Argument</strong></td>
+<td><strong>Description</strong></td>
+</tr>
+<tr class="row-even"><td>old_folder</td>
+<td>Required string. The name of the folder to rename for the owner.</td>
+</tr>
+<tr class="row-odd"><td>new_folder</td>
+<td>Required string. The new name of the folder.</td>
+</tr>
+<tr class="row-even"><td>owner</td>
+<td>Optional string. User, folder owner, None for logged in user.</td>
+</tr>
+</tbody>
+</table>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">Boolean</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="arcgis.gis.ContentManager.replace_service">
+<code class="descname">replace_service</code><span class="sig-paren">(</span><em>replace_item</em>, <em>new_item</em>, <em>replaced_service_name=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.ContentManager.replace_service" title="Permalink to this definition">¶</a></dt>
+<dd><p>The replace_service operation allows you to replace your production vector tile layers with staging ones. This
+operation allows you to perform quality control on a staging tile layer and to then replace the production tile
+layer with the staging with minimal downtime. This operation has the option to keep a backup of the production
+tile layer.</p>
+<p><em>Note</em>: If you are looking to clone services, use the <cite>clone_items()</cite> method instead.
+<em>Note</em>: This functionality is only available for Vector Tile Services.</p>
+<p>Workflow for replace_service:</p>
+<p>1. Publish the staging service to the same system as the production service. Both services are active at
+the same time. Share the staging service with a smaller set of users and QA the staging service.</p>
+<p>2. The item properties (ex: thumbnail, iteminfo, metadata) of the production item will be preserved.
+If you need to update them use the <cite>Item.update()</cite> method.</p>
+<p>3. Call the replace_service operation. The service running on the hosting server gets replaced
+(for example, its cache).</p>
+<p><a href="#id14"><span class="problematic" id="id15">*</span></a>Note:
+It is the responsibility of the user to ensure both services are functionally equivalent for clients
+consuming them. For example, when replacing a hosted feature service, ensure the new service is constructed
+with the anticipated layers and fields for its client application.</p>
+<p>If you want to retain the replaced production service, for example, to keep an archive of the evolution of the
+service you can do so by omitting a value for “Replaced Service Name” . If replaced service name is not provided,
+the production service being replaced will be archived with a time stamp when replace service was executed.
+You can provide any name for the replaced service as long as it is not pre-existing on your portal content.</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="24%" />
+<col width="76%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><strong>Argument</strong></td>
+<td><strong>Description</strong></td>
+</tr>
+<tr class="row-even"><td>replace_item</td>
+<td>Required Item or Item’s Id as string. The service to be replaced</td>
+</tr>
+<tr class="row-odd"><td>new_item</td>
+<td>Required Item or Item’s Id as string. The replacement service.</td>
+</tr>
+<tr class="row-even"><td>replaced_service_name</td>
+<td>Optional string. The name of the replacement service.</td>
+</tr>
+</tbody>
+</table>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">boolean</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
 <dt id="arcgis.gis.ContentManager.search">
-<code class="descname">search</code><span class="sig-paren">(</span><em>query</em>, <em>item_type=None</em>, <em>sort_field='avgRating'</em>, <em>sort_order='desc'</em>, <em>max_items=10</em>, <em>outside_org=False</em>, <em>categories=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.ContentManager.search" title="Permalink to this definition">¶</a></dt>
+<code class="descname">search</code><span class="sig-paren">(</span><em>query</em>, <em>item_type=None</em>, <em>sort_field='avgRating'</em>, <em>sort_order='desc'</em>, <em>max_items=10</em>, <em>outside_org=False</em>, <em>categories=None</em>, <em>category_filters=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.ContentManager.search" title="Permalink to this definition">¶</a></dt>
 <dd><p>Searches for portal items.</p>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
@@ -3840,6 +4437,13 @@ avgRating, numRatings, numComments, and numViews.</td>
 <tr class="row-even"><td>categories</td>
 <td>Optional string or list. A string of category values.</td>
 </tr>
+<tr class="row-odd"><td>category_filters</td>
+<td><p class="first">Optional string. A comma separated list of up to 3 category terms to
+search items that have matching categories.</p>
+<p class="last">Up to 2 category_filters parameter are allowed per request. It can not be
+used together with categories to search in a request.</p>
+</td>
+</tr>
 </tbody>
 </table>
 <table class="docutils field-list" frame="void" rules="none">
@@ -3847,6 +4451,93 @@ avgRating, numRatings, numComments, and numViews.</td>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">A list of items matching the specified query.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="arcgis.gis.ContentManager.share_items">
+<code class="descname">share_items</code><span class="sig-paren">(</span><em>items</em>, <em>everyone=False</em>, <em>org=False</em>, <em>groups=None</em>, <em>allow_members_to_edit=False</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.ContentManager.share_items" title="Permalink to this definition">¶</a></dt>
+<dd><p>Shares a batch of items with everyone, members of the organization, or specified list of groups.
+Users can only share items with groups to which they belong.</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="24%" />
+<col width="76%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><strong>Argument</strong></td>
+<td><strong>Description</strong></td>
+</tr>
+<tr class="row-even"><td>items</td>
+<td>Required List. A list of Item or item ids to modify sharing on.</td>
+</tr>
+<tr class="row-odd"><td>everyone</td>
+<td>Optional boolean. Default is False, don’t share with everyone.</td>
+</tr>
+<tr class="row-even"><td>org</td>
+<td>Optional boolean. Default is False, don’t share with the
+organization.</td>
+</tr>
+<tr class="row-odd"><td>groups</td>
+<td>Optional list of group names as strings, or a list of
+arcgis.gis.Group objects, or a comma-separated list of group IDs.</td>
+</tr>
+<tr class="row-even"><td>allow_members_to_edit</td>
+<td>Optional boolean. Default is False, to allow item to be shared with
+groups that allow shared update</td>
+</tr>
+</tbody>
+</table>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">dict</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="arcgis.gis.ContentManager.unshare_items">
+<code class="descname">unshare_items</code><span class="sig-paren">(</span><em>items</em>, <em>groups=None</em>, <em>everyone=None</em>, <em>org=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.ContentManager.unshare_items" title="Permalink to this definition">¶</a></dt>
+<dd><p>Unshares a batch of items with the specified list of groups, everyone, or organization.
+Each item’s current sharing will be overwritten with this method.</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="23%" />
+<col width="77%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><strong>Argument</strong></td>
+<td><strong>Description</strong></td>
+</tr>
+<tr class="row-even"><td>items</td>
+<td>Required List. A list of Item or item ids to modify sharing on.</td>
+</tr>
+<tr class="row-odd"><td>everyone</td>
+<td>Required Boolean. If provided, the everyone sharing property will be
+updated.  True means it will share the items with anyone. False means
+the item will not be shared with all users.</td>
+</tr>
+<tr class="row-even"><td>org</td>
+<td>Required Boolean. A true value means that the items will be shared
+with all members of the organization.  A false value means that the
+item will not be shared with all organization users.</td>
+</tr>
+<tr class="row-odd"><td>groups</td>
+<td>Required list of group names as strings, or a list of
+arcgis.gis.Group objects, or a list of group IDs.</td>
+</tr>
+</tbody>
+</table>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">dict</td>
 </tr>
 </tbody>
 </table>
@@ -3865,12 +4556,68 @@ avgRating, numRatings, numComments, and numViews.</td>
 An instance of this class, called ‘users’, is available as a property of the Gis object.
 Users call methods on this ‘users’ object to manipulate (create, get, search, etc) users.</p>
 <dl class="method">
+<dt id="arcgis.gis.UserManager.counts">
+<code class="descname">counts</code><span class="sig-paren">(</span><em>type='bundles'</em>, <em>as_df=True</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.UserManager.counts" title="Permalink to this definition">¶</a></dt>
+<dd><p>This method returns a simple report on the number of licenses currently used
+for a given <cite>type</cite>.  A <cite>type</cite> can be a role, app, bundle or user license type.</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="17%" />
+<col width="83%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><strong>Argument</strong></td>
+<td><strong>Description</strong></td>
+</tr>
+<tr class="row-even"><td>type</td>
+<td><p class="first">Required String. The type of data to return.  The following values are valid:</p>
+<blockquote class="last">
+<div><ul class="simple">
+<li>role - returns counts on user roles</li>
+<li>app - returns counts on registered applications</li>
+<li>bundles - returns counts on application bundles</li>
+<li>user_type - returns counts on the user license types</li>
+</ul>
+</div></blockquote>
+</td>
+</tr>
+<tr class="row-odd"><td>as_df</td>
+<td>Optional boolean. If true, the results are returned as a pandas DataFrame, else
+it is returned as a list of dictionaries.</td>
+</tr>
+</tbody>
+</table>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">Pandas DataFrame if as_df is True. If False, the result is a list of dictionaries.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Example as_df=True</strong></p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">df</span> <span class="o">=</span> <span class="n">gis</span><span class="o">.</span><span class="n">um</span><span class="o">.</span><span class="n">counts</span><span class="p">(</span><span class="s1">&#39;user_type&#39;</span><span class="p">,</span> <span class="kc">True</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">df</span>
+<span class="go">    count        key</span>
+<span class="go"> 0     12  creatorUT</span>
+<span class="go"> 1      2   viewerUT</span>
+</pre></div>
+</div>
+<p><strong>Example as_df=False</strong></p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">df</span> <span class="o">=</span> <span class="n">gis</span><span class="o">.</span><span class="n">um</span><span class="o">.</span><span class="n">counts</span><span class="p">(</span><span class="s1">&#39;user_type&#39;</span><span class="p">,</span> <span class="kc">False</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">df</span>
+<span class="go">[{&#39;key&#39;: &#39;creatorUT&#39;, &#39;count&#39;: 12}, {&#39;key&#39;: &#39;viewerUT&#39;, &#39;count&#39;: 2}]</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
 <dt id="arcgis.gis.UserManager.create">
-<code class="descname">create</code><span class="sig-paren">(</span><em>username</em>, <em>password</em>, <em>firstname</em>, <em>lastname</em>, <em>email</em>, <em>description=None</em>, <em>role='org_user'</em>, <em>provider='arcgis'</em>, <em>idp_username=None</em>, <em>level=2</em>, <em>thumbnail=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.UserManager.create" title="Permalink to this definition">¶</a></dt>
+<code class="descname">create</code><span class="sig-paren">(</span><em>username</em>, <em>password</em>, <em>firstname</em>, <em>lastname</em>, <em>email</em>, <em>description=None</em>, <em>role=None</em>, <em>provider='arcgis'</em>, <em>idp_username=None</em>, <em>level=2</em>, <em>thumbnail=None</em>, <em>user_type=None</em>, <em>credits=-1</em>, <em>groups=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.UserManager.create" title="Permalink to this definition">¶</a></dt>
 <dd><p>This operation is used to pre-create built-in or enterprise accounts within the portal,
 or built-in users in an ArcGIS Online organization account. Only an administrator
 can call this method.</p>
-<p>To create a viewer account, choose role=’org_viewer’ and level=1</p>
+<p>To create a viewer account, choose role=’org_viewer’ and level=’viewer’</p>
 <table border="1" class="docutils">
 <colgroup>
 <col width="16%" />
@@ -3908,7 +4655,8 @@ the user set their password by clicking on a link that is emailed to him/her.</t
 </tr>
 <tr class="row-odd"><td>role</td>
 <td>Optional string. The role for the user account. The default value is org_user.
-Other possible values are org_publisher, org_admin, org_viewer.</td>
+Other possible values are org_user, org_publisher, org_admin, viewer,
+view_only, viewplusedit or a custom role object (from gis.users.roles).</td>
 </tr>
 <tr class="row-even"><td>provider</td>
 <td>Optional string. The provider for the account. The default value is arcgis.
@@ -3919,8 +4667,22 @@ The other possible value is enterprise.</td>
 This parameter is only required if the provider parameter is enterprise.</td>
 </tr>
 <tr class="row-even"><td>level</td>
-<td>Optional string. The account level.
+<td>Optional string. The account level. (Pre 10.7 Portal)
 See <a class="reference external" href="http://server.arcgis.com/en/portal/latest/administer/linux/roles.htm">http://server.arcgis.com/en/portal/latest/administer/linux/roles.htm</a></td>
+</tr>
+<tr class="row-odd"><td>user_type</td>
+<td>Required string. The account user type. This can be creator or viewer.  The
+type effects what applications a user can use and what actions they can do in
+the organization. (10.7+)
+See <a class="reference external" href="http://server.arcgis.com/en/portal/latest/administer/linux/roles.htm">http://server.arcgis.com/en/portal/latest/administer/linux/roles.htm</a></td>
+</tr>
+<tr class="row-even"><td>credits</td>
+<td>Optional Float. The number of credits to assign a user.  The default is None,
+which means unlimited. (10.7+)</td>
+</tr>
+<tr class="row-odd"><td>groups</td>
+<td>Optional List. An array of Group objects to provide access to for a given
+user. (10.7+)</td>
 </tr>
 </tbody>
 </table>
@@ -3929,6 +4691,66 @@ See <a class="reference external" href="http://server.arcgis.com/en/portal/lates
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">The user if successfully created, None if unsuccessful.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="arcgis.gis.UserManager.disable_users">
+<code class="descname">disable_users</code><span class="sig-paren">(</span><em>users</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.UserManager.disable_users" title="Permalink to this definition">¶</a></dt>
+<dd><p>This is a bulk disables user operation that allows administrators to quickly disable large
+number of users in a single call.  It is useful to do this operation if you have multiple
+users that need to be disabled.  Supported on ArcGIS REST API 6.4+.</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="21%" />
+<col width="79%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><strong>Argument</strong></td>
+<td><strong>Description</strong></td>
+</tr>
+<tr class="row-even"><td>users</td>
+<td>Required List. List of User or UserNames to disable</td>
+</tr>
+</tbody>
+</table>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">Boolean</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="arcgis.gis.UserManager.enable_users">
+<code class="descname">enable_users</code><span class="sig-paren">(</span><em>users</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.UserManager.enable_users" title="Permalink to this definition">¶</a></dt>
+<dd><p>This is a bulk operation that allows administrators to quickly enable large number of users
+in a single call.  It is useful to do this operation if you have multiple users that need
+to be enabled. Supported on ArcGIS REST API 6.4+.</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="21%" />
+<col width="79%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><strong>Argument</strong></td>
+<td><strong>Description</strong></td>
+</tr>
+<tr class="row-even"><td>users</td>
+<td>Required List. List of User or UserNames to enable</td>
+</tr>
+</tbody>
+</table>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">Boolean</td>
 </tr>
 </tbody>
 </table>
@@ -3948,7 +4770,8 @@ See <a class="reference external" href="http://server.arcgis.com/en/portal/lates
 <td><strong>Description</strong></td>
 </tr>
 <tr class="row-even"><td>username</td>
-<td>Required string. The user to get as an object.</td>
+<td>Required string. The user to get as a string. This can be the
+user’s login name or the user’s ID.</td>
 </tr>
 </tbody>
 </table>
@@ -3957,6 +4780,77 @@ See <a class="reference external" href="http://server.arcgis.com/en/portal/lates
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">The user object if successfully found, None if unsuccessful.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="arcgis.gis.UserManager.invite">
+<code class="descname">invite</code><span class="sig-paren">(</span><em>email</em>, <em>role='org_user'</em>, <em>level=2</em>, <em>provider=None</em>, <em>must_approve=False</em>, <em>expiration='1 Day'</em>, <em>validate_email=True</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.UserManager.invite" title="Permalink to this definition">¶</a></dt>
+<dd><p>Invites a user to an organization by email</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="17%" />
+<col width="83%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><strong>Argument</strong></td>
+<td><strong>Description</strong></td>
+</tr>
+<tr class="row-even"><td>email</td>
+<td>Required string. The user’s email that will be invited to the organization.</td>
+</tr>
+<tr class="row-odd"><td>role</td>
+<td>Optional string. The role for the user account. The default value is org_user.
+Other possible values are org_publisher, org_admin, org_viewer.</td>
+</tr>
+<tr class="row-even"><td>level</td>
+<td>Optional string. The account level. The default is 2.
+See <a class="reference external" href="http://server.arcgis.com/en/portal/latest/administer/linux/roles.htm">http://server.arcgis.com/en/portal/latest/administer/linux/roles.htm</a></td>
+</tr>
+<tr class="row-odd"><td>provider</td>
+<td>Optional string. The provider for the account. The default value is arcgis.
+The other possible value is enterprise.</td>
+</tr>
+<tr class="row-even"><td>must_approve</td>
+<td>Optional boolean. After a user accepts the invite, if True, and administrator
+must approve of the individual joining the organization. The default is False.</td>
+</tr>
+<tr class="row-odd"><td>expiration</td>
+<td>Optional string.  The default is ‘1 Day’. This is the time the emailed user has
+to accept the invitation request until it expires.
+The values are: 1 Day (default), 3 Days, 1 Week, or 2 Weeks.</td>
+</tr>
+<tr class="row-even"><td>validate_email</td>
+<td>Optional boolean. If True (default) the Enterprise will ensure that the email
+is properly formatted. If false, no check will occur</td>
+</tr>
+</tbody>
+</table>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">boolean</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="arcgis.gis.UserManager.license_types">
+<code class="descname">license_types</code><a class="headerlink" href="#arcgis.gis.UserManager.license_types" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns a list of available licenses associated with a given GIS.
+The information returned can help administrators determine what type
+of a user should me based on the bundles associated with each user
+type.</p>
+<p><strong>This is only available on 10.7+.</strong></p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">list</td>
 </tr>
 </tbody>
 </table>
@@ -3976,7 +4870,7 @@ See <a class="reference external" href="http://server.arcgis.com/en/portal/lates
 
 <dl class="method">
 <dt id="arcgis.gis.UserManager.search">
-<code class="descname">search</code><span class="sig-paren">(</span><em>query=None</em>, <em>sort_field='username'</em>, <em>sort_order='asc'</em>, <em>max_users=100</em>, <em>outside_org=False</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.UserManager.search" title="Permalink to this definition">¶</a></dt>
+<code class="descname">search</code><span class="sig-paren">(</span><em>query=None</em>, <em>sort_field='username'</em>, <em>sort_order='asc'</em>, <em>max_users=100</em>, <em>outside_org=False</em>, <em>exclude_system=False</em>, <em>user_type=None</em>, <em>role=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.UserManager.search" title="Permalink to this definition">¶</a></dt>
 <dd><p>Searches portal users.</p>
 <p>Returns a list of users matching the specified query</p>
 <div class="admonition note">
@@ -4026,6 +4920,19 @@ to get list of all users in the organization.</td>
 your organization. The default is False (search only
 within your organization).</td>
 </tr>
+<tr class="row-odd"><td>exclude_system</td>
+<td>Optional boolean. Controls if built-in system accounts are
+returned or not.  True means built-in account are not
+returned, where as False means that they are.</td>
+</tr>
+<tr class="row-even"><td>user_type</td>
+<td>Optional String. This parameters allows for the filtering
+of the users by their assigned type.</td>
+</tr>
+<tr class="row-odd"><td>role</td>
+<td>Optional String.  This parameter allows for the filting
+of the users based on a role.</td>
+</tr>
 </tbody>
 </table>
 <table class="docutils field-list" frame="void" rules="none">
@@ -4033,6 +4940,54 @@ within your organization).</td>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">A list of users.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="arcgis.gis.UserManager.send_notification">
+<code class="descname">send_notification</code><span class="sig-paren">(</span><em>users</em>, <em>subject</em>, <em>message</em>, <em>type='builtin'</em>, <em>client_id=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.UserManager.send_notification" title="Permalink to this definition">¶</a></dt>
+<dd><p>Creates a user notifcations for a list of users.</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="17%" />
+<col width="83%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><strong>Argument</strong></td>
+<td><strong>Description</strong></td>
+</tr>
+<tr class="row-even"><td>users</td>
+<td>Required List. A list of strings or User objects to send notifcations to.</td>
+</tr>
+<tr class="row-odd"><td>subject</td>
+<td>Required String. The notifcation subject line.</td>
+</tr>
+<tr class="row-even"><td>message</td>
+<td>Required String. The notifcation content. This should be in plain text.</td>
+</tr>
+<tr class="row-odd"><td>type</td>
+<td><p class="first">Optional String.  The notification can be sent various ways. These include:</p>
+<blockquote class="last">
+<div><ul class="simple">
+<li>builtin - The enterprise built-in system</li>
+<li>push - The push notifcation to send a message to</li>
+<li>email - a notification sent to the user’s email account</li>
+</ul>
+</div></blockquote>
+</td>
+</tr>
+<tr class="row-even"><td>client_id</td>
+<td>Optional String. The client id for push notification.</td>
+</tr>
+</tbody>
+</table>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">Boolean</td>
 </tr>
 </tbody>
 </table>
@@ -4074,6 +5029,14 @@ and at least 4 characters.</td>
 </tr>
 </tbody>
 </table>
+</dd></dl>
+
+<dl class="method">
+<dt id="arcgis.gis.UserManager.user_groups">
+<code class="descname">user_groups</code><span class="sig-paren">(</span><em>users</em>, <em>max_results=-1</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.UserManager.user_groups" title="Permalink to this definition">¶</a></dt>
+<dd><p>Givens a List of Users, the <cite>user_groups</cite> will report back all group ids
+that each user belongs to.  This method is designed to be a reporting
+tool for administrators so they can easily manage a user or users groups.</p>
 </dd></dl>
 
 </dd></dl>
@@ -4349,12 +5312,12 @@ federated with the portal.</p>
 
 <dl class="method">
 <dt id="arcgis.gis.DatastoreManager.add_bigdata">
-<code class="descname">add_bigdata</code><span class="sig-paren">(</span><em>name</em>, <em>server_path=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.DatastoreManager.add_bigdata" title="Permalink to this definition">¶</a></dt>
+<code class="descname">add_bigdata</code><span class="sig-paren">(</span><em>name</em>, <em>server_path=None</em>, <em>connection_type='fileShare'</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.DatastoreManager.add_bigdata" title="Permalink to this definition">¶</a></dt>
 <dd><p>Registers a bigdata fileshare with the data store.</p>
 <table border="1" class="docutils">
 <colgroup>
-<col width="18%" />
-<col width="82%" />
+<col width="17%" />
+<col width="83%" />
 </colgroup>
 <tbody valign="top">
 <tr class="row-odd"><td><strong>Argument</strong></td>
@@ -4366,6 +5329,12 @@ federated with the portal.</p>
 <tr class="row-odd"><td>server_path</td>
 <td>Optional string. The path to the folder from the server.</td>
 </tr>
+<tr class="row-even"><td>connection_type</td>
+<td>Optional string. Allows for the setting of the types of big data store.
+The value ‘fileShare’ is used for local big data stores, and for
+cloud stores, the connection_type should be ‘dataStore’. The value
+‘fileShare’ is the default value.</td>
+</tr>
 </tbody>
 </table>
 <table class="docutils field-list" frame="void" rules="none">
@@ -4373,6 +5342,63 @@ federated with the portal.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">The big data fileshare if registered successfully, None otherwise.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="arcgis.gis.DatastoreManager.add_cloudstore">
+<code class="descname">add_cloudstore</code><span class="sig-paren">(</span><em>name</em>, <em>conn_str</em>, <em>object_store</em>, <em>provider</em>, <em>managed=False</em>, <em>folder=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.DatastoreManager.add_cloudstore" title="Permalink to this definition">¶</a></dt>
+<dd><p>Cloud Store data item represents a connection to a Amazon or Microsoft Azure store.
+Connection information for the data store item is stored within conn_str as a
+stringified JSON. ArcGIS Server encrypts connection string for storage. Connection
+strings that are encrypted will include a {crypt} prefix. You can get a data store
+item with decrypted connection string by passing a decrypt=true parameter in the request
+for a data store item. Data store with decrypted connection string will be returned only for
+requests made with https. The examples below show data stores with decrypted conn_str.
+A valid object_store (S3 bucket or Azure Blob store) is required. Folders within an object
+store are optional.</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="18%" />
+<col width="82%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><strong>Argument</strong></td>
+<td><strong>Description</strong></td>
+</tr>
+<tr class="row-even"><td>name</td>
+<td>Required string. The name of the cloud store.</td>
+</tr>
+<tr class="row-odd"><td>conn_str</td>
+<td>Required string. The connection information for the cloud storage
+product.</td>
+</tr>
+<tr class="row-even"><td>object_store</td>
+<td>Required string. This is the amazon bucket path or Azuze path.</td>
+</tr>
+<tr class="row-odd"><td>provider</td>
+<td>Required string. Values must be azuredatalakestore, amazon,
+Huawei, Alibaba, or azure.</td>
+</tr>
+<tr class="row-even"><td>managed</td>
+<td>Optional boolean. When the data store is server only, the database
+is entirely managed and owned by the server and cannot be accessed
+by the publisher directly. When this option is chosen, the
+managed property should be set to true. Otherwise it is false.</td>
+</tr>
+<tr class="row-odd"><td>folder</td>
+<td>Optional string. For some Azure cloud stores, an optional folder
+can be specified.</td>
+</tr>
+</tbody>
+</table>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">DataStore</td>
 </tr>
 </tbody>
 </table>
@@ -4656,15 +5682,15 @@ each privilege.  For supported privileges see
 <dd><p>Retrieves the role with the specified role ID.</p>
 <table border="1" class="docutils">
 <colgroup>
-<col width="19%" />
-<col width="81%" />
+<col width="21%" />
+<col width="79%" />
 </colgroup>
 <tbody valign="top">
 <tr class="row-odd"><td><strong>Argument</strong></td>
 <td><strong>Description</strong></td>
 </tr>
 <tr class="row-even"><td>role_id</td>
-<td>Required string. The role ID of the role to get. Set to None to get all roles</td>
+<td>Required string. The role ID of the role to get.</td>
 </tr>
 </tbody>
 </table>
@@ -4672,7 +5698,7 @@ each privilege.  For supported privileges see
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">The role associated with the specified role ID, or a list of all roles if role_id was set to None.</td>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">The role associated with the specified role ID</td>
 </tr>
 </tbody>
 </table>
@@ -4952,10 +5978,13 @@ used together with file_name.</td>
 <li class="toctree-l1"><a class="reference internal" href="arcgis.gis.admin.html">arcgis.gis.admin module</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.gis.admin.html#agoladminmanager">AGOLAdminManager</a></li>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.gis.admin.html#portaladminmanager">PortalAdminManager</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.gis.admin.html#bundle">Bundle</a></li>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.gis.admin.html#categorymanager">CategoryManager</a></li>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.gis.admin.html#collaborationmanager">CollaborationManager</a></li>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.gis.admin.html#collaboration">Collaboration</a></li>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.gis.admin.html#creditmanager">CreditManager</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.gis.admin.html#license">License</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.gis.admin.html#licensemanager">LicenseManager</a></li>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.gis.admin.html#identityprovidermanager">IdentityProviderManager</a></li>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.gis.admin.html#passwordpolicy">PasswordPolicy</a></li>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.gis.admin.html#portalresourcemanager">PortalResourceManager</a></li>
@@ -4971,10 +6000,13 @@ used together with file_name.</td>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.gis.admin.html#enterprisegroups">EnterpriseGroups</a></li>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.gis.admin.html#site">Site</a></li>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.gis.admin.html#system">System</a></li>
-<li class="toctree-l2"><a class="reference internal" href="arcgis.gis.admin.html#licenses">Licenses</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.gis.admin.html#licenses-deprecated-10-7">Licenses (Deprecated 10.7+)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.gis.admin.html#portallicense">PortalLicense</a></li>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.gis.admin.html#directory">Directory</a></li>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.gis.admin.html#webadaptor">WebAdaptor</a></li>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.gis.admin.html#webadaptors">WebAdaptors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.gis.admin.html#webhookmanager">WebhookManager</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.gis.admin.html#webhook">Webhook</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="arcgis.gis.server.html">arcgis.gis.server module</a><ul>
@@ -5031,7 +6063,7 @@ used together with file_name.</td>
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 2016-2017, Esri.
+        &copy; Copyright 2016-2019, Esri.
 
     </p>
   </div>
@@ -5053,7 +6085,7 @@ used together with file_name.</td>
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'./',
-            VERSION:'1.4.0',
+            VERSION:'1.6.1',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  true,

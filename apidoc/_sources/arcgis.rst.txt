@@ -43,6 +43,8 @@ arcgis.mapping module
 arcgis.widgets module
 -----------------
 
+arcgis.apps module
+------------------
 
 Module contents
 ---------------
