@@ -30,9 +30,11 @@ def _main():
         '..'))
     guide_dir = os.path.join(root_dir, "guide")
     samples_dir = os.path.join(root_dir, "samples")
+    labs_dir = os.path.join(root_dir, "labs")
     nb_file_paths = \
         glob.glob(os.path.join(guide_dir, "**", "*.ipynb"), recursive=True) + \
-        glob.glob(os.path.join(samples_dir, "**", "*.ipynb"), recursive=True)
+        glob.glob(os.path.join(samples_dir, "**", "*.ipynb"), recursive=True) + \
+        glob.glob(os.path.join(labs_dir, "**", "*.ipynb"), recursive=True)
 
     for nb_file_path in nb_file_paths:
         print(f"Replacing profiles in {nb_file_path}")
