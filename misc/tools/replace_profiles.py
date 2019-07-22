@@ -9,7 +9,7 @@ import glob
 profile_mappings = \
     {'your_enterprise_profile': "url='https://pythonapi.playground.esri.com/portal', "\
                                 "username='arcgis_python', "\
-                                "password='amazing_arcgis123'",
+                                "password='amazing_arcgis_123'",
      'your_online_profile': "url='https://arcgis.com/', "\
                             "username='arcgis_python', "\
                             "password='P@ssword123'" }
