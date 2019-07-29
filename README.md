@@ -1,5 +1,5 @@
 # ArcGIS API for Python
-ArcGIS API for Python is a Python library for working with maps and geospatial data, powered by web GIS. This branch contains just the notebooks and other presentation materials (slide decks etc.) which the team wishes to share with you. You must use the [master branch](https://github.com/Esri/arcgis-python-api/tree/master/) for all other SDK related materials.
+ArcGIS API for Python is a Python library for working with maps and geospatial data, powered by web GIS. This branch contains just the notebooks and other presentation materials (slide decks etc.) which the team wishes to share with you. You must use the **[master branch](https://github.com/Esri/arcgis-python-api/tree/master/)** for all other SDK related materials.
 
 ## Licensing
 Copyright 2018-2019 Esri
