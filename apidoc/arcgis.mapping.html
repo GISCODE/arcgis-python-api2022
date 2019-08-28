@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>arcgis.mapping module &mdash; arcgis 1.6.1 documentation</title>
+  <title>arcgis.mapping module &mdash; arcgis 1.6.2 documentation</title>
   
 
   
@@ -39,7 +39,7 @@
         <link rel="index" title="Index"
               href="genindex.html"/>
         <link rel="search" title="Search" href="search.html"/>
-    <link rel="top" title="arcgis 1.6.1 documentation" href="index.html"/>
+    <link rel="top" title="arcgis 1.6.2 documentation" href="index.html"/>
         <link rel="next" title="arcgis.realtime module" href="arcgis.realtime.html"/>
         <link rel="prev" title="arcgis.geoprocessing module" href="arcgis.geoprocessing.html"/>
 <!-- This code block is inserted close near the <head> tag. See http://bit.ly/2BHUQzB -->
@@ -82,7 +82,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             
             
               <div class="version">
-                1.6.1
+                1.6.2
               </div>
             
           
@@ -1704,6 +1704,57 @@ max_export_tile_count - sets the maximum amount of tiles to be exported</p>
 </dd></dl>
 
 <dl class="method">
+<dt id="arcgis.mapping.MapImageLayerManager.import_tiles">
+<code class="descname">import_tiles</code><span class="sig-paren">(</span><em>item</em>, <em>levels=None</em>, <em>extent=None</em>, <em>merge=False</em>, <em>replace=False</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.mapping.MapImageLayerManager.import_tiles" title="Permalink to this definition">¶</a></dt>
+<dd><table border="1" class="docutils">
+<colgroup>
+<col width="18%" />
+<col width="82%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><strong>Argument</strong></td>
+<td><strong>Description</strong></td>
+</tr>
+<tr class="row-even"><td>item</td>
+<td>Required ItemId or Item. The TPK file’s item id.
+This TPK file contains to-be-extracted bundle files
+which are then merged into an existing cache service.</td>
+</tr>
+<tr class="row-odd"><td>levels</td>
+<td>Optional String / List of integers, The level of details
+to update. Example: “1,2,10,20” or [1,2,10,20]</td>
+</tr>
+<tr class="row-even"><td>extent</td>
+<td>Optional String / Dict. The area to update as Xmin, YMin, XMax, YMax
+example: “-100,-50,200,500” or
+{‘xmin’:100, ‘ymin’:200, ‘xmax’:105, ‘ymax’:205}</td>
+</tr>
+<tr class="row-odd"><td>merge</td>
+<td>Optional Boolean. Default is false and applicable to
+compact cache storage format. It controls whether
+the bundle files from the TPK file are merged with
+the one in the existing cached service. Otherwise,
+the bundle files are overwritten.</td>
+</tr>
+<tr class="row-even"><td>replace</td>
+<td>Optional Boolean. Default is false, applicable to
+compact cache storage format and used when
+merge=true. It controls whether the new tiles will
+replace the existing ones when merging bundles.</td>
+</tr>
+</tbody>
+</table>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">Dict</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
 <dt id="arcgis.mapping.MapImageLayerManager.job_statistics">
 <code class="descname">job_statistics</code><span class="sig-paren">(</span><em>job_id</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.mapping.MapImageLayerManager.job_statistics" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns the job statistics for the given jobId</p>
@@ -1882,9 +1933,9 @@ used.</td>
 </div>
 <div class="section" id="export-map">
 <h2>export_map<a class="headerlink" href="#export-map" title="Permalink to this headline">¶</a></h2>
-<dl class="method">
+<dl class="function">
 <dt id="arcgis.mapping.export_map">
-<code class="descclassname">mapping.</code><code class="descname">export_map</code><span class="sig-paren">(</span><em>web_map_as_json: str = None</em>, <em>format: str = 'PDF'</em>, <em>layout_template: str = 'MAP_ONLY'</em>, <em>gis=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.mapping.export_map" title="Permalink to this definition">¶</a></dt>
+<code class="descclassname">arcgis.mapping.</code><code class="descname">export_map</code><span class="sig-paren">(</span><em>web_map_as_json: str = None</em>, <em>format: str = 'PDF'</em>, <em>layout_template: str = 'MAP_ONLY'</em>, <em>gis=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.mapping.export_map" title="Permalink to this definition">¶</a></dt>
 <dd><p>This function takes the state of the web map(for example, included services, layer visibility
 settings, client-side graphics, and so forth) and returns either (a) a page layout or
 (b) a map without page surrounds of the specified area of interest in raster or vector format.
@@ -1915,9 +1966,9 @@ Parameters:</p>
 </div>
 <div class="section" id="get-layout-templates">
 <h2>get_layout_templates<a class="headerlink" href="#get-layout-templates" title="Permalink to this headline">¶</a></h2>
-<dl class="method">
+<dl class="function">
 <dt id="arcgis.mapping.get_layout_templates">
-<code class="descclassname">mapping.</code><code class="descname">get_layout_templates</code><span class="sig-paren">(</span><em>gis=None</em><span class="sig-paren">)</span> &#x2192; str<a class="headerlink" href="#arcgis.mapping.get_layout_templates" title="Permalink to this definition">¶</a></dt>
+<code class="descclassname">arcgis.mapping.</code><code class="descname">get_layout_templates</code><span class="sig-paren">(</span><em>gis=None</em><span class="sig-paren">)</span> &#x2192; str<a class="headerlink" href="#arcgis.mapping.get_layout_templates" title="Permalink to this definition">¶</a></dt>
 <dd><p>This function returns the content of the GIS’s layout templates formatted as dict.</p>
 <p>Parameters:</p>
 <p>gis: Optional, the GIS on which this tool runs. If not specified, the active GIS is used.</p>
@@ -2317,9 +2368,9 @@ the data they wish to display on a map, or in a web map.</p>
 </div>
 <div class="section" id="generate-renderer">
 <h2>generate_renderer<a class="headerlink" href="#generate-renderer" title="Permalink to this headline">¶</a></h2>
-<dl class="method">
+<dl class="function">
 <dt id="arcgis.mapping.renderer.generate_renderer">
-<code class="descclassname">renderer.</code><code class="descname">generate_renderer</code><span class="sig-paren">(</span><em>geometry_type</em>, <em>sdf_or_series=None</em>, <em>label=None</em>, <em>render_type=None</em>, <em>colors=None</em>, <em>**symbol_args</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.mapping.renderer.generate_renderer" title="Permalink to this definition">¶</a></dt>
+<code class="descclassname">arcgis.mapping.renderer.</code><code class="descname">generate_renderer</code><span class="sig-paren">(</span><em>geometry_type</em>, <em>sdf_or_series=None</em>, <em>label=None</em>, <em>render_type=None</em>, <em>colors=None</em>, <em>**symbol_args</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.mapping.renderer.generate_renderer" title="Permalink to this definition">¶</a></dt>
 <dd><p>Generates the Renderer JSON</p>
 <table border="1" class="docutils">
 <colgroup>
@@ -2352,7 +2403,7 @@ temporal</td>
 <td>simple, unique, class break</td>
 </tr>
 <tr class="row-even"><td>Polygon</td>
-<td>simple, unique, class break</td>
+<td>simple, unique, class break, dot density</td>
 </tr>
 <tr class="row-odd"><td>Raster</td>
 <td>stretched</td>
@@ -2398,6 +2449,7 @@ simple renderers.</p>
 density or weighted values.</dd>
 </dl>
 </li>
+<li>‘d’ - dot density renderer</li>
 </ul>
 </td>
 </tr>
@@ -2712,6 +2764,69 @@ property.</td>
 </tr>
 </tbody>
 </table>
+<p><strong>Dot Density Renderer</strong></p>
+<p>A class breaks renderer symbolizes based on the value of some numeric attribute.</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="20%" />
+<col width="80%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><strong>Optional Argument</strong></td>
+<td><strong>Description</strong></td>
+</tr>
+<tr class="row-even"><td>attributes</td>
+<td><p class="first">Required List. The fields, labels and colors to add to
+the web map.  The list consists of dictionarys with the
+following keys:</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="18%" />
+<col width="82%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><strong>Argument</strong></td>
+<td><strong>Description</strong></td>
+</tr>
+<tr class="row-even"><td>field</td>
+<td>Required String.  Name of the dataset field</td>
+</tr>
+<tr class="row-odd"><td>label</td>
+<td>Required String.  Descriptive name of the field.</td>
+</tr>
+<tr class="row-even"><td>color</td>
+<td>Required List. A integer array consisting of R,G,B,A values</td>
+</tr>
+<tr class="row-odd"><td>&#160;</td>
+<td>&#160;</td>
+</tr>
+</tbody>
+</table>
+<p class="last">If the field name is not in the SeDF, then an error will be raised on renderering.</p>
+</td>
+</tr>
+<tr class="row-even"><td>dot_value</td>
+<td>Required Float. The unit value of what 1 dot equals.</td>
+</tr>
+<tr class="row-odd"><td>ref_scale</td>
+<td>Required Int. The reference scale of the dots.</td>
+</tr>
+<tr class="row-even"><td>unit</td>
+<td>Required string.  A label of the unit which each dot
+means.</td>
+</tr>
+<tr class="row-odd"><td>blend_dots</td>
+<td>Optional boolean.  Allows for the dots to overlap.</td>
+</tr>
+<tr class="row-even"><td>size</td>
+<td>Optional float. The size of the dot on the density map.</td>
+</tr>
+<tr class="row-odd"><td>background</td>
+<td>Optional List.  A color background as a list of [r,g,b,a]
+values.  The default is no background [0,0,0,0].</td>
+</tr>
+</tbody>
+</table>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -2725,9 +2840,9 @@ property.</td>
 </div>
 <div class="section" id="visual-variables">
 <h2>visual_variables<a class="headerlink" href="#visual-variables" title="Permalink to this headline">¶</a></h2>
-<dl class="method">
+<dl class="function">
 <dt id="arcgis.mapping.renderer.visual_variables">
-<code class="descclassname">renderer.</code><code class="descname">visual_variables</code><span class="sig-paren">(</span><em>geometry_type</em>, <em>sdf_or_list</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.mapping.renderer.visual_variables" title="Permalink to this definition">¶</a></dt>
+<code class="descclassname">arcgis.mapping.renderer.</code><code class="descname">visual_variables</code><span class="sig-paren">(</span><em>geometry_type</em>, <em>sdf_or_list</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.mapping.renderer.visual_variables" title="Permalink to this definition">¶</a></dt>
 <dd><p>a function to create visual variables</p>
 <p>This operation allows developers to take a deep dive into developing custom renderer.
 Here a user/developer can create transparancy, size information, and other rules to
@@ -2817,7 +2932,7 @@ Must be one of the following values:</p>
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'./',
-            VERSION:'1.6.1',
+            VERSION:'1.6.2',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  true,

@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>arcgis.geometry module &mdash; arcgis 1.6.1 documentation</title>
+  <title>arcgis.geometry module &mdash; arcgis 1.6.2 documentation</title>
   
 
   
@@ -39,7 +39,7 @@
         <link rel="index" title="Index"
               href="genindex.html"/>
         <link rel="search" title="Search" href="search.html"/>
-    <link rel="top" title="arcgis 1.6.1 documentation" href="index.html"/>
+    <link rel="top" title="arcgis 1.6.2 documentation" href="index.html"/>
         <link rel="next" title="arcgis.geometry.filters module" href="arcgis.geometry.filters.html"/>
         <link rel="prev" title="arcgis.geoenrichment module" href="arcgis.geoenrichment.html"/>
 <!-- This code block is inserted close near the <head> tag. See http://bit.ly/2BHUQzB -->
@@ -82,7 +82,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             
             
               <div class="version">
-                1.6.1
+                1.6.2
               </div>
             
           
@@ -129,7 +129,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <li class="toctree-l2"><a class="reference internal" href="#buffer">buffer</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#convex-hull">convex_hull</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#cut">cut</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#density">density</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#densify">densify</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#difference">difference</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#distance">distance</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#find-transformation">find_transformation</a></li>
@@ -2205,9 +2205,9 @@ geometries.</p>
 </div>
 <div class="section" id="areas-and-lengths">
 <h2>areas_and_lengths<a class="headerlink" href="#areas-and-lengths" title="Permalink to this headline">¶</a></h2>
-<dl class="method">
+<dl class="function">
 <dt id="arcgis.geometry.areas_and_lengths">
-<code class="descclassname">geometry.</code><code class="descname">areas_and_lengths</code><span class="sig-paren">(</span><em>polygons</em>, <em>length_unit</em>, <em>area_unit</em>, <em>calculation_type</em>, <em>spatial_ref=4326</em>, <em>gis=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.geometry.areas_and_lengths" title="Permalink to this definition">¶</a></dt>
+<code class="descclassname">arcgis.geometry.</code><code class="descname">areas_and_lengths</code><span class="sig-paren">(</span><em>polygons</em>, <em>length_unit</em>, <em>area_unit</em>, <em>calculation_type</em>, <em>spatial_ref=4326</em>, <em>gis=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.geometry.areas_and_lengths" title="Permalink to this definition">¶</a></dt>
 <dd><p>The areas_and_lengths function calculates areas and perimeter lengths
 for each polygon specified in the input array.</p>
 <dl class="docutils">
@@ -2282,40 +2282,48 @@ is preserved.</dd>
 </div>
 <div class="section" id="auto-complete">
 <h2>auto_complete<a class="headerlink" href="#auto-complete" title="Permalink to this headline">¶</a></h2>
-<dl class="method">
+<dl class="function">
 <dt id="arcgis.geometry.auto_complete">
-<code class="descclassname">geometry.</code><code class="descname">auto_complete</code><span class="sig-paren">(</span><em>polygons=None</em>, <em>polylines=None</em>, <em>spatial_ref=None</em>, <em>gis=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.geometry.auto_complete" title="Permalink to this definition">¶</a></dt>
+<code class="descclassname">arcgis.geometry.</code><code class="descname">auto_complete</code><span class="sig-paren">(</span><em>polygons=None</em>, <em>polylines=None</em>, <em>spatial_ref=None</em>, <em>gis=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.geometry.auto_complete" title="Permalink to this definition">¶</a></dt>
 <dd><p>The auto_complete function simplifies the process of
 constructing new polygons that are adjacent to other polygons.
 It constructs polygons that fill in the gaps between existing
 polygons and a set of polylines.</p>
 <dl class="docutils">
 <dt>Inputs:</dt>
-<dd>polygons - array of Polygon objects
-polylines - list of Polyline objects
-spatial_ref - spatial reference of the input geometries WKID</dd>
+<dd><dl class="first last docutils">
+<dt>polygons -</dt>
+<dd>array of Polygon objects</dd>
+<dt>polylines -</dt>
+<dd>list of Polyline objects</dd>
+<dt>spatial_ref -</dt>
+<dd>spatial reference of the input geometries WKID</dd>
+</dl>
+</dd>
 </dl>
 </dd></dl>
 
 </div>
 <div class="section" id="buffer">
 <h2>buffer<a class="headerlink" href="#buffer" title="Permalink to this headline">¶</a></h2>
-<dl class="method">
+<dl class="function">
 <dt id="arcgis.geometry.buffer">
-<code class="descclassname">geometry.</code><code class="descname">buffer</code><span class="sig-paren">(</span><em>geometries</em>, <em>in_sr</em>, <em>distances</em>, <em>unit</em>, <em>out_sr=None</em>, <em>buffer_sr=None</em>, <em>union_results=None</em>, <em>geodesic=None</em>, <em>gis=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.geometry.buffer" title="Permalink to this definition">¶</a></dt>
+<code class="descclassname">arcgis.geometry.</code><code class="descname">buffer</code><span class="sig-paren">(</span><em>geometries</em>, <em>in_sr</em>, <em>distances</em>, <em>unit</em>, <em>out_sr=None</em>, <em>buffer_sr=None</em>, <em>union_results=None</em>, <em>geodesic=None</em>, <em>gis=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.geometry.buffer" title="Permalink to this definition">¶</a></dt>
 <dd><p>The buffer function is performed on a geometry service resource
 The result of this function is buffered polygons at the
 specified distances for the input geometry array. Options are
 available to union buffers and to use geodesic distance.</p>
-<dl class="docutils">
-<dt>Inputs:</dt>
-<dd><p class="first">geometries - The array of geometries to be buffered.
-in_sr - The well-known ID of the spatial reference or a spatial</p>
+<p>Inputs:</p>
 <blockquote>
-<div>reference JSON object for the input geometries.</div></blockquote>
-<dl class="last docutils">
-<dt>distances - The distances that each of the input geometries is</dt>
-<dd>buffered.</dd>
+<div><dl class="docutils">
+<dt>geometries -</dt>
+<dd>The array of geometries to be buffered.</dd>
+<dt>in_sr -</dt>
+<dd>The well-known ID of the spatial reference or a spatial
+reference JSON object for the input geometries.</dd>
+<dt>distances -</dt>
+<dd>The distances that each of the input geometries is
+buffered.</dd>
 <dt>unit - The units for calculating each buffer distance. If unit</dt>
 <dd>is not specified, the units are derived from bufferSR. If
 bufferSR is not specified, the units are derived from in_sr.</dd>
@@ -2334,16 +2342,15 @@ geodesic is set to false, the 2D Euclidean distance is used
 to buffer the input geometries. The default value depends on
 the geometry type, unit and bufferSR.</dd>
 </dl>
-</dd>
-</dl>
+</div></blockquote>
 </dd></dl>
 
 </div>
 <div class="section" id="convex-hull">
 <h2>convex_hull<a class="headerlink" href="#convex-hull" title="Permalink to this headline">¶</a></h2>
-<dl class="method">
+<dl class="function">
 <dt id="arcgis.geometry.convex_hull">
-<code class="descclassname">geometry.</code><code class="descname">convex_hull</code><span class="sig-paren">(</span><em>geometries</em>, <em>spatial_ref=None</em>, <em>gis=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.geometry.convex_hull" title="Permalink to this definition">¶</a></dt>
+<code class="descclassname">arcgis.geometry.</code><code class="descname">convex_hull</code><span class="sig-paren">(</span><em>geometries</em>, <em>spatial_ref=None</em>, <em>gis=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.geometry.convex_hull" title="Permalink to this definition">¶</a></dt>
 <dd><p>The convex_hull function is performed on a geometry service
 resource. It returns the convex hull of the input geometry. The
 input geometry can be a point, multipoint, polyline, or polygon.
@@ -2362,9 +2369,9 @@ spatial_ref - The well-known ID or a spatial reference JSON object for</p>
 </div>
 <div class="section" id="cut">
 <h2>cut<a class="headerlink" href="#cut" title="Permalink to this headline">¶</a></h2>
-<dl class="method">
+<dl class="function">
 <dt id="arcgis.geometry.cut">
-<code class="descclassname">geometry.</code><code class="descname">cut</code><span class="sig-paren">(</span><em>cutter</em>, <em>target</em>, <em>spatial_ref=None</em>, <em>gis=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.geometry.cut" title="Permalink to this definition">¶</a></dt>
+<code class="descclassname">arcgis.geometry.</code><code class="descname">cut</code><span class="sig-paren">(</span><em>cutter</em>, <em>target</em>, <em>spatial_ref=None</em>, <em>gis=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.geometry.cut" title="Permalink to this definition">¶</a></dt>
 <dd><p>The cut function is performed on a geometry service resource. This
 function splits the target polyline or polygon where it’s crossed
 by the cutter polyline.
@@ -2391,14 +2398,50 @@ spatial_ref.</dd>
 </dd></dl>
 
 </div>
-<div class="section" id="density">
-<h2>density<a class="headerlink" href="#density" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="densify">
+<h2>densify<a class="headerlink" href="#densify" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="arcgis.geometry.densify">
+<code class="descclassname">arcgis.geometry.</code><code class="descname">densify</code><span class="sig-paren">(</span><em>geometries</em>, <em>spatial_ref</em>, <em>max_segment_length</em>, <em>length_unit</em>, <em>geodesic=False</em>, <em>gis=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.geometry.densify" title="Permalink to this definition">¶</a></dt>
+<dd><p>The densify function is performed using the GIS’s geometry engine.
+This function densifies geometries by plotting points between
+existing vertices.</p>
+<dl class="docutils">
+<dt>Inputs:</dt>
+<dd><dl class="first last docutils">
+<dt>geometries - The array of geometries to be densified. The</dt>
+<dd>structure of each geometry in the array is the same as the
+structure of the JSON geometry objects returned by the ArcGIS
+REST API.</dd>
+<dt>spatial_ref - The well-known ID or a spatial reference JSON object for</dt>
+<dd>the input polylines. For a list of valid WKID values, see
+Projected coordinate systems and Geographic coordinate systems.</dd>
+<dt>max_segment_length - All segments longer than maxSegmentLength are</dt>
+<dd>replaced with sequences of lines no longer than
+max_segment_length.</dd>
+<dt>length_unit - The length unit of max_segment_length. If geodesic is</dt>
+<dd>set to false, then the units are derived from spatial_ref, and
+length_unit is ignored. If geodesic is set to true, then
+length_unit must be a linear unit. In a case where length_unit is
+not specified and spatial_ref is a PCS, the units are derived from spatial_ref.
+In a case where length_unit is not specified and spatial_ref is a GCS,
+then the units are meters.</dd>
+<dt>geodesic - If geodesic is set to true, then geodesic distance is</dt>
+<dd>used to calculate max_segment_length. Geodesic distance is the
+shortest path between two points along the ellipsoid of the
+earth. If geodesic is set to false, then 2D Euclidean distance
+is used to calculate max_segment_length. The default is false.</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
 </div>
 <div class="section" id="difference">
 <h2>difference<a class="headerlink" href="#difference" title="Permalink to this headline">¶</a></h2>
-<dl class="method">
+<dl class="function">
 <dt id="arcgis.geometry.difference">
-<code class="descclassname">geometry.</code><code class="descname">difference</code><span class="sig-paren">(</span><em>geometries</em>, <em>spatial_ref</em>, <em>geometry</em>, <em>gis=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.geometry.difference" title="Permalink to this definition">¶</a></dt>
+<code class="descclassname">arcgis.geometry.</code><code class="descname">difference</code><span class="sig-paren">(</span><em>geometries</em>, <em>spatial_ref</em>, <em>geometry</em>, <em>gis=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.geometry.difference" title="Permalink to this definition">¶</a></dt>
 <dd><p>The difference function is performed on a geometry service
 resource. This function constructs the set-theoretic difference
 between each element of an array of geometries and another geometry
@@ -2427,9 +2470,9 @@ syntax is not supported.</dd>
 </div>
 <div class="section" id="distance">
 <h2>distance<a class="headerlink" href="#distance" title="Permalink to this headline">¶</a></h2>
-<dl class="method">
+<dl class="function">
 <dt id="arcgis.geometry.distance">
-<code class="descclassname">geometry.</code><code class="descname">distance</code><span class="sig-paren">(</span><em>spatial_ref</em>, <em>geometry1</em>, <em>geometry2</em>, <em>distance_unit=''</em>, <em>geodesic=False</em>, <em>gis=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.geometry.distance" title="Permalink to this definition">¶</a></dt>
+<code class="descclassname">arcgis.geometry.</code><code class="descname">distance</code><span class="sig-paren">(</span><em>spatial_ref</em>, <em>geometry1</em>, <em>geometry2</em>, <em>distance_unit=''</em>, <em>geodesic=False</em>, <em>gis=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.geometry.distance" title="Permalink to this definition">¶</a></dt>
 <dd><p>The distance function is performed on a geometry service resource.
 It reports the 2D Euclidean or geodesic distance between the two
 geometries.</p>
@@ -2460,9 +2503,9 @@ false.</dd>
 </div>
 <div class="section" id="find-transformation">
 <h2>find_transformation<a class="headerlink" href="#find-transformation" title="Permalink to this headline">¶</a></h2>
-<dl class="method">
+<dl class="function">
 <dt id="arcgis.geometry.find_transformation">
-<code class="descclassname">geometry.</code><code class="descname">find_transformation</code><span class="sig-paren">(</span><em>in_sr</em>, <em>out_sr</em>, <em>extent_of_interest=None</em>, <em>num_of_results=1</em>, <em>gis=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.geometry.find_transformation" title="Permalink to this definition">¶</a></dt>
+<code class="descclassname">arcgis.geometry.</code><code class="descname">find_transformation</code><span class="sig-paren">(</span><em>in_sr</em>, <em>out_sr</em>, <em>extent_of_interest=None</em>, <em>num_of_results=1</em>, <em>gis=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.geometry.find_transformation" title="Permalink to this definition">¶</a></dt>
 <dd><p>The find_transformations function is performed on a geometry
 service resource. This function returns a list of applicable
 geographic transformations you should use when projecting
@@ -2503,9 +2546,9 @@ envelope.</dd>
 </div>
 <div class="section" id="from-geo-coordinate-string">
 <h2>from_geo_coordinate_string<a class="headerlink" href="#from-geo-coordinate-string" title="Permalink to this headline">¶</a></h2>
-<dl class="method">
+<dl class="function">
 <dt id="arcgis.geometry.from_geo_coordinate_string">
-<code class="descclassname">geometry.</code><code class="descname">from_geo_coordinate_string</code><span class="sig-paren">(</span><em>spatial_ref</em>, <em>strings</em>, <em>conversion_type</em>, <em>conversion_mode=None</em>, <em>gis=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.geometry.from_geo_coordinate_string" title="Permalink to this definition">¶</a></dt>
+<code class="descclassname">arcgis.geometry.</code><code class="descname">from_geo_coordinate_string</code><span class="sig-paren">(</span><em>spatial_ref</em>, <em>strings</em>, <em>conversion_type</em>, <em>conversion_mode=None</em>, <em>gis=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.geometry.from_geo_coordinate_string" title="Permalink to this definition">¶</a></dt>
 <dd><p>The from_geo_coordinate_string function is performed on a geometry
 service resource. The function converts an array of well-known
 strings into xy-coordinates based on the conversion type and
@@ -2571,9 +2614,9 @@ utmNorthSouth - Uses north/south latitude indicators instead of</p>
 </div>
 <div class="section" id="generalize">
 <h2>generalize<a class="headerlink" href="#generalize" title="Permalink to this headline">¶</a></h2>
-<dl class="method">
+<dl class="function">
 <dt id="arcgis.geometry.generalize">
-<code class="descclassname">geometry.</code><code class="descname">generalize</code><span class="sig-paren">(</span><em>spatial_ref</em>, <em>geometries</em>, <em>max_deviation</em>, <em>deviation_unit</em>, <em>gis=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.geometry.generalize" title="Permalink to this definition">¶</a></dt>
+<code class="descclassname">arcgis.geometry.</code><code class="descname">generalize</code><span class="sig-paren">(</span><em>spatial_ref</em>, <em>geometries</em>, <em>max_deviation</em>, <em>deviation_unit</em>, <em>gis=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.geometry.generalize" title="Permalink to this definition">¶</a></dt>
 <dd><p>The generalize function is performed on a geometry service
 resource. The generalize function simplifies the input geometries
 using the Douglas-Peucker algorithm with a specified maximum
@@ -2602,9 +2645,9 @@ geometry.</div></blockquote>
 </div>
 <div class="section" id="intersect">
 <h2>intersect<a class="headerlink" href="#intersect" title="Permalink to this headline">¶</a></h2>
-<dl class="method">
+<dl class="function">
 <dt id="arcgis.geometry.intersect">
-<code class="descclassname">geometry.</code><code class="descname">intersect</code><span class="sig-paren">(</span><em>spatial_ref</em>, <em>geometries</em>, <em>geometry</em>, <em>gis=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.geometry.intersect" title="Permalink to this definition">¶</a></dt>
+<code class="descclassname">arcgis.geometry.</code><code class="descname">intersect</code><span class="sig-paren">(</span><em>spatial_ref</em>, <em>geometries</em>, <em>geometry</em>, <em>gis=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.geometry.intersect" title="Permalink to this definition">¶</a></dt>
 <dd><p>The intersect function is performed on a geometry service
 resource. This function constructs the set-theoretic intersection
 between an array of geometries and another geometry. The dimension
@@ -2630,9 +2673,9 @@ ArcGIS REST API.</dd>
 </div>
 <div class="section" id="label-points">
 <h2>label_points<a class="headerlink" href="#label-points" title="Permalink to this headline">¶</a></h2>
-<dl class="method">
+<dl class="function">
 <dt id="arcgis.geometry.label_points">
-<code class="descclassname">geometry.</code><code class="descname">label_points</code><span class="sig-paren">(</span><em>spatial_ref</em>, <em>polygons</em>, <em>gis=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.geometry.label_points" title="Permalink to this definition">¶</a></dt>
+<code class="descclassname">arcgis.geometry.</code><code class="descname">label_points</code><span class="sig-paren">(</span><em>spatial_ref</em>, <em>polygons</em>, <em>gis=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.geometry.label_points" title="Permalink to this definition">¶</a></dt>
 <dd><p>The label_points function is performed on a geometry service
 resource. The labelPoints function calculates an interior point
 for each polygon specified in the input array. These interior
@@ -2653,9 +2696,9 @@ spatial_ref.</dd>
 </div>
 <div class="section" id="lengths">
 <h2>lengths<a class="headerlink" href="#lengths" title="Permalink to this headline">¶</a></h2>
-<dl class="method">
+<dl class="function">
 <dt id="arcgis.geometry.lengths">
-<code class="descclassname">geometry.</code><code class="descname">lengths</code><span class="sig-paren">(</span><em>spatial_ref</em>, <em>polylines</em>, <em>length_unit</em>, <em>calculation_type</em>, <em>gis=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.geometry.lengths" title="Permalink to this definition">¶</a></dt>
+<code class="descclassname">arcgis.geometry.</code><code class="descname">lengths</code><span class="sig-paren">(</span><em>spatial_ref</em>, <em>polylines</em>, <em>length_unit</em>, <em>calculation_type</em>, <em>gis=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.geometry.lengths" title="Permalink to this definition">¶</a></dt>
 <dd><p>The lengths function is performed on a geometry service resource.
 This function calculates the 2D Euclidean or geodesic lengths of
 each polyline specified in the input array.</p>
@@ -2702,9 +2745,9 @@ geometry in its coordinate system is preserved.</dd>
 </div>
 <div class="section" id="offset">
 <h2>offset<a class="headerlink" href="#offset" title="Permalink to this headline">¶</a></h2>
-<dl class="method">
+<dl class="function">
 <dt id="arcgis.geometry.offset">
-<code class="descclassname">geometry.</code><code class="descname">offset</code><span class="sig-paren">(</span><em>geometries</em>, <em>offset_distance</em>, <em>offset_unit</em>, <em>offset_how='esriGeometryOffsetRounded'</em>, <em>bevel_ratio=10</em>, <em>simplify_result=False</em>, <em>spatial_ref=None</em>, <em>gis=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.geometry.offset" title="Permalink to this definition">¶</a></dt>
+<code class="descclassname">arcgis.geometry.</code><code class="descname">offset</code><span class="sig-paren">(</span><em>geometries</em>, <em>offset_distance</em>, <em>offset_unit</em>, <em>offset_how='esriGeometryOffsetRounded'</em>, <em>bevel_ratio=10</em>, <em>simplify_result=False</em>, <em>spatial_ref=None</em>, <em>gis=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.geometry.offset" title="Permalink to this definition">¶</a></dt>
 <dd><p>The offset function is performed on a geometry service resource.
 This function constructs geometries that are offset from the
 given input geometries. If the offset parameter is positive, the
@@ -2762,9 +2805,9 @@ geometries. The default is false.</dd>
 </div>
 <div class="section" id="project">
 <h2>project<a class="headerlink" href="#project" title="Permalink to this headline">¶</a></h2>
-<dl class="method">
+<dl class="function">
 <dt id="arcgis.geometry.project">
-<code class="descclassname">geometry.</code><code class="descname">project</code><span class="sig-paren">(</span><em>geometries</em>, <em>in_sr</em>, <em>out_sr</em>, <em>transformation=''</em>, <em>transform_forward=False</em>, <em>gis=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.geometry.project" title="Permalink to this definition">¶</a></dt>
+<code class="descclassname">arcgis.geometry.</code><code class="descname">project</code><span class="sig-paren">(</span><em>geometries</em>, <em>in_sr</em>, <em>out_sr</em>, <em>transformation=''</em>, <em>transform_forward=False</em>, <em>gis=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.geometry.project" title="Permalink to this definition">¶</a></dt>
 <dd><p>The project function is performed on a geometry service resource.
 This function projects an array of input geometries from the input
 spatial reference to the output spatial reference.</p>
@@ -2802,9 +2845,9 @@ result = project(geometries = input_geom, in_sr = 3857, out_sr = 4326)</dd>
 </div>
 <div class="section" id="relation">
 <h2>relation<a class="headerlink" href="#relation" title="Permalink to this headline">¶</a></h2>
-<dl class="method">
+<dl class="function">
 <dt id="arcgis.geometry.relation">
-<code class="descclassname">geometry.</code><code class="descname">relation</code><span class="sig-paren">(</span><em>geometries1</em>, <em>geometries2</em>, <em>spatial_ref</em>, <em>spatial_relation='esriGeometryRelationIntersection'</em>, <em>relation_param=''</em>, <em>gis=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.geometry.relation" title="Permalink to this definition">¶</a></dt>
+<code class="descclassname">arcgis.geometry.</code><code class="descname">relation</code><span class="sig-paren">(</span><em>geometries1</em>, <em>geometries2</em>, <em>spatial_ref</em>, <em>spatial_relation='esriGeometryRelationIntersection'</em>, <em>relation_param=''</em>, <em>gis=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.geometry.relation" title="Permalink to this definition">¶</a></dt>
 <dd><p>The relation function is performed on a geometry service resource.
 This function determines the pairs of geometries from the input
 geometry arrays that participate in the specified spatial relation.
@@ -2842,9 +2885,9 @@ esriGeometryRelationWithin | esriGeometryRelationRelation</dd>
 </div>
 <div class="section" id="reshape">
 <h2>reshape<a class="headerlink" href="#reshape" title="Permalink to this headline">¶</a></h2>
-<dl class="method">
+<dl class="function">
 <dt id="arcgis.geometry.reshape">
-<code class="descclassname">geometry.</code><code class="descname">reshape</code><span class="sig-paren">(</span><em>spatial_ref</em>, <em>target</em>, <em>reshaper</em>, <em>gis=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.geometry.reshape" title="Permalink to this definition">¶</a></dt>
+<code class="descclassname">arcgis.geometry.</code><code class="descname">reshape</code><span class="sig-paren">(</span><em>spatial_ref</em>, <em>target</em>, <em>reshaper</em>, <em>gis=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.geometry.reshape" title="Permalink to this definition">¶</a></dt>
 <dd><p>The reshape function is performed on a geometry service resource.
 It reshapes a polyline or polygon feature by constructing a
 polyline over the feature. The feature takes the shape of the
@@ -2865,9 +2908,9 @@ reshaper - The single-part polyline that does the reshaping.</p>
 </div>
 <div class="section" id="to-geo-coordinate-string">
 <h2>to_geo_coordinate_string<a class="headerlink" href="#to-geo-coordinate-string" title="Permalink to this headline">¶</a></h2>
-<dl class="method">
+<dl class="function">
 <dt id="arcgis.geometry.to_geo_coordinate_string">
-<code class="descclassname">geometry.</code><code class="descname">to_geo_coordinate_string</code><span class="sig-paren">(</span><em>spatial_ref</em>, <em>coordinates</em>, <em>conversion_type</em>, <em>conversion_mode='mgrsDefault'</em>, <em>num_of_digits=None</em>, <em>rounding=True</em>, <em>add_spaces=True</em>, <em>gis=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.geometry.to_geo_coordinate_string" title="Permalink to this definition">¶</a></dt>
+<code class="descclassname">arcgis.geometry.</code><code class="descname">to_geo_coordinate_string</code><span class="sig-paren">(</span><em>spatial_ref</em>, <em>coordinates</em>, <em>conversion_type</em>, <em>conversion_mode='mgrsDefault'</em>, <em>num_of_digits=None</em>, <em>rounding=True</em>, <em>add_spaces=True</em>, <em>gis=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.geometry.to_geo_coordinate_string" title="Permalink to this definition">¶</a></dt>
 <dd><p>The to_geo_coordinate_string function is performed on a geometry
 service resource. The function converts an array of
 xy-coordinates into well-known strings based on the conversion type
@@ -2941,9 +2984,9 @@ while the default value for both USNG and UTM is true.</dd>
 </div>
 <div class="section" id="trim-extend">
 <h2>trim_extend<a class="headerlink" href="#trim-extend" title="Permalink to this headline">¶</a></h2>
-<dl class="method">
+<dl class="function">
 <dt id="arcgis.geometry.trim_extend">
-<code class="descclassname">geometry.</code><code class="descname">trim_extend</code><span class="sig-paren">(</span><em>spatial_ref</em>, <em>polylines</em>, <em>trim_extend_to</em>, <em>extend_how=0</em>, <em>gis=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.geometry.trim_extend" title="Permalink to this definition">¶</a></dt>
+<code class="descclassname">arcgis.geometry.</code><code class="descname">trim_extend</code><span class="sig-paren">(</span><em>spatial_ref</em>, <em>polylines</em>, <em>trim_extend_to</em>, <em>extend_how=0</em>, <em>gis=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.geometry.trim_extend" title="Permalink to this definition">¶</a></dt>
 <dd><p>The trim_extend function is performed on a geometry service
 resource. This function trims or extends each polyline specified
 in the input array, using the user-specified guide polylines. When
@@ -2992,9 +3035,9 @@ its attributes empty. Incompatible with esriKeepAttributes.</dd>
 </div>
 <div class="section" id="union">
 <h2>union<a class="headerlink" href="#union" title="Permalink to this headline">¶</a></h2>
-<dl class="method">
+<dl class="function">
 <dt id="arcgis.geometry.union">
-<code class="descclassname">geometry.</code><code class="descname">union</code><span class="sig-paren">(</span><em>spatial_ref</em>, <em>geometries</em>, <em>gis=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.geometry.union" title="Permalink to this definition">¶</a></dt>
+<code class="descclassname">arcgis.geometry.</code><code class="descname">union</code><span class="sig-paren">(</span><em>spatial_ref</em>, <em>geometries</em>, <em>gis=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.geometry.union" title="Permalink to this definition">¶</a></dt>
 <dd><p>The union function is performed on a geometry service resource.
 This function constructs the set-theoretic union of the geometries
 in the input array. All inputs must be of the same type.</p>
@@ -3071,7 +3114,7 @@ spatial_ref - The well-known ID of the spatial reference or a spatial</p>
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'./',
-            VERSION:'1.6.1',
+            VERSION:'1.6.2',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  true,

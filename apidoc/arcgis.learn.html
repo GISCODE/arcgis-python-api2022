@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>arcgis.learn module &mdash; arcgis 1.6.1 documentation</title>
+  <title>arcgis.learn module &mdash; arcgis 1.6.2 documentation</title>
   
 
   
@@ -39,7 +39,7 @@
         <link rel="index" title="Index"
               href="genindex.html"/>
         <link rel="search" title="Search" href="search.html"/>
-    <link rel="top" title="arcgis 1.6.1 documentation" href="index.html"/>
+    <link rel="top" title="arcgis 1.6.2 documentation" href="index.html"/>
         <link rel="prev" title="arcgis.apps.tracker module" href="arcgis.apps.tracker.html"/>
 <!-- This code block is inserted close near the <head> tag. See http://bit.ly/2BHUQzB -->
 <!-- The point of this code block is to send us google analytics on website views -->
@@ -81,7 +81,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             
             
               <div class="version">
-                1.6.1
+                1.6.2
               </div>
             
           
@@ -131,6 +131,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <li class="toctree-l2"><a class="reference internal" href="#prepare-data">prepare_data</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#singleshotdetector">SingleShotDetector</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#unetclassifier">UnetClassifier</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#featureclassifier">FeatureClassifier</a></li>
 </ul>
 </li>
 </ul>
@@ -717,7 +718,7 @@ average precision.</td>
 
 <dl class="method">
 <dt id="arcgis.learn.SingleShotDetector.fit">
-<code class="descname">fit</code><span class="sig-paren">(</span><em>epochs=10</em>, <em>lr=slice(0.0001</em>, <em>0.003</em>, <em>None)</em>, <em>one_cycle=True</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.learn.SingleShotDetector.fit" title="Permalink to this definition">¶</a></dt>
+<code class="descname">fit</code><span class="sig-paren">(</span><em>epochs=10</em>, <em>lr=slice(0.0001</em>, <em>0.003</em>, <em>None)</em>, <em>one_cycle=True</em>, <em>early_stopping=False</em>, <em>checkpoint=True</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.learn.SingleShotDetector.fit" title="Permalink to this definition">¶</a></dt>
 <dd><p>Train the model for the specified number of epocs and using the
 specified learning rates</p>
 <table border="1" class="docutils">
@@ -742,6 +743,17 @@ the <cite>lr_find</cite> plot.</td>
 <td>Optional boolean. Parameter to select 1cycle
 learning rate schedule. If set to <cite>False</cite> no
 learning rate schedule is used.</td>
+</tr>
+<tr class="row-odd"><td>early_stopping</td>
+<td>Optional boolean. Parameter to add early stopping.
+If set to <cite>True</cite> training will stop if validation
+loss stops improving for 5 epochs.</td>
+</tr>
+<tr class="row-even"><td>checkpoint</td>
+<td>Optional boolean. Parameter to save the best model
+during training. If set to <cite>True</cite> the best model
+based on validation loss will be saved during
+training.</td>
 </tr>
 </tbody>
 </table>
@@ -817,9 +829,9 @@ Helps in choosing the optimum learning rate for training the model.</p>
 <dt id="arcgis.learn.SingleShotDetector.save">
 <code class="descname">save</code><span class="sig-paren">(</span><em>name_or_path</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.learn.SingleShotDetector.save" title="Permalink to this definition">¶</a></dt>
 <dd><p>Saves the model weights, creates an Esri Model Definition and Deep
-Learning Package zip for deployment to Image Server or ArcGIS Pro</p>
-<p>Train the model for the specified number of epocs and using the
-specified learning rates</p>
+Learning Package zip for deployment to Image Server or ArcGIS Pro
+Train the model for the specified number of epocs and using the
+specified learning rates.</p>
 <table border="1" class="docutils">
 <colgroup>
 <col width="31%" />
@@ -895,7 +907,7 @@ saved.</td>
 </table>
 <dl class="method">
 <dt id="arcgis.learn.UnetClassifier.fit">
-<code class="descname">fit</code><span class="sig-paren">(</span><em>epochs=10</em>, <em>lr=slice(0.0001</em>, <em>0.003</em>, <em>None)</em>, <em>one_cycle=True</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.learn.UnetClassifier.fit" title="Permalink to this definition">¶</a></dt>
+<code class="descname">fit</code><span class="sig-paren">(</span><em>epochs=10</em>, <em>lr=slice(0.0001</em>, <em>0.003</em>, <em>None)</em>, <em>one_cycle=True</em>, <em>early_stopping=False</em>, <em>checkpoint=True</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.learn.UnetClassifier.fit" title="Permalink to this definition">¶</a></dt>
 <dd><p>Train the model for the specified number of epocs and using the
 specified learning rates</p>
 <table border="1" class="docutils">
@@ -920,6 +932,17 @@ the <cite>lr_find</cite> plot.</td>
 <td>Optional boolean. Parameter to select 1cycle
 learning rate schedule. If set to <cite>False</cite> no
 learning rate schedule is used.</td>
+</tr>
+<tr class="row-odd"><td>early_stopping</td>
+<td>Optional boolean. Parameter to add early stopping.
+If set to <cite>True</cite> training will stop if validation
+loss stops improving for 5 epochs.</td>
+</tr>
+<tr class="row-even"><td>checkpoint</td>
+<td>Optional boolean. Parameter to save the best model
+during training. If set to <cite>True</cite> the best model
+based on validation loss will be saved during
+training.</td>
 </tr>
 </tbody>
 </table>
@@ -998,7 +1021,223 @@ all the intermediate directories.</td>
 <dl class="method">
 <dt id="arcgis.learn.UnetClassifier.unfreeze">
 <code class="descname">unfreeze</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.learn.UnetClassifier.unfreeze" title="Permalink to this definition">¶</a></dt>
-<dd><p>Unfreezes the earlier layers of the detector for fine-tuning.</p>
+<dd><p>Unfreezes the earlier layers of the model for fine-tuning.</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="featureclassifier">
+<h2>FeatureClassifier<a class="headerlink" href="#featureclassifier" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="arcgis.learn.FeatureClassifier">
+<em class="property">class </em><code class="descclassname">arcgis.learn.</code><code class="descname">FeatureClassifier</code><span class="sig-paren">(</span><em>data</em>, <em>backbone=None</em>, <em>pretrained_path=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.learn.FeatureClassifier" title="Permalink to this definition">¶</a></dt>
+<dd><p>Creates an image classifier to classify the area occupied by a
+geographical feature based on the imagery it overlaps with.</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="26%" />
+<col width="74%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><strong>Argument</strong></td>
+<td><strong>Description</strong></td>
+</tr>
+<tr class="row-even"><td>data</td>
+<td>Required fastai Databunch. Returned data object from
+<cite>prepare_data</cite> function.</td>
+</tr>
+<tr class="row-odd"><td>backbone</td>
+<td>Optional torchvision model. Backbone CNN model to be used for
+creating the base of the <cite>FeatureClassifier</cite>, which
+is <cite>resnet34</cite> by default.</td>
+</tr>
+<tr class="row-even"><td>pretrained_path</td>
+<td>Optional string. Path where pre-trained model is
+saved.</td>
+</tr>
+</tbody>
+</table>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><cite>FeatureClassifier</cite> Object</td>
+</tr>
+</tbody>
+</table>
+<dl class="method">
+<dt id="arcgis.learn.FeatureClassifier.classify_features">
+<code class="descname">classify_features</code><span class="sig-paren">(</span><em>feature_layer</em>, <em>labeled_tiles_directory</em>, <em>input_label_field</em>, <em>output_label_field</em>, <em>confidence_field=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.learn.FeatureClassifier.classify_features" title="Permalink to this definition">¶</a></dt>
+<dd><p>Classifies the labeled tiles and updates the feature layer with the prediction results with column output_label_field.</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="29%" />
+<col width="71%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><strong>Argument</strong></td>
+<td><strong>Description</strong></td>
+</tr>
+<tr class="row-even"><td>feature_layer</td>
+<td>Required. Feature Layer for classification.</td>
+</tr>
+<tr class="row-odd"><td>labeled_tiles_directory</td>
+<td>Required. Folder structure containing images and labels folder. The
+chips should have been generated using the export training data tool in
+the Labeled Tiles format, and the labels should contain the OBJECTIDs
+of the features to be classified.</td>
+</tr>
+<tr class="row-even"><td>input_label_field</td>
+<td>Required. Value field name which created the labeled tiles. This field
+should contain the OBJECTIDs of the features to be classified.</td>
+</tr>
+<tr class="row-odd"><td>output_label_field</td>
+<td>Required. Output column name to be added in the layer which contains predictions.</td>
+</tr>
+<tr class="row-even"><td>confidence_field</td>
+<td>Optional. Output column name to be added in the layer which contains the confidence score.</td>
+</tr>
+</tbody>
+</table>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">Boolean : True/False if operation is sucessful</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="arcgis.learn.FeatureClassifier.fit">
+<code class="descname">fit</code><span class="sig-paren">(</span><em>epochs=10</em>, <em>lr=slice(0.0001</em>, <em>0.003</em>, <em>None)</em>, <em>one_cycle=True</em>, <em>early_stopping=False</em>, <em>checkpoint=True</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.learn.FeatureClassifier.fit" title="Permalink to this definition">¶</a></dt>
+<dd><p>Train the model for the specified number of epocs and using the
+specified learning rates</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="30%" />
+<col width="70%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><strong>Argument</strong></td>
+<td><strong>Description</strong></td>
+</tr>
+<tr class="row-even"><td>epochs</td>
+<td>Required integer. Number of cycles of training
+on the data. Increase it if underfitting.</td>
+</tr>
+<tr class="row-odd"><td>lr</td>
+<td>Required float or slice of floats. Learning rate
+to be used for training the model. Select from
+the <cite>lr_find</cite> plot.</td>
+</tr>
+<tr class="row-even"><td>one_cycle</td>
+<td>Optional boolean. Parameter to select 1cycle
+learning rate schedule. If set to <cite>False</cite> no
+learning rate schedule is used.</td>
+</tr>
+<tr class="row-odd"><td>early_stopping</td>
+<td>Optional boolean. Parameter to add early stopping.
+If set to <cite>True</cite> training will stop if validation
+loss stops improving for 5 epochs.</td>
+</tr>
+<tr class="row-even"><td>checkpoint</td>
+<td>Optional boolean. Parameter to save the best model
+during training. If set to <cite>True</cite> the best model
+based on validation loss will be saved during
+training.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="classmethod">
+<dt id="arcgis.learn.FeatureClassifier.from_model">
+<em class="property">classmethod </em><code class="descname">from_model</code><span class="sig-paren">(</span><em>emd_path</em>, <em>data=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.learn.FeatureClassifier.from_model" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="arcgis.learn.FeatureClassifier.load">
+<code class="descname">load</code><span class="sig-paren">(</span><em>name_or_path</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.learn.FeatureClassifier.load" title="Permalink to this definition">¶</a></dt>
+<dd><p>Loads a saved model for inferencing or fine tuning from the specified
+path or model name.</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="30%" />
+<col width="70%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><strong>Argument</strong></td>
+<td><strong>Description</strong></td>
+</tr>
+<tr class="row-even"><td>name_or_path</td>
+<td>Required string. Name of the model to load from
+the pre-defined location. If path is passed then
+it loads from the specified path with model name
+as directory name. Path to “.pth” file can also
+be passed</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="arcgis.learn.FeatureClassifier.lr_find">
+<code class="descname">lr_find</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.learn.FeatureClassifier.lr_find" title="Permalink to this definition">¶</a></dt>
+<dd><p>Runs the Learning Rate Finder, and displays the graph of it’s output.
+Helps in choosing the optimum learning rate for training the model.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="arcgis.learn.FeatureClassifier.plot_confusion_matrix">
+<code class="descname">plot_confusion_matrix</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.learn.FeatureClassifier.plot_confusion_matrix" title="Permalink to this definition">¶</a></dt>
+<dd><p>Plots a confusion matrix of the model predictions to evaluate accuracy</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="arcgis.learn.FeatureClassifier.predict">
+<code class="descname">predict</code><span class="sig-paren">(</span><em>img_path</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.learn.FeatureClassifier.predict" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="arcgis.learn.FeatureClassifier.save">
+<code class="descname">save</code><span class="sig-paren">(</span><em>name_or_path</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.learn.FeatureClassifier.save" title="Permalink to this definition">¶</a></dt>
+<dd><p>Saves the model weights, creates an Esri Model Definition and Deep
+Learning Package zip for deployment to Image Server or ArcGIS Pro
+Train the model for the specified number of epocs and using the
+specified learning rates.</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="31%" />
+<col width="69%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><strong>Argument</strong></td>
+<td><strong>Description</strong></td>
+</tr>
+<tr class="row-even"><td>name_or_path</td>
+<td>Required string. Name of the model to save. It
+stores it at the pre-defined location. If path
+is passed then it stores at the specified path
+with model name as directory name. and creates
+all the intermediate directories.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="arcgis.learn.FeatureClassifier.show_results">
+<code class="descname">show_results</code><span class="sig-paren">(</span><em>rows=5</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.learn.FeatureClassifier.show_results" title="Permalink to this definition">¶</a></dt>
+<dd><p>Displays the results of a trained model on a part of the validation set.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="arcgis.learn.FeatureClassifier.unfreeze">
+<code class="descname">unfreeze</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.learn.FeatureClassifier.unfreeze" title="Permalink to this definition">¶</a></dt>
+<dd><p>Unfreezes the earlier layers of the model for fine-tuning.</p>
 </dd></dl>
 
 </dd></dl>
@@ -1049,7 +1288,7 @@ all the intermediate directories.</td>
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'./',
-            VERSION:'1.6.1',
+            VERSION:'1.6.2',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  true,

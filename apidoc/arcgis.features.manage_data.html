@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>arcgis.features.manage_data module &mdash; arcgis 1.6.1 documentation</title>
+  <title>arcgis.features.manage_data module &mdash; arcgis 1.6.2 documentation</title>
   
 
   
@@ -39,7 +39,7 @@
         <link rel="index" title="Index"
               href="genindex.html"/>
         <link rel="search" title="Search" href="search.html"/>
-    <link rel="top" title="arcgis 1.6.1 documentation" href="index.html"/>
+    <link rel="top" title="arcgis 1.6.2 documentation" href="index.html"/>
         <link rel="up" title="arcgis.features module" href="arcgis.features.toc.html"/>
         <link rel="next" title="arcgis.features.managers module" href="arcgis.features.managers.html"/>
         <link rel="prev" title="arcgis.features.hydrology module" href="arcgis.features.hydrology.html"/>
@@ -83,7 +83,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             
             
               <div class="version">
-                1.6.1
+                1.6.2
               </div>
             
           
@@ -233,112 +233,383 @@ overlay_layers combines two or more layers into one single layer. You can think 
 maps and creating a single map containing all the information found in the stack.</p>
 <div class="section" id="dissolve-boundaries">
 <h2>dissolve_boundaries<a class="headerlink" href="#dissolve-boundaries" title="Permalink to this headline">¶</a></h2>
-<dl class="method">
+<dl class="function">
 <dt id="arcgis.features.manage_data.dissolve_boundaries">
-<code class="descclassname">manage_data.</code><code class="descname">dissolve_boundaries</code><span class="sig-paren">(</span><em>input_layer</em>, <em>dissolve_fields=[]</em>, <em>summary_fields=[]</em>, <em>output_name=None</em>, <em>context=None</em>, <em>gis=None</em>, <em>estimate=False</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.features.manage_data.dissolve_boundaries" title="Permalink to this definition">¶</a></dt>
-<dd><p>Dissolve features based on specified fields.</p>
-<dl class="docutils">
-<dt>input_layer <span class="classifier-delimiter">:</span> <span class="classifier">Required layer (see Feature Input in documentation)</span></dt>
-<dd>The layer containing polygon features that will be dissolved.</dd>
-<dt>dissolve_fields <span class="classifier-delimiter">:</span> <span class="classifier">Optional list of strings</span></dt>
-<dd>One or more fields from the input that control which polygons are merged. If no fields are supplied, all
-polygons that overlap or shared a common border will be dissolved into one polygon.</dd>
-<dt>summary_fields <span class="classifier-delimiter">:</span> <span class="classifier">Optional list of strings</span></dt>
-<dd>A list of field names and statistical types that will be used to summarize the output. Supported statistics
-include: Sum, Mean, Min, Max, and Stddev.</dd>
-<dt>output_name <span class="classifier-delimiter">:</span> <span class="classifier">Optional string</span></dt>
-<dd>Additional properties such as output feature service name.</dd>
-<dt>context <span class="classifier-delimiter">:</span> <span class="classifier">Optional string</span></dt>
-<dd>Additional settings such as processing extent and output spatial reference.</dd>
-<dt>gis :</dt>
-<dd>Optional, the GIS on which this tool runs. If not specified, the active GIS is used.</dd>
-</dl>
-<p>dissolved_layer : layer (FeatureCollection)</p>
+<code class="descclassname">arcgis.features.manage_data.</code><code class="descname">dissolve_boundaries</code><span class="sig-paren">(</span><em>input_layer</em>, <em>dissolve_fields=[]</em>, <em>summary_fields=[]</em>, <em>output_name=None</em>, <em>context=None</em>, <em>gis=None</em>, <em>estimate=False</em>, <em>multi_part_features=True</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.features.manage_data.dissolve_boundaries" title="Permalink to this definition">¶</a></dt>
+<dd><img alt="_images/dissolve_boundaries.png" src="_images/dissolve_boundaries.png" />
+<p>The dissolve_boundaries method finds polygons that overlap or share a common boundary and merges them together to form a single polygon.</p>
+<p>You can control which boundaries are merged by specifying a field. For example, if you have a layer of counties, and each county 
+has a State_Name attribute, you can dissolve boundaries using the State_Name attribute. Adjacent counties will be merged together 
+if they have the same value for State_Name. The end result is a layer of state boundaries.</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="19%" />
+<col width="81%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><strong>Parameter</strong></td>
+<td><strong>Description</strong></td>
+</tr>
+<tr class="row-even"><td>input_layer</td>
+<td>Required layer. The layer containing polygon features that will be dissolved. See <a class="reference internal" href="arcgis.features.analysis.html#featureinput"><span class="std std-ref">Feature Input</span></a>.</td>
+</tr>
+<tr class="row-odd"><td>dissolve_fields</td>
+<td><p class="first">Optional list of strings. One or more fields on the input_layer that control which polygons
+are merged. If you don’t supply dissolve_fields , or you supply an empty list of fields, polygons
+that share a common border (that is, they are adjacent) or polygon areas that overlap will be dissolved into one polygon.</p>
+<p class="last">If you do supply values for the dissolve_fields parameter, polygons that share a common border
+and contain the same value in one or more fields will be dissolved. For example, if you have a layer of counties,
+and each county has a State_Name attribute, you can dissolve boundaries using the State_Name attribute.
+Adjacent counties will be merged together if they have the same value for State_Name. The end result is a layer of
+state boundaries.If two or more fields are specified, the values in these fields must be the same for the boundary to be dissolved.</p>
+</td>
+</tr>
+<tr class="row-even"><td>summary_fields</td>
+<td><p class="first">Optional list of strings. A list of field names and statistical summary type that you wish to calculate from the polygons
+that are dissolved together. For example, if you are dissolving counties based on State_Name, and each county had a Population field, you can sum Population.
+The result would be a layer of state boundaries with total population.</p>
+<p>fieldName is the name of one of the numeric fields found in the input_layer.
+summary type is one of the following:</p>
+<ul class="simple">
+<li>Sum—Adds the total value of all the points in each polygon</li>
+<li>Mean—Calculates the average of all the points in each polygon.</li>
+<li>Min—Finds the smallest value of all the points in each polygon.</li>
+<li>Max—Finds the largest value of all the points in each polygon.</li>
+<li>Stddev—Finds the standard deviation of all the points in each polygon.</li>
+</ul>
+<p class="last">Example [fieldName1 summaryType1,fieldName2 summaryType2].</p>
+</td>
+</tr>
+<tr class="row-odd"><td>output_name</td>
+<td>Optional string. If provided, the task will create a feature service of the results.
+You define the name of the service. If output_name is not supplied, the task will return a feature collection.</td>
+</tr>
+<tr class="row-even"><td>context</td>
+<td><p class="first">Optional string. Context contains additional settings that affect task execution. For dissolve_boundaries Points, there are two settings.</p>
+<ol class="last arabic simple">
+<li>Extent (extent)-a bounding box that defines the analysis area. Only those features in the input_layer that intersect the bounding box will be analyzed.</li>
+<li>Output Spatial Reference (outSR)—the output features will be projected into the output spatial reference.</li>
+</ol>
+</td>
+</tr>
+<tr class="row-odd"><td>gis</td>
+<td>Optional, the GIS on which this tool runs. If not specified, the active GIS is used.</td>
+</tr>
+<tr class="row-even"><td>estimate</td>
+<td>Optional Boolean. If True, the number of credits to run the operation will be returned.</td>
+</tr>
+<tr class="row-odd"><td>multi_part_features</td>
+<td><p class="first">Optional boolean. Specifies whether multipart features (i.e. features which share a common
+attribute table but are not visibly connected) are allowed in the output feature class.</p>
+<p>Choice list: [‘True’, ‘False’].</p>
+<p>True: Specifies multipart features are allowed.</p>
+<p>False: Specifies multipart features are not allowed. Instead of creating multipart features, individual features will be created for each part.</p>
+<p class="last">The default value is True.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">result_layer : feature layer Item if output_name is specified, else Feature Collection.</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">USAGE</span> <span class="n">EXAMPLE</span><span class="p">:</span> <span class="n">To</span> <span class="n">dissolve</span> <span class="n">boundaries</span> <span class="n">of</span> <span class="n">polygons</span> <span class="k">with</span> <span class="n">same</span> <span class="n">state</span> <span class="n">name</span><span class="o">.</span> <span class="n">The</span> <span class="n">dissolved</span> <span class="n">polygons</span> <span class="n">are</span> <span class="n">summarized</span> <span class="n">using</span> <span class="n">population</span> <span class="k">as</span> <span class="n">summary</span> <span class="n">field</span> <span class="ow">and</span> <span class="n">standard</span> <span class="n">deviation</span> <span class="k">as</span> <span class="n">summary</span> <span class="nb">type</span><span class="o">.</span>
+<span class="n">diss_counties</span> <span class="o">=</span> <span class="n">dissolve_boundaries</span><span class="p">(</span><span class="n">input_layer</span><span class="o">=</span><span class="n">usa_counties</span><span class="p">,</span>
+                                    <span class="n">dissolve_fields</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;STATE_NAME&quot;</span><span class="p">],</span>
+                                    <span class="n">summary_fields</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;POPULATION STDDEV&quot;</span><span class="p">],</span>
+                                    <span class="n">output_name</span><span class="o">=</span><span class="s2">&quot;DissolveBoundaries&quot;</span><span class="p">)</span>    
+</pre></div>
+</div>
 </dd></dl>
 
 </div>
 <div class="section" id="extract-data">
 <h2>extract_data<a class="headerlink" href="#extract-data" title="Permalink to this headline">¶</a></h2>
-<dl class="method">
+<dl class="function">
 <dt id="arcgis.features.manage_data.extract_data">
-<code class="descclassname">manage_data.</code><code class="descname">extract_data</code><span class="sig-paren">(</span><em>input_layers</em>, <em>extent=None</em>, <em>clip=False</em>, <em>data_format=None</em>, <em>output_name=None</em>, <em>context=None</em>, <em>gis=None</em>, <em>estimate=False</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.features.manage_data.extract_data" title="Permalink to this definition">¶</a></dt>
-<dd><p>Select and download data for a specified area of interest. Layers that you select will be added to a zip file or
-layer package.</p>
-<dl class="docutils">
-<dt>input_layers <span class="classifier-delimiter">:</span> <span class="classifier">Required list of strings</span></dt>
-<dd>The layers from which you can extract features.</dd>
-<dt>extent <span class="classifier-delimiter">:</span> <span class="classifier">Optional string</span></dt>
-<dd>The area that defines which features will be included in the output zip file or layer package.</dd>
-<dt>clip <span class="classifier-delimiter">:</span> <span class="classifier">Optional bool</span></dt>
-<dd>Select features that intersect the extent or clip features within the extent.</dd>
-<dt>data_format <span class="classifier-delimiter">:</span> <span class="classifier">Optional string</span></dt>
-<dd>Format of the data that will be extracted and downloaded.  Layer packages will always include file geodatabases.</dd>
-<dt>output_name <span class="classifier-delimiter">:</span> <span class="classifier">Optional string</span></dt>
-<dd>Additional properties such as output feature service name.</dd>
-<dt>context <span class="classifier-delimiter">:</span> <span class="classifier">Optional string</span></dt>
-<dd>Additional settings such as processing extent and output spatial reference.</dd>
-<dt>gis :</dt>
-<dd>Optional, the GIS on which this tool runs. If not specified, the active GIS is used.</dd>
-</dl>
-<p>content_id : layer (FeatureCollection)</p>
+<code class="descclassname">arcgis.features.manage_data.</code><code class="descname">extract_data</code><span class="sig-paren">(</span><em>input_layers</em>, <em>extent=None</em>, <em>clip=False</em>, <em>data_format=None</em>, <em>output_name=None</em>, <em>context=None</em>, <em>gis=None</em>, <em>estimate=False</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.features.manage_data.extract_data" title="Permalink to this definition">¶</a></dt>
+<dd><img alt="_images/extract_data.png" src="_images/extract_data.png" />
+<p>The <code class="docutils literal"><span class="pre">extract_data</span></code> method is used to extract data from one or more layers within a given extent. 
+The extracted data format can be a file geodatabase, shapefiles, csv, or kml. 
+File geodatabases and shapefiles are added to a zip file that can be downloaded.</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="12%" />
+<col width="88%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><strong>Argument</strong></td>
+<td><strong>Description</strong></td>
+</tr>
+<tr class="row-even"><td>input_layers</td>
+<td>Required list of strings. A list of input layers to be extracted. See <a class="reference internal" href="arcgis.features.analysis.html#featureinput"><span class="std std-ref">Feature Input</span></a>.</td>
+</tr>
+<tr class="row-odd"><td>extent</td>
+<td>Optional layer. The extent is the area of interest used to extract the input features. If not specified, all features from each input layer are extracted. See <a class="reference internal" href="arcgis.features.analysis.html#featureinput"><span class="std std-ref">Feature Input</span></a>.</td>
+</tr>
+<tr class="row-even"><td>clip</td>
+<td><p class="first">Optional boolean. A Boolean value that specifies whether the features within the input layer are clipped
+within the extent. By default, features are not clipped and all features intersecting the extent are returned.</p>
+<p class="last">The default is false.</p>
+</td>
+</tr>
+<tr class="row-odd"><td>data_format</td>
+<td><p class="first">Optional string. A keyword defining the output data format for your extracted data.</p>
+<p>Choice list: [‘FileGeodatabase’, ‘ShapeFile’, ‘KML’, ‘CSV’]</p>
+<p>The default is ‘CSV’.</p>
+<p class="last">If FILEGEODATABASE is specified, and the input layer has <a class="reference external" href="https://enterprise.arcgis.com/en/portal/latest/use/manage-hosted-layers.htm#ESRI_SECTION2_EF4F7A72F7B74E47B5CBCC1F343445E2">attachments</a> , the attachments will be extracted
+to the output file geodatabase if clip is false. If clip is true, attachments will not be extracted.</p>
+</td>
+</tr>
+<tr class="row-even"><td>output_name</td>
+<td><p class="first">Optional string or dict. <code class="docutils literal"><span class="pre">output_name</span></code> is used to name the item in your My contents page. For more information on these item properties, see the Item resource page in the <a class="reference external" href="https://developers.arcgis.com/rest/users-groups-and-items/item.htm">ArcGIS REST API</a>
+Syntax when <code class="docutils literal"><span class="pre">output_name</span></code> is dict: {</p>
+<blockquote class="last">
+<div>“title”: “&lt;title&gt;”,
+“tag”: “&lt;tags&gt;”,
+“snippet”: “&lt;snippet&gt;”,
+“description”: “&lt;description&gt;”
+}</div></blockquote>
+</td>
+</tr>
+<tr class="row-odd"><td>context</td>
+<td><p class="first">Optional string. Context contains additional settings that affect method execution. For <code class="docutils literal"><span class="pre">extract_data</span></code>, there is one setting.</p>
+<ol class="last arabic simple">
+<li>Output Spatial Reference (outSR)—the extracted features will be projected into the output spatial reference.</li>
+</ol>
+</td>
+</tr>
+<tr class="row-even"><td>gis</td>
+<td>Optional, the GIS on which this tool runs. If not specified, the active GIS is used.</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="c1"># USAGE EXAMPLE: To extract data from highways layer with the extent of a state boundary. </span>
+
+<span class="n">ext_state_highway</span> <span class="o">=</span> <span class="n">extract_data</span><span class="p">(</span><span class="n">input_layers</span><span class="o">=</span><span class="p">[</span><span class="n">highways</span><span class="o">.</span><span class="n">layers</span><span class="p">[</span><span class="mi">0</span><span class="p">]],</span>
+                         <span class="n">extent</span><span class="o">=</span><span class="n">state_area_boundary</span><span class="o">.</span><span class="n">layers</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span>
+                         <span class="n">clip</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span>
+                         <span class="n">data_format</span><span class="o">=</span><span class="s1">&#39;shapefile&#39;</span><span class="p">,</span>
+                         <span class="n">output_name</span><span class="o">=</span><span class="s1">&#39;state highway extracted&#39;</span><span class="p">)</span>     
+</pre></div>
+</div>
 </dd></dl>
 
 </div>
 <div class="section" id="merge-layers">
 <h2>merge_layers<a class="headerlink" href="#merge-layers" title="Permalink to this headline">¶</a></h2>
-<dl class="method">
+<dl class="function">
 <dt id="arcgis.features.manage_data.merge_layers">
-<code class="descclassname">manage_data.</code><code class="descname">merge_layers</code><span class="sig-paren">(</span><em>input_layer</em>, <em>merge_layer</em>, <em>merging_attributes=[]</em>, <em>output_name=None</em>, <em>context=None</em>, <em>gis=None</em>, <em>estimate=False</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.features.manage_data.merge_layers" title="Permalink to this definition">¶</a></dt>
-<dd><p>Combines two inputs of the same feature data type into a new output.</p>
-<dl class="docutils">
-<dt>input_layer <span class="classifier-delimiter">:</span> <span class="classifier">Required layer (see Feature Input in documentation)</span></dt>
-<dd>The point, line, or polygon  features to merge with the mergeLayer.</dd>
-<dt>merge_layer <span class="classifier-delimiter">:</span> <span class="classifier">Required layer (see Feature Input in documentation)</span></dt>
-<dd>The point, line or polygon features to merge with inputLayer.  mergeLayer must contain the same feature type
-point, line, or polygon) as the inputLayer.</dd>
-<dt>merging_attributes <span class="classifier-delimiter">:</span> <span class="classifier">Optional list of strings</span></dt>
-<dd>An array of values that describe how fields from the mergeLayer are to be modified.  By default all fields from
-both inputs will be carried across to the output.</dd>
-<dt>output_name <span class="classifier-delimiter">:</span> <span class="classifier">Optional string</span></dt>
-<dd>Additional properties such as output feature service name.</dd>
-<dt>context <span class="classifier-delimiter">:</span> <span class="classifier">Optional string</span></dt>
-<dd>Additional settings such as processing extent and output spatial reference.</dd>
-<dt>gis :</dt>
-<dd>Optional, the GIS on which this tool runs. If not specified, the active GIS is used.</dd>
-</dl>
-<p>merged_layer : layer (FeatureCollection)</p>
+<code class="descclassname">arcgis.features.manage_data.</code><code class="descname">merge_layers</code><span class="sig-paren">(</span><em>input_layer</em>, <em>merge_layer</em>, <em>merging_attributes=[]</em>, <em>output_name=None</em>, <em>context=None</em>, <em>gis=None</em>, <em>estimate=False</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.features.manage_data.merge_layers" title="Permalink to this definition">¶</a></dt>
+<dd><img alt="_images/merge_layers.png" src="_images/merge_layers.png" />
+<p>The <code class="docutils literal"><span class="pre">merge_layers</span></code> method copies features from two layers into a new layer. 
+The layers to be merged must all contain the same feature types (points, lines, or polygons). 
+You can control how the fields from the input layers are joined and copied. For example:</p>
+<ul class="simple">
+<li>I have three layers for England, Wales, and Scotland and I want a single layer of Great Britain.</li>
+<li>I have two layers containing parcel information for contiguous townships. I want to join them together into a single layer, keeping only the fields that have the same name and type on the two layers.</li>
+</ul>
+<table border="1" class="docutils">
+<colgroup>
+<col width="7%" />
+<col width="93%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><strong>Argument</strong></td>
+<td><strong>Description</strong></td>
+</tr>
+<tr class="row-even"><td>input_layer</td>
+<td>Required feature layer. The point, line or polygon features with the <code class="docutils literal"><span class="pre">merge_layer</span></code>. See <a class="reference internal" href="arcgis.features.analysis.html#featureinput"><span class="std std-ref">Feature Input</span></a>.</td>
+</tr>
+<tr class="row-odd"><td>merge_layer</td>
+<td>Required feature layer. The point, line, or polygon features to merge with the <code class="docutils literal"><span class="pre">input_layer</span></code>.
+The <code class="docutils literal"><span class="pre">merge_layer</span></code> must contain the same feature type (point, line, or polygon) as the <code class="docutils literal"><span class="pre">input_layer</span></code>. See <a class="reference internal" href="arcgis.features.analysis.html#featureinput"><span class="std std-ref">Feature Input</span></a>.</td>
+</tr>
+<tr class="row-even"><td>merge_attributes</td>
+<td><p class="first">Optional list. Defines how the fields in <code class="docutils literal"><span class="pre">merge_layer</span></code> will be
+modified. By default, all fields from both inputs will be
+included in the output layer.</p>
+<p>If a field exists in one layer but not the other, the output
+layer will still contain the field. The output field will
+contain null values for the input features that did not have the
+field. For example, if the <code class="docutils literal"><span class="pre">input_layer</span></code> contains a field named
+TYPE but the <code class="docutils literal"><span class="pre">merge_layer</span></code> does not contain TYPE, the output will
+contain TYPE, but its values will be null for all the features
+copied from the <code class="docutils literal"><span class="pre">merge_layer</span></code>.</p>
+<p>You can control how fields in the <code class="docutils literal"><span class="pre">merge_layer</span></code> are written to the
+output layer using the following merge types that operate on a
+specified <code class="docutils literal"><span class="pre">merge_layer</span></code> field:</p>
+<ul class="last simple">
+<li><code class="docutils literal"><span class="pre">Remove</span></code> - The field in the <code class="docutils literal"><span class="pre">merge_layer</span></code> will be removed from the output layer.</li>
+<li><code class="docutils literal"><span class="pre">Rename</span></code> - The field in the <code class="docutils literal"><span class="pre">merge_layer</span></code> will be renamed in the output layer.
+You cannot rename a field in the <code class="docutils literal"><span class="pre">merge_layer</span></code> to a field in the <code class="docutils literal"><span class="pre">input_layer</span></code>. If you want to make field names equivalent, use Match.</li>
+<li><code class="docutils literal"><span class="pre">Match</span></code> - A field in the <code class="docutils literal"><span class="pre">merge_layer</span></code> is made equivalent to a field in the <code class="docutils literal"><span class="pre">input_layer</span></code> specified by merge value.
+For example, the <code class="docutils literal"><span class="pre">input_layer</span></code> has a field named CODE and the <code class="docutils literal"><span class="pre">merge_layer</span></code> has a field named STATUS.
+You can match STATUS to CODE, and the output will contain the CODE field with values of the STATUS field used for features copied from the <code class="docutils literal"><span class="pre">merge_layer</span></code>.
+Type casting is supported (for example, float to integer, integer to string) except for string to numeric.</li>
+</ul>
+</td>
+</tr>
+<tr class="row-odd"><td>output_name</td>
+<td>Optional string. If provided, the method will create a feature service of the results. You define the name of the service. If <code class="docutils literal"><span class="pre">output_name</span></code> is not supplied, the method will return a feature collection.</td>
+</tr>
+<tr class="row-even"><td>context</td>
+<td><p class="first">Optional dict. Context contains additional settings that affect task execution. For <code class="docutils literal"><span class="pre">merge_layers</span></code>, there are two settings.</p>
+<ol class="last arabic simple">
+<li>Extent (<code class="docutils literal"><span class="pre">extent</span></code>)-a bounding box that defines the analysis area. Only those features in the <code class="docutils literal"><span class="pre">input_layer</span></code> and the <code class="docutils literal"><span class="pre">merge_layer</span></code> that intersect the bounding box will be merged into the output layer.</li>
+<li>Output Spatial Reference (<code class="docutils literal"><span class="pre">outSR</span></code>)—the output features will be projected into the output spatial reference.</li>
+</ol>
+</td>
+</tr>
+<tr class="row-odd"><td>gis</td>
+<td>Optional, the GIS on which this tool runs. If not specified, the active GIS is used.</td>
+</tr>
+<tr class="row-even"><td>estimate</td>
+<td>Optional boolean. If True, the estimated number of credits required to run the operation will be returned.</td>
+</tr>
+</tbody>
+</table>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">result_layer : feature layer Item if <code class="docutils literal"><span class="pre">output_name</span></code> is specified, else Feature Collection.</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="c1">#USAGE EXAMPLE: To merge two layers into a new layer using merge attributes.</span>
+<span class="n">merged</span> <span class="o">=</span> <span class="n">merge_layers</span><span class="p">(</span><span class="n">input_layer</span><span class="o">=</span><span class="n">esri_offices</span><span class="p">,</span>
+                      <span class="n">merge_layer</span><span class="o">=</span><span class="n">satellite_soffice_lyr</span><span class="p">,</span>
+                      <span class="n">merging_attributes</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;State Match Place_Name&quot;</span><span class="p">],</span>
+                      <span class="n">output_name</span><span class="o">=</span><span class="s2">&quot;merge layers&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
 </dd></dl>
 
 </div>
 <div class="section" id="overlay-layers">
 <h2>overlay_layers<a class="headerlink" href="#overlay-layers" title="Permalink to this headline">¶</a></h2>
-<dl class="method">
+<dl class="function">
 <dt id="arcgis.features.manage_data.overlay_layers">
-<code class="descclassname">manage_data.</code><code class="descname">overlay_layers</code><span class="sig-paren">(</span><em>input_layer</em>, <em>overlay_layer</em>, <em>overlay_type='Intersect'</em>, <em>snap_to_input=False</em>, <em>output_type='Input'</em>, <em>tolerance=None</em>, <em>output_name=None</em>, <em>context=None</em>, <em>gis=None</em>, <em>estimate=False</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.features.manage_data.overlay_layers" title="Permalink to this definition">¶</a></dt>
-<dd><p>Overlays the input layer with the overlay layer. Overlay operations supported are Intersect, Union, and Erase.</p>
-<dl class="docutils">
-<dt>input_layer <span class="classifier-delimiter">:</span> <span class="classifier">Required layer (see Feature Input in documentation)</span></dt>
-<dd>The input analysis layer.</dd>
-<dt>overlay_layer <span class="classifier-delimiter">:</span> <span class="classifier">Required layer (see Feature Input in documentation)</span></dt>
-<dd>The layer to be overlaid with the analysis layer.</dd>
-<dt>overlay_type <span class="classifier-delimiter">:</span> <span class="classifier">Optional string</span></dt>
-<dd>The overlay type (INTERSECT, UNION, or ERASE) defines how the analysis layer and the overlay layer are combined.</dd>
-<dt>snap_to_input <span class="classifier-delimiter">:</span> <span class="classifier">Optional bool</span></dt>
-<dd>When the distance between features is less than the tolerance, the features in the overlay layer will snap to
-the features in the input layer.</dd>
-<dt>output_type <span class="classifier-delimiter">:</span> <span class="classifier">Optional string</span></dt>
-<dd>The type of intersection (INPUT, LINE, POINT).</dd>
-<dt>tolerance <span class="classifier-delimiter">:</span> <span class="classifier">Optional float</span></dt>
-<dd>The minimum distance separating all feature coordinates (nodes and vertices) as well as the distance a
-coordinate can move in X or Y (or both).</dd>
-<dt>output_name <span class="classifier-delimiter">:</span> <span class="classifier">Optional string</span></dt>
-<dd>Additional properties such as output feature service name.</dd>
-<dt>context <span class="classifier-delimiter">:</span> <span class="classifier">Optional string</span></dt>
-<dd>Additional settings such as processing extent and output spatial reference.</dd>
-<dt>gis :</dt>
-<dd>Optional, the GIS on which this tool runs. If not specified, the active GIS is used.</dd>
-</dl>
-<p>output_layer : layer (FeatureCollection)</p>
+<code class="descclassname">arcgis.features.manage_data.</code><code class="descname">overlay_layers</code><span class="sig-paren">(</span><em>input_layer</em>, <em>overlay_layer</em>, <em>overlay_type='Intersect'</em>, <em>snap_to_input=False</em>, <em>output_type='Input'</em>, <em>tolerance=None</em>, <em>output_name=None</em>, <em>context=None</em>, <em>gis=None</em>, <em>estimate=False</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.features.manage_data.overlay_layers" title="Permalink to this definition">¶</a></dt>
+<dd><img alt="_images/overlay_layers.png" src="_images/overlay_layers.png" />
+<p>The <code class="docutils literal"><span class="pre">overlay_layers</span></code> method combines two or more layers into one single layer. 
+You can think of overlay as peering through a stack of maps and creating a single map containing 
+all the information found in the stack. In fact, before the advent of GIS, cartographers would 
+literally copy maps onto clear acetate sheets, overlay these sheets on a light table, and hand 
+draw a new map from the overlaid data. Overlay is much more than a merging of line work; all the 
+attributes of the features taking part in the overlay are carried through to the final product. 
+Overlay is used to answer one of the most basic questions of geography, “what is on top of what?” For example:</p>
+<ul class="simple">
+<li>What parcels are within the 100-year floodplain? (Within is just another way of saying on top of.)</li>
+<li>What roads are within what counties?</li>
+<li>What land use is on top of what soil type?</li>
+<li>What wells are within abandoned military bases?</li>
+</ul>
+<table border="1" class="docutils">
+<colgroup>
+<col width="7%" />
+<col width="93%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><strong>Argument</strong></td>
+<td><strong>Description</strong></td>
+</tr>
+<tr class="row-even"><td>input_layer</td>
+<td>Required layer. The point, line, or polygon features that will be
+overlayed with the <code class="docutils literal"><span class="pre">overlay_layer</span></code>. See <a class="reference internal" href="arcgis.features.analysis.html#featureinput"><span class="std std-ref">Feature Input</span></a>.</td>
+</tr>
+<tr class="row-odd"><td>overlay_layer</td>
+<td>Required layer. The features that will be overlaid with the <code class="docutils literal"><span class="pre">input_layer</span></code> features. See <a class="reference internal" href="arcgis.features.analysis.html#featureinput"><span class="std std-ref">Feature Input</span></a>.</td>
+</tr>
+<tr class="row-even"><td>overlay_type</td>
+<td><p class="first">Optional string. The type of overlay to be performed.</p>
+<p>Choice list: [‘Intersect’, ‘Union’, ‘Erase’]</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="12%" />
+<col width="88%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><img alt="Intersect" src="_images/Intersect.png" /></td>
+<td><code class="docutils literal"><span class="pre">Intersect</span></code>-Computes a geometric intersection of the input layers. Features or portions of
+features which overlap in both the <code class="docutils literal"><span class="pre">input_layer</span></code> and <code class="docutils literal"><span class="pre">overlay_layer</span></code> layer will be written
+to the output layer. This is the default.</td>
+</tr>
+<tr class="row-even"><td><img alt="Union" src="_images/Union.png" /></td>
+<td><code class="docutils literal"><span class="pre">Union</span></code>-Computes a geometric union of the input layers. All features and their attributes will
+be written to the output layer. This option is only valid if both the <code class="docutils literal"><span class="pre">input_layer</span></code> and
+the <code class="docutils literal"><span class="pre">overlay_layer</span></code> contain polygon features.</td>
+</tr>
+<tr class="row-odd"><td><img alt="Erase" src="_images/Erase.png" /></td>
+<td><code class="docutils literal"><span class="pre">Erase</span></code>-Only those features or portions of features in the <code class="docutils literal"><span class="pre">overlay_layer</span></code> that are not within the
+features in the <code class="docutils literal"><span class="pre">input_layer</span></code> layer are written to the output.</td>
+</tr>
+</tbody>
+</table>
+<p class="last">The default value is ‘Intersect’.</p>
+</td>
+</tr>
+<tr class="row-even"><td>snap_to_input</td>
+<td>Optional boolean. A Boolean value indicating if feature vertices in the <code class="docutils literal"><span class="pre">input_layer</span></code> are allowed to move.
+The default is false and means if the distance between features is less than the <code class="docutils literal"><span class="pre">tolerance</span></code> value, all features from both
+layers can move to allow snapping to each other. When set to true, only features in <code class="docutils literal"><span class="pre">overlay_layer</span></code> can move to snap to the <code class="docutils literal"><span class="pre">input_layer</span></code> features.</td>
+</tr>
+<tr class="row-odd"><td>output_type</td>
+<td><p class="first">Optional string. The type of intersection you want to find.
+This parameter is only valid when the <code class="docutils literal"><span class="pre">overlay_type</span></code> is Intersect.</p>
+<p>Choice list: [‘Input’, ‘Line’, ‘Point’]</p>
+<blockquote class="last">
+<div><ul class="simple">
+<li><code class="docutils literal"><span class="pre">Input</span></code> - The features returned will be the same geometry type as
+the <code class="docutils literal"><span class="pre">input_layer</span></code> or <code class="docutils literal"><span class="pre">overlay_layer</span></code> with the lowest dimension geometry.
+If all inputs are polygons, the output will contain polygons. If one or more of
+the inputs are lines and none of the inputs are points, the output will be line.
+If one or more of the inputs are points, the output will contain points. This is the default.</li>
+<li><code class="docutils literal"><span class="pre">Line</span></code> - Line intersections will be returned. This is only valid if none of the inputs are points.</li>
+<li><code class="docutils literal"><span class="pre">Point</span></code> - Point intersections will be returned. If the inputs are line or polygon, the output will be a multipoint layer.</li>
+</ul>
+</div></blockquote>
+</td>
+</tr>
+<tr class="row-even"><td>tolerance</td>
+<td>Optional float. A float value of the minimum distance separating all feature coordinates
+as well as the distance a coordinate can move in X or Y (or both). The units of tolerance are the same as the units of the <code class="docutils literal"><span class="pre">input_layer</span></code>.</td>
+</tr>
+<tr class="row-odd"><td>output_name</td>
+<td>Optional string. If provided, the task will create a feature service of the results. You define the name of the service. If <code class="docutils literal"><span class="pre">output_name</span></code> is not supplied, the task will return a feature collection.</td>
+</tr>
+<tr class="row-even"><td>context</td>
+<td><p class="first">Optional string. Context contains additional settings that affect task execution. For <code class="docutils literal"><span class="pre">overlay_layers</span></code>, there are two settings.</p>
+<ol class="last arabic simple">
+<li>Extent (<code class="docutils literal"><span class="pre">extent</span></code>)—a bounding box that defines the analysis area. Only those features in the <code class="docutils literal"><span class="pre">input_layer</span></code> and <code class="docutils literal"><span class="pre">overlay_layer</span></code> and that intersect the bounding box will be overlaid.</li>
+<li>Output Spatial Reference (<code class="docutils literal"><span class="pre">outSR</span></code>)—the output features will be projected into the output spatial reference.</li>
+</ol>
+</td>
+</tr>
+<tr class="row-odd"><td>gis</td>
+<td>Optional, the GIS on which this tool runs. If not specified, the active GIS is used.</td>
+</tr>
+</tbody>
+</table>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">result_layer : feature layer Item if <code class="docutils literal"><span class="pre">output_name</span></code> is specified, else Feature Collection.</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="c1">#USAGE EXAMPLE: To clip a buffer in the shape of Capitol hill neighborhood.</span>
+<span class="n">cliped_buffer</span> <span class="o">=</span> <span class="n">overlay_layers</span><span class="p">(</span><span class="nb">buffer</span><span class="p">,</span>
+                               <span class="n">neighbourhood</span><span class="p">,</span>
+                               <span class="n">output_name</span><span class="o">=</span><span class="s2">&quot;Cliped buffer&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
 </dd></dl>
 
 </div>
@@ -389,7 +660,7 @@ coordinate can move in X or Y (or both).</dd>
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'./',
-            VERSION:'1.6.1',
+            VERSION:'1.6.2',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  true,

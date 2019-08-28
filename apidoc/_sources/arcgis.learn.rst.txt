@@ -45,3 +45,9 @@ UnetClassifier
     :inherited-members:
     :undoc-members:
 
+FeatureClassifier
+------------------
+.. autoclass:: arcgis.learn.FeatureClassifier
+    :members:
+    :inherited-members:
+    :undoc-members:

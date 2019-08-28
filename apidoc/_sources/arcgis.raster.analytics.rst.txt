@@ -5,21 +5,21 @@ arcgis.raster.analytics module
 
 get_datastores
 --------------
-.. automethod:: arcgis.raster.analytics.get_datastores
+.. autofunction:: arcgis.raster.analytics.get_datastores
     
 is_supported
 --------------
-.. automethod:: arcgis.raster.analytics.is_supported
+.. autofunction:: arcgis.raster.analytics.is_supported
 
 
 generate_raster
 ---------------
-.. automethod:: arcgis.raster.analytics.generate_raster
+.. autofunction:: arcgis.raster.analytics.generate_raster
 
 
 interpolate_points
 ------------------
-.. automethod:: arcgis.raster.analytics.interpolate_points
+.. autofunction:: arcgis.raster.analytics.interpolate_points
 
 
 create_viewshed

@@ -55,11 +55,11 @@ SceneLayer
 
 export_map
 ------------
-.. automethod:: arcgis.mapping.export_map
+.. autofunction:: arcgis.mapping.export_map
 
 get_layout_templates
 -----------
-.. automethod:: arcgis.mapping.get_layout_templates
+.. autofunction:: arcgis.mapping.get_layout_templates
 
 
 Symbology
@@ -74,9 +74,9 @@ Renderers
 
 generate_renderer
 -----------
-.. automethod:: arcgis.mapping.renderer.generate_renderer
+.. autofunction:: arcgis.mapping.renderer.generate_renderer
 
 visual_variables
 -----------
-.. automethod:: arcgis.mapping.renderer.visual_variables
+.. autofunction:: arcgis.mapping.renderer.visual_variables
 
