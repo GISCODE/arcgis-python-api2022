@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>arcgis.geometry.filters module &mdash; arcgis 1.6.1 documentation</title>
+  <title>arcgis.geometry.filters module &mdash; arcgis 1.6.2 documentation</title>
   
 
   
@@ -39,7 +39,7 @@
         <link rel="index" title="Index"
               href="genindex.html"/>
         <link rel="search" title="Search" href="search.html"/>
-    <link rel="top" title="arcgis 1.6.1 documentation" href="index.html"/>
+    <link rel="top" title="arcgis 1.6.2 documentation" href="index.html"/>
         <link rel="up" title="arcgis.geometry module" href="arcgis.geometry.html"/>
         <link rel="next" title="arcgis.geoprocessing module" href="arcgis.geoprocessing.html"/>
         <link rel="prev" title="arcgis.geometry module" href="arcgis.geometry.html"/>
@@ -83,7 +83,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             
             
               <div class="version">
-                1.6.1
+                1.6.2
               </div>
             
           
@@ -130,7 +130,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <li class="toctree-l2"><a class="reference internal" href="arcgis.geometry.html#buffer">buffer</a></li>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.geometry.html#convex-hull">convex_hull</a></li>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.geometry.html#cut">cut</a></li>
-<li class="toctree-l2"><a class="reference internal" href="arcgis.geometry.html#density">density</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.geometry.html#densify">densify</a></li>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.geometry.html#difference">difference</a></li>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.geometry.html#distance">distance</a></li>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.geometry.html#find-transformation">find_transformation</a></li>
@@ -243,18 +243,37 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 Used when querying feature layers and imagery layers.</p>
 <div class="section" id="intersects">
 <h2>intersects<a class="headerlink" href="#intersects" title="Permalink to this headline">¶</a></h2>
-<dl class="method">
+<dl class="function">
 <dt id="arcgis.geometry.filters.intersects">
-<code class="descclassname">filters.</code><code class="descname">intersects</code><span class="sig-paren">(</span><em>geometry</em>, <em>sr=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.geometry.filters.intersects" title="Permalink to this definition">¶</a></dt>
+<code class="descclassname">arcgis.geometry.filters.</code><code class="descname">intersects</code><span class="sig-paren">(</span><em>geometry</em>, <em>sr=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.geometry.filters.intersects" title="Permalink to this definition">¶</a></dt>
 <dd><p>filters results whose geometry intersects with the specified geometry</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">USAGE</span> <span class="n">EXAMPLE</span><span class="p">:</span> <span class="n">Select</span> <span class="n">the</span> <span class="n">gas</span> <span class="n">lines</span> <span class="n">that</span> <span class="n">intersect</span> <span class="n">a</span> <span class="n">specific</span>
+<span class="n">freeway</span> <span class="n">feature</span><span class="p">,</span> <span class="n">United</span> <span class="n">States</span> <span class="n">Interstate</span> <span class="mf">15.</span>
+
+<span class="kn">from</span> <span class="nn">arcgis.geometry</span> <span class="kn">import</span> <span class="n">Geometry</span>
+<span class="kn">from</span> <span class="nn">arcgis.features.filters</span> <span class="kn">import</span> <span class="n">intersects</span>
+
+<span class="c1"># select a filter feature to construct its geometry</span>
+<span class="n">rte15_fset</span> <span class="o">=</span> <span class="n">freeway_lyr</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="n">where</span><span class="o">=</span><span class="s2">&quot;ROUTE_NUM = &#39;I15&#39;&quot;</span><span class="p">)</span>
+<span class="n">rte15_geom_dict</span> <span class="o">=</span> <span class="n">rte15_fset</span><span class="o">.</span><span class="n">features</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">geometry</span>
+<span class="n">rte15_geom_dict</span><span class="p">[</span><span class="s1">&#39;spatialReference&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">freeway_sr</span>
+<span class="n">rte15_geom</span> <span class="o">=</span> <span class="n">Geometry</span><span class="p">(</span><span class="n">rte15_geom_dict</span><span class="p">)</span>
+
+<span class="c1"># construct a geometry filter using the filter geometry</span>
+<span class="n">flyr_filter</span> <span class="o">=</span> <span class="n">intersects</span><span class="p">(</span><span class="n">rte15_geom</span><span class="p">,</span> <span class="n">sr</span><span class="o">=</span><span class="n">freeway_sr</span><span class="p">)</span>
+
+<span class="c1"># query a feature layer for features that meet filter criteria</span>
+<span class="n">gas_lines_I15</span> <span class="o">=</span> <span class="n">gas_line_lyr</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="n">geometry_filter</span><span class="o">=</span><span class="n">flyr_filter</span><span class="p">)</span>
+</pre></div>
+</div>
 </dd></dl>
 
 </div>
 <div class="section" id="contains">
 <h2>contains<a class="headerlink" href="#contains" title="Permalink to this headline">¶</a></h2>
-<dl class="method">
+<dl class="function">
 <dt id="arcgis.geometry.filters.contains">
-<code class="descclassname">filters.</code><code class="descname">contains</code><span class="sig-paren">(</span><em>geometry</em>, <em>sr=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.geometry.filters.contains" title="Permalink to this definition">¶</a></dt>
+<code class="descclassname">arcgis.geometry.filters.</code><code class="descname">contains</code><span class="sig-paren">(</span><em>geometry</em>, <em>sr=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.geometry.filters.contains" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns a feature if its shape is wholly contained within the search geometry.
 Valid for all shape type combinations.</p>
 </dd></dl>
@@ -262,9 +281,9 @@ Valid for all shape type combinations.</p>
 </div>
 <div class="section" id="crosses">
 <h2>crosses<a class="headerlink" href="#crosses" title="Permalink to this headline">¶</a></h2>
-<dl class="method">
+<dl class="function">
 <dt id="arcgis.geometry.filters.crosses">
-<code class="descclassname">filters.</code><code class="descname">crosses</code><span class="sig-paren">(</span><em>geometry</em>, <em>sr=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.geometry.filters.crosses" title="Permalink to this definition">¶</a></dt>
+<code class="descclassname">arcgis.geometry.filters.</code><code class="descname">crosses</code><span class="sig-paren">(</span><em>geometry</em>, <em>sr=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.geometry.filters.crosses" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns a feature if the intersection of the interiors of the two shapes is not empty and has a lower dimension
 than the maximum dimension of the two shapes. Two lines that share an endpoint in common do not cross.
 Valid for Line/Line, Line/Area, Multi-point/Area, and Multi-point/Line shape type combinations.</p>
@@ -273,27 +292,27 @@ Valid for Line/Line, Line/Area, Multi-point/Area, and Multi-point/Line shape typ
 </div>
 <div class="section" id="envelope-intersects">
 <h2>envelope_intersects<a class="headerlink" href="#envelope-intersects" title="Permalink to this headline">¶</a></h2>
-<dl class="method">
+<dl class="function">
 <dt id="arcgis.geometry.filters.envelope_intersects">
-<code class="descclassname">filters.</code><code class="descname">envelope_intersects</code><span class="sig-paren">(</span><em>geometry</em>, <em>sr=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.geometry.filters.envelope_intersects" title="Permalink to this definition">¶</a></dt>
+<code class="descclassname">arcgis.geometry.filters.</code><code class="descname">envelope_intersects</code><span class="sig-paren">(</span><em>geometry</em>, <em>sr=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.geometry.filters.envelope_intersects" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns features if the envelope of the two shapes intersects.</p>
 </dd></dl>
 
 </div>
 <div class="section" id="index-intersects">
 <h2>index_intersects<a class="headerlink" href="#index-intersects" title="Permalink to this headline">¶</a></h2>
-<dl class="method">
+<dl class="function">
 <dt id="arcgis.geometry.filters.index_intersects">
-<code class="descclassname">filters.</code><code class="descname">index_intersects</code><span class="sig-paren">(</span><em>geometry</em>, <em>sr=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.geometry.filters.index_intersects" title="Permalink to this definition">¶</a></dt>
+<code class="descclassname">arcgis.geometry.filters.</code><code class="descname">index_intersects</code><span class="sig-paren">(</span><em>geometry</em>, <em>sr=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.geometry.filters.index_intersects" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns a feature if the envelope of the query geometry intersects the index entry for the target geometry.</p>
 </dd></dl>
 
 </div>
 <div class="section" id="overlaps">
 <h2>overlaps<a class="headerlink" href="#overlaps" title="Permalink to this headline">¶</a></h2>
-<dl class="method">
+<dl class="function">
 <dt id="arcgis.geometry.filters.overlaps">
-<code class="descclassname">filters.</code><code class="descname">overlaps</code><span class="sig-paren">(</span><em>geometry</em>, <em>sr=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.geometry.filters.overlaps" title="Permalink to this definition">¶</a></dt>
+<code class="descclassname">arcgis.geometry.filters.</code><code class="descname">overlaps</code><span class="sig-paren">(</span><em>geometry</em>, <em>sr=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.geometry.filters.overlaps" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns a feature if the intersection of the two shapes results in an object of the same dimension, but different
 from both of the shapes. Applies to Area/Area, Line/Line, and Multi-point/Multi-point shape type combinations.</p>
 </dd></dl>
@@ -301,9 +320,9 @@ from both of the shapes. Applies to Area/Area, Line/Line, and Multi-point/Multi-
 </div>
 <div class="section" id="touches">
 <h2>touches<a class="headerlink" href="#touches" title="Permalink to this headline">¶</a></h2>
-<dl class="method">
+<dl class="function">
 <dt id="arcgis.geometry.filters.touches">
-<code class="descclassname">filters.</code><code class="descname">touches</code><span class="sig-paren">(</span><em>geometry</em>, <em>sr=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.geometry.filters.touches" title="Permalink to this definition">¶</a></dt>
+<code class="descclassname">arcgis.geometry.filters.</code><code class="descname">touches</code><span class="sig-paren">(</span><em>geometry</em>, <em>sr=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.geometry.filters.touches" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns a feature if the two shapes share a common boundary. However, the intersection of the interiors of the
 two shapes must be empty. In the Point/Line case, the point may touch an endpoint only of the line. Applies to all
 combinations except Point/Point.</p>
@@ -312,9 +331,9 @@ combinations except Point/Point.</p>
 </div>
 <div class="section" id="within">
 <h2>within<a class="headerlink" href="#within" title="Permalink to this headline">¶</a></h2>
-<dl class="method">
+<dl class="function">
 <dt id="arcgis.geometry.filters.within">
-<code class="descclassname">filters.</code><code class="descname">within</code><span class="sig-paren">(</span><em>geometry</em>, <em>sr=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.geometry.filters.within" title="Permalink to this definition">¶</a></dt>
+<code class="descclassname">arcgis.geometry.filters.</code><code class="descname">within</code><span class="sig-paren">(</span><em>geometry</em>, <em>sr=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.geometry.filters.within" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns a feature if its shape wholly contains the search geometry. Valid for all shape type combinations.</p>
 </dd></dl>
 
@@ -366,7 +385,7 @@ combinations except Point/Point.</p>
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'./',
-            VERSION:'1.6.1',
+            VERSION:'1.6.2',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  true,

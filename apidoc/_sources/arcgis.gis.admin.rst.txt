@@ -40,14 +40,12 @@ CollaborationManager
     :undoc-members:
     :show-inheritance:
 
-
 Collaboration
 ---------------
 .. autoclass:: arcgis.gis.admin.Collaboration
     :members:
     :undoc-members:
     :show-inheritance:
-
 
 CreditManager
 ---------------
@@ -70,8 +68,14 @@ LicenseManager
     :undoc-members:
     :show-inheritance:
 
+LivingAtlas
+-----------
+.. autoclass:: arcgis.gis.admin.LivingAtlas
+    :members:
+    :undoc-members:
+
 IdentityProviderManager
----------------
+-----------------------
 .. autoclass:: arcgis.gis.admin.IdentityProviderManager
     :members:
     :undoc-members:
@@ -157,7 +161,7 @@ EnterpriseUsers
    :undoc-members:
 
 EnterpriseGroups
----------------
+----------------
 .. autoclass:: arcgis.gis.admin.EnterpriseGroups
    :members:
    :undoc-members:
@@ -178,7 +182,7 @@ System
 
 
 Licenses (Deprecated 10.7+)
----------------
+---------------------------
 .. autoclass:: arcgis.gis.admin.Licenses
    :members:
    :undoc-members:

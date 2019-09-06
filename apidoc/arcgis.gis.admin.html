@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>arcgis.gis.admin module &mdash; arcgis 1.6.1 documentation</title>
+  <title>arcgis.gis.admin module &mdash; arcgis 1.6.2 documentation</title>
   
 
   
@@ -39,7 +39,7 @@
         <link rel="index" title="Index"
               href="genindex.html"/>
         <link rel="search" title="Search" href="search.html"/>
-    <link rel="top" title="arcgis 1.6.1 documentation" href="index.html"/>
+    <link rel="top" title="arcgis 1.6.2 documentation" href="index.html"/>
         <link rel="up" title="arcgis.gis module" href="arcgis.gis.toc.html"/>
         <link rel="next" title="arcgis.gis.server module" href="arcgis.gis.server.html"/>
         <link rel="prev" title="arcgis.gis module" href="arcgis.gis.toc.html"/>
@@ -83,7 +83,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             
             
               <div class="version">
-                1.6.1
+                1.6.2
               </div>
             
           
@@ -136,6 +136,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <li class="toctree-l4"><a class="reference internal" href="#creditmanager">CreditManager</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#license">License</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#licensemanager">LicenseManager</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#livingatlas">LivingAtlas</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#identityprovidermanager">IdentityProviderManager</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#passwordpolicy">PasswordPolicy</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#portalresourcemanager">PortalResourceManager</a></li>
@@ -403,8 +404,7 @@ when needed.</p>
 <dl class="attribute">
 <dt id="arcgis.gis.admin.PortalAdminManager.category_schema">
 <code class="descname">category_schema</code><a class="headerlink" href="#arcgis.gis.admin.PortalAdminManager.category_schema" title="Permalink to this definition">¶</a></dt>
-<dd><p>This resource allows for the setting and manipulating of catagory
-schemas.</p>
+<dd><p>This resource allows for the setting and manipulating of catagory schemas.</p>
 </dd></dl>
 
 <dl class="attribute">
@@ -2285,6 +2285,353 @@ for ArcGIS Pro.</p>
 </dd></dl>
 
 </div>
+<div class="section" id="livingatlas">
+<h2>LivingAtlas<a class="headerlink" href="#livingatlas" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="arcgis.gis.admin.LivingAtlas">
+<em class="property">class </em><code class="descclassname">arcgis.gis.admin.</code><code class="descname">LivingAtlas</code><span class="sig-paren">(</span><em>url</em>, <em>gis</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.admin.LivingAtlas" title="Permalink to this definition">¶</a></dt>
+<dd><p>Living Atlas of the World content is a collection of authoritative,
+ready-to-use, global geographic content available from ArcGIS Online.
+The content includes valuable maps, data layers, tools, services and
+apps for geographic analysis.
+When you make Living Atlas content available to your portal members,
+you’re providing them with ready-made content that they can use
+alone or in combination with their own content to create maps,
+scenes, and apps and perform analysis in the portal map viewer or
+Insights for ArcGIS.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Note:</th><td class="field-body">Your portal must have access to the Internet to use Living Atlas
+content from ArcGIS Online</td>
+</tr>
+</tbody>
+</table>
+<p>Types of content available
+All the Living Atlas content you access from Portal for ArcGIS was
+created by Esri. If your portal can connect to the Internet, the
+following three levels of Living Atlas content are available to you from
+ArcGIS Online:</p>
+<blockquote>
+<div><dl class="docutils">
+<dt>1). Content that does not require you to sign in to an ArcGIS Online</dt>
+<dd>account
+- This content is available by default in Portal for ArcGIS.</dd>
+<dt>2). Subscriber content</dt>
+<dd><ul class="first last simple">
+<li>Subscriber content is the collection of ready-to-use map layers,
+analytic tools, and services published by Esri that requires an
+ArcGIS Online organizational subscription account to access. This
+includes layers from Esri such as Landsat 8 imagery, NAIP imagery,
+landscape analysis layers, and historical maps. Subscriber content
+is provided as part of your organizational subscription and does
+not consume any credits. Layers included in the Living Atlas
+subscriber content are suitable for use with analysis tools.</li>
+</ul>
+</dd>
+<dt>3). Premium content</dt>
+<dd><ul class="first simple">
+<li>Premium content is a type of subscriber content that requires an</li>
+</ul>
+<p class="last">ArcGIS Online organizational subscription account to access and
+consumes credits. Access and credit information is listed in the
+description details for each item.
+Premium content provides portal members with access to ready-to-use
+content such as demographic and lifestyle maps as well as tools for
+geocoding, geoenrichment, network analysis, elevation analysis, and
+spatial analysis.</p>
+</dd>
+</dl>
+</div></blockquote>
+<table border="1" class="docutils">
+<colgroup>
+<col width="20%" />
+<col width="80%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><strong>Argument</strong></td>
+<td><strong>Description</strong></td>
+</tr>
+<tr class="row-even"><td>url</td>
+<td>required string, the web address of the site to
+manage licenses.
+example:
+<a class="reference external" href="https:/">https:/</a>/&lt;org url&gt;/&lt;wa&gt;/portaladmin/system/content/livingatlas</td>
+</tr>
+<tr class="row-odd"><td>gis</td>
+<td>required GIS, the gis connection object.</td>
+</tr>
+</tbody>
+</table>
+<dl class="method">
+<dt id="arcgis.gis.admin.LivingAtlas.disable_premium_atlas">
+<code class="descname">disable_premium_atlas</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.admin.LivingAtlas.disable_premium_atlas" title="Permalink to this definition">¶</a></dt>
+<dd><p>Disables the Premium Living Atlas Content for a local portal.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="arcgis.gis.admin.LivingAtlas.disable_public_access">
+<code class="descname">disable_public_access</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.admin.LivingAtlas.disable_public_access" title="Permalink to this definition">¶</a></dt>
+<dd><p>Disables the Public Living Atlas content.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">boolean. True means enabled, False means failure to enable.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="arcgis.gis.admin.LivingAtlas.disable_subscriber_atlas">
+<code class="descname">disable_subscriber_atlas</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.admin.LivingAtlas.disable_subscriber_atlas" title="Permalink to this definition">¶</a></dt>
+<dd><p>Disables the Subscriber level Living Atlas Content for a local portal.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="arcgis.gis.admin.LivingAtlas.enable_premium_atlas">
+<code class="descname">enable_premium_atlas</code><span class="sig-paren">(</span><em>username</em>, <em>password</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.admin.LivingAtlas.enable_premium_atlas" title="Permalink to this definition">¶</a></dt>
+<dd><p>Enables the Premium Livinng Atlas Content for a local portal.</p>
+<p>Premium content is a type of subscriber content that requires an
+ArcGIS Online organizational subscription account to access and
+consumes credits. Access and credit information is listed in the
+description details for each item.
+Premium content provides portal members with access to ready-to-use
+content such as demographic and lifestyle maps as well as tools for
+geocoding, geoenrichment, network analysis, elevation analysis, and
+spatial analysis.</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="22%" />
+<col width="78%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><strong>Argument</strong></td>
+<td><strong>Description</strong></td>
+</tr>
+<tr class="row-even"><td>username</td>
+<td>required string, username for AGOL</td>
+</tr>
+<tr class="row-odd"><td>password</td>
+<td>required string, login password for AGOL account</td>
+</tr>
+</tbody>
+</table>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Note:</th><td class="field-body">This will cost you credits.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="arcgis.gis.admin.LivingAtlas.enable_public_access">
+<code class="descname">enable_public_access</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.admin.LivingAtlas.enable_public_access" title="Permalink to this definition">¶</a></dt>
+<dd><p>Enables the Public Living Atlas content.</p>
+<p>Living Atlas of the World content is a collection of authoritative,
+ready-to-use, global geographic content available from ArcGIS Online.
+The content includes valuable maps, data layers, tools, services and
+apps for geographic analysis.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">boolean. True means enabled, False means failure to enable.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="arcgis.gis.admin.LivingAtlas.enable_subscriber_atlas">
+<code class="descname">enable_subscriber_atlas</code><span class="sig-paren">(</span><em>username</em>, <em>password</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.admin.LivingAtlas.enable_subscriber_atlas" title="Permalink to this definition">¶</a></dt>
+<dd><p>Enables the Premium Livinng Atlas Content for a local portal.</p>
+<p>Subscriber content is the collection of ready-to-use map layers,
+analytic tools, and services published by Esri that requires an
+ArcGIS Online organizational subscription account to access. This
+includes layers from Esri such as Landsat 8 imagery, NAIP imagery,
+landscape analysis layers, and historical maps. Subscriber content
+is provided as part of your organizational subscription and does
+not consume any credits. Layers included in the Living Atlas
+subscriber content are suitable for use with analysis tools.</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="22%" />
+<col width="78%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><strong>Argument</strong></td>
+<td><strong>Description</strong></td>
+</tr>
+<tr class="row-even"><td>username</td>
+<td>required string, username for AGOL</td>
+</tr>
+<tr class="row-odd"><td>password</td>
+<td>required string, login password for AGOL account</td>
+</tr>
+</tbody>
+</table>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Note:</th><td class="field-body">This will <strong>not</strong> cost your organization credits.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="arcgis.gis.admin.LivingAtlas.groups">
+<code class="descname">groups</code><a class="headerlink" href="#arcgis.gis.admin.LivingAtlas.groups" title="Permalink to this definition">¶</a></dt>
+<dd><p>returns a list of all living atlas groups</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="arcgis.gis.admin.LivingAtlas.status">
+<code class="descname">status</code><span class="sig-paren">(</span><em>group</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.admin.LivingAtlas.status" title="Permalink to this definition">¶</a></dt>
+<dd><p>returns the information about the sharing status of the Living
+Atlas</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="22%" />
+<col width="78%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><strong>Argument</strong></td>
+<td><strong>Description</strong></td>
+</tr>
+<tr class="row-even"><td>group</td>
+<td>required string or Group object</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="arcgis.gis.admin.LivingAtlas.update_premium_account">
+<code class="descname">update_premium_account</code><span class="sig-paren">(</span><em>username</em>, <em>password</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.admin.LivingAtlas.update_premium_account" title="Permalink to this definition">¶</a></dt>
+<dd><p>Updates the Username/Password for the Living Atlas Premium User.
+The account must be an ArcGIS Online account.</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="22%" />
+<col width="78%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><strong>Argument</strong></td>
+<td><strong>Description</strong></td>
+</tr>
+<tr class="row-even"><td>username</td>
+<td>Required string. The user who will be used for
+to access the subscriber Living Atlas content.</td>
+</tr>
+<tr class="row-odd"><td>password</td>
+<td>Required string. The credentials for the user above.</td>
+</tr>
+</tbody>
+</table>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">boolean</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="arcgis.gis.admin.LivingAtlas.update_subscriber_account">
+<code class="descname">update_subscriber_account</code><span class="sig-paren">(</span><em>username</em>, <em>password</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.admin.LivingAtlas.update_subscriber_account" title="Permalink to this definition">¶</a></dt>
+<dd><p>Updates the Username/Password for the Living Atlas Subscriber User.
+The account must be an ArcGIS Online account.</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="22%" />
+<col width="78%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><strong>Argument</strong></td>
+<td><strong>Description</strong></td>
+</tr>
+<tr class="row-even"><td>username</td>
+<td>Required string. The user who will be used for
+to access the subscriber Living Atlas content.</td>
+</tr>
+<tr class="row-odd"><td>password</td>
+<td>Required string. The credentials for the user above.</td>
+</tr>
+</tbody>
+</table>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">boolean</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="arcgis.gis.admin.LivingAtlas.upgrade">
+<code class="descname">upgrade</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.admin.LivingAtlas.upgrade" title="Permalink to this definition">¶</a></dt>
+<dd><p>Upgrades the Living Atlas Group to the latest version</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">Boolean</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="arcgis.gis.admin.LivingAtlas.validate_credentials">
+<code class="descname">validate_credentials</code><span class="sig-paren">(</span><em>username</em>, <em>password</em>, <em>online_url=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.admin.LivingAtlas.validate_credentials" title="Permalink to this definition">¶</a></dt>
+<dd><p>returns the information about the sharing status of the Living
+Atlas</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="22%" />
+<col width="78%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><strong>Argument</strong></td>
+<td><strong>Description</strong></td>
+</tr>
+<tr class="row-even"><td>username</td>
+<td>required string, username for AGOL</td>
+</tr>
+<tr class="row-odd"><td>password</td>
+<td>required string, login password for AGOL account</td>
+</tr>
+<tr class="row-even"><td>online_url</td>
+<td>optional string, Url to ArcGIS Online site.
+default is <a class="reference external" href="https://www.arcgis.com">https://www.arcgis.com</a></td>
+</tr>
+</tbody>
+</table>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">boolean</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+</div>
 <div class="section" id="identityprovidermanager">
 <h2>IdentityProviderManager<a class="headerlink" href="#identityprovidermanager" title="Permalink to this headline">¶</a></h2>
 <dl class="class">
@@ -3992,14 +4339,14 @@ within Portal for ArcGIS. The resource returns the total number of
 members in the system.</p>
 <dl class="method">
 <dt id="arcgis.gis.admin.EnterpriseUsers.create">
-<code class="descname">create</code><span class="sig-paren">(</span><em>username</em>, <em>password</em>, <em>first_name</em>, <em>last_name</em>, <em>email</em>, <em>role='org_user'</em>, <em>level=2</em>, <em>provider='arcgis'</em>, <em>idp_username=None</em>, <em>description=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.admin.EnterpriseUsers.create" title="Permalink to this definition">¶</a></dt>
+<code class="descname">create</code><span class="sig-paren">(</span><em>username</em>, <em>password</em>, <em>first_name</em>, <em>last_name</em>, <em>email</em>, <em>role='org_user'</em>, <em>level=2</em>, <em>provider='arcgis'</em>, <em>idp_username=None</em>, <em>description=None</em>, <em>user_license=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.admin.EnterpriseUsers.create" title="Permalink to this definition">¶</a></dt>
 <dd><p>This operation is used to pre-create built-in or enterprise
 accounts within the portal. The provider parameter is used to
 indicate the type of user account.</p>
 <table border="1" class="docutils">
 <colgroup>
-<col width="28%" />
-<col width="72%" />
+<col width="25%" />
+<col width="75%" />
 </colgroup>
 <tbody valign="top">
 <tr class="row-odd"><td><strong>Argument</strong></td>
@@ -4023,7 +4370,7 @@ indicate the type of user account.</p>
 <tr class="row-odd"><td>role</td>
 <td>Optional string. The role for the user account. The default value is
 org_user.
-Values org_user | org_publisher | org_admin</td>
+Values org_admin | org_publisher | org_user | org_editor (Data Editor) | viewer</td>
 </tr>
 <tr class="row-even"><td>level</td>
 <td>Optional integer. The account level to assign the user.
@@ -4040,6 +4387,15 @@ parameter is enterprise.</td>
 </tr>
 <tr class="row-odd"><td>description</td>
 <td>Optional string. A user description</td>
+</tr>
+<tr class="row-even"><td>user_license</td>
+<td><p class="first">Optional string. The user type for the account. (10.7+)</p>
+<dl class="last docutils">
+<dt>Values: creator, editor, advanced (GIS Advanced),</dt>
+<dd>basic (GIS Basic), standard (GIS Standard), viewer,
+fieldworker</dd>
+</dl>
+</td>
 </tr>
 </tbody>
 </table>
@@ -4353,7 +4709,7 @@ store. You can narrow down the search using the filter parameter.</p>
 administrators can create, export, import, and join sites.</p>
 <dl class="staticmethod">
 <dt id="arcgis.gis.admin.Site.create">
-<em class="property">static </em><code class="descname">create</code><span class="sig-paren">(</span><em>con</em>, <em>url</em>, <em>username</em>, <em>password</em>, <em>full_name</em>, <em>email</em>, <em>content_store</em>, <em>description=''</em>, <em>question_idx=None</em>, <em>question_ans=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.admin.Site.create" title="Permalink to this definition">¶</a></dt>
+<em class="property">static </em><code class="descname">create</code><span class="sig-paren">(</span><em>con</em>, <em>url</em>, <em>username</em>, <em>password</em>, <em>full_name</em>, <em>email</em>, <em>content_store</em>, <em>description=''</em>, <em>question_idx=None</em>, <em>question_ans=None</em>, <em>license_file=None</em>, <em>user_license=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.admin.Site.create" title="Permalink to this definition">¶</a></dt>
 <dd><p>The create site operation initializes and configures Portal for
 ArcGIS for use. It must be the first operation invoked after
 installation. Creating a new site involves:</p>
@@ -4413,6 +4769,22 @@ forgotten password</td>
 </tr>
 <tr class="row-odd"><td>question_ans</td>
 <td>Optional string. The answer to the secret question</td>
+</tr>
+<tr class="row-even"><td>license_file</td>
+<td>Optional string. The portal license file. Starting at 10.7, you will
+obtain your portal license file - which contains information
+regarding your user types, apps, and app bundles-from My Esri. For
+more information, see Obtain a portal license file.</td>
+</tr>
+<tr class="row-odd"><td>user_license</td>
+<td><p class="first">The user type for the initial administrator account. The values
+listed below are the user types that are compatible with the
+Administrator role.</p>
+<dl class="last docutils">
+<dt>Values: creatorUT, GISProfessionalBasicUT,</dt>
+<dd>GISProfessionalStdUT, GISProfessionalAdvUT</dd>
+</dl>
+</td>
 </tr>
 </tbody>
 </table>
@@ -4528,7 +4900,7 @@ machine then uses the connection information to work with the
 configuration store.
 If this is the first portal machine in your site, use the Create
 Site operation instead.
-The joinSite operation:</p>
+The join operation:</p>
 <blockquote>
 <div><ul class="simple">
 <li>Registers a machine to an existing site (active machine)</li>
@@ -4770,6 +5142,10 @@ machine or site in the nonProxyHosts property. Machine and
 domain items are separated using a pipe (|).</li>
 <li>WebContextURL-If you are using a reverse proxy, set this
 property to reverse proxy URL.</li>
+<li>ldapCertificateValidation Introduced at 10.7. When set to true,
+any encrypted LDAP communication (LDAPS) made from the portal to
+the user or group identity store will enforce certificate
+validation. The default value is false.</li>
 </ul>
 </div></blockquote>
 </dd></dl>
@@ -5863,7 +6239,7 @@ the message on your receiver.</td>
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'./',
-            VERSION:'1.6.1',
+            VERSION:'1.6.2',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  true,

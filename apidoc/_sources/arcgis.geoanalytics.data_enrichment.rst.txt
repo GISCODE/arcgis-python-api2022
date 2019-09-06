@@ -5,5 +5,5 @@ arcgis.geoanalytics.data_enrichment module
 
 enrich_from_grid
 --------------
-.. automethod:: arcgis.geoanalytics.data_enrichment.enrich_from_grid
+.. autofunction:: arcgis.geoanalytics.data_enrichment.enrich_from_grid
 

@@ -5,8 +5,8 @@ arcgis.features.hydrology module
 
 trace_downstream
 -------------------------------
-.. automethod:: arcgis.features.hydrology.trace_downstream
+.. autofunction:: arcgis.features.hydrology.trace_downstream
 
 watershed
 -------------------------------
-.. automethod:: arcgis.features.hydrology.watershed
+.. autofunction:: arcgis.features.hydrology.watershed
