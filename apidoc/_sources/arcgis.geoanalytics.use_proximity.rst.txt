@@ -5,4 +5,4 @@ arcgis.geoanalytics.use_proximity module
     
 create_buffers
 --------------
-.. automethod:: arcgis.geoanalytics.use_proximity.create_buffers
+.. autofunction:: arcgis.geoanalytics.use_proximity.create_buffers

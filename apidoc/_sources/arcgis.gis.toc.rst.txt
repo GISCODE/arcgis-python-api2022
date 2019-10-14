@@ -59,6 +59,12 @@ GroupApplication
     :undoc-members:
     :show-inheritance:
 
+CategorySchemaManager
+-------------------------
+.. autoclass:: arcgis.gis.CategorySchemaManager
+    :members:
+    :undoc-members:
+
 ContentManager
 -------------------------
 .. autoclass:: arcgis.gis.ContentManager

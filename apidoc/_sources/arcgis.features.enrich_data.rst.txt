@@ -5,4 +5,4 @@ arcgis.features.enrich_data module
 
 enrich_layer
 --------------
-.. automethod:: arcgis.features.enrich_data.enrich_layer
+.. autofunction:: arcgis.features.enrich_data.enrich_layer

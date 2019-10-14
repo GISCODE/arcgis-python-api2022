@@ -47,92 +47,92 @@ Geometry
 
 areas_and_lengths
 --------------
-.. automethod:: arcgis.geometry.areas_and_lengths
+.. autofunction:: arcgis.geometry.areas_and_lengths
 
 auto_complete
 --------------
-.. automethod:: arcgis.geometry.auto_complete
+.. autofunction:: arcgis.geometry.auto_complete
 
 buffer
 --------------
-.. automethod:: arcgis.geometry.buffer
+.. autofunction:: arcgis.geometry.buffer
 
 convex_hull
 --------------
-.. automethod:: arcgis.geometry.convex_hull
+.. autofunction:: arcgis.geometry.convex_hull
 
 cut
 --------------
-.. automethod:: arcgis.geometry.cut
+.. autofunction:: arcgis.geometry.cut
 
-density
+densify
 --------------
-.. automethod:: arcgis.geometry.density
+.. autofunction:: arcgis.geometry.densify
 
 difference
 --------------
-.. automethod:: arcgis.geometry.difference
+.. autofunction:: arcgis.geometry.difference
 
 distance
 --------------
-.. automethod:: arcgis.geometry.distance
+.. autofunction:: arcgis.geometry.distance
 
 find_transformation
 --------------
-.. automethod:: arcgis.geometry.find_transformation
+.. autofunction:: arcgis.geometry.find_transformation
 
 from_geo_coordinate_string
 --------------
-.. automethod:: arcgis.geometry.from_geo_coordinate_string
+.. autofunction:: arcgis.geometry.from_geo_coordinate_string
 
 generalize
 --------------
-.. automethod:: arcgis.geometry.generalize
+.. autofunction:: arcgis.geometry.generalize
 
 intersect
 --------------
-.. automethod:: arcgis.geometry.intersect
+.. autofunction:: arcgis.geometry.intersect
 
 label_points
 --------------
-.. automethod:: arcgis.geometry.label_points
+.. autofunction:: arcgis.geometry.label_points
 
 lengths
 --------------
-.. automethod:: arcgis.geometry.lengths
+.. autofunction:: arcgis.geometry.lengths
 
 offset
 --------------
-.. automethod:: arcgis.geometry.offset
+.. autofunction:: arcgis.geometry.offset
 
 project
 --------------
-.. automethod:: arcgis.geometry.project
+.. autofunction:: arcgis.geometry.project
 
 
 relation
 --------------
-.. automethod:: arcgis.geometry.relation
+.. autofunction:: arcgis.geometry.relation
 
 
 reshape
 --------------
-.. automethod:: arcgis.geometry.reshape
+.. autofunction:: arcgis.geometry.reshape
 
 
 to_geo_coordinate_string
 --------------
-.. automethod:: arcgis.geometry.to_geo_coordinate_string
+.. autofunction:: arcgis.geometry.to_geo_coordinate_string
 
 
 trim_extend
 --------------
-.. automethod:: arcgis.geometry.trim_extend
+.. autofunction:: arcgis.geometry.trim_extend
 
 
 union
 --------------
-.. automethod:: arcgis.geometry.union
+.. autofunction:: arcgis.geometry.union
 
 
 Submodules
