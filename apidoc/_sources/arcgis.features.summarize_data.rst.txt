@@ -5,16 +5,24 @@ arcgis.features.summarize_data module
 
 aggregate_points
 --------------
-.. automethod:: arcgis.features.summarize_data.aggregate_points
-    
+.. autofunction:: arcgis.features.summarize_data.aggregate_points
+
+describe_dataset
+--------------
+.. autofunction:: arcgis.features.summarize_data.describe_dataset
+
 join_features
 --------------
-.. automethod:: arcgis.features.summarize_data.join_features
-    
+.. autofunction:: arcgis.features.summarize_data.join_features
+
 summarize_nearby
 --------------
-.. automethod:: arcgis.features.summarize_data.summarize_nearby
+.. autofunction:: arcgis.features.summarize_data.summarize_nearby
+
+summarize_center_and_dispersion
+--------------
+.. autofunction:: arcgis.features.summarize_data.summarize_center_and_dispersion
 
 summarize_within
 --------------
-.. automethod:: arcgis.features.summarize_data.summarize_within
+.. autofunction:: arcgis.features.summarize_data.summarize_within

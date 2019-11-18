@@ -5,13 +5,13 @@ arcgis.geoanalytics.find_locations module
 
 detect_incidents
 --------------
-.. automethod:: arcgis.geoanalytics.find_locations.detect_incidents
+.. autofunction:: arcgis.geoanalytics.find_locations.detect_incidents
 
 find_similar_locations
 --------------
-.. automethod:: arcgis.geoanalytics.find_locations.find_similar_locations
+.. autofunction:: arcgis.geoanalytics.find_locations.find_similar_locations
 
 geocode_locations
 --------------
-.. automethod:: arcgis.geoanalytics.find_locations.geocode_locations
+.. autofunction:: arcgis.geoanalytics.find_locations.geocode_locations
 

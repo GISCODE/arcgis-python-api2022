@@ -12,7 +12,7 @@ Geocoder
 
 get_geocoders
 --------------
-.. automethod:: arcgis.geocoding.get_geocoders
+.. autofunction:: arcgis.geocoding.get_geocoders
     
 geocode
 --------------
@@ -20,20 +20,20 @@ geocode
 
 geocode_from_items
 ------------------
-.. automethod:: arcgis.geocoding.geocode_from_items
+.. autofunction:: arcgis.geocoding.geocode_from_items
 
 analyze_geocode_input
 ------------------
-.. automethod:: arcgis.geocoding.analyze_geocode_input
+.. autofunction:: arcgis.geocoding.analyze_geocode_input
     
 reverse_geocode
 --------------
-.. automethod:: arcgis.geocoding.reverse_geocode
+.. autofunction:: arcgis.geocoding.reverse_geocode
 
 batch_geocode
 --------------
-.. automethod:: arcgis.geocoding.batch_geocode
+.. autofunction:: arcgis.geocoding.batch_geocode
 
 suggest
 --------------
-.. automethod:: arcgis.geocoding.suggest
+.. autofunction:: arcgis.geocoding.suggest

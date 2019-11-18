@@ -8,10 +8,12 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>arcgis.raster module &mdash; arcgis 1.5.0 documentation</title>
+  <title>arcgis.raster module &mdash; arcgis 1.6.2 documentation</title>
   
 
   
+  
+    <link rel="shortcut icon" href="_static/favicon.ico"/>
   
   
   
@@ -37,9 +39,9 @@
         <link rel="index" title="Index"
               href="genindex.html"/>
         <link rel="search" title="Search" href="search.html"/>
-    <link rel="top" title="arcgis 1.5.0 documentation" href="index.html"/>
+    <link rel="top" title="arcgis 1.6.2 documentation" href="index.html"/>
         <link rel="next" title="arcgis.raster.analytics module" href="arcgis.raster.analytics.html"/>
-        <link rel="prev" title="arcgis.features.managers module" href="arcgis.features.managers.html"/>
+        <link rel="prev" title="arcgis.features.use_proximity module" href="arcgis.features.use_proximity.html"/>
 <!-- This code block is inserted close near the <head> tag. See http://bit.ly/2BHUQzB -->
 <!-- The point of this code block is to send us google analytics on website views -->
 <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
@@ -71,13 +73,16 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
           
 
           
+            
+            <img src="_static/python_api_logo.png" class="logo" />
+          
           </a>
 
           
             
             
               <div class="version">
-                1.5.0
+                1.6.2
               </div>
             
           
@@ -103,566 +108,36 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             
               <p class="caption"><span class="caption-text">arcgis</span></p>
 <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="arcgis.gis.toc.html">arcgis.gis module</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="arcgis.gis.toc.html#gis">GIS</a></li>
-<li class="toctree-l2"><a class="reference internal" href="arcgis.gis.toc.html#item">Item</a></li>
-<li class="toctree-l2"><a class="reference internal" href="arcgis.gis.toc.html#user">User</a></li>
-<li class="toctree-l2"><a class="reference internal" href="arcgis.gis.toc.html#group">Group</a></li>
-<li class="toctree-l2"><a class="reference internal" href="arcgis.gis.toc.html#datastore">Datastore</a></li>
-<li class="toctree-l2"><a class="reference internal" href="arcgis.gis.toc.html#role">Role</a></li>
-<li class="toctree-l2"><a class="reference internal" href="arcgis.gis.toc.html#layer">Layer</a></li>
-<li class="toctree-l2"><a class="reference internal" href="arcgis.gis.toc.html#groupapplication">GroupApplication</a></li>
-<li class="toctree-l2"><a class="reference internal" href="arcgis.gis.toc.html#contentmanager">ContentManager</a></li>
-<li class="toctree-l2"><a class="reference internal" href="arcgis.gis.toc.html#usermanager">UserManager</a></li>
-<li class="toctree-l2"><a class="reference internal" href="arcgis.gis.toc.html#groupmanager">GroupManager</a></li>
-<li class="toctree-l2"><a class="reference internal" href="arcgis.gis.toc.html#datastoremanager">DatastoreManager</a></li>
-<li class="toctree-l2"><a class="reference internal" href="arcgis.gis.toc.html#rolemanager">RoleManager</a></li>
-<li class="toctree-l2"><a class="reference internal" href="arcgis.gis.toc.html#resourcemanager">ResourceManager</a></li>
-<li class="toctree-l2"><a class="reference internal" href="arcgis.gis.toc.html#submodules">Submodules</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="arcgis.gis.admin.html">arcgis.gis.admin module</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.gis.admin.html#agoladminmanager">AGOLAdminManager</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.gis.admin.html#portaladminmanager">PortalAdminManager</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.gis.admin.html#categorymanager">CategoryManager</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.gis.admin.html#collaborationmanager">CollaborationManager</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.gis.admin.html#collaboration">Collaboration</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.gis.admin.html#creditmanager">CreditManager</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.gis.admin.html#license">License</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.gis.admin.html#licensemanager">LicenseManager</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.gis.admin.html#identityprovidermanager">IdentityProviderManager</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.gis.admin.html#passwordpolicy">PasswordPolicy</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.gis.admin.html#portalresourcemanager">PortalResourceManager</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.gis.admin.html#ux">UX</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.gis.admin.html#federation">Federation</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.gis.admin.html#logs">Logs</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.gis.admin.html#machines">Machines</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.gis.admin.html#security">Security</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.gis.admin.html#oauth">OAuth</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.gis.admin.html#sslcertificate">SSLCertificate</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.gis.admin.html#sslcertificates">SSLCertificates</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.gis.admin.html#enterpriseusers">EnterpriseUsers</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.gis.admin.html#enterprisegroups">EnterpriseGroups</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.gis.admin.html#site">Site</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.gis.admin.html#system">System</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.gis.admin.html#licenses">Licenses</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.gis.admin.html#directory">Directory</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.gis.admin.html#webadaptor">WebAdaptor</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.gis.admin.html#webadaptors">WebAdaptors</a></li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="arcgis.gis.server.html">arcgis.gis.server module</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.gis.server.html#server">Server</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.gis.server.html#module-arcgis.gis.server.catalog">ServicesDirectory</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.gis.server.html#service">Service</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.gis.server.html#machine">Machine</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.gis.server.html#report">Report</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.gis.server.html#datastore">Datastore</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.gis.server.html#user">User</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.gis.server.html#role">Role</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.gis.server.html#servermanager">ServerManager</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.gis.server.html#servicemanager">ServiceManager</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.gis.server.html#machinemanager">MachineManager</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.gis.server.html#logmanager">LogManager</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.gis.server.html#reportmanager">ReportManager</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.gis.server.html#datastoremanager">DataStoreManager</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.gis.server.html#usermanager">UserManager</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.gis.server.html#rolemanager">RoleManager</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.gis.server.html#systemmanager">SystemManager</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.gis.server.html#sitemanager">SiteManager</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.gis.server.html#directorymanager">DirectoryManager</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.gis.server.html#configurationstore">ConfigurationStore</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.gis.server.html#jobs">Jobs</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.gis.server.html#serverdirectory">ServerDirectory</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.gis.server.html#serverproperties">ServerProperties</a></li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="arcgis.env.html">arcgis.env module</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="arcgis.env.html#active-gis">active_gis</a></li>
-<li class="toctree-l2"><a class="reference internal" href="arcgis.env.html#analysis-extent">analysis_extent</a></li>
-<li class="toctree-l2"><a class="reference internal" href="arcgis.env.html#out-spatial-reference">out_spatial_reference</a></li>
-<li class="toctree-l2"><a class="reference internal" href="arcgis.env.html#process-spatial-reference">process_spatial_reference</a></li>
-<li class="toctree-l2"><a class="reference internal" href="arcgis.env.html#output-datastore">output_datastore</a></li>
-<li class="toctree-l2"><a class="reference internal" href="arcgis.env.html#return-z">return_z</a></li>
-<li class="toctree-l2"><a class="reference internal" href="arcgis.env.html#return-m">return_m</a></li>
-<li class="toctree-l2"><a class="reference internal" href="arcgis.env.html#verbose">verbose</a></li>
-<li class="toctree-l2"><a class="reference internal" href="arcgis.env.html#default-aggregation-styles">default_aggregation_styles</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="arcgis.features.toc.html">arcgis.features module</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="arcgis.features.toc.html#feature">Feature</a></li>
-<li class="toctree-l2"><a class="reference internal" href="arcgis.features.toc.html#featurelayer">FeatureLayer</a></li>
-<li class="toctree-l2"><a class="reference internal" href="arcgis.features.toc.html#table">Table</a></li>
-<li class="toctree-l2"><a class="reference internal" href="arcgis.features.toc.html#featurelayercollection">FeatureLayerCollection</a></li>
-<li class="toctree-l2"><a class="reference internal" href="arcgis.features.toc.html#featureset">FeatureSet</a></li>
-<li class="toctree-l2"><a class="reference internal" href="arcgis.features.toc.html#featurecollection">FeatureCollection</a></li>
-<li class="toctree-l2"><a class="reference internal" href="arcgis.features.toc.html#arcgis-features-geoaccessor">arcgis.features.GeoAccessor</a></li>
-<li class="toctree-l2"><a class="reference internal" href="arcgis.features.toc.html#arcgis-features-geoseriesaccessor">arcgis.features.GeoSeriesAccessor</a></li>
-<li class="toctree-l2"><a class="reference internal" href="arcgis.features.toc.html#spatialdataframe">SpatialDataFrame</a></li>
-<li class="toctree-l2"><a class="reference internal" href="arcgis.features.toc.html#submodules">Submodules</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="arcgis.features.analysis.html">arcgis.features.analysis module</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.features.analysis.html#aggregate-points">aggregate_points</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.features.analysis.html#calculate-density">calculate_density</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.features.analysis.html#connect-origins-to-destinations">connect_origins_to_destinations</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.features.analysis.html#create-buffers">create_buffers</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.features.analysis.html#create-drive-time-areas">create_drive_time_areas</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.features.analysis.html#create-route-layers">create_route_layers</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.features.analysis.html#create-viewshed">create_viewshed</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.features.analysis.html#create-watersheds">create_watersheds</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.features.analysis.html#derive-new-locations">derive_new_locations</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.features.analysis.html#dissolve-boundaries">dissolve_boundaries</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.features.analysis.html#enrich-layer">enrich_layer</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.features.analysis.html#extract-data">extract_data</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.features.analysis.html#find-existing-locations">find_existing_locations</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.features.analysis.html#find-hot-spots">find_hot_spots</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.features.analysis.html#find-nearest">find_nearest</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.features.analysis.html#find-similar-locations">find_similar_locations</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.features.analysis.html#interpolate-points">interpolate_points</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.features.analysis.html#join-features">join_features</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.features.analysis.html#merge-layers">merge_layers</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.features.analysis.html#overlay-layers">overlay_layers</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.features.analysis.html#plan-routes">plan_routes</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.features.analysis.html#summarize-nearby">summarize_nearby</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.features.analysis.html#summarize-within">summarize_within</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.features.analysis.html#trace-downstream">trace_downstream</a></li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="arcgis.features.analyze_patterns.html">arcgis.features.analyze_patterns module</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.features.analyze_patterns.html#calculate-density">calculate_density</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.features.analyze_patterns.html#find-hot-spots">find_hot_spots</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.features.analyze_patterns.html#find-outliers">find_outliers</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.features.analyze_patterns.html#interpolate-points">interpolate_points</a></li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="arcgis.features.enrich_data.html">arcgis.features.enrich_data module</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.features.enrich_data.html#enrich-layer">enrich_layer</a></li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="arcgis.features.find_locations.html">arcgis.features.find_locations module</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.features.find_locations.html#find-existing-locations">find_existing_locations</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.features.find_locations.html#derive-new-locations">derive_new_locations</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.features.find_locations.html#find-similar-locations">find_similar_locations</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.features.find_locations.html#choose-best-facilities">choose_best_facilities</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.features.find_locations.html#create-viewshed">create_viewshed</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.features.find_locations.html#create-watersheds">create_watersheds</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.features.find_locations.html#trace-downstream">trace_downstream</a></li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="arcgis.features.manage_data.html">arcgis.features.manage_data module</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.features.manage_data.html#dissolve-boundaries">dissolve_boundaries</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.features.manage_data.html#extract-data">extract_data</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.features.manage_data.html#merge-layers">merge_layers</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.features.manage_data.html#overlay-layers">overlay_layers</a></li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="arcgis.features.summarize_data.html">arcgis.features.summarize_data module</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.features.summarize_data.html#aggregate-points">aggregate_points</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.features.summarize_data.html#join-features">join_features</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.features.summarize_data.html#summarize-nearby">summarize_nearby</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.features.summarize_data.html#summarize-within">summarize_within</a></li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="arcgis.features.use_proximity.html">arcgis.features.use_proximity module</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.features.use_proximity.html#connect-origins-to-destinations">connect_origins_to_destinations</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.features.use_proximity.html#create-buffers">create_buffers</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.features.use_proximity.html#create-drive-time-areas">create_drive_time_areas</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.features.use_proximity.html#find-nearest">find_nearest</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.features.use_proximity.html#plan-routes">plan_routes</a></li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="arcgis.features.elevation.html">arcgis.features.elevation module</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.features.elevation.html#profile">profile</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.features.elevation.html#viewshed">viewshed</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.features.elevation.html#summarize-elevation">summarize_elevation</a></li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="arcgis.features.managers.html">arcgis.features.managers module</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.features.managers.html#attachmentmanager">AttachmentManager</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.features.managers.html#syncmanager">SyncManager</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.features.managers.html#featurelayercollectionmanager">FeatureLayerCollectionManager</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.features.managers.html#featurelayermanager">FeatureLayerManager</a></li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.gis.toc.html">arcgis.gis module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.env.html">arcgis.env module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.features.toc.html">arcgis.features module</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">arcgis.raster module</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#imagerylayer">ImageryLayer</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#rastercatalogitem">RasterCatalogItem</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#rastermanager">RasterManager</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#imagerytilemanager">ImageryTileManager</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#submodules">Submodules</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="arcgis.raster.analytics.html">arcgis.raster.analytics module</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.analytics.html#get-datastores">get_datastores</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.analytics.html#is-supported">is_supported</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.analytics.html#generate-raster">generate_raster</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.analytics.html#interpolate-points">interpolate_points</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.analytics.html#create-viewshed">create_viewshed</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.analytics.html#summarize-raster-within">summarize_raster_within</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.analytics.html#calculate-density">calculate_density</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.analytics.html#classify">classify</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.analytics.html#segment">segment</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.analytics.html#train-classifier">train_classifier</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.analytics.html#convert-feature-to-raster">convert_feature_to_raster</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.analytics.html#convert-raster-to-feature">convert_raster_to_feature</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.analytics.html#copy-raster">copy_raster</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.analytics.html#create-image-collection">create_image_collection</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.analytics.html#add-image">add_image</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.analytics.html#delete-image">delete_image</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.analytics.html#delete-image-collection">delete_image_collection</a></li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="arcgis.raster.functions.html">arcgis.raster.functions module</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#abs">abs</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#acos">acos</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#acosh">acosh</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#apply">apply</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#arg-max">arg_max</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#arg-median">arg_median</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#arg-min">arg_min</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#arg-statistics">arg_statistics</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#arithmetic">arithmetic</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#asin">asin</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#asinh">asinh</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#aspect">aspect</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#atan">atan</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#atan2">atan2</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#atanh">atanh</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#band-arithmetic">band_arithmetic</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#bitwise-and">bitwise_and</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#bitwise-left-shift">bitwise_left_shift</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#bitwise-not">bitwise_not</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#bitwise-or">bitwise_or</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#bitwise-right-shift">bitwise_right_shift</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#bitwise-xor">bitwise_xor</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#boolean-and">boolean_and</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#boolean-not">boolean_not</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#boolean-or">boolean_or</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#boolean-xor">boolean_xor</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#classify">classify</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#clip">clip</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#colormap">colormap</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#colormap-to-rgb">colormap_to_rgb</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#colorspace-conversion">colorspace_conversion</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#complex">complex</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#composite-band">composite_band</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#con">con</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#contrast-brightness">contrast_brightness</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#convolution">convolution</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#cos">cos</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#cosh">cosh</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#curvature">curvature</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#divide">divide</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#duration">duration</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#elevation-void-fill">elevation_void_fill</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#equal-to">equal_to</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#exp">exp</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#exp10">exp10</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#exp2">exp2</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#expression">expression</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#extract-band">extract_band</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#float">FLOAT</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#float-divide">float_divide</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#floor-divide">floor_divide</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#gemi">gemi</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#geometric">geometric</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#grayscale">grayscale</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#greater-than">greater_than</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#greater-than-equal">greater_than_equal</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#gvitm">gvitm</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#hillshade">hillshade</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#identity">identity</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#int">INT</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#is-null">is_null</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#less-than">less_than</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#less-than-equal">less_than_equal</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#ln">ln</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#local">local</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#log10">log10</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#log2">log2</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#majority">majority</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#mask">mask</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#max">max</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#mean">mean</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#med">med</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#min">min</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#minority">minority</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#minus">minus</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#ml-classify">ml_classify</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#mod">mod</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#mode">mode</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#msavi">msavi</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#multiply">MULTIPLY</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#ndvi">ndvi</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#negate">negate</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#not-equal">not_equal</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#pansharpen">pansharpen</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#plus">plus</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#power">power</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#pvi">pvi</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#cellstats-range">cellstats_range</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#raster-calculator">raster_calculator</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#remap">remap</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#resample">resample</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#round-down">round_down</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#round-up">round_up</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#savi">savi</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#segment-mean-shift">segment_mean_shift</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#set-null">set_null</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#shaded-relief">shaded_relief</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#sin">sin</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#sinh">sinh</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#slope">slope</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#spectral-conversion">spectral_conversion</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#speckle">speckle</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#sqrt">sqrt</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#square">square</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#focal-statistics">focal_statistics</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#statistics-histogram">statistics_histogram</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#std">std</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#stretch">stretch</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#sultan">sultan</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#sum">sum</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#tan">tan</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#tanh">tanh</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#tasseled-cap">tasseled_cap</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#threshold">threshold</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#times">times</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#transpose-bits">transpose_bits</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#tsavi">tsavi</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#unit-conversion">unit_conversion</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#variety">variety</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#vector-field">vector_field</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#vector-field-renderer">vector_field_renderer</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#weighted-overlay">weighted_overlay</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#weighted-sum">weighted_sum</a></li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="arcgis.raster.functions.gbl.html">arcgis.raster.functions.gbl module</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.gbl.html#cost-allocation">cost_allocation</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.gbl.html#cost-distance">cost_distance</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.gbl.html#euclidean-allocation">euclidean_allocation</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.gbl.html#euclidean-distance">euclidean_distance</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.gbl.html#fill">fill</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.gbl.html#flow-accumulation">flow_accumulation</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.gbl.html#flow-distance">flow_distance</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.gbl.html#flow-direction">flow_direction</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.gbl.html#least-cost-path">least_cost_path</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.gbl.html#nibble">nibble</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.gbl.html#stream-link">stream_link</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.gbl.html#watershed">watershed</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.gbl.html#zonal-statistics">zonal_statistics</a></li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="arcgis.raster.orthomapping.html">arcgis.raster.orthomapping module</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.orthomapping.html#is-supported">is_supported</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.orthomapping.html#compute-sensor-model">compute_sensor_model</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.orthomapping.html#alter-processing-states">alter_processing_states</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.orthomapping.html#get-processing-states">get_processing_states</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.orthomapping.html#match-control-points">match_control_points</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.orthomapping.html#color-correction">color_correction</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.orthomapping.html#compute-control-points">compute_control_points</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.orthomapping.html#compute-seamlines">compute_seamlines</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.orthomapping.html#edit-control-points">edit_control_points</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.orthomapping.html#generate-dem">generate_dem</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.orthomapping.html#generate-orthomosaic">generate_orthomosaic</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.orthomapping.html#generate-report">generate_report</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.orthomapping.html#query-camera-info">query_camera_info</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.orthomapping.html#query-control-points">query_control_points</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.orthomapping.html#reset-image-collection">reset_image_collection</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.orthomapping.html#compute-spatial-reference-factory-code">compute_spatial_reference_factory_code</a></li>
+<li class="toctree-l3"><a class="reference internal" href="arcgis.raster.analytics.html">arcgis.raster.analytics module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="arcgis.raster.functions.html">arcgis.raster.functions module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="arcgis.raster.functions.gbl.html">arcgis.raster.functions.gbl module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="arcgis.raster.orthomapping.html">arcgis.raster.orthomapping module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="arcgis.raster.functions.RFT.html">arcgis.raster.functions.RFT</a></li>
 </ul>
 </li>
 </ul>
 </li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="arcgis.network.toc.html">arcgis.network module</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="arcgis.network.toc.html#networklayer">NetworkLayer</a></li>
-<li class="toctree-l2"><a class="reference internal" href="arcgis.network.toc.html#routelayer">RouteLayer</a></li>
-<li class="toctree-l2"><a class="reference internal" href="arcgis.network.toc.html#servicearealayer">ServiceAreaLayer</a></li>
-<li class="toctree-l2"><a class="reference internal" href="arcgis.network.toc.html#closestfacilitylayer">ClosestFacilityLayer</a></li>
-<li class="toctree-l2"><a class="reference internal" href="arcgis.network.toc.html#networkdataset">NetworkDataset</a></li>
-<li class="toctree-l2"><a class="reference internal" href="arcgis.network.toc.html#submodules">Submodules</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="arcgis.network.analysis.html">arcgis.network.analysis module</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.network.analysis.html#solve-vehicle-routing-problem">solve_vehicle_routing_problem</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.network.analysis.html#find-closest-facilities">find_closest_facilities</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.network.analysis.html#solve-location-allocation">solve_location_allocation</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.network.analysis.html#generate-origin-destination-cost-matrix">generate_origin_destination_cost_matrix</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.network.analysis.html#find-routes">find_routes</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.network.analysis.html#generate-service-areas">generate_service_areas</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.network.analysis.html#get-travel-modes">get_travel_modes</a></li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="arcgis.geoanalytics.toc.html">arcgis.geoanalytics module</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="arcgis.geoanalytics.toc.html#get-datastores">get_datastores</a></li>
-<li class="toctree-l2"><a class="reference internal" href="arcgis.geoanalytics.toc.html#is-supported">is_supported</a></li>
-<li class="toctree-l2"><a class="reference internal" href="arcgis.geoanalytics.toc.html#submodules">Submodules</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="arcgis.geoanalytics.analyze_patterns.html">arcgis.geoanalytics.analyze_patterns module</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.geoanalytics.analyze_patterns.html#calculate-density">calculate_density</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.geoanalytics.analyze_patterns.html#find-hot-spots">find_hot_spots</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.geoanalytics.analyze_patterns.html#create-space-time-cube">create_space_time_cube</a></li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="arcgis.geoanalytics.find_locations.html">arcgis.geoanalytics.find_locations module</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.geoanalytics.find_locations.html#detect-incidents">detect_incidents</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.geoanalytics.find_locations.html#find-similar-locations">find_similar_locations</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.geoanalytics.find_locations.html#geocode-locations">geocode_locations</a></li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="arcgis.geoanalytics.manage_data.html">arcgis.geoanalytics.manage_data module</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.geoanalytics.manage_data.html#append-data">append_data</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.geoanalytics.manage_data.html#calculate-fields">calculate_fields</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.geoanalytics.manage_data.html#clip-layer">clip_layer</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.geoanalytics.manage_data.html#copy-to-data-store">copy_to_data_store</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.geoanalytics.manage_data.html#overlay-data">overlay_data</a></li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="arcgis.geoanalytics.summarize_data.html">arcgis.geoanalytics.summarize_data module</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.geoanalytics.summarize_data.html#aggregate-points">aggregate_points</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.geoanalytics.summarize_data.html#build-multivariable-grid">build_multivariable_grid</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.geoanalytics.summarize_data.html#join-features">join_features</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.geoanalytics.summarize_data.html#reconstruct-tracks">reconstruct_tracks</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.geoanalytics.summarize_data.html#summarize-attributes">summarize_attributes</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.geoanalytics.summarize_data.html#summarize-within">summarize_within</a></li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="arcgis.geoanalytics.use_proximity.html">arcgis.geoanalytics.use_proximity module</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.geoanalytics.use_proximity.html#create-buffers">create_buffers</a></li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="arcgis.geocoding.html">arcgis.geocoding module</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="arcgis.geocoding.html#geocoder">Geocoder</a></li>
-<li class="toctree-l2"><a class="reference internal" href="arcgis.geocoding.html#get-geocoders">get_geocoders</a></li>
-<li class="toctree-l2"><a class="reference internal" href="arcgis.geocoding.html#geocode">geocode</a></li>
-<li class="toctree-l2"><a class="reference internal" href="arcgis.geocoding.html#geocode-from-items">geocode_from_items</a></li>
-<li class="toctree-l2"><a class="reference internal" href="arcgis.geocoding.html#analyze-geocode-input">analyze_geocode_input</a></li>
-<li class="toctree-l2"><a class="reference internal" href="arcgis.geocoding.html#reverse-geocode">reverse_geocode</a></li>
-<li class="toctree-l2"><a class="reference internal" href="arcgis.geocoding.html#batch-geocode">batch_geocode</a></li>
-<li class="toctree-l2"><a class="reference internal" href="arcgis.geocoding.html#suggest">suggest</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="arcgis.geoenrichment.html">arcgis.geoenrichment module</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="arcgis.geoenrichment.html#country">Country</a></li>
-<li class="toctree-l2"><a class="reference internal" href="arcgis.geoenrichment.html#get-countries">get_countries</a></li>
-<li class="toctree-l2"><a class="reference internal" href="arcgis.geoenrichment.html#create-report">create_report</a></li>
-<li class="toctree-l2"><a class="reference internal" href="arcgis.geoenrichment.html#enrich">enrich</a></li>
-<li class="toctree-l2"><a class="reference internal" href="arcgis.geoenrichment.html#find-businesses">find_businesses</a></li>
-<li class="toctree-l2"><a class="reference internal" href="arcgis.geoenrichment.html#standard-geography-query">standard_geography_query</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="arcgis.geometry.html">arcgis.geometry module</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="arcgis.geometry.html#point">Point</a></li>
-<li class="toctree-l2"><a class="reference internal" href="arcgis.geometry.html#multipoint">MultiPoint</a></li>
-<li class="toctree-l2"><a class="reference internal" href="arcgis.geometry.html#polyline">Polyline</a></li>
-<li class="toctree-l2"><a class="reference internal" href="arcgis.geometry.html#polygon">Polygon</a></li>
-<li class="toctree-l2"><a class="reference internal" href="arcgis.geometry.html#envelope">Envelope</a></li>
-<li class="toctree-l2"><a class="reference internal" href="arcgis.geometry.html#spatialreference">SpatialReference</a></li>
-<li class="toctree-l2"><a class="reference internal" href="arcgis.geometry.html#geometry">Geometry</a></li>
-<li class="toctree-l2"><a class="reference internal" href="arcgis.geometry.html#areas-and-lengths">areas_and_lengths</a></li>
-<li class="toctree-l2"><a class="reference internal" href="arcgis.geometry.html#auto-complete">auto_complete</a></li>
-<li class="toctree-l2"><a class="reference internal" href="arcgis.geometry.html#buffer">buffer</a></li>
-<li class="toctree-l2"><a class="reference internal" href="arcgis.geometry.html#convex-hull">convex_hull</a></li>
-<li class="toctree-l2"><a class="reference internal" href="arcgis.geometry.html#cut">cut</a></li>
-<li class="toctree-l2"><a class="reference internal" href="arcgis.geometry.html#density">density</a></li>
-<li class="toctree-l2"><a class="reference internal" href="arcgis.geometry.html#difference">difference</a></li>
-<li class="toctree-l2"><a class="reference internal" href="arcgis.geometry.html#distance">distance</a></li>
-<li class="toctree-l2"><a class="reference internal" href="arcgis.geometry.html#find-transformation">find_transformation</a></li>
-<li class="toctree-l2"><a class="reference internal" href="arcgis.geometry.html#from-geo-coordinate-string">from_geo_coordinate_string</a></li>
-<li class="toctree-l2"><a class="reference internal" href="arcgis.geometry.html#generalize">generalize</a></li>
-<li class="toctree-l2"><a class="reference internal" href="arcgis.geometry.html#intersect">intersect</a></li>
-<li class="toctree-l2"><a class="reference internal" href="arcgis.geometry.html#label-points">label_points</a></li>
-<li class="toctree-l2"><a class="reference internal" href="arcgis.geometry.html#lengths">lengths</a></li>
-<li class="toctree-l2"><a class="reference internal" href="arcgis.geometry.html#offset">offset</a></li>
-<li class="toctree-l2"><a class="reference internal" href="arcgis.geometry.html#project">project</a></li>
-<li class="toctree-l2"><a class="reference internal" href="arcgis.geometry.html#relation">relation</a></li>
-<li class="toctree-l2"><a class="reference internal" href="arcgis.geometry.html#reshape">reshape</a></li>
-<li class="toctree-l2"><a class="reference internal" href="arcgis.geometry.html#to-geo-coordinate-string">to_geo_coordinate_string</a></li>
-<li class="toctree-l2"><a class="reference internal" href="arcgis.geometry.html#trim-extend">trim_extend</a></li>
-<li class="toctree-l2"><a class="reference internal" href="arcgis.geometry.html#union">union</a></li>
-<li class="toctree-l2"><a class="reference internal" href="arcgis.geometry.html#submodules">Submodules</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="arcgis.geometry.filters.html">arcgis.geometry.filters module</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.geometry.filters.html#intersects">intersects</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.geometry.filters.html#contains">contains</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.geometry.filters.html#crosses">crosses</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.geometry.filters.html#envelope-intersects">envelope_intersects</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.geometry.filters.html#index-intersects">index_intersects</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.geometry.filters.html#overlaps">overlaps</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.geometry.filters.html#touches">touches</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.geometry.filters.html#within">within</a></li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="arcgis.geoprocessing.html">arcgis.geoprocessing module</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="arcgis.geoprocessing.html#import-toolbox">import_toolbox</a></li>
-<li class="toctree-l2"><a class="reference internal" href="arcgis.geoprocessing.html#datafile">DataFile</a></li>
-<li class="toctree-l2"><a class="reference internal" href="arcgis.geoprocessing.html#linearunit">LinearUnit</a></li>
-<li class="toctree-l2"><a class="reference internal" href="arcgis.geoprocessing.html#rasterdata">RasterData</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="arcgis.mapping.html">arcgis.mapping module</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="arcgis.mapping.html#webmap">WebMap</a></li>
-<li class="toctree-l2"><a class="reference internal" href="arcgis.mapping.html#offlinemapareamanager">OfflineMapAreaManager</a></li>
-<li class="toctree-l2"><a class="reference internal" href="arcgis.mapping.html#webscene">WebScene</a></li>
-<li class="toctree-l2"><a class="reference internal" href="arcgis.mapping.html#mapimagelayer">MapImageLayer</a></li>
-<li class="toctree-l2"><a class="reference internal" href="arcgis.mapping.html#mapimagelayermanager">MapImageLayerManager</a></li>
-<li class="toctree-l2"><a class="reference internal" href="arcgis.mapping.html#vectortilelayer">VectorTileLayer</a></li>
-<li class="toctree-l2"><a class="reference internal" href="arcgis.mapping.html#scenelayer">SceneLayer</a></li>
-<li class="toctree-l2"><a class="reference internal" href="arcgis.mapping.html#export-map">export_map</a></li>
-<li class="toctree-l2"><a class="reference internal" href="arcgis.mapping.html#get-layout-templates">get_layout_templates</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="arcgis.realtime.html">arcgis.realtime module</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="arcgis.realtime.html#streamlayer">StreamLayer</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="arcgis.schematics.html">arcgis.schematics module</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="arcgis.schematics.html#schematiclayers">SchematicLayers</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="arcgis.widgets.html">arcgis.widgets module</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="arcgis.widgets.html#mapview">MapView</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="arcgis.apps.html">arcgis.apps module</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="arcgis.apps.html#build-collector-url">build_collector_url</a></li>
-<li class="toctree-l2"><a class="reference internal" href="arcgis.apps.html#build-explorer-url">build_explorer_url</a></li>
-<li class="toctree-l2"><a class="reference internal" href="arcgis.apps.html#build-navigator-url">build_navigator_url</a></li>
-<li class="toctree-l2"><a class="reference internal" href="arcgis.apps.html#build-survey123-url">build_survey123_url</a></li>
-<li class="toctree-l2"><a class="reference internal" href="arcgis.apps.html#submodules">Submodules</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="arcgis.apps.workforce.html">arcgis.apps.workforce module</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.apps.workforce.html#assignment">Assignment</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.apps.workforce.html#assignmenttype">AssignmentType</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.apps.workforce.html#attachment">Attachment</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.apps.workforce.html#dispatcher">Dispatcher</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.apps.workforce.html#project">Project</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.apps.workforce.html#track">Track</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.apps.workforce.html#worker">Worker</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.apps.workforce.html#submodules">Submodules</a></li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="arcgis.apps.storymap.html">arcgis.apps.storymap module</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.apps.storymap.html#journalstorymap">JournalStoryMap</a></li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.network.toc.html">arcgis.network module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.geoanalytics.toc.html">arcgis.geoanalytics module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.geocoding.html">arcgis.geocoding module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.geoenrichment.html">arcgis.geoenrichment module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.geometry.html">arcgis.geometry module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.geoprocessing.html">arcgis.geoprocessing module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.mapping.html">arcgis.mapping module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.realtime.html">arcgis.realtime module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.schematics.html">arcgis.schematics module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.widgets.html">arcgis.widgets module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.apps.html">arcgis.apps module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.learn.html">arcgis.learn module</a></li>
 </ul>
 
             
@@ -777,6 +252,12 @@ indicate a correct bandCount value.</td>
 </table>
 </dd></dl>
 
+<dl class="attribute">
+<dt id="arcgis.raster.ImageryLayer.band_count">
+<code class="descname">band_count</code><a class="headerlink" href="#arcgis.raster.ImageryLayer.band_count" title="Permalink to this definition">¶</a></dt>
+<dd><p>returns the band count of the imagery layer</p>
+</dd></dl>
+
 <dl class="method">
 <dt id="arcgis.raster.ImageryLayer.blend">
 <code class="descname">blend</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.raster.ImageryLayer.blend" title="Permalink to this definition">¶</a></dt>
@@ -786,6 +267,56 @@ indicate a correct bandCount value.</td>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">this imagery layer with mosaic operation set to ‘blend’</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="arcgis.raster.ImageryLayer.calculate_volume">
+<code class="descname">calculate_volume</code><span class="sig-paren">(</span><em>geometries</em>, <em>base_type=None</em>, <em>mosaic_rule=None</em>, <em>constant_z=None</em>, <em>pixel_size=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.raster.ImageryLayer.calculate_volume" title="Permalink to this definition">¶</a></dt>
+<dd><p>Performs volumetric calculation on an elevation service. Results are always in square meters (area) and cubic
+meters (volume). If a service does not have vertical spatial reference and z unit is not in meters, user
+needs to apply a conversion factor when interpreting results.</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="16%" />
+<col width="84%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><strong>Argument</strong></td>
+<td><strong>Description</strong></td>
+</tr>
+<tr class="row-even"><td>geometries</td>
+<td>required a list of Polygon geometry objects or a list of envelope geometry objects.
+A geometry that defines the geometry
+within which the volume is computed. The geometry can be an
+envelope or a polygon</td>
+</tr>
+<tr class="row-odd"><td>base_type</td>
+<td>optional integer.
+0 - constant z;
+1 - best fitting plane;
+2 - lowest elevation on the perimeter;
+3 - highest elevation on the perimeter;
+4 - average elevation on the perimeter</td>
+</tr>
+<tr class="row-even"><td>mosaic_rule</td>
+<td>Optional dictionary. Used to select different DEMs in a mosaic dataset</td>
+</tr>
+<tr class="row-odd"><td>constant_z</td>
+<td>Optional integer. parameter to specify constant z value</td>
+</tr>
+<tr class="row-even"><td>pixel_size</td>
+<td>Optional dictionary. Defines the spatial resolution at which volume calculation is performed</td>
+</tr>
+</tbody>
+</table>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">dictionary showing volume values for each geometry in the input geometries array</td>
 </tr>
 </tbody>
 </table>
@@ -817,6 +348,12 @@ indicate a correct bandCount value.</td>
 <dd><p>The colormap method returns RGB color representation of pixel
 values. This method is supported if the hasColormap property of
 the layer is true.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="arcgis.raster.ImageryLayer.columns">
+<code class="descname">columns</code><a class="headerlink" href="#arcgis.raster.ImageryLayer.columns" title="Permalink to this definition">¶</a></dt>
+<dd><p>returns number of columns in the imagery layer</p>
 </dd></dl>
 
 <dl class="method">
@@ -987,6 +524,14 @@ pixelSize=0.18,0.18</dd>
 </dd></dl>
 
 <dl class="method">
+<dt id="arcgis.raster.ImageryLayer.compute_pixel_location">
+<code class="descname">compute_pixel_location</code><span class="sig-paren">(</span><em>raster_id</em>, <em>geometries</em>, <em>spatial_reference</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.raster.ImageryLayer.compute_pixel_location" title="Permalink to this definition">¶</a></dt>
+<dd><p>With given input geometries, it calculates corresponding pixel location
+in column and row on specific raster catalog item.
+A prerequisite is that the raster catalog item has valid icsToPixel resource.</p>
+</dd></dl>
+
+<dl class="method">
 <dt id="arcgis.raster.ImageryLayer.compute_stats_and_histograms">
 <code class="descname">compute_stats_and_histograms</code><span class="sig-paren">(</span><em>geometry</em>, <em>mosaic_rule=None</em>, <em>rendering_rule=None</em>, <em>pixel_size=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.raster.ImageryLayer.compute_stats_and_histograms" title="Permalink to this definition">¶</a></dt>
 <dd><p>The result of this operation contains both statistics and histograms
@@ -1108,7 +653,7 @@ that it fits within the given size.</td>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">G - Graph item</td>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">Graph</td>
 </tr>
 </tbody>
 </table>
@@ -1166,7 +711,7 @@ spatial reference of the imagery layer.</td>
 <tr class="row-odd"><td>size</td>
 <td>optional list. The size (width * height) of the exported image in
 pixels. If size is not specified, an image with a default size of
-400 * 400 will be exported.
+1200*450 will be exported.
 Syntax: list of [width, height]</td>
 </tr>
 <tr class="row-even"><td>time</td>
@@ -1523,6 +1068,12 @@ include all the field values in the results.</td>
 </tr>
 </tbody>
 </table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="arcgis.raster.ImageryLayer.height">
+<code class="descname">height</code><a class="headerlink" href="#arcgis.raster.ImageryLayer.height" title="Permalink to this definition">¶</a></dt>
+<dd><p>returns height of image service</p>
 </dd></dl>
 
 <dl class="attribute">
@@ -1949,6 +1500,12 @@ Common data sources for multidimensional image services are mosaic
 datasets created from netCDF, GRIB, and HDF data.</p>
 </dd></dl>
 
+<dl class="attribute">
+<dt id="arcgis.raster.ImageryLayer.pixel_type">
+<code class="descname">pixel_type</code><a class="headerlink" href="#arcgis.raster.ImageryLayer.pixel_type" title="Permalink to this definition">¶</a></dt>
+<dd><p>returns pixel type of the imagery layer</p>
+</dd></dl>
+
 <dl class="method">
 <dt id="arcgis.raster.ImageryLayer.project">
 <code class="descname">project</code><span class="sig-paren">(</span><em>geometries</em>, <em>in_sr</em>, <em>out_sr</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.raster.ImageryLayer.project" title="Permalink to this definition">¶</a></dt>
@@ -2148,9 +1705,15 @@ type.</td>
 <dd><p>Raster manager for this layer</p>
 </dd></dl>
 
+<dl class="attribute">
+<dt id="arcgis.raster.ImageryLayer.rows">
+<code class="descname">rows</code><a class="headerlink" href="#arcgis.raster.ImageryLayer.rows" title="Permalink to this definition">¶</a></dt>
+<dd><p>returns number of rows in the imagery layer</p>
+</dd></dl>
+
 <dl class="method">
 <dt id="arcgis.raster.ImageryLayer.save">
-<code class="descname">save</code><span class="sig-paren">(</span><em>output_name=None</em>, <em>for_viz=False</em>, <em>gis=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.raster.ImageryLayer.save" title="Permalink to this definition">¶</a></dt>
+<code class="descname">save</code><span class="sig-paren">(</span><em>output_name=None</em>, <em>for_viz=False</em>, <em>*</em>, <em>gis=None</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.raster.ImageryLayer.save" title="Permalink to this definition">¶</a></dt>
 <dd><p>Persists this imagery layer to the GIS as an Imagery Layer item. If for_viz is True, a new Item is created that
 uses the applied raster functions for visualization at display resolution using on-the-fly image processing.
 If for_viz is False, distributed raster analysis is used for generating a new raster information product by
@@ -2273,7 +1836,7 @@ applied to the layer, unless overridden</td>
 
 <dl class="method">
 <dt id="arcgis.raster.ImageryLayer.to_features">
-<code class="descname">to_features</code><span class="sig-paren">(</span><em>field='Value'</em>, <em>output_type='Polygon'</em>, <em>simplify=True</em>, <em>output_name=None</em>, <em>gis=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.raster.ImageryLayer.to_features" title="Permalink to this definition">¶</a></dt>
+<code class="descname">to_features</code><span class="sig-paren">(</span><em>field='Value'</em>, <em>output_type='Polygon'</em>, <em>simplify=True</em>, <em>output_name=None</em>, <em>*</em>, <em>gis=None</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.raster.ImageryLayer.to_features" title="Permalink to this definition">¶</a></dt>
 <dd><p>Converts this raster to a persisted feature layer of the specified type using Raster Analytics.</p>
 <p>Distributed raster analysis is used for generating a new feature layer by
 applying raster functions at source resolution across the extent of the raster
@@ -2316,6 +1879,43 @@ output. The GIS must have Raster Analytics capability.</td>
 </table>
 </dd></dl>
 
+<dl class="method">
+<dt id="arcgis.raster.ImageryLayer.validate">
+<code class="descname">validate</code><span class="sig-paren">(</span><em>rendering_rule=None</em>, <em>mosaic_rule=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.raster.ImageryLayer.validate" title="Permalink to this definition">¶</a></dt>
+<dd><p>validates rendering rule and/or mosaic rule of an image service.</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="20%" />
+<col width="80%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><strong>Argument</strong></td>
+<td><strong>Description</strong></td>
+</tr>
+<tr class="row-even"><td>rendering_rule</td>
+<td>optional dictionary. Specifies the rendering rule to be validated</td>
+</tr>
+<tr class="row-odd"><td>mosaic_rule</td>
+<td>optional dictionary. Specifies the mosaic rule to be validated</td>
+</tr>
+</tbody>
+</table>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">dictionary showing whether the specified rendering rule and/or mosaic rule is valid</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="arcgis.raster.ImageryLayer.width">
+<code class="descname">width</code><a class="headerlink" href="#arcgis.raster.ImageryLayer.width" title="Permalink to this definition">¶</a></dt>
+<dd><p>returns width of the imagery layer</p>
+</dd></dl>
+
 </dd></dl>
 
 </div>
@@ -2354,6 +1954,15 @@ item will not be loaded until requested.</td>
 <dd><p>The raster ics property returns the image coordinate system of the
 associated raster in an image layer. The returned ics can be used
 as the SR parameter.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="arcgis.raster.RasterCatalogItem.ics_to_pixel">
+<code class="descname">ics_to_pixel</code><a class="headerlink" href="#arcgis.raster.RasterCatalogItem.ics_to_pixel" title="Permalink to this definition">¶</a></dt>
+<dd><p>returns coefficients to build up mathematic model for geometric
+transformation. With this transformation, ICS coordinates based
+from the catalog item raster can be used to calculate the original
+column and row numbers on the corresponding image.</p>
 </dd></dl>
 
 <dl class="method">
@@ -3015,6 +2624,12 @@ for a blank/missing tile.</td>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.raster.analytics.html#add-image">add_image</a></li>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.raster.analytics.html#delete-image">delete_image</a></li>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.raster.analytics.html#delete-image-collection">delete_image_collection</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.raster.analytics.html#list-datastore-content">list_datastore_content</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.raster.analytics.html#build-footprints">build_footprints</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.raster.analytics.html#build-overview">build_overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.raster.analytics.html#calculate-statistics">calculate_statistics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.raster.analytics.html#optimum-travel-cost-network">optimum_travel_cost_network</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.raster.analytics.html#determine-travel-costpath-as-polyline">determine_travel_costpath_as_polyline</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="arcgis.raster.functions.html">arcgis.raster.functions module</a><ul>
@@ -3044,7 +2659,10 @@ for a blank/missing tile.</td>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.raster.functions.html#boolean-not">boolean_not</a></li>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.raster.functions.html#boolean-or">boolean_or</a></li>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.raster.functions.html#boolean-xor">boolean_xor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.raster.functions.html#cire">cire</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.raster.functions.html#cig">cig</a></li>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.raster.functions.html#classify">classify</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.raster.functions.html#clay-minerals">clay_minerals</a></li>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.raster.functions.html#clip">clip</a></li>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.raster.functions.html#colormap">colormap</a></li>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.raster.functions.html#colormap-to-rgb">colormap_to_rgb</a></li>
@@ -3061,16 +2679,20 @@ for a blank/missing tile.</td>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.raster.functions.html#duration">duration</a></li>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.raster.functions.html#elevation-void-fill">elevation_void_fill</a></li>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.raster.functions.html#equal-to">equal_to</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.raster.functions.html#evi">evi</a></li>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.raster.functions.html#exp">exp</a></li>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.raster.functions.html#exp10">exp10</a></li>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.raster.functions.html#exp2">exp2</a></li>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.raster.functions.html#expression">expression</a></li>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.raster.functions.html#extract-band">extract_band</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.raster.functions.html#ferrous-minerals">ferrous_minerals</a></li>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.raster.functions.html#float">FLOAT</a></li>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.raster.functions.html#float-divide">float_divide</a></li>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.raster.functions.html#floor-divide">floor_divide</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.raster.functions.html#focal-stats">focal_stats</a></li>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.raster.functions.html#gemi">gemi</a></li>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.raster.functions.html#geometric">geometric</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.raster.functions.html#gndvi">gndvi</a></li>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.raster.functions.html#grayscale">grayscale</a></li>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.raster.functions.html#greater-than">greater_than</a></li>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.raster.functions.html#greater-than-equal">greater_than_equal</a></li>
@@ -3078,6 +2700,7 @@ for a blank/missing tile.</td>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.raster.functions.html#hillshade">hillshade</a></li>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.raster.functions.html#identity">identity</a></li>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.raster.functions.html#int">INT</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.raster.functions.html#iron-oxide">iron_oxide</a></li>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.raster.functions.html#is-null">is_null</a></li>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.raster.functions.html#less-than">less_than</a></li>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.raster.functions.html#less-than-equal">less_than_equal</a></li>
@@ -3085,6 +2708,7 @@ for a blank/missing tile.</td>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.raster.functions.html#local">local</a></li>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.raster.functions.html#log10">log10</a></li>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.raster.functions.html#log2">log2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.raster.functions.html#lookup">lookup</a></li>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.raster.functions.html#majority">majority</a></li>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.raster.functions.html#mask">mask</a></li>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.raster.functions.html#max">max</a></li>
@@ -3095,10 +2719,13 @@ for a blank/missing tile.</td>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.raster.functions.html#minus">minus</a></li>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.raster.functions.html#ml-classify">ml_classify</a></li>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.raster.functions.html#mod">mod</a></li>
-<li class="toctree-l2"><a class="reference internal" href="arcgis.raster.functions.html#mode">mode</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.raster.functions.html#monitor-vegetation">monitor_vegetation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.raster.functions.html#msavi">msavi</a></li>
-<li class="toctree-l2"><a class="reference internal" href="arcgis.raster.functions.html#multiply">MULTIPLY</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.raster.functions.html#mtvi2">mtvi2</a></li>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.raster.functions.html#ndvi">ndvi</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.raster.functions.html#ndvire">ndvire</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.raster.functions.html#id3">NDVI</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.raster.functions.html#ndwi">ndwi</a></li>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.raster.functions.html#negate">negate</a></li>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.raster.functions.html#not-equal">not_equal</a></li>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.raster.functions.html#pansharpen">pansharpen</a></li>
@@ -3107,10 +2734,12 @@ for a blank/missing tile.</td>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.raster.functions.html#pvi">pvi</a></li>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.raster.functions.html#cellstats-range">cellstats_range</a></li>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.raster.functions.html#raster-calculator">raster_calculator</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.raster.functions.html#raster-collection-function">raster_collection_function</a></li>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.raster.functions.html#remap">remap</a></li>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.raster.functions.html#resample">resample</a></li>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.raster.functions.html#round-down">round_down</a></li>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.raster.functions.html#round-up">round_up</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.raster.functions.html#rtvi-core">rtvi_core</a></li>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.raster.functions.html#savi">savi</a></li>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.raster.functions.html#segment-mean-shift">segment_mean_shift</a></li>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.raster.functions.html#set-null">set_null</a></li>
@@ -3122,6 +2751,8 @@ for a blank/missing tile.</td>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.raster.functions.html#speckle">speckle</a></li>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.raster.functions.html#sqrt">sqrt</a></li>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.raster.functions.html#square">square</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.raster.functions.html#sr">sr</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.raster.functions.html#srre">srre</a></li>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.raster.functions.html#focal-statistics">focal_statistics</a></li>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.raster.functions.html#statistics-histogram">statistics_histogram</a></li>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.raster.functions.html#std">std</a></li>
@@ -3136,6 +2767,7 @@ for a blank/missing tile.</td>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.raster.functions.html#transpose-bits">transpose_bits</a></li>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.raster.functions.html#tsavi">tsavi</a></li>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.raster.functions.html#unit-conversion">unit_conversion</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.raster.functions.html#vari">vari</a></li>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.raster.functions.html#variety">variety</a></li>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.raster.functions.html#vector-field">vector_field</a></li>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.raster.functions.html#vector-field-renderer">vector_field_renderer</a></li>
@@ -3144,19 +2776,30 @@ for a blank/missing tile.</td>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="arcgis.raster.functions.gbl.html">arcgis.raster.functions.gbl module</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.raster.functions.gbl.html#calculate-travel-cost">calculate_travel_cost</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.raster.functions.gbl.html#calculate-distance">calculate_distance</a></li>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.raster.functions.gbl.html#cost-allocation">cost_allocation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.raster.functions.gbl.html#cost-backlink">cost_backlink</a></li>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.raster.functions.gbl.html#cost-distance">cost_distance</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.raster.functions.gbl.html#cost-path">cost_path</a></li>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.raster.functions.gbl.html#euclidean-allocation">euclidean_allocation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.raster.functions.gbl.html#euclidean-distance">euclidean_distance</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.raster.functions.gbl.html#euclidean-direction">euclidean_direction</a></li>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.raster.functions.gbl.html#fill">fill</a></li>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.raster.functions.gbl.html#flow-accumulation">flow_accumulation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.raster.functions.gbl.html#flow-distance">flow_distance</a></li>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.raster.functions.gbl.html#flow-direction">flow_direction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.raster.functions.gbl.html#kernel-density">kernel_density</a></li>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.raster.functions.gbl.html#least-cost-path">least_cost_path</a></li>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.raster.functions.gbl.html#nibble">nibble</a></li>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.raster.functions.gbl.html#stream-link">stream_link</a></li>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.raster.functions.gbl.html#watershed">watershed</a></li>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.raster.functions.gbl.html#zonal-statistics">zonal_statistics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.raster.functions.gbl.html#region-group">region_group</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.raster.functions.gbl.html#corridor">corridor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.raster.functions.gbl.html#path-distance">path_distance</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.raster.functions.gbl.html#path-distance-allocation">path_distance_allocation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.raster.functions.gbl.html#path-distance-back-link">path_distance_back_link</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="arcgis.raster.orthomapping.html">arcgis.raster.orthomapping module</a><ul>
@@ -3178,6 +2821,7 @@ for a blank/missing tile.</td>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.raster.orthomapping.html#compute-spatial-reference-factory-code">compute_spatial_reference_factory_code</a></li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.raster.functions.RFT.html">arcgis.raster.functions.RFT</a></li>
 </ul>
 </div>
 </div>
@@ -3197,7 +2841,7 @@ for a blank/missing tile.</td>
         <a href="arcgis.raster.analytics.html" class="btn btn-neutral float-right" title="arcgis.raster.analytics module" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="arcgis.features.managers.html" class="btn btn-neutral" title="arcgis.features.managers module" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="arcgis.features.use_proximity.html" class="btn btn-neutral" title="arcgis.features.use_proximity module" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
@@ -3206,7 +2850,7 @@ for a blank/missing tile.</td>
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 2016-2017, Esri.
+        &copy; Copyright 2016-2019, Esri.
 
     </p>
   </div>
@@ -3228,7 +2872,7 @@ for a blank/missing tile.</td>
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'./',
-            VERSION:'1.5.0',
+            VERSION:'1.6.2',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  true,

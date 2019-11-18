@@ -5,12 +5,12 @@ arcgis.features.elevation module
 
 profile
 -------------------------------
-.. automethod:: arcgis.features.elevation.profile
+.. autofunction:: arcgis.features.elevation.profile
     
 viewshed
 --------------
-.. automethod:: arcgis.features.elevation.viewshed
+.. autofunction:: arcgis.features.elevation.viewshed
 
 summarize_elevation
 -----------------------
-.. automethod:: arcgis.features.elevation.summarize_elevation
+.. autofunction:: arcgis.features.elevation.summarize_elevation
