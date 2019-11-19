@@ -9,7 +9,7 @@ API Reference for the ArcGIS API for Python
 Contents:
 
 .. toctree::
-   :maxdepth: 3
+   :maxdepth: 5
    :caption: arcgis
 
    arcgis.gis.toc
@@ -27,7 +27,7 @@ Contents:
    arcgis.schematics
    arcgis.widgets
    arcgis.apps
-
+   arcgis.learn
 
 Indices and tables
 ==================

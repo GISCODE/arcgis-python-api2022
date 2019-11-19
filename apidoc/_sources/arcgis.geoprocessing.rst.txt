@@ -6,7 +6,7 @@ arcgis.geoprocessing module
 
 import_toolbox
 --------------
-.. automethod:: arcgis.geoprocessing.import_toolbox
+.. autofunction:: arcgis.geoprocessing.import_toolbox
 
 DataFile
 --------------

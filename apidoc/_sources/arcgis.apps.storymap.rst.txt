@@ -9,3 +9,4 @@ JournalStoryMap
     :members:
     :undoc-members:
     :show-inheritance:
+

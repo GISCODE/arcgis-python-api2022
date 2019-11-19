@@ -5,24 +5,28 @@ arcgis.geoanalytics.summarize_data module
 
 aggregate_points
 --------------
-.. automethod:: arcgis.geoanalytics.summarize_data.aggregate_points
+.. autofunction:: arcgis.geoanalytics.summarize_data.aggregate_points
 
 build_multivariable_grid
 --------------
-.. automethod:: arcgis.geoanalytics.summarize_data.build_multivariable_grid
+.. autofunction:: arcgis.geoanalytics.summarize_data.build_multivariable_grid
+
+describe_dataset
+--------------
+.. autofunction:: arcgis.geoanalytics.summarize_data.describe_dataset
 
 join_features
 --------------
-.. automethod:: arcgis.geoanalytics.summarize_data.join_features
+.. autofunction:: arcgis.geoanalytics.summarize_data.join_features
 
 reconstruct_tracks
 --------------
-.. automethod:: arcgis.geoanalytics.summarize_data.reconstruct_tracks
+.. autofunction:: arcgis.geoanalytics.summarize_data.reconstruct_tracks
 
 summarize_attributes
 --------------
-.. automethod:: arcgis.geoanalytics.summarize_data.summarize_attributes
+.. autofunction:: arcgis.geoanalytics.summarize_data.summarize_attributes
 
 summarize_within
 --------------
-.. automethod:: arcgis.geoanalytics.summarize_data.summarize_within
+.. autofunction:: arcgis.geoanalytics.summarize_data.summarize_within
