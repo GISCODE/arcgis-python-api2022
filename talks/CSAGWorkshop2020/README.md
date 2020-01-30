@@ -1,0 +1,1 @@
+Complete resources for the workshop (Pro Project, Training Data) are here https://github.com/sandeepgadhwal/csag-workshop2020/
