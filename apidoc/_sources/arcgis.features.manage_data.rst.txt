@@ -20,3 +20,10 @@ overlay_layers
 --------------
 .. autofunction:: arcgis.features.manage_data.overlay_layers
 
+create_route_layers
+--------------
+.. autofunction:: arcgis.features.manage_data.create_route_layers
+
+generate_tessellation
+--------------
+.. autofunction:: arcgis.features.manage_data.generate_tessellation

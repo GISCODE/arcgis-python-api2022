@@ -15,10 +15,13 @@ find_hot_spots
 --------------
 .. autofunction:: arcgis.geoanalytics.analyze_patterns.find_hot_spots
 
+find_point_clusters
+-------------------
+.. autofunction:: arcgis.geoanalytics.analyze_patterns.find_point_clusters
+
 forest
 --------------
 .. autofunction:: arcgis.geoanalytics.analyze_patterns.forest
-
 
 glr
 --------------
