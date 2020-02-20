@@ -7,6 +7,10 @@ detect_incidents
 --------------
 .. autofunction:: arcgis.geoanalytics.find_locations.detect_incidents
 
+find_dwell_locations
+--------------
+.. autofunction:: arcgis.geoanalytics.find_locations.find_dwell_locations
+
 find_similar_locations
 --------------
 .. autofunction:: arcgis.geoanalytics.find_locations.find_similar_locations

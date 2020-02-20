@@ -151,6 +151,10 @@ con
 ___
 .. autofunction:: arcgis.raster.functions.con
 
+constant_raster
+_______________
+.. autofunction:: arcgis.raster.functions.constant_raster
+
 contrast_brightness
 ___________________
 .. autofunction:: arcgis.raster.functions.contrast_brightness
@@ -402,6 +406,10 @@ ___
 cellstats_range
 _______________
 .. autofunction:: arcgis.raster.functions.cellstats_range
+
+random_raster
+_____________
+.. autofunction:: arcgis.raster.functions.random_raster
 
 raster_calculator
 _________________

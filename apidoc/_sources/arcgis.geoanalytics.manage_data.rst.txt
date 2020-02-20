@@ -13,7 +13,7 @@ calculate_fields
 
 clip_layer
 -------------
-..autofunction:: arcgis.geoanalytics.manage_data.clip_layer
+.. autofunction:: arcgis.geoanalytics.manage_data.clip_layer
 
 copy_to_data_store
 --------------

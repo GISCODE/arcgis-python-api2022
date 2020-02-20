@@ -4,7 +4,7 @@ arcgis.apps.tracker module
 .. automodule:: arcgis.apps.tracker
 
 
-The :class:`~arcgis.apps.tracker.LocationTrackingManager` is the main entry point into the Workforce module.
+The :class:`~arcgis.apps.tracker.LocationTrackingManager` is the main entry point into the Tracker module.
 It can be used as shown in the following code example.
 
 

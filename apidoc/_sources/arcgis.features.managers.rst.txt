@@ -56,3 +56,10 @@ UtilityNetworkManager
     :inherited-members:
     :members:
     :undoc-members:
+    
+ValidationManager
+--------------
+.. autoclass:: arcgis.features._validation.ValidationManager
+    :inherited-members:
+    :members:
+    :undoc-members:

@@ -1,2 +1,0 @@
-## Note
-To reduce the size of the master branch, we moved the conference talks to its own branch called [`conference_talks`](https://github.com/Esri/arcgis-python-api/tree/conference_talks/talks). Please find the materials you are looking for in that branch. We apologize for this inconvenience.

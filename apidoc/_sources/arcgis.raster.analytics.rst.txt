@@ -109,8 +109,41 @@ optimum_travel_cost_network
 -----------------------
 .. automethod:: arcgis.raster.analytics.optimum_travel_cost_network
 
-
 determine_travel_costpath_as_polyline
 -------------------------------------
 .. automethod:: arcgis.raster.analytics.determine_travel_costpath_as_polyline
+generate_multidimensional_anomaly
+---------------------------------
+.. automethod:: arcgis.raster.analytics.generate_multidimensional_anomaly
 
+build_multidimensional_transpose
+--------------------------------
+.. automethod:: arcgis.raster.analytics.build_multidimensional_transpose
+
+aggregate_multidimensional_raster
+---------------------------------
+.. automethod:: arcgis.raster.analytics.aggregate_multidimensional_raster
+
+generate_trend_raster
+---------------------
+.. automethod:: arcgis.raster.analytics.generate_trend_raster
+
+predict_using_trend_raster
+---------------------------
+.. automethod:: arcgis.raster.analytics.predict_using_trend_raster
+
+find_argument_statistics
+------------------------
+.. automethod:: arcgis.raster.analytics.find_argument_statistics
+
+linear_spectral_unmixing
+-------------------------
+.. automethod:: arcgis.raster.analytics.linear_spectral_unmixing
+
+subset_multidimensional_raster
+------------------------------
+.. automethod:: arcgis.raster.analytics.subset_multidimensional_raster
+
+costpath_as_polyline
+--------------------
+.. automethod:: arcgis.raster.analytics.costpath_as_polyline

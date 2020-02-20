@@ -17,6 +17,13 @@ OfflineMapAreaManager
     :undoc-members:
     :show-inheritance:
 
+PackagingJob
+-----------------------
+.. autoclass:: arcgis.mapping.PackagingJob
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
 WebScene
 -------------------
 .. autoclass:: arcgis.mapping.WebScene
