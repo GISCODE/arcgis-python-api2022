@@ -9,4 +9,3 @@ MapView
     :members:
     :undoc-members:
     :show-inheritance:
-

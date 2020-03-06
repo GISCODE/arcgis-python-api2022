@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>API Reference for the ArcGIS API for Python &mdash; arcgis 1.7.1 documentation</title>
+  <title>API Reference for the ArcGIS API for Python &mdash; arcgis 1.8.0 documentation</title>
   
 
   
@@ -75,7 +75,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             
             
               <div class="version">
-                1.7.1
+                1.8.0
               </div>
             
           
@@ -272,10 +272,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.gis.server.html#iteminformationmanager">ItemInformationManager</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="arcgis.gis.server.html#module-arcgis.gis.nb">arcgis.gis.nb module</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.gis.server.html#notebookserver">NotebookServer</a></li>
-</ul>
-</li>
 <li class="toctree-l3"><a class="reference internal" href="arcgis.gis.mission.html">arcgis.gis.mission module</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.gis.mission.html#missionserver">MissionServer</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.gis.mission.html#directorymanager">DirectoryManager</a></li>
@@ -287,6 +283,13 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.gis.mission.html#systemmanager">SystemManager</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.gis.mission.html#webadaptor">WebAdaptor</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.gis.mission.html#webadaptormanager">WebAdaptorManager</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="arcgis.gis.nb.html">arcgis.gis.nb module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.gis.nb.html#notebookserver">NotebookServer</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.gis.nb.html#notebookmanager">NotebookManager</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.gis.nb.html#notebook">Notebook</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.gis.nb.html#runtime">Runtime</a></li>
 </ul>
 </li>
 </ul>
@@ -427,6 +430,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="arcgis.raster.toc.html">arcgis.raster module</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.raster.toc.html#imagerylayer">ImageryLayer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.raster.toc.html#raster">Raster</a></li>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.raster.toc.html#rastercatalogitem">RasterCatalogItem</a></li>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.raster.toc.html#rastermanager">RasterManager</a></li>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.raster.toc.html#imagerytilemanager">ImageryTileManager</a></li>
@@ -464,12 +468,14 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.raster.analytics.html#linear-spectral-unmixing">linear_spectral_unmixing</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.raster.analytics.html#subset-multidimensional-raster">subset_multidimensional_raster</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.raster.analytics.html#costpath-as-polyline">costpath_as_polyline</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.analytics.html#define-nodata">define_nodata</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="arcgis.raster.functions.html">arcgis.raster.functions module</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#abs">abs</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#acos">acos</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#acosh">acosh</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#aggregate-cells">aggregate_cells</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#apply">apply</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#arg-max">arg_max</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#arg-median">arg_median</a></li>
@@ -621,8 +627,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.gbl.html#cost-path">cost_path</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.gbl.html#distance-accumulation">distance_accumulation</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.gbl.html#distance-allocation">distance_allocation</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.gbl.html#euclidean-back-direction">euclidean_back_direction</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.gbl.html#euclidean-allocation">euclidean_allocation</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.gbl.html#euclidean-back-direction">euclidean_back_direction</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.gbl.html#euclidean-direction">euclidean_direction</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.gbl.html#euclidean-distance">euclidean_distance</a></li>
 <li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.gbl.html#expand">expand</a></li>
@@ -905,6 +911,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.learn.html#classify-objects">classify_objects</a></li>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.learn.html#classify-pixels">classify_pixels</a></li>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.learn.html#export-training-data">export_training_data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.learn.html#export-point-dataset">export_point_dataset</a></li>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.learn.html#list-models">list_models</a></li>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.learn.html#model">Model</a></li>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.learn.html#prepare-data">prepare_data</a></li>
@@ -916,6 +923,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.learn.html#pspnetclassifier">PSPNetClassifier</a></li>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.learn.html#maskrcnn">MaskRCNN</a></li>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.learn.html#deeplab">DeepLab</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.learn.html#pointcnn">PointCNN</a></li>
 </ul>
 </li>
 </ul>

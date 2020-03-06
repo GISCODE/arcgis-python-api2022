@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>arcgis.raster.functions.gbl module &mdash; arcgis 1.7.1 documentation</title>
+  <title>arcgis.raster.functions.gbl module &mdash; arcgis 1.8.0 documentation</title>
   
 
   
@@ -76,7 +76,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             
             
               <div class="version">
-                1.7.1
+                1.8.0
               </div>
             
           
@@ -107,6 +107,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <li class="toctree-l1"><a class="reference internal" href="arcgis.features.toc.html">arcgis.features module</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="arcgis.raster.toc.html">arcgis.raster module</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="arcgis.raster.toc.html#imagerylayer">ImageryLayer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.raster.toc.html#raster">Raster</a></li>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.raster.toc.html#rastercatalogitem">RasterCatalogItem</a></li>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.raster.toc.html#rastermanager">RasterManager</a></li>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.raster.toc.html#imagerytilemanager">ImageryTileManager</a></li>
@@ -123,8 +124,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <li class="toctree-l4"><a class="reference internal" href="#cost-path">cost_path</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#distance-accumulation">distance_accumulation</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#distance-allocation">distance_allocation</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#euclidean-back-direction">euclidean_back_direction</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#euclidean-allocation">euclidean_allocation</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#euclidean-back-direction">euclidean_back_direction</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#euclidean-direction">euclidean_direction</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#euclidean-distance">euclidean_distance</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#expand">expand</a></li>
@@ -658,8 +659,8 @@ of travel for each source. That field must contain the string FROM_SOURCE or TO_
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>in_destination_data</strong> – Required. A raster or feature dataset that identifies those cells from which the least-cost
-path is determined to the least costly source. If the input is a raster, the input
+<li><p><strong>in_destination_data</strong> – Required raster layer. A raster that identifies those cells from which the least-cost
+path is determined to the least costly source. The input raster layer
 consists of cells that have valid values (zero is a valid value), and the remaining
 cells must be assigned NoData.</p></li>
 <li><p><strong>in_cost_distance_raster</strong> – Required. The name of a cost distance raster to be used to determine the least-cost path from
@@ -859,59 +860,6 @@ known as a great circle line if based on a sphere rather than an ellipsoid.</p>
 </dd></dl>
 
 </div>
-<div class="section" id="euclidean-back-direction">
-<h2>euclidean_back_direction<a class="headerlink" href="#euclidean-back-direction" title="Permalink to this headline">¶</a></h2>
-<dl class="function">
-<dt id="arcgis.raster.functions.gbl.euclidean_back_direction">
-<code class="sig-prename descclassname">arcgis.raster.functions.gbl.</code><code class="sig-name descname">euclidean_back_direction</code><span class="sig-paren">(</span><em class="sig-param">in_source_data</em>, <em class="sig-param">cell_size=None</em>, <em class="sig-param">max_distance=None</em>, <em class="sig-param">distance_method='PLANAR'</em>, <em class="sig-param">in_barrier_data=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.raster.functions.gbl.euclidean_back_direction" title="Permalink to this definition">¶</a></dt>
-<dd><p>Calculates, for each cell, the direction, in degrees, to the neighboring cell along 
-the shortest path back to the closest source while avoiding barriers.</p>
-<p>The direction is calculated from each cell center to the center of the source cell 
-that’s nearest to it.</p>
-<p>The range of values is from 0 degrees to 360 degrees, with 0 reserved for the source cells.
-Due east (right) is 90 and the values increase clockwise (180 is south, 270 is west, 
-and 360 is north).</p>
-<p>For more information, see 
-<a class="reference external" href="https://pro.arcgis.com/en/pro-app/help/data/imagery/euclidean-back-direction-function.htm">https://pro.arcgis.com/en/pro-app/help/data/imagery/euclidean-back-direction-function.htm</a></p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>in_source_data</strong> – Required; The input raster that identifies the pixels or locations to
-which the Euclidean direction for every output cell location is calculated.
-The input type can be an integer or a floating-point value.</p></li>
-<li><p><strong>cell_size</strong> – Optional. The pixel size at which the output raster will be created. If the cell
-size was explicitly set in Environments, that will be the default cell size. 
-If Environments was not set, the output cell size will be the same as the 
-Source Raster</p></li>
-<li><p><strong>max_distance</strong> – Optional. The threshold that the accumulative distance values cannot exceed. If an
-accumulative Euclidean distance exceeds this value, the output value for
-the pixel location will be NoData. The default distance is to the edge 
-of the output raster</p></li>
-<li><p><strong>distance_method</strong> – <p>Optional. Optional String; Determines whether to calculate the distance using a planar (flat earth) 
-or a geodesic (ellipsoid) method.</p>
-<p>Planar - Planar measurements use 2D Cartesian mathematics to calculate 
-length and area. The option is only available when measuring in a 
-projected coordinate system and the 2D plane of that coordinate system 
-will be used as the basis for the measurements. This is the default.</p>
-<p>Geodesic - The shortest line between two points on the earth’s surface 
-on a spheroid (ellipsoid). Therefore, regardless of input or output 
-projection, the results do not change.</p>
-<p>One use for a geodesic line is when you want to determine the shortest 
-distance between two cities for an airplane’s flight path. This is also
-known as a great circle line if based on a sphere rather than an ellipsoid.</p>
-</p></li>
-<li><p><strong>in_barrier_data</strong> – Optional barrier raster. The input raster that defines the barriers. The dataset must contain 
-NoData where there are no barriers. Barriers are represented by valid values including zero. 
-The barriers can be defined by an integer or floating-point raster.</p></li>
-</ul>
-</dd>
-<dt class="field-even">Returns</dt>
-<dd class="field-even"><p>output raster with function applied</p>
-</dd>
-</dl>
-</dd></dl>
-
-</div>
 <div class="section" id="euclidean-allocation">
 <h2>euclidean_allocation<a class="headerlink" href="#euclidean-allocation" title="Permalink to this headline">¶</a></h2>
 <dl class="function">
@@ -970,6 +918,59 @@ The barriers can be defined by an integer or floating-point raster.</p></li>
 </dd></dl>
 
 </div>
+<div class="section" id="euclidean-back-direction">
+<h2>euclidean_back_direction<a class="headerlink" href="#euclidean-back-direction" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="arcgis.raster.functions.gbl.euclidean_back_direction">
+<code class="sig-prename descclassname">arcgis.raster.functions.gbl.</code><code class="sig-name descname">euclidean_back_direction</code><span class="sig-paren">(</span><em class="sig-param">in_source_data</em>, <em class="sig-param">cell_size=None</em>, <em class="sig-param">max_distance=None</em>, <em class="sig-param">distance_method='PLANAR'</em>, <em class="sig-param">in_barrier_data=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.raster.functions.gbl.euclidean_back_direction" title="Permalink to this definition">¶</a></dt>
+<dd><p>Calculates, for each cell, the direction, in degrees, to the neighboring cell along 
+the shortest path back to the closest source while avoiding barriers.</p>
+<p>The direction is calculated from each cell center to the center of the source cell 
+that’s nearest to it.</p>
+<p>The range of values is from 0 degrees to 360 degrees, with 0 reserved for the source cells.
+Due east (right) is 90 and the values increase clockwise (180 is south, 270 is west, 
+and 360 is north).</p>
+<p>For more information, see 
+<a class="reference external" href="https://pro.arcgis.com/en/pro-app/help/data/imagery/euclidean-back-direction-function.htm">https://pro.arcgis.com/en/pro-app/help/data/imagery/euclidean-back-direction-function.htm</a></p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>in_source_data</strong> – Required; The input raster that identifies the pixels or locations to
+which the Euclidean direction for every output cell location is calculated.
+The input type can be an integer or a floating-point value.</p></li>
+<li><p><strong>cell_size</strong> – Optional. The pixel size at which the output raster will be created. If the cell
+size was explicitly set in Environments, that will be the default cell size. 
+If Environments was not set, the output cell size will be the same as the 
+Source Raster</p></li>
+<li><p><strong>max_distance</strong> – Optional. The threshold that the accumulative distance values cannot exceed. If an
+accumulative Euclidean distance exceeds this value, the output value for
+the pixel location will be NoData. The default distance is to the edge 
+of the output raster</p></li>
+<li><p><strong>distance_method</strong> – <p>Optional. Optional String; Determines whether to calculate the distance using a planar (flat earth) 
+or a geodesic (ellipsoid) method.</p>
+<p>Planar - Planar measurements use 2D Cartesian mathematics to calculate 
+length and area. The option is only available when measuring in a 
+projected coordinate system and the 2D plane of that coordinate system 
+will be used as the basis for the measurements. This is the default.</p>
+<p>Geodesic - The shortest line between two points on the earth’s surface 
+on a spheroid (ellipsoid). Therefore, regardless of input or output 
+projection, the results do not change.</p>
+<p>One use for a geodesic line is when you want to determine the shortest 
+distance between two cities for an airplane’s flight path. This is also
+known as a great circle line if based on a sphere rather than an ellipsoid.</p>
+</p></li>
+<li><p><strong>in_barrier_data</strong> – Optional barrier raster. The input raster that defines the barriers. The dataset must contain 
+NoData where there are no barriers. Barriers are represented by valid values including zero. 
+The barriers can be defined by an integer or floating-point raster.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>output raster with function applied</p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
 <div class="section" id="euclidean-direction">
 <h2>euclidean_direction<a class="headerlink" href="#euclidean-direction" title="Permalink to this headline">¶</a></h2>
 <dl class="function">
@@ -979,7 +980,7 @@ The barriers can be defined by an integer or floating-point raster.</p></li>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>in_source_data</strong> – Required. The input source locations. This is a raster or feature dataset that
+<li><p><strong>in_source_data</strong> – Required raster layer. The input source locations. This is a raster that
 identifies the cells or locations to which the Euclidean distance for
 every output cell location is calculated. For rasters, the input type
 can  be integer or floating point.</p></li>
@@ -987,13 +988,10 @@ can  be integer or floating point.</p></li>
 exceed. If an accumulative Euclidean distance value exceeds this
 value, the output value for the cell location will be NoData. The default
 distance is to the edge of the output raster.</p></li>
-<li><p><strong>max_distance</strong> – Optional. The cell size at which the output raster will be created. This will be the
-value in the environment if it is explicitly set. If it is not set in the
-environment, the default cell size will depend on if the input source data
-is a raster or a feature, as follows: If the source is raster, the output
-will have that same cell size. If the source is feature, the output will
-have a cell size determined by the shorter of the width or height of the
-extent of input feature, in the input spatial reference, divided by 250.</p></li>
+<li><p><strong>max_distance</strong> – Optional. Defines the threshold distance within which the direction to the 
+closest source will be calculated. If the distance to the nearest source 
+exceeds this, the output for that cell will be NoData. The default distance 
+is to the extent of the output raster.</p></li>
 <li><p><strong>distance_method</strong> – <p>Optional String; Determines whether to calculate the distance using a planar (flat earth) 
 or a geodesic (ellipsoid) method.</p>
 <p>Planar - Planar measurements use 2D Cartesian mathematics to calculate 
@@ -1083,7 +1081,7 @@ It must be of integer type.</p></li>
 The value must be integer, and can be 1 or greater.</p></li>
 <li><p><strong>zone_values</strong> – Required. The list of zones to expand. The zone values 
 must be integer, and they can be in any order.
-The zone_values can be specified as a list or  as a string 
+The zone values can be specified as a list or as a string. 
 If specified as a string and if it is required to specify multiple zones, 
 use a semicolon (“;”) to separate the zone values.</p></li>
 </ul>
@@ -1597,7 +1595,7 @@ while accounting for surface distance along with horizontal and vertical cost fa
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>in_source_data</strong> – <p>Required. The input source locations.
-This is a raster or feature dataset that identifies the cells or locations from or to which
+This is a raster that identifies the cells or locations from or to which
 the least accumulated cost distance for every output cell location is calculated.</p>
 <p>For rasters, the input type can be integer or floating point.</p>
 <p>If the input source raster is floating point, the {in_value_raster} must be set, and it must be of integer type.
@@ -1617,7 +1615,7 @@ Possible values are: “BINARY”, “LINEAR”, “SYMMETRIC_LINEAR”, “INVE
 <li><p><strong>maximum_distance</strong> – Optional. Defines the threshold that the accumulative cost values cannot exceed.</p></li>
 <li><p><strong>in_value_raster</strong> – Optional. The input integer raster that identifies the zone values that should be
 used for each input source location.
-For each source location (cell or feature), the value defined by the {in_value_raster} will be
+For each source location cell, the value defined by the {in_value_raster} will be
 assigned to all cells allocated to the source location for the computation.
 The value raster will take precedence over any setting for the {source_field}.</p></li>
 <li><p><strong>source_field</strong> – Optional. The field used to assign values to the source locations. It must be of integer type.
@@ -1771,7 +1769,7 @@ It must be of integer type.</p></li>
 <li><p><strong>number_of_cells</strong> – Required. The number of cells by which to shrink each specified zone.
 The value must be integer, and can be 1 or greater.</p></li>
 <li><p><strong>zone_values</strong> – Required. The list of zones to shrink. The zone values must be integer, and they can be in any order.
-The zone_values can be specified as a list or  as a string 
+The zone values can be specified as a list or as a string. 
 If specified as a string and if it is required to specify multiple zones, 
 use a semicolon (“;”) to separate the zone values.</p></li>
 </ul>
@@ -1901,16 +1899,12 @@ with the values of the nearest neighbors.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>input_flow_direction_raster</strong> – Required. The input raster that shows the direction of flow out of each cell.</p></li>
-<li><p><strong>input_pour_point_data</strong> – Required. The input pour point locations. For a raster, this represents cells above
+<li><p><strong>input_flow_direction_raster</strong> – Required raster layer. The input raster that shows the direction of flow out of each cell.</p></li>
+<li><p><strong>input_pour_point_data</strong> – Required raster layer. This raster represents cells above
 which the contributing area, or catchment, will be determined. All cells that
-are not NoData will be used as source cells.
-For a point feature dataset, this represents locations above which the contributing
-area, or catchment, will be determined.</p></li>
-<li><p><strong>pour_point_field</strong> – Optional. Field used to assign values to the pour point locations. If the pour point dataset is a
-raster, use Value.
-If the pour point dataset is a feature, use a numeric field. If the field contains
-floating-point values, they will be truncated into integers.</p></li>
+are not NoData will be used as source cells.</p></li>
+<li><p><strong>pour_point_field</strong> – Optional string. Field used to assign values to the pour point locations.
+For a raster pour point dataset, Value is used by default.</p></li>
 </ul>
 </dd>
 <dt class="field-even">Returns</dt>

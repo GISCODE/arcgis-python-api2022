@@ -39,13 +39,13 @@ distance_allocation
 ___________________
 .. autofunction:: arcgis.raster.functions.gbl.distance_allocation
 
-euclidean_back_direction
-________________________
-.. autofunction:: arcgis.raster.functions.gbl.euclidean_back_direction
-
 euclidean_allocation
 _______________
 .. autofunction:: arcgis.raster.functions.gbl.euclidean_allocation
+
+euclidean_back_direction
+________________________
+.. autofunction:: arcgis.raster.functions.gbl.euclidean_back_direction
 
 euclidean_direction
 ___________________

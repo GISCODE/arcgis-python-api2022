@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>arcgis.raster.functions module &mdash; arcgis 1.7.1 documentation</title>
+  <title>arcgis.raster.functions module &mdash; arcgis 1.8.0 documentation</title>
   
 
   
@@ -76,7 +76,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             
             
               <div class="version">
-                1.7.1
+                1.8.0
               </div>
             
           
@@ -107,6 +107,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <li class="toctree-l1"><a class="reference internal" href="arcgis.features.toc.html">arcgis.features module</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="arcgis.raster.toc.html">arcgis.raster module</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="arcgis.raster.toc.html#imagerylayer">ImageryLayer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.raster.toc.html#raster">Raster</a></li>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.raster.toc.html#rastercatalogitem">RasterCatalogItem</a></li>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.raster.toc.html#rastermanager">RasterManager</a></li>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.raster.toc.html#imagerytilemanager">ImageryTileManager</a></li>
@@ -116,6 +117,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <li class="toctree-l4"><a class="reference internal" href="#abs">abs</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#acos">acos</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#acosh">acosh</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#aggregate-cells">aggregate_cells</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#apply">apply</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#arg-max">arg_max</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#arg-median">arg_median</a></li>
@@ -420,6 +422,76 @@ processed product on disk, for which raster analytics tools like arcgis.raster.a
 </dd>
 <dt class="field-even">Returns</dt>
 <dd class="field-even"><p>the output raster</p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+<div class="section" id="aggregate-cells">
+<h2>aggregate_cells<a class="headerlink" href="#aggregate-cells" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="arcgis.raster.functions.aggregate_cells">
+<code class="sig-prename descclassname">arcgis.raster.functions.</code><code class="sig-name descname">aggregate_cells</code><span class="sig-paren">(</span><em class="sig-param">raster</em>, <em class="sig-param">cell_factor=2</em>, <em class="sig-param">aggregation_type=9</em>, <em class="sig-param">extent_handling=False</em>, <em class="sig-param">ignore_nodata=False</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.raster.functions.aggregate_cells" title="Permalink to this definition">¶</a></dt>
+<dd><p>Generates a reduced-resolution version of a raster.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>raster</strong> – the input raster</p></li>
+<li><p><strong>cell_factor</strong> – The factor by which to multiply the cell size of the input raster to 
+obtain the desired resolution for the output raster.
+For example, a cell factor value of three would result in an output cell 
+size three times larger than that of the input raster.
+The value must be an integer greater than 1.</p></li>
+<li><p><strong>aggregation_type</strong> – <p>Optional int. Establishes how the value for each output cell will be determined.
+The values of the input cells encompassed by the coarser output cell 
+are aggregated by one of the following statistics:</p>
+<blockquote>
+<div><ul>
+<li><p>2 (MAXIMUM) : The largest value of the input cells.</p></li>
+<li><p>3 (MEAN) : The average value of the input cells.</p></li>
+<li><p>4 (MEDIAN) : The median value of the input cells.</p></li>
+<li><p>5 (MINIMUM) : The smallest value of the input cells.</p></li>
+<li><p>9 (SUM) : The sum (total) of the input cell values.This is the default.</p></li>
+</ul>
+</div></blockquote>
+</p></li>
+<li><p><strong>extent_handling</strong> – <p>Optional boolean. Defines how to handle the boundaries of the input raster when its rows 
+or columns are not a multiple of the cell factor.</p>
+<blockquote>
+<div><ul>
+<li><p>True : Expands the top or right boundaries of the input raster so 
+the total number of cells in a row or column is a multiple 
+of the cell factor. Those expanded cells are given a value 
+of NoData. With this option, the output raster can cover a 
+larger spatial extent than the input raster. This is the default.</p></li>
+<li><p>False : Reduces the number of rows or columns in the output raster by 1. 
+This will truncate the remaining cells on the top or right 
+boundaries of the input raster, making the number of rows 
+or columns in the input raster a multiple of the cell factor.
+With this option, the output raster can cover a smaller 
+spatial extent than the input raster.</p></li>
+</ul>
+</div></blockquote>
+</p></li>
+<li><p><strong>ignore_nodata</strong> – <p>Optional boolean. Denotes whether NoData values are ignored by the aggregation calculation.</p>
+<ul>
+<li><p>True : Specifies that if NoData values exist for any of the cells that fall within the 
+spatial extent of a larger cell on the output raster, the NoData values will be 
+ignored when determining the value for output cell locations. Only input cells 
+within the extent of the output cell that have data values will be used in
+determining the value of the output cell. This is the default.</p></li>
+<li><p>False : Specifies that if any cell that falls within the spatial extent of a larger 
+cell on the output raster has a value of NoData, the value for that output 
+cell location will be NoData.When the this option is used, it is implied 
+that when cells within an aggregation contain the NoData value, 
+there is insufficient information to perform the specified calculations 
+necessary to determine an output value.</p></li>
+</ul>
+</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>output raster</p>
 </dd>
 </dl>
 </dd></dl>
@@ -1249,6 +1321,15 @@ no argument but an optional input raster. For more information, see
 <dd class="field-even"><p>the output raster</p>
 </dd>
 </dl>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">USAGE</span> <span class="n">EXAMPLE</span><span class="p">:</span> <span class="n">To</span> <span class="n">extract</span> <span class="n">raster</span> <span class="kn">from</span> <span class="nn">flow</span> <span class="n">direction</span> <span class="n">raster</span> <span class="n">layer</span> <span class="n">that</span> <span class="n">only</span> <span class="n">covers</span> <span class="n">the</span> <span class="n">watershed</span><span class="o">.</span> 
+               <span class="n">rasters</span><span class="p">:</span> 
+               <span class="p">[</span><span class="s2">&quot;Input raster representing the true or false result of the desired condition. It can be of integer or floating point type.&quot;</span><span class="p">,</span> 
+                <span class="s2">&quot;The input whose values will be used as the output cell values if the condition is true. It can be an integer or a floating point raster, or a constant value.&quot;</span><span class="p">,</span> 
+                <span class="s2">&quot;The input whose values will be used as the output cell values if the condition is false. It can be an integer or a floating point raster, or a constant value.&quot;</span><span class="p">]</span>
+
+<span class="n">con</span><span class="p">([</span><span class="n">stowe_watershed_lyr</span><span class="p">,</span> <span class="n">Stowe_fill_flow_direction_lyr</span><span class="p">,</span> <span class="mi">0</span><span class="p">])</span>
+</pre></div>
+</div>
 </dd></dl>
 
 </div>
@@ -1263,31 +1344,24 @@ no argument but an optional input raster. For more information, see
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>constant</strong> – Required list. The value of the constant to be added to the virtual raster.</p></li>
 <li><p><strong>raster_info</strong> – <p>Required Raster info dictionary or ImageryLayer object to set the properties of the output raster.
-if ImageryLayer is specified then the raster information is obtained from the ImageryLayer specified. 
-Example for RasterInfo dict - 
-{‘bandCount’: 3,</p>
-<blockquote>
-<div><dl>
-<dt>’extent’: {“xmin”: 4488761.95,</dt><dd><p>”ymin”: 5478609.805,
+if ImageryLayer is specified then the raster information is obtained from the ImageryLayer specified.</p>
+<p>Example for RasterInfo dict -</p>
+<p>{‘bandCount’: 3,’extent’: {“xmin”: 4488761.95,
+“ymin”: 5478609.805,
 “xmax”: 4489727.05,
 “ymax”: 5479555.305,
-“spatialReference”: {</p>
-<blockquote>
-<div><p>“wkt”: “PROJCS[“Deutsches_Hauptdreiecksnetz_Transverse_Mercator”,</p>
-<p>GEOGCS[“GCS_Deutsches_Hauptdreiecksnetz”,DATUM[“D_Deutsches_Hauptdreiecksnetz”,</p>
-<p>SPHEROID[“Bessel_1841”,6377397.155,299.1528128]],PRIMEM[“Greenwich”,0.0],</p>
-<p>UNIT[“Degree”,0.0174532925199433]],PROJECTION[“Transverse_Mercator”],</p>
-<p>PARAMETER[“false_easting”,4500000.0],PARAMETER[“false_northing”,0.0],</p>
-<p>PARAMETER[“central_meridian”,12.0],PARAMETER[“scale_factor”,1.0],</p>
-<p>PARAMETER[“latitude_of_origin”,0.0],UNIT[“Meter”,1.0]]”</p>
-</div></blockquote>
-<p>}},</p>
-</dd>
-</dl>
-<p>’pixelSizeX’: 0.0999999999999614,</p>
-<p>’pixelSizeY’: 0.1,</p>
-<p>’pixelType’: ‘U8’}</p>
-</div></blockquote>
+“spatialReference”: {
+“wkt”: “PROJCS[“Deutsches_Hauptdreiecksnetz_Transverse_Mercator”,
+GEOGCS[“GCS_Deutsches_Hauptdreiecksnetz”,DATUM[“D_Deutsches_Hauptdreiecksnetz”,
+SPHEROID[“Bessel_1841”,6377397.155,299.1528128]],PRIMEM[“Greenwich”,0.0],
+UNIT[“Degree”,0.0174532925199433]],PROJECTION[“Transverse_Mercator”],
+PARAMETER[“false_easting”,4500000.0],PARAMETER[“false_northing”,0.0],
+PARAMETER[“central_meridian”,12.0],PARAMETER[“scale_factor”,1.0],
+PARAMETER[“latitude_of_origin”,0.0],UNIT[“Meter”,1.0]]”
+}}, 
+‘pixelSizeX’: 0.0999999999999614, 
+‘pixelSizeY’: 0.1, 
+‘pixelType’: ‘U8’}</p>
 </p></li>
 <li><p><strong>gis</strong> – Optional gis. gis parameter can be specified to render the output raster dynamically using the raster rendering service of the gis.
 If not provided, active gis will be used to do this.
@@ -3002,14 +3076,16 @@ For more info including operators supported, see Calculator function
 <dl class="function">
 <dt id="arcgis.raster.functions.raster_collection_function">
 <code class="sig-prename descclassname">arcgis.raster.functions.</code><code class="sig-name descname">raster_collection_function</code><span class="sig-paren">(</span><em class="sig-param">raster</em>, <em class="sig-param">item_function</em>, <em class="sig-param">aggregation_function</em>, <em class="sig-param">processing_function</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.raster.functions.raster_collection_function" title="Permalink to this definition">¶</a></dt>
-<dd><p>Creates a new raster by applying item, aggregation and processing function</p>
+<dd><p>Creates a new raster by applying item, aggregation and processing function
+:param raster: Input Imagery Layer. The image service the layer is based on should be a mosaic dataset
+:param item_function: The raster function template to be applied on each item of the mosaic dataset.</p>
+<blockquote>
+<div><p>Create an RFT object out of the raster function template item on the portal and 
+specify that as the input to item_function</p>
+</div></blockquote>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>raster</strong> – Input Imagery Layer. The image service the layer is based on should be a mosaic dataset</p></li>
-<li><p><strong>item_function</strong> – The raster function template to be applied on each item of the mosaic dataset. 
-Create an RFT object out of the raster function template item on the portal and 
-specify that as the input to item_function</p></li>
 <li><p><strong>aggregation_function</strong> – The aggregation function to be applied on the mosaic dataset.
 Create an RFT object out of the raster function template item on the portal and 
 specify that as the input to aggregation_function</p></li>

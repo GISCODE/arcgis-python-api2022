@@ -15,6 +15,10 @@ acosh
 _____
 .. autofunction:: arcgis.raster.functions.acosh
 
+aggregate_cells
+_______________
+.. autofunction:: arcgis.raster.functions.aggregate_cells
+
 apply
 _____
 .. autofunction:: arcgis.raster.functions.apply
