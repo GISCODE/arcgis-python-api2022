@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>arcgis.gis.admin module &mdash; arcgis 1.7.1 documentation</title>
+  <title>arcgis.gis.admin module &mdash; arcgis 1.8.0 documentation</title>
   
 
   
@@ -76,7 +76,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             
             
               <div class="version">
-                1.7.1
+                1.8.0
               </div>
             
           
@@ -158,8 +158,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="arcgis.gis.server.html">arcgis.gis.server module</a></li>
-<li class="toctree-l3"><a class="reference internal" href="arcgis.gis.server.html#module-arcgis.gis.nb">arcgis.gis.nb module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="arcgis.gis.mission.html">arcgis.gis.mission module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="arcgis.gis.nb.html">arcgis.gis.nb module</a></li>
 </ul>
 </li>
 </ul>
@@ -297,22 +297,77 @@ portal participates</p>
 
 <dl class="method">
 <dt id="arcgis.gis.admin.AGOLAdminManager.history">
-<code class="sig-name descname">history</code><span class="sig-paren">(</span><em class="sig-param">start_date</em>, <em class="sig-param">num=100</em>, <em class="sig-param">save_folder=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.admin.AGOLAdminManager.history" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">history</code><span class="sig-paren">(</span><em class="sig-param">start_date</em>, <em class="sig-param">to_date=None</em>, <em class="sig-param">num=100</em>, <em class="sig-param">all_events=True</em>, <em class="sig-param">event_ids=None</em>, <em class="sig-param">event_types=None</em>, <em class="sig-param">actors=None</em>, <em class="sig-param">owners=None</em>, <em class="sig-param">actions=None</em>, <em class="sig-param">ips=None</em>, <em class="sig-param">sort_order='asc'</em>, <em class="sig-param">data_format='csv'</em>, <em class="sig-param">save_folder=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.admin.AGOLAdminManager.history" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns a CSV file containing the login history from a start_date to the present.</p>
 <table class="docutils align-default">
 <colgroup>
-<col style="width: 17%" />
-<col style="width: 83%" />
+<col style="width: 14%" />
+<col style="width: 86%" />
 </colgroup>
 <tbody>
 <tr class="row-odd"><td><p><strong>Argument</strong></p></td>
 <td><p><strong>Description</strong></p></td>
 </tr>
 <tr class="row-even"><td><p>start_date</p></td>
-<td><p>Required datetime.datetime object. The beginning date.</p></td>
+<td><p>Required datetime.datetime object. The beginning date to start with.</p></td>
 </tr>
-<tr class="row-odd"><td><p>num</p></td>
-<td><p>Optional Integer. The maximum number of records to return.</p></td>
+<tr class="row-odd"><td><p>to_date</p></td>
+<td><p>Optional datetime.datetime object. The ending date.  If not provided, the query
+will attempt to obtain all records till the current date.</p></td>
+</tr>
+<tr class="row-even"><td><p>num</p></td>
+<td><p>Optional Integer. The maximum number of records to return.  The maximum value
+is 10,000 set by the ArcGIS REST API.  If the value of -1 is provided it will
+attempt to get all records for the date range.  The default is <strong>100</strong>.</p></td>
+</tr>
+<tr class="row-odd"><td><p>all_events</p></td>
+<td><p>Optional Boolean. If <cite>True</cite>, all types of events are included.  If <cite>False</cite>, only
+actions targeted by the organization are included.  When exporting as <cite>csv</cite> this
+parameter is <cite>True</cite>.</p></td>
+</tr>
+<tr class="row-even"><td><p>event_id</p></td>
+<td><p>Optional String. Filter events by specific target user name or target ID in a batch result set.
+It can be the ID of an item, a group, a role, a collaboration, an identity
+provider, and so on.</p></td>
+</tr>
+<tr class="row-odd"><td><p>event_types</p></td>
+<td><p>Optional String.  Filter events by a comma-separated list of target types in a
+batch result set.</p>
+<dl class="simple">
+<dt>Values: a (organization), c (collaboration), cp (collaboration participate),</dt><dd><p>cpg (collaboration participate group), cw (collaboration workspace),
+cwp (collaboration workspace participate), g (group), i (item),
+idp (identity provider), inv (invitation), r (role), u (user)</p>
+</dd>
+</dl>
+</td>
+</tr>
+<tr class="row-even"><td><p>actors</p></td>
+<td><p>Optional String. Comma seperated list of usernames.</p></td>
+</tr>
+<tr class="row-odd"><td><p>owners</p></td>
+<td><p>Optional String. Filter events by a comma-separated list of user names who own
+the action targets in a batch result set.</p></td>
+</tr>
+<tr class="row-even"><td><p>actions</p></td>
+<td><p>Optional String. Comma seperated list of actions to query for.</p>
+<p>Values: <cite>add</cite>, <cite>addusers</cite>, <cite>create</cite>, <cite>delete</cite>, <cite>removeusers</cite>, <cite>share</cite>, <cite>unshare</cite>,
+<cite>update</cite>, <cite>failedlogin</cite>, <cite>login</cite>, and <cite>updateUsers</cite>.</p>
+</td>
+</tr>
+<tr class="row-odd"><td><p>ips</p></td>
+<td><p>Optional String. Filter events by a comma-separated list of IP addresses in a batch result set.</p></td>
+</tr>
+<tr class="row-even"><td><p>sort_order</p></td>
+<td><p>Optional String.  Describes whether the results return in ascending or
+descending chronological order. The default is ascending.</p>
+<p>Values: <cite>asc</cite> or <cite>desc</cite></p>
+</td>
+</tr>
+<tr class="row-odd"><td><p>data_format</p></td>
+<td><p>Optional String.  The way the data is returned to the user.  The response can
+be a <cite>df</cite> or <cite>csv</cite>.</p>
+<p>Values: <cite>df</cite> or <cite>csv</cite></p>
+</td>
 </tr>
 <tr class="row-even"><td><p>save_folder</p></td>
 <td><p>Optional String. The save location of the CSV file.</p></td>
@@ -321,7 +376,7 @@ portal participates</p>
 </table>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p>string</p>
+<dd class="field-odd"><p>string or pd.DataFrame</p>
 </dd>
 </dl>
 </dd></dl>
@@ -1875,7 +1930,7 @@ at least 1 day previous than then start_time.</p></td>
 <dl class="method">
 <dt id="arcgis.gis.admin.CreditManager.deallocate">
 <code class="sig-name descname">deallocate</code><span class="sig-paren">(</span><em class="sig-param">username</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.admin.CreditManager.deallocate" title="Permalink to this definition">¶</a></dt>
-<dd><p>Allows organization administrators to remove credit allocation for
+<dd><p>Allows organization administrators to set credit limit to umlimited for
 organizational users in ArcGIS Online</p>
 <table class="docutils align-default">
 <colgroup>
@@ -1887,7 +1942,7 @@ organizational users in ArcGIS Online</p>
 <td><p><strong>Description</strong></p></td>
 </tr>
 <tr class="row-even"><td><p>username</p></td>
-<td><p>Required string.The name of the user to remove all credit from.</p></td>
+<td><p>Required string.The name of the user to set to unlimited credits.</p></td>
 </tr>
 </tbody>
 </table>

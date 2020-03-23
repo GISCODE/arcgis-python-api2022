@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>arcgis.mapping module &mdash; arcgis 1.7.1 documentation</title>
+  <title>arcgis.mapping module &mdash; arcgis 1.8.0 documentation</title>
   
 
   
@@ -76,7 +76,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             
             
               <div class="version">
-                1.7.1
+                1.8.0
               </div>
             
           
@@ -351,15 +351,64 @@ for the table that is added. If not specified, appropriate defaults are applied.
 <dl class="method">
 <dt id="arcgis.mapping.WebMap.basemap">
 <em class="property">property </em><code class="sig-name descname">basemap</code><a class="headerlink" href="#arcgis.mapping.WebMap.basemap" title="Permalink to this definition">¶</a></dt>
-<dd><p>Base map layers in the web map
-:return: List of layers as dictionaries</p>
+<dd><p>Base map layers in the web map</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>List of layers as dictionaries</p>
+</dd>
+</dl>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Usage example 1: Get the basemap used in the web map</span>
+
+<span class="kn">from</span> <span class="nn">arcgis.mapping</span> <span class="kn">import</span> <span class="n">WebMap</span>
+<span class="n">wm</span> <span class="o">=</span> <span class="n">WebMap</span><span class="p">(</span><span class="n">wm_item</span><span class="p">)</span>
+
+<span class="n">wm</span><span class="o">.</span><span class="n">basemap</span>
+<span class="o">&gt;&gt;</span> <span class="p">{</span><span class="s2">&quot;baseMapLayers&quot;</span><span class="p">:</span> <span class="p">[</span>
+    <span class="p">{</span><span class="s2">&quot;id&quot;</span><span class="p">:</span> <span class="s2">&quot;defaultBasemap&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;layerType&quot;</span><span class="p">:</span> <span class="s2">&quot;ArcGISTiledMapServiceLayer&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;url&quot;</span><span class="p">:</span> <span class="s2">&quot;https://services.arcgisonline.com/ArcGIS/rest/services/World_Topo_Map/MapServer&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;visibility&quot;</span><span class="p">:</span> <span class="n">true</span><span class="p">,</span>
+    <span class="s2">&quot;opacity&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+    <span class="s2">&quot;title&quot;</span><span class="p">:</span> <span class="s2">&quot;Topographic&quot;</span>
+    <span class="p">}],</span>
+    <span class="s2">&quot;title&quot;</span><span class="p">:</span> <span class="s2">&quot;Topographic&quot;</span>
+    <span class="p">}</span>
+    
+<span class="c1"># Usage example 2: Set the basemap used in the web map</span>
+<span class="kn">from</span> <span class="nn">arcgis.mapping</span> <span class="kn">import</span> <span class="n">WebMap</span>
+<span class="n">wm</span> <span class="o">=</span> <span class="n">WebMap</span><span class="p">(</span><span class="n">wm_item</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">wm</span><span class="o">.</span><span class="n">basemaps</span><span class="p">)</span>
+<span class="o">&gt;&gt;</span> <span class="p">[</span><span class="s1">&#39;dark-gray&#39;</span><span class="p">,</span> <span class="s1">&#39;dark-gray-vector&#39;</span><span class="p">,</span> <span class="s1">&#39;gray&#39;</span><span class="p">,</span> <span class="s1">&#39;gray-vector&#39;</span><span class="p">,</span> <span class="s1">&#39;hybrid&#39;</span><span class="p">,</span> <span class="s1">&#39;national-geographic&#39;</span><span class="p">,</span> <span class="s1">&#39;oceans&#39;</span><span class="p">,</span> <span class="s1">&#39;osm&#39;</span><span class="p">,</span> <span class="s1">&#39;satellite&#39;</span><span class="p">,</span> <span class="s1">&#39;streets&#39;</span><span class="p">,</span> <span class="s1">&#39;streets-navigation-vector&#39;</span><span class="p">,</span> <span class="s1">&#39;streets-night-vector&#39;</span><span class="p">,</span> <span class="s1">&#39;streets-relief-vector&#39;</span><span class="p">,</span> <span class="s1">&#39;streets-vector&#39;</span><span class="p">,</span> <span class="s1">&#39;terrain&#39;</span><span class="p">,</span> <span class="s1">&#39;topo&#39;</span><span class="p">,</span> <span class="s1">&#39;topo-vector&#39;</span><span class="p">]</span>
+<span class="n">wm</span><span class="o">.</span><span class="n">basemap</span> <span class="o">=</span> <span class="s1">&#39;dark-gray&#39;</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">wm</span><span class="o">.</span><span class="n">gallery_basemaps</span><span class="p">)</span>
+<span class="o">&gt;&gt;</span> <span class="p">[</span><span class="s1">&#39;custom_dark_gray_canvas&#39;</span><span class="p">,</span> <span class="s1">&#39;imagery&#39;</span><span class="p">,</span> <span class="s1">&#39;imagery_hybrid&#39;</span><span class="p">,</span> <span class="s1">&#39;light_gray_canvas&#39;</span><span class="p">,</span> <span class="s1">&#39;custom_basemap_vector_(proxy)&#39;</span><span class="p">,</span> <span class="s1">&#39;world_imagery_(proxy)&#39;</span><span class="p">,</span> <span class="s1">&#39;world_street_map_(proxy)&#39;</span><span class="p">]</span>
+<span class="n">wm</span><span class="o">.</span><span class="n">basemap</span> <span class="o">=</span> <span class="s1">&#39;custom_dark_gray_canvas&#39;</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="arcgis.mapping.WebMap.basemaps">
+<em class="property">property </em><code class="sig-name descname">basemaps</code><a class="headerlink" href="#arcgis.mapping.WebMap.basemaps" title="Permalink to this definition">¶</a></dt>
+<dd><p>A list of possible basemaps to set for the map</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="arcgis.mapping.WebMap.gallery_basemaps">
+<em class="property">property </em><code class="sig-name descname">gallery_basemaps</code><a class="headerlink" href="#arcgis.mapping.WebMap.gallery_basemaps" title="Permalink to this definition">¶</a></dt>
+<dd><p>View your portal’s custom basemap group</p>
 </dd></dl>
 
 <dl class="method">
 <dt id="arcgis.mapping.WebMap.layers">
 <em class="property">property </em><code class="sig-name descname">layers</code><a class="headerlink" href="#arcgis.mapping.WebMap.layers" title="Permalink to this definition">¶</a></dt>
-<dd><p>Operational layers in the web map
-:return: List of Layers as dictionaries</p>
+<dd><p>Operational layers in the web map</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>List of Layers as dictionaries</p>
+</dd>
+</dl>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># USAGE EXAMPLE 1: Get the list of layers from a web map</span>
 
 <span class="kn">from</span> <span class="nn">arcgis.mapping</span> <span class="kn">import</span> <span class="n">WebMap</span>
@@ -702,7 +751,6 @@ creates one or more map area packages corresponding to each layer type in the ex
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <ul class="simple">
-<li><p>Offline map area functionality is only available if your GIS is ArcGIS Online.</p></li>
 <li><p>There can be only 1 map area item for an extent or bookmark.</p></li>
 <li><p>You need to be the owner of the web map or an administrator of your GIS.</p></li>
 </ul>
@@ -717,13 +765,31 @@ creates one or more map area packages corresponding to each layer type in the ex
 <td><p><strong>Description</strong></p></td>
 </tr>
 <tr class="row-even"><td><p>area</p></td>
-<td><p>Required object. You can specify the name of a web map bookmark or a
-desired extent.</p>
-<p>To get the bookmarks from a web map, query the <cite>definition.bookmarks</cite>
-property.</p>
-<p>You can specify the extent as a list or dictionary of ‘xmin’, ‘ymin’,
-‘xmax’, ‘ymax’ and spatial reference. If spatial reference is not
-specified, it is assumed to be ‘wkid’ : 4326.</p>
+<td><p>Required object.  Bookmark or extent. Specify as either:</p>
+<blockquote>
+<div><ul class="simple">
+<li><dl class="simple">
+<dt>bookmark name</dt><dd><p><cite>WebMap.definition.bookmarks</cite> returns list of bookmarks.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>list of coordinate pairs:</dt><dd><p>[[‘xmin’, ‘ymin’], [‘xmax’, ‘ymax’]]</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>dictionary:</dt><dd><p>{‘xmin’: &lt;value&gt;,
+‘ymin’: &lt;value&gt;,
+‘xmax’: &lt;value&gt;,
+‘ymax’: &lt;value&gt;,
+‘spatialReference’ : {‘wkid’ : &lt;value&gt;}}</p>
+</dd>
+</dl>
+</li>
+</ul>
+</div></blockquote>
+<p>If spatial reference is not specified, it is assumed ‘wkid’: 4326.</p>
 </td>
 </tr>
 <tr class="row-odd"><td><p>item_properties</p></td>
@@ -1016,6 +1082,77 @@ scheduler. Note all time is in UTC.</p>
 <span class="n">oa</span> <span class="o">=</span> <span class="n">wm</span><span class="o">.</span><span class="n">offline_areas</span><span class="o">.</span><span class="n">modify_refresh_schedule</span><span class="p">(</span><span class="n">item</span><span class="o">.</span><span class="n">id</span><span class="p">,</span> <span class="s1">&#39;daily&#39;</span><span class="p">,</span> <span class="p">{</span><span class="s1">&#39;hour&#39;</span> <span class="p">:</span> <span class="mi">10</span><span class="p">,</span> <span class="s1">&#39;minute&#39;</span> <span class="p">:</span> <span class="mi">30</span><span class="p">})</span>
 </pre></div>
 </div>
+</dd></dl>
+
+<dl class="method">
+<dt id="arcgis.mapping.OfflineMapAreaManager.offline_properties">
+<em class="property">property </em><code class="sig-name descname">offline_properties</code><a class="headerlink" href="#arcgis.mapping.OfflineMapAreaManager.offline_properties" title="Permalink to this definition">¶</a></dt>
+<dd><p>This property allows users to configure the offline properties 
+for a webmap.  The <cite>offline_properties</cite> allows for the definition 
+of how available offline editing, basemap, and read-only layers 
+behave in the web map application.</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 21%" />
+<col style="width: 79%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>Argument</strong></p></td>
+<td><p><strong>Description</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>values</p></td>
+<td><p>Required Dict.  The key/value object that defines the offline
+application properties.</p></td>
+</tr>
+</tbody>
+</table>
+<p>The dictionary supports the following keys in the dictionary</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 14%" />
+<col style="width: 86%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>Key</strong></p></td>
+<td><p><strong>Values</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>download</p></td>
+<td><p>When editing layers, the edits are always sent to the server. This
+string value indicates which data is retrieved. For example, none
+indicates that only the schema is written since neither the features
+nor attachments are retrieved. For a full sync without downloading
+attachments, indicate features. Lastly, the default behavior is to
+have a full sync using <cite>features_and_attachments</cite> where both
+features and attachments are retrieved.</p>
+<p>If property is present, must be one of the following values:</p>
+<p>Allowed Values: [features, features_and_attachments, None]</p>
+</td>
+</tr>
+<tr class="row-odd"><td><p>sync</p></td>
+<td><p><cite>sync</cite> applies to editing layers only.  This string value indicates
+how the data is synced.</p>
+<p>Allowed Values:</p>
+<p>sync_features_and_attachments  - bidirectional sync
+sync_features_upload_attachments - bidirection sync for feaures but upload only for attachments
+upload_features_and_attachments - upload only for both features and attachments (initial replica is just a schema)</p>
+</td>
+</tr>
+<tr class="row-even"><td><p>reference_basemap</p></td>
+<td><p>The filename of a basemap that has been copied to a mobile device.
+This can be used instead of the default basemap for the map to
+reduce downloads.</p></td>
+</tr>
+<tr class="row-odd"><td><p>get_attachments</p></td>
+<td><p>Boolean value that indicates whether to include attachments with the
+read-only data.</p></td>
+</tr>
+</tbody>
+</table>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>Dictionary</p>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="method">

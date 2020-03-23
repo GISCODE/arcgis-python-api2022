@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>arcgis.widgets module &mdash; arcgis 1.7.1 documentation</title>
+  <title>arcgis.widgets module &mdash; arcgis 1.8.0 documentation</title>
   
 
   
@@ -76,7 +76,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             
             
               <div class="version">
-                1.7.1
+                1.8.0
               </div>
             
           
@@ -233,8 +233,8 @@ for more information.</p></td>
 </tr>
 <tr class="row-even"><td><p>item</p></td>
 <td><p>Required object. You can specify Item objects, Layer objects such as
-FeatureLayer, ImageryLayer, MapImageLayer etc., FeatureSet and
-FeatureCollection objects.</p></td>
+FeatureLayer, ImageryLayer, MapImageLayer, FeatureSet,
+FeatureCollection, <code class="docutils literal notranslate"><span class="pre">arcgis.raster.Raster</span></code> objects, etc.</p></td>
 </tr>
 <tr class="row-odd"><td><p>options</p></td>
 <td><p>Optional dict. Specify visualization options such as renderer info,
@@ -242,6 +242,24 @@ opacity, definition expressions. See example below</p></td>
 </tr>
 </tbody>
 </table>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Calling <code class="docutils literal notranslate"><span class="pre">MapView.add_layer()</span></code> on an <code class="docutils literal notranslate"><span class="pre">arcgis.raster.Raster</span></code> instance
+has the following limitations:</p>
+<ul class="simple">
+<li><p>Local raster overlays do not persist beyond the notebook session on
+published web maps/web scenes – you would need to seperately publish
+these local rasters.</p></li>
+<li><p>The entire raster image data is placed on the MapView’s canvas with 
+no performance optimizations. This means no pyramids, no dynamic 
+downsampling, etc. Please be mindful of the size of the local raster 
+and your computer’s hardware limitations.</p></li>
+<li><p>Pixel values and projections are not guaranteed to be accurate, 
+especially when the local raster’s Spatial Reference doesn’t 
+reproject accurately to Web Mercator (what the <code class="docutils literal notranslate"><span class="pre">MapView</span></code> 
+widget uses).</p></li>
+</ul>
+</div>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># USAGE EXAMPLE: Add a feature layer with smart mapping renderer and</span>
 <span class="c1"># a definition expression to limit the features drawn.</span>
 <span class="n">map1</span> <span class="o">=</span> <span class="n">gis</span><span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="s2">&quot;Seattle, WA&quot;</span><span class="p">)</span>
@@ -475,6 +493,39 @@ using the add_layers() method</p>
 <dd><p>If set to <cite>True</cite>, will display a legend in the widget that will
 describe all layers added to the map. If set to <cite>False</cite>, will hide the
 legend. Default: <cite>False</cite>.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="arcgis.widgets.MapView.local_raster_file_format">
+<em class="property">property </em><code class="sig-name descname">local_raster_file_format</code><a class="headerlink" href="#arcgis.widgets.MapView.local_raster_file_format" title="Permalink to this definition">¶</a></dt>
+<dd><p>String getter/setter. When calling
+<code class="docutils literal notranslate"><span class="pre">map.add_layer(arcgis.raster.Raster())</span></code> for a local raster file,
+an intermediate image file must be written to disk in order to
+successfully display on the map. This file format can be one of
+the following:</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 28%" />
+<col style="width: 72%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>Possible Values</strong></p></td>
+<td><p><strong>Description</strong></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">&quot;jpg&quot;</span></code> (Default)</p></td>
+<td><p>Write raster to a <code class="docutils literal notranslate"><span class="pre">.JPG</span></code> file. This results
+in a lossy image, but should draw quicker than
+a <code class="docutils literal notranslate"><span class="pre">.PNG</span></code> file. Requires the <code class="docutils literal notranslate"><span class="pre">PIL</span></code> image
+processing package (distributed under the name
+of it’s active fork, “Pillow”)</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">&quot;png&quot;</span></code></p></td>
+<td><p>Write raster to a <code class="docutils literal notranslate"><span class="pre">.PNG</span></code> file. This results
+in a lossless image, but it might take a longer
+time to draw than a <code class="docutils literal notranslate"><span class="pre">.JPG</span></code> file.</p></td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
 <dl class="attribute">
@@ -1015,9 +1066,9 @@ allowed (true) or not allowed (false).</p></td>
 </div>
 </dd></dl>
 
-<dl class="attribute">
+<dl class="method">
 <dt id="arcgis.widgets.MapView.zoom">
-<code class="sig-name descname">zoom</code><a class="headerlink" href="#arcgis.widgets.MapView.zoom" title="Permalink to this definition">¶</a></dt>
+<em class="property">property </em><code class="sig-name descname">zoom</code><a class="headerlink" href="#arcgis.widgets.MapView.zoom" title="Permalink to this definition">¶</a></dt>
 <dd><p>What level of zoom you want to apply: the higher the number, the more
 zoomed in you are.</p>
 </dd></dl>

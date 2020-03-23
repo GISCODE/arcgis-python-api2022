@@ -147,3 +147,7 @@ subset_multidimensional_raster
 costpath_as_polyline
 --------------------
 .. automethod:: arcgis.raster.analytics.costpath_as_polyline
+
+define_nodata
+-------------
+.. automethod:: arcgis.raster.analytics.define_nodata
