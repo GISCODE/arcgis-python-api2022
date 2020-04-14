@@ -7,8 +7,9 @@
 Please go through each entry in the below checklist and mark an 'X' if that condition has been met. Every entry should be marked with an 'X' to be get the Pull Request approved.
 
 
-- [ ] All `import`s are in the first cell? First block of imports are standard libraries, second block are 3rd party libraries, third block are all `arcgis` imports?
+- [ ] All `import`s are in the first cell? First block of imports are standard libraries, second block are 3rd party libraries, third block are all `arcgis` imports? Note that in some cases, for samples, it is a good idea to keep the imports next to where they are used, particularly for uncommonly used features that we want to highlight.
 - [ ] All `GIS` object instantiations are one of the following?
+    - `gis = GIS()`
     - `gis = GIS('https://www.arcgis.com', 'arcgis_python', 'P@ssword123')`
     - `gis = GIS(profile="your_online_profile")`
     - `gis = GIS('https://pythonapi.playground.esri.com/portal', 'arcgis_python', 'amazing_arcgis_123')`
