@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>arcgis.features module &mdash; arcgis 1.7.1 documentation</title>
+  <title>arcgis.features module &mdash; arcgis 1.8.0 documentation</title>
   
 
   
@@ -74,7 +74,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             
             
               <div class="version">
-                1.7.1
+                1.8.0
               </div>
             
           
@@ -3292,7 +3292,7 @@ the GIS to which the geocoder belongs.</p>
 <td><p><strong>Description</strong></p></td>
 </tr>
 <tr class="row-even"><td><p>location</p></td>
-<td><p>Required string. Full path to the feature class</p></td>
+<td><p>Required string or pathlib.Path. Full path to the feature class</p></td>
 </tr>
 </tbody>
 </table>
@@ -3325,6 +3325,47 @@ the GIS to which the geocoder belongs.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
 <dd class="field-odd"><p>pandas.core.frame.DataFrame</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="arcgis.features.GeoAccessor.from_geodataframe">
+<em class="property">static </em><code class="sig-name descname">from_geodataframe</code><span class="sig-paren">(</span><em class="sig-param">geo_df</em>, <em class="sig-param">inplace=False</em>, <em class="sig-param">column_name='SHAPE'</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.features.GeoAccessor.from_geodataframe" title="Permalink to this definition">¶</a></dt>
+<dd><p>Import Geopandas GeoDataFrame into an ArcGIS Spatially enabled DataFrame.
+Requires geopandas library be installed in current environment.</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 25%" />
+<col style="width: 75%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>Argument</strong></p></td>
+<td><p><strong>Description</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>geo_df</p></td>
+<td><p>GeoDataFrame object, created using GeoPandas library</p></td>
+</tr>
+<tr class="row-odd"><td><p>inplace</p></td>
+<td><dl class="simple">
+<dt>Optional Bool. When True, the existing GeoDataFrame is spatially</dt><dd><p>enabled and returned. When False, a new Spatially Enabled
+DataFrame object is returned. Default is False.</p>
+</dd>
+</dl>
+</td>
+</tr>
+<tr class="row-even"><td><p>column_name</p></td>
+<td><dl class="simple">
+<dt>Optional String. Sets the name of the geometry column. Default</dt><dd><p>is <cite>SHAPE</cite>.</p>
+</dd>
+</dl>
+</td>
+</tr>
+</tbody>
+</table>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>ArcGIS Spatially Enabled DataFrame object.</p>
 </dd>
 </dl>
 </dd></dl>
@@ -3379,7 +3420,8 @@ to a Spatially enabled DataFrame.</p></td>
 <td><p><strong>Description</strong></p></td>
 </tr>
 <tr class="row-even"><td><p>filename</p></td>
-<td><p>Required string. The path to the table.</p></td>
+<td><p>Required string or pathlib.Path. The path to the
+table.</p></td>
 </tr>
 </tbody>
 </table>
@@ -5060,7 +5102,7 @@ a 2D comparison only; M and Z values are ignored.</p>
 <dt id="arcgis.features.GeoSeriesAccessor.generalize">
 <code class="sig-name descname">generalize</code><span class="sig-paren">(</span><em class="sig-param">max_offset</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.features.GeoSeriesAccessor.generalize" title="Permalink to this definition">¶</a></dt>
 <dd><p>Creates a new simplified geometry using a specified maximum offset
-tolerance.</p>
+tolerance.  This only works on Polylines and Polygons.</p>
 <table class="docutils align-default">
 <colgroup>
 <col style="width: 18%" />

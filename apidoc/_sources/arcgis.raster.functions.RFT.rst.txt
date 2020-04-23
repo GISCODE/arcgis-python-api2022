@@ -8,7 +8,7 @@ arcgis.raster.functions.RFT
     that were marked as public by the author of the RFT. (This is supported only in 
     jupyter notebook and IPython environment.)
 
-    If any of the input values need to be given or overriden, the values maybe specified 
+    If any of the input values need to be given or overridden, the values maybe specified 
     as inputs directly to the RFT object. RFT objects can only be called using keyword 
     arguments. On calling the RFT object with the necessary input variables, it creates 
     an output Imagery Layer with function chain applied on it.

@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>arcgis.raster module &mdash; arcgis 1.7.1 documentation</title>
+  <title>arcgis.raster module &mdash; arcgis 1.8.0 documentation</title>
   
 
   
@@ -76,7 +76,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             
             
               <div class="version">
-                1.7.1
+                1.8.0
               </div>
             
           
@@ -107,6 +107,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <li class="toctree-l1"><a class="reference internal" href="arcgis.features.toc.html">arcgis.features module</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">arcgis.raster module</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#imagerylayer">ImageryLayer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#raster">Raster</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#rastercatalogitem">RasterCatalogItem</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#rastermanager">RasterManager</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#imagerytilemanager">ImageryTileManager</a></li>
@@ -467,7 +468,7 @@ with a comma-separated syntax.</p>
 
 <dl class="method">
 <dt id="arcgis.raster.ImageryLayer.compute_histograms">
-<code class="sig-name descname">compute_histograms</code><span class="sig-paren">(</span><em class="sig-param">geometry</em>, <em class="sig-param">mosaic_rule=None</em>, <em class="sig-param">rendering_rule=None</em>, <em class="sig-param">pixel_size=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.raster.ImageryLayer.compute_histograms" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">compute_histograms</code><span class="sig-paren">(</span><em class="sig-param">geometry</em>, <em class="sig-param">mosaic_rule=None</em>, <em class="sig-param">rendering_rule=None</em>, <em class="sig-param">pixel_size=None</em>, <em class="sig-param">time=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.raster.ImageryLayer.compute_histograms" title="Permalink to this definition">¶</a></dt>
 <dd><p>The compute_histograms operation is performed on an imagery layer
 method. This operation is supported by any imagery layer published with
 mosaic datasets or a raster dataset. The result of this operation contains
@@ -526,6 +527,21 @@ with a comma-separated string.</p>
 </dl>
 </td>
 </tr>
+<tr class="row-even"><td><p>time</p></td>
+<td><p>optional datetime.date, datetime.datetime or timestamp string. The
+time instant or the time extent of the exported image.
+Time instant specified as datetime.date, datetime.datetime or
+timestamp in milliseconds since epoch
+Syntax: time=&lt;timeInstant&gt;</p>
+<p>Time extent specified as list of [&lt;startTime&gt;, &lt;endTime&gt;]
+For time extents one of &lt;startTime&gt; or &lt;endTime&gt; could be None. A
+None value specified for start time or end time will represent
+infinity for start or end time respectively.
+Syntax: time=[&lt;startTime&gt;, &lt;endTime&gt;] ; specified as
+datetime.date, datetime.datetime or timestamp</p>
+<p>Added at 10.8</p>
+</td>
+</tr>
 </tbody>
 </table>
 <dl class="field-list simple">
@@ -533,6 +549,23 @@ with a comma-separated string.</p>
 <dd class="field-odd"><p>dict</p>
 </dd>
 </dl>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Usage Example 1: Compute the histogram at a point for a time instant.</span>
+
+<span class="n">comp_hist_01</span> <span class="o">=</span> <span class="n">image_service</span><span class="o">.</span><span class="n">compute_histograms</span><span class="p">(</span><span class="n">geometry</span><span class="o">=</span><span class="n">pt</span><span class="p">,</span>
+                                                <span class="n">rendering_rule</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;rasterFunction&quot;</span><span class="p">:</span><span class="kc">None</span><span class="p">},</span>
+                                                <span class="n">time</span><span class="o">=</span><span class="s2">&quot;1326650400000&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Usage Example 2: Compute the histogram at a point for a time extent.</span>
+<span class="c1"># If the datetime object is not in the UTC timezone, the API will internally convert it to the UTC timezone.</span>
+
+<span class="n">start</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="p">(</span><span class="mi">2012</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">15</span><span class="p">,</span><span class="mi">18</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span> <span class="n">tzinfo</span><span class="o">=</span><span class="n">datetime</span><span class="o">.</span><span class="n">timezone</span><span class="o">.</span><span class="n">utc</span><span class="p">)</span>
+<span class="n">end</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="p">(</span><span class="mi">2012</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">15</span><span class="p">,</span><span class="mi">21</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span> <span class="n">tzinfo</span><span class="o">=</span><span class="n">datetime</span><span class="o">.</span><span class="n">timezone</span><span class="o">.</span><span class="n">utc</span><span class="p">)</span>
+<span class="n">comp_hist_02</span> <span class="o">=</span> <span class="n">image_service</span><span class="o">.</span><span class="n">compute_histograms</span><span class="p">(</span><span class="n">geometry</span><span class="o">=</span><span class="n">pt</span><span class="p">,</span>
+                                                <span class="n">rendering_rule</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;rasterFunction&quot;</span><span class="p">:</span><span class="kc">None</span><span class="p">},</span>
+                                                <span class="n">time</span><span class="o">=</span><span class="p">[</span><span class="n">start</span><span class="p">,</span> <span class="n">end</span><span class="p">])</span>
+</pre></div>
+</div>
 </dd></dl>
 
 <dl class="method">
@@ -545,7 +578,7 @@ A prerequisite is that the raster catalog item has valid icsToPixel resource.</p
 
 <dl class="method">
 <dt id="arcgis.raster.ImageryLayer.compute_stats_and_histograms">
-<code class="sig-name descname">compute_stats_and_histograms</code><span class="sig-paren">(</span><em class="sig-param">geometry</em>, <em class="sig-param">mosaic_rule=None</em>, <em class="sig-param">rendering_rule=None</em>, <em class="sig-param">pixel_size=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.raster.ImageryLayer.compute_stats_and_histograms" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">compute_stats_and_histograms</code><span class="sig-paren">(</span><em class="sig-param">geometry</em>, <em class="sig-param">mosaic_rule=None</em>, <em class="sig-param">rendering_rule=None</em>, <em class="sig-param">pixel_size=None</em>, <em class="sig-param">time=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.raster.ImageryLayer.compute_stats_and_histograms" title="Permalink to this definition">¶</a></dt>
 <dd><p>The result of this operation contains both statistics and histograms
 computed from the given extent.</p>
 <table class="docutils align-default">
@@ -593,6 +626,21 @@ used for histogram calculation.</p>
 </dl>
 </td>
 </tr>
+<tr class="row-even"><td><p>time</p></td>
+<td><p>optional datetime.date, datetime.datetime or timestamp string. The
+time instant or the time extent of the exported image.
+Time instant specified as datetime.date, datetime.datetime or
+timestamp in milliseconds since epoch
+Syntax: time=&lt;timeInstant&gt;</p>
+<p>Time extent specified as list of [&lt;startTime&gt;, &lt;endTime&gt;]
+For time extents one of &lt;startTime&gt; or &lt;endTime&gt; could be None. A
+None value specified for start time or end time will represent
+infinity for start or end time respectively.
+Syntax: time=[&lt;startTime&gt;, &lt;endTime&gt;] ; specified as
+datetime.date, datetime.datetime or timestamp</p>
+<p>Added at 10.8</p>
+</td>
+</tr>
 </tbody>
 </table>
 <dl class="field-list simple">
@@ -600,6 +648,23 @@ used for histogram calculation.</p>
 <dd class="field-odd"><p>dictionary</p>
 </dd>
 </dl>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Usage Example 1: Compute the stats and histogram at a point for a time instant.</span>
+
+<span class="n">comp_stats_hist_01</span> <span class="o">=</span> <span class="n">image_service</span><span class="o">.</span><span class="n">compute_stats_and_histograms</span><span class="p">(</span><span class="n">geometry</span><span class="o">=</span><span class="n">pt</span><span class="p">,</span>
+                                                                <span class="n">rendering_rule</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;rasterFunction&quot;</span><span class="p">:</span><span class="kc">None</span><span class="p">},</span>
+                                                                <span class="n">time</span><span class="o">=</span><span class="s2">&quot;1326650400000&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Usage Example 2: Compute the stats and histogram at a point for a time extent.</span>
+<span class="c1"># If the datetime object is not in the UTC timezone, the API will internally convert it to the UTC timezone.</span>
+
+<span class="n">start</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="p">(</span><span class="mi">2012</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">15</span><span class="p">,</span><span class="mi">18</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span> <span class="n">tzinfo</span><span class="o">=</span><span class="n">datetime</span><span class="o">.</span><span class="n">timezone</span><span class="o">.</span><span class="n">utc</span><span class="p">)</span>
+<span class="n">end</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="p">(</span><span class="mi">2012</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">15</span><span class="p">,</span><span class="mi">21</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span> <span class="n">tzinfo</span><span class="o">=</span><span class="n">datetime</span><span class="o">.</span><span class="n">timezone</span><span class="o">.</span><span class="n">utc</span><span class="p">)</span>
+<span class="n">comp_stats_hist_02</span> <span class="o">=</span> <span class="n">image_service</span><span class="o">.</span><span class="n">compute_stats_and_histograms</span><span class="p">(</span><span class="n">geometry</span><span class="o">=</span><span class="n">pt</span><span class="p">,</span>
+                                                                <span class="n">rendering_rule</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;rasterFunction&quot;</span><span class="p">:</span><span class="kc">None</span><span class="p">},</span>
+                                                                <span class="n">time</span><span class="o">=</span><span class="p">[</span><span class="n">start</span><span class="p">,</span><span class="n">end</span><span class="p">])</span>
+</pre></div>
+</div>
 </dd></dl>
 
 <dl class="method">
@@ -1153,7 +1218,7 @@ counts: [45,9,690,86580,857,….] #length of this list corresponds ‘size’</p
 
 <dl class="method">
 <dt id="arcgis.raster.ImageryLayer.identify">
-<code class="sig-name descname">identify</code><span class="sig-paren">(</span><em class="sig-param">geometry</em>, <em class="sig-param">mosaic_rule=None</em>, <em class="sig-param">rendering_rules=None</em>, <em class="sig-param">pixel_size=None</em>, <em class="sig-param">time_extent=None</em>, <em class="sig-param">return_geometry=False</em>, <em class="sig-param">return_catalog_items=True</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.raster.ImageryLayer.identify" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">identify</code><span class="sig-paren">(</span><em class="sig-param">geometry</em>, <em class="sig-param">mosaic_rule=None</em>, <em class="sig-param">rendering_rules=None</em>, <em class="sig-param">pixel_size=None</em>, <em class="sig-param">time_extent=None</em>, <em class="sig-param">return_geometry=False</em>, <em class="sig-param">return_catalog_items=True</em>, <em class="sig-param">return_pixel_values=True</em>, <em class="sig-param">max_item_count=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.raster.ImageryLayer.identify" title="Permalink to this definition">¶</a></dt>
 <dd><p>It identifies the content of an image layer for a given location
 and a given mosaic rule. The location can be a point or a polygon.</p>
 <p>The identify operation is supported by both mosaic dataset and
@@ -1171,8 +1236,8 @@ visibilities gives the percentage contribution of the item to
 overall mosaic.</p>
 <table class="docutils align-default">
 <colgroup>
-<col style="width: 23%" />
-<col style="width: 77%" />
+<col style="width: 21%" />
+<col style="width: 79%" />
 </colgroup>
 <tbody>
 <tr class="row-odd"><td><p><strong>Arguments</strong></p></td>
@@ -1229,6 +1294,28 @@ items. Set it to false when catalog items are not needed to improve
 the identify operation’s performance significantly. When set to
 false, neither the geometry nor attributes of catalog items will be
 returned.</p></td>
+</tr>
+<tr class="row-odd"><td><p>return_pixel_values</p></td>
+<td><p>optional boolean.  Indicates whether to return the pixel values of
+all mosaicked raster catalog items under the requested geometry.</p>
+<p>Set it to false when only the pixel value of mosaicked output is
+needed at requested geometry.</p>
+<p>The default value of this parameter is true.</p>
+<p>Added at 10.6.1.</p>
+</td>
+</tr>
+<tr class="row-even"><td><p>max_item_count</p></td>
+<td><p>optional int. If the returnCatalogItems parameter is set to true,
+this parameter will take effect. The default behavior is to return
+all raster catalog items within the requested geometry.
+Otherwise, the number of items returned will be the value specified in the
+max_item_count or all eligible items, whichever is smaller.</p>
+<p>Added at 10.6.1.</p>
+<dl class="simple">
+<dt>Example:</dt><dd><p>2</p>
+</dd>
+</dl>
+</td>
 </tr>
 </tbody>
 </table>
@@ -1740,6 +1827,48 @@ type.</p>
 </dd></dl>
 
 <dl class="method">
+<dt id="arcgis.raster.ImageryLayer.query_boundary">
+<code class="sig-name descname">query_boundary</code><span class="sig-paren">(</span><em class="sig-param">out_sr=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.raster.ImageryLayer.query_boundary" title="Permalink to this definition">¶</a></dt>
+<dd><p>The Query Boundary operation is supported by image services based on mosaic datasets 
+or raster datasets.</p>
+<p>For an image service based on a mosaic dataset, the result of this operation 
+includes the geometry shape of the mosaicked items’ boundary and area of 
+coverage in square meters.</p>
+<p>For an image service based on a raster dataset, the result of this operation 
+includes the geometry shape of the dataset’s envelope boundary and area of 
+coverage in square meters.</p>
+<p>Added at 10.6</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 20%" />
+<col style="width: 80%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>Argument</strong></p></td>
+<td><p><strong>Description</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>out_sr</p></td>
+<td><p>The spatial reference of the boundary’s geometry.</p>
+<p>The spatial reference can be specified as either a well-known ID or
+as a spatial reference JSON object.</p>
+<p>If the outSR is not specified, the boundary will be reported in the
+spatial reference of the image service.</p>
+<dl class="simple">
+<dt>Example:</dt><dd><p>4326</p>
+</dd>
+</dl>
+</td>
+</tr>
+</tbody>
+</table>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>dictionary showing whether the specified rendering rule and/or mosaic rule is valid</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
 <dt id="arcgis.raster.ImageryLayer.raster_info">
 <em class="property">property </em><code class="sig-name descname">raster_info</code><a class="headerlink" href="#arcgis.raster.ImageryLayer.raster_info" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns information about the ImageryLayer such as 
@@ -1883,6 +2012,102 @@ applied to the layer, unless overridden</p></td>
 </dd></dl>
 
 <dl class="method">
+<dt id="arcgis.raster.ImageryLayer.temporal_profile">
+<code class="sig-name descname">temporal_profile</code><span class="sig-paren">(</span><em class="sig-param">points=[], time_field=None, variables=[], bands=[0], time_extent=None, dimension=None, dimension_values=[], show_values=False, trend_type=None, trend_order=None, plot_properties={}</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.raster.ImageryLayer.temporal_profile" title="Permalink to this definition">¶</a></dt>
+<dd><p>A temporal profile serves as a basic analysis tool for imagery data in a time series. 
+Visualizing change over time with the temporal profile allows trends to be displayed 
+and compared with variables, bands, or values from other dimensions simultaneously.</p>
+<p>Using the functionality in temporal profile charts, you can perform trend analysis, gain insight into 
+multidimensional raster data at given locations, and plot values that are changing over time 
+in the form of a line graph.</p>
+<p>Temporal profile charts can be used in various scientific applications involving time series 
+analysis of raster data, and the graphical output of results can be used directly as 
+input for strategy management and decision making.</p>
+<p>The x-axis of the temporal profile displays the time in continuous time intervals. The time field is 
+obtained from the timeInfo of the image service.</p>
+<p>The y-axis of the temporal profile displays the variable value.</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 31%" />
+<col style="width: 69%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>Argument</strong></p></td>
+<td><p><strong>Description</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>points</p></td>
+<td><p>Required list of point Geometry objects.</p></td>
+</tr>
+<tr class="row-odd"><td><p>time_field</p></td>
+<td><p>Required string. The time field that will be used for plotting
+temporal profile.</p>
+<p>If not specified the time field is obtained from the timeInfo of
+the image service.</p>
+</td>
+</tr>
+<tr class="row-even"><td><p>variables</p></td>
+<td><p>Required list of variable names.
+For non multidimensional data, the variable would be name of the Sensor.
+To plot the graph against all sensors specify - “ALL_SENSORS”</p></td>
+</tr>
+<tr class="row-odd"><td><p>bands</p></td>
+<td><p>Optional list of band indices. By default takes the
+first band (band index - 0).
+For a multiband data, you can compare the time change of different
+bands over different locations.</p></td>
+</tr>
+<tr class="row-even"><td><p>time_extent</p></td>
+<td><p>Optional list of date time object. This represents the time extent</p></td>
+</tr>
+<tr class="row-odd"><td><p>dimension</p></td>
+<td><p>Optional list of dimension names. This option works specifically on
+multidimensional data containing a time dimension and other dimensions.</p>
+<p>The temporal profile is created based on the specific values in other
+dimensions, such as depth at the corresponding time value. For example,
+soil moisture data usually includes both a time dimension and vertical
+dimension below the earth’s surface, resulting in a temporal profile
+at 0.1, 0.2, and 0.3 meters below the ground.</p>
+</td>
+</tr>
+<tr class="row-even"><td><p>dimension_values</p></td>
+<td><p>Optional list of dimension values. This parameter can be used to specify
+the values of dimension parameter other than the time dimension (dimension
+name specified using dimension parameter)</p></td>
+</tr>
+<tr class="row-odd"><td><p>show_values</p></td>
+<td><p>Optional bool. Default False.
+Set this parameter to True to display the values at each point in the line graph.</p></td>
+</tr>
+<tr class="row-even"><td><p>trend_type</p></td>
+<td><p>Optional string. Default None.
+Set the trend_type parameter eith with linear or harmonic to draw the trend line
+linear : Fits the pixel values for a variable along a linear trend line.
+harmonic : Fits the pixel values for a variable along a harmonic trend line.</p></td>
+</tr>
+<tr class="row-odd"><td><p>trend_order</p></td>
+<td><p>optional number. The frequency number to use in the trend fitting.
+This parameter specifies the frequency of cycles in a year.
+The default value is 1, or one harmonic cycle per year.</p>
+<p>This parameter is only included in the trend analysis for a harmonic regression.</p>
+</td>
+</tr>
+<tr class="row-even"><td><p>plot_properties</p></td>
+<td><p>Optional dict. This parameter can be used to set the figure
+properties. These are the matplotlib.pyplot.figure() parameters and values
+specified in dict format.</p>
+<p>eg: {“figsize”:(15,15)}</p>
+</td>
+</tr>
+</tbody>
+</table>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
 <dt id="arcgis.raster.ImageryLayer.tiles">
 <em class="property">property </em><code class="sig-name descname">tiles</code><a class="headerlink" href="#arcgis.raster.ImageryLayer.tiles" title="Permalink to this definition">¶</a></dt>
 <dd><p>Imagery tile manager for this layer</p>
@@ -1890,40 +2115,66 @@ applied to the layer, unless overridden</p></td>
 
 <dl class="method">
 <dt id="arcgis.raster.ImageryLayer.to_features">
-<code class="sig-name descname">to_features</code><span class="sig-paren">(</span><em class="sig-param">field='Value'</em>, <em class="sig-param">output_type='Polygon'</em>, <em class="sig-param">simplify=True</em>, <em class="sig-param">output_name=None</em>, <em class="sig-param">*</em>, <em class="sig-param">gis=None</em>, <em class="sig-param">future=False</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.raster.ImageryLayer.to_features" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">to_features</code><span class="sig-paren">(</span><em class="sig-param">field='Value'</em>, <em class="sig-param">output_type='Polygon'</em>, <em class="sig-param">simplify=True</em>, <em class="sig-param">output_name=None</em>, <em class="sig-param">create_multipart_features=False</em>, <em class="sig-param">max_vertices_per_feature=None</em>, <em class="sig-param">*</em>, <em class="sig-param">gis=None</em>, <em class="sig-param">future=False</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.raster.ImageryLayer.to_features" title="Permalink to this definition">¶</a></dt>
 <dd><p>Converts this raster to a persisted feature layer of the specified type using Raster Analytics.</p>
 <p>Distributed raster analysis is used for generating a new feature layer by
 applying raster functions at source resolution across the extent of the raster
 and performing a raster to features conversion.</p>
 <table class="docutils align-default">
 <colgroup>
-<col style="width: 20%" />
-<col style="width: 80%" />
+<col style="width: 25%" />
+<col style="width: 75%" />
 </colgroup>
 <tbody>
 <tr class="row-odd"><td><p><strong>Argument</strong></p></td>
 <td><p><strong>Description</strong></p></td>
 </tr>
 <tr class="row-even"><td><p>field</p></td>
-<td><p>optional string. numerical or a string field on the input layer
-that will be used for the conversion</p></td>
+<td><p>Optional string - field that specifies which value will be used for the conversion.
+It can be any integer or a string field.</p>
+<p>A field containing floating-point values can only be used if the output is to a point dataset.</p>
+<p>Default is “Value”</p>
+</td>
 </tr>
 <tr class="row-odd"><td><p>output_type</p></td>
-<td><p>string, type of output. Point, Line or Polygon</p></td>
+<td><p>Optional string.</p>
+<p>One of the following: [‘Point’, ‘Line’, ‘Polygon’]</p>
+</td>
 </tr>
 <tr class="row-even"><td><p>simplify</p></td>
-<td><p>boolean, specify if features will be smoothed out</p></td>
+<td><p>Optional bool, This option that specifies how the features should be smoothed. It is
+only available for line and polygon output.</p>
+<p>True, then the features will be smoothed out. This is the default.</p>
+<p>if False, then The features will follow exactly the cell boundaries of the raster dataset.</p>
+</td>
 </tr>
 <tr class="row-odd"><td><p>output_name</p></td>
-<td><p>string, name of output feature layer</p></td>
+<td><p>Optional. If not provided, an Feature layer is created by the method and used as the output</p></td>
 </tr>
-<tr class="row-even"><td><p>gis</p></td>
-<td><p>optional arcgis.gis.GIS object. The GIS to be used for saving the
-output. The GIS must have Raster Analytics capability.</p></td>
+<tr class="row-even"><td><p>.</p></td>
+<td><p>You can pass in an existing Feature Service Item from your GIS to use that instead.</p>
+<p>Alternatively, you can pass in the name of the output Feature Service that should be created by this method
+to be used as the output for the tool.</p>
+<p>A RuntimeError is raised if a service by that name already exists</p>
+</td>
 </tr>
-<tr class="row-odd"><td><p>future</p></td>
-<td><p>Optional boolean. If True, the result will be a GPJob object and
-results will be returned asynchronously. Keyword only parameter.</p></td>
+<tr class="row-odd"><td><p>create_multipart_features</p></td>
+<td><p>Optional boolean. Specifies whether the output polygons will consist of
+single-part or multipart features.</p>
+<p>True: Specifies that multipart features will be created based on polygons that have the same value.</p>
+<p>False: Specifies that individual features will be created for each polygon. This is the default.</p>
+</td>
+</tr>
+<tr class="row-even"><td><p>max_vertices_per_feature</p></td>
+<td><p>Optional int. The vertex limit used to subdivide a polygon into smaller polygons.</p></td>
+</tr>
+<tr class="row-odd"><td><p>gis</p></td>
+<td><p>Optional GIS object. If not speficied, the currently active connection
+is used.</p></td>
+</tr>
+<tr class="row-even"><td><p>future</p></td>
+<td><p>Keyword only parameter. Optional boolean. If True, the result will be a GPJob object and
+results will be returned asynchronously.</p></td>
 </tr>
 </tbody>
 </table>
@@ -1966,6 +2217,936 @@ results will be returned asynchronously. Keyword only parameter.</p></td>
 <dt id="arcgis.raster.ImageryLayer.width">
 <em class="property">property </em><code class="sig-name descname">width</code><a class="headerlink" href="#arcgis.raster.ImageryLayer.width" title="Permalink to this definition">¶</a></dt>
 <dd><p>returns width of the imagery layer</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="raster">
+<h2>Raster<a class="headerlink" href="#raster" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="arcgis.raster.Raster">
+<em class="property">class </em><code class="sig-prename descclassname">arcgis.raster.</code><code class="sig-name descname">Raster</code><span class="sig-paren">(</span><em class="sig-param">path</em>, <em class="sig-param">is_multidimensional=False</em>, <em class="sig-param">extent=None</em>, <em class="sig-param">cmap=None</em>, <em class="sig-param">opacity=None</em>, <em class="sig-param">engine=None</em>, <em class="sig-param">gis=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.raster.Raster" title="Permalink to this definition">¶</a></dt>
+<dd><p>A raster object is a variable that references a raster. It can be used to query the properties of the raster dataset.</p>
+<p>Usage: arcgis.raster.Raster(path, is_multidimensional=False,  engine=None, gis=None)</p>
+<p>The Raster class can work with arcpy engine or image server engine. By default, 
+if the path is an image service url, then the Raster class uses the image server engine 
+for processing and if it is a local path it uses the arcpy engine.</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 29%" />
+<col style="width: 71%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>Argument</strong></p></td>
+<td><p><strong>Description</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>path</p></td>
+<td><p>Required string. The input raster.</p>
+<dl>
+<dt>Example:</dt><dd><p>path = r”/path/to/raster”</p>
+<p>path = “<a class="reference external" href="https://sample.arcgisonline.com/arcgis/rest/services/CharlotteLAS/ImageServer">https://sample.arcgisonline.com/arcgis/rest/services/CharlotteLAS/ImageServer</a>”</p>
+</dd>
+</dl>
+</td>
+</tr>
+<tr class="row-odd"><td><p>is_multidimensional</p></td>
+<td><p>Optional boolean. Determines whether the input raster will be
+treated as multidimensional.</p>
+<p>Specify True if the input is multidimensional and should be
+processed as multidimensional, where processing occurs for every
+slice in the dataset. Specify False if the input is not
+multidimensional, or if it is multidimensional and should not be
+processed as multidimensional.</p>
+<p>Default is False</p>
+</td>
+</tr>
+<tr class="row-even"><td><p>extent</p></td>
+<td><p>Optional dict. If the input raster’s extent cannot be automatically
+inferred, pass in a dictionary representing the raster’s extent
+for when viewing on a <a class="reference internal" href="arcgis.widgets.html#arcgis.widgets.MapView" title="arcgis.widgets.MapView"><code class="xref py py-class docutils literal notranslate"><span class="pre">MapView</span></code></a> widget.</p>
+<dl>
+<dt>Example:</dt><dd><div class="line-block">
+<div class="line">{ “xmin” : -74.22655,</div>
+<div class="line-block">
+<div class="line">“ymin” : 40.712216,</div>
+<div class="line">“xmax” : -74.12544,</div>
+<div class="line">“ymax” : 40.773941,</div>
+<div class="line">“spatialReference” :</div>
+<div class="line-block">
+<div class="line">{ “wkid” : 4326 }</div>
+</div>
+</div>
+<div class="line">}</div>
+</div>
+</dd>
+</dl>
+</td>
+</tr>
+<tr class="row-odd"><td><p>cmap</p></td>
+<td><p>Optional str. When displaying a 1 band raster in a
+<a class="reference internal" href="arcgis.widgets.html#arcgis.widgets.MapView" title="arcgis.widgets.MapView"><code class="xref py py-class docutils literal notranslate"><span class="pre">MapView</span></code></a> widget, what matplotlib colormap
+to apply to the raster. See <code class="docutils literal notranslate"><span class="pre">arcgis.mapping.display_colormaps()</span></code> for
+a list of compatible values.</p></td>
+</tr>
+<tr class="row-even"><td><p>opacity</p></td>
+<td><p>Optional number. When displaying a raster in a
+<a class="reference internal" href="arcgis.widgets.html#arcgis.widgets.MapView" title="arcgis.widgets.MapView"><code class="xref py py-class docutils literal notranslate"><span class="pre">MapView</span></code></a> widget, what opacity to apply. 0
+is completely transparent, 1 is completely opaque.
+Default: 1</p></td>
+</tr>
+<tr class="row-odd"><td><p>engine</p></td>
+<td><p>Optional string. The backend engine to be used.
+Possible options:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>“arcpy” : Use the arcpy engine for processing.</p></li>
+<li><p>“image_server” : Use the Image Server engine for processing.</p></li>
+</ul>
+</div></blockquote>
+</td>
+</tr>
+<tr class="row-even"><td><p>gis</p></td>
+<td><p>Optional. GIS of the Raster object.</p></td>
+</tr>
+</tbody>
+</table>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Useage: Overlay local rasters on the `MapView` widget</span>
+<span class="nb">map</span> <span class="o">=</span> <span class="n">gis</span><span class="o">.</span><span class="n">map</span><span class="p">()</span>
+
+<span class="c1"># Overlay a local .tif file</span>
+<span class="n">raster</span> <span class="o">=</span> <span class="n">Raster</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;./data/Amberg.tif&quot;</span><span class="p">)</span>
+<span class="nb">map</span><span class="o">.</span><span class="n">add_layer</span><span class="p">(</span><span class="n">raster</span><span class="p">)</span>
+
+<span class="c1"># Overlay a 1-channel .gdb file with the &quot;Orange Red&quot; colormap at 85% opacity</span>
+<span class="n">raster</span> <span class="o">=</span> <span class="n">Raster</span><span class="p">(</span><span class="s2">&quot;./data/madison_wi.gdb/Impervious_Surfaces&quot;</span><span class="p">,</span>
+                <span class="n">cmap</span> <span class="o">=</span> <span class="s2">&quot;OrRd&quot;</span><span class="p">,</span>
+                <span class="n">opacity</span> <span class="o">=</span> <span class="mf">0.85</span><span class="p">)</span>
+<span class="nb">map</span><span class="o">.</span><span class="n">add_layer</span><span class="p">(</span><span class="n">raster</span><span class="p">)</span>
+
+<span class="c1"># Overlay a local .jpg file by manually specifying its extent</span>
+<span class="n">raster</span> <span class="o">=</span> <span class="n">Raster</span><span class="p">(</span><span class="s2">&quot;./data/newark_nj_1922.jpg&quot;</span><span class="p">,</span>
+                <span class="n">extent</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;xmin&quot;</span><span class="p">:</span><span class="o">-</span><span class="mf">74.22655</span><span class="p">,</span>
+                          <span class="s2">&quot;ymin&quot;</span><span class="p">:</span><span class="mf">40.712216</span><span class="p">,</span>
+                          <span class="s2">&quot;xmax&quot;</span><span class="p">:</span><span class="o">-</span><span class="mf">74.12544</span><span class="p">,</span>
+                          <span class="s2">&quot;ymax&quot;</span><span class="p">:</span><span class="mf">40.773941</span><span class="p">,</span>
+                          <span class="s2">&quot;spatialReference&quot;</span><span class="p">:{</span><span class="s2">&quot;wkid&quot;</span><span class="p">:</span><span class="mi">4326</span><span class="p">}})</span>
+<span class="nb">map</span><span class="o">.</span><span class="n">add_layer</span><span class="p">(</span><span class="n">raster</span><span class="p">)</span>
+</pre></div>
+</div>
+<dl class="method">
+<dt id="arcgis.raster.Raster.add_dimension">
+<code class="sig-name descname">add_dimension</code><span class="sig-paren">(</span><em class="sig-param">variable</em>, <em class="sig-param">new_dimension_name</em>, <em class="sig-param">dimension_value</em>, <em class="sig-param">dimension_attributes=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.raster.Raster.add_dimension" title="Permalink to this definition">¶</a></dt>
+<dd><p>Adds a new dimension to a given variable.</p>
+<p>(Operation is not supported on image services)</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 35%" />
+<col style="width: 65%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>Argument</strong></p></td>
+<td><p><strong>Description</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>variable</p></td>
+<td><p>Required string. variable to which the new dimesnion is to be added</p></td>
+</tr>
+<tr class="row-odd"><td><p>new_dimension_name</p></td>
+<td><p>Required string. name of the new dimesnion to be added</p></td>
+</tr>
+<tr class="row-even"><td><p>dimension_value</p></td>
+<td><p>Required string. dimension value</p></td>
+</tr>
+<tr class="row-odd"><td><p>dimension_attributes</p></td>
+<td><p>optional attributes of the new dimension like Description, Unit etc.</p></td>
+</tr>
+</tbody>
+</table>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>The variable names and their dimensions in the multidimensional raster</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="arcgis.raster.Raster.band_count">
+<em class="property">property </em><code class="sig-name descname">band_count</code><a class="headerlink" href="#arcgis.raster.Raster.band_count" title="Permalink to this definition">¶</a></dt>
+<dd><p>returns the band count of the raster</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="arcgis.raster.Raster.catalog_path">
+<em class="property">property </em><code class="sig-name descname">catalog_path</code><a class="headerlink" href="#arcgis.raster.Raster.catalog_path" title="Permalink to this definition">¶</a></dt>
+<dd><p>The full path and the name of the referenced raster.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="arcgis.raster.Raster.cmap">
+<em class="property">property </em><code class="sig-name descname">cmap</code><a class="headerlink" href="#arcgis.raster.Raster.cmap" title="Permalink to this definition">¶</a></dt>
+<dd><p>When displaying a 1 band raster in a <a class="reference internal" href="arcgis.widgets.html#arcgis.widgets.MapView" title="arcgis.widgets.MapView"><code class="xref py py-class docutils literal notranslate"><span class="pre">MapView</span></code></a>
+widget, what matplotlib colormap to apply to the raster.</p>
+<p>Value must be a <cite>str</cite>. See <cite>~arcgis.mapping.display_colormaps()</cite> for
+a list of compatible values.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="arcgis.raster.Raster.columns">
+<em class="property">property </em><code class="sig-name descname">columns</code><a class="headerlink" href="#arcgis.raster.Raster.columns" title="Permalink to this definition">¶</a></dt>
+<dd><p>returns number of columns in the raster</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="arcgis.raster.Raster.export_image">
+<code class="sig-name descname">export_image</code><span class="sig-paren">(</span><em class="sig-param">bbox=None</em>, <em class="sig-param">image_sr=None</em>, <em class="sig-param">bbox_sr=None</em>, <em class="sig-param">size=None</em>, <em class="sig-param">time=None</em>, <em class="sig-param">export_format='jpgpng'</em>, <em class="sig-param">pixel_type=None</em>, <em class="sig-param">no_data=None</em>, <em class="sig-param">no_data_interpretation='esriNoDataMatchAny'</em>, <em class="sig-param">interpolation=None</em>, <em class="sig-param">compression=None</em>, <em class="sig-param">compression_quality=None</em>, <em class="sig-param">band_ids=None</em>, <em class="sig-param">mosaic_rule=None</em>, <em class="sig-param">rendering_rule=None</em>, <em class="sig-param">f='image'</em>, <em class="sig-param">save_folder=None</em>, <em class="sig-param">save_file=None</em>, <em class="sig-param">compression_tolerance=None</em>, <em class="sig-param">adjust_aspect_ratio=None</em>, <em class="sig-param">lerc_version=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.raster.Raster.export_image" title="Permalink to this definition">¶</a></dt>
+<dd><p>The export_image operation is performed on a raster layer to visualise it.</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 24%" />
+<col style="width: 76%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>Arguments</strong></p></td>
+<td><p><strong>Description</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>bbox</p></td>
+<td><p>Optional dict or string. The extent (bounding box) of the exported
+image. Unless the bbox_sr parameter has been specified, the bbox is
+assumed to be in the spatial reference of the raster layer.
+The bbox should be specified as an arcgis.geometry.Envelope object,
+it’s json representation or as a list or string with this
+format: ‘&lt;xmin&gt;, &lt;ymin&gt;, &lt;xmax&gt;, &lt;ymax&gt;’
+If omitted, the extent of the raster layer is used</p></td>
+</tr>
+<tr class="row-odd"><td><p>image_sr</p></td>
+<td><p>optional string, SpatialReference. The spatial reference of the
+exported image. The spatial reference can be specified as either a
+well-known ID, it’s json representation or as an
+arcgis.geometry.SpatialReference object.
+If the image_sr is not specified, the image will be exported in the
+spatial reference of the raster.</p></td>
+</tr>
+<tr class="row-even"><td><p>bbox_sr</p></td>
+<td><p>optional string, SpatialReference. The spatial reference of the
+bbox.
+The spatial reference can be specified as either a well-known ID,
+it’s json representation or as an arcgis.geometry.SpatialReference
+object.
+If the image_sr is not specified, bbox is assumed to be in the
+spatial reference of the raster.
+(Available only when image_server engine is used)</p></td>
+</tr>
+<tr class="row-odd"><td><p>size</p></td>
+<td><p>optional list. The size (width * height) of the exported image in
+pixels. If size is not specified, an image with a default size of
+400*450 will be exported.
+Syntax: list of [width, height]</p></td>
+</tr>
+<tr class="row-even"><td><p>time</p></td>
+<td><p>optional datetime.date, datetime.datetime or timestamp string. The
+time instant or the time extent of the exported image.
+Time instant specified as datetime.date, datetime.datetime or
+timestamp in milliseconds since epoch
+Syntax: time=&lt;timeInstant&gt;
+Time extent specified as list of [&lt;startTime&gt;, &lt;endTime&gt;]
+For time extents one of &lt;startTime&gt; or &lt;endTime&gt; could be None. A
+None value specified for start time or end time will represent
+infinity for start or end time respectively.
+Syntax: time=[&lt;startTime&gt;, &lt;endTime&gt;] ; specified as
+datetime.date, datetime.datetime or timestamp
+(Available only when image_server engine is used)</p></td>
+</tr>
+<tr class="row-odd"><td><p>export_format</p></td>
+<td><p>optional string. The format of the exported image. The default
+format is jpgpng. The jpgpng format returns a JPG if there are no
+transparent pixels in the requested extent; otherwise, it returns a
+PNG (png32).
+Values: jpgpng,png,png8,png24,jpg,bmp,gif,tiff,png32,bip,bsq,lerc</p></td>
+</tr>
+<tr class="row-even"><td><p>pixel_type</p></td>
+<td><p>optional string. The pixel type, also known as data type, pertains
+to the type of values stored in the raster, such as signed integer,
+unsigned integer, or floating point. Integers are whole numbers,
+whereas floating points have decimals.
+(Available only when image_server engine is used)</p></td>
+</tr>
+<tr class="row-odd"><td><p>no_data</p></td>
+<td><p>optional float. The pixel value representing no information.
+(Available only when image_server engine is used)</p></td>
+</tr>
+<tr class="row-even"><td><p>no_data_interpretation</p></td>
+<td><p>optional string. Interpretation of the no_data setting. The default
+is NoDataMatchAny when no_data is a number, and NoDataMatchAll when
+no_data is a comma-delimited string: NoDataMatchAny,NoDataMatchAll.
+(Available only when image_server engine is used)</p></td>
+</tr>
+<tr class="row-odd"><td><p>interpolation</p></td>
+<td><p>optional string. The resampling process of extrapolating the pixel
+values while transforming the raster dataset when it undergoes
+warping or when it changes coordinate space.
+One of: RSP_BilinearInterpolation, RSP_CubicConvolution,
+RSP_Majority, RSP_NearestNeighbor
+(Available only when image_server engine is used)</p></td>
+</tr>
+<tr class="row-even"><td><p>compression</p></td>
+<td><p>optional string. Controls how to compress the image when exporting
+to TIFF format: None, JPEG, LZ77. It does not control compression on
+other formats.
+(Available only when image_server engine is used)</p></td>
+</tr>
+<tr class="row-odd"><td><p>compression_quality</p></td>
+<td><p>optional integer. Controls how much loss the image will be subjected
+to by the compression algorithm. Valid value ranges of compression
+quality are from 0 to 100.
+(Available only when image_server engine is used)</p></td>
+</tr>
+<tr class="row-even"><td><p>band_ids</p></td>
+<td><p>optional list. If there are multiple bands, you can specify a single
+band to export, or you can change the band combination (red, green,
+blue) by specifying the band number. Band number is 0 based.
+Specified as list of ints, eg [2,1,0]
+(Available only when image_server engine is used)</p></td>
+</tr>
+<tr class="row-odd"><td><p>mosaic_rule</p></td>
+<td><p>optional dict. Specifies the mosaic rule when defining how
+individual images should be mosaicked. When a mosaic rule is not
+specified, the default mosaic rule of the image layer will be used
+(as advertised in the root resource: defaultMosaicMethod,
+mosaicOperator, sortField, sortValue).</p></td>
+</tr>
+<tr class="row-even"><td><p>rendering_rule</p></td>
+<td><p>optional dict. Specifies the rendering rule for how the requested
+image should be rendered.</p></td>
+</tr>
+<tr class="row-odd"><td><p>f</p></td>
+<td><p>optional string. The response format.  default is json
+Values: json,image,kmz
+If image format is chosen, the bytes of the exported image are
+returned unless save_folder and save_file parameters are also
+passed, in which case the image is written to the specified file
+(Available only when image_server engine is used)</p></td>
+</tr>
+<tr class="row-even"><td><p>save_folder</p></td>
+<td><p>optional string. The folder in which the exported image is saved
+when f=image
+(Available only when image_server engine is used)</p></td>
+</tr>
+<tr class="row-odd"><td><p>save_file</p></td>
+<td><p>optional string. The file in which the exported image is saved when
+f=image
+(Available only when image_server engine is used)</p></td>
+</tr>
+<tr class="row-even"><td><p>compression_tolerance</p></td>
+<td><p>optional float. Controls the tolerance of the lerc compression
+algorithm. The tolerance defines the maximum possible error of pixel
+values in the compressed image.
+Example: compression_tolerance=0.5 is loseless for 8 and 16 bit
+images, but has an accuracy of +-0.5 for floating point data. The
+compression tolerance works for the LERC format only.
+(Available only when image_server engine is used)</p></td>
+</tr>
+<tr class="row-odd"><td><p>adjust_aspect_ratio</p></td>
+<td><p>optional boolean. Indicates whether to adjust the aspect ratio or
+not. By default adjust_aspect_ratio is true, that means the actual
+bbox will be adjusted to match the width/height ratio of size
+paramter, and the response image has square pixels.
+(Available only when image_server engine is used)</p></td>
+</tr>
+<tr class="row-even"><td><p>lerc_version</p></td>
+<td><p>optional integer. The version of the Lerc format if the user sets
+the format as lerc.
+Values: 1 or 2
+If a version is specified, the server returns the matching version,
+or otherwise the highest version available.
+(Available only when image_server engine is used)</p></td>
+</tr>
+</tbody>
+</table>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>The raw raster data</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="arcgis.raster.Raster.extent">
+<em class="property">property </em><code class="sig-name descname">extent</code><a class="headerlink" href="#arcgis.raster.Raster.extent" title="Permalink to this definition">¶</a></dt>
+<dd><p>Area of interest. Used for displaying the imagery layer when queried</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="arcgis.raster.Raster.get_dimension_attributes">
+<code class="sig-name descname">get_dimension_attributes</code><span class="sig-paren">(</span><em class="sig-param">variable_name</em>, <em class="sig-param">dimension_name</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.raster.Raster.get_dimension_attributes" title="Permalink to this definition">¶</a></dt>
+<dd><blockquote>
+<div><p>Returns the attribute information of a dimension within a variable, e.g., min value, max value, unit, etc.</p>
+</div></blockquote>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 20%" />
+<col style="width: 80%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>Arguments</strong></p></td>
+<td><p><strong>Description</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>variable_name</p></td>
+<td><p>required string. the name of the variable</p></td>
+</tr>
+<tr class="row-odd"><td><p>dimension_name</p></td>
+<td><p>required string. the name of the dimension</p></td>
+</tr>
+</tbody>
+</table>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>dict. The attribute information of the given dimension within the given variable.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="arcgis.raster.Raster.get_dimension_names">
+<code class="sig-name descname">get_dimension_names</code><span class="sig-paren">(</span><em class="sig-param">variable_name</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.raster.Raster.get_dimension_names" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns a list of the dimension names that the variable contains.</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 20%" />
+<col style="width: 80%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>Arguments</strong></p></td>
+<td><p><strong>Description</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>variable_name</p></td>
+<td><p>required string. the name of the variable</p></td>
+</tr>
+</tbody>
+</table>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>list. The dimension names that the given variable contains</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="arcgis.raster.Raster.get_dimension_values">
+<code class="sig-name descname">get_dimension_values</code><span class="sig-paren">(</span><em class="sig-param">variable_name</em>, <em class="sig-param">dimension_name</em>, <em class="sig-param">return_as_datetime_object=False</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.raster.Raster.get_dimension_values" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns a list of the dimension names that the variable contains.</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 35%" />
+<col style="width: 65%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>Argument</strong></p></td>
+<td><p><strong>Description</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>variable_name</p></td>
+<td><p>Required string. the name of the variable</p></td>
+</tr>
+<tr class="row-odd"><td><p>dimension_name</p></td>
+<td><p>Required string. the name of the dimension</p></td>
+</tr>
+<tr class="row-even"><td><p>return_as_datetime_object</p></td>
+<td><p>Set to  True, to return the dimension values as datetime object.
+Valid only if the dimension name is</p></td>
+</tr>
+</tbody>
+</table>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>list. The dimension values along the given dimension within the given variable.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="arcgis.raster.Raster.get_property">
+<code class="sig-name descname">get_property</code><span class="sig-paren">(</span><em class="sig-param">property_name</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.raster.Raster.get_property" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the value of the given property.</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 20%" />
+<col style="width: 80%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>Arguments</strong></p></td>
+<td><p><strong>Description</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>variable_name</p></td>
+<td><p>required string. the name of the variable</p></td>
+</tr>
+</tbody>
+</table>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>string.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="arcgis.raster.Raster.get_raster_bands">
+<code class="sig-name descname">get_raster_bands</code><span class="sig-paren">(</span><em class="sig-param">band_ids_or_names=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.raster.Raster.get_raster_bands" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns a Raster object for each band specified in a multiband raster.</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 20%" />
+<col style="width: 80%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>Arguments</strong></p></td>
+<td><p><strong>Description</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>band_ids_or_names</p></td>
+<td><p>required list. The index number or names of the bands to return as
+Raster objects. If not specified, all bands will be extracted.</p></td>
+</tr>
+</tbody>
+</table>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>Raster object</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="arcgis.raster.Raster.get_variable_attributes">
+<code class="sig-name descname">get_variable_attributes</code><span class="sig-paren">(</span><em class="sig-param">variable_name</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.raster.Raster.get_variable_attributes" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the attribute information of a variable, e.g., description, unit, etc.</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 20%" />
+<col style="width: 80%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>Arguments</strong></p></td>
+<td><p><strong>Description</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>variable_name</p></td>
+<td><p>required string. the name of the variable</p></td>
+</tr>
+</tbody>
+</table>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>dict. The attribute information of the given variable.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="arcgis.raster.Raster.has_RAT">
+<em class="property">property </em><code class="sig-name descname">has_RAT</code><a class="headerlink" href="#arcgis.raster.Raster.has_RAT" title="Permalink to this definition">¶</a></dt>
+<dd><p>Identifies if there is an associated attribute table: True if an attribute table exists, or False if no attribute table exists.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="arcgis.raster.Raster.height">
+<em class="property">property </em><code class="sig-name descname">height</code><a class="headerlink" href="#arcgis.raster.Raster.height" title="Permalink to this definition">¶</a></dt>
+<dd><p>returns height of the raster in the units of its spatial reference</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="arcgis.raster.Raster.is_integer">
+<em class="property">property </em><code class="sig-name descname">is_integer</code><a class="headerlink" href="#arcgis.raster.Raster.is_integer" title="Permalink to this definition">¶</a></dt>
+<dd><p>returns True if the raster has integer type.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="arcgis.raster.Raster.is_multidimensional">
+<em class="property">property </em><code class="sig-name descname">is_multidimensional</code><a class="headerlink" href="#arcgis.raster.Raster.is_multidimensional" title="Permalink to this definition">¶</a></dt>
+<dd><p>returns True if the raster is multidimensional.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="arcgis.raster.Raster.is_temporary">
+<em class="property">property </em><code class="sig-name descname">is_temporary</code><a class="headerlink" href="#arcgis.raster.Raster.is_temporary" title="Permalink to this definition">¶</a></dt>
+<dd><p>returns True if the raster is temporary, or False if it is permanent.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="arcgis.raster.Raster.maximum">
+<em class="property">property </em><code class="sig-name descname">maximum</code><a class="headerlink" href="#arcgis.raster.Raster.maximum" title="Permalink to this definition">¶</a></dt>
+<dd><p>returns the maximum value in the referenced raster.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="arcgis.raster.Raster.mean">
+<em class="property">property </em><code class="sig-name descname">mean</code><a class="headerlink" href="#arcgis.raster.Raster.mean" title="Permalink to this definition">¶</a></dt>
+<dd><p>returns the mean value in the referenced raster.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="arcgis.raster.Raster.mean_cell_height">
+<em class="property">property </em><code class="sig-name descname">mean_cell_height</code><a class="headerlink" href="#arcgis.raster.Raster.mean_cell_height" title="Permalink to this definition">¶</a></dt>
+<dd><p>returns the cell size in the y direction.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="arcgis.raster.Raster.mean_cell_width">
+<em class="property">property </em><code class="sig-name descname">mean_cell_width</code><a class="headerlink" href="#arcgis.raster.Raster.mean_cell_width" title="Permalink to this definition">¶</a></dt>
+<dd><p>returns the cell size in the x direction.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="arcgis.raster.Raster.minimum">
+<em class="property">property </em><code class="sig-name descname">minimum</code><a class="headerlink" href="#arcgis.raster.Raster.minimum" title="Permalink to this definition">¶</a></dt>
+<dd><p>returns minimum value in the referenced raster.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="arcgis.raster.Raster.multidimensional_info">
+<em class="property">property </em><code class="sig-name descname">multidimensional_info</code><a class="headerlink" href="#arcgis.raster.Raster.multidimensional_info" title="Permalink to this definition">¶</a></dt>
+<dd><p>returns the multidimensional information of the raster dataset, including variable names, descriptions and units, and dimension names, units, intervals, units, and ranges.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="arcgis.raster.Raster.name">
+<em class="property">property </em><code class="sig-name descname">name</code><a class="headerlink" href="#arcgis.raster.Raster.name" title="Permalink to this definition">¶</a></dt>
+<dd><p>returns the name of the raster</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="arcgis.raster.Raster.opacity">
+<em class="property">property </em><code class="sig-name descname">opacity</code><a class="headerlink" href="#arcgis.raster.Raster.opacity" title="Permalink to this definition">¶</a></dt>
+<dd><p>When displaying in a <a class="reference internal" href="arcgis.widgets.html#arcgis.widgets.MapView" title="arcgis.widgets.MapView"><code class="xref py py-class docutils literal notranslate"><span class="pre">MapView</span></code></a> widget, what
+opacity to apply. 0 is completely transparent, 1 is completely opaque.
+Default: 1</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="arcgis.raster.Raster.path">
+<em class="property">property </em><code class="sig-name descname">path</code><a class="headerlink" href="#arcgis.raster.Raster.path" title="Permalink to this definition">¶</a></dt>
+<dd><p>The full path and name of the referenced raster.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="arcgis.raster.Raster.pixel_type">
+<em class="property">property </em><code class="sig-name descname">pixel_type</code><a class="headerlink" href="#arcgis.raster.Raster.pixel_type" title="Permalink to this definition">¶</a></dt>
+<dd><p>returns pixel type of the imagery layer</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="arcgis.raster.Raster.properties">
+<em class="property">property </em><code class="sig-name descname">properties</code><a class="headerlink" href="#arcgis.raster.Raster.properties" title="Permalink to this definition">¶</a></dt>
+<dd><p>returns the property name and value pairs in the referenced raster</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="arcgis.raster.Raster.read">
+<code class="sig-name descname">read</code><span class="sig-paren">(</span><em class="sig-param">upper_left_corner=(0</em>, <em class="sig-param">0)</em>, <em class="sig-param">origin_coordinate=None</em>, <em class="sig-param">ncols=0</em>, <em class="sig-param">nrows=0</em>, <em class="sig-param">nodata_to_value=None</em>, <em class="sig-param">cell_size=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.raster.Raster.read" title="Permalink to this definition">¶</a></dt>
+<dd><p>read a numpy array from the calling raster</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 18%" />
+<col style="width: 82%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>Arguments</strong></p></td>
+<td><p><strong>Description</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>upper_left_corner</p></td>
+<td><p>2-D tuple. a tuple with 2 values representing the number of pixels along x and y
+direction relative to the origin_coordinate. E.g., (2, 0), means that
+the real origin to extract the array is 2 pixels away in x
+direction from the origin_coordinate</p></td>
+</tr>
+<tr class="row-odd"><td><p>origin_coordinate</p></td>
+<td><p>2-d tuple (X, Y). The x and y values are in map units.
+If no value is specified, the top left corner of the calling raster,</p></td>
+</tr>
+<tr class="row-even"><td><p>ncols</p></td>
+<td><p>integer. the number of columns from the real origin in the calling
+raster to convert to the NumPy array.
+If no value is specified, the number of columns of the calling raster
+will be used. Default: None</p></td>
+</tr>
+<tr class="row-odd"><td><p>nrows</p></td>
+<td><p>integer. the number of rows from the real origin in the calling
+raster to convert to the NumPy array.
+If no value is specified, the number of rows of the calling raster
+will be used. Default: None</p></td>
+</tr>
+<tr class="row-even"><td><p>nodata_to_value</p></td>
+<td><p>numeric. pixels with nodata values in the raster would be assigned
+with the given value in  the NumPy array. If no value is specified,
+the NoData value of the calling raster will be used. Default: None</p></td>
+</tr>
+<tr class="row-odd"><td><p>cell_size</p></td>
+<td><p>2-D tuple. a tuple with 2 values shows the x_cell_size and y_cell_size,
+e.g., cell_size = (2, 2).
+if no value is specified, the original cell size of the calling raster
+will be used. Otherwise, pixels would be resampled to the requested cell_size</p></td>
+</tr>
+</tbody>
+</table>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>numpy.ndarray. If self is a multidimensional raster, the array has shape (slices, height, width, bands)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="arcgis.raster.Raster.read_only">
+<em class="property">property </em><code class="sig-name descname">read_only</code><a class="headerlink" href="#arcgis.raster.Raster.read_only" title="Permalink to this definition">¶</a></dt>
+<dd><p>returns whether the raster cell values are writable or not using the [row, column] notation. 
+When this property is True, they are not writable. Otherwise, they are writable.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="arcgis.raster.Raster.remove_variables">
+<code class="sig-name descname">remove_variables</code><span class="sig-paren">(</span><em class="sig-param">variable_names</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.raster.Raster.remove_variables" title="Permalink to this definition">¶</a></dt>
+<dd><p>Removes the given variables.</p>
+<p>(Operation is not supported on image services)</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 20%" />
+<col style="width: 80%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>Arguments</strong></p></td>
+<td><p><strong>Description</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>variable_names</p></td>
+<td><p>required list. the list of variables to be removed</p></td>
+</tr>
+</tbody>
+</table>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>list. a list of all variables.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="arcgis.raster.Raster.rename_variable">
+<code class="sig-name descname">rename_variable</code><span class="sig-paren">(</span><em class="sig-param">current_variable_name</em>, <em class="sig-param">new_variable_name</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.raster.Raster.rename_variable" title="Permalink to this definition">¶</a></dt>
+<dd><p>Rename the given variable name.</p>
+<p>(Operation is not supported on image services)</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 35%" />
+<col style="width: 65%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>Argument</strong></p></td>
+<td><p><strong>Description</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>current_variable_name</p></td>
+<td><p>Required string. the name of the variable to be renamed</p></td>
+</tr>
+<tr class="row-odd"><td><p>new_variable_name</p></td>
+<td><p>Required string. the new variable name</p></td>
+</tr>
+</tbody>
+</table>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>list. The dimension names that the given variable contains</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="arcgis.raster.Raster.rows">
+<em class="property">property </em><code class="sig-name descname">rows</code><a class="headerlink" href="#arcgis.raster.Raster.rows" title="Permalink to this definition">¶</a></dt>
+<dd><p>returns number of rows in the raster</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="arcgis.raster.Raster.save">
+<code class="sig-name descname">save</code><span class="sig-paren">(</span><em class="sig-param">output_name=None</em>, <em class="sig-param">for_viz=False</em>, <em class="sig-param">process_as_multidimensional=None</em>, <em class="sig-param">build_transpose=None</em>, <em class="sig-param">gis=None</em>, <em class="sig-param">future=False</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.raster.Raster.save" title="Permalink to this definition">¶</a></dt>
+<dd><p>When run using image_server engine, save() persists this raster to the GIS as an Imagery Layer item. 
+If for_viz is True, a new Item is created that uses the applied raster functions for visualization at 
+display resolution using on-the-fly image processing.
+If for_viz is False, distributed raster analysis is used for generating a new raster information product by
+applying raster functions at source resolution across the extent of the output imagery layer.</p>
+<p>When run using arcpy engine, save() Persists this raster to location specified in output_name.</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 35%" />
+<col style="width: 65%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>Argument</strong></p></td>
+<td><p><strong>Description</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>output_name</p></td>
+<td><p>optional string.</p>
+<p>When run using image_server engine, specify output name.
+If not provided, an Imagery Layer item is created
+by the method and used as the output.
+You can pass in the name of the output raster that should be
+created by this method to be used as the output for the tool.
+Alternatively, if for_viz is False, you can pass in an existing
+Image Layer Item from your GIS to use that instead.
+A RuntimeError is raised if a layer by that name already exists</p>
+<p>When run using arcpy engine, output_name is the name string
+representing the output location.</p>
+</td>
+</tr>
+<tr class="row-odd"><td><p>for_viz</p></td>
+<td><p>optional boolean. If True, a new Item is created that uses the
+applied raster functions for visualization at display resolution
+using on-the-fly image processing.
+If for_viz is False, distributed raster analysis is used for
+generating a new raster information product for use in analysis and
+visualization by applying raster functions at source resolution
+across the extent of the output raster.</p>
+<p>(Available only when image_server engine is used)</p>
+</td>
+</tr>
+<tr class="row-even"><td><p>process_as_multidimensional</p></td>
+<td><p>Optional bool.  If the input is multidimensional raster, the output
+will be processed as multidimensional if set to True</p></td>
+</tr>
+<tr class="row-odd"><td><p>build_transpose</p></td>
+<td><p>Optional bool, if set to true, transforms the output
+multidimensional raster. Valid only if process_as_multidimensional
+is set to True</p></td>
+</tr>
+<tr class="row-even"><td><p>gis</p></td>
+<td><p>optional arcgis.gis.GIS object. The GIS to be used for saving the
+output. Keyword only parameter.</p>
+<p>(Available only when image_server engine is used)</p>
+</td>
+</tr>
+<tr class="row-odd"><td><p>future</p></td>
+<td><p>Optional boolean. If True, the result will be a GPJob object and
+results will be returned asynchronously. Keyword only parameter.</p>
+<p>(Available only when image_server engine is used)</p>
+</td>
+</tr>
+</tbody>
+</table>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>String representing the location of the output data</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="arcgis.raster.Raster.set_engine">
+<code class="sig-name descname">set_engine</code><span class="sig-paren">(</span><em class="sig-param">engine</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.raster.Raster.set_engine" title="Permalink to this definition">¶</a></dt>
+<dd><p>Can be used to change the back end engine</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="arcgis.raster.Raster.set_property">
+<code class="sig-name descname">set_property</code><span class="sig-paren">(</span><em class="sig-param">property_name</em>, <em class="sig-param">property_value</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.raster.Raster.set_property" title="Permalink to this definition">¶</a></dt>
+<dd><p>Add a customized property to the raster. If the property name exists, 
+the existing property value will be overwritten.</p>
+<p>(Operation is not supported on image services)</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 20%" />
+<col style="width: 80%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>Arguments</strong></p></td>
+<td><p><strong>Description</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>property_name</p></td>
+<td><p>required string. The property name of the raster</p></td>
+</tr>
+<tr class="row-odd"><td><p>property_value</p></td>
+<td><p>required string. The value to assign to the property.</p></td>
+</tr>
+</tbody>
+</table>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="arcgis.raster.Raster.spatial_reference">
+<em class="property">property </em><code class="sig-name descname">spatial_reference</code><a class="headerlink" href="#arcgis.raster.Raster.spatial_reference" title="Permalink to this definition">¶</a></dt>
+<dd><p>returns the spatial reference of the referenced raster.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="arcgis.raster.Raster.standard_deviation">
+<em class="property">property </em><code class="sig-name descname">standard_deviation</code><a class="headerlink" href="#arcgis.raster.Raster.standard_deviation" title="Permalink to this definition">¶</a></dt>
+<dd><p>returns the standard deviation of the values in the referenced raster.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="arcgis.raster.Raster.variable_names">
+<em class="property">property </em><code class="sig-name descname">variable_names</code><a class="headerlink" href="#arcgis.raster.Raster.variable_names" title="Permalink to this definition">¶</a></dt>
+<dd><p>returns the variable names in the multidimensional raster</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="arcgis.raster.Raster.variables">
+<em class="property">property </em><code class="sig-name descname">variables</code><a class="headerlink" href="#arcgis.raster.Raster.variables" title="Permalink to this definition">¶</a></dt>
+<dd><p>returns the variable names and their dimensions in the multidimensional raster dataset. 
+For example, a multidimensional raster containing temperature data over 24 months would 
+return the following: [‘temp(StdTime=24)’]</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="arcgis.raster.Raster.width">
+<em class="property">property </em><code class="sig-name descname">width</code><a class="headerlink" href="#arcgis.raster.Raster.width" title="Permalink to this definition">¶</a></dt>
+<dd><p>returns width of the raster in the units of its spatial reference</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="arcgis.raster.Raster.write">
+<code class="sig-name descname">write</code><span class="sig-paren">(</span><em class="sig-param">array</em>, <em class="sig-param">upper_left_corner=(0</em>, <em class="sig-param">0)</em>, <em class="sig-param">origin_coordinate=None</em>, <em class="sig-param">value_to_nodata=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.raster.Raster.write" title="Permalink to this definition">¶</a></dt>
+<dd><p>write a numpy array to the calling raster.</p>
+<p>(Operation is not supported on image services)</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 19%" />
+<col style="width: 81%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>Arguments</strong></p></td>
+<td><p><strong>Description</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>array</p></td>
+<td><p>required numpy.ndarray. the array must be in the shape of (slices,
+height, width, bands) for writing a multidimensional raster and
+(height, width bands) for writing a normal raster</p></td>
+</tr>
+<tr class="row-odd"><td><p>upper_left_corner</p></td>
+<td><p>2-D tuple.a tuple with 2 values representing the number of pixels
+along x and y direction that shows the position relative to the
+origin_coordinate. E.g., (2, 0), means that the position from which the
+numpy array will be written into the calling Raster is 2 pixels away
+in x direction from the origin_coordinate.
+Default value is (0, 0)</p></td>
+</tr>
+<tr class="row-even"><td><p>origin_coordinate</p></td>
+<td><p>2-d tuple (X, Y) from where the numpy array will be written
+into the calling Raster. The x- and y-values are in map units.
+If no value is specified, the top left corner of the
+calling raster,</p></td>
+</tr>
+<tr class="row-odd"><td><p>value_to_nodata</p></td>
+<td><p>numeric. The value in the numpy array assigned to be the
+NoData values in the calling Raster.</p>
+<p>If no value is specified, the NoData value of the calling Raster will
+be used. Default None</p>
+</td>
+</tr>
+</tbody>
+</table>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+</dl>
 </dd></dl>
 
 </dd></dl>
@@ -2677,12 +3858,14 @@ for a blank/missing tile.</p></td>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.raster.analytics.html#linear-spectral-unmixing">linear_spectral_unmixing</a></li>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.raster.analytics.html#subset-multidimensional-raster">subset_multidimensional_raster</a></li>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.raster.analytics.html#costpath-as-polyline">costpath_as_polyline</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.raster.analytics.html#define-nodata">define_nodata</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="arcgis.raster.functions.html">arcgis.raster.functions module</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.raster.functions.html#abs">abs</a></li>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.raster.functions.html#acos">acos</a></li>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.raster.functions.html#acosh">acosh</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.raster.functions.html#aggregate-cells">aggregate_cells</a></li>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.raster.functions.html#apply">apply</a></li>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.raster.functions.html#arg-max">arg_max</a></li>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.raster.functions.html#arg-median">arg_median</a></li>
@@ -2834,8 +4017,8 @@ for a blank/missing tile.</p></td>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.raster.functions.gbl.html#cost-path">cost_path</a></li>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.raster.functions.gbl.html#distance-accumulation">distance_accumulation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.raster.functions.gbl.html#distance-allocation">distance_allocation</a></li>
-<li class="toctree-l2"><a class="reference internal" href="arcgis.raster.functions.gbl.html#euclidean-back-direction">euclidean_back_direction</a></li>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.raster.functions.gbl.html#euclidean-allocation">euclidean_allocation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.raster.functions.gbl.html#euclidean-back-direction">euclidean_back_direction</a></li>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.raster.functions.gbl.html#euclidean-direction">euclidean_direction</a></li>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.raster.functions.gbl.html#euclidean-distance">euclidean_distance</a></li>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.raster.functions.gbl.html#expand">expand</a></li>

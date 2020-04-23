@@ -20,6 +20,9 @@ export_training_data
 ---------------
 .. autofunction:: arcgis.learn.export_training_data
 
+export_point_dataset
+---------------
+.. autofunction:: arcgis.learn.export_point_dataset
 
 list_models
 ---------------
@@ -87,6 +90,13 @@ MaskRCNN
 DeepLab
 ------------------
 .. autoclass:: arcgis.learn.DeepLab
+    :members:
+    :inherited-members:
+    :undoc-members:
+
+PointCNN
+------------------
+.. autoclass:: arcgis.learn.PointCNN
     :members:
     :inherited-members:
     :undoc-members:

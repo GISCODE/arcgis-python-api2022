@@ -15,6 +15,13 @@ ImageryLayer
     :members:
     :undoc-members:
 
+Raster
+------
+.. autoclass:: arcgis.raster.Raster
+    :inherited-members:
+    :members:
+    :undoc-members:
+
 RasterCatalogItem
 -----------------
 .. autoclass:: arcgis.raster.RasterCatalogItem

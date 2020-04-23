@@ -5,7 +5,7 @@ To learn more about the API, visit the product page [here](https://developers.ar
 
 ## What's included
 This SDK repository contains the following items:
-* API Reference Documentation. A hosted version of this can be found [here](https://esri.github.io/arcgis-python-api/apidoc/html/).
+* API Reference Documentation. A hosted version of this can be found [here](https://developers.arcgis.com/python/api-reference/).
 * Samples as Jupyter Notebooks.
 * Guides chapters as Jupyter Notebooks.
 

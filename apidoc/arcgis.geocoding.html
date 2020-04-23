@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>arcgis.geocoding module &mdash; arcgis 1.7.1 documentation</title>
+  <title>arcgis.geocoding module &mdash; arcgis 1.8.0 documentation</title>
   
 
   
@@ -76,7 +76,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             
             
               <div class="version">
-                1.7.1
+                1.8.0
               </div>
             
           
@@ -669,13 +669,13 @@ specified, the active GIS’s first geocoder is used.</p></td>
 <h2>batch_geocode<a class="headerlink" href="#batch-geocode" title="Permalink to this headline">¶</a></h2>
 <dl class="function">
 <dt id="arcgis.geocoding.batch_geocode">
-<code class="sig-prename descclassname">arcgis.geocoding.</code><code class="sig-name descname">batch_geocode</code><span class="sig-paren">(</span><em class="sig-param">addresses</em>, <em class="sig-param">source_country=None</em>, <em class="sig-param">category=None</em>, <em class="sig-param">out_sr=None</em>, <em class="sig-param">geocoder=None</em>, <em class="sig-param">as_featureset=False</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.geocoding.batch_geocode" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">arcgis.geocoding.</code><code class="sig-name descname">batch_geocode</code><span class="sig-paren">(</span><em class="sig-param">addresses</em>, <em class="sig-param">source_country=None</em>, <em class="sig-param">category=None</em>, <em class="sig-param">out_sr=None</em>, <em class="sig-param">geocoder=None</em>, <em class="sig-param">as_featureset=False</em>, <em class="sig-param">match_out_of_range=True</em>, <em class="sig-param">location_type='street'</em>, <em class="sig-param">search_extent=None</em>, <em class="sig-param">lang_code='EN'</em>, <em class="sig-param">preferred_label_values=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.geocoding.batch_geocode" title="Permalink to this definition">¶</a></dt>
 <dd><p>The batch_geocode() function geocodes an entire list of addresses.
 Geocoding many addresses at once is also known as bulk geocoding.</p>
 <table class="docutils align-default">
 <colgroup>
-<col style="width: 19%" />
-<col style="width: 81%" />
+<col style="width: 26%" />
+<col style="width: 74%" />
 </colgroup>
 <tbody>
 <tr class="row-odd"><td><p><strong>Argument</strong></p></td>
@@ -688,27 +688,26 @@ For passing in the location name as a single line of text -
 single field batch geocoding - use a string.
 For passing in the location name as multiple lines of text
 multifield batch geocoding - use the address fields described
-in the Geocoder documentation.</p>
-<blockquote>
-<div><p>The maximum number of addresses that can be geocoded in a
+in the Geocoder documentation.
+The maximum number of addresses that can be geocoded in a
 single request is limited to the SuggestedBatchSize property of
 the locator.
-Syntax:</p>
+Syntax:
+addresses = [“380 New York St, Redlands, CA”,</p>
 <blockquote>
-<div><p>addresses = [“380 New York St, Redlands, CA”,
-“1 World Way, Los Angeles, CA”,
+<div><p>“1 World Way, Los Angeles, CA”,
 “1200 Getty Center Drive, Los Angeles, CA”,
 “5905 Wilshire Boulevard, Los Angeles, CA”,
 “100 Universal City Plaza, Universal City, CA 91608”,
 “4800 Oak Grove Dr, Pasadena, CA 91109”]</p>
+</div></blockquote>
 <p>OR</p>
-<dl class="simple">
-<dt>addresses= [{</dt><dd><p>“Address”: “380 New York St.”,
+<dl>
+<dt>addresses= [{</dt><dd><blockquote>
+<div><p>“Address”: “380 New York St.”,
 “City”: “Redlands”,
 “Region”: “CA”,
 “Postal”: “92373”</p>
-</dd>
-</dl>
 </div></blockquote>
 <dl class="simple">
 <dt>},{</dt><dd><p>“Address”: “1 World Way”,
@@ -718,7 +717,8 @@ Syntax:</p>
 </dd>
 </dl>
 <p>}]</p>
-</div></blockquote>
+</dd>
+</dl>
 </td>
 </tr>
 <tr class="row-odd"><td><p>source_country</p></td>
@@ -746,6 +746,34 @@ dictionary.</p></td>
 <tr class="row-odd"><td><p>geocoder</p></td>
 <td><p>Optional, the geocoder to be used. If not specified,
 the active GIS’s first geocoder is used.</p></td>
+</tr>
+<tr class="row-even"><td><p>match_out_of_range</p></td>
+<td><p>Optional, A Boolean which specifies if StreetAddress matches should
+be returned even when the input house number is outside of the house
+number range defined for the input street.</p></td>
+</tr>
+<tr class="row-odd"><td><p>location_type</p></td>
+<td><p>Optional, Specifies if the output geometry of PointAddress matches
+should be the rooftop point or street entrance location. Valid values
+are rooftop and street.</p></td>
+</tr>
+<tr class="row-even"><td><p>search_extent</p></td>
+<td><p>Optional, a set of bounding box coordinates that limit the search
+area to a specific region. The input can either be a comma-separated
+list of coordinates defining the bounding box or a JSON envelope
+object.</p></td>
+</tr>
+<tr class="row-odd"><td><p>lang_code</p></td>
+<td><p>Optional, sets the language in which geocode results are returned.
+See the table of supported countries for valid language code values
+in each country.</p></td>
+</tr>
+<tr class="row-even"><td><p>preferred_label_values</p></td>
+<td><p>Optional, allows simple configuration of output fields returned
+in a response from the World Geocoding Service by specifying which
+address component values should be included in output fields. Supports
+a single value or a comma-delimited collection of values as input.
+e.g. =’matchedCity,primaryStreet’</p></td>
 </tr>
 </tbody>
 </table>

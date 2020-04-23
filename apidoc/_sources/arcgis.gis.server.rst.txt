@@ -168,20 +168,8 @@ ServerProperties
 
 ItemInformationManager
 ----------------
-.. autoclass:: arcgis.gis.server.admin.ItemInformationManager
+.. autoclass:: arcgis.gis.server.ItemInformationManager
     :members:
     :undoc-members:
     :show-inheritance:
-    
-    
-arcgis\.gis\.nb module
-===========================
-
-.. automodule:: arcgis.gis.nb
-
-NotebookServer
-----------------
-.. autoclass:: arcgis.gis.server.notebook.NotebookServer
-    :members:
-    :undoc-members:
-    :show-inheritance:
+      

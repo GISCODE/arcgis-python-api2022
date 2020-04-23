@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>arcgis.gis module &mdash; arcgis 1.7.1 documentation</title>
+  <title>arcgis.gis module &mdash; arcgis 1.8.0 documentation</title>
   
 
   
@@ -76,7 +76,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             
             
               <div class="version">
-                1.7.1
+                1.8.0
               </div>
             
           
@@ -124,8 +124,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <li class="toctree-l2"><a class="reference internal" href="#submodules">Submodules</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="arcgis.gis.admin.html">arcgis.gis.admin module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="arcgis.gis.server.html">arcgis.gis.server module</a></li>
-<li class="toctree-l3"><a class="reference internal" href="arcgis.gis.server.html#module-arcgis.gis.nb">arcgis.gis.nb module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="arcgis.gis.mission.html">arcgis.gis.mission module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="arcgis.gis.nb.html">arcgis.gis.nb module</a></li>
 </ul>
 </li>
 </ul>
@@ -419,6 +419,64 @@ to the specified zoomlevel. See <a class="reference internal" href="arcgis.widge
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
 <dd class="field-odd"><p>The map widget (displayed in Jupyter Notebook when queried).</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="arcgis.gis.GIS.org_settings">
+<em class="property">property </em><code class="sig-name descname">org_settings</code><a class="headerlink" href="#arcgis.gis.GIS.org_settings" title="Permalink to this definition">¶</a></dt>
+<dd><p>The portal settings resource is used to return a view of the 
+portal’s configuration as seen by the current users, either 
+anonymous or logged in. Information returned by this resource 
+includes helper services, allowed redirect URIs, and the current 
+configuration for any access notices or information banners.</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 12%" />
+<col style="width: 88%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>Parameters</strong></p></td>
+<td><p><strong>Description</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>settings</p></td>
+<td><p>Required Dict.  A dictionary of the settings</p>
+<blockquote>
+<div><table class="docutils align-default">
+<colgroup>
+<col style="width: 16%" />
+<col style="width: 84%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>Fields</strong></p></td>
+<td><p><strong>Description</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>anonymousAccessNotice</p></td>
+<td><p>Dict. A JSON object representing a notice that is shown to your organization’s anonymous users.
+Ex: {‘title’: ‘Anonymous Access Notice Title’, ‘text’: ‘Anonymous Access Notice Text’, ‘buttons’: ‘acceptAndDecline’, ‘enabled’: True}</p></td>
+</tr>
+<tr class="row-odd"><td><p>authenticatedAccessNotice</p></td>
+<td><p>Dict. A JSON object representing a notice that is shown to your organization’s authenticated users.
+Ex: {‘title’: ‘Authenticated Access Notice Title’, ‘text’: ‘Authenticated Access Notice Text’, ‘buttons’: ‘okOnly’, ‘enabled’: True}</p></td>
+</tr>
+<tr class="row-even"><td><p>informationalBanner</p></td>
+<td><p>Dict. A JSON object representing the informational banner that is shown at the top of your organization’s page.
+Ex: {‘text’: ‘Header Text’, ‘bgColor’: ‘grey’, ‘fontColor’: ‘blue’, ‘enabled’: True}</p></td>
+</tr>
+<tr class="row-odd"><td><p>clearEmptyFields</p></td>
+<td><p>Bool.  If True, any empty dictionary will be set to null.</p></td>
+</tr>
+</tbody>
+</table>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>Dictionary</p>
 </dd>
 </dl>
 </dd></dl>
@@ -4953,6 +5011,68 @@ that each user belongs to.  This method is designed to be a reporting
 tool for administrators so they can easily manage a user or users groups.</p>
 </dd></dl>
 
+<dl class="method">
+<dt id="arcgis.gis.UserManager.user_settings">
+<em class="property">property </em><code class="sig-name descname">user_settings</code><a class="headerlink" href="#arcgis.gis.UserManager.user_settings" title="Permalink to this definition">¶</a></dt>
+<dd><p>Gets/sets the user’s settings</p>
+<p>The <cite>user_settings</cite> allows administrators to set, and edit, new 
+member defaults. Members who create their own built-in accounts and
+members added by an administrator or through automatic account 
+creation will be automatically assigned the new member defaults.</p>
+<p>Passing in <cite>None</cite> to the property will delete all the user settings.</p>
+<p><strong>Settings Key/Value Dictionary</strong></p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 14%" />
+<col style="width: 86%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>Keys</strong></p></td>
+<td><p><strong>Description</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>role</p></td>
+<td><p>String/Role. The role ID. To assign a custom role as the new member default,
+provide a Role object.</p>
+<p>Values: <cite>administrator</cite>, <cite>publisher</cite>, <cite>editor</cite>, <cite>viewer</cite> or custom <cite>Role</cite> object</p>
+</td>
+</tr>
+<tr class="row-odd"><td><p>userLicenseType</p></td>
+<td><p>String. The ID of a user type licensed with your organization. To see which
+user types are included with your organization’s licensing, see the License
+resource in the Portal Admin API.</p>
+<p>Values: <cite>creator</cite>, <cite>editor</cite>, <cite>Advanced GIS</cite>, <cite>Basic GIS</cite>, <cite>Standard GIS</cite>,
+<cite>viewer</cite>, or <cite>fieldWorker</cite></p>
+</td>
+</tr>
+<tr class="row-even"><td><p>groups</p></td>
+<td><p>List of String/Groups. An array of group ID numbers or <cite>Group</cite> objects that
+specify the groups new members will be added to.</p></td>
+</tr>
+<tr class="row-odd"><td><p>userType</p></td>
+<td><p>String.  This key only applies to <cite>ArcGIS Online</cite>. If new members will have
+Esri access (both) or if Esri access will be disabled (arcgisonly). The default
+value is <cite>arcgisonly</cite>.</p>
+<p>Values: <cite>arcgisonly</cite> or <cite>both</cite></p>
+</td>
+</tr>
+<tr class="row-even"><td><p>apps</p></td>
+<td><p>List of dictionaries.  An array of an app’s itemID and, when applicable, entitlement.
+Example: <cite>{“apps” :[{“itemId”: “f761dd0f298944dcab22d1e888c60293”,”entitlements”: [“Insights”]}]}</cite></p></td>
+</tr>
+<tr class="row-odd"><td><p>appBundles</p></td>
+<td><p>List of dictionaries. An array of an app bundle’s ID.</p>
+<p>Example: <cite>{“appBundles”:[{“itemId”: “99d7956c7e824ff4ab27422e2a26c2b7}]}</cite></p>
+</td>
+</tr>
+</tbody>
+</table>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>Dictionary</p>
+</dd>
+</dl>
+</dd></dl>
+
 </dd></dl>
 
 </div>
@@ -6308,10 +6428,6 @@ certificate.</p>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.gis.server.html#iteminformationmanager">ItemInformationManager</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="arcgis.gis.server.html#module-arcgis.gis.nb">arcgis.gis.nb module</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="arcgis.gis.server.html#notebookserver">NotebookServer</a></li>
-</ul>
-</li>
 <li class="toctree-l1"><a class="reference internal" href="arcgis.gis.mission.html">arcgis.gis.mission module</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.gis.mission.html#missionserver">MissionServer</a></li>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.gis.mission.html#directorymanager">DirectoryManager</a></li>
@@ -6323,6 +6439,13 @@ certificate.</p>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.gis.mission.html#systemmanager">SystemManager</a></li>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.gis.mission.html#webadaptor">WebAdaptor</a></li>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.gis.mission.html#webadaptormanager">WebAdaptorManager</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.gis.nb.html">arcgis.gis.nb module</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.gis.nb.html#notebookserver">NotebookServer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.gis.nb.html#notebookmanager">NotebookManager</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.gis.nb.html#notebook">Notebook</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.gis.nb.html#runtime">Runtime</a></li>
 </ul>
 </li>
 </ul>

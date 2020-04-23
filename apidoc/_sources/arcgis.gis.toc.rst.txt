@@ -135,3 +135,6 @@ Submodules
    arcgis.gis.admin
    arcgis.gis.server
    arcgis.gis.mission
+   arcgis.gis.nb
+   
+   
