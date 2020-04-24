@@ -3,7 +3,7 @@
 conda create --name pytorcharcgis
 conda activate pytorcharcgis
 
-#default minicinda's Python 8.3.2 does not work with the pytorch we need
+#default miniconda's Python 8.3.2 does not work with the pytorch we need
 conda install python=3.7.3
 
 conda install -c conda-forge requests-toolbelt requests_ntlm
