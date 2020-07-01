@@ -2,6 +2,6 @@
 
 SET DIR=%~dp0%
 cd %DIR%doccano/app
-call %DIR%venv/scripts/activate
+call "c:/doccano/venv/scripts/activate"
 python manage.py runserver
 cd %DIR%

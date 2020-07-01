@@ -1,7 +1,5 @@
 Set-ExecutionPolicy Bypass -Scope Process -Force
-"y"|choco uninstall git -n --skip-autouninstaller
-choco uninstall python -y -n --skip-autouninstal
-"y"|choco uninstall nodejs -n --skip-autouninstal
-"y"|choco uninstall yarn -n --skip-autouninstal
-"y"|choco uninstall nssm -n --skip-autouninstal
-
+"y"|choco uninstall git.install -n --skipautouninstaller
+"y"|choco uninstall python --version=3.7.2 -n --skipautouninstaller
+"y"|choco uninstall nodejs --version=13.11.0 -n --skipautouninstaller
+"y"|choco uninstall nssm -n --skipautouninstaller
