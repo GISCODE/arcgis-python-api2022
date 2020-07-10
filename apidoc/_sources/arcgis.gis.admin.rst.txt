@@ -10,10 +10,16 @@ AGOLAdminManager
     :undoc-members:
     :show-inheritance:
 
-
 PortalAdminManager
 ---------------
 .. autoclass:: arcgis.gis.admin.PortalAdminManager
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
+AGOLUsageReports
+---------------
+.. autoclass:: arcgis.gis.admin.AGOLUsageReports
     :members:
     :undoc-members:
     :show-inheritance:
@@ -24,7 +30,6 @@ Bundle
     :members:
     :undoc-members:
     :show-inheritance:
-
 
 CategoryManager
 ---------------

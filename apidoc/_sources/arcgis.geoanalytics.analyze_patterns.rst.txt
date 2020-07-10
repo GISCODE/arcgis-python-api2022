@@ -26,3 +26,7 @@ forest
 glr
 --------------
 .. autofunction:: arcgis.geoanalytics.analyze_patterns.glr
+
+gwr
+--------------
+.. autofunction:: arcgis.geoanalytics.analyze_patterns.gwr

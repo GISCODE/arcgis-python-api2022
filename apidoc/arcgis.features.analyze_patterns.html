@@ -1,15 +1,19 @@
 
 
 <!DOCTYPE html>
-<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<html class="writer-html5" lang="en" >
 <head>
   <meta charset="utf-8">
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>arcgis.features.analyze_patterns module &mdash; arcgis 1.8.0 documentation</title>
+  <title>arcgis.features.analyze_patterns module &mdash; arcgis 1.8.2 documentation</title>
   
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/theme_overrides.css" type="text/css" />
 
   
   
@@ -19,24 +23,21 @@
   
 
   
-  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
-        <script type="text/javascript" src="_static/jquery.js"></script>
-        <script type="text/javascript" src="_static/underscore.js"></script>
-        <script type="text/javascript" src="_static/doctools.js"></script>
-        <script type="text/javascript" src="_static/language_data.js"></script>
-        <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/language_data.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     
     <script type="text/javascript" src="_static/js/theme.js"></script>
 
     
-
-  
-  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-  <link rel="stylesheet" href="_static/theme_overrides.css" type="text/css" />
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="arcgis.features.elevation module" href="arcgis.features.elevation.html" />
@@ -63,7 +64,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
           
 
           
-            <a href="index.html" class="icon icon-home"> arcgis
+            <a href="index.html" class="icon icon-home" alt="Documentation Home"> arcgis
           
 
           
@@ -76,7 +77,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             
             
               <div class="version">
-                1.8.0
+                1.8.2
               </div>
             
           
@@ -93,6 +94,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
           
         </div>
 
+        
         <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
           
             
@@ -142,7 +144,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <li class="toctree-l1"><a class="reference internal" href="arcgis.geoenrichment.html">arcgis.geoenrichment module</a></li>
 <li class="toctree-l1"><a class="reference internal" href="arcgis.geometry.html">arcgis.geometry module</a></li>
 <li class="toctree-l1"><a class="reference internal" href="arcgis.geoprocessing.html">arcgis.geoprocessing module</a></li>
-<li class="toctree-l1"><a class="reference internal" href="arcgis.mapping.html">arcgis.mapping module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.mapping.toc.html">arcgis.mapping module</a></li>
 <li class="toctree-l1"><a class="reference internal" href="arcgis.realtime.html">arcgis.realtime module</a></li>
 <li class="toctree-l1"><a class="reference internal" href="arcgis.schematics.html">arcgis.schematics module</a></li>
 <li class="toctree-l1"><a class="reference internal" href="arcgis.widgets.html">arcgis.widgets module</a></li>
@@ -153,6 +155,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             
           
         </div>
+        
       </div>
     </nav>
 
@@ -191,7 +194,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
   <ul class="wy-breadcrumbs">
     
-      <li><a href="index.html">Docs</a> &raquo;</li>
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
         
           <li><a href="arcgis.features.toc.html">arcgis.features module</a> &raquo;</li>
         
@@ -225,9 +228,9 @@ find_hot_spots identifies statistically significant clustering in the spatial pa
 interpolate_points predicts values at new locations based on measurements found in a collection of points.</p>
 <div class="section" id="calculate-density">
 <h2>calculate_density<a class="headerlink" href="#calculate-density" title="Permalink to this headline">¶</a></h2>
-<dl class="function">
+<dl class="py function">
 <dt id="arcgis.features.analyze_patterns.calculate_density">
-<code class="sig-prename descclassname">arcgis.features.analyze_patterns.</code><code class="sig-name descname">calculate_density</code><span class="sig-paren">(</span><em class="sig-param">input_layer</em>, <em class="sig-param">field=None</em>, <em class="sig-param">cell_size=None</em>, <em class="sig-param">cell_size_units='Meters'</em>, <em class="sig-param">radius=None</em>, <em class="sig-param">radius_units=None</em>, <em class="sig-param">bounding_polygon_layer=None</em>, <em class="sig-param">area_units=None</em>, <em class="sig-param">classification_type='EqualInterval'</em>, <em class="sig-param">num_classes=10</em>, <em class="sig-param">output_name=None</em>, <em class="sig-param">context=None</em>, <em class="sig-param">gis=None</em>, <em class="sig-param">estimate=False</em>, <em class="sig-param">future=False</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.features.analyze_patterns.calculate_density" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">arcgis.features.analyze_patterns.</code><code class="sig-name descname">calculate_density</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">input_layer</span></em>, <em class="sig-param"><span class="n">field</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">cell_size</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">cell_size_units</span><span class="o">=</span><span class="default_value">'Meters'</span></em>, <em class="sig-param"><span class="n">radius</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">radius_units</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">bounding_polygon_layer</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">area_units</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">classification_type</span><span class="o">=</span><span class="default_value">'EqualInterval'</span></em>, <em class="sig-param"><span class="n">num_classes</span><span class="o">=</span><span class="default_value">10</span></em>, <em class="sig-param"><span class="n">output_name</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">context</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">gis</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">estimate</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">future</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.features.analyze_patterns.calculate_density" title="Permalink to this definition">¶</a></dt>
 <dd><img alt="_images/calculate_density.png" src="_images/calculate_density.png" />
 <p>The calculate_density function creates a density map from point or line features by spreading known quantities of
 some phenomenon (represented as attributes of the points or lines) across the map. The result is a layer of areas
@@ -251,7 +254,7 @@ identify areas that are hospitable to grazing animals.</p>
 <td><p><strong>Description</strong></p></td>
 </tr>
 <tr class="row-even"><td><p>input_layer</p></td>
-<td><p>Required layer. The point or line features from which to calculate density. See <a class="reference internal" href="arcgis.geoanalytics.toc.html#featureinput"><span class="std std-ref">Feature Input</span></a>.</p></td>
+<td><p>Required layer. The point or line features from which to calculate density. See <a class="reference internal" href="arcgis.features.analysis.html#featureinput"><span class="std std-ref">Feature Input</span></a>.</p></td>
 </tr>
 <tr class="row-odd"><td><p>field</p></td>
 <td><p>Optional string. A numeric field name specifying the number of incidents at each location.  For example, if you have points that represent cities, you can use a field representing the population of the city as the count field, and the resulting population density layer will calculate larger population densities near cities with larger populations. If not specified, each location will be assumed to represent a single count.</p></td>
@@ -271,7 +274,7 @@ Choice list: [‘Miles’, ‘Feet’, ‘Kilometers’,  ‘Meters’]</p></td>
 Choice list: [‘Miles’, ‘Feet’, ‘Kilometers’,  ‘Meters’]</p></td>
 </tr>
 <tr class="row-even"><td><p>bounding_polygon_layer</p></td>
-<td><p>Optional layer. A layer specifying the polygon(s) where you want densities to be calculated. For example, if you are interpolating densities of fish within a lake, you can use the boundary of the lake in this parameter and the output will only draw within the boundary of the lake. See <a class="reference internal" href="arcgis.geoanalytics.toc.html#featureinput"><span class="std std-ref">Feature Input</span></a>.</p></td>
+<td><p>Optional layer. A layer specifying the polygon(s) where you want densities to be calculated. For example, if you are interpolating densities of fish within a lake, you can use the boundary of the lake in this parameter and the output will only draw within the boundary of the lake. See <a class="reference internal" href="arcgis.features.analysis.html#featureinput"><span class="std std-ref">Feature Input</span></a>.</p></td>
 </tr>
 <tr class="row-odd"><td><p>area_units</p></td>
 <td><p>Optional string. The units of the calculated density values.
@@ -340,9 +343,9 @@ Choice list: [‘EqualInterval’, ‘GeometricInterval’, ‘NaturalBreaks’,
 </div>
 <div class="section" id="find-hot-spots">
 <h2>find_hot_spots<a class="headerlink" href="#find-hot-spots" title="Permalink to this headline">¶</a></h2>
-<dl class="function">
+<dl class="py function">
 <dt id="arcgis.features.analyze_patterns.find_hot_spots">
-<code class="sig-prename descclassname">arcgis.features.analyze_patterns.</code><code class="sig-name descname">find_hot_spots</code><span class="sig-paren">(</span><em class="sig-param">analysis_layer</em>, <em class="sig-param">analysis_field=None</em>, <em class="sig-param">divided_by_field=None</em>, <em class="sig-param">bounding_polygon_layer=None</em>, <em class="sig-param">aggregation_polygon_layer=None</em>, <em class="sig-param">output_name=None</em>, <em class="sig-param">context=None</em>, <em class="sig-param">gis=None</em>, <em class="sig-param">estimate=False</em>, <em class="sig-param">shape_type=None</em>, <em class="sig-param">cell_size=None</em>, <em class="sig-param">cell_size_unit=None</em>, <em class="sig-param">distance_band=None</em>, <em class="sig-param">distance_band_unit=None</em>, <em class="sig-param">future=False</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.features.analyze_patterns.find_hot_spots" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">arcgis.features.analyze_patterns.</code><code class="sig-name descname">find_hot_spots</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">analysis_layer</span></em>, <em class="sig-param"><span class="n">analysis_field</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">divided_by_field</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">bounding_polygon_layer</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">aggregation_polygon_layer</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">output_name</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">context</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">gis</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">estimate</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">shape_type</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">cell_size</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">cell_size_unit</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">distance_band</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">distance_band_unit</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">future</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.features.analyze_patterns.find_hot_spots" title="Permalink to this definition">¶</a></dt>
 <dd><img alt="_images/find_hot_spots.png" src="_images/find_hot_spots.png" />
 <p>The <code class="docutils literal notranslate"><span class="pre">find_hot_spots</span></code> method analyzes point data (such as crime incidents, traffic accidents, or trees) or field values associated with
 points or area features (such as the number of people in each census tract or the total sales for retail stores). It finds statistically
@@ -363,7 +366,7 @@ be the result of random processes and random chance.</p>
 <td><p><strong>Description</strong></p></td>
 </tr>
 <tr class="row-even"><td><p>analysis_layer (Required if the analysis_layer contains polygons)</p></td>
-<td><p>Required layer. The point or polygon feature layer for which hot spots will be calculated. See <a class="reference internal" href="arcgis.geoanalytics.toc.html#featureinput"><span class="std std-ref">Feature Input</span></a>.</p></td>
+<td><p>Required layer. The point or polygon feature layer for which hot spots will be calculated. See <a class="reference internal" href="arcgis.features.analysis.html#featureinput"><span class="std std-ref">Feature Input</span></a>.</p></td>
 </tr>
 <tr class="row-odd"><td><p>analysis_field</p></td>
 <td><p>Optional string. The numeric field that will be analyzed. The field you select might represent:</p>
@@ -388,12 +391,12 @@ used as the attribute to divide by. This option will use credits.</p>
 <tr class="row-odd"><td><p>bounding_polygon_layer</p></td>
 <td><p>Optional layer. When the analysis layer is points and no <code class="docutils literal notranslate"><span class="pre">analysis_field</span></code> is specified, you can provide polygons features that define where incidents could have occurred.
 For example, if you are analyzing boating accidents in a harbor, the outline of the harbor might provide a good boundary for where accidents could occur.
-When no bounding areas are provided, only locations with at least one point will be included in the analysis. See <a class="reference internal" href="arcgis.geoanalytics.toc.html#featureinput"><span class="std std-ref">Feature Input</span></a>.</p></td>
+When no bounding areas are provided, only locations with at least one point will be included in the analysis. See <a class="reference internal" href="arcgis.features.analysis.html#featureinput"><span class="std std-ref">Feature Input</span></a>.</p></td>
 </tr>
 <tr class="row-even"><td><p>aggregation_polygon_layer</p></td>
 <td><p>Optional layer. When the <code class="docutils literal notranslate"><span class="pre">analysis_layer</span></code> contains points and no <code class="docutils literal notranslate"><span class="pre">analysis_field</span></code> is specified,
 you can provide polygon features into which the points will be aggregated and analyzed, such as administrative units.
-The number of points that fall within each polygon are counted, and the point count in each polygon is analyzed. See <a class="reference internal" href="arcgis.geoanalytics.toc.html#featureinput"><span class="std std-ref">Feature Input</span></a>.</p></td>
+The number of points that fall within each polygon are counted, and the point count in each polygon is analyzed. See <a class="reference internal" href="arcgis.features.analysis.html#featureinput"><span class="std std-ref">Feature Input</span></a>.</p></td>
 </tr>
 <tr class="row-odd"><td><p>output_name</p></td>
 <td><p>Optional string. If provided, the task will create a feature service of the results.
@@ -461,9 +464,9 @@ in order to assess local clustering.</p></td>
 </div>
 <div class="section" id="find-outliers">
 <h2>find_outliers<a class="headerlink" href="#find-outliers" title="Permalink to this headline">¶</a></h2>
-<dl class="function">
+<dl class="py function">
 <dt id="arcgis.features.analyze_patterns.find_outliers">
-<code class="sig-prename descclassname">arcgis.features.analyze_patterns.</code><code class="sig-name descname">find_outliers</code><span class="sig-paren">(</span><em class="sig-param">analysis_layer</em>, <em class="sig-param">analysis_field=None</em>, <em class="sig-param">divided_by_field=None</em>, <em class="sig-param">bounding_polygon_layer=None</em>, <em class="sig-param">aggregation_polygon_layer=None</em>, <em class="sig-param">permutations=None</em>, <em class="sig-param">shape_type=None</em>, <em class="sig-param">cell_size=None</em>, <em class="sig-param">cell_units=None</em>, <em class="sig-param">distance_band=None</em>, <em class="sig-param">band_units=None</em>, <em class="sig-param">output_name=None</em>, <em class="sig-param">context=None</em>, <em class="sig-param">gis=None</em>, <em class="sig-param">estimate=False</em>, <em class="sig-param">future=False</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.features.analyze_patterns.find_outliers" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">arcgis.features.analyze_patterns.</code><code class="sig-name descname">find_outliers</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">analysis_layer</span></em>, <em class="sig-param"><span class="n">analysis_field</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">divided_by_field</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">bounding_polygon_layer</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">aggregation_polygon_layer</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">permutations</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">shape_type</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">cell_size</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">cell_units</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">distance_band</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">band_units</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">output_name</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">context</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">gis</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">estimate</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">future</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.features.analyze_patterns.find_outliers" title="Permalink to this definition">¶</a></dt>
 <dd><img alt="_images/find_outliers.png" src="_images/find_outliers.png" />
 <p>The <code class="docutils literal notranslate"><span class="pre">find_outliers</span></code> method analyzes point data (such as crime incidents, traffic accidents, or trees) or field values associated with points
 or area features (such as the number of people in each census tract or the total sales for retail stores). It finds statistically significant
@@ -481,7 +484,7 @@ spatial pattern associated with these features could very likely be the result o
 <td><p><strong>Description</strong></p></td>
 </tr>
 <tr class="row-even"><td><p>analysis_layer</p></td>
-<td><p>Required feature layer. The point or polygon feature layer for which outliers will be calculated. See <a class="reference internal" href="arcgis.geoanalytics.toc.html#featureinput"><span class="std std-ref">Feature Input</span></a>.</p></td>
+<td><p>Required feature layer. The point or polygon feature layer for which outliers will be calculated. See <a class="reference internal" href="arcgis.features.analysis.html#featureinput"><span class="std std-ref">Feature Input</span></a>.</p></td>
 </tr>
 <tr class="row-odd"><td><p>analysis_field (Required if the analysis_layer contains polygons)</p></td>
 <td><p>Optional string. The numeric field that will be analyzed. The field you select might represent:</p>
@@ -505,12 +508,12 @@ which will then be used as the attribute to divide by. This option will use cred
 <tr class="row-odd"><td><p>bounding_polygon_layer</p></td>
 <td><p>Optional layer. When the analysis layer is points and no <code class="docutils literal notranslate"><span class="pre">analysis_field</span></code> is specified, you can provide polygon features that define where incidents could have occurred.
 For example, if you are analyzing boating accidents in a harbor, the outline of the harbor might provide a good boundary for where accidents could occur.
-When no bounding areas are provided, only locations with at least one point will be included in the analysis. See <a class="reference internal" href="arcgis.geoanalytics.toc.html#featureinput"><span class="std std-ref">Feature Input</span></a>.</p></td>
+When no bounding areas are provided, only locations with at least one point will be included in the analysis. See <a class="reference internal" href="arcgis.features.analysis.html#featureinput"><span class="std std-ref">Feature Input</span></a>.</p></td>
 </tr>
 <tr class="row-even"><td><p>aggregation_polygon_layer</p></td>
 <td><p>Optional layer. When the <code class="docutils literal notranslate"><span class="pre">analysis_layer</span></code> contains points and no <code class="docutils literal notranslate"><span class="pre">analysis_field</span></code> is specified, you can provide polygon features into which the
 points will be aggregated and analyzed, such as administrative units. The number of points that fall within each polygon
-are counted, and the point count in each polygon is analyzed. See <a class="reference internal" href="arcgis.geoanalytics.toc.html#featureinput"><span class="std std-ref">Feature Input</span></a>.</p></td>
+are counted, and the point count in each polygon is analyzed. See <a class="reference internal" href="arcgis.features.analysis.html#featureinput"><span class="std std-ref">Feature Input</span></a>.</p></td>
 </tr>
 <tr class="row-odd"><td><p>permutations</p></td>
 <td><p>Optional string. Permutations are used to determine how likely it would be to find the actual spatial distribution of the values you are analyzing.
@@ -588,9 +591,9 @@ in order to assess local clustering.</p></td>
 </div>
 <div class="section" id="interpolate-points">
 <h2>interpolate_points<a class="headerlink" href="#interpolate-points" title="Permalink to this headline">¶</a></h2>
-<dl class="function">
+<dl class="py function">
 <dt id="arcgis.features.analyze_patterns.interpolate_points">
-<code class="sig-prename descclassname">arcgis.features.analyze_patterns.</code><code class="sig-name descname">interpolate_points</code><span class="sig-paren">(</span><em class="sig-param">input_layer</em>, <em class="sig-param">field</em>, <em class="sig-param">interpolate_option='5'</em>, <em class="sig-param">output_prediction_error=False</em>, <em class="sig-param">classification_type='GeometricInterval'</em>, <em class="sig-param">num_classes=10</em>, <em class="sig-param">class_breaks=[]</em>, <em class="sig-param">bounding_polygon_layer=None</em>, <em class="sig-param">predict_at_point_layer=None</em>, <em class="sig-param">output_name=None</em>, <em class="sig-param">context=None</em>, <em class="sig-param">gis=None</em>, <em class="sig-param">estimate=False</em>, <em class="sig-param">future=False</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.features.analyze_patterns.interpolate_points" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">arcgis.features.analyze_patterns.</code><code class="sig-name descname">interpolate_points</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">input_layer</span></em>, <em class="sig-param"><span class="n">field</span></em>, <em class="sig-param"><span class="n">interpolate_option</span><span class="o">=</span><span class="default_value">'5'</span></em>, <em class="sig-param"><span class="n">output_prediction_error</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">classification_type</span><span class="o">=</span><span class="default_value">'GeometricInterval'</span></em>, <em class="sig-param"><span class="n">num_classes</span><span class="o">=</span><span class="default_value">10</span></em>, <em class="sig-param"><span class="n">class_breaks</span><span class="o">=</span><span class="default_value">[]</span></em>, <em class="sig-param"><span class="n">bounding_polygon_layer</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">predict_at_point_layer</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">output_name</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">context</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">gis</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">estimate</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">future</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.features.analyze_patterns.interpolate_points" title="Permalink to this definition">¶</a></dt>
 <dd><img alt="_images/interpolate_points.png" src="_images/interpolate_points.png" />
 <p>The <code class="docutils literal notranslate"><span class="pre">interpolate_points</span></code> method allows you to predict values at new locations based on measurements
 from a collection of points. The method takes point data with values at each point and returns
@@ -653,7 +656,7 @@ will use the following parameters:</p>
 <td><p><strong>Description</strong></p></td>
 </tr>
 <tr class="row-even"><td><p>input_layer</p></td>
-<td><p>Required layer. The point layer whose features will be interpolated. See <a class="reference internal" href="arcgis.geoanalytics.toc.html#featureinput"><span class="std std-ref">Feature Input</span></a>.</p></td>
+<td><p>Required layer. The point layer whose features will be interpolated. See <a class="reference internal" href="arcgis.features.analysis.html#featureinput"><span class="std std-ref">Feature Input</span></a>.</p></td>
 </tr>
 <tr class="row-odd"><td><p>field</p></td>
 <td><p>Required string. Name of the numeric field containing the values you wish to interpolate.</p></td>
@@ -709,7 +712,7 @@ You must enter at least two values and no more than 32.</p></td>
 <tr class="row-odd"><td><p>bounding_polygon_layer</p></td>
 <td><p>Optional layer. A layer specifying the polygon(s) where you want values to be interpolated.  For example,
 if you are interpolating densities of fish within a lake, you can use the boundary of the lake in this
-parameter and the output will only contain polygons within the boundary of the lake. See <a class="reference internal" href="arcgis.geoanalytics.toc.html#featureinput"><span class="std std-ref">Feature Input</span></a>.</p></td>
+parameter and the output will only contain polygons within the boundary of the lake. See <a class="reference internal" href="arcgis.features.analysis.html#featureinput"><span class="std std-ref">Feature Input</span></a>.</p></td>
 </tr>
 <tr class="row-even"><td><p>predict_at_point_layer</p></td>
 <td><p>Optional layer. An optional layer specifying point locations to calculate prediction values.
@@ -717,7 +720,7 @@ This allows you to make predictions at specific locations of interest. For examp
 measurements of pollution levels, you can use this parameter to predict the pollution levels of locations with large
 at-risk populations, such as schools or hospitals. You can then use this information to give recommendations to health
 officials in those locations.</p>
-<p>If supplied, the output <code class="docutils literal notranslate"><span class="pre">predicted_point_layer</span></code> will contain predictions at the specified locations. See <a class="reference internal" href="arcgis.geoanalytics.toc.html#featureinput"><span class="std std-ref">Feature Input</span></a>.</p>
+<p>If supplied, the output <code class="docutils literal notranslate"><span class="pre">predicted_point_layer</span></code> will contain predictions at the specified locations. See <a class="reference internal" href="arcgis.features.analysis.html#featureinput"><span class="std std-ref">Feature Input</span></a>.</p>
 </td>
 </tr>
 <tr class="row-odd"><td><p>output_name</p></td>
@@ -783,11 +786,19 @@ You define the name of the service. If <code class="docutils literal notranslate
 
   <div role="contentinfo">
     <p>
+        
         &copy; Copyright 2016-2019, Esri
 
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
 
 </footer>
 
@@ -798,7 +809,6 @@ You define the name of the service. If <code class="docutils literal notranslate
 
   </div>
   
-
 
   <script type="text/javascript">
       jQuery(function () {

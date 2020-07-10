@@ -15,6 +15,20 @@ ImageryLayer
     :members:
     :undoc-members:
 
+ImageryLayerCacheManager
+------------------
+.. autoclass:: arcgis.raster.ImageryLayerCacheManager
+    :inherited-members:
+    :members:
+    :undoc-members:
+
+ImageryTileManager
+------------------
+.. autoclass:: arcgis.raster.ImageryTileManager
+    :inherited-members:
+    :members:
+    :undoc-members:
+
 Raster
 ------
 .. autoclass:: arcgis.raster.Raster
@@ -36,14 +50,12 @@ RasterManager
     :members:
     :undoc-members:
 
-ImageryTileManager
-------------------
-.. autoclass:: arcgis.raster.ImageryTileManager
+RasterCollection
+----------------
+.. autoclass:: arcgis.raster.RasterCollection
     :inherited-members:
     :members:
     :undoc-members:
-
-
 
 Submodules
 --------------

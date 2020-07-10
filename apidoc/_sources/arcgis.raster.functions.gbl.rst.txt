@@ -91,6 +91,10 @@ nibble
 ______
 .. autofunction:: arcgis.raster.functions.gbl.nibble
 
+optimal_path_as_raster
+______________________
+.. autofunction:: arcgis.raster.functions.gbl.optimal_path_as_raster
+
 path_distance
 _____________
 .. autofunction:: arcgis.raster.functions.gbl.path_distance

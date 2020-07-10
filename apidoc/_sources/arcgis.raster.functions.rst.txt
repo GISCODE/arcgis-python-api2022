@@ -243,6 +243,10 @@ gemi
 ____
 .. autofunction:: arcgis.raster.functions.gemi
 
+generate_trend
+______________
+.. autofunction:: arcgis.raster.functions.generate_trend
+
 geometric
 _________
 .. autofunction:: arcgis.raster.functions.geometric
@@ -279,6 +283,10 @@ INT
 ___
 .. autofunction:: arcgis.raster.functions.INT
 
+interpolate_irregular_data
+__________________________
+.. autofunction:: arcgis.raster.functions.interpolate_irregular_data
+
 iron_oxide
 __________
 .. autofunction:: arcgis.raster.functions.iron_oxide
@@ -294,6 +302,10 @@ _________
 less_than_equal
 _______________
 .. autofunction:: arcgis.raster.functions.less_than_equal
+
+linear_spectral_unmixing
+________________________
+.. autofunction:: arcgis.raster.functions.linear_spectral_unmixing
 
 ln
 __
@@ -367,6 +379,10 @@ mtvi2
 _____
 .. autofunction:: arcgis.raster.functions.mtvi2
 
+multidimensional_filter
+_______________________
+.. autofunction:: arcgis.raster.functions.multidimensional_filter
+
 ndvi
 ____
 .. autofunction:: arcgis.raster.functions.ndvi
@@ -402,6 +418,10 @@ ____
 power
 _____
 .. autofunction:: arcgis.raster.functions.power
+
+predict_using_trend
+___________________
+.. autofunction:: arcgis.raster.functions.predict_using_trend
 
 pvi
 ___
@@ -442,6 +462,14 @@ ________
 rtvi_core
 _________
 .. autofunction:: arcgis.raster.functions.rtvi_core
+
+s1_radiometric_calibration
+__________________________
+.. autofunction:: arcgis.raster.functions.s1_radiometric_calibration
+
+s1_thermal_noise_removal
+________________________
+.. autofunction:: arcgis.raster.functions.s1_thermal_noise_removal
 
 savi
 ____

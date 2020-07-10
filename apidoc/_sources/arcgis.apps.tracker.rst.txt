@@ -17,7 +17,7 @@ It can be used as shown in the following code example.
     print(gis.admin.location_tracking.status)
 
 LocationTrackingManager
-----------
+-----------------------
 .. autoclass:: arcgis.apps.tracker.LocationTrackingManager
     :members:
     :undoc-members:
@@ -31,14 +31,14 @@ TrackView
     :inherited-members:
 
 TrackViewerManager
--------------
+------------------
 .. autoclass:: arcgis.apps.tracker.TrackViewerManager
     :members:
     :undoc-members:
     :inherited-members:
 
 MobileUserManager
--------------
+-----------------
 .. autoclass:: arcgis.apps.tracker.MobileUserManager
     :members:
     :inherited-members:
