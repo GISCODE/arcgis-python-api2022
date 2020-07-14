@@ -60,12 +60,12 @@ There can be multiple unsupervised/semi-supervised workflows to clean the noise 
 
 ### Results
 
-**Visualization of Results in Notebook:**
+**Visualization of results in notebook:**
 
 ![img1](img/show_results.gif)
 
 
-**PointCNN’s output for buildings & Trees:**
+**PointCNN’s output for buildings & trees:**
 
 ![img2](img/pcnn.png)
 
