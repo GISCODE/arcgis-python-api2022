@@ -1,6 +1,6 @@
 # An end to end 'deep learning' based solution: Generating 3D models from raw LiDAR data.
 
-![final output](combined.png)
+![final output](img/combined.png)
 
 ### Introduction 
 
@@ -29,6 +29,11 @@ We can further divide this project's workflow, based on what technology or set o
 
 - To tackle this, & reduce our post-processing efforts, we trained another model for 4 classes: Ground, Building, Bridges & Background (Trees, cars, etc.), on the Netherlands ' data. Where we use the feature of `selective_classify( )`. To get the best possible correctness & completeness, using both the models.
 
+Complete deep learning workflow resides in a jupyter notebook, as shown in the figure below (notebook is available in this repo):
+
+![img11](img/notebook.png) 
+
+
 ### GIS workflow
 
 Generation of Building & Tree multipatches have separate workflows.
@@ -41,6 +46,7 @@ Generation of Building & Tree multipatches have separate workflows.
 
 There can be multiple unsupervised/semi-supervised workflows to clean the noise & generate building footprints from classified building points, one such method for reference is shown in the 'model builder' diagram below:
 
+![img9](img/building model builder.png) 
 
 ###### Tree Multipatches:
 
@@ -49,39 +55,47 @@ There can be multiple unsupervised/semi-supervised workflows to clean the noise 
 - Lastly, these footprints are used to generate realistic 3D models/multipatches using City Engine's rule packages, while the metadata that comes with City Engine's vegetation CGA assets is also used to get the best possible guess for tree species & it's properties without physically visiting the area of interest.
 
 There can be multiple unsupervised/semi-supervised workflows to clean the noise & generate tree footprints from classified tree points, one such method for reference is shown in the 'model builder' diagram below:
-
+![img10](img/tree model builder.png) 
 
 ### Results
 
 Visualization of Results in Notebook:
 
-![Visualization of Results in Notebook](show_results.gif)
+![img1](img/show_results.gif)
 
 
 PointCNN’s output for buildings & Trees:
 
- 
+![img2](img/pcnn.png)
+
 Identifying individual trees using clustering: 
- 
+
+![img3](img/clustering.png) 
 
 
 Tree footprints: 
- 
+
+![img4](img/tree footprint.png) 
+
 
 Building footprints: 
- 
+
+![img5](img/building footprint.png) 
+
 
 Tree crown volumes:
+
+![img6](img/tree volume estimation.png) 
+
 
 
 City Engine’s vegetation metadata:
 
- 
-
+![img7](img/metadata.png) 
 
 
 
 Final output with tree & building 3D models:
+
+![img8](img/output.png) 
  
-
-
