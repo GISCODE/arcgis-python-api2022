@@ -46,7 +46,7 @@ Generation of Building & Tree multipatches have separate workflows.
 
 There can be multiple unsupervised/semi-supervised workflows to clean the noise & generate building footprints from classified building points, one such method for reference is shown in the 'model builder' diagram below:
 
-![img9](img/building model builder.png) 
+![img9](img/building_model_builder.png) 
 
 ###### Tree Multipatches:
 
@@ -55,7 +55,8 @@ There can be multiple unsupervised/semi-supervised workflows to clean the noise 
 - Lastly, these footprints are used to generate realistic 3D models/multipatches using City Engine's rule packages, while the metadata that comes with City Engine's vegetation CGA assets is also used to get the best possible guess for tree species & it's properties without physically visiting the area of interest.
 
 There can be multiple unsupervised/semi-supervised workflows to clean the noise & generate tree footprints from classified tree points, one such method for reference is shown in the 'model builder' diagram below:
-![img10](img/tree model builder.png) 
+
+![img10](img/tree_model_builder.png) 
 
 ### Results
 
@@ -75,17 +76,17 @@ Identifying individual trees using clustering:
 
 Tree footprints: 
 
-![img4](img/tree footprint.png) 
+![img4](img/tree_footprint.png) 
 
 
 Building footprints: 
 
-![img5](img/building footprint.png) 
+![img5](img/building_footprint.png) 
 
 
 Tree crown volumes:
 
-![img6](img/tree volume estimation.png) 
+![img6](img/tree_volume_estimation.png) 
 
 
 
