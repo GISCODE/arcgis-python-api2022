@@ -60,43 +60,43 @@ There can be multiple unsupervised/semi-supervised workflows to clean the noise 
 
 ### Results
 
-Visualization of Results in Notebook:
+**Visualization of Results in Notebook:**
 
 ![img1](img/show_results.gif)
 
 
-PointCNN’s output for buildings & Trees:
+**PointCNN’s output for buildings & Trees:**
 
 ![img2](img/pcnn.png)
 
-Identifying individual trees using clustering: 
+**Identifying individual trees using clustering:** 
 
 ![img3](img/clustering.png) 
 
 
-Tree footprints: 
+**Tree footprints:**
 
 ![img4](img/tree_footprint.png) 
 
 
-Building footprints: 
+**Building footprints:**
 
 ![img5](img/building_footprint.png) 
 
 
-Tree crown volumes:
+**Tree crown volumes:**
 
 ![img6](img/tree_volume_estimation.png) 
 
 
 
-City Engine’s vegetation metadata:
+**City Engine’s vegetation metadata:**
 
 ![img7](img/metadata.png) 
 
 
 
-Final output with tree & building 3D models:
+**Final output with tree & building 3D models:**
 
 ![img8](img/output.png) 
  
