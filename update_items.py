@@ -28,6 +28,8 @@ from arcgis.gis import GIS
 
 ITEMS_METADATA_YAML_PATH = os.path.join(".", "items_metadata.yaml")
 THUMBNAILS_DIR = os.path.join(".", "static", "thumbnails")
+REPLACE_PROFILES_SCRIPT = os.path.join(".", "misc", "tools", 
+                                       "replace_profiles.py")
 
 NB_PORTAL_TYPE = "Notebook"
 NB_PORTAL_TYPE_KEYWORDS = "Notebook, Python"
@@ -46,6 +48,8 @@ def _main():
     gis = GIS(args.portal_url, args.username,
               args.password, verify_cert=False)
     items_metadata_yaml = _read_items_metadata_yaml()
+    if args.replace_profiles:
+        _replace_profiles()
     s = ItemsUploader(gis, items_metadata_yaml)
     s.upload_items()
     if s.failed_uploads:
@@ -66,7 +70,10 @@ def _parse_cmd_line_args():
         help="The portal to connect to (Default:geosaurus.maps.arcgis.com)",
         default="https://geosaurus.maps.arcgis.com/")
     parser.add_argument("--verbose", "-v", action="store_true",
-        help="Print all DEBUG log messages instead of just INFO")
+       help="Print all DEBUG log messages instead of just INFO")
+    parser.add_argument("--replace-profiles", "-c", action="store_true",
+       help="Replace all profiles in notebooks with their appropriate username "\
+            "and passwords. Does this by running misc/tools/replace_profiles.py")
     args = parser.parse_args(sys.argv[1:]) #don't use filename as 1st arg
     return args
 
@@ -92,6 +99,13 @@ def _read_items_metadata_yaml():
     """Returns the items_metadata.yaml file as a dict"""
     with open(ITEMS_METADATA_YAML_PATH) as f:
         return yaml.safe_load(f)
+
+def _replace_profiles():
+    """Runs misc/tools/replace_profiles.py to go through each notebook in the 
+    repo and replace profiles with usernames/passwords
+    """
+    cmd = f"{sys.executable} {REPLACE_PROFILES_SCRIPT}"
+    os.system(cmd)
 
 class ItemsUploader:
     def __init__(self, gis, items_metadata_yaml):
