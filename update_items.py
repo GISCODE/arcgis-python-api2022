@@ -162,8 +162,8 @@ class ItemsUploader:
             raise Exception(f"Couldn't find {nb_path}")
 
     def update_item(self, item_id, item_type, item_type_keywords, title, categories, 
-                     snippet, description, license_info, tags, nb_path, 
-                     runtime_stamp, thumbnail):
+                    snippet, description, license_info, tags, nb_path, 
+                    runtime_stamp, thumbnail):
         """Actually uploads the notebook item to the portal"""
         item_properties = {"title" : title,
                            "snippet" : snippet,
@@ -181,6 +181,7 @@ class ItemsUploader:
         existing_item = self._gis.content.get(item_id)
         if existing_item:
             log.debug(f'item {existing_item.homepage} exists, updating...')
+            item_properties["url"] = existing_item.homepage
             existing_item.update(item_properties,
                                  data = nb_path,
                                  thumbnail = thumbnail)
