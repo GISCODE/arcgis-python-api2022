@@ -114,7 +114,9 @@ class ItemsUploader:
         self.failed_uploads = []
 
     def upload_items(self, share_after_upload = True):
-        for entry in self._items_metadata_yaml["samples"] + self._items_metadata_yaml["guides"]:
+        for entry in self._items_metadata_yaml["samples"] + \
+                     self._items_metadata_yaml["guides"] + \
+                     self._items_metadata_yaml["labs"]:
             self._stage_and_upload_item(entry, share_after_upload)
 
     def _stage_and_upload_item(self, entry, share_after_upload = True):
