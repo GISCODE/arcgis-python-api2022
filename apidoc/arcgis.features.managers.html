@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>arcgis.features.managers module &mdash; arcgis 1.8.2 documentation</title>
+  <title>arcgis.features.managers module &mdash; arcgis 1.8.3 documentation</title>
   
 
   
@@ -77,7 +77,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             
             
               <div class="version">
-                1.8.2
+                1.8.3
               </div>
             
           
@@ -134,6 +134,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <li class="toctree-l4"><a class="reference internal" href="#parcelfabricmanager">ParcelFabricManager</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#utilitynetworkmanager">UtilityNetworkManager</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#validationmanager">ValidationManager</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#webhookservicemanager">WebHookServiceManager</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#webhook">WebHook</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="arcgis.features.summarize_data.html">arcgis.features.summarize_data module</a></li>
@@ -154,7 +156,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <li class="toctree-l1"><a class="reference internal" href="arcgis.schematics.html">arcgis.schematics module</a></li>
 <li class="toctree-l1"><a class="reference internal" href="arcgis.widgets.html">arcgis.widgets module</a></li>
 <li class="toctree-l1"><a class="reference internal" href="arcgis.apps.html">arcgis.apps module</a></li>
-<li class="toctree-l1"><a class="reference internal" href="arcgis.learn.html">arcgis.learn module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.learn.toc.html">arcgis.learn module</a></li>
 </ul>
 
             
@@ -575,7 +577,7 @@ is returned that a client can visit to check the status of the job.
 See the topic on asynchronous usage for more information. The default
 is False.</p></td>
 </tr>
-<tr class="row-even"><td><p><a href="#id5"><span class="problematic" id="id6">attachments_sync_</span></a></p></td>
+<tr class="row-even"><td><p><a href="#id7"><span class="problematic" id="id8">attachments_sync_</span></a></p></td>
 <td><p>Client can specify the attachmentsSyncDirection when creating a</p></td>
 </tr>
 <tr class="row-odd"><td><p>direction</p></td>
@@ -847,6 +849,17 @@ FeatureService or layer.</p>
 <dd></dd></dl>
 
 <dl class="py method">
+<dt id="arcgis.features.managers.FeatureLayerCollectionManager.generate_service_definition">
+<em class="property">property </em><code class="sig-name descname">generate_service_definition</code><a class="headerlink" href="#arcgis.features.managers.FeatureLayerCollectionManager.generate_service_definition" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns a dictionary can be used for service generation.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>dict or None (if not supported on the service)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
 <dt id="arcgis.features.managers.FeatureLayerCollectionManager.overwrite">
 <code class="sig-name descname">overwrite</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">data_file</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.features.managers.FeatureLayerCollectionManager.overwrite" title="Permalink to this definition">¶</a></dt>
 <dd><p>Overwrite all the features and layers in a hosted feature layer collection service. This operation removes
@@ -905,6 +918,11 @@ individual feature service layer object.</p>
 </dd>
 </dl>
 </dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.features.managers.FeatureLayerCollectionManager.webhook_manager">
+<em class="property">property </em><code class="sig-name descname">webhook_manager</code><a class="headerlink" href="#arcgis.features.managers.FeatureLayerCollectionManager.webhook_manager" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
 
 </dd></dl>
 
@@ -1362,7 +1380,7 @@ all forward moments will be trimmed.</p></td>
 
 <dl class="py method">
 <dt id="arcgis.features._version.Version.differences">
-<code class="sig-name descname">differences</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">result_type</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.features._version.Version.differences" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">differences</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">result_type</span><span class="o">=</span><span class="default_value">'objectIds'</span></em>, <em class="sig-param"><span class="n">moment</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.features._version.Version.differences" title="Permalink to this definition">¶</a></dt>
 <dd><p>The <code class="docutils literal notranslate"><span class="pre">`differences`</span></code> operation allows you to view differences between
 the current version and the default version. The two versions can
 be compared to check for the following conditions.</p>
@@ -1373,6 +1391,26 @@ be compared to check for the following conditions.</p>
 </ul>
 <p>Both differences and conflicts will be returned. It is the clients
 responsibility to determine which are differences, and which are conflicts.</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 18%" />
+<col style="width: 82%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>Argument</strong></p></td>
+<td><p><strong>Description</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>result_type</p></td>
+<td><p>Required String.  Determines the type of results to return.
+The default result type is <cite>objectIds</cite>.</p>
+<p>Values : <cite>objectIds</cite> or <cite>features</cite></p>
+</td>
+</tr>
+<tr class="row-odd"><td><p>moment</p></td>
+<td><p>Required String. Moment used to compare current version with default.</p></td>
+</tr>
+</tbody>
+</table>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
 <dd class="field-odd"><p>dict</p>
@@ -1583,6 +1621,45 @@ version following the reconcile.</p></td>
 </dd></dl>
 
 <dl class="py method">
+<dt id="arcgis.features._version.Version.restore">
+<code class="sig-name descname">restore</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">rows</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.features._version.Version.restore" title="Permalink to this definition">¶</a></dt>
+<dd><p>The <cite>restore</cite> method allows users to restore rows from a common 
+ancestor version.  This method is intended to be used when a 
+<cite>DeleteUpdate</cite> conflicts are identified during the last reconcile.</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 21%" />
+<col style="width: 79%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>Argument</strong></p></td>
+<td><p><strong>Description</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>rows</p></td>
+<td><p>Required List.  An array of the rows to be restored</p>
+<p><strong>Syntax</strong></p>
+<p>[</p>
+<blockquote>
+<div><p>{</p>
+<blockquote>
+<div><p>“layerId”: &lt;layerId&gt;,
+“objectIds”:[&lt;objectId&gt;]</p>
+</div></blockquote>
+<p>}</p>
+</div></blockquote>
+<p>]</p>
+</td>
+</tr>
+</tbody>
+</table>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>Boolean, String where the Boolean is the Success and the String is the Moment</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
 <dt id="arcgis.features._version.Version.save_edits">
 <em class="property">property </em><code class="sig-name descname">save_edits</code><a class="headerlink" href="#arcgis.features._version.Version.save_edits" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get/Set the Property to Save the Changes.</p>
@@ -1704,13 +1781,93 @@ ParcelFabricManager.</p></td>
 </tbody>
 </table>
 <dl class="py method">
+<dt id="arcgis.features._parcel.ParcelFabricManager.analyze_least_squares_adjustment">
+<code class="sig-name descname">analyze_least_squares_adjustment</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">analysis_type</span><span class="o">=</span><span class="default_value">'CONSISTENCY_CHECK'</span></em>, <em class="sig-param"><span class="n">convergence_tolerance</span><span class="o">=</span><span class="default_value">0.05</span></em>, <em class="sig-param"><span class="n">parcel_features</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">future</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.features._parcel.ParcelFabricManager.analyze_least_squares_adjustment" title="Permalink to this definition">¶</a></dt>
+<dd><p>Note: Least Squares Adjustment functionality introduced at version 10.8.1</p>
+<p>Analyzes the parcel fabric measurement network by running a least squares adjustment on the
+input parcels. A least-squares adjustment is a mathematical procedure that uses statistical
+analysis to estimate the most likely coordinates for connected points in a measurement network.</p>
+<p>Use apply_least_squares_adjustment to apply the results of a least squares adjustment to parcel fabric feature classes.
+====================    ====================================================================
+<strong>Argument</strong>            <strong>Description</strong>
+——————–    ——————————————————————–
+analysis_type           Optional string. Represents the type of least squares analysis that will be run on the input parcels.</p>
+<blockquote>
+<div><blockquote>
+<div><p>CONSISTENCY_CHECK - A free-network least-squares adjustment will be run to check dimensions on
+parcel lines for inconsistencies and mistakes. Fixed or weighted control points will not be
+used by the adjustment.</p>
+<p>WEIGHTED_LEAST_SQUARES - A weighted least-squares adjustment will be run to compute updated
+coordinates for parcel points. The parcels being adjusted should connect to at least two fixed
+or weighted control points.</p>
+</div></blockquote>
+<p>The default value is CONSISTENCY_CHECK.</p>
+</div></blockquote>
+<p>——————–    ——————————————————————–
+convergence_tolerance   Optional float. Represents the maximum coordinate shift expected after iterating the least squares adjustment. A least</p>
+<blockquote>
+<div><p>squares adjustment is run repeatedly (in iterations) until the solution converges. The solution is
+considered converged when maximum coordinate shift encountered becomes less than the specified convergence
+tolerance.</p>
+<p>The default value is 0.05 meters or 0.164 feet.</p>
+</div></blockquote>
+<p>——————–    ——————————————————————–
+parcel_features         Optional list. Represents the input parcels that will be analyzed by a least squares adjustment.</p>
+<blockquote>
+<div><blockquote>
+<div><p>Syntax: parcel_features = [{“id”:”&lt;guid&gt;”,”layerId”:”&lt;layerID&gt;”},{…}]</p>
+</div></blockquote>
+<p>If None, the method will analyze the entire parcel fabric.</p>
+</div></blockquote>
+<p>——————–    ——————————————————————–
+future                  Optional boolean. If true, the request is processed as an asynchronous job and a URL is returned that points a location</p>
+<blockquote>
+<div><p>displaying the status of the job.</p>
+<p>The default is False.</p>
+</div></blockquote>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.features._parcel.ParcelFabricManager.apply_least_squares_adjustment">
+<code class="sig-name descname">apply_least_squares_adjustment</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">movement_tolerance</span><span class="o">=</span><span class="default_value">0.05</span></em>, <em class="sig-param"><span class="n">update_attributes</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="n">future</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.features._parcel.ParcelFabricManager.apply_least_squares_adjustment" title="Permalink to this definition">¶</a></dt>
+<dd><p>Note: Least Squares Adjustment functionality introduced at version 10.8.1</p>
+<p>Applies the results of a least squares adjustment to parcel fabric feature classes. Least squares adjustment results stored
+in the AdjustmentLines and AdjustmentPoints feature classes are applied to the corresponding parcel line, connection line,
+and parcel fabric point feature classes.</p>
+<p>Use analyze_least_squares_adjustment to run a least-squares analysis on parcels and store the results in adjustment feature classes.
+====================     ====================================================================
+<strong>Argument</strong>             <strong>Description</strong>
+——————–     ——————————————————————–
+movement_tolerance        Optional float. Represents the minimum allowable coordinate shift when updating parcel fabric points. If the distance between</p>
+<blockquote>
+<div><p>the adjustment point and the parcel fabric point is greater than the specified tolerance, the parcel fabric
+point is updated to the location of the adjustment point.</p>
+<p>The default tolerance is 0.05 meters or 0.164 feet.</p>
+</div></blockquote>
+<p>——————–     ——————————————————————–
+update_attributes         Optional boolean. Specifies whether attribute fields in the parcel fabric Points feature class will be updated with</p>
+<blockquote>
+<div><p>statistical metadata. The XY Uncertainty, Error Ellipse Semi Major, Error Ellipse Semi Minor, and
+Error Ellipse Direction fields will be updated with the values stored in the same fields in the AdjustmentPoints
+feature class.</p>
+<p>The default is True</p>
+</div></blockquote>
+<p>——————–     ——————————————————————–
+future                   Optional boolean. If true, the request is processed as an asynchronous job and a URL is returned that points a location</p>
+<blockquote>
+<div><p>displaying the status of the job.</p>
+<p>The default is False.</p>
+</div></blockquote>
+</dd></dl>
+
+<dl class="py method">
 <dt id="arcgis.features._parcel.ParcelFabricManager.assign_to_record">
 <code class="sig-name descname">assign_to_record</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">features</span></em>, <em class="sig-param"><span class="n">record</span></em>, <em class="sig-param"><span class="n">write_attribute</span></em>, <em class="sig-param"><span class="n">moment</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.features._parcel.ParcelFabricManager.assign_to_record" title="Permalink to this definition">¶</a></dt>
-<dd><p>Assigns the specified parcel features to the specified record. If 
+<dd><p>Assigns the specified parcel features to the specified record. If
 parcel polygons are assigned, the record polygon will be updated to
-match the cumulative geometry of all the parcels associated to it. 
-The Created By Record or Retired By Record attribute field of the 
-parcel features is updated with the global ID of the assigned 
+match the cumulative geometry of all the parcels associated to it.
+The Created By Record or Retired By Record attribute field of the
+parcel features is updated with the global ID of the assigned
 record.</p>
 <table class="docutils align-default">
 <colgroup>
@@ -1986,13 +2143,13 @@ specific value. Uses a key/value pair of FieldName/Value.</p>
 <dl class="py method">
 <dt id="arcgis.features._parcel.ParcelFabricManager.create_seeds">
 <code class="sig-name descname">create_seeds</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">record</span></em>, <em class="sig-param"><span class="n">moment</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">extent</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.features._parcel.ParcelFabricManager.create_seeds" title="Permalink to this definition">¶</a></dt>
-<dd><p>Create seeds creates parcel seeds for closed loops of lines that 
+<dd><p>Create seeds creates parcel seeds for closed loops of lines that
 are associated with the specified record.</p>
-<p>When building parcels from lines, parcel seeds are used. A parcel 
-seed is the initial state or seed state of a parcel. A parcel seed 
-indicates to the build process that a parcel can be built from the 
+<p>When building parcels from lines, parcel seeds are used. A parcel
+seed is the initial state or seed state of a parcel. A parcel seed
+indicates to the build process that a parcel can be built from the
 lines enclosing the seed.</p>
-<p>A parcel seed is a minimized polygon feature and is stored in the 
+<p>A parcel seed is a minimized polygon feature and is stored in the
 parcel type polygon feature class.</p>
 <table class="docutils align-default">
 <colgroup>
@@ -2213,10 +2370,10 @@ merged parcel.</p>
 <dt id="arcgis.features._parcel.ParcelFabricManager.update_history">
 <code class="sig-name descname">update_history</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">features</span></em>, <em class="sig-param"><span class="n">record</span></em>, <em class="sig-param"><span class="n">moment</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">set_as_historic</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.features._parcel.ParcelFabricManager.update_history" title="Permalink to this definition">¶</a></dt>
 <dd><p>Sets the specified parcel features to current or historic using the
-specified record. If setting current parcels as historic, the 
-Retired By Record field of the features is updated with the Global 
+specified record. If setting current parcels as historic, the
+Retired By Record field of the features is updated with the Global
 ID of the specified record. If setting historic parcels as current,
-the Created By Record field of the features is updated with the 
+the Created By Record field of the features is updated with the
 Global ID of the specified record.</p>
 <table class="docutils align-default">
 <colgroup>
@@ -2592,12 +2749,12 @@ evaluating <cite>topology</cite> for a parcel fabric.</p>
 
 <dl class="py method">
 <dt id="arcgis.features._validation.ValidationManager.update_error">
-<code class="sig-name descname">update_error</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">error_features</span></em>, <em class="sig-param"><span class="n">version</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.features._validation.ValidationManager.update_error" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">update_error</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">error_features</span></em>, <em class="sig-param"><span class="n">version</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">return_edits</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.features._validation.ValidationManager.update_error" title="Permalink to this definition">¶</a></dt>
 <dd><p>Updates errors on the validation tables.</p>
 <table class="docutils align-default">
 <colgroup>
-<col style="width: 18%" />
-<col style="width: 82%" />
+<col style="width: 17%" />
+<col style="width: 83%" />
 </colgroup>
 <tbody>
 <tr class="row-odd"><td><p><strong>Argument</strong></p></td>
@@ -2633,11 +2790,341 @@ evaluating <cite>topology</cite> for a parcel fabric.</p>
 </div></blockquote>
 </td>
 </tr>
+<tr class="row-odd"><td><p>return_edits</p></td>
+<td><p>Optional Boolean. <cite>return_edits</cite> returns features edited due to
+errors update. Results returned are organized in a layer by layer
+fashion. If it is set to <cite>True</cite>, each layer may have edited features
+returned in an editedFeatures object.</p>
+<p>The editedFeatures object returns full features including the original
+features prior to delete, the original and current features for
+updates and the current rows for inserts which may contain implicit
+changes (e.g. as a result of a calculation rule ).</p>
+<p>The response includes no editedFeatures and <cite>exceededTransferLimit=True</cite>
+if the count of edited features to return is more than the maxRecordCount.
+If clients are using this parameter to maintain a cache, they should
+invalidate the cache when <cite>exceededTransferLimit = True</cite> is returned.
+If the server encounters an error when generating the list of edits is
+the response, <cite>exceededTransferLimit = True</cite> is also returned.</p>
+<p>Edited features are returned in the spatial reference of the feature
+service as defined by the services spatialReference object or by the
+spatialReference of the layers extent object.</p>
+<p>The default for this parameter is False.</p>
+</td>
+</tr>
 </tbody>
 </table>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
 <dd class="field-odd"><p>dictionary</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="webhookservicemanager">
+<h2>WebHookServiceManager<a class="headerlink" href="#webhookservicemanager" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt id="arcgis.features.managers.WebHookServiceManager">
+<em class="property">class </em><code class="sig-prename descclassname">arcgis.features.managers.</code><code class="sig-name descname">WebHookServiceManager</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">url</span></em>, <em class="sig-param"><span class="n">fc</span></em>, <em class="sig-param"><span class="n">gis</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.features.managers.WebHookServiceManager" title="Permalink to this definition">¶</a></dt>
+<dd><p>The <cite>WebHookServiceManager</cite> allows owners and administrators wire feature 
+service specific events to feature layer collections.</p>
+<dl class="py method">
+<dt id="arcgis.features.managers.WebHookServiceManager.create">
+<code class="sig-name descname">create</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">name</span><span class="p">:</span> <span class="n">str</span></em>, <em class="sig-param"><span class="n">hook_url</span><span class="p">:</span> <span class="n">str</span></em>, <em class="sig-param"><span class="n">change_types</span><span class="p">:</span> <span class="n">str</span> <span class="o">=</span> <span class="default_value">'*'</span></em>, <em class="sig-param"><span class="n">signature_key</span><span class="p">:</span> <span class="n">str</span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="n">active</span><span class="p">:</span> <span class="n">bool</span> <span class="o">=</span> <span class="default_value">False</span></em>, <em class="sig-param"><span class="n">schedule_info</span><span class="p">:</span> <span class="n">dict</span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="n">payload_format</span><span class="p">:</span> <span class="n">str</span> <span class="o">=</span> <span class="default_value">'json'</span></em><span class="sig-paren">)</span> &#x2192; <a class="reference internal" href="#arcgis.features.managers.WebHook" title="arcgis.features.managers.WebHook">arcgis.features.managers.WebHook</a><a class="headerlink" href="#arcgis.features.managers.WebHookServiceManager.create" title="Permalink to this definition">¶</a></dt>
+<dd><p>Creates a New Feature Collection Web Hook</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 30%" />
+<col style="width: 70%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>Argument</strong></p></td>
+<td><p><strong>Description</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>name</p></td>
+<td><p>Required String. Use valid name for a webhook. This name needs to be unique per service.</p></td>
+</tr>
+<tr class="row-odd"><td><p>hook_url</p></td>
+<td><p>Required String.  The URL to which the payloads will be delivered.</p></td>
+</tr>
+<tr class="row-even"><td><p>change_types</p></td>
+<td><p>Optional String.  The default is “*”, which means all events.  This is a
+comma separated list of values that will fire off the web hook.  The list
+each supported type is below.</p></td>
+</tr>
+<tr class="row-odd"><td><p>signature_key</p></td>
+<td><p>Optional String. If specified, the key will be used in generating the HMAC
+hex digest of value using sha256 hash function and is return in the
+x-esriHook-Signature header.</p></td>
+</tr>
+<tr class="row-even"><td><p>active</p></td>
+<td><p>Optional bool. Enable or disable call backs when the webhook is triggered.</p></td>
+</tr>
+<tr class="row-odd"><td><p>schedule_info</p></td>
+<td><p>Optional Dict. Allows the trigger to be used as a given schedule.
+Example:</p>
+<dl>
+<dt>{</dt><dd><p>“name” : “Every-5seconds”,
+“startAt” : 1478280677536,
+“state” : “enabled”,</p>
+<dl class="simple">
+<dt>“recurrenceInfo”<span class="classifier">{</span></dt><dd><p>“frequency” : “second”,
+“interval” : 5</p>
+</dd>
+</dl>
+<p>}</p>
+</dd>
+</dl>
+<p>}</p>
+</td>
+</tr>
+<tr class="row-even"><td><p>payload_format</p></td>
+<td><p>Optional String. The payload can be sent in pretty format or standard.
+The default is <cite>json</cite>.</p></td>
+</tr>
+</tbody>
+</table>
+<p>A list of allowed web hook triggers is shown below.</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 67%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>Name</strong></p></td>
+<td><p><strong>Trigged When</strong></p></td>
+</tr>
+<tr class="row-even"><td><p><cite>*</cite></p></td>
+<td><p>Wildcard event. Any time any event is triggered.</p></td>
+</tr>
+<tr class="row-odd"><td><p><cite>FeaturesCreated</cite></p></td>
+<td><p>A new feature is created</p></td>
+</tr>
+<tr class="row-even"><td><p><cite>FeaturesUpdated</cite></p></td>
+<td><p>Any time a feature is updated</p></td>
+</tr>
+<tr class="row-odd"><td><p><cite>FeaturesDeleted</cite></p></td>
+<td><p>Any time a feature is deleted</p></td>
+</tr>
+<tr class="row-even"><td><p><cite>FeaturesEdited</cite></p></td>
+<td><p>Any time a feature is edited (insert or update or delete)</p></td>
+</tr>
+<tr class="row-odd"><td><p><cite>AttachmentsCreated</cite></p></td>
+<td><p>Any time adding a new attachment to a feature</p></td>
+</tr>
+<tr class="row-even"><td><p><cite>AttachmentsUpdated</cite></p></td>
+<td><p>Any time updating a feature attachment</p></td>
+</tr>
+<tr class="row-odd"><td><p><cite>AttachmentsDeleted</cite></p></td>
+<td><p>Any time an attachment is deleted from a feature</p></td>
+</tr>
+<tr class="row-even"><td><p><cite>LayerSchemaChanged</cite></p></td>
+<td><p>Any time a schema is changed in a layer</p></td>
+</tr>
+<tr class="row-odd"><td><p><cite>LayerDefinitionChanged</cite></p></td>
+<td><p>Any time a layer definition is changed</p></td>
+</tr>
+<tr class="row-even"><td><p><cite>FeatureServiceDefinitionChanged</cite></p></td>
+<td><p>Any time a feature service is changed</p></td>
+</tr>
+</tbody>
+</table>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><cite>WebHook</cite></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.features.managers.WebHookServiceManager.delete_all_hooks">
+<code class="sig-name descname">delete_all_hooks</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; bool<a class="headerlink" href="#arcgis.features.managers.WebHookServiceManager.delete_all_hooks" title="Permalink to this definition">¶</a></dt>
+<dd><p>The <cite>delete_all_hooks</cite> operation will permanently remove the specified webhook.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.features.managers.WebHookServiceManager.disable_hooks">
+<code class="sig-name descname">disable_hooks</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; bool<a class="headerlink" href="#arcgis.features.managers.WebHookServiceManager.disable_hooks" title="Permalink to this definition">¶</a></dt>
+<dd><p>The <cite>disable_hooks</cite> will turn off all web hooks for the current service.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.features.managers.WebHookServiceManager.enable_hooks">
+<code class="sig-name descname">enable_hooks</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; bool<a class="headerlink" href="#arcgis.features.managers.WebHookServiceManager.enable_hooks" title="Permalink to this definition">¶</a></dt>
+<dd><p>The <cite>enable_hooks</cite> operation restarts a deactivated webhook. When 
+activated, payloads will be delivered to the payload URL when the 
+webhook is invoked.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.features.managers.WebHookServiceManager.list">
+<em class="property">property </em><code class="sig-name descname">list</code><a class="headerlink" href="#arcgis.features.managers.WebHookServiceManager.list" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns a list of web hooks on the Feature Layer Collection</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>tuple[WebHook]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.features.managers.WebHookServiceManager.properties">
+<em class="property">property </em><code class="sig-name descname">properties</code><a class="headerlink" href="#arcgis.features.managers.WebHookServiceManager.properties" title="Permalink to this definition">¶</a></dt>
+<dd><p>returns the properties for the WebHook Service Manager</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="webhook">
+<h2>WebHook<a class="headerlink" href="#webhook" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt id="arcgis.features.managers.WebHook">
+<em class="property">class </em><code class="sig-prename descclassname">arcgis.features.managers.</code><code class="sig-name descname">WebHook</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">url</span></em>, <em class="sig-param"><span class="n">gis</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.features.managers.WebHook" title="Permalink to this definition">¶</a></dt>
+<dd><p>The Webhook represents a single hook instance.</p>
+<dl class="py method">
+<dt id="arcgis.features.managers.WebHook.delete">
+<code class="sig-name descname">delete</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; bool<a class="headerlink" href="#arcgis.features.managers.WebHook.delete" title="Permalink to this definition">¶</a></dt>
+<dd><p>Deletes the current webhook from the system</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.features.managers.WebHook.edit">
+<code class="sig-name descname">edit</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">name</span><span class="p">:</span> <span class="n">str</span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="n">change_types</span><span class="p">:</span> <span class="n">str</span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="n">hook_url</span><span class="p">:</span> <span class="n">str</span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="n">signature_key</span><span class="p">:</span> <span class="n">str</span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="n">active</span><span class="p">:</span> <span class="n">bool</span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="n">schedule_info</span><span class="p">:</span> <span class="n">dict</span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="n">payload_format</span><span class="p">:</span> <span class="n">str</span> <span class="o">=</span> <span class="default_value">None</span></em><span class="sig-paren">)</span> &#x2192; dict<a class="headerlink" href="#arcgis.features.managers.WebHook.edit" title="Permalink to this definition">¶</a></dt>
+<dd><p>Updates the existing WebHook’s Properties.</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 30%" />
+<col style="width: 70%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>Argument</strong></p></td>
+<td><p><strong>Description</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>name</p></td>
+<td><p>Optional String. Use valid name for a webhook. This name needs to be unique per service.</p></td>
+</tr>
+<tr class="row-odd"><td><p>hook_url</p></td>
+<td><p>Optional String.  The URL to which the payloads will be delivered.</p></td>
+</tr>
+<tr class="row-even"><td><p>change_types</p></td>
+<td><p>Optional String.  The default is “*”, which means all events.  This is a
+comma separated list of values that will fire off the web hook.  The list
+each supported type is below.</p></td>
+</tr>
+<tr class="row-odd"><td><p>signature_key</p></td>
+<td><p>Optional String. If specified, the key will be used in generating the HMAC
+hex digest of value using sha256 hash function and is return in the
+x-esriHook-Signature header.</p></td>
+</tr>
+<tr class="row-even"><td><p>active</p></td>
+<td><p>Optional bool. Enable or disable call backs when the webhook is triggered.</p></td>
+</tr>
+<tr class="row-odd"><td><p>schedule_info</p></td>
+<td><p>Optional Dict. Allows the trigger to be used as a given schedule.
+Example:</p>
+<p><a href="#id5"><span class="problematic" id="id6">``</span></a>`
+{</p>
+<blockquote>
+<div><p>“name” : “Every-5seconds”,
+“startAt” : 1478280677536,
+“state” : “enabled”,</p>
+<dl class="simple">
+<dt>“recurrenceInfo”<span class="classifier">{</span></dt><dd><p>“frequency” : “second”,
+“interval” : 5</p>
+</dd>
+</dl>
+<p>}</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="row-even"><td><p>payload_format</p></td>
+<td><p>Optional String. The payload can be sent in pretty format or standard.
+The default is <cite>json</cite>.</p></td>
+</tr>
+</tbody>
+</table>
+<p>A list of allowed web hook triggers is shown below.</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 67%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>Name</strong></p></td>
+<td><p><strong>Trigged When</strong></p></td>
+</tr>
+<tr class="row-even"><td><p><cite>*</cite></p></td>
+<td><p>Wildcard event. Any time any event is triggered.</p></td>
+</tr>
+<tr class="row-odd"><td><p><cite>FeaturesCreated</cite></p></td>
+<td><p>A new feature is created</p></td>
+</tr>
+<tr class="row-even"><td><p><cite>FeaturesUpdated</cite></p></td>
+<td><p>Any time a feature is updated</p></td>
+</tr>
+<tr class="row-odd"><td><p><cite>FeaturesDeleted</cite></p></td>
+<td><p>Any time a feature is deleted</p></td>
+</tr>
+<tr class="row-even"><td><p><cite>FeaturesEdited</cite></p></td>
+<td><p>Any time a feature is edited (insert or update or delete)</p></td>
+</tr>
+<tr class="row-odd"><td><p><cite>AttachmentsCreated</cite></p></td>
+<td><p>Any time adding a new attachment to a feature</p></td>
+</tr>
+<tr class="row-even"><td><p><cite>AttachmentsUpdated</cite></p></td>
+<td><p>Any time updating a feature attachment</p></td>
+</tr>
+<tr class="row-odd"><td><p><cite>AttachmentsDeleted</cite></p></td>
+<td><p>Any time an attachment is deleted from a feature</p></td>
+</tr>
+<tr class="row-even"><td><p><cite>LayerSchemaChanged</cite></p></td>
+<td><p>Any time a schema is changed in a layer</p></td>
+</tr>
+<tr class="row-odd"><td><p><cite>LayerDefinitionChanged</cite></p></td>
+<td><p>Any time a layer definition is changed</p></td>
+</tr>
+<tr class="row-even"><td><p><cite>FeatureServiceDefinitionChanged</cite></p></td>
+<td><p>Any time a feature service is changed</p></td>
+</tr>
+</tbody>
+</table>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>dict</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.features.managers.WebHook.properties">
+<em class="property">property </em><code class="sig-name descname">properties</code><a class="headerlink" href="#arcgis.features.managers.WebHook.properties" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the WebHook’s properties</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>PropertyMap</p>
 </dd>
 </dl>
 </dd></dl>
@@ -2669,7 +3156,7 @@ evaluating <cite>topology</cite> for a parcel fabric.</p>
   <div role="contentinfo">
     <p>
         
-        &copy; Copyright 2016-2019, Esri
+        &copy; Copyright 2016-2021, Esri
 
     </p>
   </div>
@@ -2691,6 +3178,134 @@ evaluating <cite>topology</cite> for a parcel fabric.</p>
 
   </div>
   
+    Options v: 1.8.3
+
+  <div class="rst-versions" data-toggle="rst-versions" role="note" aria-label="versions">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      <span class="fa fa-book"> Pick an earlier version</span>
+      v: 1.8.3
+      <span class="fa fa-caret-down"></span>
+    </span>
+    <div class="rst-other-versions">
+      
+      
+      <dl>
+        <dt>Versions</dt>
+        
+          
+          <dd><a href="1.8.2/">1.8.2</a></dd>
+          
+        
+          
+          <dd><a href="1.8.1/">1.8.1</a></dd>
+          
+        
+          
+          <dd><a href="1.8.0/">1.8.0</a></dd>
+          
+        
+          
+          <dd><a href="1.7.1/">1.7.1</a></dd>
+          
+        
+          
+          <dd><a href="1.7.0/">1.7.0</a></dd>
+          
+        
+          
+          <dd><a href="1.6.2/">1.6.2</a></dd>
+          
+        
+          
+          <dd><a href="1.6.1/">1.6.1</a></dd>
+          
+        
+          
+          <dd><a href="1.6.0/">1.6.0</a></dd>
+          
+        
+          
+          <dd><a href="1.5.3/">1.5.3</a></dd>
+          
+        
+          
+          <dd><a href="1.5.2/">1.5.2</a></dd>
+          
+        
+          
+          <dd><a href="1.5.1/">1.5.1</a></dd>
+          
+        
+          
+          <dd><a href="1.5.0/">1.5.0</a></dd>
+          
+        
+          
+          <dd><a href="1.4.2/">1.4.2</a></dd>
+          
+        
+          
+          <dd><a href="1.4.1/">1.4.1</a></dd>
+          
+        
+          
+          <dd><a href="1.4.0/">1.4.0</a></dd>
+          
+        
+          
+          <dd><a href="1.3.0/">1.3.0</a></dd>
+          
+        
+          
+          <dd><a href="1.2.5/">1.2.5</a></dd>
+          
+        
+          
+          <dd><a href="1.2.4/">1.2.4</a></dd>
+          
+        
+          
+          <dd><a href="1.2.3/">1.2.3</a></dd>
+          
+        
+          
+          <dd><a href="1.2.2/">1.2.2</a></dd>
+          
+        
+          
+          <dd><a href="1.2.1/">1.2.1</a></dd>
+          
+        
+          
+          <dd><a href="1.2.0/">1.2.0</a></dd>
+          
+        
+          
+          <dd><a href="1.0.1/">1.0.1</a></dd>
+          
+        
+          
+          <dd><a href="1.0.0/">1.0.0</a></dd>
+          
+        
+          
+          <dd><a href="0.3.0/">0.3.0</a></dd>
+          
+        
+          
+          <dd><a href="0.2.0/">0.2.0</a></dd>
+          
+        
+          
+          <dd><a href="0.1.0/">0.1.0</a></dd>
+          
+        
+      </dl>
+      
+      
+      
+    </div>
+
 
   <script type="text/javascript">
       jQuery(function () {

@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>arcgis.gis.server module &mdash; arcgis 1.8.2 documentation</title>
+  <title>arcgis.gis.server module &mdash; arcgis 1.8.3 documentation</title>
   
 
   
@@ -77,7 +77,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             
             
               <div class="version">
-                1.8.2
+                1.8.3
               </div>
             
           
@@ -121,6 +121,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <li class="toctree-l2"><a class="reference internal" href="arcgis.gis.toc.html#datastoremanager">DatastoreManager</a></li>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.gis.toc.html#rolemanager">RoleManager</a></li>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.gis.toc.html#resourcemanager">ResourceManager</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.gis.toc.html#apikeymanager">APIKeyManager</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.gis.toc.html#apikey">APIKey</a></li>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.gis.toc.html#profilemanager">ProfileManager</a></li>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.gis.toc.html#invitationmanager">InvitationManager</a></li>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.gis.toc.html#certificatemanager">CertificateManager</a></li>
@@ -131,6 +133,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <li class="toctree-l4"><a class="reference internal" href="#server">Server</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#module-arcgis.gis.server.catalog">ServicesDirectory</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#service">Service</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#extension">Extension</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#machine">Machine</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#report">Report</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#datastore">Datastore</a></li>
@@ -152,10 +155,13 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <li class="toctree-l4"><a class="reference internal" href="#serverdirectory">ServerDirectory</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#serverproperties">ServerProperties</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#iteminformationmanager">ItemInformationManager</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#jobmanager">JobManager</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#job">Job</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="arcgis.gis.mission.html">arcgis.gis.mission module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="arcgis.gis.nb.html">arcgis.gis.nb module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="arcgis.gis.workflowmanager.html">arcgis.gis.workflowmanager module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="arcgis.gis.tasks.html">arcgis.gis.tasks module</a></li>
 </ul>
 </li>
@@ -175,7 +181,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <li class="toctree-l1"><a class="reference internal" href="arcgis.schematics.html">arcgis.schematics module</a></li>
 <li class="toctree-l1"><a class="reference internal" href="arcgis.widgets.html">arcgis.widgets module</a></li>
 <li class="toctree-l1"><a class="reference internal" href="arcgis.apps.html">arcgis.apps module</a></li>
-<li class="toctree-l1"><a class="reference internal" href="arcgis.learn.html">arcgis.learn module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.learn.toc.html">arcgis.learn module</a></li>
 </ul>
 
             
@@ -717,7 +723,7 @@ restarted with updated properties.</p>
 <dl class="py method">
 <dt id="arcgis.gis.server.Service.extensions">
 <em class="property">property </em><code class="sig-name descname">extensions</code><a class="headerlink" href="#arcgis.gis.server.Service.extensions" title="Permalink to this definition">¶</a></dt>
-<dd><p>lists the extensions on a service</p>
+<dd><p>lists the <a class="reference internal" href="#arcgis.gis.server.Extension" title="arcgis.gis.server.Extension"><code class="xref py py-class docutils literal notranslate"><span class="pre">extensions</span></code></a> on a service</p>
 </dd></dl>
 
 <dl class="py method">
@@ -727,6 +733,37 @@ restarted with updated properties.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
 <dd class="field-odd"><p>ItemInformationManager</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.gis.server.Service.jobs">
+<em class="property">property </em><code class="sig-name descname">jobs</code><a class="headerlink" href="#arcgis.gis.server.Service.jobs" title="Permalink to this definition">¶</a></dt>
+<dd><p>returns a <cite>JobManager</cite> to manage asynchronous geoprocessing tasks</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.gis.server.Service.modify_extensions">
+<code class="sig-name descname">modify_extensions</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">extension_objects</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.server.Service.modify_extensions" title="Permalink to this definition">¶</a></dt>
+<dd><p>enables/disables a service extension type based on the name</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 21%" />
+<col style="width: 79%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>Argument</strong></p></td>
+<td><p><strong>Description</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>extension_objects</p></td>
+<td><p>Required list. A list of new extensions.</p></td>
+</tr>
+</tbody>
+</table>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>boolean</p>
 </dd>
 </dl>
 </dd></dl>
@@ -784,6 +821,64 @@ restarted with updated properties.</p>
 <dt id="arcgis.gis.server.Service.stop">
 <code class="sig-name descname">stop</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.server.Service.stop" title="Permalink to this definition">¶</a></dt>
 <dd><p>stops the current service</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="extension">
+<h2>Extension<a class="headerlink" href="#extension" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt id="arcgis.gis.server.Extension">
+<em class="property">class </em><code class="sig-prename descclassname">arcgis.gis.server.</code><code class="sig-name descname">Extension</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">type_name</span></em>, <em class="sig-param"><span class="n">capabilities</span></em>, <em class="sig-param"><span class="n">enabled</span></em>, <em class="sig-param"><span class="n">max_upload_file_size</span></em>, <em class="sig-param"><span class="n">allowed_upload_filetype</span></em>, <em class="sig-param"><span class="n">properties</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.server.Extension" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>represents a service extension</p>
+<dl class="py method">
+<dt id="arcgis.gis.server.Extension.allowed_upload_filetypes">
+<em class="property">property </em><code class="sig-name descname">allowed_upload_filetypes</code><a class="headerlink" href="#arcgis.gis.server.Extension.allowed_upload_filetypes" title="Permalink to this definition">¶</a></dt>
+<dd><p>gets/sets the allowedUploadFileTypes</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.gis.server.Extension.capabilities">
+<em class="property">property </em><code class="sig-name descname">capabilities</code><a class="headerlink" href="#arcgis.gis.server.Extension.capabilities" title="Permalink to this definition">¶</a></dt>
+<dd><p>gets/sets the capabilities</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.gis.server.Extension.enabled">
+<em class="property">property </em><code class="sig-name descname">enabled</code><a class="headerlink" href="#arcgis.gis.server.Extension.enabled" title="Permalink to this definition">¶</a></dt>
+<dd><p>gets/sets the extension is enabled</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.gis.server.Extension.fromJSON">
+<em class="property">static </em><code class="sig-name descname">fromJSON</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">value</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.server.Extension.fromJSON" title="Permalink to this definition">¶</a></dt>
+<dd><p>returns the object from json string or dictionary</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.gis.server.Extension.max_upload_file_size">
+<em class="property">property </em><code class="sig-name descname">max_upload_file_size</code><a class="headerlink" href="#arcgis.gis.server.Extension.max_upload_file_size" title="Permalink to this definition">¶</a></dt>
+<dd><p>sets/gets the maxUploadFileSize</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.gis.server.Extension.properties">
+<em class="property">property </em><code class="sig-name descname">properties</code><a class="headerlink" href="#arcgis.gis.server.Extension.properties" title="Permalink to this definition">¶</a></dt>
+<dd><p>gets/sets the extension properties</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.gis.server.Extension.typeName">
+<em class="property">property </em><code class="sig-name descname">typeName</code><a class="headerlink" href="#arcgis.gis.server.Extension.typeName" title="Permalink to this definition">¶</a></dt>
+<dd><p>gets the extension type</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.gis.server.Extension.value">
+<em class="property">property </em><code class="sig-name descname">value</code><a class="headerlink" href="#arcgis.gis.server.Extension.value" title="Permalink to this definition">¶</a></dt>
+<dd><p>returns the object as a dictionary</p>
 </dd></dl>
 
 </dd></dl>
@@ -1593,6 +1688,17 @@ allowed values are GeoAnalytics, RasterAnalytics, and ImageHosting.</p></td>
 </dd></dl>
 
 <dl class="py method">
+<dt id="arcgis.gis.server.ServerManager.properties">
+<em class="property">property </em><code class="sig-name descname">properties</code><a class="headerlink" href="#arcgis.gis.server.ServerManager.properties" title="Permalink to this definition">¶</a></dt>
+<dd><p>The <cite>ServerManager</cite> properties</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>Dict</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
 <dt id="arcgis.gis.server.ServerManager.update">
 <code class="sig-name descname">update</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">server</span></em>, <em class="sig-param"><span class="n">role</span></em>, <em class="sig-param"><span class="n">function</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.server.ServerManager.update" title="Permalink to this definition">¶</a></dt>
 <dd><p>This operation allows you to set an ArcGIS Server federated with
@@ -2181,11 +2287,13 @@ output log file path is returned.</p>
 <dt id="arcgis.gis.server.ReportManager.create">
 <code class="sig-name descname">create</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">reportname</span></em>, <em class="sig-param"><span class="n">queries</span></em>, <em class="sig-param"><span class="n">metadata</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">since</span><span class="o">=</span><span class="default_value">'LAST_DAY'</span></em>, <em class="sig-param"><span class="n">from_value</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">to_value</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">aggregation_interval</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.server.ReportManager.create" title="Permalink to this definition">¶</a></dt>
 <dd><p>Creates a new usage report. A usage report is created by submitting
-a JSON representation of the usage report to this operation.</p>
+a JSON representation of the usage report to this operation.
+See <a class="reference external" href="https://developers.arcgis.com/rest/enterprise-administration/server/createusagereport.htm">CreateUsageReport</a>
+for details on the REST request bundled by this method.</p>
 <table class="docutils align-default">
 <colgroup>
-<col style="width: 22%" />
-<col style="width: 78%" />
+<col style="width: 19%" />
+<col style="width: 81%" />
 </colgroup>
 <tbody>
 <tr class="row-odd"><td><p><strong>Argument</strong></p></td>
@@ -2195,32 +2303,71 @@ a JSON representation of the usage report to this operation.</p>
 <td><p>Required string. The unique name of the report.</p></td>
 </tr>
 <tr class="row-odd"><td><p>queries</p></td>
-<td><p>Required string. A list of queries for which to generate the report.
-Specify the list as an array of JSON objects representing the queries.
-Each query specifies the list of metrics to be queried for a given
-set of resourceURIs.</p>
-<p>The queries parameter has the following sub-parameters:</p>
+<td><p>Required list of Python dictionaries for which to generate the
+report. Each dictionary has two keys: <code class="docutils literal notranslate"><span class="pre">resourceURIs</span></code> and
+<code class="docutils literal notranslate"><span class="pre">metrics</span></code></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Usage Example</span>
+
+<span class="p">[{</span><span class="s2">&quot;resourceURIs&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;/services/Folder_name/&quot;</span><span class="p">,</span>
+                   <span class="s2">&quot;Forest_loss.FeatureServer&quot;</span><span class="p">],</span>
+  <span class="s2">&quot;metrics&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;RequestCount,RequestsFailed&quot;</span><span class="p">]}]</span>
+</pre></div>
+</div>
+<p>Each key’s corresponding value is a list of strings specifying
+a resource for which to gather metrics, or the metrics to
+gather, respectively.</p>
 <ul>
-<li><p>resourceURIs – Comma-separated list of resource URIs for which
-to report metrics. This specifies the services or folders for
-which to gather metrics. The resourceURI is formatted as below:</p>
-<blockquote>
-<div><ul>
-<li><p>services/ – Entire Site</p></li>
-<li><p>services/Folder/ – Folder within a Site. Reports metrics
-aggregated across all services within that Folder and Sub-Folders.</p></li>
-<li><p>services/Folder/ServiceName.ServiceType – Service in a
-specified folder, for example:</p>
+<li><dl>
+<dt><code class="docutils literal notranslate"><span class="pre">resourceURIs</span></code> –</dt><dd><p>Comma-separated list that specifies the services or folders
+for which to gather metrics, formatted as below:</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">services/</span></code> -
+Entire Site</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">services/Folder/</span></code> -
+Folder within a Site. Reports metrics aggregated across all
+services within that folder and any sub-folders.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">services/Folder/ServiceName.ServiceType</span></code> -
+Service in a specified folder.</p>
 <blockquote>
 <div><ul class="simple">
-<li><p>services/Map_bv_999.MapServer</p></li>
-<li><p>services/ServiceName.ServiceType</p></li>
+<li><p>services/Folder_name/Map_bv_999.MapServer</p></li>
 </ul>
 </div></blockquote>
 </li>
-<li><p>Service in the root folder, for example: Map_bv_999.MapServer.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">service</span></code> -
+If in the root folder</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Map_bv_999.MapServer</p></li>
 </ul>
 </div></blockquote>
+</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt><code class="docutils literal notranslate"><span class="pre">metrics</span></code> –</dt><dd><p>Comma-separated string of specific measures to gather.</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">RequestCount</span></code> —
+the number of requests received</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">RequestsFailed</span></code> —
+the number of requests that failed</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">RequestsTimedOut</span></code> —
+the number of requests that timed out</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">RequestMaxResponseTime</span></code> —
+the maximum response time</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">RequestAvgResponseTime</span></code> —
+the average response time</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ServiceActiveInstances</span></code> —
+the maximum number of active (running) service instances sampled at 1 minute
+intervals for a specified service</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ServiceRunningInstancesMax</span></code> — the maximum number of active (running) service
+instances, sampled at one-minute intervals for a specified service. If you
+include this metric, it must be the only metric included in the report.</p></li>
+</ul>
+</dd>
+</dl>
 </li>
 </ul>
 </td>
@@ -2241,25 +2388,44 @@ will need to be processed by the client.</p></td>
 <td><p>Optional string. The time duration of the report. The supported
 values are: LAST_DAY, LAST_WEEK, LAST_MONTH, LAST_YEAR, CUSTOM</p>
 <ul class="simple">
-<li><p>LAST_DAY represents a time range spanning the previous 24 hours.
+<li><p><code class="docutils literal notranslate"><span class="pre">LAST_DAY</span></code> represents a time range spanning the previous 24 hours.
 This is the default value.</p></li>
-<li><p>LAST_WEEK represents a time range spanning the previous 7 days.</p></li>
-<li><p>LAST_MONTH represents a time range spanning the previous 30 days.</p></li>
-<li><p>LAST_YEAR represents a time range spanning the previous 365 days.</p></li>
-<li><p>CUSTOM represents a time range that is specified using the from
+<li><p><code class="docutils literal notranslate"><span class="pre">LAST_WEEK</span></code> represents a time range spanning the previous 7 days.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">LAST_MONTH</span></code> represents a time range spanning the previous 30 days.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">LAST_YEAR</span></code> represents a time range spanning the previous 365 days.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">CUSTOM</span></code> represents a time range that is specified using the from
 and to parameters.</p></li>
 </ul>
 </td>
 </tr>
 <tr class="row-even"><td><p>from_value</p></td>
-<td><p>Optional string. Only valid when <em>since</em> is CUSTOM. The timestamp
-(milliseconds since UNIX epoch, namely January 1, 1970, 00:00:00 GMT)
-for the beginning period of the report.</p></td>
+<td><p>Optional integer. Only valid when <code class="docutils literal notranslate"><span class="pre">since</span></code> is CUSTOM. The timestamp
+in milliseconds (since January 1, 1970, 00:00:00 GMT, the Unix epoch)
+for the beginning period of the report.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># usage Example:</span>
+
+<span class="kn">import</span> <span class="nn">datetime</span> <span class="k">as</span> <span class="nn">dt</span>
+
+<span class="o">&gt;&gt;&gt;</span> <span class="n">sept1_2020</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">dt</span><span class="o">.</span><span class="n">datetime</span><span class="p">(</span><span class="mi">2020</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">timestamp</span><span class="p">())</span> <span class="o">*</span> <span class="mi">1000</span>
+    <span class="n">sept1_2020</span>
+
+    <span class="mi">1598943600000</span>
+</pre></div>
+</div>
+</td>
 </tr>
 <tr class="row-odd"><td><p>to_value</p></td>
-<td><p>Optional string. Only valid when <em>since</em> is CUSTOM. The timestamp
-(milliseconds since UNIX epoch, namely January 1, 1970, 00:00:00 GMT)
-for the ending period of the report.</p></td>
+<td><p>Optional integer. Only valid when <code class="docutils literal notranslate"><span class="pre">since</span></code> is CUSTOM. The timestamp
+in milliseconds (since January 1, 1970, 00:00:00 GMT, the Unix epoch)
+for the ending period of the report.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># usage Example:</span>
+
+<span class="kn">import</span> <span class="nn">datetime</span> <span class="k">as</span> <span class="nn">dt</span>
+
+<span class="n">now</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">dt</span><span class="o">.</span><span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">()</span><span class="o">.</span><span class="n">timestamp</span><span class="p">())</span> <span class="o">*</span> <span class="mi">1000</span>
+</pre></div>
+</div>
+</td>
 </tr>
 <tr class="row-even"><td><p>aggregation_interval</p></td>
 <td><p>Optional string. The aggregation interval in minutes. Server metrics
@@ -2273,11 +2439,11 @@ When the aggregation_interval is not specified, the following defaults
 are used:</p>
 <blockquote>
 <div><ul class="simple">
-<li><p>LAST_DAY: 30 minutes</p></li>
-<li><p>LAST_WEEK: 4 hours</p></li>
-<li><p>LAST_MONTH: 24 hours</p></li>
-<li><p>LAST_YEAR: 1 week</p></li>
-<li><p>CUSTOM: 30 minutes up to 1 day, 4 hours up to 1 week, 1</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">LAST_DAY</span></code>: 30 minutes</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">LAST_WEEK</span></code>: 4 hours</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">LAST_MONTH</span></code>: 24 hours</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">LAST_YEAR</span></code>: 1 week</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">CUSTOM</span></code>: 30 minutes up to 1 day, 4 hours up to 1 week, 1</p></li>
 </ul>
 <p>day up to 30 days, and 1 week for longer periods.</p>
 </div></blockquote>
@@ -2289,21 +2455,35 @@ the aggregationInterval, the interval is used instead.</p>
 </table>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p>A JSON indicating success.</p>
+<dd class="field-odd"><p>A <a class="reference internal" href="#arcgis.gis.server.Report" title="arcgis.gis.server.Report"><code class="xref py py-class docutils literal notranslate"><span class="pre">Report</span></code></a> object.</p>
 </dd>
 </dl>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">USAGE</span> <span class="n">EXAMPLE</span><span class="p">:</span>
 
-<span class="o">&gt;&gt;&gt;</span> <span class="n">queryObj</span> <span class="o">=</span> <span class="p">[{</span>
-    <span class="s2">&quot;resourceURIs&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;services/Map_bv_999.MapServer&quot;</span><span class="p">],</span>
-    <span class="s2">&quot;metrics&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;RequestCount&quot;</span><span class="p">]</span>
-    <span class="p">}]</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">obj</span><span class="o">.</span><span class="n">createReport</span><span class="p">(</span>
-    <span class="n">reportname</span><span class="o">=</span><span class="s2">&quot;SampleReport&quot;</span><span class="p">,</span>
-    <span class="n">queries</span><span class="o">=</span><span class="n">queryObj</span><span class="p">,</span>
-    <span class="n">metadata</span><span class="o">=</span><span class="s2">&quot;This could be any String or JSON Object.&quot;</span><span class="p">,</span>
-    <span class="n">since</span><span class="o">=</span><span class="s2">&quot;LAST_DAY&quot;</span>
-    <span class="p">)</span>
+<span class="kn">import</span> <span class="nn">datetime</span> <span class="k">as</span> <span class="nn">dt</span>
+<span class="kn">from</span> <span class="nn">arcgis.gis</span> <span class="kn">import</span> <span class="n">GIS</span>
+
+<span class="o">&gt;&gt;&gt;</span> <span class="n">gis</span> <span class="o">=</span> <span class="n">GIS</span><span class="p">(</span><span class="n">profile</span><span class="o">=</span><span class="s2">&quot;your_ent_profile&quot;</span><span class="p">,</span> <span class="n">verify_cert</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+
+<span class="o">&gt;&gt;&gt;</span> <span class="n">gis_servers</span> <span class="o">=</span> <span class="n">gis</span><span class="o">.</span><span class="n">admin</span><span class="o">.</span><span class="n">servers</span><span class="o">.</span><span class="n">list</span><span class="p">()</span>
+
+<span class="o">&gt;&gt;&gt;</span> <span class="n">gis_server</span> <span class="o">=</span> <span class="n">gis_servers</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+
+<span class="o">&gt;&gt;&gt;</span> <span class="n">now</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">dt</span><span class="o">.</span><span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">()</span><span class="o">.</span><span class="n">timestamp</span><span class="p">())</span> <span class="o">*</span> <span class="mi">1000</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">sept1_2020</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">dt</span><span class="o">.</span><span class="n">datetime</span><span class="p">(</span><span class="mi">2020</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">timestamp</span><span class="p">())</span> <span class="o">*</span> <span class="mi">1000</span>
+
+<span class="o">&gt;&gt;&gt;</span> <span class="n">query_obj</span> <span class="o">=</span> <span class="p">[{</span><span class="s2">&quot;resourceURIs&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;services/Map_bv_999.MapServer&quot;</span><span class="p">],</span>
+                  <span class="s2">&quot;metrics&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;RequestCount&quot;</span><span class="p">]}]</span>
+
+<span class="o">&gt;&gt;&gt;</span> <span class="n">r</span> <span class="o">=</span> <span class="n">gis_server</span><span class="o">.</span><span class="n">usage</span><span class="o">.</span><span class="n">create</span><span class="p">(</span><span class="n">reportname</span><span class="o">=</span><span class="s2">&quot;SampleReport&quot;</span><span class="p">,</span>
+                                <span class="n">queries</span><span class="o">=</span><span class="n">query_obj</span><span class="p">,</span>
+                                <span class="n">metadata</span><span class="o">=</span><span class="s2">&quot;This could be any String or JSON Object.&quot;</span><span class="p">,</span>
+                                <span class="n">since</span><span class="o">=</span><span class="s2">&quot;CUSTOM&quot;</span><span class="p">,</span>
+                                <span class="n">from_value</span><span class="o">=</span><span class="n">sept1_2020</span><span class="p">,</span>
+                                <span class="n">to_value</span><span class="o">=</span><span class="n">now</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">r</span>
+
+    <span class="o">&lt;</span><span class="n">Report</span> <span class="n">at</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">server_url</span><span class="p">:</span><span class="mi">6443</span><span class="o">/</span><span class="n">arcgis</span><span class="o">/</span><span class="n">admin</span><span class="o">/</span><span class="n">usagereports</span><span class="o">/</span><span class="n">SampleReport</span><span class="o">&gt;</span>
 </pre></div>
 </div>
 </dd></dl>
@@ -2361,12 +2541,11 @@ persisted forever.</p></td>
 <dl class="py method">
 <dt id="arcgis.gis.server.ReportManager.quick_report">
 <code class="sig-name descname">quick_report</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">since</span><span class="o">=</span><span class="default_value">'LAST_WEEK'</span></em>, <em class="sig-param"><span class="n">queries</span><span class="o">=</span><span class="default_value">'services/'</span></em>, <em class="sig-param"><span class="n">metrics</span><span class="o">=</span><span class="default_value">'RequestsFailed'</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.server.ReportManager.quick_report" title="Permalink to this definition">¶</a></dt>
-<dd><p>The operation quick_report generates an on the fly usage report for
-a service, services, or folder.</p>
+<dd><p>Generates an on the fly usage report for a service, services, or folder.</p>
 <table class="docutils align-default">
 <colgroup>
-<col style="width: 22%" />
-<col style="width: 78%" />
+<col style="width: 20%" />
+<col style="width: 80%" />
 </colgroup>
 <tbody>
 <tr class="row-odd"><td><p><strong>Argument</strong></p></td>
@@ -2374,47 +2553,46 @@ a service, services, or folder.</p>
 </tr>
 <tr class="row-even"><td><p>since</p></td>
 <td><p>Optional string. The time duration of the report. The supported
-values are: LAST_DAY, LAST_WEEK, LAST_MONTH, LAST_YEAR, CUSTOM</p>
+values are: LAST_DAY, LAST_WEEK, LAST_MONTH, or LAST_YEAR.</p>
 <ul class="simple">
-<li><p>LAST_DAY represents a time range spanning the previous 24 hours.
+<li><p><code class="docutils literal notranslate"><span class="pre">LAST_DAY</span></code> represents a time range spanning the previous 24 hours.
 This is the default value.</p></li>
-<li><p>LAST_WEEK represents a time range spanning the previous 7 days.</p></li>
-<li><p>LAST_MONTH represents a time range spanning the previous 30 days.</p></li>
-<li><p>LAST_YEAR represents a time range spanning the previous 365 days.</p></li>
-<li><p>CUSTOM represents a time range that is specified using the from
-and to parameters.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">LAST_WEEK</span></code> represents a time range spanning the previous 7 days.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">LAST_MONTH</span></code> represents a time range spanning the previous 30 days.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">LAST_YEAR</span></code> represents a time range spanning the previous 365 days.</p></li>
 </ul>
 </td>
 </tr>
 <tr class="row-odd"><td><p>queries</p></td>
-<td><p>Required string. A list of queries for which to generate the report.
-Specify the list as an array of JSON objects representing the queries.
-Each query specifies the list of metrics to be queried for a given
-set of resourceURIs.</p>
-<p>The queries parameter has the following sub-parameters:</p>
-<ul>
-<li><p>resourceURIs – Comma-separated list of resource URIs for which
-to report metrics. This specifies the services or folders for
-which to gather metrics. The resourceURI is formatted as below:</p>
+<td><p>Required string. A string of resourceURIs for which to generate the report.
+Specified as a comma-separated sting of services or folders for which to
+gather metrics.</p>
 <blockquote>
 <div><ul>
-<li><p>services/ – Entire Site</p></li>
-<li><p>services/Folder/ – Folder within a Site. Reports metrics
+<li><p><code class="docutils literal notranslate"><span class="pre">services/</span></code> – Entire Site</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">services/Folder/</span></code> – Folder within a Site. Reports metrics
 aggregated across all services within that Folder and Sub-Folders.</p></li>
-<li><p>services/Folder/ServiceName.ServiceType – Service in a
+<li><p><code class="docutils literal notranslate"><span class="pre">services/Folder/ServiceName.ServiceType</span></code> – Service in a
 specified folder, for example:</p>
 <blockquote>
 <div><ul class="simple">
-<li><p>services/Map_bv_999.MapServer</p></li>
-<li><p>services/ServiceName.ServiceType</p></li>
+<li><p>services/Folder_Name/Map_bv_999.MapServer</p></li>
+<li><p>services/Fodler_Name/ServiceName.ServiceType</p></li>
 </ul>
 </div></blockquote>
 </li>
-<li><p>Service in the root folder, for example: Map_bv_999.MapServer.</p></li>
+<li><dl class="simple">
+<dt><code class="docutils literal notranslate"><span class="pre">root</span> <span class="pre">folder</span></code> – Service in the root folder</dt><dd><ul class="simple">
+<li><p>Map_bv_999.MapServer.</p></li>
 </ul>
-</div></blockquote>
+</dd>
+</dl>
 </li>
 </ul>
+</div></blockquote>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">queries</span><span class="o">=</span><span class="s2">&quot;services/Hydroligic_Data/Lake_algae.FeatureServer,services/Mountains&quot;</span>
+</pre></div>
+</div>
 </td>
 </tr>
 <tr class="row-even"><td><p>metrics</p></td>
@@ -2432,6 +2610,9 @@ specified folder, for example:</p>
 for a specified service</p></li>
 </ul>
 </div></blockquote>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">metrics</span><span class="o">=</span><span class="s2">&quot;RequestCount,RequestsFailed&quot;</span>
+</pre></div>
+</div>
 </td>
 </tr>
 </tbody>
@@ -2441,6 +2622,34 @@ for a specified service</p></li>
 <dd class="field-odd"><p>A Python dictionary of data on a successful query.</p>
 </dd>
 </dl>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Usage Example:</span>
+
+<span class="o">&gt;&gt;&gt;</span> <span class="n">gis</span> <span class="o">=</span> <span class="n">GIS</span><span class="p">(</span><span class="n">profile</span><span class="o">=</span><span class="s2">&quot;my_own_portal&quot;</span><span class="p">,</span> <span class="n">verify_cert</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+
+<span class="o">&gt;&gt;&gt;</span> <span class="n">gis_servers</span> <span class="o">=</span> <span class="n">gis</span><span class="o">.</span><span class="n">admin</span><span class="o">.</span><span class="n">servers</span><span class="o">.</span><span class="n">list</span><span class="p">()</span>
+
+<span class="o">&gt;&gt;&gt;</span> <span class="n">srv</span> <span class="o">=</span> <span class="n">gis_servers</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+
+<span class="o">&gt;&gt;&gt;</span> <span class="n">query_string</span> <span class="o">=</span> <span class="s2">&quot;services/Forests/Forests_degraded_2000.MapServer,services/Lakes/Lakes_drought_levels.MapServer&quot;</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">qk_report</span> <span class="o">=</span> <span class="n">srv</span><span class="o">.</span><span class="n">usage</span><span class="o">.</span><span class="n">quick_report</span><span class="p">(</span><span class="n">since</span> <span class="o">=</span> <span class="s2">&quot;LAST_MONTH&quot;</span><span class="p">,</span>
+                                       <span class="n">queries</span> <span class="o">=</span> <span class="n">query_string</span><span class="p">,</span>
+                                       <span class="n">metrics</span> <span class="o">=</span> <span class="s2">&quot;RequestCount,RequestsFailed&quot;</span><span class="p">)</span>
+
+<span class="o">&gt;&gt;&gt;</span> <span class="n">qk_report</span>
+
+    <span class="p">{</span><span class="s1">&#39;report&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;reportname&#39;</span><span class="p">:</span> <span class="s1">&#39;1fa828eb31664485ae5c25c76c86e28d&#39;</span><span class="p">,</span>
+                <span class="s1">&#39;metadata&#39;</span><span class="p">:</span> <span class="s1">&#39;{&quot;temp&quot;:true,&quot;title&quot;:&quot;1fa828eb31664485ae5c25c76c86e28d&quot;,&quot;managerReport&quot;:false}&#39;</span><span class="p">,</span>
+                <span class="s1">&#39;time-slices&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">1598914800000</span><span class="p">,</span> <span class="mi">1599001200000</span><span class="p">,</span> <span class="mi">1599087600000</span><span class="p">,</span> <span class="o">...</span> <span class="mi">1601420400000</span><span class="p">],</span>
+                <span class="s1">&#39;report-data&#39;</span><span class="p">:</span> <span class="p">[[{</span><span class="s1">&#39;resourceURI&#39;</span><span class="p">:</span> <span class="s1">&#39;services/Forests/Forests_degraded_2000.MapServer&#39;</span><span class="p">,</span>
+                                  <span class="s1">&#39;metric-type&#39;</span><span class="p">:</span> <span class="s1">&#39;RequestCount&#39;</span><span class="p">,</span> <span class="s1">&#39;data&#39;</span><span class="p">:</span> <span class="p">[</span><span class="kc">None</span><span class="p">,</span> <span class="mi">17</span><span class="p">,</span> <span class="mi">928</span><span class="p">,</span> <span class="o">...</span> <span class="mi">20</span><span class="p">]},</span>
+                                 <span class="p">{</span><span class="s1">&#39;resourceURI&#39;</span><span class="p">:</span> <span class="s1">&#39;services/Forests/Forests_degraded_2000.MapServer&#39;</span><span class="p">,</span>
+                                  <span class="s1">&#39;metric-type&#39;</span><span class="p">:</span> <span class="s1">&#39;RequestsFailed&#39;</span><span class="p">,</span> <span class="s1">&#39;data&#39;</span><span class="p">:</span> <span class="p">[</span><span class="kc">None</span><span class="p">,</span> <span class="mi">225</span><span class="p">,</span> <span class="kc">None</span><span class="p">,</span> <span class="o">...</span> <span class="mi">0</span><span class="p">]},</span>
+                                 <span class="p">{</span><span class="s1">&#39;resourceURI&#39;</span><span class="p">:</span> <span class="s1">&#39;services/Lakes/Lakes_drought_levels.MapServer&#39;</span><span class="p">,</span>
+                                  <span class="s1">&#39;metric-type&#39;</span><span class="p">:</span> <span class="s1">&#39;RequestCount&#39;</span><span class="p">,</span> <span class="s1">&#39;data&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="o">...</span> <span class="mi">71</span><span class="p">]},</span>
+                                 <span class="p">{</span><span class="s1">&#39;resourceURI&#39;</span><span class="p">:</span> <span class="s1">&#39;services/Lakes/Lakes_drought_levels.MapServer&#39;</span><span class="p">,</span>
+                                  <span class="s1">&#39;metric-type&#39;</span><span class="p">:</span> <span class="s1">&#39;RequestsFailed&#39;</span><span class="p">,</span> <span class="s1">&#39;data&#39;</span><span class="p">:</span> <span class="p">[</span><span class="kc">None</span><span class="p">,</span> <span class="kc">None</span><span class="p">,</span> <span class="mi">1</span> <span class="o">...</span> <span class="p">,</span> <span class="mi">0</span><span class="p">]}]]}}</span>
+</pre></div>
+</div>
 </dd></dl>
 
 <dl class="py method">
@@ -2761,7 +2970,7 @@ share data store for which you want to create a data store item.</p></td>
 </table>
 <p>returns: string on success, None on failure</p>
 <p><strong>Usage</strong>:</p>
-<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">con</span> <span class="o">=</span> <span class="n">dm</span><span class="o">.</span><span class="n">create_connection_string</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;c:\myfolder\postgres_db.sde&quot;</span><span class="p">)</span>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">con</span> <span class="o">=</span> <span class="n">dm</span><span class="o">.</span><span class="n">create_connection_string</span><span class="p">(</span><span class="s2">&quot;c:\myfolder\postgres_db.sde&quot;</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">con</span><span class="p">)</span>
 <span class="go">&#39;ENCRYPTED_PASSWORD=************************;SERVER=localhost;</span>
 <span class="go">INSTANCE=sde:postgresql:localhost,5432;DBCLIENT=postgresql;</span>
@@ -4645,6 +4854,12 @@ file must be uploaded.</p></td>
 </dd></dl>
 
 </div>
+<div class="section" id="jobmanager">
+<h2>JobManager<a class="headerlink" href="#jobmanager" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="job">
+<h2>Job<a class="headerlink" href="#job" title="Permalink to this headline">¶</a></h2>
+</div>
 </div>
 
 
@@ -4669,7 +4884,7 @@ file must be uploaded.</p></td>
   <div role="contentinfo">
     <p>
         
-        &copy; Copyright 2016-2019, Esri
+        &copy; Copyright 2016-2021, Esri
 
     </p>
   </div>
@@ -4691,6 +4906,134 @@ file must be uploaded.</p></td>
 
   </div>
   
+    Options v: 1.8.3
+
+  <div class="rst-versions" data-toggle="rst-versions" role="note" aria-label="versions">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      <span class="fa fa-book"> Pick an earlier version</span>
+      v: 1.8.3
+      <span class="fa fa-caret-down"></span>
+    </span>
+    <div class="rst-other-versions">
+      
+      
+      <dl>
+        <dt>Versions</dt>
+        
+          
+          <dd><a href="1.8.2/">1.8.2</a></dd>
+          
+        
+          
+          <dd><a href="1.8.1/">1.8.1</a></dd>
+          
+        
+          
+          <dd><a href="1.8.0/">1.8.0</a></dd>
+          
+        
+          
+          <dd><a href="1.7.1/">1.7.1</a></dd>
+          
+        
+          
+          <dd><a href="1.7.0/">1.7.0</a></dd>
+          
+        
+          
+          <dd><a href="1.6.2/">1.6.2</a></dd>
+          
+        
+          
+          <dd><a href="1.6.1/">1.6.1</a></dd>
+          
+        
+          
+          <dd><a href="1.6.0/">1.6.0</a></dd>
+          
+        
+          
+          <dd><a href="1.5.3/">1.5.3</a></dd>
+          
+        
+          
+          <dd><a href="1.5.2/">1.5.2</a></dd>
+          
+        
+          
+          <dd><a href="1.5.1/">1.5.1</a></dd>
+          
+        
+          
+          <dd><a href="1.5.0/">1.5.0</a></dd>
+          
+        
+          
+          <dd><a href="1.4.2/">1.4.2</a></dd>
+          
+        
+          
+          <dd><a href="1.4.1/">1.4.1</a></dd>
+          
+        
+          
+          <dd><a href="1.4.0/">1.4.0</a></dd>
+          
+        
+          
+          <dd><a href="1.3.0/">1.3.0</a></dd>
+          
+        
+          
+          <dd><a href="1.2.5/">1.2.5</a></dd>
+          
+        
+          
+          <dd><a href="1.2.4/">1.2.4</a></dd>
+          
+        
+          
+          <dd><a href="1.2.3/">1.2.3</a></dd>
+          
+        
+          
+          <dd><a href="1.2.2/">1.2.2</a></dd>
+          
+        
+          
+          <dd><a href="1.2.1/">1.2.1</a></dd>
+          
+        
+          
+          <dd><a href="1.2.0/">1.2.0</a></dd>
+          
+        
+          
+          <dd><a href="1.0.1/">1.0.1</a></dd>
+          
+        
+          
+          <dd><a href="1.0.0/">1.0.0</a></dd>
+          
+        
+          
+          <dd><a href="0.3.0/">0.3.0</a></dd>
+          
+        
+          
+          <dd><a href="0.2.0/">0.2.0</a></dd>
+          
+        
+          
+          <dd><a href="0.1.0/">0.1.0</a></dd>
+          
+        
+      </dl>
+      
+      
+      
+    </div>
+
 
   <script type="text/javascript">
       jQuery(function () {

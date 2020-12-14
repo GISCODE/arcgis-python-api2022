@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>arcgis.geometry module &mdash; arcgis 1.8.2 documentation</title>
+  <title>arcgis.geometry module &mdash; arcgis 1.8.3 documentation</title>
   
 
   
@@ -77,7 +77,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             
             
               <div class="version">
-                1.8.2
+                1.8.3
               </div>
             
           
@@ -143,6 +143,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <li class="toctree-l2"><a class="reference internal" href="#union">union</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#submodules">Submodules</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="arcgis.geometry.filters.html">arcgis.geometry.filters module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="arcgis.geometry.functions.html">arcgis.geometry.functions module</a></li>
 </ul>
 </li>
 </ul>
@@ -153,7 +154,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <li class="toctree-l1"><a class="reference internal" href="arcgis.schematics.html">arcgis.schematics module</a></li>
 <li class="toctree-l1"><a class="reference internal" href="arcgis.widgets.html">arcgis.widgets module</a></li>
 <li class="toctree-l1"><a class="reference internal" href="arcgis.apps.html">arcgis.apps module</a></li>
-<li class="toctree-l1"><a class="reference internal" href="arcgis.learn.html">arcgis.learn module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.learn.toc.html">arcgis.learn module</a></li>
 </ul>
 
             
@@ -587,6 +588,21 @@ to figure out the geometry type and returns the correct type as the example belo
 <span class="nb">print</span> <span class="p">(</span><span class="nb">isinstance</span><span class="p">(</span><span class="n">geom</span><span class="p">,</span> <span class="n">Polygon</span><span class="p">)</span> <span class="c1"># True</span>
 </pre></div>
 </div>
+<dl class="py method">
+<dt id="arcgis.geometry.Geometry.EWKT">
+<em class="property">property </em><code class="sig-name descname">EWKT</code><a class="headerlink" href="#arcgis.geometry.Geometry.EWKT" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the extended well-known text (EWKT) representation for OGC geometry.
+It provides a portable representation of a geometry value as a text
+string.
+Any true curves in the geometry will be densified into approximate
+curves in the WKT string.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>string</p>
+</dd>
+</dl>
+</dd></dl>
+
 <dl class="py method">
 <dt id="arcgis.geometry.Geometry.JSON">
 <em class="property">property </em><code class="sig-name descname">JSON</code><a class="headerlink" href="#arcgis.geometry.Geometry.JSON" title="Permalink to this definition">¶</a></dt>
@@ -2070,11 +2086,12 @@ geometries.</p>
 <h2>areas_and_lengths<a class="headerlink" href="#areas-and-lengths" title="Permalink to this headline">¶</a></h2>
 <dl class="py function">
 <dt id="arcgis.geometry.areas_and_lengths">
-<code class="sig-prename descclassname">arcgis.geometry.</code><code class="sig-name descname">areas_and_lengths</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">polygons</span></em>, <em class="sig-param"><span class="n">length_unit</span></em>, <em class="sig-param"><span class="n">area_unit</span></em>, <em class="sig-param"><span class="n">calculation_type</span></em>, <em class="sig-param"><span class="n">spatial_ref</span><span class="o">=</span><span class="default_value">4326</span></em>, <em class="sig-param"><span class="n">gis</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.geometry.areas_and_lengths" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">arcgis.geometry.</code><code class="sig-name descname">areas_and_lengths</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">polygons</span></em>, <em class="sig-param"><span class="n">length_unit</span></em>, <em class="sig-param"><span class="n">area_unit</span></em>, <em class="sig-param"><span class="n">calculation_type</span></em>, <em class="sig-param"><span class="n">spatial_ref</span><span class="o">=</span><span class="default_value">4326</span></em>, <em class="sig-param"><span class="n">gis</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">future</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.geometry.areas_and_lengths" title="Permalink to this definition">¶</a></dt>
 <dd><p>The areas_and_lengths function calculates areas and perimeter lengths
 for each polygon specified in the input array.</p>
 <dl>
-<dt>Inputs:</dt><dd><dl>
+<dt>Inputs:</dt><dd><blockquote>
+<div><dl>
 <dt>polygons - The array of polygons whose areas and lengths are</dt><dd><p>to be computed.</p>
 </dd>
 <dt>length_unit - The length unit in which the perimeters of</dt><dd><p>polygons will be calculated. If calculation_type
@@ -2135,6 +2152,8 @@ is preserved.</p>
 </dl>
 </dd>
 </dl>
+</div></blockquote>
+<p>future - boolean. This operation determines if the job is run asynchronously or not.</p>
 </dd>
 <dt>Output:</dt><dd><p>JSON as dictionary</p>
 </dd>
@@ -2146,12 +2165,12 @@ is preserved.</p>
 <h2>auto_complete<a class="headerlink" href="#auto-complete" title="Permalink to this headline">¶</a></h2>
 <dl class="py function">
 <dt id="arcgis.geometry.auto_complete">
-<code class="sig-prename descclassname">arcgis.geometry.</code><code class="sig-name descname">auto_complete</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">polygons</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">polylines</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">spatial_ref</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">gis</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.geometry.auto_complete" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">arcgis.geometry.</code><code class="sig-name descname">auto_complete</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">polygons</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">polylines</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">spatial_ref</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">gis</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">future</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.geometry.auto_complete" title="Permalink to this definition">¶</a></dt>
 <dd><p>The auto_complete function simplifies the process of
 constructing new polygons that are adjacent to other polygons.
 It constructs polygons that fill in the gaps between existing
 polygons and a set of polylines.</p>
-<dl class="simple">
+<dl>
 <dt>Inputs:</dt><dd><dl class="simple">
 <dt>polygons -</dt><dd><p>array of Polygon objects</p>
 </dd>
@@ -2160,6 +2179,7 @@ polygons and a set of polylines.</p>
 <dt>spatial_ref -</dt><dd><p>spatial reference of the input geometries WKID</p>
 </dd>
 </dl>
+<p>future - boolean. This operation determines if the job is run asynchronously or not.</p>
 </dd>
 </dl>
 </dd></dl>
@@ -2169,13 +2189,14 @@ polygons and a set of polylines.</p>
 <h2>buffer<a class="headerlink" href="#buffer" title="Permalink to this headline">¶</a></h2>
 <dl class="py function">
 <dt id="arcgis.geometry.buffer">
-<code class="sig-prename descclassname">arcgis.geometry.</code><code class="sig-name descname">buffer</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">geometries</span></em>, <em class="sig-param"><span class="n">in_sr</span></em>, <em class="sig-param"><span class="n">distances</span></em>, <em class="sig-param"><span class="n">unit</span></em>, <em class="sig-param"><span class="n">out_sr</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">buffer_sr</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">union_results</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">geodesic</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">gis</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.geometry.buffer" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">arcgis.geometry.</code><code class="sig-name descname">buffer</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">geometries</span></em>, <em class="sig-param"><span class="n">in_sr</span></em>, <em class="sig-param"><span class="n">distances</span></em>, <em class="sig-param"><span class="n">unit</span></em>, <em class="sig-param"><span class="n">out_sr</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">buffer_sr</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">union_results</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">geodesic</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">gis</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">future</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.geometry.buffer" title="Permalink to this definition">¶</a></dt>
 <dd><p>The buffer function is performed on a geometry service resource
 The result of this function is buffered polygons at the
 specified distances for the input geometry array. Options are
 available to union buffers and to use geodesic distance.</p>
 <p>Inputs:</p>
 <blockquote>
+<div><blockquote>
 <div><dl class="simple">
 <dt>geometries -</dt><dd><p>The array of geometries to be buffered.</p>
 </dd>
@@ -2204,6 +2225,8 @@ the geometry type, unit and bufferSR.</p>
 </dd>
 </dl>
 </div></blockquote>
+<p>future - boolean. This operation determines if the job is run asynchronously or not.</p>
+</div></blockquote>
 </dd></dl>
 
 </div>
@@ -2211,7 +2234,7 @@ the geometry type, unit and bufferSR.</p>
 <h2>convex_hull<a class="headerlink" href="#convex-hull" title="Permalink to this headline">¶</a></h2>
 <dl class="py function">
 <dt id="arcgis.geometry.convex_hull">
-<code class="sig-prename descclassname">arcgis.geometry.</code><code class="sig-name descname">convex_hull</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">geometries</span></em>, <em class="sig-param"><span class="n">spatial_ref</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">gis</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.geometry.convex_hull" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">arcgis.geometry.</code><code class="sig-name descname">convex_hull</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">geometries</span></em>, <em class="sig-param"><span class="n">spatial_ref</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">gis</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">future</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.geometry.convex_hull" title="Permalink to this definition">¶</a></dt>
 <dd><p>The convex_hull function is performed on a geometry service
 resource. It returns the convex hull of the input geometry. The
 input geometry can be a point, multipoint, polyline, or polygon.
@@ -2223,6 +2246,7 @@ spatial_ref - The well-known ID or a spatial reference JSON object for</p>
 <blockquote>
 <div><p>the output geometry.</p>
 </div></blockquote>
+<p>future - boolean. This operation determines if the job is run asynchronously or not.</p>
 </dd>
 </dl>
 </dd></dl>
@@ -2232,13 +2256,13 @@ spatial_ref - The well-known ID or a spatial reference JSON object for</p>
 <h2>cut<a class="headerlink" href="#cut" title="Permalink to this headline">¶</a></h2>
 <dl class="py function">
 <dt id="arcgis.geometry.cut">
-<code class="sig-prename descclassname">arcgis.geometry.</code><code class="sig-name descname">cut</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">cutter</span></em>, <em class="sig-param"><span class="n">target</span></em>, <em class="sig-param"><span class="n">spatial_ref</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">gis</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.geometry.cut" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">arcgis.geometry.</code><code class="sig-name descname">cut</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">cutter</span></em>, <em class="sig-param"><span class="n">target</span></em>, <em class="sig-param"><span class="n">spatial_ref</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">gis</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">future</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.geometry.cut" title="Permalink to this definition">¶</a></dt>
 <dd><p>The cut function is performed on a geometry service resource. This
 function splits the target polyline or polygon where it’s crossed
 by the cutter polyline.
 At 10.1 and later, this function calls simplify on the input
 cutter and target geometries.</p>
-<dl class="simple">
+<dl>
 <dt>Inputs:</dt><dd><dl class="simple">
 <dt>cutter - The polyline that will be used to divide the target</dt><dd><p>into pieces where it crosses the target.The spatial reference
 of the polylines is specified by spatial_ref. The structure of the
@@ -2253,6 +2277,7 @@ spatial_ref.</p>
 <dt>spatial_ref - The well-known ID or a spatial reference JSON object for</dt><dd><p>the output geometry.</p>
 </dd>
 </dl>
+<p>future - boolean. This operation determines if the job is run asynchronously or not.</p>
 </dd>
 </dl>
 </dd></dl>
@@ -2262,11 +2287,11 @@ spatial_ref.</p>
 <h2>densify<a class="headerlink" href="#densify" title="Permalink to this headline">¶</a></h2>
 <dl class="py function">
 <dt id="arcgis.geometry.densify">
-<code class="sig-prename descclassname">arcgis.geometry.</code><code class="sig-name descname">densify</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">geometries</span></em>, <em class="sig-param"><span class="n">spatial_ref</span></em>, <em class="sig-param"><span class="n">max_segment_length</span></em>, <em class="sig-param"><span class="n">length_unit</span></em>, <em class="sig-param"><span class="n">geodesic</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">gis</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.geometry.densify" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">arcgis.geometry.</code><code class="sig-name descname">densify</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">geometries</span></em>, <em class="sig-param"><span class="n">spatial_ref</span></em>, <em class="sig-param"><span class="n">max_segment_length</span></em>, <em class="sig-param"><span class="n">length_unit</span></em>, <em class="sig-param"><span class="n">geodesic</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">gis</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">future</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.geometry.densify" title="Permalink to this definition">¶</a></dt>
 <dd><p>The densify function is performed using the GIS’s geometry engine.
 This function densifies geometries by plotting points between
 existing vertices.</p>
-<dl class="simple">
+<dl>
 <dt>Inputs:</dt><dd><dl class="simple">
 <dt>geometries - The array of geometries to be densified. The</dt><dd><p>structure of each geometry in the array is the same as the
 structure of the JSON geometry objects returned by the ArcGIS
@@ -2291,6 +2316,7 @@ earth. If geodesic is set to false, then 2D Euclidean distance
 is used to calculate max_segment_length. The default is false.</p>
 </dd>
 </dl>
+<p>future - boolean. This operation determines if the job is run asynchronously or not.</p>
 </dd>
 </dl>
 </dd></dl>
@@ -2300,14 +2326,14 @@ is used to calculate max_segment_length. The default is false.</p>
 <h2>difference<a class="headerlink" href="#difference" title="Permalink to this headline">¶</a></h2>
 <dl class="py function">
 <dt id="arcgis.geometry.difference">
-<code class="sig-prename descclassname">arcgis.geometry.</code><code class="sig-name descname">difference</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">geometries</span></em>, <em class="sig-param"><span class="n">spatial_ref</span></em>, <em class="sig-param"><span class="n">geometry</span></em>, <em class="sig-param"><span class="n">gis</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.geometry.difference" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">arcgis.geometry.</code><code class="sig-name descname">difference</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">geometries</span></em>, <em class="sig-param"><span class="n">spatial_ref</span></em>, <em class="sig-param"><span class="n">geometry</span></em>, <em class="sig-param"><span class="n">gis</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">future</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.geometry.difference" title="Permalink to this definition">¶</a></dt>
 <dd><p>The difference function is performed on a geometry service
 resource. This function constructs the set-theoretic difference
 between each element of an array of geometries and another geometry
 the so-called difference geometry. In other words, let B be the
 difference geometry. For each geometry, A, in the input geometry
 array, it constructs A-B.</p>
-<dl class="simple">
+<dl>
 <dt>Inputs:</dt><dd><dl class="simple">
 <dt>geometries -  An array of points, multipoints, polylines or</dt><dd><p>polygons. The structure of each geometry in the array is the
 same as the structure of the JSON geometry objects returned by
@@ -2321,6 +2347,7 @@ syntax is not supported.</p>
 <dt>spatial_ref - The well-known ID of the spatial reference or a spatial</dt><dd><p>reference JSON object for the input geometries.</p>
 </dd>
 </dl>
+<p>future - boolean. This operation determines if the job is run asynchronously or not.</p>
 </dd>
 </dl>
 </dd></dl>
@@ -2330,11 +2357,11 @@ syntax is not supported.</p>
 <h2>distance<a class="headerlink" href="#distance" title="Permalink to this headline">¶</a></h2>
 <dl class="py function">
 <dt id="arcgis.geometry.distance">
-<code class="sig-prename descclassname">arcgis.geometry.</code><code class="sig-name descname">distance</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">spatial_ref</span></em>, <em class="sig-param"><span class="n">geometry1</span></em>, <em class="sig-param"><span class="n">geometry2</span></em>, <em class="sig-param"><span class="n">distance_unit</span><span class="o">=</span><span class="default_value">''</span></em>, <em class="sig-param"><span class="n">geodesic</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">gis</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.geometry.distance" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">arcgis.geometry.</code><code class="sig-name descname">distance</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">spatial_ref</span></em>, <em class="sig-param"><span class="n">geometry1</span></em>, <em class="sig-param"><span class="n">geometry2</span></em>, <em class="sig-param"><span class="n">distance_unit</span><span class="o">=</span><span class="default_value">''</span></em>, <em class="sig-param"><span class="n">geodesic</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">gis</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">future</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.geometry.distance" title="Permalink to this definition">¶</a></dt>
 <dd><p>The distance function is performed on a geometry service resource.
 It reports the 2D Euclidean or geodesic distance between the two
 geometries.</p>
-<dl class="simple">
+<dl>
 <dt>Inputs:</dt><dd><dl class="simple">
 <dt>spatial_ref - The well-known ID or a spatial reference JSON object for</dt><dd><p>input geometries.</p>
 </dd>
@@ -2353,6 +2380,7 @@ specified, the planar distance is returned. The default value is
 false.</p>
 </dd>
 </dl>
+<p>future - boolean. This operation determines if the job is run asynchronously or not.</p>
 </dd>
 </dl>
 </dd></dl>
@@ -2362,7 +2390,7 @@ false.</p>
 <h2>find_transformation<a class="headerlink" href="#find-transformation" title="Permalink to this headline">¶</a></h2>
 <dl class="py function">
 <dt id="arcgis.geometry.find_transformation">
-<code class="sig-prename descclassname">arcgis.geometry.</code><code class="sig-name descname">find_transformation</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">in_sr</span></em>, <em class="sig-param"><span class="n">out_sr</span></em>, <em class="sig-param"><span class="n">extent_of_interest</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">num_of_results</span><span class="o">=</span><span class="default_value">1</span></em>, <em class="sig-param"><span class="n">gis</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.geometry.find_transformation" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">arcgis.geometry.</code><code class="sig-name descname">find_transformation</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">in_sr</span></em>, <em class="sig-param"><span class="n">out_sr</span></em>, <em class="sig-param"><span class="n">extent_of_interest</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">num_of_results</span><span class="o">=</span><span class="default_value">1</span></em>, <em class="sig-param"><span class="n">gis</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">future</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.geometry.find_transformation" title="Permalink to this definition">¶</a></dt>
 <dd><p>The find_transformations function is performed on a geometry
 service resource. This function returns a list of applicable
 geographic transformations you should use when projecting
@@ -2379,7 +2407,7 @@ case where a predefined transformation needs to be applied in the
 reverse direction, it is returned as a forward composite
 transformation containing one transformation and a transformForward
 element with a value of false.</p>
-<dl class="simple">
+<dl>
 <dt>Inputs:</dt><dd><dl class="simple">
 <dt>in_sr - The well-known ID (gis,WKID) of the spatial reference or a</dt><dd><p>spatial reference JSON object for the input geometries</p>
 </dd>
@@ -2395,6 +2423,7 @@ envelope.</p>
 -1, all applicable transformations are returned.</p>
 </dd>
 </dl>
+<p>future - boolean. This operation determines if the job is run asynchronously or not.</p>
 </dd>
 </dl>
 </dd></dl>
@@ -2404,7 +2433,7 @@ envelope.</p>
 <h2>from_geo_coordinate_string<a class="headerlink" href="#from-geo-coordinate-string" title="Permalink to this headline">¶</a></h2>
 <dl class="py function">
 <dt id="arcgis.geometry.from_geo_coordinate_string">
-<code class="sig-prename descclassname">arcgis.geometry.</code><code class="sig-name descname">from_geo_coordinate_string</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">spatial_ref</span></em>, <em class="sig-param"><span class="n">strings</span></em>, <em class="sig-param"><span class="n">conversion_type</span></em>, <em class="sig-param"><span class="n">conversion_mode</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">gis</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.geometry.from_geo_coordinate_string" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">arcgis.geometry.</code><code class="sig-name descname">from_geo_coordinate_string</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">spatial_ref</span></em>, <em class="sig-param"><span class="n">strings</span></em>, <em class="sig-param"><span class="n">conversion_type</span></em>, <em class="sig-param"><span class="n">conversion_mode</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">gis</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">future</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.geometry.from_geo_coordinate_string" title="Permalink to this definition">¶</a></dt>
 <dd><p>The from_geo_coordinate_string function is performed on a geometry
 service resource. The function converts an array of well-known
 strings into xy-coordinates based on the conversion type and
@@ -2458,6 +2487,7 @@ utmNorthSouth - Uses north/south latitude indicators instead of</p>
 </div></blockquote>
 </dd>
 </dl>
+<p>future - boolean. This operation determines if the job is run asynchronously or not.</p>
 </dd>
 </dl>
 </dd>
@@ -2469,7 +2499,7 @@ utmNorthSouth - Uses north/south latitude indicators instead of</p>
 <h2>generalize<a class="headerlink" href="#generalize" title="Permalink to this headline">¶</a></h2>
 <dl class="py function">
 <dt id="arcgis.geometry.generalize">
-<code class="sig-prename descclassname">arcgis.geometry.</code><code class="sig-name descname">generalize</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">spatial_ref</span></em>, <em class="sig-param"><span class="n">geometries</span></em>, <em class="sig-param"><span class="n">max_deviation</span></em>, <em class="sig-param"><span class="n">deviation_unit</span></em>, <em class="sig-param"><span class="n">gis</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.geometry.generalize" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">arcgis.geometry.</code><code class="sig-name descname">generalize</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">spatial_ref</span></em>, <em class="sig-param"><span class="n">geometries</span></em>, <em class="sig-param"><span class="n">max_deviation</span></em>, <em class="sig-param"><span class="n">deviation_unit</span></em>, <em class="sig-param"><span class="n">gis</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">future</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.geometry.generalize" title="Permalink to this definition">¶</a></dt>
 <dd><p>The generalize function is performed on a geometry service
 resource. The generalize function simplifies the input geometries
 using the Douglas-Peucker algorithm with a specified maximum
@@ -2491,6 +2521,7 @@ geometry.</p>
 <dt>deviation_unit - A unit for maximum deviation. If a unit is not</dt><dd><p>specified, the units are derived from spatial_ref.</p>
 </dd>
 </dl>
+<p>future - boolean. This operation determines if the job is run asynchronously or not.</p>
 </dd>
 </dl>
 </dd></dl>
@@ -2500,14 +2531,14 @@ geometry.</p>
 <h2>intersect<a class="headerlink" href="#intersect" title="Permalink to this headline">¶</a></h2>
 <dl class="py function">
 <dt id="arcgis.geometry.intersect">
-<code class="sig-prename descclassname">arcgis.geometry.</code><code class="sig-name descname">intersect</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">spatial_ref</span></em>, <em class="sig-param"><span class="n">geometries</span></em>, <em class="sig-param"><span class="n">geometry</span></em>, <em class="sig-param"><span class="n">gis</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.geometry.intersect" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">arcgis.geometry.</code><code class="sig-name descname">intersect</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">spatial_ref</span></em>, <em class="sig-param"><span class="n">geometries</span></em>, <em class="sig-param"><span class="n">geometry</span></em>, <em class="sig-param"><span class="n">gis</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">future</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.geometry.intersect" title="Permalink to this definition">¶</a></dt>
 <dd><p>The intersect function is performed on a geometry service
 resource. This function constructs the set-theoretic intersection
 between an array of geometries and another geometry. The dimension
 of each resultant geometry is the minimum dimension of the input
 geometry in the geometries array and the other geometry specified
 by the geometry parameter.</p>
-<dl class="simple">
+<dl>
 <dt>Inputs:</dt><dd><dl class="simple">
 <dt>spatial_ref - The well-known ID or a spatial reference JSON object for the</dt><dd><p>input geometries.</p>
 </dd>
@@ -2518,6 +2549,7 @@ ArcGIS REST API.</p>
 <dt>geometry - A single geometry of any type with a dimension equal to</dt><dd><p>or greater than the elements of geometries.</p>
 </dd>
 </dl>
+<p>future - boolean. This operation determines if the job is run asynchronously or not.</p>
 </dd>
 </dl>
 </dd></dl>
@@ -2527,12 +2559,12 @@ ArcGIS REST API.</p>
 <h2>label_points<a class="headerlink" href="#label-points" title="Permalink to this headline">¶</a></h2>
 <dl class="py function">
 <dt id="arcgis.geometry.label_points">
-<code class="sig-prename descclassname">arcgis.geometry.</code><code class="sig-name descname">label_points</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">spatial_ref</span></em>, <em class="sig-param"><span class="n">polygons</span></em>, <em class="sig-param"><span class="n">gis</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.geometry.label_points" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">arcgis.geometry.</code><code class="sig-name descname">label_points</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">spatial_ref</span></em>, <em class="sig-param"><span class="n">polygons</span></em>, <em class="sig-param"><span class="n">gis</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">future</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.geometry.label_points" title="Permalink to this definition">¶</a></dt>
 <dd><p>The label_points function is performed on a geometry service
 resource. The labelPoints function calculates an interior point
 for each polygon specified in the input array. These interior
 points can be used by clients for labeling the polygons.</p>
-<dl class="simple">
+<dl>
 <dt>Inputs:</dt><dd><dl class="simple">
 <dt>spatial_ref - The well-known ID of the spatial reference or a spatial</dt><dd><p>reference JSON object for the input polygons.</p>
 </dd>
@@ -2540,6 +2572,7 @@ points can be used by clients for labeling the polygons.</p>
 spatial_ref.</p>
 </dd>
 </dl>
+<p>future - boolean. This operation determines if the job is run asynchronously or not.</p>
 </dd>
 </dl>
 </dd></dl>
@@ -2549,12 +2582,12 @@ spatial_ref.</p>
 <h2>lengths<a class="headerlink" href="#lengths" title="Permalink to this headline">¶</a></h2>
 <dl class="py function">
 <dt id="arcgis.geometry.lengths">
-<code class="sig-prename descclassname">arcgis.geometry.</code><code class="sig-name descname">lengths</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">spatial_ref</span></em>, <em class="sig-param"><span class="n">polylines</span></em>, <em class="sig-param"><span class="n">length_unit</span></em>, <em class="sig-param"><span class="n">calculation_type</span></em>, <em class="sig-param"><span class="n">gis</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.geometry.lengths" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">arcgis.geometry.</code><code class="sig-name descname">lengths</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">spatial_ref</span></em>, <em class="sig-param"><span class="n">polylines</span></em>, <em class="sig-param"><span class="n">length_unit</span></em>, <em class="sig-param"><span class="n">calculation_type</span></em>, <em class="sig-param"><span class="n">gis</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">future</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.geometry.lengths" title="Permalink to this definition">¶</a></dt>
 <dd><p>The lengths function is performed on a geometry service resource.
 This function calculates the 2D Euclidean or geodesic lengths of
 each polyline specified in the input array.</p>
-<dl class="simple">
-<dt>Inputs:</dt><dd><dl class="simple">
+<dl>
+<dt>Inputs:</dt><dd><dl>
 <dt>spatial_ref - The well-known ID of the spatial reference or a spatial</dt><dd><p>reference JSON object for the input polylines.</p>
 </dd>
 <dt>polylines - The array of polylines whose lengths are to be</dt><dd><p>computed.</p>
@@ -2567,7 +2600,7 @@ linear esriUnits constant such as esriSRUnit_Meter or
 esriSRUnit_SurveyMile. If calculation_type is not planar and
 length_unit is not specified, then the units are meters.</p>
 </dd>
-<dt>calculation_type - calculation_type defines the length calculation</dt><dd><dl class="simple">
+<dt>calculation_type - calculation_type defines the length calculation</dt><dd><dl>
 <dt>for the geometry. The type can be one of the following values:</dt><dd><dl class="simple">
 <dt>planar - Planar measurements use 2D Euclidean distance to</dt><dd><p>calculate length. This type should only be used if the length
 needs to be calculated in the given spatial reference.
@@ -2582,6 +2615,7 @@ shortest path between two points on an earth ellipsoid.</p>
 geometry in its coordinate system is preserved.</p>
 </dd>
 </dl>
+<p>future - boolean. This operation determines if the job is run asynchronously or not.</p>
 </dd>
 </dl>
 </dd>
@@ -2595,7 +2629,7 @@ geometry in its coordinate system is preserved.</p>
 <h2>offset<a class="headerlink" href="#offset" title="Permalink to this headline">¶</a></h2>
 <dl class="py function">
 <dt id="arcgis.geometry.offset">
-<code class="sig-prename descclassname">arcgis.geometry.</code><code class="sig-name descname">offset</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">geometries</span></em>, <em class="sig-param"><span class="n">offset_distance</span></em>, <em class="sig-param"><span class="n">offset_unit</span></em>, <em class="sig-param"><span class="n">offset_how</span><span class="o">=</span><span class="default_value">'esriGeometryOffsetRounded'</span></em>, <em class="sig-param"><span class="n">bevel_ratio</span><span class="o">=</span><span class="default_value">10</span></em>, <em class="sig-param"><span class="n">simplify_result</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">spatial_ref</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">gis</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.geometry.offset" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">arcgis.geometry.</code><code class="sig-name descname">offset</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">geometries</span></em>, <em class="sig-param"><span class="n">offset_distance</span></em>, <em class="sig-param"><span class="n">offset_unit</span></em>, <em class="sig-param"><span class="n">offset_how</span><span class="o">=</span><span class="default_value">'esriGeometryOffsetRounded'</span></em>, <em class="sig-param"><span class="n">bevel_ratio</span><span class="o">=</span><span class="default_value">10</span></em>, <em class="sig-param"><span class="n">simplify_result</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">spatial_ref</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">gis</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">future</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.geometry.offset" title="Permalink to this definition">¶</a></dt>
 <dd><p>The offset function is performed on a geometry service resource.
 This function constructs geometries that are offset from the
 given input geometries. If the offset parameter is positive, the
@@ -2644,6 +2678,7 @@ geometries. The default is false.</p>
 <dt>spatial_ref - The well-known ID or a spatial reference JSON object for the</dt><dd><p>input geometries.</p>
 </dd>
 </dl>
+<p>future - boolean. This operation determines if the job is run asynchronously or not.</p>
 </dd>
 </dl>
 </dd></dl>
@@ -2653,7 +2688,7 @@ geometries. The default is false.</p>
 <h2>project<a class="headerlink" href="#project" title="Permalink to this headline">¶</a></h2>
 <dl class="py function">
 <dt id="arcgis.geometry.project">
-<code class="sig-prename descclassname">arcgis.geometry.</code><code class="sig-name descname">project</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">geometries</span></em>, <em class="sig-param"><span class="n">in_sr</span></em>, <em class="sig-param"><span class="n">out_sr</span></em>, <em class="sig-param"><span class="n">transformation</span><span class="o">=</span><span class="default_value">''</span></em>, <em class="sig-param"><span class="n">transform_forward</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">gis</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.geometry.project" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">arcgis.geometry.</code><code class="sig-name descname">project</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">geometries</span></em>, <em class="sig-param"><span class="n">in_sr</span></em>, <em class="sig-param"><span class="n">out_sr</span></em>, <em class="sig-param"><span class="n">transformation</span><span class="o">=</span><span class="default_value">''</span></em>, <em class="sig-param"><span class="n">transform_forward</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">gis</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">future</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.geometry.project" title="Permalink to this definition">¶</a></dt>
 <dd><p>The project function is performed on a geometry service resource.
 This function projects an array of input geometries from the input
 spatial reference to the output spatial reference.</p>
@@ -2678,6 +2713,7 @@ transformation is specified, a value for the transformForward
 parameter must also be specified. The default value is false.</p>
 </dd>
 </dl>
+<p>future - boolean. This operation determines if the job is run asynchronously or not.</p>
 </dd>
 <dt>Example:</dt><dd><p>input_geom = [{“x”: -17568824.55, “y”: 2428377.35}, {“x”: -17568456.88, “y”: 2428431.352}]
 result = project(geometries = input_geom, in_sr = 3857, out_sr = 4326)</p>
@@ -2693,7 +2729,7 @@ result = project(geometries = input_geom, in_sr = 3857, out_sr = 4326)</p>
 <h2>relation<a class="headerlink" href="#relation" title="Permalink to this headline">¶</a></h2>
 <dl class="py function">
 <dt id="arcgis.geometry.relation">
-<code class="sig-prename descclassname">arcgis.geometry.</code><code class="sig-name descname">relation</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">geometries1</span></em>, <em class="sig-param"><span class="n">geometries2</span></em>, <em class="sig-param"><span class="n">spatial_ref</span></em>, <em class="sig-param"><span class="n">spatial_relation</span><span class="o">=</span><span class="default_value">'esriGeometryRelationIntersection'</span></em>, <em class="sig-param"><span class="n">relation_param</span><span class="o">=</span><span class="default_value">''</span></em>, <em class="sig-param"><span class="n">gis</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.geometry.relation" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">arcgis.geometry.</code><code class="sig-name descname">relation</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">geometries1</span></em>, <em class="sig-param"><span class="n">geometries2</span></em>, <em class="sig-param"><span class="n">spatial_ref</span></em>, <em class="sig-param"><span class="n">spatial_relation</span><span class="o">=</span><span class="default_value">'esriGeometryRelationIntersection'</span></em>, <em class="sig-param"><span class="n">relation_param</span><span class="o">=</span><span class="default_value">''</span></em>, <em class="sig-param"><span class="n">gis</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">future</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.geometry.relation" title="Permalink to this definition">¶</a></dt>
 <dd><p>The relation function is performed on a geometry service resource.
 This function determines the pairs of geometries from the input
 geometry arrays that participate in the specified spatial relation.
@@ -2724,6 +2760,7 @@ esriGeometryRelationWithin | esriGeometryRelationRelation</p>
 <dt>relation_param - The Shape Comparison Language string to be</dt><dd><p>evaluated.</p>
 </dd>
 </dl>
+<p>future - boolean. This operation determines if the job is run asynchronously or not.</p>
 </dd>
 </dl>
 </dd></dl>
@@ -2733,7 +2770,7 @@ esriGeometryRelationWithin | esriGeometryRelationRelation</p>
 <h2>reshape<a class="headerlink" href="#reshape" title="Permalink to this headline">¶</a></h2>
 <dl class="py function">
 <dt id="arcgis.geometry.reshape">
-<code class="sig-prename descclassname">arcgis.geometry.</code><code class="sig-name descname">reshape</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">spatial_ref</span></em>, <em class="sig-param"><span class="n">target</span></em>, <em class="sig-param"><span class="n">reshaper</span></em>, <em class="sig-param"><span class="n">gis</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.geometry.reshape" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">arcgis.geometry.</code><code class="sig-name descname">reshape</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">spatial_ref</span></em>, <em class="sig-param"><span class="n">target</span></em>, <em class="sig-param"><span class="n">reshaper</span></em>, <em class="sig-param"><span class="n">gis</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">future</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.geometry.reshape" title="Permalink to this definition">¶</a></dt>
 <dd><p>The reshape function is performed on a geometry service resource.
 It reshapes a polyline or polygon feature by constructing a
 polyline over the feature. The feature takes the shape of the
@@ -2745,7 +2782,8 @@ feature to the last.</p>
 </dd>
 </dl>
 <p>target -  The polyline or polygon to be reshaped.
-reshaper - The single-part polyline that does the reshaping.</p>
+reshaper - The single-part polyline that does the reshaping.
+future - boolean. This operation determines if the job is run asynchronously or not.</p>
 </dd>
 </dl>
 </dd></dl>
@@ -2755,7 +2793,7 @@ reshaper - The single-part polyline that does the reshaping.</p>
 <h2>to_geo_coordinate_string<a class="headerlink" href="#to-geo-coordinate-string" title="Permalink to this headline">¶</a></h2>
 <dl class="py function">
 <dt id="arcgis.geometry.to_geo_coordinate_string">
-<code class="sig-prename descclassname">arcgis.geometry.</code><code class="sig-name descname">to_geo_coordinate_string</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">spatial_ref</span></em>, <em class="sig-param"><span class="n">coordinates</span></em>, <em class="sig-param"><span class="n">conversion_type</span></em>, <em class="sig-param"><span class="n">conversion_mode</span><span class="o">=</span><span class="default_value">'mgrsDefault'</span></em>, <em class="sig-param"><span class="n">num_of_digits</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">rounding</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="n">add_spaces</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="n">gis</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.geometry.to_geo_coordinate_string" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">arcgis.geometry.</code><code class="sig-name descname">to_geo_coordinate_string</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">spatial_ref</span></em>, <em class="sig-param"><span class="n">coordinates</span></em>, <em class="sig-param"><span class="n">conversion_type</span></em>, <em class="sig-param"><span class="n">conversion_mode</span><span class="o">=</span><span class="default_value">'mgrsDefault'</span></em>, <em class="sig-param"><span class="n">num_of_digits</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">rounding</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="n">add_spaces</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="n">gis</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">future</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.geometry.to_geo_coordinate_string" title="Permalink to this definition">¶</a></dt>
 <dd><p>The to_geo_coordinate_string function is performed on a geometry
 service resource. The function converts an array of
 xy-coordinates into well-known strings based on the conversion type
@@ -2819,6 +2857,7 @@ types MGRS, USNG and UTM. The default value for MGRS is false,
 while the default value for both USNG and UTM is true.</p>
 </dd>
 </dl>
+<p>future - boolean. This operation determines if the job is run asynchronously or not.</p>
 </dd>
 </dl>
 </dd></dl>
@@ -2828,7 +2867,7 @@ while the default value for both USNG and UTM is true.</p>
 <h2>trim_extend<a class="headerlink" href="#trim-extend" title="Permalink to this headline">¶</a></h2>
 <dl class="py function">
 <dt id="arcgis.geometry.trim_extend">
-<code class="sig-prename descclassname">arcgis.geometry.</code><code class="sig-name descname">trim_extend</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">spatial_ref</span></em>, <em class="sig-param"><span class="n">polylines</span></em>, <em class="sig-param"><span class="n">trim_extend_to</span></em>, <em class="sig-param"><span class="n">extend_how</span><span class="o">=</span><span class="default_value">0</span></em>, <em class="sig-param"><span class="n">gis</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.geometry.trim_extend" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">arcgis.geometry.</code><code class="sig-name descname">trim_extend</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">spatial_ref</span></em>, <em class="sig-param"><span class="n">polylines</span></em>, <em class="sig-param"><span class="n">trim_extend_to</span></em>, <em class="sig-param"><span class="n">extend_how</span><span class="o">=</span><span class="default_value">0</span></em>, <em class="sig-param"><span class="n">gis</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">future</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.geometry.trim_extend" title="Permalink to this definition">¶</a></dt>
 <dd><p>The trim_extend function is performed on a geometry service
 resource. This function trims or extends each polyline specified
 in the input array, using the user-specified guide polylines. When
@@ -2870,6 +2909,7 @@ its attributes empty. Incompatible with esriKeepAttributes.</p>
 16 - Do not extend the ‘to’ end of any path.</p>
 </dd>
 </dl>
+<p>future - boolean. This operation determines if the job is run asynchronously or not.</p>
 </dd>
 </dl>
 </dd></dl>
@@ -2879,7 +2919,7 @@ its attributes empty. Incompatible with esriKeepAttributes.</p>
 <h2>union<a class="headerlink" href="#union" title="Permalink to this headline">¶</a></h2>
 <dl class="py function">
 <dt id="arcgis.geometry.union">
-<code class="sig-prename descclassname">arcgis.geometry.</code><code class="sig-name descname">union</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">spatial_ref</span></em>, <em class="sig-param"><span class="n">geometries</span></em>, <em class="sig-param"><span class="n">gis</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.geometry.union" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">arcgis.geometry.</code><code class="sig-name descname">union</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">spatial_ref</span></em>, <em class="sig-param"><span class="n">geometries</span></em>, <em class="sig-param"><span class="n">gis</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">future</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.geometry.union" title="Permalink to this definition">¶</a></dt>
 <dd><p>The union function is performed on a geometry service resource.
 This function constructs the set-theoretic union of the geometries
 in the input array. All inputs must be of the same type.</p>
@@ -2888,7 +2928,8 @@ spatial_ref - The well-known ID of the spatial reference or a spatial</p>
 <blockquote>
 <div><p>reference json object.</p>
 </div></blockquote>
-<p>geometries - The array of geometries to be unioned.</p>
+<p>geometries - The array of geometries to be unioned.
+future - boolean. This operation determines if the job is run asynchronously or not.</p>
 </dd></dl>
 
 </div>
@@ -2905,6 +2946,31 @@ spatial_ref - The well-known ID of the spatial reference or a spatial</p>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.geometry.filters.html#overlaps">overlaps</a></li>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.geometry.filters.html#touches">touches</a></li>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.geometry.filters.html#within">within</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.geometry.functions.html">arcgis.geometry.functions module</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.geometry.functions.html#areas-and-lengths">areas_and_lengths</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.geometry.functions.html#auto-complete">auto_complete</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.geometry.functions.html#buffer">buffer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.geometry.functions.html#convex-hull">convex_hull</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.geometry.functions.html#cut">cut</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.geometry.functions.html#densify">densify</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.geometry.functions.html#difference">difference</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.geometry.functions.html#distance">distance</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.geometry.functions.html#find-transformation">find_transformation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.geometry.functions.html#from-geo-coordinate-string">from_geo_coordinate_string</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.geometry.functions.html#generalize">generalize</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.geometry.functions.html#intersect">intersect</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.geometry.functions.html#label-points">label_points</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.geometry.functions.html#lengths">lengths</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.geometry.functions.html#offset">offset</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.geometry.functions.html#project">project</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.geometry.functions.html#relation">relation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.geometry.functions.html#reshape">reshape</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.geometry.functions.html#simplify">simplify</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.geometry.functions.html#to-geo-coordinate-string">to_geo_coordinate_string</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.geometry.functions.html#trim-extend">trim_extend</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.geometry.functions.html#union">union</a></li>
 </ul>
 </li>
 </ul>
@@ -2934,7 +3000,7 @@ spatial_ref - The well-known ID of the spatial reference or a spatial</p>
   <div role="contentinfo">
     <p>
         
-        &copy; Copyright 2016-2019, Esri
+        &copy; Copyright 2016-2021, Esri
 
     </p>
   </div>
@@ -2956,6 +3022,134 @@ spatial_ref - The well-known ID of the spatial reference or a spatial</p>
 
   </div>
   
+    Options v: 1.8.3
+
+  <div class="rst-versions" data-toggle="rst-versions" role="note" aria-label="versions">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      <span class="fa fa-book"> Pick an earlier version</span>
+      v: 1.8.3
+      <span class="fa fa-caret-down"></span>
+    </span>
+    <div class="rst-other-versions">
+      
+      
+      <dl>
+        <dt>Versions</dt>
+        
+          
+          <dd><a href="1.8.2/">1.8.2</a></dd>
+          
+        
+          
+          <dd><a href="1.8.1/">1.8.1</a></dd>
+          
+        
+          
+          <dd><a href="1.8.0/">1.8.0</a></dd>
+          
+        
+          
+          <dd><a href="1.7.1/">1.7.1</a></dd>
+          
+        
+          
+          <dd><a href="1.7.0/">1.7.0</a></dd>
+          
+        
+          
+          <dd><a href="1.6.2/">1.6.2</a></dd>
+          
+        
+          
+          <dd><a href="1.6.1/">1.6.1</a></dd>
+          
+        
+          
+          <dd><a href="1.6.0/">1.6.0</a></dd>
+          
+        
+          
+          <dd><a href="1.5.3/">1.5.3</a></dd>
+          
+        
+          
+          <dd><a href="1.5.2/">1.5.2</a></dd>
+          
+        
+          
+          <dd><a href="1.5.1/">1.5.1</a></dd>
+          
+        
+          
+          <dd><a href="1.5.0/">1.5.0</a></dd>
+          
+        
+          
+          <dd><a href="1.4.2/">1.4.2</a></dd>
+          
+        
+          
+          <dd><a href="1.4.1/">1.4.1</a></dd>
+          
+        
+          
+          <dd><a href="1.4.0/">1.4.0</a></dd>
+          
+        
+          
+          <dd><a href="1.3.0/">1.3.0</a></dd>
+          
+        
+          
+          <dd><a href="1.2.5/">1.2.5</a></dd>
+          
+        
+          
+          <dd><a href="1.2.4/">1.2.4</a></dd>
+          
+        
+          
+          <dd><a href="1.2.3/">1.2.3</a></dd>
+          
+        
+          
+          <dd><a href="1.2.2/">1.2.2</a></dd>
+          
+        
+          
+          <dd><a href="1.2.1/">1.2.1</a></dd>
+          
+        
+          
+          <dd><a href="1.2.0/">1.2.0</a></dd>
+          
+        
+          
+          <dd><a href="1.0.1/">1.0.1</a></dd>
+          
+        
+          
+          <dd><a href="1.0.0/">1.0.0</a></dd>
+          
+        
+          
+          <dd><a href="0.3.0/">0.3.0</a></dd>
+          
+        
+          
+          <dd><a href="0.2.0/">0.2.0</a></dd>
+          
+        
+          
+          <dd><a href="0.1.0/">0.1.0</a></dd>
+          
+        
+      </dl>
+      
+      
+      
+    </div>
+
 
   <script type="text/javascript">
       jQuery(function () {

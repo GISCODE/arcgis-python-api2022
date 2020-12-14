@@ -24,154 +24,158 @@ interpolate_points
 
 create_viewshed
 ---------------
-.. automethod:: arcgis.raster.analytics.create_viewshed
+.. autofunction:: arcgis.raster.analytics.create_viewshed
 
 
 summarize_raster_within
 -----------------------
-.. automethod:: arcgis.raster.analytics.summarize_raster_within
+.. autofunction:: arcgis.raster.analytics.summarize_raster_within
 
 
 calculate_density
 -----------------
-.. automethod:: arcgis.raster.analytics.calculate_density
+.. autofunction:: arcgis.raster.analytics.calculate_density
 
 
 classify
 --------
-.. automethod:: arcgis.raster.analytics.classify
+.. autofunction:: arcgis.raster.analytics.classify
 
 
 segment
 ------------------
-.. automethod:: arcgis.raster.analytics.segment
+.. autofunction:: arcgis.raster.analytics.segment
 
 
 train_classifier
 ----------------
-.. automethod:: arcgis.raster.analytics.train_classifier
+.. autofunction:: arcgis.raster.analytics.train_classifier
 
 
 convert_feature_to_raster
 -------------------------
-.. automethod:: arcgis.raster.analytics.convert_feature_to_raster
+.. autofunction:: arcgis.raster.analytics.convert_feature_to_raster
 
 
 convert_raster_to_feature
 -------------------------
-.. automethod:: arcgis.raster.analytics.convert_raster_to_feature
+.. autofunction:: arcgis.raster.analytics.convert_raster_to_feature
 
 
 copy_raster
 -----------
-.. automethod:: arcgis.raster.analytics.copy_raster
+.. autofunction:: arcgis.raster.analytics.copy_raster
 
 
 create_image_collection
 -----------
-.. automethod:: arcgis.raster.analytics.create_image_collection
+.. autofunction:: arcgis.raster.analytics.create_image_collection
 
 
 add_image
 ---------
-.. automethod:: arcgis.raster.analytics.add_image
+.. autofunction:: arcgis.raster.analytics.add_image
 
 
 delete_image
 ------------
-.. automethod:: arcgis.raster.analytics.delete_image
+.. autofunction:: arcgis.raster.analytics.delete_image
 
 
 delete_image_collection
 -----------------------
-.. automethod:: arcgis.raster.analytics.delete_image_collection
+.. autofunction:: arcgis.raster.analytics.delete_image_collection
 
 list_datastore_content
 -----------------------
-.. automethod:: arcgis.raster.analytics.list_datastore_content
+.. autofunction:: arcgis.raster.analytics.list_datastore_content
 
 
 build_footprints
 -----------------------
-.. automethod:: arcgis.raster.analytics.build_footprints
+.. autofunction:: arcgis.raster.analytics.build_footprints
 
 
 build_overview
 -----------------------
-.. automethod:: arcgis.raster.analytics.build_overview
+.. autofunction:: arcgis.raster.analytics.build_overview
 
 
 calculate_statistics
 -----------------------
-.. automethod:: arcgis.raster.analytics.calculate_statistics
+.. autofunction:: arcgis.raster.analytics.calculate_statistics
 
 optimum_travel_cost_network
 -----------------------
-.. automethod:: arcgis.raster.analytics.optimum_travel_cost_network
+.. autofunction:: arcgis.raster.analytics.optimum_travel_cost_network
 
 determine_travel_costpath_as_polyline
 -------------------------------------
-.. automethod:: arcgis.raster.analytics.determine_travel_costpath_as_polyline
+.. autofunction:: arcgis.raster.analytics.determine_travel_costpath_as_polyline
 generate_multidimensional_anomaly
 ---------------------------------
-.. automethod:: arcgis.raster.analytics.generate_multidimensional_anomaly
+.. autofunction:: arcgis.raster.analytics.generate_multidimensional_anomaly
 
 build_multidimensional_transpose
 --------------------------------
-.. automethod:: arcgis.raster.analytics.build_multidimensional_transpose
+.. autofunction:: arcgis.raster.analytics.build_multidimensional_transpose
 
 aggregate_multidimensional_raster
 ---------------------------------
-.. automethod:: arcgis.raster.analytics.aggregate_multidimensional_raster
+.. autofunction:: arcgis.raster.analytics.aggregate_multidimensional_raster
 
 generate_trend_raster
 ---------------------
-.. automethod:: arcgis.raster.analytics.generate_trend_raster
+.. autofunction:: arcgis.raster.analytics.generate_trend_raster
 
 predict_using_trend_raster
 ---------------------------
-.. automethod:: arcgis.raster.analytics.predict_using_trend_raster
+.. autofunction:: arcgis.raster.analytics.predict_using_trend_raster
 
 find_argument_statistics
 ------------------------
-.. automethod:: arcgis.raster.analytics.find_argument_statistics
+.. autofunction:: arcgis.raster.analytics.find_argument_statistics
 
 linear_spectral_unmixing
 -------------------------
-.. automethod:: arcgis.raster.analytics.linear_spectral_unmixing
+.. autofunction:: arcgis.raster.analytics.linear_spectral_unmixing
 
 subset_multidimensional_raster
 ------------------------------
-.. automethod:: arcgis.raster.analytics.subset_multidimensional_raster
+.. autofunction:: arcgis.raster.analytics.subset_multidimensional_raster
 
 costpath_as_polyline
 --------------------
-.. automethod:: arcgis.raster.analytics.costpath_as_polyline
+.. autofunction:: arcgis.raster.analytics.costpath_as_polyline
 
 define_nodata
 -------------
-.. automethod:: arcgis.raster.analytics.define_nodata
+.. autofunction:: arcgis.raster.analytics.define_nodata
 
 optimal_path_as_line
 --------------------
-.. automethod:: arcgis.raster.analytics.optimal_path_as_line
+.. autofunction:: arcgis.raster.analytics.optimal_path_as_line
 
 optimal_region_connections
 --------------------------
-.. automethod:: arcgis.raster.analytics.optimal_region_connections
+.. autofunction:: arcgis.raster.analytics.optimal_region_connections
 
 analyze_changes_using_ccdc
 --------------------------
-.. automethod:: arcgis.raster.analytics.analyze_changes_using_ccdc
+.. autofunction:: arcgis.raster.analytics.analyze_changes_using_ccdc
 
 detect_change_using_change_analysis_raster
 ------------------------------------------
-.. automethod:: arcgis.raster.analytics.detect_change_using_change_analysis_raster
+.. autofunction:: arcgis.raster.analytics.detect_change_using_change_analysis_raster
 
 manage_multidimensional_raster
 ------------------------------
-.. automethod:: arcgis.raster.analytics.manage_multidimensional_raster
+.. autofunction:: arcgis.raster.analytics.manage_multidimensional_raster
 
 sample
 ------
-.. automethod:: arcgis.raster.analytics.sample
+.. autofunction:: arcgis.raster.analytics.sample
+
+merge_multidimensional_rasters
+------------------------------
+.. autofunction:: arcgis.raster.analytics.merge_multidimensional_rasters
