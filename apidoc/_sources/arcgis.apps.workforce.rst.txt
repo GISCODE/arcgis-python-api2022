@@ -10,7 +10,7 @@ It can be used as shown in the following code example.
 
 .. code-block:: python
 
-    # Get a Project and search the assignments and workers.
+    # Get a Project and search the assignments and workers, create new Workforce project
 
     import arcgis
     gis = arcgis.gis.GIS("https://arcgis.com", "<username>", "<password>")
@@ -18,6 +18,7 @@ It can be used as shown in the following code example.
     project = arcgis.apps.workforce.Project(item)
     assignments = project.assignments.search()
     workers = project.workers.search()
+    project2 = arcgis.apps.workforce.create_project('new_project', summary='This project was created by Python')
 
 Assignment
 ----------
@@ -43,6 +44,12 @@ Dispatcher
 ----------
 .. autoclass:: arcgis.apps.workforce.Dispatcher
     :members: name, contact_number, user_id
+    :inherited-members:
+
+Integration
+----------
+.. autoclass:: arcgis.apps.workforce.Integration
+    :members: integration_id, prompt, url_template, assignment_type
     :inherited-members:
 
 Project

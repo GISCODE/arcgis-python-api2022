@@ -141,3 +141,4 @@ Submodules
    :maxdepth: 3
 
    arcgis.geometry.filters
+   arcgis.geometry.functions

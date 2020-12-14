@@ -1,0 +1,523 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>arcgis.viz &mdash; arcgis 0.1 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="arcgis 0.1 documentation" href="../../index.html"/>
+        <link rel="up" title="Module code" href="../index.html"/> 
+
+  
+  <script src="../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-nav-search">
+        
+
+        
+          <a href="../../index.html" class="icon icon-home"> arcgis
+        
+
+        
+        </a>
+
+        
+          
+          
+            <div class="version">
+              0.1
+            </div>
+          
+        
+
+        
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+        
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        
+          
+          
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../arcgis.html">arcgis package</a></li>
+</ul>
+
+          
+        
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../index.html">arcgis</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="../index.html">Module code</a> &raquo;</li>
+      
+    <li>arcgis.viz</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <h1>Source code for arcgis.viz</h1><div class="highlight"><pre>
+<span class="kn">import</span> <span class="nn">arcgis.gis</span>
+<span class="kn">import</span> <span class="nn">json</span>
+<span class="kn">import</span> <span class="nn">time</span>
+<span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">import</span> <span class="nn">tempfile</span>
+<span class="kn">import</span> <span class="nn">collections</span>
+<span class="kn">import</span> <span class="nn">random</span>
+<span class="kn">import</span> <span class="nn">string</span>
+<span class="kn">from</span> <span class="nn">contextlib</span> <span class="kn">import</span> <span class="n">contextmanager</span>
+
+<span class="kn">from</span> <span class="nn">arcgis.tools</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="kn">from</span> <span class="nn">arcgis.lyr</span> <span class="kn">import</span> <span class="o">*</span>
+
+<span class="c">#from IPython.html import widgets</span>
+<span class="c">#from IPython.utils.traitlets import Unicode, Int, List</span>
+<span class="k">try</span><span class="p">:</span>
+        <span class="kn">from</span> <span class="nn">ipywidgets</span> <span class="kn">import</span> <span class="n">widgets</span>
+<span class="k">except</span><span class="p">:</span>
+        <span class="kn">from</span> <span class="nn">IPython.html</span> <span class="kn">import</span> <span class="n">widgets</span>
+<span class="c">#from IPython.html import widgets</span>
+<span class="k">try</span><span class="p">:</span>
+        <span class="kn">from</span> <span class="nn">traitlets</span> <span class="kn">import</span> <span class="n">Unicode</span><span class="p">,</span> <span class="n">Int</span><span class="p">,</span> <span class="n">List</span>
+<span class="k">except</span><span class="p">:</span>
+        <span class="kn">from</span> <span class="nn">IPython.utils.traitlets</span> <span class="kn">import</span> <span class="n">Unicode</span><span class="p">,</span> <span class="n">Int</span><span class="p">,</span> <span class="n">List</span>
+
+
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">The arcgis.viz module provides components for visualizing GIS data and analysis.</span>
+<span class="sd">This module includes components such as MapView - an IPython Notebook widget for </span>
+<span class="sd">working with maps, as well as WebMap and WebScene components that enable 2D and 3D</span>
+<span class="sd">mapping and visualization in ArcGIS Online and on ArcGIS Portals.</span>
+<span class="sd">&quot;&quot;&quot;</span>
+
+<span class="nd">@contextmanager</span>
+<span class="k">def</span> <span class="nf">_tempinput</span><span class="p">(</span><span class="n">data</span><span class="p">):</span>
+    <span class="n">temp</span> <span class="o">=</span> <span class="n">tempfile</span><span class="o">.</span><span class="n">NamedTemporaryFile</span><span class="p">(</span><span class="n">delete</span><span class="o">=</span><span class="bp">False</span><span class="p">)</span>
+    <span class="n">temp</span><span class="o">.</span><span class="n">write</span><span class="p">((</span><span class="nb">bytes</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="s">&#39;UTF-8&#39;</span><span class="p">)))</span>
+    <span class="n">temp</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+    <span class="k">yield</span> <span class="n">temp</span><span class="o">.</span><span class="n">name</span>
+    <span class="n">os</span><span class="o">.</span><span class="n">unlink</span><span class="p">(</span><span class="n">temp</span><span class="o">.</span><span class="n">name</span><span class="p">)</span>
+
+<span class="c"># pylint: disable=fixme, line-too-long</span>
+<div class="viewcode-block" id="WebMap"><a class="viewcode-back" href="../../arcgis.viz.html#arcgis.viz.WebMap">[docs]</a><span class="k">class</span> <span class="nc">WebMap</span><span class="p">(</span><span class="n">collections</span><span class="o">.</span><span class="n">OrderedDict</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Represents a webmap and provides access to it&#39;s basemaps and operational layers as well</span>
+<span class="sd">    as functionality to visualize and interact with them.</span>
+<span class="sd">    http://resources.arcgis.com/en/help/arcgis-web-map-json/index.html#/Web_map_format_overview/02qt00000007000000/</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">webmapitem</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Constructs a Webmap object given it&#39;s item from ArcGIS Online or Portal.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="n">webmapitem</span><span class="o">.</span><span class="n">type</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span> <span class="o">!=</span> <span class="s">&#39;web map&#39;</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="s">&quot;item type must be web map&quot;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">item</span> <span class="o">=</span> <span class="n">webmapitem</span>
+        <span class="n">webmapdict</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">item</span><span class="o">.</span><span class="n">get_data</span><span class="p">()</span>
+        <span class="n">collections</span><span class="o">.</span><span class="n">OrderedDict</span><span class="o">.</span><span class="n">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">webmapdict</span><span class="p">)</span>
+        <span class="c">#dict.update(webmapdict) </span>
+                
+    <span class="k">def</span> <span class="nf">_repr_html_</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="c">#return &#39;&lt;iframe width=810 height=600 src=&quot;&#39;+&quot;http://developers.arcgis.com/javascript/samples/mobile_arcgis/?webmap=&quot;+self.item.itemid+&#39;&quot;/&gt;&#39;</span>
+        <span class="k">return</span> <span class="s">&#39;&lt;iframe width=960 height=600 src=&quot;&#39;</span><span class="o">+</span><span class="bp">self</span><span class="o">.</span><span class="n">item</span><span class="o">.</span><span class="n">_portal</span><span class="o">.</span><span class="n">url</span>  <span class="o">+</span> <span class="s">&quot;/home/webmap/viewer.html?webmap=&quot;</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">item</span><span class="o">.</span><span class="n">itemid</span> <span class="o">+</span> <span class="s">&#39;&quot;/&gt;&#39;</span>
+
+    <span class="c">#def __repr__(self):</span>
+    <span class="c">#    dictrepr = collections.OrderedDict.__repr__(self)</span>
+    <span class="c">#    return &#39;%s(%s)&#39; % (type(self).__name__, dictrepr)</span>
+
+    <span class="k">def</span> <span class="nf">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
+
+<div class="viewcode-block" id="WebMap.update"><a class="viewcode-back" href="../../arcgis.viz.html#arcgis.viz.WebMap.update">[docs]</a>    <span class="k">def</span> <span class="nf">update</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="c">#with _tempinput(self.__str__()) as tempfilename:</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">item</span><span class="o">.</span><span class="n">update</span><span class="p">({</span> <span class="s">&#39;text&#39;</span><span class="p">:</span><span class="bp">self</span><span class="o">.</span><span class="n">__str__</span><span class="p">()</span> <span class="p">})</span>
+</div></div>
+<div class="viewcode-block" id="WebScene"><a class="viewcode-back" href="../../arcgis.viz.html#arcgis.viz.WebScene">[docs]</a><span class="k">class</span> <span class="nc">WebScene</span><span class="p">(</span><span class="n">collections</span><span class="o">.</span><span class="n">OrderedDict</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Represents a web scene and provides access to it&#39;s basemaps and operational layers as well</span>
+<span class="sd">    as functionality to visualize and interact with them.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">websceneitem</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Constructs a WebScene object given it&#39;s item from ArcGIS Online or Portal.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="n">websceneitem</span><span class="o">.</span><span class="n">type</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span> <span class="o">!=</span> <span class="s">&#39;web scene&#39;</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="s">&quot;item type must be web scene&quot;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">item</span> <span class="o">=</span> <span class="n">websceneitem</span>
+        <span class="n">webscenedict</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">item</span><span class="o">.</span><span class="n">get_data</span><span class="p">()</span>
+        <span class="n">collections</span><span class="o">.</span><span class="n">OrderedDict</span><span class="o">.</span><span class="n">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">webscenedict</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">_repr_html_</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="s">&#39;&lt;iframe width=960 height=600 src=&quot;&#39;</span><span class="o">+</span><span class="s">&quot;http://www.arcgis.com/home/webscene/viewer.html?webscene=&quot;</span><span class="o">+</span><span class="bp">self</span><span class="o">.</span><span class="n">item</span><span class="o">.</span><span class="n">itemid</span><span class="o">+</span><span class="s">&#39;&quot;/&gt;&#39;</span>
+
+    <span class="c">#def __repr__(self):</span>
+    <span class="c">#    dictrepr = dict.__repr__(self)</span>
+    <span class="c">#    return &#39;%s(%s)&#39; % (type(self).__name__, dictrepr)</span>
+
+    <span class="k">def</span> <span class="nf">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
+
+<div class="viewcode-block" id="WebScene.update"><a class="viewcode-back" href="../../arcgis.viz.html#arcgis.viz.WebScene.update">[docs]</a>    <span class="k">def</span> <span class="nf">update</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">with</span> <span class="n">_tempinput</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">__str__</span><span class="p">())</span> <span class="k">as</span> <span class="n">tempfilename</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">item</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">tempfilename</span><span class="p">)</span>
+</div></div>
+<div class="viewcode-block" id="MapView"><a class="viewcode-back" href="../../arcgis.viz.html#arcgis.viz.MapView">[docs]</a><span class="k">class</span> <span class="nc">MapView</span><span class="p">(</span><span class="n">widgets</span><span class="o">.</span><span class="n">DOMWidget</span><span class="p">):</span>
+    <span class="n">_view_name</span> <span class="o">=</span> <span class="n">Unicode</span><span class="p">(</span><span class="s">&#39;MapView&#39;</span><span class="p">,</span> <span class="n">sync</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+    <span class="n">basemap</span> <span class="o">=</span> <span class="n">Unicode</span><span class="p">(</span><span class="s">&#39;topo&#39;</span><span class="p">,</span> <span class="n">sync</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+    <span class="n">width</span> <span class="o">=</span> <span class="n">Unicode</span><span class="p">(</span><span class="s">&#39;100%&#39;</span><span class="p">,</span> <span class="n">sync</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+    <span class="n">zoom</span> <span class="o">=</span> <span class="n">Int</span><span class="p">(</span><span class="mi">6</span><span class="p">,</span> <span class="n">sync</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+    <span class="nb">id</span> <span class="o">=</span> <span class="n">Unicode</span><span class="p">(</span><span class="s">&#39;&#39;</span><span class="p">,</span> <span class="n">sync</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+    <span class="n">center</span> <span class="o">=</span> <span class="n">List</span><span class="p">([</span><span class="mf">28.7124568</span><span class="p">,</span> <span class="mf">77.1175102</span><span class="p">],</span> <span class="n">sync</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+    <span class="n">mode</span> <span class="o">=</span> <span class="n">Unicode</span><span class="p">(</span><span class="s">&#39;navigate&#39;</span><span class="p">,</span> <span class="n">sync</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+    <span class="n">addlayer</span> <span class="o">=</span> <span class="n">Unicode</span><span class="p">(</span><span class="s">&#39;&#39;</span><span class="p">,</span> <span class="n">sync</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+    <span class="n">start_time</span> <span class="o">=</span> <span class="n">Unicode</span><span class="p">(</span><span class="s">&#39;&#39;</span><span class="p">,</span> <span class="n">sync</span> <span class="o">=</span> <span class="bp">True</span><span class="p">)</span> <span class="c">#Unicode(&#39;1/1/1989 UTC&#39;, sync = True)</span>
+    <span class="n">end_time</span> <span class="o">=</span> <span class="n">Unicode</span><span class="p">(</span><span class="s">&#39;&#39;</span><span class="p">,</span> <span class="n">sync</span> <span class="o">=</span> <span class="bp">True</span><span class="p">)</span> <span class="c">#Unicode(&#39;1/1/1991 UTC&#39;, sync = True)</span>
+    <span class="n">_swipe_div</span> <span class="o">=</span> <span class="n">Unicode</span><span class="p">(</span><span class="s">&#39;&#39;</span><span class="p">,</span> <span class="n">sync</span> <span class="o">=</span> <span class="bp">True</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Constructor&quot;&quot;&quot;</span>
+        <span class="nb">super</span><span class="p">(</span><span class="n">MapView</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">__init__</span><span class="p">(</span><span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_click_handlers</span> <span class="o">=</span> <span class="n">widgets</span><span class="o">.</span><span class="n">CallbackDispatcher</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_draw_end_handlers</span> <span class="o">=</span> <span class="n">widgets</span><span class="o">.</span><span class="n">CallbackDispatcher</span><span class="p">()</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">on_msg</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_handle_map_msg</span><span class="p">)</span>
+        
+        <span class="bp">self</span><span class="o">.</span><span class="n">basemaps</span> <span class="o">=</span> <span class="p">[</span><span class="s">&quot;streets&quot;</span><span class="p">,</span> <span class="s">&quot;satellite&quot;</span><span class="p">,</span> <span class="s">&quot;hybrid&quot;</span><span class="p">,</span> <span class="s">&quot;topo&quot;</span><span class="p">,</span> <span class="s">&quot;gray&quot;</span><span class="p">,</span> <span class="s">&quot;dark-gray&quot;</span><span class="p">,</span> <span class="s">&quot;oceans&quot;</span><span class="p">,</span> <span class="s">&quot;national-geographic&quot;</span><span class="p">,</span> <span class="s">&quot;terrain&quot;</span><span class="p">,</span> <span class="s">&quot;osm&quot;</span><span class="p">]</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_swipe_div</span> <span class="o">=</span> <span class="s">&#39;swipeDiv&#39;</span> <span class="o">+</span><span class="s">&#39;&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">(</span><span class="n">string</span><span class="o">.</span><span class="n">ascii_uppercase</span> <span class="o">+</span> <span class="n">string</span><span class="o">.</span><span class="n">digits</span><span class="p">)</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">6</span><span class="p">))</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">item</span> <span class="o">=</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s">&#39;item&#39;</span><span class="p">,</span> <span class="bp">None</span><span class="p">)</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">item</span> <span class="ow">is</span> <span class="ow">not</span> <span class="bp">None</span><span class="p">:</span>
+            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">item</span><span class="o">.</span><span class="n">type</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span> <span class="o">!=</span> <span class="s">&#39;web map&#39;</span><span class="p">:</span>
+                <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="s">&quot;item type must be web map&quot;</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">id</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">item</span><span class="o">.</span><span class="n">id</span>
+    
+<div class="viewcode-block" id="MapView.draw"><a class="viewcode-back" href="../../arcgis.viz.html#arcgis.viz.MapView.draw">[docs]</a>    <span class="k">def</span> <span class="nf">draw</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">shape</span><span class="p">,</span> <span class="n">popup</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">symbol</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">attributes</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Draws a shape. </span>
+<span class="sd">        </span>
+<span class="sd">        Arguments:</span>
+<span class="sd">        shape is one of [&quot;circle&quot;, &quot;downarrow&quot;, &quot;ellipse&quot;, &quot;extent&quot;, &quot;freehandpolygon&quot;, </span>
+<span class="sd">        &quot;freehandpolyline&quot;, &quot;leftarrow&quot;, &quot;line&quot;, &quot;multipoint&quot;, &quot;point&quot;, &quot;polygon&quot;, &quot;polyline&quot;, </span>
+<span class="sd">        &quot;rectangle&quot;, &quot;rightarrow&quot;, &quot;triangle&quot;, &quot;uparrow&quot;, or geometry dict object]</span>
+<span class="sd">        </span>
+<span class="sd">        popup is a dict containing &quot;title&quot; and &quot;content&quot; as keys that will be displayed</span>
+<span class="sd">        when the shape is clicked</span>
+
+<span class="sd">        symbol is a symbol specified in json format as described at http://resources.arcgis.com/en/help/arcgis-rest-api/index.html#//02r3000000n5000000</span>
+<span class="sd">        a default symbol is used is one is not specified</span>
+
+<span class="sd">        attributes is a dict containing name value pairs of fields and field values </span>
+<span class="sd">        associated with the graphic.</span>
+<span class="sd">         </span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">shape</span><span class="p">,</span> <span class="nb">list</span><span class="p">)</span> <span class="ow">and</span> <span class="nb">len</span><span class="p">(</span><span class="n">shape</span><span class="p">)</span> <span class="o">==</span> <span class="mi">2</span><span class="p">:</span> <span class="c"># [lat, long] pair</span>
+            <span class="n">shape</span> <span class="o">=</span> <span class="p">{</span> <span class="s">&#39;x&#39;</span><span class="p">:</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="s">&#39;y&#39;</span><span class="p">:</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="s">&quot;spatialReference&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s">&quot;wkid&quot;</span><span class="p">:</span><span class="mi">4326</span><span class="p">},</span> <span class="s">&#39;type&#39;</span><span class="p">:</span><span class="s">&#39;point&#39;</span> <span class="p">}</span>
+        <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">shape</span><span class="p">,</span> <span class="nb">tuple</span><span class="p">):</span> <span class="c"># (lat, long) pair</span>
+            <span class="n">shape</span> <span class="o">=</span> <span class="p">{</span> <span class="s">&#39;x&#39;</span><span class="p">:</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="s">&#39;y&#39;</span><span class="p">:</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="s">&quot;spatialReference&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s">&quot;wkid&quot;</span><span class="p">:</span><span class="mi">4326</span><span class="p">},</span> <span class="s">&#39;type&#39;</span><span class="p">:</span><span class="s">&#39;point&#39;</span> <span class="p">}</span>
+
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">shape</span><span class="p">,</span> <span class="nb">dict</span><span class="p">):</span>
+            <span class="n">graphic</span> <span class="o">=</span> <span class="p">{</span> 
+                <span class="s">&quot;geometry&quot;</span> <span class="p">:</span> <span class="n">shape</span><span class="p">,</span> 
+                <span class="s">&quot;infoTemplate&quot;</span> <span class="p">:</span> <span class="n">popup</span><span class="p">,</span>
+                <span class="s">&quot;symbol&quot;</span> <span class="p">:</span> <span class="n">symbol</span><span class="p">,</span>
+                <span class="s">&quot;attributes&quot;</span> <span class="p">:</span> <span class="n">attributes</span>
+                <span class="p">}</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">mode</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">(</span><span class="n">graphic</span><span class="p">)</span>
+            <span class="c">#print(json.dumps(graphic))</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">mode</span> <span class="o">=</span> <span class="n">shape</span>
+</div>
+<div class="viewcode-block" id="MapView.add_layer"><a class="viewcode-back" href="../../arcgis.viz.html#arcgis.viz.MapView.add_layer">[docs]</a>    <span class="k">def</span> <span class="nf">add_layer</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">item</span><span class="p">,</span> <span class="n">options</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Adds layers from the provided item</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">item</span><span class="p">,</span> <span class="n">arcgis</span><span class="o">.</span><span class="n">gis</span><span class="o">.</span><span class="n">Item</span><span class="p">):</span>
+            <span class="k">if</span> <span class="n">item</span><span class="o">.</span><span class="n">type</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span> <span class="o">==</span> <span class="s">&#39;feature service&#39;</span><span class="p">:</span>
+                <span class="n">fs</span> <span class="o">=</span> <span class="n">FeatureService</span><span class="p">(</span><span class="n">item</span><span class="p">)</span>
+                <span class="n">lyr_url</span> <span class="o">=</span> <span class="s">&quot;&quot;</span>
+                <span class="k">for</span> <span class="n">layer</span> <span class="ow">in</span> <span class="n">fs</span><span class="o">.</span><span class="n">layers</span><span class="p">:</span>
+                    <span class="n">lyr_url</span> <span class="o">=</span> <span class="n">layer</span><span class="p">[</span><span class="s">&#39;url&#39;</span><span class="p">]</span>
+                    <span class="c">#if it&#39;s from this portal, only then add token...</span>
+                    <span class="k">try</span><span class="p">:</span>
+                        <span class="k">if</span> <span class="s">&#39;access&#39;</span> <span class="ow">in</span> <span class="n">item</span> <span class="ow">and</span> <span class="n">item</span><span class="p">[</span><span class="s">&#39;access&#39;</span><span class="p">]</span> <span class="o">!=</span> <span class="s">&#39;public&#39;</span><span class="p">:</span>
+                            <span class="n">lyr_url</span> <span class="o">=</span> <span class="n">layer</span><span class="p">[</span><span class="s">&#39;url&#39;</span><span class="p">]</span> <span class="o">+</span> <span class="s">&quot;?token=&quot;</span> <span class="o">+</span> <span class="n">item</span><span class="o">.</span><span class="n">_portal</span><span class="o">.</span><span class="n">con</span><span class="o">.</span><span class="n">token</span>
+                    <span class="k">except</span><span class="p">:</span>
+                        <span class="k">pass</span>
+                    
+                    <span class="n">js_layer</span> <span class="o">=</span> <span class="p">{</span>
+                        <span class="s">&quot;type&quot;</span> <span class="p">:</span> <span class="s">&quot;FeatureLayer&quot;</span><span class="p">,</span>
+                        <span class="s">&quot;url&quot;</span> <span class="p">:</span> <span class="n">lyr_url</span>
+                        <span class="p">}</span>
+                    <span class="k">if</span> <span class="n">options</span> <span class="ow">is</span> <span class="ow">not</span> <span class="bp">None</span><span class="p">:</span>
+                        <span class="n">js_layer</span><span class="o">.</span><span class="n">update</span><span class="p">({</span> <span class="s">&quot;options&quot;</span> <span class="p">:</span> <span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">(</span><span class="n">options</span><span class="p">)</span> <span class="p">})</span>
+
+                    <span class="bp">self</span><span class="o">.</span><span class="n">addlayer</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">(</span><span class="n">js_layer</span><span class="p">)</span>
+            
+            <span class="k">elif</span> <span class="n">item</span><span class="o">.</span><span class="n">type</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span> <span class="o">==</span> <span class="s">&#39;feature collection&#39;</span><span class="p">:</span>
+                <span class="n">fcdict</span> <span class="o">=</span> <span class="n">item</span><span class="o">.</span><span class="n">get_data</span><span class="p">()</span>
+                <span class="n">fc</span> <span class="o">=</span> <span class="n">FeatureCollection</span><span class="p">(</span><span class="n">fcdict</span><span class="p">[</span><span class="s">&#39;layers&#39;</span><span class="p">][</span><span class="mi">0</span><span class="p">])</span>
+                <span class="c">#layer = fcdict[&#39;layers&#39;][0]</span>
+
+                <span class="k">if</span> <span class="n">options</span> <span class="ow">is</span> <span class="ow">not</span> <span class="bp">None</span><span class="p">:</span>
+                    <span class="n">fc</span><span class="o">.</span><span class="n">update</span><span class="p">({</span> <span class="s">&quot;options&quot;</span> <span class="p">:</span> <span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">(</span><span class="n">options</span><span class="p">)</span> <span class="p">})</span>
+
+                <span class="bp">self</span><span class="o">.</span><span class="n">addlayer</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">(</span><span class="n">fc</span><span class="p">)</span>
+
+            <span class="k">elif</span> <span class="n">item</span><span class="o">.</span><span class="n">type</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span> <span class="o">==</span> <span class="s">&#39;image service&#39;</span><span class="p">:</span>
+                <span class="n">layer</span> <span class="o">=</span> <span class="n">ImageLayer</span><span class="p">(</span><span class="n">item</span><span class="p">)</span>
+                <span class="n">lyr_url</span> <span class="o">=</span> <span class="n">layer</span><span class="p">[</span><span class="s">&#39;url&#39;</span><span class="p">]</span>
+                <span class="k">try</span><span class="p">:</span>
+                    <span class="k">if</span> <span class="s">&#39;access&#39;</span> <span class="ow">in</span> <span class="n">item</span> <span class="ow">and</span> <span class="n">item</span><span class="p">[</span><span class="s">&#39;access&#39;</span><span class="p">]</span> <span class="o">!=</span> <span class="s">&#39;public&#39;</span><span class="p">:</span>
+                        <span class="n">lyr_url</span> <span class="o">=</span> <span class="n">layer</span><span class="p">[</span><span class="s">&#39;url&#39;</span><span class="p">]</span> <span class="o">+</span> <span class="s">&quot;?token=&quot;</span> <span class="o">+</span> <span class="n">item</span><span class="o">.</span><span class="n">_portal</span><span class="o">.</span><span class="n">con</span><span class="o">.</span><span class="n">token</span>
+                <span class="k">except</span><span class="p">:</span>
+                    <span class="k">pass</span>
+                
+                <span class="n">js_layer</span> <span class="o">=</span> <span class="p">{</span>
+                    <span class="s">&quot;type&quot;</span> <span class="p">:</span> <span class="s">&quot;ImageLayer&quot;</span><span class="p">,</span>
+                    <span class="s">&quot;url&quot;</span> <span class="p">:</span> <span class="n">lyr_url</span>
+                    <span class="p">}</span>
+                <span class="k">if</span> <span class="n">options</span> <span class="ow">is</span> <span class="ow">not</span> <span class="bp">None</span><span class="p">:</span>
+                    <span class="n">js_layer</span><span class="o">.</span><span class="n">update</span><span class="p">({</span> <span class="s">&quot;options&quot;</span> <span class="p">:</span> <span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">(</span><span class="n">options</span><span class="p">)</span> <span class="p">})</span>
+
+                <span class="bp">self</span><span class="o">.</span><span class="n">addlayer</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">(</span><span class="n">js_layer</span><span class="p">)</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="s">&quot;item type must be feature service or image service&quot;</span><span class="p">)</span>
+
+
+        <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">item</span><span class="p">,</span> <span class="n">FeatureService</span><span class="p">):</span>
+            <span class="k">for</span> <span class="n">layer</span> <span class="ow">in</span> <span class="n">item</span><span class="o">.</span><span class="n">layers</span><span class="p">:</span>
+                <span class="n">lyr_url</span> <span class="o">=</span> <span class="s">&quot;&quot;</span>
+                <span class="k">try</span><span class="p">:</span>
+                    <span class="k">if</span> <span class="s">&#39;access&#39;</span> <span class="ow">in</span> <span class="n">item</span> <span class="ow">and</span> <span class="n">item</span><span class="p">[</span><span class="s">&#39;access&#39;</span><span class="p">]</span> <span class="o">!=</span> <span class="s">&#39;public&#39;</span><span class="p">:</span>
+                        <span class="n">lyr_url</span> <span class="o">=</span> <span class="n">layer</span><span class="p">[</span><span class="s">&#39;url&#39;</span><span class="p">]</span> <span class="o">+</span> <span class="s">&quot;?token=&quot;</span> <span class="o">+</span> <span class="n">item</span><span class="o">.</span><span class="n">item</span><span class="o">.</span><span class="n">_portal</span><span class="o">.</span><span class="n">con</span><span class="o">.</span><span class="n">token</span>
+                <span class="k">except</span><span class="p">:</span>
+                    <span class="k">pass</span>
+                
+                <span class="n">js_layer</span> <span class="o">=</span> <span class="p">{</span>
+                    <span class="s">&quot;type&quot;</span> <span class="p">:</span> <span class="s">&quot;FeatureLayer&quot;</span><span class="p">,</span>
+                    <span class="s">&quot;url&quot;</span> <span class="p">:</span> <span class="n">lyr_url</span>
+                    <span class="p">}</span>
+                <span class="k">if</span> <span class="n">options</span> <span class="ow">is</span> <span class="ow">not</span> <span class="bp">None</span><span class="p">:</span>
+                    <span class="n">js_layer</span><span class="o">.</span><span class="n">update</span><span class="p">({</span> <span class="s">&quot;options&quot;</span> <span class="p">:</span> <span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">(</span><span class="n">options</span><span class="p">)</span> <span class="p">})</span>
+
+                <span class="bp">self</span><span class="o">.</span><span class="n">addlayer</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">(</span><span class="n">js_layer</span><span class="p">)</span>
+
+        <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">item</span><span class="p">,</span> <span class="n">FeatureCollection</span><span class="p">):</span>
+            <span class="k">if</span> <span class="n">options</span> <span class="ow">is</span> <span class="ow">not</span> <span class="bp">None</span><span class="p">:</span>
+                <span class="n">item</span><span class="o">.</span><span class="n">update</span><span class="p">({</span> <span class="s">&quot;options&quot;</span> <span class="p">:</span> <span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">(</span><span class="n">options</span><span class="p">)</span> <span class="p">})</span>
+
+            <span class="bp">self</span><span class="o">.</span><span class="n">addlayer</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">(</span><span class="n">item</span><span class="p">)</span>
+
+        <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">item</span><span class="p">,</span> <span class="n">Layer</span><span class="p">):</span>
+            <span class="n">layer</span> <span class="o">=</span> <span class="p">{</span>
+                <span class="s">&quot;type&quot;</span> <span class="p">:</span> <span class="s">&quot;FeatureLayer&quot;</span><span class="p">,</span>
+                <span class="s">&quot;url&quot;</span> <span class="p">:</span> <span class="n">item</span><span class="p">[</span><span class="s">&#39;url&#39;</span><span class="p">]</span> <span class="o">+</span> <span class="s">&quot;?token=&quot;</span> <span class="o">+</span> <span class="n">item</span><span class="o">.</span><span class="n">_portal</span><span class="o">.</span><span class="n">con</span><span class="o">.</span><span class="n">token</span>
+                <span class="p">}</span>
+            <span class="k">if</span> <span class="n">options</span> <span class="ow">is</span> <span class="ow">not</span> <span class="bp">None</span><span class="p">:</span>
+                <span class="n">layer</span><span class="o">.</span><span class="n">update</span><span class="p">({</span> <span class="s">&quot;options&quot;</span> <span class="p">:</span> <span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">(</span><span class="n">options</span><span class="p">)</span> <span class="p">})</span>
+
+            <span class="bp">self</span><span class="o">.</span><span class="n">addlayer</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">(</span><span class="n">layer</span><span class="p">)</span>
+            <span class="c">#json.dumps(item) </span>
+        
+        <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">item</span><span class="p">,</span> <span class="n">ImageLayer</span><span class="p">):</span>
+            <span class="n">layer</span> <span class="o">=</span> <span class="p">{</span>
+                <span class="s">&quot;type&quot;</span> <span class="p">:</span> <span class="s">&quot;ImageLayer&quot;</span><span class="p">,</span>
+                <span class="s">&quot;url&quot;</span> <span class="p">:</span> <span class="n">item</span><span class="p">[</span><span class="s">&#39;url&#39;</span><span class="p">]</span>
+                <span class="p">}</span>
+            <span class="k">if</span> <span class="n">options</span> <span class="ow">is</span> <span class="ow">not</span> <span class="bp">None</span><span class="p">:</span>
+                <span class="n">layer</span><span class="o">.</span><span class="n">update</span><span class="p">({</span> <span class="s">&quot;options&quot;</span> <span class="p">:</span> <span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">(</span><span class="n">options</span><span class="p">)</span> <span class="p">})</span>
+
+            <span class="bp">self</span><span class="o">.</span><span class="n">addlayer</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">(</span><span class="n">layer</span><span class="p">)</span>
+            <span class="c">#json.dumps(item) </span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">options</span> <span class="ow">is</span> <span class="ow">not</span> <span class="bp">None</span><span class="p">:</span>
+                <span class="n">item</span><span class="o">.</span><span class="n">update</span><span class="p">({</span> <span class="s">&quot;options&quot;</span> <span class="p">:</span> <span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">(</span><span class="n">options</span><span class="p">)</span> <span class="p">})</span>
+
+            <span class="bp">self</span><span class="o">.</span><span class="n">addlayer</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">(</span><span class="n">item</span><span class="p">)</span>
+
+            <span class="c">#layer = item</span>
+            <span class="sd">&#39;&#39;&#39; { </span>
+<span class="sd">                &quot;type&quot; : item[&#39;type&#39;], </span>
+<span class="sd">                &quot;url&quot; : item[&#39;url&#39;],</span>
+<span class="sd">                &quot;definition_expression&quot; : item[&#39;definition_expression&#39;]</span>
+<span class="sd">                &quot;opacity&quot; : 0.75</span>
+<span class="sd">                }</span>
+<span class="sd">            &#39;&#39;&#39;</span>
+            <span class="c">#self.addlayer = json.dumps(layer)</span>
+ </div>
+<div class="viewcode-block" id="MapView.clear_graphics"><a class="viewcode-back" href="../../arcgis.viz.html#arcgis.viz.MapView.clear_graphics">[docs]</a>    <span class="k">def</span> <span class="nf">clear_graphics</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">mode</span> <span class="o">=</span> <span class="s">&quot;###clear_graphics&quot;</span>
+    </div>
+<div class="viewcode-block" id="MapView.set_time_extent"><a class="viewcode-back" href="../../arcgis.viz.html#arcgis.viz.MapView.set_time_extent">[docs]</a>    <span class="k">def</span> <span class="nf">set_time_extent</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">start_time</span><span class="p">,</span> <span class="n">end_time</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">start_time</span> <span class="o">=</span> <span class="n">start_time</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">end_time</span> <span class="o">=</span> <span class="n">end_time</span>
+</div>
+<div class="viewcode-block" id="MapView.remove_layers"><a class="viewcode-back" href="../../arcgis.viz.html#arcgis.viz.MapView.remove_layers">[docs]</a>    <span class="k">def</span> <span class="nf">remove_layers</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">mode</span> <span class="o">=</span> <span class="s">&quot;###remove_layers&quot;</span>
+    
+    </div>
+<div class="viewcode-block" id="MapView.on_click"><a class="viewcode-back" href="../../arcgis.viz.html#arcgis.viz.MapView.on_click">[docs]</a>    <span class="k">def</span> <span class="nf">on_click</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">callback</span><span class="p">,</span> <span class="n">remove</span><span class="o">=</span><span class="bp">False</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Register a callback to execute when the map is clicked.</span>
+
+<span class="sd">        The callback will be called with one argument,</span>
+<span class="sd">        the clicked widget instance.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        remove : bool (optional)</span>
+<span class="sd">            Set to true to remove the callback from the list of callbacks.&quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_click_handlers</span><span class="o">.</span><span class="n">register_callback</span><span class="p">(</span><span class="n">callback</span><span class="p">,</span> <span class="n">remove</span><span class="o">=</span><span class="n">remove</span><span class="p">)</span>
+</div>
+<div class="viewcode-block" id="MapView.on_draw_end"><a class="viewcode-back" href="../../arcgis.viz.html#arcgis.viz.MapView.on_draw_end">[docs]</a>    <span class="k">def</span> <span class="nf">on_draw_end</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">callback</span><span class="p">,</span> <span class="n">remove</span><span class="o">=</span><span class="bp">False</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Register a callback to execute when something is drawn</span>
+
+<span class="sd">        The callback will be called with two argument,</span>
+<span class="sd">        the clicked widget instance, and the geometry drawn</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        remove : bool (optional)</span>
+<span class="sd">            Set to true to remove the callback from the list of callbacks.&quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_draw_end_handlers</span><span class="o">.</span><span class="n">register_callback</span><span class="p">(</span><span class="n">callback</span><span class="p">,</span> <span class="n">remove</span><span class="o">=</span><span class="n">remove</span><span class="p">)</span>
+</div>
+    <span class="k">def</span> <span class="nf">_handle_map_msg</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">_</span><span class="p">,</span> <span class="n">content</span><span class="p">,</span> <span class="n">buffers</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Handle a msg from the front-end.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        content: dict</span>
+<span class="sd">            Content of the msg.&quot;&quot;&quot;</span>
+        
+        <span class="k">if</span> <span class="n">content</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">&#39;event&#39;</span><span class="p">,</span> <span class="s">&#39;&#39;</span><span class="p">)</span> <span class="o">==</span> <span class="s">&#39;mouseclick&#39;</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_click_handlers</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">content</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">&#39;message&#39;</span><span class="p">,</span> <span class="bp">None</span><span class="p">))</span>
+        <span class="k">if</span> <span class="n">content</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">&#39;event&#39;</span><span class="p">,</span> <span class="s">&#39;&#39;</span><span class="p">)</span> <span class="o">==</span> <span class="s">&#39;draw-end&#39;</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_draw_end_handlers</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">content</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">&#39;message&#39;</span><span class="p">,</span> <span class="bp">None</span><span class="p">))</span></div>
+</pre></div>
+
+           </div>
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2016, Esri.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../',
+            VERSION:'0.1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

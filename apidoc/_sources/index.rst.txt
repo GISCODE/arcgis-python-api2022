@@ -27,7 +27,7 @@ Contents:
    arcgis.schematics
    arcgis.widgets
    arcgis.apps
-   arcgis.learn
+   arcgis.learn.toc
 
 Indices and tables
 ==================

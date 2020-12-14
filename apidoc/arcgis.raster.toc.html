@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>arcgis.raster module &mdash; arcgis 1.8.2 documentation</title>
+  <title>arcgis.raster module &mdash; arcgis 1.8.3 documentation</title>
   
 
   
@@ -77,7 +77,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             
             
               <div class="version">
-                1.8.2
+                1.8.3
               </div>
             
           
@@ -115,6 +115,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <li class="toctree-l2"><a class="reference internal" href="#rastercatalogitem">RasterCatalogItem</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#rastermanager">RasterManager</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#rastercollection">RasterCollection</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#rasterinfo">RasterInfo</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#submodules">Submodules</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="arcgis.raster.analytics.html">arcgis.raster.analytics module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="arcgis.raster.functions.html">arcgis.raster.functions module</a></li>
@@ -136,7 +137,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <li class="toctree-l1"><a class="reference internal" href="arcgis.schematics.html">arcgis.schematics module</a></li>
 <li class="toctree-l1"><a class="reference internal" href="arcgis.widgets.html">arcgis.widgets module</a></li>
 <li class="toctree-l1"><a class="reference internal" href="arcgis.apps.html">arcgis.apps module</a></li>
-<li class="toctree-l1"><a class="reference internal" href="arcgis.learn.html">arcgis.learn module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.learn.toc.html">arcgis.learn module</a></li>
 </ul>
 
             
@@ -363,10 +364,40 @@ Syntax:</p>
 
 <dl class="py method">
 <dt id="arcgis.raster.ImageryLayer.colormap">
-<code class="sig-name descname">colormap</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.raster.ImageryLayer.colormap" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">colormap</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">rendering_rule</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">variable</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.raster.ImageryLayer.colormap" title="Permalink to this definition">¶</a></dt>
 <dd><p>The colormap method returns RGB color representation of pixel
 values. This method is supported if the hasColormap property of
 the layer is true.</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 12%" />
+<col style="width: 88%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>Argument</strong></p></td>
+<td><p><strong>Description</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>rendering_rule</p></td>
+<td><p>optional dictionary. Specifies the rendering rule for how the
+requested image should be rendered.
+See the raster function objects for the JSON syntax and examples.
+<a class="reference external" href="http://resources.arcgis.com/en/help/arcgis-rest-api/index.html#/Raster_function_objects/02r3000000rv000000/">http://resources.arcgis.com/en/help/arcgis-rest-api/index.html#/Raster_function_objects/02r3000000rv000000/</a></p></td>
+</tr>
+<tr class="row-odd"><td><p>variable</p></td>
+<td><p>Optional String. This parameter can be used to request a
+colormap for each variable for an image service that has
+multidimensional information. It will return a colormap
+for the whole image service if not specified. Eligible variable names
+can be queried from multidimensional_info property of the Imagery Layer object.
+This parameter is available from 10.8.1</p></td>
+</tr>
+</tbody>
+</table>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>dictionary</p>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="py method">
@@ -1058,6 +1089,16 @@ Example: out_format=’TIFF’</p>
 </dd></dl>
 
 <dl class="py method">
+<dt id="arcgis.raster.ImageryLayer.get_histograms">
+<code class="sig-name descname">get_histograms</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">variable</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.raster.ImageryLayer.get_histograms" title="Permalink to this definition">¶</a></dt>
+<dd><p>get_histograms() can return histogram for each variable if used with multidimensional ImageryLayer 
+object by specifing value for variable parameter.</p>
+<p>If histogram is not found, returns None. In this case, call the compute_histograms().
+(get_histograms() is an enhanced version of the histograms property on the ImageryLayer class
+with additional variable parameter.)</p>
+</dd></dl>
+
+<dl class="py method">
 <dt id="arcgis.raster.ImageryLayer.get_raster_file">
 <code class="sig-name descname">get_raster_file</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">download_info</span></em>, <em class="sig-param"><span class="n">out_folder</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.raster.ImageryLayer.get_raster_file" title="Permalink to this definition">¶</a></dt>
 <dd><p>The Raster File method represents a single raw raster file. The
@@ -1198,31 +1239,34 @@ include all the field values in the results.</p></td>
 <dt id="arcgis.raster.ImageryLayer.histograms">
 <em class="property">property </em><code class="sig-name descname">histograms</code><a class="headerlink" href="#arcgis.raster.ImageryLayer.histograms" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns the histograms of each band in the imagery layer as a list of dictionaries corresponding to each band.
-If not histograms is found, returns None. In this case, call the compute_histograms()
-:return:</p>
-<blockquote>
-<div><p>my_hist = imagery_layer.histograms()</p>
-<p>Structure of the return value:
-[</p>
-<blockquote>
-<div><dl class="simple">
-<dt>{ #band 1</dt><dd><p>“size”:256,
-“min”:560,
-“max”:24568,
-counts: [10,99,56,42200,125,….] #length of this list corresponds ‘size’</p>
+If not histograms is found, returns None. In this case, call the compute_histograms()</p>
+<dl class="field-list simple">
+<dt class="field-odd">Syntax</dt>
+<dd class="field-odd"><p>my_hist = imagery_layer.histograms()</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><div class="line-block">
+<div class="line">#Structure of the return value for a two band imagery layer</div>
+<div class="line">[ </div>
+<div class="line-block">
+<div class="line">{#band 1</div>
+<div class="line">”size”:256,</div>
+<div class="line">”min”:560,</div>
+<div class="line">”max”:24568,</div>
+<div class="line">”counts”: [10,99,56,42200,125,….] #length of this list corresponds ‘size’</div>
+<div class="line">},</div>
+<div class="line">{#band 2</div>
+<div class="line">”size”:256,</div>
+<div class="line">”min”:8000,</div>
+<div class="line">”max”:15668,</div>
+<div class="line">”counts”: [45,9,690,86580,857,….] #length of this list corresponds ‘size’</div>
+<div class="line">}</div>
+</div>
+<div class="line">]</div>
+</div>
+</p>
 </dd>
 </dl>
-<p>}
-{ #band 3</p>
-<blockquote>
-<div><p>“size”:256, #number of bins
-“min”:8000,
-“max”:15668,
-counts: [45,9,690,86580,857,….] #length of this list corresponds ‘size’</p>
-</div></blockquote>
-</div></blockquote>
-<p>]</p>
-</div></blockquote>
 </dd></dl>
 
 <dl class="py method">
@@ -1902,6 +1946,36 @@ bandCount, extent , pixelSizeX, pixelSizeY, pixelType</p>
 </dd></dl>
 
 <dl class="py method">
+<dt id="arcgis.raster.ImageryLayer.render_tilesonly_layer">
+<code class="sig-name descname">render_tilesonly_layer</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">level</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">slice_id</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.raster.ImageryLayer.render_tilesonly_layer" title="Permalink to this definition">¶</a></dt>
+<dd><p>Render tiles only Imagery Layer at a given level.</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 67%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>Argument</strong></p></td>
+<td><p><strong>Description</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>level</p></td>
+<td><p>Optional integer. Level to be used for rendering.
+Default value is 0.</p></td>
+</tr>
+<tr class="row-odd"><td><p>slice_id</p></td>
+<td><p>Optional l integer. Renders the given slice of a multidimensional raster.
+To get the slice index use slices method on the ImageryLayer object.</p></td>
+</tr>
+</tbody>
+</table>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
 <dt id="arcgis.raster.ImageryLayer.rows">
 <em class="property">property </em><code class="sig-name descname">rows</code><a class="headerlink" href="#arcgis.raster.ImageryLayer.rows" title="Permalink to this definition">¶</a></dt>
 <dd><p>returns number of rows in the imagery layer</p>
@@ -1916,8 +1990,8 @@ If for_viz is False, distributed raster analysis is used for generating a new ra
 applying raster functions at source resolution across the extent of the output imagery layer.</p>
 <table class="docutils align-default">
 <colgroup>
-<col style="width: 35%" />
-<col style="width: 65%" />
+<col style="width: 25%" />
+<col style="width: 75%" />
 </colgroup>
 <tbody>
 <tr class="row-odd"><td><p><strong>Argument</strong></p></td>
@@ -1957,6 +2031,12 @@ output. Keyword only parameter.</p></td>
 <tr class="row-odd"><td><p>future</p></td>
 <td><p>Optional boolean. If True, the result will be a GPJob object and
 results will be returned asynchronously. Keyword only parameter.</p></td>
+</tr>
+<tr class="row-even"><td><p>tiles_only</p></td>
+<td><p>On AGOL, the default output image service for this function would be a Tiled Imagery Layer.
+To create Dynamic Imagery Layer as output on AGOL, set tiles_only parameter to False.</p>
+<p>Function will not honor tiles_only parameter on enterprise and will generate Dynamic Imagery Layer by default.</p>
+</td>
 </tr>
 </tbody>
 </table>
@@ -2024,6 +2104,13 @@ applied to the layer, unless overridden</p></td>
 <dt id="arcgis.raster.ImageryLayer.slices">
 <code class="sig-name descname">slices</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">muldidef</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.raster.ImageryLayer.slices" title="Permalink to this definition">¶</a></dt>
 <dd><p>Operation to query slice ID and multidimensional information of a multidimensional image service.</p>
+<p>Operation available in ArcGIS Image Server 10.8.1 and higher.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.raster.ImageryLayer.statistics">
+<code class="sig-name descname">statistics</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">variable</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.raster.ImageryLayer.statistics" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns statistics of the raster.</p>
 <p>Operation available in ArcGIS Image Server 10.8.1 and higher.</p>
 </dd></dl>
 
@@ -2138,6 +2225,12 @@ specified in dict format.</p>
 <dt id="arcgis.raster.ImageryLayer.tiles">
 <em class="property">property </em><code class="sig-name descname">tiles</code><a class="headerlink" href="#arcgis.raster.ImageryLayer.tiles" title="Permalink to this definition">¶</a></dt>
 <dd><p>Imagery tile manager for this layer</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.raster.ImageryLayer.tiles_only">
+<em class="property">property </em><code class="sig-name descname">tiles_only</code><a class="headerlink" href="#arcgis.raster.ImageryLayer.tiles_only" title="Permalink to this definition">¶</a></dt>
+<dd><p>returns True if the layer is a Tiled Imagery Layer</p>
 </dd></dl>
 
 <dl class="py method">
@@ -2871,6 +2964,12 @@ Possible options:</p>
 </pre></div>
 </div>
 <dl class="py method">
+<dt id="arcgis.raster.Raster.RAT">
+<em class="property">property </em><code class="sig-name descname">RAT</code><a class="headerlink" href="#arcgis.raster.Raster.RAT" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the attribute table as a dictionary if the table exists</p>
+</dd></dl>
+
+<dl class="py method">
 <dt id="arcgis.raster.Raster.add_dimension">
 <code class="sig-name descname">add_dimension</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">variable</span></em>, <em class="sig-param"><span class="n">new_dimension_name</span></em>, <em class="sig-param"><span class="n">dimension_value</span></em>, <em class="sig-param"><span class="n">dimension_attributes</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.raster.Raster.add_dimension" title="Permalink to this definition">¶</a></dt>
 <dd><p>Adds a new dimension to a given variable.</p>
@@ -2901,6 +3000,47 @@ Possible options:</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
 <dd class="field-odd"><p>The variable names and their dimensions in the multidimensional raster</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.raster.Raster.append_slices">
+<code class="sig-name descname">append_slices</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">md_raster</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.raster.Raster.append_slices" title="Permalink to this definition">¶</a></dt>
+<dd><p>Appends the slices from another multidimensional raster.</p>
+<p>(Operation is not supported on image services)</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 19%" />
+<col style="width: 81%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>Arguments</strong></p></td>
+<td><p><strong>Description</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>md_raster</p></td>
+<td><p>Required multidimensional raster. The multidimensional raster containing
+the slices to be appended.</p>
+<p>This raster must have the same variables, with the same dimension names,
+as the target raster. The cell sizes, extents, and spatial reference
+systems must also match.</p>
+<p>The slices in this raster must be for dimension values that follow
+the dimension values of the slices in the target raster.</p>
+<p>If a variable has two dimensions, slices will be appended along
+one dimension. The other dimension must have the same number of
+slices as the dimension in the target raster.</p>
+<p>For example, if a salinity variable contains slices over time and
+depth dimensions, time slices can be appended to another salinity
+multidimensional raster but only if the same number of depth slices
+exist in both rasters.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<dl class="field-list simple">
+<dt class="field-odd">Returns (string)</dt>
+<dd class="field-odd"><p>A string containing the variable names and the associated dimensions in the multidimensional raster. 
+For example, if the resulting raster has 10 time slices with precipitation data, it will return ‘prcp(StdTime=10)’.</p>
 </dd>
 </dl>
 </dd></dl>
@@ -3136,6 +3276,33 @@ or otherwise the highest version available.
 </dd></dl>
 
 <dl class="py method">
+<dt id="arcgis.raster.Raster.get_colormap">
+<code class="sig-name descname">get_colormap</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">variable_name</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.raster.Raster.get_colormap" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the color map of the raster. If the raster is multidimensional, returns the color map of a variable.</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 35%" />
+<col style="width: 65%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>Argument</strong></p></td>
+<td><p><strong>Description</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>variable_name</p></td>
+<td><p>Optional string. The variable name of the multidimensional raster.
+If a variable is not specified and the raster is multidimensional,
+the color map of the first variable will be returned.</p></td>
+</tr>
+</tbody>
+</table>
+<dl class="field-list simple">
+<dt class="field-odd">Returns (dict)</dt>
+<dd class="field-odd"><p>The colormap of the raster or the given variable.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
 <dt id="arcgis.raster.Raster.get_dimension_attributes">
 <code class="sig-name descname">get_dimension_attributes</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">variable_name</span></em>, <em class="sig-param"><span class="n">dimension_name</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.raster.Raster.get_dimension_attributes" title="Permalink to this definition">¶</a></dt>
 <dd><blockquote>
@@ -3223,6 +3390,34 @@ Valid only if the dimension name is</p></td>
 </dd></dl>
 
 <dl class="py method">
+<dt id="arcgis.raster.Raster.get_histograms">
+<code class="sig-name descname">get_histograms</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">variable_name</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.raster.Raster.get_histograms" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the histograms of the raster. If the raster is multidimensional, it returns the histogram of a variable. 
+If the raster is multiband, it returns the histogram of each band.</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 67%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>Argument</strong></p></td>
+<td><p><strong>Description</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>variable_name</p></td>
+<td><p>Optional string. The variable name of the multidimensional raster dataset.
+If a variable is not specified and the raster is multidimensional,
+the histogram of the first variable will be returned.</p></td>
+</tr>
+</tbody>
+</table>
+<dl class="field-list simple">
+<dt class="field-odd">Returns (list of dict)</dt>
+<dd class="field-odd"><p>The histogram values of the raster or variable.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
 <dt id="arcgis.raster.Raster.get_property">
 <code class="sig-name descname">get_property</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">property_name</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.raster.Raster.get_property" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns the value of the given property.</p>
@@ -3269,6 +3464,33 @@ Raster objects. If not specified, all bands will be extracted.</p></td>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
 <dd class="field-odd"><p>Raster object</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.raster.Raster.get_statistics">
+<code class="sig-name descname">get_statistics</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">variable_name</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.raster.Raster.get_statistics" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the statistics of the raster. If the raster is multidimensional, returns the statistics of a variable.</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 67%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>Argument</strong></p></td>
+<td><p><strong>Description</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>variable_name</p></td>
+<td><p>Optional string. The variable name of the multidimensional raster dataset.
+If a variable is not specified and the raster is multidimensional,
+the statistics of the first variable will be returned.</p></td>
+</tr>
+</tbody>
+</table>
+<dl class="field-list simple">
+<dt class="field-odd">Returns (dict)</dt>
+<dd class="field-odd"><p>The statistics of the raster or the given variable.</p>
 </dd>
 </dl>
 </dd></dl>
@@ -3409,8 +3631,15 @@ Default: 1</p>
 </dd></dl>
 
 <dl class="py method">
+<dt id="arcgis.raster.Raster.raster_info">
+<em class="property">property </em><code class="sig-name descname">raster_info</code><a class="headerlink" href="#arcgis.raster.Raster.raster_info" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns information about the ImageryLayer such as 
+bandCount, extent , pixelSizeX, pixelSizeY, pixelType</p>
+</dd></dl>
+
+<dl class="py method">
 <dt id="arcgis.raster.Raster.read">
-<code class="sig-name descname">read</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">upper_left_corner</span><span class="o">=</span><span class="default_value">0, 0</span></em>, <em class="sig-param"><span class="n">origin_coordinate</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">ncols</span><span class="o">=</span><span class="default_value">0</span></em>, <em class="sig-param"><span class="n">nrows</span><span class="o">=</span><span class="default_value">0</span></em>, <em class="sig-param"><span class="n">nodata_to_value</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">cell_size</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.raster.Raster.read" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">read</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">upper_left_corner</span><span class="o">=</span><span class="default_value">(0, 0)</span></em>, <em class="sig-param"><span class="n">origin_coordinate</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">ncols</span><span class="o">=</span><span class="default_value">0</span></em>, <em class="sig-param"><span class="n">nrows</span><span class="o">=</span><span class="default_value">0</span></em>, <em class="sig-param"><span class="n">nodata_to_value</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">cell_size</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.raster.Raster.read" title="Permalink to this definition">¶</a></dt>
 <dd><p>read a numpy array from the calling raster</p>
 <table class="docutils align-default">
 <colgroup>
@@ -3605,9 +3834,92 @@ results will be returned asynchronously. Keyword only parameter.</p>
 </dd></dl>
 
 <dl class="py method">
+<dt id="arcgis.raster.Raster.set_colormap">
+<code class="sig-name descname">set_colormap</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">color_map</span></em>, <em class="sig-param"><span class="n">variable_name</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.raster.Raster.set_colormap" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets the color map for the raster. If the raster is multidimensional, it sets the color map for a variable.</p>
+<p>(Operation is not supported on image services)</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 19%" />
+<col style="width: 81%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>Argument</strong></p></td>
+<td><p><strong>Description</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>color_map</p></td>
+<td><p>Optional (string, dict): The color map to apply to the raster. This
+can be a string indicating the name of the color map or color ramp
+to use, for example, NDVI or Yellow To Red, respectively. This can
+also be a Python dictionary with a custom color map or color ramp
+object.</p>
+<p>For example:</p>
+<p>customized colormap object, e.g., {‘values’: [0, 1, 2, 3, 4, 5, 6], ‘colors’: [‘#000000’, ‘#DCFFDF’, ‘#B8FFBE’, ‘#85FF90’, ‘#50FF60’,’#00AB10’, ‘#006B0A’]}</p>
+<p>colorramp name, e.g., “Yellow To Red”</p>
+<p>colormap name, e.g., “NDVI”</p>
+<p>customized colorramp object, e.g., {“type”: “algorithmic”, “fromColor”: [115, 76, 0, 255],”toColor”: [255, 25, 86, 255], “algorithm”: “esriHSVAlgorithm”}</p>
+</td>
+</tr>
+<tr class="row-odd"><td><p>variable_name</p></td>
+<td><p>Optional string. The variable name of the multidimensional raster dataset.
+If a variable is not specified and the raster is multidimensional, the color
+map of the first variable will be set.</p></td>
+</tr>
+</tbody>
+</table>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
 <dt id="arcgis.raster.Raster.set_engine">
 <code class="sig-name descname">set_engine</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">engine</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.raster.Raster.set_engine" title="Permalink to this definition">¶</a></dt>
 <dd><p>Can be used to change the back end engine</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.raster.Raster.set_histograms">
+<code class="sig-name descname">set_histograms</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">histogram_obj</span></em>, <em class="sig-param"><span class="n">variable_name</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.raster.Raster.set_histograms" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set the histogram for the raster or a given variable if the raster is multidimensional.</p>
+<p>(Operation is not supported on image services)</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 26%" />
+<col style="width: 74%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>Argument</strong></p></td>
+<td><p><strong>Description</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>histogram_obj</p></td>
+<td><p>Optional list of histogram objects(dict),</p>
+<p>If the raster is multiband, the histogram for each band will be set
+with each dictionary in the list. The first band will use the histogram
+in the first dictionary. The second band will use the histogram in
+the second dictionary, and so on.</p>
+<p>size - The number of bins in the histogram</p>
+<p>min - The minimum pixel value</p>
+<p>max - The maximum pixel value</p>
+<p>counts - A list containing the number of pixels in each bin, in the order of bins</p>
+<p>For example:</p>
+<p>[{‘size’: number_of_bins, ‘min’: min_val, ‘max’: max_val, ‘counts’: [pixel_count_at_each_bin, …]}, …]</p>
+</td>
+</tr>
+<tr class="row-odd"><td><p>variable_name</p></td>
+<td><p>Optional string. The variable name of the multidimensional raster dataset.
+If a variable is not specified and the raster is multidimensional,
+the histogram will be set for the first variable.</p></td>
+</tr>
+</tbody>
+</table>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="py method">
@@ -3641,6 +3953,89 @@ the existing property value will be overwritten.</p>
 </dd></dl>
 
 <dl class="py method">
+<dt id="arcgis.raster.Raster.set_statistics">
+<code class="sig-name descname">set_statistics</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">statistics_obj</span></em>, <em class="sig-param"><span class="n">variable_name</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.raster.Raster.set_statistics" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets the statistics for the raster. If the raster is multiband, it sets the statistics for each band. 
+If the raster is multidimensional, it sets the statistics for a variable.</p>
+<p>(Operation is not supported on image services)</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 25%" />
+<col style="width: 75%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>Argument</strong></p></td>
+<td><p><strong>Description</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>color_map</p></td>
+<td><p>Optional list of statistics objects. A list of Python dictionaries containing statistics and corresponding
+values to set. For example, [{‘min’: 10, ‘max’: 20}] sets the minimum
+and maximum pixel values.</p>
+<p>If the raster is multiband, the statistics for each band will be set with
+each dictionary in the list. The first band will use the statistics in the
+first dictionary. The second band will use the statistics in the second
+dictionary, and so on.</p>
+<p>min - The minimum pixel value
+max - The maximum pixel value
+mean - The mean pixel value
+median - The median pixel value
+standardDeviation - The standard deviation of the pixel values
+count - The total number of pixels
+skipX - The horizontal skip factor
+skipY - The vertical skip factor</p>
+<p>For example:</p>
+<p>[{‘min’: val, ‘max’: val, ‘mean’: val, ‘standardDeviation’: val,
+‘median’: val, ‘mode’: val, ‘count’: val}, …]</p>
+</td>
+</tr>
+<tr class="row-odd"><td><p>variable_name</p></td>
+<td><p>Optional string. The variable name of the multidimensional raster.
+If a variable is not specified and the raster is multidimensional,
+the statistics of the first variable will be set.</p></td>
+</tr>
+</tbody>
+</table>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.raster.Raster.set_variable_attributes">
+<code class="sig-name descname">set_variable_attributes</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">variable_name</span></em>, <em class="sig-param"><span class="n">variable_attributes</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.raster.Raster.set_variable_attributes" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets the attribute information of a variable in a multidimensional raster (for example, description, unit, and so on).</p>
+<p>(Operation is not supported on image services)</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 67%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>Arguments</strong></p></td>
+<td><p><strong>Description</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>variable_name</p></td>
+<td><p>Required string. The variable name of the multidimensional raster dataset.</p></td>
+</tr>
+<tr class="row-odd"><td><p>variable_attributes</p></td>
+<td><p>Required dict that contains attribute information to replace the current
+attribute information of the variable.</p>
+<p>For example:</p>
+<p>{‘Description’: ‘Daily total precipitation’, ‘Unit’: ‘mm/day’}.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<dl class="field-list simple">
+<dt class="field-odd">Returns (dict)</dt>
+<dd class="field-odd"><p>The attribute information of the variable.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
 <dt id="arcgis.raster.Raster.slices">
 <em class="property">property </em><code class="sig-name descname">slices</code><a class="headerlink" href="#arcgis.raster.Raster.slices" title="Permalink to this definition">¶</a></dt>
 <dd><p>returns the attribute information of each slice, 
@@ -3658,6 +4053,75 @@ dimension values returned as a list of dictionaries.</p>
 <dt id="arcgis.raster.Raster.standard_deviation">
 <em class="property">property </em><code class="sig-name descname">standard_deviation</code><a class="headerlink" href="#arcgis.raster.Raster.standard_deviation" title="Permalink to this definition">¶</a></dt>
 <dd><p>returns the standard deviation of the values in the referenced raster.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.raster.Raster.summarize">
+<code class="sig-name descname">summarize</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">geometry</span></em>, <em class="sig-param"><span class="n">pixel_size</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.raster.Raster.summarize" title="Permalink to this definition">¶</a></dt>
+<dd><p>The result of this operation contains statistics of a Raster for a given geometry.</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 20%" />
+<col style="width: 80%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>Argument</strong></p></td>
+<td><p><strong>Description</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>geometry</p></td>
+<td><p>Required Polygon or Extent. A geometry that defines the geometry
+within which the histogram is computed. The geometry can be an
+envelope or a polygon</p></td>
+</tr>
+<tr class="row-odd"><td><p>pixel_size</p></td>
+<td><p>optional string or dict. The pixel level being used (or the
+resolution being looked at). If pixel size is not specified, then
+pixel_size will default to the base resolution of the dataset. The
+raster at the specified pixel size in the mosaic dataset will be
+used for histogram calculation.</p>
+<dl class="simple">
+<dt>Syntax:</dt><dd><ul class="simple">
+<li><p>dictionary structure: pixel_size={point}</p></li>
+<li><p>Point simple syntax: pixel_size=’&lt;x&gt;,&lt;y&gt;’</p></li>
+</ul>
+</dd>
+<dt>Examples:</dt><dd><ul class="simple">
+<li><p>pixel_size={“x”: 0.18, “y”: 0.18}</p></li>
+<li><p>pixel_size=’0.18,0.18’</p></li>
+</ul>
+</dd>
+</dl>
+</td>
+</tr>
+</tbody>
+</table>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><p>dictionary. (Dictionary at each index represents the statistics of the corresponding band.)
+[{</p>
+<blockquote>
+<div><blockquote>
+<div><p>”min”: 0,
+“max”: 9,
+“mean”: 3.271703916996627,
+“standardDeviation”: 1.961013669880657,
+“median”: 4,
+“mode”: 4,
+“skipX”: 1,
+“skipY”: 1,
+“count”: 2004546</p>
+</div></blockquote>
+<p>}]</p>
+</div></blockquote>
+</p>
+</dd>
+</dl>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Usage Example 1: Summarize a raster at an area.</span>
+
+<span class="n">stats</span> <span class="o">=</span> <span class="n">raster</span><span class="o">.</span><span class="n">summarize</span><span class="p">(</span><span class="n">geometry</span><span class="o">=</span><span class="n">geom_obj</span><span class="p">)</span>
+<span class="n">mean_of_first_band</span> <span class="o">=</span> <span class="n">stats</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="s2">&quot;mean&quot;</span><span class="p">]</span>
+</pre></div>
+</div>
 </dd></dl>
 
 <dl class="py method">
@@ -3704,7 +4168,7 @@ This property is the lower end of that range.</p>
 
 <dl class="py method">
 <dt id="arcgis.raster.Raster.write">
-<code class="sig-name descname">write</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">array</span></em>, <em class="sig-param"><span class="n">upper_left_corner</span><span class="o">=</span><span class="default_value">0, 0</span></em>, <em class="sig-param"><span class="n">origin_coordinate</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">value_to_nodata</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.raster.Raster.write" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">write</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">array</span></em>, <em class="sig-param"><span class="n">upper_left_corner</span><span class="o">=</span><span class="default_value">(0, 0)</span></em>, <em class="sig-param"><span class="n">origin_coordinate</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">value_to_nodata</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.raster.Raster.write" title="Permalink to this definition">¶</a></dt>
 <dd><p>write a numpy array to the calling raster.</p>
 <p>(Operation is not supported on image services)</p>
 <table class="docutils align-default">
@@ -4881,6 +5345,122 @@ dimension_field_names = [“Time”, “Depth”]).</p>
 </dd></dl>
 
 </div>
+<div class="section" id="rasterinfo">
+<h2>RasterInfo<a class="headerlink" href="#rasterinfo" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt id="arcgis.raster.RasterInfo">
+<em class="property">class </em><code class="sig-prename descclassname">arcgis.raster.</code><code class="sig-name descname">RasterInfo</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">raster_info_dict</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.raster.RasterInfo" title="Permalink to this definition">¶</a></dt>
+<dd><p>Class allows to create RasterInfo object that describes a set of raster properties to
+facilitate the creation of local raster dataset using the Raster class (requires arcpy)</p>
+<p>A RasterInfo object can be created by instantiating it from a dictionary,
+or by calling an Imagery Layer/Raster object’s raster_info property</p>
+<p>Information about the raster can also be set through the following properties available on the RasterInfo object:
+band_count, extent , pixel_size_x, pixel_size_y, pixel_type, block_height, block_width, no_data_values, spatial_reference</p>
+<p>To construct RasterInfo object from a dictionary, use from_dict method on this class.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Usage Example 1: This example creates a new Raster object from the raster_info of another Raster object. (requires arcpy)</span>
+<span class="n">raster_obj</span> <span class="o">=</span> <span class="n">Raster</span><span class="p">(</span><span class="o">&lt;</span><span class="n">raster</span> <span class="n">dataset</span> <span class="n">path</span><span class="o">&gt;</span><span class="p">)</span>
+<span class="n">ras_info</span> <span class="o">=</span> <span class="n">RasterInfo</span><span class="p">(</span><span class="n">raster_obj</span><span class="o">.</span><span class="n">raster_info</span><span class="p">)</span>
+<span class="n">rinfo_based_ras</span> <span class="o">=</span> <span class="n">Raster</span><span class="p">(</span><span class="n">rasInfo2</span><span class="p">)</span>
+
+<span class="c1">#To write pixel values to this temporary Raster object:</span>
+<span class="n">rinfo_based_ras</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="o">&lt;</span><span class="n">numpy_array</span><span class="o">&gt;</span><span class="p">)</span>
+
+<span class="c1">#To save this temporary raster locally:</span>
+<span class="n">rinfo_based_ras</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;C:\data\persisted_raster.crf&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>RasterInfo object can also be used in raster functions that take in raster info as a parameter. (does not require arcpy)
+example: As value to the raster_info parameter for arcgis.raster.functions.constant_raster() and arcgis.raster.functions.random_raster()</p>
+<dl class="py method">
+<dt id="arcgis.raster.RasterInfo.band_count">
+<em class="property">property </em><code class="sig-name descname">band_count</code><a class="headerlink" href="#arcgis.raster.RasterInfo.band_count" title="Permalink to this definition">¶</a></dt>
+<dd><p>Information about the band count of a raster.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.raster.RasterInfo.block_height">
+<em class="property">property </em><code class="sig-name descname">block_height</code><a class="headerlink" href="#arcgis.raster.RasterInfo.block_height" title="Permalink to this definition">¶</a></dt>
+<dd><p>Information about the block height</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.raster.RasterInfo.block_width">
+<em class="property">property </em><code class="sig-name descname">block_width</code><a class="headerlink" href="#arcgis.raster.RasterInfo.block_width" title="Permalink to this definition">¶</a></dt>
+<dd><p>Information about the block width</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.raster.RasterInfo.extent">
+<em class="property">property </em><code class="sig-name descname">extent</code><a class="headerlink" href="#arcgis.raster.RasterInfo.extent" title="Permalink to this definition">¶</a></dt>
+<dd><p>Information about the extent of a raster.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.raster.RasterInfo.from_dict">
+<code class="sig-name descname">from_dict</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">raster_info_dict</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.raster.RasterInfo.from_dict" title="Permalink to this definition">¶</a></dt>
+<dd><p>Function used to initialise RasterInfo object from raster info dictionary</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Usage Example : </span>
+<span class="n">rinfo</span> <span class="o">=</span> <span class="n">RasterInfo</span><span class="p">()</span>
+<span class="n">rinfo</span><span class="o">.</span><span class="n">from_dict</span><span class="p">({</span><span class="s1">&#39;bandCount&#39;</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span>
+                 <span class="s1">&#39;extent&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;xmin&quot;</span><span class="p">:</span> <span class="mf">4488761.95</span><span class="p">,</span>
+                             <span class="s2">&quot;ymin&quot;</span><span class="p">:</span> <span class="mf">5478609.805</span><span class="p">,</span>
+                             <span class="s2">&quot;xmax&quot;</span><span class="p">:</span> <span class="mf">4489727.05</span><span class="p">,</span>
+                             <span class="s2">&quot;ymax&quot;</span><span class="p">:</span> <span class="mf">5479555.305</span><span class="p">,</span>
+                             <span class="s2">&quot;spatialReference&quot;</span><span class="p">:</span> <span class="p">{</span>
+                               <span class="s2">&quot;wkt&quot;</span><span class="p">:</span> <span class="s2">&quot;PROJCS[&quot;</span><span class="n">Deutsches_Hauptdreiecksnetz_Transverse_Mercator</span><span class="s2">&quot;,</span>
+                               <span class="n">GEOGCS</span><span class="p">[</span><span class="s2">&quot;GCS_Deutsches_Hauptdreiecksnetz&quot;</span><span class="p">,</span><span class="n">DATUM</span><span class="p">[</span><span class="s2">&quot;D_Deutsches_Hauptdreiecksnetz&quot;</span><span class="p">,</span>
+                               <span class="n">SPHEROID</span><span class="p">[</span><span class="s2">&quot;Bessel_1841&quot;</span><span class="p">,</span><span class="mf">6377397.155</span><span class="p">,</span><span class="mf">299.1528128</span><span class="p">]],</span><span class="n">PRIMEM</span><span class="p">[</span><span class="s2">&quot;Greenwich&quot;</span><span class="p">,</span><span class="mf">0.0</span><span class="p">],</span>
+                               <span class="n">UNIT</span><span class="p">[</span><span class="s2">&quot;Degree&quot;</span><span class="p">,</span><span class="mf">0.0174532925199433</span><span class="p">]],</span><span class="n">PROJECTION</span><span class="p">[</span><span class="s2">&quot;Transverse_Mercator&quot;</span><span class="p">],</span>
+                               <span class="n">PARAMETER</span><span class="p">[</span><span class="s2">&quot;false_easting&quot;</span><span class="p">,</span><span class="mf">4500000.0</span><span class="p">],</span><span class="n">PARAMETER</span><span class="p">[</span><span class="s2">&quot;false_northing&quot;</span><span class="p">,</span><span class="mf">0.0</span><span class="p">],</span>
+                               <span class="n">PARAMETER</span><span class="p">[</span><span class="s2">&quot;central_meridian&quot;</span><span class="p">,</span><span class="mf">12.0</span><span class="p">],</span><span class="n">PARAMETER</span><span class="p">[</span><span class="s2">&quot;scale_factor&quot;</span><span class="p">,</span><span class="mf">1.0</span><span class="p">],</span>
+                               <span class="n">PARAMETER</span><span class="p">[</span><span class="s2">&quot;latitude_of_origin&quot;</span><span class="p">,</span><span class="mf">0.0</span><span class="p">],</span><span class="n">UNIT</span><span class="p">[</span><span class="s2">&quot;Meter&quot;</span><span class="p">,</span><span class="mf">1.0</span><span class="p">]]</span><span class="s2">&quot;</span>
+                             <span class="p">}},</span> 
+                 <span class="s1">&#39;pixelSizeX&#39;</span><span class="p">:</span> <span class="mf">0.0999999999999614</span><span class="p">,</span> 
+                 <span class="s1">&#39;pixelSizeY&#39;</span><span class="p">:</span> <span class="mf">0.1</span><span class="p">,</span> 
+                 <span class="s1">&#39;pixelType&#39;</span><span class="p">:</span> <span class="s1">&#39;U8&#39;</span><span class="p">})</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.raster.RasterInfo.no_data_values">
+<em class="property">property </em><code class="sig-name descname">no_data_values</code><a class="headerlink" href="#arcgis.raster.RasterInfo.no_data_values" title="Permalink to this definition">¶</a></dt>
+<dd><p>Information about the no_data_values</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.raster.RasterInfo.pixel_size_x">
+<em class="property">property </em><code class="sig-name descname">pixel_size_x</code><a class="headerlink" href="#arcgis.raster.RasterInfo.pixel_size_x" title="Permalink to this definition">¶</a></dt>
+<dd><p>Information about the pixel size of a raster in x direction</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.raster.RasterInfo.pixel_size_y">
+<em class="property">property </em><code class="sig-name descname">pixel_size_y</code><a class="headerlink" href="#arcgis.raster.RasterInfo.pixel_size_y" title="Permalink to this definition">¶</a></dt>
+<dd><p>Information about the pixel size of a raster in y direction</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.raster.RasterInfo.pixel_type">
+<em class="property">property </em><code class="sig-name descname">pixel_type</code><a class="headerlink" href="#arcgis.raster.RasterInfo.pixel_type" title="Permalink to this definition">¶</a></dt>
+<dd><p>Information about the pixel type of a raster.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.raster.RasterInfo.spatial_reference">
+<em class="property">property </em><code class="sig-name descname">spatial_reference</code><a class="headerlink" href="#arcgis.raster.RasterInfo.spatial_reference" title="Permalink to this definition">¶</a></dt>
+<dd><p>Information about the extent of a raster.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.raster.RasterInfo.to_dict">
+<code class="sig-name descname">to_dict</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.raster.RasterInfo.to_dict" title="Permalink to this definition">¶</a></dt>
+<dd><p>To return Raster Info in dictionary format</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
 <div class="section" id="submodules">
 <h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this headline">¶</a></h2>
 <div class="toctree-wrapper compound">
@@ -4925,13 +5505,16 @@ dimension_field_names = [“Time”, “Depth”]).</p>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.raster.analytics.html#detect-change-using-change-analysis-raster">detect_change_using_change_analysis_raster</a></li>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.raster.analytics.html#manage-multidimensional-raster">manage_multidimensional_raster</a></li>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.raster.analytics.html#sample">sample</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.raster.analytics.html#merge-multidimensional-rasters">merge_multidimensional_rasters</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="arcgis.raster.functions.html">arcgis.raster.functions module</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.raster.functions.html#abs">abs</a></li>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.raster.functions.html#acos">acos</a></li>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.raster.functions.html#acosh">acosh</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.raster.functions.html#aggregate">aggregate</a></li>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.raster.functions.html#aggregate-cells">aggregate_cells</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.raster.functions.html#apparent-reflectance">apparent_reflectance</a></li>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.raster.functions.html#apply">apply</a></li>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.raster.functions.html#arg-max">arg_max</a></li>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.raster.functions.html#arg-median">arg_median</a></li>
@@ -4941,9 +5524,11 @@ dimension_field_names = [“Time”, “Depth”]).</p>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.raster.functions.html#asin">asin</a></li>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.raster.functions.html#asinh">asinh</a></li>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.raster.functions.html#aspect">aspect</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.raster.functions.html#aspect-slope">aspect_slope</a></li>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.raster.functions.html#atan">atan</a></li>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.raster.functions.html#atan2">atan2</a></li>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.raster.functions.html#atanh">atanh</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.raster.functions.html#bai">bai</a></li>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.raster.functions.html#band-arithmetic">band_arithmetic</a></li>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.raster.functions.html#bitwise-and">bitwise_and</a></li>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.raster.functions.html#bitwise-left-shift">bitwise_left_shift</a></li>
@@ -4955,6 +5540,7 @@ dimension_field_names = [“Time”, “Depth”]).</p>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.raster.functions.html#boolean-not">boolean_not</a></li>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.raster.functions.html#boolean-or">boolean_or</a></li>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.raster.functions.html#boolean-xor">boolean_xor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.raster.functions.html#buffered">buffered</a></li>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.raster.functions.html#cire">cire</a></li>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.raster.functions.html#cig">cig</a></li>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.raster.functions.html#classify">classify</a></li>
@@ -4965,13 +5551,16 @@ dimension_field_names = [“Time”, “Depth”]).</p>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.raster.functions.html#colorspace-conversion">colorspace_conversion</a></li>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.raster.functions.html#complex">complex</a></li>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.raster.functions.html#composite-band">composite_band</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.raster.functions.html#compute-change">compute_change</a></li>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.raster.functions.html#con">con</a></li>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.raster.functions.html#constant-raster">constant_raster</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.raster.functions.html#contour">contour</a></li>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.raster.functions.html#contrast-brightness">contrast_brightness</a></li>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.raster.functions.html#convolution">convolution</a></li>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.raster.functions.html#cos">cos</a></li>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.raster.functions.html#cosh">cosh</a></li>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.raster.functions.html#curvature">curvature</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.raster.functions.html#detect-change-using-change-analysis-raster">detect_change_using_change_analysis_raster</a></li>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.raster.functions.html#divide">divide</a></li>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.raster.functions.html#duration">duration</a></li>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.raster.functions.html#elevation-void-fill">elevation_void_fill</a></li>
@@ -4995,6 +5584,7 @@ dimension_field_names = [“Time”, “Depth”]).</p>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.raster.functions.html#greater-than">greater_than</a></li>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.raster.functions.html#greater-than-equal">greater_than_equal</a></li>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.raster.functions.html#gvitm">gvitm</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.raster.functions.html#heat-index">heat_index</a></li>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.raster.functions.html#hillshade">hillshade</a></li>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.raster.functions.html#identity">identity</a></li>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.raster.functions.html#int">INT</a></li>
@@ -5018,11 +5608,16 @@ dimension_field_names = [“Time”, “Depth”]).</p>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.raster.functions.html#minority">minority</a></li>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.raster.functions.html#minus">minus</a></li>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.raster.functions.html#ml-classify">ml_classify</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.raster.functions.html#mndwi">mndwi</a></li>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.raster.functions.html#mod">mod</a></li>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.raster.functions.html#monitor-vegetation">monitor_vegetation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.raster.functions.html#msavi">msavi</a></li>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.raster.functions.html#mtvi2">mtvi2</a></li>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.raster.functions.html#multidimensional-filter">multidimensional_filter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.raster.functions.html#nbr">nbr</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.raster.functions.html#ndbi">ndbi</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.raster.functions.html#ndmi">ndmi</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.raster.functions.html#ndsi">ndsi</a></li>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.raster.functions.html#ndvi">ndvi</a></li>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.raster.functions.html#ndvire">ndvire</a></li>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.raster.functions.html#id3">NDVI</a></li>
@@ -5038,7 +5633,9 @@ dimension_field_names = [“Time”, “Depth”]).</p>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.raster.functions.html#random-raster">random_raster</a></li>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.raster.functions.html#raster-calculator">raster_calculator</a></li>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.raster.functions.html#raster-collection-function">raster_collection_function</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.raster.functions.html#rasterize-features">rasterize_features</a></li>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.raster.functions.html#remap">remap</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.raster.functions.html#reproject">reproject</a></li>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.raster.functions.html#resample">resample</a></li>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.raster.functions.html#round-down">round_down</a></li>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.raster.functions.html#round-up">round_up</a></li>
@@ -5070,6 +5667,7 @@ dimension_field_names = [“Time”, “Depth”]).</p>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.raster.functions.html#threshold">threshold</a></li>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.raster.functions.html#times">times</a></li>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.raster.functions.html#transpose-bits">transpose_bits</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.raster.functions.html#trend-to-rgb">trend_to_rgb</a></li>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.raster.functions.html#tsavi">tsavi</a></li>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.raster.functions.html#unit-conversion">unit_conversion</a></li>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.raster.functions.html#vari">vari</a></li>
@@ -5078,9 +5676,11 @@ dimension_field_names = [“Time”, “Depth”]).</p>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.raster.functions.html#vector-field-renderer">vector_field_renderer</a></li>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.raster.functions.html#weighted-overlay">weighted_overlay</a></li>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.raster.functions.html#weighted-sum">weighted_sum</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.raster.functions.html#wind-chill">wind_chill</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="arcgis.raster.functions.gbl.html">arcgis.raster.functions.gbl module</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.raster.functions.gbl.html#boundary-clean">boundary_clean</a></li>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.raster.functions.gbl.html#calculate-distance">calculate_distance</a></li>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.raster.functions.gbl.html#calculate-travel-cost">calculate_travel_cost</a></li>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.raster.functions.gbl.html#corridor">corridor</a></li>
@@ -5164,7 +5764,7 @@ dimension_field_names = [“Time”, “Depth”]).</p>
   <div role="contentinfo">
     <p>
         
-        &copy; Copyright 2016-2019, Esri
+        &copy; Copyright 2016-2021, Esri
 
     </p>
   </div>
@@ -5186,6 +5786,134 @@ dimension_field_names = [“Time”, “Depth”]).</p>
 
   </div>
   
+    Options v: 1.8.3
+
+  <div class="rst-versions" data-toggle="rst-versions" role="note" aria-label="versions">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      <span class="fa fa-book"> Pick an earlier version</span>
+      v: 1.8.3
+      <span class="fa fa-caret-down"></span>
+    </span>
+    <div class="rst-other-versions">
+      
+      
+      <dl>
+        <dt>Versions</dt>
+        
+          
+          <dd><a href="1.8.2/">1.8.2</a></dd>
+          
+        
+          
+          <dd><a href="1.8.1/">1.8.1</a></dd>
+          
+        
+          
+          <dd><a href="1.8.0/">1.8.0</a></dd>
+          
+        
+          
+          <dd><a href="1.7.1/">1.7.1</a></dd>
+          
+        
+          
+          <dd><a href="1.7.0/">1.7.0</a></dd>
+          
+        
+          
+          <dd><a href="1.6.2/">1.6.2</a></dd>
+          
+        
+          
+          <dd><a href="1.6.1/">1.6.1</a></dd>
+          
+        
+          
+          <dd><a href="1.6.0/">1.6.0</a></dd>
+          
+        
+          
+          <dd><a href="1.5.3/">1.5.3</a></dd>
+          
+        
+          
+          <dd><a href="1.5.2/">1.5.2</a></dd>
+          
+        
+          
+          <dd><a href="1.5.1/">1.5.1</a></dd>
+          
+        
+          
+          <dd><a href="1.5.0/">1.5.0</a></dd>
+          
+        
+          
+          <dd><a href="1.4.2/">1.4.2</a></dd>
+          
+        
+          
+          <dd><a href="1.4.1/">1.4.1</a></dd>
+          
+        
+          
+          <dd><a href="1.4.0/">1.4.0</a></dd>
+          
+        
+          
+          <dd><a href="1.3.0/">1.3.0</a></dd>
+          
+        
+          
+          <dd><a href="1.2.5/">1.2.5</a></dd>
+          
+        
+          
+          <dd><a href="1.2.4/">1.2.4</a></dd>
+          
+        
+          
+          <dd><a href="1.2.3/">1.2.3</a></dd>
+          
+        
+          
+          <dd><a href="1.2.2/">1.2.2</a></dd>
+          
+        
+          
+          <dd><a href="1.2.1/">1.2.1</a></dd>
+          
+        
+          
+          <dd><a href="1.2.0/">1.2.0</a></dd>
+          
+        
+          
+          <dd><a href="1.0.1/">1.0.1</a></dd>
+          
+        
+          
+          <dd><a href="1.0.0/">1.0.0</a></dd>
+          
+        
+          
+          <dd><a href="0.3.0/">0.3.0</a></dd>
+          
+        
+          
+          <dd><a href="0.2.0/">0.2.0</a></dd>
+          
+        
+          
+          <dd><a href="0.1.0/">0.1.0</a></dd>
+          
+        
+      </dl>
+      
+      
+      
+    </div>
+
 
   <script type="text/javascript">
       jQuery(function () {

@@ -24,11 +24,11 @@ enrich
 --------------
 .. autofunction:: arcgis.geoenrichment.enrich
 
-find_businesses
---------------
-.. autofunction:: arcgis.geoenrichment.find_businesses
 
 standard_geography_query
 ---------------
 .. autofunction:: arcgis.geoenrichment.standard_geography_query
 
+service_limits
+---------------
+.. autofunction:: arcgis.geoenrichment.service_limits

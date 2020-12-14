@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>arcgis.gis.admin module &mdash; arcgis 1.8.2 documentation</title>
+  <title>arcgis.gis.admin module &mdash; arcgis 1.8.3 documentation</title>
   
 
   
@@ -77,7 +77,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             
             
               <div class="version">
-                1.8.2
+                1.8.3
               </div>
             
           
@@ -121,6 +121,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <li class="toctree-l2"><a class="reference internal" href="arcgis.gis.toc.html#datastoremanager">DatastoreManager</a></li>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.gis.toc.html#rolemanager">RoleManager</a></li>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.gis.toc.html#resourcemanager">ResourceManager</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.gis.toc.html#apikeymanager">APIKeyManager</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.gis.toc.html#apikey">APIKey</a></li>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.gis.toc.html#profilemanager">ProfileManager</a></li>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.gis.toc.html#invitationmanager">InvitationManager</a></li>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.gis.toc.html#certificatemanager">CertificateManager</a></li>
@@ -165,6 +167,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <li class="toctree-l3"><a class="reference internal" href="arcgis.gis.server.html">arcgis.gis.server module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="arcgis.gis.mission.html">arcgis.gis.mission module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="arcgis.gis.nb.html">arcgis.gis.nb module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="arcgis.gis.workflowmanager.html">arcgis.gis.workflowmanager module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="arcgis.gis.tasks.html">arcgis.gis.tasks module</a></li>
 </ul>
 </li>
@@ -184,7 +187,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <li class="toctree-l1"><a class="reference internal" href="arcgis.schematics.html">arcgis.schematics module</a></li>
 <li class="toctree-l1"><a class="reference internal" href="arcgis.widgets.html">arcgis.widgets module</a></li>
 <li class="toctree-l1"><a class="reference internal" href="arcgis.apps.html">arcgis.apps module</a></li>
-<li class="toctree-l1"><a class="reference internal" href="arcgis.learn.html">arcgis.learn module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.learn.toc.html">arcgis.learn module</a></li>
 </ul>
 
             
@@ -305,7 +308,7 @@ portal participates</p>
 <dl class="py method">
 <dt id="arcgis.gis.admin.AGOLAdminManager.history">
 <code class="sig-name descname">history</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">start_date</span></em>, <em class="sig-param"><span class="n">to_date</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">num</span><span class="o">=</span><span class="default_value">100</span></em>, <em class="sig-param"><span class="n">all_events</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="n">event_ids</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">event_types</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">actors</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">owners</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">actions</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">ips</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">sort_order</span><span class="o">=</span><span class="default_value">'asc'</span></em>, <em class="sig-param"><span class="n">data_format</span><span class="o">=</span><span class="default_value">'csv'</span></em>, <em class="sig-param"><span class="n">save_folder</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.admin.AGOLAdminManager.history" title="Permalink to this definition">¶</a></dt>
-<dd><p>Returns a CSV file containing the login history from a start_date to the present.</p>
+<dd><p>Returns a CSV file or Pandas’s DataFrame containing the login history from a start_date to the present.</p>
 <table class="docutils align-default">
 <colgroup>
 <col style="width: 14%" />
@@ -724,6 +727,58 @@ returned</p></td>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
 <dd class="field-odd"><p>string path to csv file or Panda’s Dataframe (default)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.gis.admin.AGOLUsageReports.generate_report">
+<code class="sig-name descname">generate_report</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">focus</span><span class="p">:</span> <span class="n">str</span> <span class="o">=</span> <span class="default_value">'org'</span></em>, <em class="sig-param"><span class="n">report_type</span><span class="p">:</span> <span class="n">str</span> <span class="o">=</span> <span class="default_value">'users'</span></em>, <em class="sig-param"><span class="n">title</span><span class="p">:</span> <span class="n">str</span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="n">duration</span><span class="p">:</span> <span class="n">str</span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="n">start_time</span><span class="p">:</span> <span class="n">datetime.datetime</span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="n">notify</span><span class="p">:</span> <span class="n">bool</span> <span class="o">=</span> <span class="default_value">False</span></em>, <em class="sig-param"><span class="n">future</span><span class="p">:</span> <span class="n">bool</span> <span class="o">=</span> <span class="default_value">True</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.admin.AGOLUsageReports.generate_report" title="Permalink to this definition">¶</a></dt>
+<dd><p>Generates the reports of the overall usage of the organizations. 
+Reports define organization usage metrics for either a weekly or 
+monthly time frame.</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 22%" />
+<col style="width: 78%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>Argument</strong></p></td>
+<td><p><strong>Description</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>focus</p></td>
+<td><p>Required String. The level to perform the report on.
+The allowed value is only <cite>org</cite>.</p></td>
+</tr>
+<tr class="row-odd"><td><p>report_type</p></td>
+<td><p>Required String. The type of report to generate. The
+allowed values are <cite>users</cite>,`content`, or <cite>credits</cite>.</p></td>
+</tr>
+<tr class="row-even"><td><p>title</p></td>
+<td><p>Optional String.  The Item’s title.</p></td>
+</tr>
+<tr class="row-odd"><td><p>duration</p></td>
+<td><p>Optional String.  This is the timeframe to generate
+the report on.  The allowed values are: <cite>weekly</cite> or
+<cite>monthly</cite>.</p></td>
+</tr>
+<tr class="row-even"><td><p>start_time</p></td>
+<td><p>Optional datetime.datetime. The start time to begin
+reporting time.</p></td>
+</tr>
+<tr class="row-odd"><td><p>notify</p></td>
+<td><p>Optional Boolean. The Job will print a message upon
+completing of the task.</p></td>
+</tr>
+<tr class="row-even"><td><p>future</p></td>
+<td><p>Optional Boolean. Returns an asynchronous Job when
+<cite>True</cite> when <cite>False</cite>, it returns an Item.</p></td>
+</tr>
+</tbody>
+</table>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>Async Job Object or Item</p>
 </dd>
 </dl>
 </dd></dl>
@@ -5907,7 +5962,21 @@ the message on your receiver.</p></td>
 </tr>
 </tbody>
 </table>
-<p>:returns WebHook</p>
+<p>:returns a <a class="reference internal" href="#arcgis.gis.admin.Webhook" title="arcgis.gis.admin.Webhook"><code class="xref py py-class docutils literal notranslate"><span class="pre">WebHook</span></code></a> instance</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Example using Zapier as the payload URL</span>
+
+<span class="kn">from</span> <span class="nn">arcgis.gis</span> <span class="kn">import</span> <span class="n">GIS</span>
+
+<span class="n">gis</span> <span class="o">=</span> <span class="n">GIS</span><span class="p">(</span><span class="n">profile</span><span class="o">=</span><span class="s2">&quot;your_profile&quot;</span><span class="p">,</span> <span class="n">verify_cert</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+
+<span class="n">wh_mgr</span> <span class="o">=</span> <span class="n">gis</span><span class="o">.</span><span class="n">admin</span><span class="o">.</span><span class="n">webhooks</span>
+<span class="n">wh</span> <span class="o">=</span> <span class="n">wh_mgr</span><span class="o">.</span><span class="n">create</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s2">&quot;Webhook_from_API&quot;</span><span class="p">,</span>
+                   <span class="n">url</span><span class="o">=</span><span class="s2">&quot;https://hooks.zapier.com/hooks/catch/6694048/odqj9o3/&quot;</span><span class="p">,</span>
+                   <span class="n">events</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;/items/981e98b949d9432ebf26433f40948cec/move&quot;</span><span class="p">,</span>
+                           <span class="s2">&quot;/items/981e98b949d9432ebf26433f40948cec/update&quot;</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>See <a class="reference external" href="https://www.esri.com/arcgis-blog/products/arcgis-enterprise/administration/webhooks-dev-summit-2019/">Webhook Blog Post</a> for a detailed explanation.</p>
 </dd></dl>
 
 <dl class="py method">
@@ -6206,7 +6275,7 @@ the message on your receiver.</p></td>
   <div role="contentinfo">
     <p>
         
-        &copy; Copyright 2016-2019, Esri
+        &copy; Copyright 2016-2021, Esri
 
     </p>
   </div>
@@ -6228,6 +6297,134 @@ the message on your receiver.</p></td>
 
   </div>
   
+    Options v: 1.8.3
+
+  <div class="rst-versions" data-toggle="rst-versions" role="note" aria-label="versions">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      <span class="fa fa-book"> Pick an earlier version</span>
+      v: 1.8.3
+      <span class="fa fa-caret-down"></span>
+    </span>
+    <div class="rst-other-versions">
+      
+      
+      <dl>
+        <dt>Versions</dt>
+        
+          
+          <dd><a href="1.8.2/">1.8.2</a></dd>
+          
+        
+          
+          <dd><a href="1.8.1/">1.8.1</a></dd>
+          
+        
+          
+          <dd><a href="1.8.0/">1.8.0</a></dd>
+          
+        
+          
+          <dd><a href="1.7.1/">1.7.1</a></dd>
+          
+        
+          
+          <dd><a href="1.7.0/">1.7.0</a></dd>
+          
+        
+          
+          <dd><a href="1.6.2/">1.6.2</a></dd>
+          
+        
+          
+          <dd><a href="1.6.1/">1.6.1</a></dd>
+          
+        
+          
+          <dd><a href="1.6.0/">1.6.0</a></dd>
+          
+        
+          
+          <dd><a href="1.5.3/">1.5.3</a></dd>
+          
+        
+          
+          <dd><a href="1.5.2/">1.5.2</a></dd>
+          
+        
+          
+          <dd><a href="1.5.1/">1.5.1</a></dd>
+          
+        
+          
+          <dd><a href="1.5.0/">1.5.0</a></dd>
+          
+        
+          
+          <dd><a href="1.4.2/">1.4.2</a></dd>
+          
+        
+          
+          <dd><a href="1.4.1/">1.4.1</a></dd>
+          
+        
+          
+          <dd><a href="1.4.0/">1.4.0</a></dd>
+          
+        
+          
+          <dd><a href="1.3.0/">1.3.0</a></dd>
+          
+        
+          
+          <dd><a href="1.2.5/">1.2.5</a></dd>
+          
+        
+          
+          <dd><a href="1.2.4/">1.2.4</a></dd>
+          
+        
+          
+          <dd><a href="1.2.3/">1.2.3</a></dd>
+          
+        
+          
+          <dd><a href="1.2.2/">1.2.2</a></dd>
+          
+        
+          
+          <dd><a href="1.2.1/">1.2.1</a></dd>
+          
+        
+          
+          <dd><a href="1.2.0/">1.2.0</a></dd>
+          
+        
+          
+          <dd><a href="1.0.1/">1.0.1</a></dd>
+          
+        
+          
+          <dd><a href="1.0.0/">1.0.0</a></dd>
+          
+        
+          
+          <dd><a href="0.3.0/">0.3.0</a></dd>
+          
+        
+          
+          <dd><a href="0.2.0/">0.2.0</a></dd>
+          
+        
+          
+          <dd><a href="0.1.0/">0.1.0</a></dd>
+          
+        
+      </dl>
+      
+      
+      
+    </div>
+
 
   <script type="text/javascript">
       jQuery(function () {

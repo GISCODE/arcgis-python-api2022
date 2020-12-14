@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>arcgis.features module &mdash; arcgis 1.8.2 documentation</title>
+  <title>arcgis.features module &mdash; arcgis 1.8.3 documentation</title>
   
 
   
@@ -77,7 +77,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             
             
               <div class="version">
-                1.8.2
+                1.8.3
               </div>
             
           
@@ -143,7 +143,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <li class="toctree-l1"><a class="reference internal" href="arcgis.schematics.html">arcgis.schematics module</a></li>
 <li class="toctree-l1"><a class="reference internal" href="arcgis.widgets.html">arcgis.widgets module</a></li>
 <li class="toctree-l1"><a class="reference internal" href="arcgis.apps.html">arcgis.apps module</a></li>
-<li class="toctree-l1"><a class="reference internal" href="arcgis.learn.html">arcgis.learn module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.learn.toc.html">arcgis.learn module</a></li>
 </ul>
 
             
@@ -675,6 +675,9 @@ is the default.</p></td>
 <code class="sig-name descname">edit_features</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">adds</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">updates</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">deletes</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">gdb_version</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">use_global_ids</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">rollback_on_failure</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="n">return_edit_moment</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">attachments</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">true_curve_client</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">session_id</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">use_previous_moment</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">datum_transformation</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.features.FeatureLayer.edit_features" title="Permalink to this definition">¶</a></dt>
 <dd><p>This operation adds, updates, and deletes features to the
 associated feature layer or table in a single call.</p>
+<p>When making large number (250+ records at once) of edits,
+<cite>append</cite> should be used over <cite>edit_features</cite> to improve
+performance and ensure service stability.</p>
 <table class="docutils align-default">
 <colgroup>
 <col style="width: 12%" />
@@ -1255,6 +1258,273 @@ available is documented on the Query REST API.</p></td>
 </dd></dl>
 
 <dl class="py method">
+<dt id="arcgis.features.FeatureLayer.query_analytics">
+<code class="sig-name descname">query_analytics</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">out_analytics</span></em>, <em class="sig-param"><span class="n">where</span><span class="o">=</span><span class="default_value">'1=1'</span></em>, <em class="sig-param"><span class="n">out_fields</span><span class="o">=</span><span class="default_value">'*'</span></em>, <em class="sig-param"><span class="n">analytic_where</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">geometry_filter</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">out_sr</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">return_geometry</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="n">order_by</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">result_type</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">cache_hint</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">result_offset</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">result_record_count</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">quantization_param</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">sql_format</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">future</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.features.FeatureLayer.query_analytics" title="Permalink to this definition">¶</a></dt>
+<dd><p><cite>query_analytics</cite> exposes the standard SQL windows functions that compute
+aggregate and ranking values based on a group of rows called window
+partition. The window function is applied to the rows after the
+partitioning and ordering of the rows. <cite>query_analytics</cite> defines a
+window or user-specified set of rows within a query result set.
+<cite>query_analytics</cite> can be used to compute aggregated values such as moving
+averages, cumulative aggregates, or running totals.</p>
+<p><strong>SQL Windows Function</strong></p>
+<p>A window function performs a calculation across a set of rows (SQL partition
+or window) that are related to the current row. Unlike regular aggregate
+functions, use of a window function does not return single output row. The
+rows retain their separate identities with each calculation appended to the
+rows as a new field value. The window function can access more than just
+the current row of the query result.</p>
+<dl class="simple">
+<dt><cite>query_analytics</cite> currently supports the following windows functions:</dt><dd><ul class="simple">
+<li><p>Aggregate functions</p></li>
+<li><p>Analytic functions</p></li>
+<li><p>Ranking functions</p></li>
+</ul>
+</dd>
+</dl>
+<p><strong>Aggregate Functions</strong></p>
+<p>Aggregate functions are deterministic function that perform a calculation on
+a set of values and return a single value. They are used in the select list
+with optional HAVING clause. GROUP BY clause can also be used to calculate
+the aggregation on categories of rows. <cite>query_analytics</cite> can be used to
+calculate the aggregation on a specific range of value. Supported aggregate
+functions are:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Min</p></li>
+<li><p>Max</p></li>
+<li><p>Sum</p></li>
+<li><p>Count</p></li>
+<li><p>AVG</p></li>
+<li><p>STDDEV</p></li>
+<li><p>VAR</p></li>
+</ul>
+</div></blockquote>
+<p><strong>Analytic Functions</strong></p>
+<p>Several analytic functions available now in all SQL vendors to compute an
+aggregate value based on a group of rows or windows partition. Unlike
+aggregation functions, analytic functions can return single or multiple rows
+for each group.</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>CUM_DIST</p></li>
+<li><p>FIRST_VALUE</p></li>
+<li><p>LAST_VALUE</p></li>
+<li><p>LEAD</p></li>
+<li><p>LAG</p></li>
+<li><p>PERCENTILE_DISC</p></li>
+<li><p>PERCENTILE_CONT</p></li>
+<li><p>PERCENT_RANK</p></li>
+</ul>
+</div></blockquote>
+<p><strong>Ranking Functions</strong></p>
+<p>Ranking functions return a ranking value for each row in a partition. Depending
+on the function that is used, some rows might receive the same value as other rows.</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>RANK</p></li>
+<li><p>NTILE</p></li>
+<li><p>DENSE_RANK</p></li>
+<li><p>ROW_NUMBER</p></li>
+</ul>
+</div></blockquote>
+<p><strong>Partitioning</strong></p>
+<p>Partitions are extremely useful when you need to calculate the same metric over
+different group of rows. It is very powerful and has many potential usages. For
+example, you can add partition by to your window specification to look at
+different groups of rows individually.</p>
+<p>‘partitionBy’ clause divides the query result set into partitions and the sql
+window function is applied to each partition.
+The ‘partitionBy’ clause normally refers to the column by which the result is
+partitioned. ‘partitionBy’ can also be a value expression (column expression or
+function) that references any of the selected columns (not aliases).</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 14%" />
+<col style="width: 86%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>Argument</strong></p></td>
+<td><p><strong>Description</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>out_analytics</p></td>
+<td><p>Required List. A set of analytics to calculate on the Feature Layer.</p>
+<p>The definitions for one or more field-based or expression analytics to be computed. This parameter is supported only on layers/tables that indicate supportsAnalytics is true.
+Note: If outAnalyticFieldName is empty or missing, the server assigns a field name to the returned analytic field.</p>
+<p>Syntax: An array of analytic definitions. An analytic definition specifies the type of analytic, the field or expression on which it is to be computed, and the resulting output field name.
+Syntax
+[</p>
+<blockquote>
+<div><dl>
+<dt>{</dt><dd><p>“analyticType”: “&lt;COUNT | SUM | MIN | MAX | AVG | STDDEV | VAR | FIRST_VALUE, LAST_VALUE, LAG, LEAD, PERCENTILE_CONT, PERCENTILE_DISC, PERCENT_RANK, RANK, NTILE, DENSE_RANK, EXPRESSION&gt;”,
+“onAnalyticField”: “Field1”,
+“outAnalyticFieldName”: “Out_Field_Name1”,</p>
+<blockquote>
+<div><dl>
+<dt>“analyticParameters”: {</dt><dd><blockquote>
+<div><p>“orderBy”: “&lt;orderBy expression”,
+“value”: &lt;double value&gt;,// percentile value
+“partitionBy”: “&lt;field name or expression&gt;”,
+“offset”: &lt;integer&gt;, // used by LAG/LEAD
+“windowFrame”: {</p>
+<blockquote>
+<div><blockquote>
+<div><p>“type”: “ROWS” | “RANGE”,
+“extent”: {</p>
+<blockquote>
+<div><blockquote>
+<div><p>“extentType”: “PRECEDING” | “BOUNDARY”,
+“PRECEDING”: {</p>
+<blockquote>
+<div><blockquote>
+<div><dl>
+<dt>“type”: &lt;”UNBOUNDED” |</dt><dd><blockquote>
+<div><dl class="simple">
+<dt>“NUMERIC_CONSTANT” |</dt><dd><p>“CURRENT_ROW”&gt;</p>
+</dd>
+</dl>
+</div></blockquote>
+<p>“value”: &lt;numeric constant value&gt;</p>
+</dd>
+</dl>
+</div></blockquote>
+<p>}
+“BOUNDARY”: {</p>
+<blockquote>
+<div><dl class="simple">
+<dt>“start”: “UNBOUNDED_PRECEDING”,</dt><dd><dl class="simple">
+<dt>“NUMERIC_PRECEDING”,</dt><dd><p>“CURRENT_ROW”,</p>
+</dd>
+</dl>
+</dd>
+</dl>
+<p>“startValue”: &lt;numeric constant value&gt;,
+“end”: &lt;”UNBOUNDED_FOLLOWING” |</p>
+<blockquote>
+<div><p>“NUMERIC_FOLLOWING” |
+“CURRENT_ROW”,</p>
+</div></blockquote>
+<p>“endValue”: &lt;numeric constant value&gt;</p>
+</div></blockquote>
+</div></blockquote>
+<p>}</p>
+</div></blockquote>
+<p>}</p>
+</div></blockquote>
+</div></blockquote>
+<p>}</p>
+</div></blockquote>
+</div></blockquote>
+<p>}</p>
+</dd>
+</dl>
+</div></blockquote>
+<p>}</p>
+</dd>
+</dl>
+<p>}</p>
+</div></blockquote>
+<p>]</p>
+<p>Example:
+[{</p>
+<blockquote>
+<div><blockquote>
+<div><p>“analyticType”: “FIRST_VALUE”,
+“onAnalyticField”: “POP1990”,
+“analyticParameters”: {</p>
+<blockquote>
+<div><p>“orderBy”: “POP1990”,
+“partitionBy”: “state_name”</p>
+</div></blockquote>
+<p>},
+“outAnalyticFieldName”: “FirstValue”</p>
+</div></blockquote>
+<p>}</p>
+</div></blockquote>
+<p>]</p>
+</td>
+</tr>
+<tr class="row-odd"><td><p>where</p></td>
+<td><p>Optional string. The default is 1=1. The selection sql statement.</p></td>
+</tr>
+<tr class="row-even"><td><p>out_fields</p></td>
+<td><p>Optional List of field names to return. Field names can be specified
+either as a List of field names or as a comma separated string.
+The default is “*”, which returns all the fields.</p></td>
+</tr>
+<tr class="row-odd"><td><p>analytic_where</p></td>
+<td><p>Optional String. A where clause for the query filter that applies to
+the result set of applying the source where clause and all other params.</p></td>
+</tr>
+<tr class="row-even"><td><p>geometry_filter</p></td>
+<td><p>Optional from arcgis.geometry.filter. Allows for the information to
+be filtered on spatial relationship with another geometry.</p></td>
+</tr>
+<tr class="row-odd"><td><p>out_sr</p></td>
+<td><p>Optional Integer. The WKID for the spatial reference of the returned
+geometry.</p></td>
+</tr>
+<tr class="row-even"><td><p>out_sr</p></td>
+<td><p>Optional Integer.  The output spatial reference <cite>wkid</cite>.</p></td>
+</tr>
+<tr class="row-odd"><td><p>return_geometry</p></td>
+<td><p>Optional boolean. If true, geometry is returned with the query.
+Default is true.</p></td>
+</tr>
+<tr class="row-even"><td><p>order_by</p></td>
+<td><p>Optional string. One or more field names on which the
+features/records need to be ordered. Use ASC or DESC for ascending
+or descending, respectively, following every field to control the
+ordering.
+example: STATE_NAME ASC, RACE DESC, GENDER</p></td>
+</tr>
+<tr class="row-odd"><td><p>result_type</p></td>
+<td><p>Optional string. The result_type parameter can be used to control
+the number of features returned by the query operation.
+Values: None | standard | tile</p></td>
+</tr>
+<tr class="row-even"><td><p>cache_hint</p></td>
+<td><p>Optional Boolean. If you are performing the same query multiple times,
+a user can ask the server to cache the call to obtain the results
+quicker.  The default is <cite>False</cite>.</p></td>
+</tr>
+<tr class="row-odd"><td><p>result_offset</p></td>
+<td><p>Optional integer. This option can be used for fetching query results
+by skipping the specified number of records and starting from the
+next record (that is, resultOffset + 1th).</p></td>
+</tr>
+<tr class="row-even"><td><p>result_record_count</p></td>
+<td><p>Optional integer. This option can be used for fetching query results
+up to the result_record_count specified. When result_offset is
+specified but this parameter is not, the map service defaults it to
+max_record_count. The maximum value for this parameter is the value
+of the layer’s max_record_count property.</p></td>
+</tr>
+<tr class="row-odd"><td><p>quantization_parameters</p></td>
+<td><p>Optional dict. Used to project the geometry onto a virtual grid,
+likely representing pixels on the screen.</p></td>
+</tr>
+<tr class="row-even"><td><p>sql_format</p></td>
+<td><p>Optional string.  The sql_format parameter can be either standard
+SQL92 standard or it can use the native SQL of the underlying
+datastore native. The default is none which means the sql_format
+depends on useStandardizedQuery parameter.
+Values: none | standard | native</p></td>
+</tr>
+<tr class="row-odd"><td><p>future</p></td>
+<td><p>Optional Boolean. This determines if a <cite>Future</cite> object is returned
+(True) the method returns the results directly (False).</p></td>
+</tr>
+</tbody>
+</table>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>pd.DataFrame</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
 <dt id="arcgis.features.FeatureLayer.query_related_records">
 <code class="sig-name descname">query_related_records</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">object_ids</span></em>, <em class="sig-param"><span class="n">relationship_id</span></em>, <em class="sig-param"><span class="n">out_fields</span><span class="o">=</span><span class="default_value">'*'</span></em>, <em class="sig-param"><span class="n">definition_expression</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">return_geometry</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="n">max_allowable_offset</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">geometry_precision</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">out_wkid</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">gdb_version</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">return_z</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">return_m</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">historic_moment</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">return_true_curve</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.features.FeatureLayer.query_related_records" title="Permalink to this definition">¶</a></dt>
 <dd><p>The Query operation is performed on a feature service layer
@@ -1507,6 +1777,35 @@ return type is Integer. If the return_ids_only is True, a list of value is retur
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
 <dd class="field-odd"><p>InsensitiveDict</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.features.FeatureLayer.time_filter">
+<em class="property">property </em><code class="sig-name descname">time_filter</code><a class="headerlink" href="#arcgis.features.FeatureLayer.time_filter" title="Permalink to this definition">¶</a></dt>
+<dd><p>Starting at Enterprise 10.7.1+, instead of querying time-enabled map
+service layers or time-enabled feature service layers, a time filter
+can be specified. Time can be filtered as a single instant or by
+separating the two ends of a time extent with a comma.</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 25%" />
+<col style="width: 75%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>Input</strong></p></td>
+<td><p><strong>Description</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>value</p></td>
+<td><p>Required Datetime/List Datetime. This is a single
+or list of start/stop date.</p></td>
+</tr>
+</tbody>
+</table>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>String of datetime values as milliseconds from epoch</p>
 </dd>
 </dl>
 </dd></dl>
@@ -1863,6 +2162,9 @@ is the default.</p></td>
 <code class="sig-name descname">edit_features</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">adds</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">updates</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">deletes</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">gdb_version</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">use_global_ids</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">rollback_on_failure</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="n">return_edit_moment</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">attachments</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">true_curve_client</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">session_id</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">use_previous_moment</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">datum_transformation</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.features.Table.edit_features" title="Permalink to this definition">¶</a></dt>
 <dd><p>This operation adds, updates, and deletes features to the
 associated feature layer or table in a single call.</p>
+<p>When making large number (250+ records at once) of edits,
+<cite>append</cite> should be used over <cite>edit_features</cite> to improve
+performance and ensure service stability.</p>
 <table class="docutils align-default">
 <colgroup>
 <col style="width: 12%" />
@@ -2161,12 +2463,12 @@ layer does not support metdata, None value will be returned.</p>
 
 <dl class="py method">
 <dt id="arcgis.features.Table.query">
-<code class="sig-name descname">query</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">where</span><span class="o">=</span><span class="default_value">'1=1'</span></em>, <em class="sig-param"><span class="n">out_fields</span><span class="o">=</span><span class="default_value">'*'</span></em>, <em class="sig-param"><span class="n">time_filter</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">geometry_filter</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">return_geometry</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="n">return_count_only</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">return_ids_only</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">return_distinct_values</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">return_extent_only</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">group_by_fields_for_statistics</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">statistic_filter</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">result_offset</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">result_record_count</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">object_ids</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">distance</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">units</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">max_allowable_offset</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">out_sr</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">geometry_precision</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">gdb_version</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">order_by_fields</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">out_statistics</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">return_z</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">return_m</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">multipatch_option</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">quantization_parameters</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">return_centroid</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">return_all_records</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="n">result_type</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">historic_moment</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">sql_format</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">return_true_curves</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">return_exceeded_limit_features</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">as_df</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">datum_transformation</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.features.Table.query" title="Permalink to this definition">¶</a></dt>
-<dd><p>Queries a feature layer based on a sql statement</p>
+<code class="sig-name descname">query</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">where</span><span class="o">=</span><span class="default_value">'1=1'</span></em>, <em class="sig-param"><span class="n">out_fields</span><span class="o">=</span><span class="default_value">'*'</span></em>, <em class="sig-param"><span class="n">time_filter</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">return_count_only</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">return_ids_only</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">return_distinct_values</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">group_by_fields_for_statistics</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">statistic_filter</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">result_offset</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">result_record_count</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">object_ids</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">gdb_version</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">order_by_fields</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">out_statistics</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">return_all_records</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="n">historic_moment</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">sql_format</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">return_exceeded_limit_features</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">as_df</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">having</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.features.Table.query" title="Permalink to this definition">¶</a></dt>
+<dd><p>Queries a Table Layer based on a set of criteria.</p>
 <table class="docutils align-default">
 <colgroup>
-<col style="width: 17%" />
-<col style="width: 83%" />
+<col style="width: 30%" />
+<col style="width: 70%" />
 </colgroup>
 <tbody>
 <tr class="row-odd"><td><p><strong>Argument</strong></p></td>
@@ -2184,25 +2486,6 @@ The default is “*”, which returns all the fields.</p></td>
 <td><p>Optional string. The object IDs of this layer or table to be queried.
 The object ID values should be a comma-separated string.</p></td>
 </tr>
-<tr class="row-odd"><td><p>distance</p></td>
-<td><p>Optional integer. The buffer distance for the input geometries.
-The distance unit is specified by units. For example, if the
-distance is 100, the query geometry is a point, units is set to
-meters, and all points within 100 meters of the point are returned.</p></td>
-</tr>
-<tr class="row-even"><td><p>units</p></td>
-<td><p>Optional string. The unit for calculating the buffer distance. If
-unit is not specified, the unit is derived from the geometry spatial
-reference. If the geometry spatial reference is not specified, the
-unit is derived from the feature service data spatial reference.
-This parameter only applies if supportsQueryWithDistance is true.
-Values: esriSRUnit_Meter | esriSRUnit_StatuteMile |</p>
-<blockquote>
-<div><p>esriSRUnit_Foot | esriSRUnit_Kilometer |
-esriSRUnit_NauticalMile | esriSRUnit_USNauticalMile</p>
-</div></blockquote>
-</td>
-</tr>
 <tr class="row-odd"><td><p>time_filter</p></td>
 <td><p>Optional list. The format is of [&lt;startTime&gt;, &lt;endTime&gt;] using
 datetime.date, datetime.datetime or timestamp in milliseconds.
@@ -2212,28 +2495,6 @@ Syntax: time_filter=[&lt;startTime&gt;, &lt;endTime&gt;] ; specified as</p>
 milliseconds</p>
 </div></blockquote>
 </td>
-</tr>
-<tr class="row-even"><td><p>geometry_filter</p></td>
-<td><p>Optional from arcgis.geometry.filter. Allows for the information to
-be filtered on spatial relationship with another geometry.</p></td>
-</tr>
-<tr class="row-odd"><td><p>max_allowable_offset</p></td>
-<td><p>Optional float. This option can be used to specify the
-max_allowable_offset to be used for generalizing geometries returned
-by the query operation.
-The max_allowable_offset is in the units of out_sr. If out_sr is not
-specified, max_allowable_offset is assumed to be in the unit of the
-spatial reference of the layer.</p></td>
-</tr>
-<tr class="row-even"><td><p>out_sr</p></td>
-<td><p>Optional Integer. The WKID for the spatial reference of the returned
-geometry.</p></td>
-</tr>
-<tr class="row-odd"><td><p>geometry_precision</p></td>
-<td><p>Optional Integer. This option can be used to specify the number of
-decimal places in the response geometries returned by the query
-operation.
-This applies to X and Y values only (not m or z-values).</p></td>
 </tr>
 <tr class="row-even"><td><p>gdb_version</p></td>
 <td><p>Optional string. The geodatabase version to query. This parameter
@@ -2263,27 +2524,19 @@ option supersedes the returnIdsOnly parameter. If
 returnCountOnly = true, the response will return both the count and
 the extent.</p></td>
 </tr>
-<tr class="row-odd"><td><p>return_extent_only</p></td>
-<td><p>Optional boolean. If true, the response only includes the extent of
-the features that would be returned by the query. If
-returnCountOnly=true, the response will return both the count and
-the extent.
-The default is false. This parameter applies only if the
-supportsReturningQueryExtent property of the layer is true.</p></td>
-</tr>
-<tr class="row-even"><td><p>order_by_fields</p></td>
+<tr class="row-odd"><td><p>order_by_fields</p></td>
 <td><p>Optional string. One or more field names on which the
 features/records need to be ordered. Use ASC or DESC for ascending
 or descending, respectively, following every field to control the
 ordering.
 example: STATE_NAME ASC, RACE DESC, GENDER</p></td>
 </tr>
-<tr class="row-odd"><td><p>group_by_fields_for_statistics</p></td>
+<tr class="row-even"><td><p>group_by_fields_for_statistics</p></td>
 <td><p>Optional string. One or more field names on which the values need to
 be grouped for calculating the statistics.
 example: STATE_NAME, GENDER</p></td>
 </tr>
-<tr class="row-even"><td><p>out_statistics</p></td>
+<tr class="row-odd"><td><p>out_statistics</p></td>
 <td><p>Optional string. The definitions for one or more field-based
 statistics to be calculated.</p>
 <p>Syntax:</p>
@@ -2307,20 +2560,6 @@ statistics to be calculated.</p>
 <p>]</p>
 </td>
 </tr>
-<tr class="row-odd"><td><p>return_z</p></td>
-<td><p>Optional boolean. If true, Z values are included in the results if
-the features have Z values. Otherwise, Z values are not returned.
-The default is False.</p></td>
-</tr>
-<tr class="row-even"><td><p>return_m</p></td>
-<td><p>Optional boolean. If true, M values are included in the results if
-the features have M values. Otherwise, M values are not returned.
-The default is false.</p></td>
-</tr>
-<tr class="row-odd"><td><p>multipatch_option</p></td>
-<td><p>Optional x/y footprint. This option dictates how the geometry of
-a multipatch feature will be returned.</p></td>
-</tr>
 <tr class="row-even"><td><p>result_offset</p></td>
 <td><p>Optional integer. This option can be used for fetching query results
 by skipping the specified number of records and starting from the
@@ -2335,15 +2574,6 @@ max_record_count. The maximum value for this parameter is the value
 of the layer’s max_record_count property. This option is ignored if
 return_all_records is True (i.e. by default).</p></td>
 </tr>
-<tr class="row-even"><td><p>quantization_parameters</p></td>
-<td><p>Optional dict. Used to project the geometry onto a virtual grid,
-likely representing pixels on the screen.</p></td>
-</tr>
-<tr class="row-odd"><td><p>return_centroid</p></td>
-<td><p>Optional boolean. Used to return the geometry centroid associated
-with each feature returned. If true, the result includes the geometry
-centroid. The default is false.</p></td>
-</tr>
 <tr class="row-even"><td><p>return_all_records</p></td>
 <td><p>Optional boolean. When True, the query operation will call the
 service until all records that satisfy the where_clause are
@@ -2352,12 +2582,7 @@ ignored if return_all_records is True. Also, if return_count_only,
 return_ids_only, or return_extent_only are True, this parameter
 will be ignored.</p></td>
 </tr>
-<tr class="row-odd"><td><p>result_type</p></td>
-<td><p>Optional string. The result_type parameter can be used to control
-the number of features returned by the query operation.
-Values: None | standard | tile</p></td>
-</tr>
-<tr class="row-even"><td><p>historic_moment</p></td>
+<tr class="row-odd"><td><p>historic_moment</p></td>
 <td><p>Optional integer. The historic moment to query. This parameter
 applies only if the layer is archiving enabled and the
 supportsQueryWithHistoricMoment property is set to true. This
@@ -2366,17 +2591,12 @@ property is provided in the layer resource.</p>
 current features.</p>
 </td>
 </tr>
-<tr class="row-odd"><td><p>sql_format</p></td>
+<tr class="row-even"><td><p>sql_format</p></td>
 <td><p>Optional string.  The sql_format parameter can be either standard
 SQL92 standard or it can use the native SQL of the underlying
 datastore native. The default is none which means the sql_format
 depends on useStandardizedQuery parameter.
 Values: none | standard | native</p></td>
-</tr>
-<tr class="row-even"><td><p>return_true_curves</p></td>
-<td><p>Optional boolean. When set to true, returns true curves in output
-geometries. When set to false, curves are converted to densified
-polylines or polygons.</p></td>
 </tr>
 <tr class="row-odd"><td><p>return_exceeded_limit_features</p></td>
 <td><p>Optional boolean. Optional parameter which is true by default. When
@@ -2392,41 +2612,6 @@ limit is no longer exceeded without making multiple calls.</p>
 <td><p>Optional boolean.  If True, the results are returned as a DataFrame
 instead of a FeatureSet.</p></td>
 </tr>
-<tr class="row-odd"><td><p>datum_transformation</p></td>
-<td><p>Optional Integer/Dictionary.  This parameter applies a datum transformation while
-projecting geometries in the results when out_sr is different than the layer’s spatial
-reference. When specifying transformations, you need to think about which datum
-transformation best projects the layer (not the feature service) to the <cite>outSR</cite> and
-<cite>sourceSpatialReference</cite> property in the layer properties. For a list of valid datum
-transformation ID values ad well-known text strings, see <a class="reference external" href="https://developers.arcgis.com/net/latest/wpf/guide/coordinate-systems-and-transformations.htm">Coordinate systems and
-transformations</a>.
-For more information on datum transformations, please see the transformation
-parameter in the <a class="reference external" href="https://developers.arcgis.com/rest/services-reference/project.htm">Project operation</a>.</p>
-<p><strong>Examples</strong></p>
-<blockquote>
-<div><table class="docutils align-default">
-<colgroup>
-<col style="width: 8%" />
-<col style="width: 92%" />
-</colgroup>
-<tbody>
-<tr class="row-odd"><td><p>Inputs</p></td>
-<td><p>Description</p></td>
-</tr>
-<tr class="row-even"><td><p>WKID</p></td>
-<td><p>Integer. Ex: datum_transformation=4326</p></td>
-</tr>
-<tr class="row-odd"><td><p>WKT</p></td>
-<td><p>Dict. Ex: datum_transformation={“wkt”: “&lt;WKT&gt;”}</p></td>
-</tr>
-<tr class="row-even"><td><p>Composite</p></td>
-<td><p>Dict. Ex: datum_transformation=```{‘geoTransforms’:[{‘wkid’:&lt;id&gt;,’forward’:&lt;true|false&gt;},{‘wkt’:’&lt;WKT&gt;’,’forward’:&lt;True|False&gt;}]}```</p></td>
-</tr>
-</tbody>
-</table>
-</div></blockquote>
-</td>
-</tr>
 <tr class="row-odd"><td><p>kwargs</p></td>
 <td><p>Optional dict. Optional parameters that can be passed to the Query
 function.  This will allow users to pass additional parameters not
@@ -2437,7 +2622,274 @@ available is documented on the Query REST API.</p></td>
 </table>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p>A FeatureSet containing the features matching the query unless another return type is specified, such as count</p>
+<dd class="field-odd"><p>A FeatureSet or Panda’s DataFrame containing the features matching the query unless another return type is specified, such as count</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.features.Table.query_analytics">
+<code class="sig-name descname">query_analytics</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">out_analytics</span></em>, <em class="sig-param"><span class="n">where</span><span class="o">=</span><span class="default_value">'1=1'</span></em>, <em class="sig-param"><span class="n">out_fields</span><span class="o">=</span><span class="default_value">'*'</span></em>, <em class="sig-param"><span class="n">analytic_where</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">geometry_filter</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">out_sr</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">return_geometry</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="n">order_by</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">result_type</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">cache_hint</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">result_offset</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">result_record_count</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">quantization_param</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">sql_format</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">future</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.features.Table.query_analytics" title="Permalink to this definition">¶</a></dt>
+<dd><p><cite>query_analytics</cite> exposes the standard SQL windows functions that compute
+aggregate and ranking values based on a group of rows called window
+partition. The window function is applied to the rows after the
+partitioning and ordering of the rows. <cite>query_analytics</cite> defines a
+window or user-specified set of rows within a query result set.
+<cite>query_analytics</cite> can be used to compute aggregated values such as moving
+averages, cumulative aggregates, or running totals.</p>
+<p><strong>SQL Windows Function</strong></p>
+<p>A window function performs a calculation across a set of rows (SQL partition
+or window) that are related to the current row. Unlike regular aggregate
+functions, use of a window function does not return single output row. The
+rows retain their separate identities with each calculation appended to the
+rows as a new field value. The window function can access more than just
+the current row of the query result.</p>
+<dl class="simple">
+<dt><cite>query_analytics</cite> currently supports the following windows functions:</dt><dd><ul class="simple">
+<li><p>Aggregate functions</p></li>
+<li><p>Analytic functions</p></li>
+<li><p>Ranking functions</p></li>
+</ul>
+</dd>
+</dl>
+<p><strong>Aggregate Functions</strong></p>
+<p>Aggregate functions are deterministic function that perform a calculation on
+a set of values and return a single value. They are used in the select list
+with optional HAVING clause. GROUP BY clause can also be used to calculate
+the aggregation on categories of rows. <cite>query_analytics</cite> can be used to
+calculate the aggregation on a specific range of value. Supported aggregate
+functions are:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Min</p></li>
+<li><p>Max</p></li>
+<li><p>Sum</p></li>
+<li><p>Count</p></li>
+<li><p>AVG</p></li>
+<li><p>STDDEV</p></li>
+<li><p>VAR</p></li>
+</ul>
+</div></blockquote>
+<p><strong>Analytic Functions</strong></p>
+<p>Several analytic functions available now in all SQL vendors to compute an
+aggregate value based on a group of rows or windows partition. Unlike
+aggregation functions, analytic functions can return single or multiple rows
+for each group.</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>CUM_DIST</p></li>
+<li><p>FIRST_VALUE</p></li>
+<li><p>LAST_VALUE</p></li>
+<li><p>LEAD</p></li>
+<li><p>LAG</p></li>
+<li><p>PERCENTILE_DISC</p></li>
+<li><p>PERCENTILE_CONT</p></li>
+<li><p>PERCENT_RANK</p></li>
+</ul>
+</div></blockquote>
+<p><strong>Ranking Functions</strong></p>
+<p>Ranking functions return a ranking value for each row in a partition. Depending
+on the function that is used, some rows might receive the same value as other rows.</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>RANK</p></li>
+<li><p>NTILE</p></li>
+<li><p>DENSE_RANK</p></li>
+<li><p>ROW_NUMBER</p></li>
+</ul>
+</div></blockquote>
+<p><strong>Partitioning</strong></p>
+<p>Partitions are extremely useful when you need to calculate the same metric over
+different group of rows. It is very powerful and has many potential usages. For
+example, you can add partition by to your window specification to look at
+different groups of rows individually.</p>
+<p>‘partitionBy’ clause divides the query result set into partitions and the sql
+window function is applied to each partition.
+The ‘partitionBy’ clause normally refers to the column by which the result is
+partitioned. ‘partitionBy’ can also be a value expression (column expression or
+function) that references any of the selected columns (not aliases).</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 14%" />
+<col style="width: 86%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>Argument</strong></p></td>
+<td><p><strong>Description</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>out_analytics</p></td>
+<td><p>Required List. A set of analytics to calculate on the Feature Layer.</p>
+<p>The definitions for one or more field-based or expression analytics to be computed. This parameter is supported only on layers/tables that indicate supportsAnalytics is true.
+Note: If outAnalyticFieldName is empty or missing, the server assigns a field name to the returned analytic field.</p>
+<p>Syntax: An array of analytic definitions. An analytic definition specifies the type of analytic, the field or expression on which it is to be computed, and the resulting output field name.
+Syntax
+[</p>
+<blockquote>
+<div><dl>
+<dt>{</dt><dd><p>“analyticType”: “&lt;COUNT | SUM | MIN | MAX | AVG | STDDEV | VAR | FIRST_VALUE, LAST_VALUE, LAG, LEAD, PERCENTILE_CONT, PERCENTILE_DISC, PERCENT_RANK, RANK, NTILE, DENSE_RANK, EXPRESSION&gt;”,
+“onAnalyticField”: “Field1”,
+“outAnalyticFieldName”: “Out_Field_Name1”,</p>
+<blockquote>
+<div><dl>
+<dt>“analyticParameters”: {</dt><dd><blockquote>
+<div><p>“orderBy”: “&lt;orderBy expression”,
+“value”: &lt;double value&gt;,// percentile value
+“partitionBy”: “&lt;field name or expression&gt;”,
+“offset”: &lt;integer&gt;, // used by LAG/LEAD
+“windowFrame”: {</p>
+<blockquote>
+<div><blockquote>
+<div><p>“type”: “ROWS” | “RANGE”,
+“extent”: {</p>
+<blockquote>
+<div><blockquote>
+<div><p>“extentType”: “PRECEDING” | “BOUNDARY”,
+“PRECEDING”: {</p>
+<blockquote>
+<div><blockquote>
+<div><dl>
+<dt>“type”: &lt;”UNBOUNDED” |</dt><dd><blockquote>
+<div><dl class="simple">
+<dt>“NUMERIC_CONSTANT” |</dt><dd><p>“CURRENT_ROW”&gt;</p>
+</dd>
+</dl>
+</div></blockquote>
+<p>“value”: &lt;numeric constant value&gt;</p>
+</dd>
+</dl>
+</div></blockquote>
+<p>}
+“BOUNDARY”: {</p>
+<blockquote>
+<div><dl class="simple">
+<dt>“start”: “UNBOUNDED_PRECEDING”,</dt><dd><dl class="simple">
+<dt>“NUMERIC_PRECEDING”,</dt><dd><p>“CURRENT_ROW”,</p>
+</dd>
+</dl>
+</dd>
+</dl>
+<p>“startValue”: &lt;numeric constant value&gt;,
+“end”: &lt;”UNBOUNDED_FOLLOWING” |</p>
+<blockquote>
+<div><p>“NUMERIC_FOLLOWING” |
+“CURRENT_ROW”,</p>
+</div></blockquote>
+<p>“endValue”: &lt;numeric constant value&gt;</p>
+</div></blockquote>
+</div></blockquote>
+<p>}</p>
+</div></blockquote>
+<p>}</p>
+</div></blockquote>
+</div></blockquote>
+<p>}</p>
+</div></blockquote>
+</div></blockquote>
+<p>}</p>
+</dd>
+</dl>
+</div></blockquote>
+<p>}</p>
+</dd>
+</dl>
+<p>}</p>
+</div></blockquote>
+<p>]</p>
+<p>Example:
+[{</p>
+<blockquote>
+<div><blockquote>
+<div><p>“analyticType”: “FIRST_VALUE”,
+“onAnalyticField”: “POP1990”,
+“analyticParameters”: {</p>
+<blockquote>
+<div><p>“orderBy”: “POP1990”,
+“partitionBy”: “state_name”</p>
+</div></blockquote>
+<p>},
+“outAnalyticFieldName”: “FirstValue”</p>
+</div></blockquote>
+<p>}</p>
+</div></blockquote>
+<p>]</p>
+</td>
+</tr>
+<tr class="row-odd"><td><p>where</p></td>
+<td><p>Optional string. The default is 1=1. The selection sql statement.</p></td>
+</tr>
+<tr class="row-even"><td><p>out_fields</p></td>
+<td><p>Optional List of field names to return. Field names can be specified
+either as a List of field names or as a comma separated string.
+The default is “*”, which returns all the fields.</p></td>
+</tr>
+<tr class="row-odd"><td><p>analytic_where</p></td>
+<td><p>Optional String. A where clause for the query filter that applies to
+the result set of applying the source where clause and all other params.</p></td>
+</tr>
+<tr class="row-even"><td><p>geometry_filter</p></td>
+<td><p>Optional from arcgis.geometry.filter. Allows for the information to
+be filtered on spatial relationship with another geometry.</p></td>
+</tr>
+<tr class="row-odd"><td><p>out_sr</p></td>
+<td><p>Optional Integer. The WKID for the spatial reference of the returned
+geometry.</p></td>
+</tr>
+<tr class="row-even"><td><p>out_sr</p></td>
+<td><p>Optional Integer.  The output spatial reference <cite>wkid</cite>.</p></td>
+</tr>
+<tr class="row-odd"><td><p>return_geometry</p></td>
+<td><p>Optional boolean. If true, geometry is returned with the query.
+Default is true.</p></td>
+</tr>
+<tr class="row-even"><td><p>order_by</p></td>
+<td><p>Optional string. One or more field names on which the
+features/records need to be ordered. Use ASC or DESC for ascending
+or descending, respectively, following every field to control the
+ordering.
+example: STATE_NAME ASC, RACE DESC, GENDER</p></td>
+</tr>
+<tr class="row-odd"><td><p>result_type</p></td>
+<td><p>Optional string. The result_type parameter can be used to control
+the number of features returned by the query operation.
+Values: None | standard | tile</p></td>
+</tr>
+<tr class="row-even"><td><p>cache_hint</p></td>
+<td><p>Optional Boolean. If you are performing the same query multiple times,
+a user can ask the server to cache the call to obtain the results
+quicker.  The default is <cite>False</cite>.</p></td>
+</tr>
+<tr class="row-odd"><td><p>result_offset</p></td>
+<td><p>Optional integer. This option can be used for fetching query results
+by skipping the specified number of records and starting from the
+next record (that is, resultOffset + 1th).</p></td>
+</tr>
+<tr class="row-even"><td><p>result_record_count</p></td>
+<td><p>Optional integer. This option can be used for fetching query results
+up to the result_record_count specified. When result_offset is
+specified but this parameter is not, the map service defaults it to
+max_record_count. The maximum value for this parameter is the value
+of the layer’s max_record_count property.</p></td>
+</tr>
+<tr class="row-odd"><td><p>quantization_parameters</p></td>
+<td><p>Optional dict. Used to project the geometry onto a virtual grid,
+likely representing pixels on the screen.</p></td>
+</tr>
+<tr class="row-even"><td><p>sql_format</p></td>
+<td><p>Optional string.  The sql_format parameter can be either standard
+SQL92 standard or it can use the native SQL of the underlying
+datastore native. The default is none which means the sql_format
+depends on useStandardizedQuery parameter.
+Values: none | standard | native</p></td>
+</tr>
+<tr class="row-odd"><td><p>future</p></td>
+<td><p>Optional Boolean. This determines if a <cite>Future</cite> object is returned
+(True) the method returns the results directly (False).</p></td>
+</tr>
+</tbody>
+</table>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>pd.DataFrame</p>
 </dd>
 </dl>
 </dd></dl>
@@ -2700,6 +3152,35 @@ return type is Integer. If the return_ids_only is True, a list of value is retur
 </dd></dl>
 
 <dl class="py method">
+<dt id="arcgis.features.Table.time_filter">
+<em class="property">property </em><code class="sig-name descname">time_filter</code><a class="headerlink" href="#arcgis.features.Table.time_filter" title="Permalink to this definition">¶</a></dt>
+<dd><p>Starting at Enterprise 10.7.1+, instead of querying time-enabled map
+service layers or time-enabled feature service layers, a time filter
+can be specified. Time can be filtered as a single instant or by
+separating the two ends of a time extent with a comma.</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 25%" />
+<col style="width: 75%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>Input</strong></p></td>
+<td><p><strong>Description</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>value</p></td>
+<td><p>Required Datetime/List Datetime. This is a single
+or list of start/stop date.</p></td>
+</tr>
+</tbody>
+</table>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>String of datetime values as milliseconds from epoch</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
 <dt id="arcgis.features.Table.update_metadata">
 <code class="sig-name descname">update_metadata</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">file_path</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.features.Table.update_metadata" title="Permalink to this definition">¶</a></dt>
 <dd><p>Updates a Layer’s metadata from an xml file.</p>
@@ -2810,6 +3291,200 @@ branch versioned and have globalid columns. Change tracking can also
 be enabled for ArcGIS Online hosted feature services. If all layers
 and tables in the service have the ChangeTracking capability, the
 <cite>extract_changes</cite> operation can be used to get changes.</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 14%" />
+<col style="width: 86%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>Argument</strong></p></td>
+<td><p><strong>Description</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>layers</p></td>
+<td><p>Required List.  The list of layers (by index value) and tables to include in the
+output.</p></td>
+</tr>
+<tr class="row-odd"><td><p>servergen</p></td>
+<td><p>Required List.   The servergen numbers allow a client to specify the last
+layer generation numbers (a Unix epoch time value in milliseconds) for the
+changes received from the server. All changes made after this value will be
+returned.</p>
+<blockquote>
+<div><ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">minServerGen</span></code>: It is the min generation of the server data changes.
+Clients with layerServerGens that is less than minServerGen cannot
+extract changes and would need to make a full server/layers query
+instead of extracting changes.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">serverGen</span></code>: It is the current server generation number of the
+changes. Every changed feature has a version or a generation number
+that is changed every time the feature is updated.</p></li>
+</ul>
+</div></blockquote>
+<dl class="simple">
+<dt>Syntax:</dt><dd><p>servergen= [{“id”: &lt;layerId1&gt;, “serverGen”: &lt;genNum1&gt;}, {“id”: &lt;layerId2&gt;, “serverGen”: &lt;genNum2&gt;}]</p>
+</dd>
+</dl>
+<p>The <code class="docutils literal notranslate"><span class="pre">id</span></code> value for the layer is the index of the layer from the <code class="xref py py-attr docutils literal notranslate"><span class="pre">layers</span></code>
+attribute on the <a class="reference internal" href="#arcgis.features.FeatureLayerCollection" title="arcgis.features.FeatureLayerCollection"><code class="xref py py-class docutils literal notranslate"><span class="pre">FeatureLayerCollection</span></code></a>. The <code class="docutils literal notranslate"><span class="pre">serverGen</span></code> value is a Unix epoch timestamp value in milliseconds.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Usage Example:</span>
+
+<span class="n">servergen</span><span class="o">=</span> <span class="p">[{</span><span class="s2">&quot;id&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="s2">&quot;serverGen&quot;</span><span class="p">:</span> <span class="mi">10500</span><span class="p">},</span>
+            <span class="p">{</span><span class="s2">&quot;id&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;serverGen&quot;</span><span class="p">:</span> <span class="mi">1100</span><span class="p">},</span>
+            <span class="p">{</span><span class="s2">&quot;id&quot;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span> <span class="s2">&quot;serverGen&quot;</span><span class="p">:</span> <span class="mi">1200</span><span class="p">}]</span>
+</pre></div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>queries</p></td>
+<td><p>Optional Dictionary. In addition to the layers and geometry
+parameters, the <cite>queries</cite> parameter can be used to further define
+what changes to return. This parameter allows you to set query
+properties on a per-layer or per-table basis. If a layer’s ID is
+present in the layers parameter and missing from layer <cite>queries</cite>,
+it’s changed features that intersect with the filter geometry are
+returned.</p>
+<p>The properties include the following:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">where</span></code> - Defines an attribute query for a layer or table. The
+default is no where clause.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">useGeometry</span></code> - Determines whether or not to apply the geometry
+for the layer. The default is true. If set to false, features
+from the layer that intersect the geometry are not added.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">includeRelated</span></code> - Determines whether or not to add related
+rows. The default is true. The value true is honored only
+for queryOption=none. This is only applicable if your data
+has relationship classes. Relationships are only processed
+in a forward direction from origin to destination.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">queryOption</span></code> - Defines whether or how filters will be applied
+to a layer. The queryOption was added in 10.2. See the
+<a class="reference external" href="https://developers.arcgis.com/rest/services-reference/sync-compatibility-notes.htm">Compatibility notes</a> topic for more information.
+Valid values are <code class="docutils literal notranslate"><span class="pre">None</span></code>, <code class="docutils literal notranslate"><span class="pre">useFilter</span></code>, or <code class="docutils literal notranslate"><span class="pre">all</span></code>. See also the
+<code class="docutils literal notranslate"><span class="pre">layerQueries</span></code> column in the Request Parameters table in the <a class="reference external" href="https://developers.arcgis.com/rest/services-reference/extract-changes-feature-service-.htm">Extract Changes (Feature Service) help</a>
+for details and code samples.</p></li>
+</ul>
+<ul class="simple">
+<li><p>When the value is none, no feature are returned based on where and filter geometry.</p></li>
+<li><p>If <code class="docutils literal notranslate"><span class="pre">includeRelated</span></code> is false, no features are returned.</p></li>
+<li><p>If <code class="docutils literal notranslate"><span class="pre">includeRelated</span></code> is true, features in this layer (that are related to the features in other layers in the replica) are returned.</p></li>
+<li><p>When the value is <code class="docutils literal notranslate"><span class="pre">useFilter</span></code>, features that satisfy filtering based on geometry and <code class="docutils literal notranslate"><span class="pre">where</span></code> are returned. The value of <code class="docutils literal notranslate"><span class="pre">includeRelated</span></code> is ignored.</p></li>
+</ul>
+</div></blockquote>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Usage Example:</span>
+
+<span class="n">queries</span><span class="o">=</span><span class="p">{</span><span class="n">Layer_or_tableID1</span><span class="p">:{</span><span class="s2">&quot;where&quot;</span><span class="p">:</span><span class="s2">&quot;attribute query&quot;</span><span class="p">,</span>
+                            <span class="s2">&quot;useGeometry&quot;</span><span class="p">:</span> <span class="n">true</span> <span class="o">|</span> <span class="n">false</span><span class="p">,</span>
+                            <span class="s2">&quot;includeRelated&quot;</span><span class="p">:</span> <span class="n">true</span> <span class="o">|</span> <span class="n">false</span><span class="p">},</span>
+         <span class="n">Layer_or_tableID2</span><span class="p">:</span> <span class="p">{</span><span class="o">.</span><span class="p">}}</span>
+</pre></div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>geometry</p></td>
+<td><p>Optional <a class="reference internal" href="arcgis.geometry.html#arcgis.geometry.Geometry" title="arcgis.geometry.Geometry"><code class="xref py py-class docutils literal notranslate"><span class="pre">Geometry</span></code></a>/<code class="xref py py-class docutils literal notranslate"><span class="pre">Extent</span></code>.
+The geometry to apply as the spatial filter for the changes. All the changed
+features in layers intersecting this geometry will be returned. The structure
+of the geometry is the same as the structure of the <a class="reference external" href="https://developers.arcgis.com/documentation/common-data-types/geometry-objects.htm">JSON geometry objects</a>
+returned by the ArcGIS REST API. In addition to the JSON structures,
+for envelopes and points you can specify the geometry with a simpler
+comma-separated syntax.</p></td>
+</tr>
+<tr class="row-even"><td><p>geometry_type</p></td>
+<td><p>Optional String. The type of geometry specified by the geometry
+parameter. The geometry type can be an envelope, point, line or
+polygon. The default geometry type is an envelope.</p>
+<p>Values: <code class="docutils literal notranslate"><span class="pre">esriGeometryPoint</span></code>, <code class="docutils literal notranslate"><span class="pre">esriGeometryMultipoint</span></code>, <code class="docutils literal notranslate"><span class="pre">esriGeometryPolyline</span></code>, <code class="docutils literal notranslate"><span class="pre">esriGeometryPolygon</span></code>, <code class="docutils literal notranslate"><span class="pre">esriGeometryEnvelope</span></code></p>
+</td>
+</tr>
+<tr class="row-odd"><td><p>in_sr</p></td>
+<td><p>Optional Integer. The spatial reference of the input geometry.</p></td>
+</tr>
+<tr class="row-even"><td><p>out_sr</p></td>
+<td><p>Optional Integer/String. The output spatial reference of the
+returned changes.</p></td>
+</tr>
+<tr class="row-odd"><td><p>version</p></td>
+<td><p>Optional String. If branch versioning is enabled, a user can specify
+the branch version name to extract changes from.</p></td>
+</tr>
+<tr class="row-even"><td><p>return_inserts</p></td>
+<td><p>Optional Boolean.  If true, newly inserted features will be
+returned. The default is false.</p></td>
+</tr>
+<tr class="row-odd"><td><p>return_updates</p></td>
+<td><p>Optional Boolean. If true, updated features will be returned. The
+default is false.</p></td>
+</tr>
+<tr class="row-even"><td><p>return_deletes</p></td>
+<td><p>Optional Boolean. If true, deleted features will be returned. The
+default is false.</p></td>
+</tr>
+<tr class="row-odd"><td><p>return_ids_only</p></td>
+<td><p>Optional Boolean. If true, the response includes an array of object
+IDs only. The default is false.</p></td>
+</tr>
+<tr class="row-even"><td><p>return_attachments</p></td>
+<td><p>Optional Boolean.  If true, attachments changes are returned in the
+response. Otherwise, attachments are not included. The default is
+false. This parameter is only applicable if the feature service has
+attachments.</p></td>
+</tr>
+<tr class="row-odd"><td><p>attachments_by_url</p></td>
+<td><p>Optional Boolean.  If true, a reference to a URL will be provided
+for each attachment returned. Otherwise, attachments are embedded in
+the response. The default is true.</p></td>
+</tr>
+<tr class="row-even"><td><p>data_format</p></td>
+<td><p>Optional String. The format of the changes returned in the response.
+The default is json. Values: sqllite or json</p></td>
+</tr>
+<tr class="row-odd"><td><p>change_extent_grid_cell</p></td>
+<td><p>Optional String. To optimize localizing changes extent, the value
+medium is an 8x8 grid that bound the changes extent. Used only when
+<cite>return_extent_only</cite> is true. The default is none.
+Values: None, large, medium, or small</p></td>
+</tr>
+</tbody>
+</table>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>dictionary containing the layerServerGens and an array of edits</p>
+</dd>
+</dl>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1">#Usage Example for extracting all changes to a feaature layer in a particular version since the time the Feature Layer was created.</span>
+
+<span class="kn">from</span> <span class="nn">arcgis.gis</span> <span class="kn">import</span> <span class="n">GIS</span>
+<span class="kn">from</span> <span class="nn">arcgis.features</span> <span class="kn">import</span> <span class="n">FeatureLayerCollection</span>
+
+<span class="o">&gt;&gt;&gt;</span> <span class="n">gis</span> <span class="o">=</span> <span class="n">GIS</span><span class="p">(</span><span class="o">&lt;</span><span class="n">url</span><span class="o">&gt;</span><span class="p">,</span> <span class="o">&lt;</span><span class="n">username</span><span class="o">&gt;</span><span class="p">,</span> <span class="o">&lt;</span><span class="n">password</span><span class="o">&gt;</span><span class="p">)</span>
+
+<span class="c1"># Search for the Feature Service item</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">fl_item</span> <span class="o">=</span> <span class="n">gis</span><span class="o">.</span><span class="n">content</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="s1">&#39;title:&quot;my_feature_layer&quot; type:&quot;Feature Layer&quot;&#39;</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">created_time</span> <span class="o">=</span> <span class="n">fl_item</span><span class="o">.</span><span class="n">created</span>
+
+<span class="c1"># Get the Feature Service url</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">fs</span><span class="o">=</span><span class="n">gis</span><span class="o">.</span><span class="n">content</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="s1">&#39;title:&quot;my_feature_layer&quot; type:&quot;Feature&quot;&#39;</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">url</span>
+
+<span class="c1"># Instantiate the a FeatureLayerCollection from the url</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">flc</span><span class="o">=</span><span class="n">FeatureLayerCollection</span><span class="p">(</span><span class="n">fs</span><span class="p">,</span> <span class="n">gis</span><span class="p">)</span>
+
+<span class="c1"># Extract the changes for the version</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">extracted_changes</span><span class="o">=</span><span class="n">flc</span><span class="o">.</span><span class="n">extract_changes</span><span class="p">(</span><span class="n">layers</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span>
+                           <span class="n">servergen</span><span class="o">=</span><span class="p">[{</span><span class="s2">&quot;id&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="s2">&quot;serverGen&quot;</span><span class="p">:</span> <span class="n">created_time</span><span class="p">}],</span>
+                           <span class="n">version</span><span class="o">=</span><span class="s2">&quot;&lt;version_owner&gt;.&lt;version_name&gt;&quot;</span><span class="p">,</span>
+                           <span class="n">return_ids_only</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+                           <span class="n">return_inserts</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+                           <span class="n">return_updates</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+                           <span class="n">return_deletes</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+                           <span class="n">data_format</span><span class="o">=</span><span class="s2">&quot;json&quot;</span><span class="p">)</span>
+
+<span class="o">&gt;&gt;&gt;</span> <span class="n">extracted_changes</span>
+
+<span class="p">{</span><span class="s1">&#39;layerServerGens&#39;</span><span class="p">:</span> <span class="p">[{</span><span class="s1">&#39;id&#39;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="s1">&#39;serverGen&#39;</span><span class="p">:</span> <span class="mi">1600713614620</span><span class="p">}],</span>
+ <span class="s1">&#39;edits&#39;</span><span class="p">:</span> <span class="p">[{</span><span class="s1">&#39;id&#39;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+   <span class="s1">&#39;objectIds&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;adds&#39;</span><span class="p">:</span> <span class="p">[],</span> <span class="s1">&#39;updates&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">194</span><span class="p">],</span> <span class="s1">&#39;deletes&#39;</span><span class="p">:</span> <span class="p">[]}}]}</span>
+</pre></div>
+</div>
 </dd></dl>
 
 <dl class="py method">
@@ -3331,6 +4006,53 @@ convert to the arcgis.Geometry Objects (new at version 1.8.1)</p></td>
 </dl>
 <p>NOTE: Credits will be consumed for batch_geocoding, from
 the GIS to which the geocoder belongs.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.features.GeoAccessor.from_feather">
+<em class="property">static </em><code class="sig-name descname">from_feather</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">path</span></em>, <em class="sig-param"><span class="n">spatial_column</span><span class="o">=</span><span class="default_value">'SHAPE'</span></em>, <em class="sig-param"><span class="n">columns</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">use_threads</span><span class="o">=</span><span class="default_value">True</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.features.GeoAccessor.from_feather" title="Permalink to this definition">¶</a></dt>
+<dd><p>Load a feather-format object from the file path.</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 24%" />
+<col style="width: 76%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>Argument</strong></p></td>
+<td><p><strong>Description</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>path</p></td>
+<td><p>String. Path object or file-like object. Any valid string
+path is acceptable. The string could be a URL. Valid
+URL schemes include http, ftp, s3, and file. For file URLs, a host is
+expected. A local file could be:</p>
+<p><code class="docutils literal notranslate"><span class="pre">file://localhost/path/to/table.feather</span></code>.</p>
+<p>If you want to pass in a path object, pandas accepts any
+<code class="docutils literal notranslate"><span class="pre">os.PathLike</span></code>.</p>
+<p>By file-like object, we refer to objects with a <code class="docutils literal notranslate"><span class="pre">read()</span></code> method,
+such as a file handler (e.g. via builtin <code class="docutils literal notranslate"><span class="pre">open</span></code> function)
+or <code class="docutils literal notranslate"><span class="pre">StringIO</span></code>.</p>
+</td>
+</tr>
+<tr class="row-odd"><td><p>spatial_column</p></td>
+<td><p>Optional String. The default is <cite>SHAPE</cite>. Specifies the column
+containing the geo-spatial information.</p></td>
+</tr>
+<tr class="row-even"><td><p>columns</p></td>
+<td><p>Sequence/List/Array. The default is <cite>None</cite>.  If not
+provided, all columns are read.</p></td>
+</tr>
+<tr class="row-odd"><td><p>use_threads</p></td>
+<td><p>Boolean. The default is <cite>True</cite>. Whether to parallelize
+reading using multiple threads.</p></td>
+</tr>
+</tbody>
+</table>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>pd.DataFrame</p>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="py method">
@@ -4497,7 +5219,7 @@ operations’ requirements.</p>
 <tr class="row-odd"><td><p><strong>Argument</strong></p></td>
 <td><p><strong>Description</strong></p></td>
 </tr>
-<tr class="row-even"><td><p>sdf</p></td>
+<tr class="row-even"><td><p>other</p></td>
 <td><p>Required Spatially Enabled DataFrame. The geometry to
 perform the operation from.</p></td>
 </tr>
@@ -4513,6 +5235,7 @@ overlaps,touches, or within.</p>
 <li><p>overlaps - Indicates if the intersection of the two geometries has the same shape type as one of the input geometries and is not equivalent to either of the input geometries.</p></li>
 <li><p>touches - Indicates if the boundaries of the geometries intersect.</p></li>
 <li><p>within - Indicates if the base geometry is within the comparison geometry.</p></li>
+<li><p>intersect - Intdicates if the base geometry has an intersection of the other geometry.</p></li>
 </ul>
 </td>
 </tr>
@@ -4549,9 +5272,12 @@ allowed values are: BOUNDARY, CLEMENTINI, and PROPER.</p>
 
 <dl class="py method">
 <dt id="arcgis.features.GeoAccessor.sanitize_column_names">
-<code class="sig-name descname">sanitize_column_names</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">convert_to_string</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="n">remove_special_char</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="n">inplace</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.features.GeoAccessor.sanitize_column_names" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">sanitize_column_names</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">convert_to_string</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="n">remove_special_char</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="n">inplace</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">use_snake_case</span><span class="o">=</span><span class="default_value">True</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.features.GeoAccessor.sanitize_column_names" title="Permalink to this definition">¶</a></dt>
 <dd><p>Cleans column names by converting them to string, removing special characters, renaming columns without
-column names to ‘noname’ and renaming duplicates with integer suffixes.</p>
+column names to ‘noname’, renaming duplicates with integer suffixes and switching spaces or Pascal or
+camel cases to Python’s favored snake_case style.</p>
+<p>Snake_casing gives you consistent column names, no matter what the flavor of your backend database is
+when you publish the DataFrame as a Feature Layer in your web GIS.</p>
 <table class="docutils align-default">
 <colgroup>
 <col style="width: 30%" />
@@ -4566,11 +5292,17 @@ column names to ‘noname’ and renaming duplicates with integer suffixes.</p>
 </tr>
 <tr class="row-odd"><td><p>remove_special_char</p></td>
 <td><p>Optional Boolean. Default is True. Removes any characters in column
-names that are not numeric or underscores.</p></td>
+names that are not numeric or underscores. This also ensures column
+names begin with alphabets by removing numeral prefixes.</p></td>
 </tr>
 <tr class="row-even"><td><p>inplace</p></td>
 <td><p>Optional Boolean. Default is False. If True, edits the DataFrame
 in place and returns Nothing. If False, returns a new DataFrame object.</p></td>
+</tr>
+<tr class="row-odd"><td><p>use_snake_case</p></td>
+<td><p>Optional Boolean. Default is True. Makes column names lower case,
+and replaces spaces between words with underscores. If column names
+are in PascalCase or camelCase, it replaces them to snake_case.</p></td>
 </tr>
 </tbody>
 </table>
@@ -4663,7 +5395,7 @@ DataFrame.</p></td>
 
 <dl class="py method">
 <dt id="arcgis.features.GeoAccessor.to_featureclass">
-<code class="sig-name descname">to_featureclass</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">location</span></em>, <em class="sig-param"><span class="n">overwrite</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="n">has_z</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">has_m</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.features.GeoAccessor.to_featureclass" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">to_featureclass</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">location</span></em>, <em class="sig-param"><span class="n">overwrite</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="n">has_z</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">has_m</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">sanitize_columns</span><span class="o">=</span><span class="default_value">True</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.features.GeoAccessor.to_featureclass" title="Permalink to this definition">¶</a></dt>
 <dd><p>Exports a geo enabled dataframe to a feature class.</p>
 <table class="docutils align-default">
 <colgroup>
@@ -4693,6 +5425,11 @@ Z value.</p></td>
 based geometries.  If a geometry is missing a M value when true, a
 RuntimeError will be raised. When False, the API will not use the
 M value.</p></td>
+</tr>
+<tr class="row-even"><td><p>sanitize_columns</p></td>
+<td><p>Optional Boolean. If True, column names will be converted to string,
+invalid characters removed and other checks will be performed. The
+default is True.</p></td>
 </tr>
 </tbody>
 </table>
@@ -5963,7 +6700,8 @@ geometries.</p>
 <dl class="py class">
 <dt id="arcgis.features.SpatialDataFrame">
 <em class="property">class </em><code class="sig-prename descclassname">arcgis.features.</code><code class="sig-name descname">SpatialDataFrame</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">*</span><span class="n">args</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.features.SpatialDataFrame" title="Permalink to this definition">¶</a></dt>
-<dd><p>A Spatial Dataframe is an object to manipulate, manage and translate
+<dd><p><strong>This class is deprecated infavor of the GeoAccessor/GeoSeriesAccessor Pattern</strong></p>
+<p>A Spatial Dataframe is an object to manipulate, manage and translate
 data into new forms of information for users.</p>
 <p>Functionality of the Spatial DataFrame is determined by the Geometry Engine
 available to the object at creation.  It will first leverage the arcpy
@@ -7401,6 +8139,7 @@ in the store wherever possible</p>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.features.analyze_patterns.html#calculate-density">calculate_density</a></li>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.features.analyze_patterns.html#find-hot-spots">find_hot_spots</a></li>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.features.analyze_patterns.html#find-outliers">find_outliers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.features.analyze_patterns.html#find-point-clusters">find_point_clusters</a></li>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.features.analyze_patterns.html#interpolate-points">interpolate_points</a></li>
 </ul>
 </li>
@@ -7449,6 +8188,8 @@ in the store wherever possible</p>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.features.managers.html#parcelfabricmanager">ParcelFabricManager</a></li>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.features.managers.html#utilitynetworkmanager">UtilityNetworkManager</a></li>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.features.managers.html#validationmanager">ValidationManager</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.features.managers.html#webhookservicemanager">WebHookServiceManager</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.features.managers.html#webhook">WebHook</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="arcgis.features.summarize_data.html">arcgis.features.summarize_data module</a><ul>
@@ -7495,7 +8236,7 @@ in the store wherever possible</p>
   <div role="contentinfo">
     <p>
         
-        &copy; Copyright 2016-2019, Esri
+        &copy; Copyright 2016-2021, Esri
 
     </p>
   </div>
@@ -7517,6 +8258,134 @@ in the store wherever possible</p>
 
   </div>
   
+    Options v: 1.8.3
+
+  <div class="rst-versions" data-toggle="rst-versions" role="note" aria-label="versions">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      <span class="fa fa-book"> Pick an earlier version</span>
+      v: 1.8.3
+      <span class="fa fa-caret-down"></span>
+    </span>
+    <div class="rst-other-versions">
+      
+      
+      <dl>
+        <dt>Versions</dt>
+        
+          
+          <dd><a href="1.8.2/">1.8.2</a></dd>
+          
+        
+          
+          <dd><a href="1.8.1/">1.8.1</a></dd>
+          
+        
+          
+          <dd><a href="1.8.0/">1.8.0</a></dd>
+          
+        
+          
+          <dd><a href="1.7.1/">1.7.1</a></dd>
+          
+        
+          
+          <dd><a href="1.7.0/">1.7.0</a></dd>
+          
+        
+          
+          <dd><a href="1.6.2/">1.6.2</a></dd>
+          
+        
+          
+          <dd><a href="1.6.1/">1.6.1</a></dd>
+          
+        
+          
+          <dd><a href="1.6.0/">1.6.0</a></dd>
+          
+        
+          
+          <dd><a href="1.5.3/">1.5.3</a></dd>
+          
+        
+          
+          <dd><a href="1.5.2/">1.5.2</a></dd>
+          
+        
+          
+          <dd><a href="1.5.1/">1.5.1</a></dd>
+          
+        
+          
+          <dd><a href="1.5.0/">1.5.0</a></dd>
+          
+        
+          
+          <dd><a href="1.4.2/">1.4.2</a></dd>
+          
+        
+          
+          <dd><a href="1.4.1/">1.4.1</a></dd>
+          
+        
+          
+          <dd><a href="1.4.0/">1.4.0</a></dd>
+          
+        
+          
+          <dd><a href="1.3.0/">1.3.0</a></dd>
+          
+        
+          
+          <dd><a href="1.2.5/">1.2.5</a></dd>
+          
+        
+          
+          <dd><a href="1.2.4/">1.2.4</a></dd>
+          
+        
+          
+          <dd><a href="1.2.3/">1.2.3</a></dd>
+          
+        
+          
+          <dd><a href="1.2.2/">1.2.2</a></dd>
+          
+        
+          
+          <dd><a href="1.2.1/">1.2.1</a></dd>
+          
+        
+          
+          <dd><a href="1.2.0/">1.2.0</a></dd>
+          
+        
+          
+          <dd><a href="1.0.1/">1.0.1</a></dd>
+          
+        
+          
+          <dd><a href="1.0.0/">1.0.0</a></dd>
+          
+        
+          
+          <dd><a href="0.3.0/">0.3.0</a></dd>
+          
+        
+          
+          <dd><a href="0.2.0/">0.2.0</a></dd>
+          
+        
+          
+          <dd><a href="0.1.0/">0.1.0</a></dd>
+          
+        
+      </dl>
+      
+      
+      
+    </div>
+
 
   <script type="text/javascript">
       jQuery(function () {

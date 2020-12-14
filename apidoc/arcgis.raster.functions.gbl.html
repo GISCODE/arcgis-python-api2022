@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>arcgis.raster.functions.gbl module &mdash; arcgis 1.8.2 documentation</title>
+  <title>arcgis.raster.functions.gbl module &mdash; arcgis 1.8.3 documentation</title>
   
 
   
@@ -77,7 +77,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             
             
               <div class="version">
-                1.8.2
+                1.8.3
               </div>
             
           
@@ -115,10 +115,12 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <li class="toctree-l2"><a class="reference internal" href="arcgis.raster.toc.html#rastercatalogitem">RasterCatalogItem</a></li>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.raster.toc.html#rastermanager">RasterManager</a></li>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.raster.toc.html#rastercollection">RasterCollection</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.raster.toc.html#rasterinfo">RasterInfo</a></li>
 <li class="toctree-l2 current"><a class="reference internal" href="arcgis.raster.toc.html#submodules">Submodules</a><ul class="current">
 <li class="toctree-l3"><a class="reference internal" href="arcgis.raster.analytics.html">arcgis.raster.analytics module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="arcgis.raster.functions.html">arcgis.raster.functions module</a></li>
 <li class="toctree-l3 current"><a class="current reference internal" href="#">arcgis.raster.functions.gbl module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#boundary-clean">boundary_clean</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#calculate-distance">calculate_distance</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#calculate-travel-cost">calculate_travel_cost</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#corridor">corridor</a></li>
@@ -172,7 +174,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <li class="toctree-l1"><a class="reference internal" href="arcgis.schematics.html">arcgis.schematics module</a></li>
 <li class="toctree-l1"><a class="reference internal" href="arcgis.widgets.html">arcgis.widgets module</a></li>
 <li class="toctree-l1"><a class="reference internal" href="arcgis.apps.html">arcgis.apps module</a></li>
-<li class="toctree-l1"><a class="reference internal" href="arcgis.learn.html">arcgis.learn module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.learn.toc.html">arcgis.learn module</a></li>
 </ul>
 
             
@@ -255,11 +257,81 @@ are added to a map for on-the-fly image processing or visualized inline within t
 <li><p>Imagery layers</p></li>
 <li><p>Rasters within imagery layers</p></li>
 </ul>
+<div class="section" id="boundary-clean">
+<h2>boundary_clean<a class="headerlink" href="#boundary-clean" title="Permalink to this headline">¶</a></h2>
+<dl class="py function">
+<dt id="arcgis.raster.functions.gbl.boundary_clean">
+<code class="sig-prename descclassname">arcgis.raster.functions.gbl.</code><code class="sig-name descname">boundary_clean</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">input_raster</span></em>, <em class="sig-param"><span class="n">sort_type</span><span class="o">=</span><span class="default_value">'NO_SORT'</span></em>, <em class="sig-param"><span class="n">number_of_runs</span><span class="o">=</span><span class="default_value">'TWO_WAY'</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.raster.functions.gbl.boundary_clean" title="Permalink to this definition">¶</a></dt>
+<dd><p>The boundary_clean function smooths the boundary between zones in a raster. 
+Function available in ArcGIS Image Server 10.9 and higher.</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 13%" />
+<col style="width: 87%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>Argument</strong></p></td>
+<td><p><strong>Description</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>input_raster</p></td>
+<td><p>Required. The input raster for which the boundary between zones will
+be smoothed. It must be of integer type.</p></td>
+</tr>
+<tr class="row-odd"><td><p>sort_type</p></td>
+<td><p>Optional string. Specifies the type of sorting to use in the smoothing process. The sorting determines the priority by which cells can expand into their neighbors. The sorting can be done based on zone value or zone area.
+The available choices are: [‘NO_SORT’, ‘DESCEND’, ‘ASCEND’]
+The default is: ‘NO_SORT’.</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">NO_SORT</span></code> - The zones are not sorted by size. Zones with larger values
+will have a higher priority to expand into zones with
+smaller values in the smoothed output. This is the default.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">DESCEND</span></code> - Sorts zones in descending order by size. Zones with
+larger total areas have a higher priority to expand into
+zones with smaller total areas. This option will tend to
+eliminate or reduce the prevalence of cells from smaller
+zones in the smoothed output.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ASCEND</span></code> - Sorts zones in ascending order by size. Zones with smaller
+total areas have a higher priority to expand into zones
+with larger total areas. This option will tend to preserve
+or increase the prevalence of cells from smaller zones in
+the smoothed output.</p></li>
+</ul>
+</td>
+</tr>
+<tr class="row-even"><td><p>number_of_runs</p></td>
+<td><p>Optional String or Boolean. Specifies the number of times the smoothing
+process will take place, twice or once.</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">TWO_WAY</span></code> (true) - Performs an expansion and shrinking operation two
+times.  For the first time the operation is performed according to the
+specified sorting type. Then an additional  expansion and shrinking
+operation is performed, but with the priority reversed. This is the default.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ONE_WAY</span></code> (false) - Performs the expansion and shrinking operation
+once, according to the sorting type.</p></li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>output raster with function applied</p>
+</dd>
+</dl>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Usage Example: </span>
+<span class="n">boundary_clean_output</span> <span class="o">=</span>  <span class="n">boundary_clean</span><span class="p">(</span><span class="n">input_raster</span> <span class="o">=</span> <span class="n">imagery_layer</span><span class="p">,</span> <span class="n">sort_type</span> <span class="o">=</span> <span class="s2">&quot;NO_SORT&quot;</span><span class="p">,</span> <span class="n">number_of_runs</span><span class="o">=</span><span class="s2">&quot;TWO_WAY&quot;</span><span class="p">)</span>
+
+<span class="n">boundary_clean_item</span> <span class="o">=</span> <span class="n">boundary_clean_output</span><span class="o">.</span><span class="n">save</span><span class="p">()</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</div>
 <div class="section" id="calculate-distance">
 <h2>calculate_distance<a class="headerlink" href="#calculate-distance" title="Permalink to this headline">¶</a></h2>
 <dl class="py function">
 <dt id="arcgis.raster.functions.gbl.calculate_distance">
-<code class="sig-prename descclassname">arcgis.raster.functions.gbl.</code><code class="sig-name descname">calculate_distance</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">*</span><span class="n">args</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.raster.functions.gbl.calculate_distance" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">arcgis.raster.functions.gbl.</code><code class="sig-name descname">calculate_distance</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">in_source_data</span></em>, <em class="sig-param"><span class="n">maximum_distance</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">output_cell_size</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">allocation_field</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">generate_out_allocation_raster</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">generate_out_direction_raster</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">generate_out_back_direction_raster</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">in_barrier_data</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">distance_method</span><span class="o">=</span><span class="default_value">'PLANAR'</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.raster.functions.gbl.calculate_distance" title="Permalink to this definition">¶</a></dt>
 <dd><div class="deprecated">
 <p><span class="versionmodified deprecated">Deprecated since version 1.8.1: </span>Please use arcgis.raster.functions.gbl.distance_accumulation() (or arcgis.raster.functions.gbl.distance_allocation() for allocation output) instead. </p>
 </div>
@@ -358,7 +430,7 @@ known as a great circle line if based on a sphere rather than an ellipsoid.</p>
 <h2>calculate_travel_cost<a class="headerlink" href="#calculate-travel-cost" title="Permalink to this headline">¶</a></h2>
 <dl class="py function">
 <dt id="arcgis.raster.functions.gbl.calculate_travel_cost">
-<code class="sig-prename descclassname">arcgis.raster.functions.gbl.</code><code class="sig-name descname">calculate_travel_cost</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">*</span><span class="n">args</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.raster.functions.gbl.calculate_travel_cost" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">arcgis.raster.functions.gbl.</code><code class="sig-name descname">calculate_travel_cost</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">in_source_data</span></em>, <em class="sig-param"><span class="n">in_cost_raster</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">in_surface_raster</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">in_horizontal_raster</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">in_vertical_raster</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">horizontal_factor</span><span class="o">=</span><span class="default_value">'BINARY'</span></em>, <em class="sig-param"><span class="n">vertical_factor</span><span class="o">=</span><span class="default_value">'BINARY'</span></em>, <em class="sig-param"><span class="n">maximum_distance</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">source_cost_multiplier</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">source_start_cost</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">source_resistance_rate</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">source_capacity</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">source_direction</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">allocation_field</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">generate_out_allocation_raster</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">generate_out_backlink_raster</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.raster.functions.gbl.calculate_travel_cost" title="Permalink to this definition">¶</a></dt>
 <dd><div class="deprecated">
 <p><span class="versionmodified deprecated">Deprecated since version 1.8.1: </span>Please use arcgis.raster.functions.gbl.distance_accumulation() (or arcgis.raster.functions.gbl.distance_allocation() for allocation output), instead. </p>
 </div>
@@ -449,7 +521,7 @@ such as cost_distance or path_distance.</p></li>
 <h2>cost_allocation<a class="headerlink" href="#cost-allocation" title="Permalink to this headline">¶</a></h2>
 <dl class="py function">
 <dt id="arcgis.raster.functions.gbl.cost_allocation">
-<code class="sig-prename descclassname">arcgis.raster.functions.gbl.</code><code class="sig-name descname">cost_allocation</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">*</span><span class="n">args</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.raster.functions.gbl.cost_allocation" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">arcgis.raster.functions.gbl.</code><code class="sig-name descname">cost_allocation</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">in_source_data</span></em>, <em class="sig-param"><span class="n">in_cost_raster</span></em>, <em class="sig-param"><span class="n">in_value_raster</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">max_distance</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">source_field</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">source_cost_multiplier</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">source_start_cost</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">source_resistance_rate</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">source_capacity</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">source_direction</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.raster.functions.gbl.cost_allocation" title="Permalink to this definition">¶</a></dt>
 <dd><div class="deprecated">
 <p><span class="versionmodified deprecated">Deprecated since version 1.8.1: </span>Please use arcgis.raster.functions.gbl.distance_allocation() instead. </p>
 </div>
@@ -533,7 +605,7 @@ of travel for each source. That field must contain the string FROM_SOURCE or TO_
 <h2>cost_backlink<a class="headerlink" href="#cost-backlink" title="Permalink to this headline">¶</a></h2>
 <dl class="py function">
 <dt id="arcgis.raster.functions.gbl.cost_backlink">
-<code class="sig-prename descclassname">arcgis.raster.functions.gbl.</code><code class="sig-name descname">cost_backlink</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">*</span><span class="n">args</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.raster.functions.gbl.cost_backlink" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">arcgis.raster.functions.gbl.</code><code class="sig-name descname">cost_backlink</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">in_source_data</span></em>, <em class="sig-param"><span class="n">in_cost_raster</span></em>, <em class="sig-param"><span class="n">max_distance</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">source_cost_multiplier</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">source_start_cost</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">source_resistance_rate</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">source_capacity</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">source_direction</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.raster.functions.gbl.cost_backlink" title="Permalink to this definition">¶</a></dt>
 <dd><div class="deprecated">
 <p><span class="versionmodified deprecated">Deprecated since version 1.8.1: </span>Please use arcgis.raster.functions.gbl.distance_accumulation()with value specified for output_back_direction_raster_name, instead.</p>
 </div>
@@ -603,7 +675,7 @@ of travel for each source. That field must contain the string FROM_SOURCE or TO_
 <h2>cost_distance<a class="headerlink" href="#cost-distance" title="Permalink to this headline">¶</a></h2>
 <dl class="py function">
 <dt id="arcgis.raster.functions.gbl.cost_distance">
-<code class="sig-prename descclassname">arcgis.raster.functions.gbl.</code><code class="sig-name descname">cost_distance</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">*</span><span class="n">args</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.raster.functions.gbl.cost_distance" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">arcgis.raster.functions.gbl.</code><code class="sig-name descname">cost_distance</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">in_source_data</span></em>, <em class="sig-param"><span class="n">in_cost_raster</span></em>, <em class="sig-param"><span class="n">max_distance</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">source_cost_multiplier</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">source_start_cost</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">source_resistance_rate</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">source_capacity</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">source_direction</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.raster.functions.gbl.cost_distance" title="Permalink to this definition">¶</a></dt>
 <dd><div class="deprecated">
 <p><span class="versionmodified deprecated">Deprecated since version 1.8.1: </span>Please use arcgis.raster.functions.gbl.distance_accumulation() instead. </p>
 </div>
@@ -675,7 +747,7 @@ of travel for each source. That field must contain the string FROM_SOURCE or TO_
 <h2>cost_path<a class="headerlink" href="#cost-path" title="Permalink to this headline">¶</a></h2>
 <dl class="py function">
 <dt id="arcgis.raster.functions.gbl.cost_path">
-<code class="sig-prename descclassname">arcgis.raster.functions.gbl.</code><code class="sig-name descname">cost_path</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">*</span><span class="n">args</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.raster.functions.gbl.cost_path" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">arcgis.raster.functions.gbl.</code><code class="sig-name descname">cost_path</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">in_destination_data</span></em>, <em class="sig-param"><span class="n">in_cost_distance_raster</span></em>, <em class="sig-param"><span class="n">in_cost_backlink_raster</span></em>, <em class="sig-param"><span class="n">path_type</span><span class="o">=</span><span class="default_value">'EACH_CELL'</span></em>, <em class="sig-param"><span class="n">destination_field</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">force_flow_direction_convention</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.raster.functions.gbl.cost_path" title="Permalink to this definition">¶</a></dt>
 <dd><div class="deprecated">
 <p><span class="versionmodified deprecated">Deprecated since version 1.8.1: </span>Please use arcgis.raster.functions.gbl.optimal_path_as_raster() instead.</p>
 </div>
@@ -731,11 +803,13 @@ least-cost source over a cost surface, preserving euclidean distance metric</p>
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>in_source_data</strong> – <p>Required. The input source locations.</p>
-<p>This is a raster that identifies the cells or locations from
-or to which the least accumulated cost distance for every output cell location is calculated.</p>
-<p>For rasters, the input type can be integer or floating point.</p>
+<p>This is a layer that identifies the cells or locations from
+or to which the least accumulated cost distance for every output cell location is calculated.
+This parameter can have either a raster layer input or a feature layer input. 
+For rasters, the input type can be integer or floating point.</p>
 </p></li>
-<li><p><strong>in_barrier_data</strong> – Optional barrier raster. The input raster that defines the barriers. The dataset must contain 
+<li><p><strong>in_barrier_data</strong> – Optional. The input layer that defines the barriers. 
+This parameter can have either a raster layer input or a feature layer input. The dataset must contain 
 NoData where there are no barriers. Barriers are represented by valid values including zero. 
 The barriers can be defined by an integer or floating-point raster.</p></li>
 <li><p><strong>in_surface_raster</strong> – Optional. A raster defining the elevation values at each cell location. The values are used to calculate the actual
@@ -822,12 +896,14 @@ avoiding network distance distortion.”,</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>in_source_data</strong> – <p>Required The input source locations.</p>
-<p>This is a raster that identifies the cells or locations from
-or to which the least accumulated cost distance for every output cell location is calculated.</p>
-<p>For rasters, the input type can be integer or floating point.</p>
+<li><p><strong>in_source_data</strong> – <p>Required. The input source locations.</p>
+<p>This is a layer that identifies the cells or locations from
+or to which the least accumulated cost distance for every output cell location is calculated.
+This parameter can have either a raster layer input or a feature layer input.
+For rasters, the input type can be integer or floating point.</p>
 </p></li>
-<li><p><strong>in_barrier_data</strong> – Optional barrier raster. The input raster that defines the barriers. The dataset must contain 
+<li><p><strong>in_barrier_data</strong> – Optional. The input layer that defines the barriers. 
+This parameter can have either a raster layer input or a feature layer input. The dataset must contain 
 NoData where there are no barriers. Barriers are represented by valid values including zero. 
 The barriers can be defined by an integer or floating-point raster.</p></li>
 <li><p><strong>in_surface_raster</strong> – Optional. A raster defining the elevation values at each cell location. The values are used to calculate the actual
@@ -906,7 +982,7 @@ If set, the output of the function will be a named tuple.</p></li>
 <h2>euclidean_allocation<a class="headerlink" href="#euclidean-allocation" title="Permalink to this headline">¶</a></h2>
 <dl class="py function">
 <dt id="arcgis.raster.functions.gbl.euclidean_allocation">
-<code class="sig-prename descclassname">arcgis.raster.functions.gbl.</code><code class="sig-name descname">euclidean_allocation</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">*</span><span class="n">args</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.raster.functions.gbl.euclidean_allocation" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">arcgis.raster.functions.gbl.</code><code class="sig-name descname">euclidean_allocation</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">in_source_data</span></em>, <em class="sig-param"><span class="n">in_value_raster</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">max_distance</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">cell_size</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">source_field</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">distance_method</span><span class="o">=</span><span class="default_value">'PLANAR'</span></em>, <em class="sig-param"><span class="n">in_barrier_data</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.raster.functions.gbl.euclidean_allocation" title="Permalink to this definition">¶</a></dt>
 <dd><div class="deprecated">
 <p><span class="versionmodified deprecated">Deprecated since version 1.8.1: </span>Please use arcgis.raster.functions.gbl.distance_allocation() instead. </p>
 </div>
@@ -967,7 +1043,7 @@ The barriers can be defined by an integer or floating-point raster.</p></li>
 <h2>euclidean_back_direction<a class="headerlink" href="#euclidean-back-direction" title="Permalink to this headline">¶</a></h2>
 <dl class="py function">
 <dt id="arcgis.raster.functions.gbl.euclidean_back_direction">
-<code class="sig-prename descclassname">arcgis.raster.functions.gbl.</code><code class="sig-name descname">euclidean_back_direction</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">*</span><span class="n">args</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.raster.functions.gbl.euclidean_back_direction" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">arcgis.raster.functions.gbl.</code><code class="sig-name descname">euclidean_back_direction</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">in_source_data</span></em>, <em class="sig-param"><span class="n">cell_size</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">max_distance</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">distance_method</span><span class="o">=</span><span class="default_value">'PLANAR'</span></em>, <em class="sig-param"><span class="n">in_barrier_data</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.raster.functions.gbl.euclidean_back_direction" title="Permalink to this definition">¶</a></dt>
 <dd><div class="deprecated">
 <p><span class="versionmodified deprecated">Deprecated since version 1.8.1: </span>Please use arcgis.raster.functions.gbl.distance_accumulation()with value specified for output_back_direction_raster_name, instead.</p>
 </div>
@@ -1023,7 +1099,7 @@ The barriers can be defined by an integer or floating-point raster.</p></li>
 <h2>euclidean_direction<a class="headerlink" href="#euclidean-direction" title="Permalink to this headline">¶</a></h2>
 <dl class="py function">
 <dt id="arcgis.raster.functions.gbl.euclidean_direction">
-<code class="sig-prename descclassname">arcgis.raster.functions.gbl.</code><code class="sig-name descname">euclidean_direction</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">*</span><span class="n">args</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.raster.functions.gbl.euclidean_direction" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">arcgis.raster.functions.gbl.</code><code class="sig-name descname">euclidean_direction</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">in_source_data</span></em>, <em class="sig-param"><span class="n">cell_size</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">max_distance</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">distance_method</span><span class="o">=</span><span class="default_value">'PLANAR'</span></em>, <em class="sig-param"><span class="n">in_barrier_data</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.raster.functions.gbl.euclidean_direction" title="Permalink to this definition">¶</a></dt>
 <dd><div class="deprecated">
 <p><span class="versionmodified deprecated">Deprecated since version 1.8.1: </span>Please use arcgis.raster.functions.gbl.distance_accumulation()with value specified for output_source_direction_raster_name, instead.</p>
 </div>
@@ -1072,7 +1148,7 @@ The barriers can be defined by an integer or floating-point raster.</p></li>
 <h2>euclidean_distance<a class="headerlink" href="#euclidean-distance" title="Permalink to this headline">¶</a></h2>
 <dl class="py function">
 <dt id="arcgis.raster.functions.gbl.euclidean_distance">
-<code class="sig-prename descclassname">arcgis.raster.functions.gbl.</code><code class="sig-name descname">euclidean_distance</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">*</span><span class="n">args</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.raster.functions.gbl.euclidean_distance" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">arcgis.raster.functions.gbl.</code><code class="sig-name descname">euclidean_distance</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">in_source_data</span></em>, <em class="sig-param"><span class="n">cell_size</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">max_distance</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">distance_method</span><span class="o">=</span><span class="default_value">'PLANAR'</span></em>, <em class="sig-param"><span class="n">in_barrier_data</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.raster.functions.gbl.euclidean_distance" title="Permalink to this definition">¶</a></dt>
 <dd><div class="deprecated">
 <p><span class="versionmodified deprecated">Deprecated since version 1.8.1: </span>Please use arcgis.raster.functions.gbl.distance_accumulation() instead. </p>
 </div>
@@ -1399,7 +1475,7 @@ be applied to each cell.</p></li>
 <h2>kernel_density<a class="headerlink" href="#kernel-density" title="Permalink to this headline">¶</a></h2>
 <dl class="py function">
 <dt id="arcgis.raster.functions.gbl.kernel_density">
-<code class="sig-prename descclassname">arcgis.raster.functions.gbl.</code><code class="sig-name descname">kernel_density</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">in_features</span></em>, <em class="sig-param"><span class="n">population_field</span></em>, <em class="sig-param"><span class="n">cell_size</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">search_radius</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">area_unit_scale_factor</span><span class="o">=</span><span class="default_value">'SQUARE_MAP_UNITS'</span></em>, <em class="sig-param"><span class="n">out_cell_values</span><span class="o">=</span><span class="default_value">'DENSITIES'</span></em>, <em class="sig-param"><span class="n">method</span><span class="o">=</span><span class="default_value">'PLANAR'</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.raster.functions.gbl.kernel_density" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">arcgis.raster.functions.gbl.</code><code class="sig-name descname">kernel_density</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">in_features</span></em>, <em class="sig-param"><span class="n">population_field</span></em>, <em class="sig-param"><span class="n">cell_size</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">search_radius</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">area_unit_scale_factor</span><span class="o">=</span><span class="default_value">'SQUARE_MAP_UNITS'</span></em>, <em class="sig-param"><span class="n">out_cell_values</span><span class="o">=</span><span class="default_value">'DENSITIES'</span></em>, <em class="sig-param"><span class="n">method</span><span class="o">=</span><span class="default_value">'PLANAR'</span></em>, <em class="sig-param"><span class="n">in_barriers</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.raster.functions.gbl.kernel_density" title="Permalink to this definition">¶</a></dt>
 <dd><p>Calculates a magnitude-per-unit area from point or polyline features using a kernel function to
 fit a smoothly tapered surface to each point or polyline.
 For more information, see
@@ -1444,6 +1520,7 @@ resampled to a different pixel size and still represent the amount of the phenom
 of the spheroid and correctly deals with data near the poles and the International dateline.</p></li>
 </ul>
 </p></li>
+<li><p><strong>in_barriers</strong> – Optional. The dataset that defines the barriers. The barriers can be a feature layer of polyline or polygon features. (Parameter available in ArcGIS Image Server 10.9 and higher.)</p></li>
 </ul>
 </dd>
 <dt class="field-even">Returns</dt>
@@ -1584,10 +1661,12 @@ avoiding network distance distortion.”,</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>in_destination_data</strong> – Required raster layer. A raster that identifies locations from which the optimal 
-path is determined to the least costly source. The input raster layer must
-consists of cells that have valid values (zero is a valid value), and the remaining
-cells must be assigned NoData.</p></li>
+<li><p><strong>in_destination_data</strong> – <p>Required layer. A layer that identifies locations from which the optimal 
+path is determined to the least costly source. 
+This parameter can have either a raster layer input or a feature layer input.</p>
+<p>If the input is a raster, it must consists of cells that have valid values 
+(zero is a valid value), and the remaining cells must be assigned NoData.</p>
+</p></li>
 <li><p><strong>in_distance_accumulation_raster</strong> – <p>Required raster layer. The distance accumulation raster is used 
 to determine the optimal path from the sources to the destinations.</p>
 <p>The distance accumulation raster is usually created with the 
@@ -1625,7 +1704,7 @@ each from cell.</p>
 <h2>path_distance<a class="headerlink" href="#path-distance" title="Permalink to this headline">¶</a></h2>
 <dl class="py function">
 <dt id="arcgis.raster.functions.gbl.path_distance">
-<code class="sig-prename descclassname">arcgis.raster.functions.gbl.</code><code class="sig-name descname">path_distance</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">*</span><span class="n">args</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.raster.functions.gbl.path_distance" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">arcgis.raster.functions.gbl.</code><code class="sig-name descname">path_distance</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">in_source_data</span></em>, <em class="sig-param"><span class="n">in_cost_raster</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">in_surface_raster</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">in_horizontal_raster</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">in_vertical_raster</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">horizontal_factor</span><span class="o">=</span><span class="default_value">'BINARY'</span></em>, <em class="sig-param"><span class="n">vertical_factor</span><span class="o">=</span><span class="default_value">'BINARY'</span></em>, <em class="sig-param"><span class="n">maximum_distance</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">source_cost_multiplier</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">source_start_cost</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">source_resistance_rate</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">source_capacity</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">source_direction</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.raster.functions.gbl.path_distance" title="Permalink to this definition">¶</a></dt>
 <dd><div class="deprecated">
 <p><span class="versionmodified deprecated">Deprecated since version 1.8.1: </span>Please use arcgis.raster.functions.gbl.distance_accumulation() instead. </p>
 </div>
@@ -1692,7 +1771,7 @@ Possible values: FROM_SOURCE, TO_SOURCE</p></li>
 <h2>path_distance_allocation<a class="headerlink" href="#path-distance-allocation" title="Permalink to this headline">¶</a></h2>
 <dl class="py function">
 <dt id="arcgis.raster.functions.gbl.path_distance_allocation">
-<code class="sig-prename descclassname">arcgis.raster.functions.gbl.</code><code class="sig-name descname">path_distance_allocation</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">*</span><span class="n">args</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.raster.functions.gbl.path_distance_allocation" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">arcgis.raster.functions.gbl.</code><code class="sig-name descname">path_distance_allocation</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">in_source_data</span></em>, <em class="sig-param"><span class="n">in_cost_raster</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">in_surface_raster</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">in_horizontal_raster</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">in_vertical_raster</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">horizontal_factor</span><span class="o">=</span><span class="default_value">'BINARY'</span></em>, <em class="sig-param"><span class="n">vertical_factor</span><span class="o">=</span><span class="default_value">'BINARY'</span></em>, <em class="sig-param"><span class="n">maximum_distance</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">in_value_raster</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">source_field</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">source_cost_multiplier</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">source_start_cost</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">source_resistance_rate</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">source_capacity</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">source_direction</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.raster.functions.gbl.path_distance_allocation" title="Permalink to this definition">¶</a></dt>
 <dd><div class="deprecated">
 <p><span class="versionmodified deprecated">Deprecated since version 1.8.1: </span>Please use arcgis.raster.functions.gbl.distance_allocation() instead.</p>
 </div>
@@ -1760,7 +1839,7 @@ Possible values: FROM_SOURCE, TO_SOURCE</p></li>
 <h2>path_distance_back_link<a class="headerlink" href="#path-distance-back-link" title="Permalink to this headline">¶</a></h2>
 <dl class="py function">
 <dt id="arcgis.raster.functions.gbl.path_distance_back_link">
-<code class="sig-prename descclassname">arcgis.raster.functions.gbl.</code><code class="sig-name descname">path_distance_back_link</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">*</span><span class="n">args</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.raster.functions.gbl.path_distance_back_link" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">arcgis.raster.functions.gbl.</code><code class="sig-name descname">path_distance_back_link</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">in_source_data</span></em>, <em class="sig-param"><span class="n">in_cost_raster</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">in_surface_raster</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">in_horizontal_raster</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">in_vertical_raster</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">horizontal_factor</span><span class="o">=</span><span class="default_value">'BINARY'</span></em>, <em class="sig-param"><span class="n">vertical_factor</span><span class="o">=</span><span class="default_value">'BINARY'</span></em>, <em class="sig-param"><span class="n">maximum_distance</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">source_cost_multiplier</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">source_start_cost</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">source_resistance_rate</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">source_capacity</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">source_direction</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.raster.functions.gbl.path_distance_back_link" title="Permalink to this definition">¶</a></dt>
 <dd><div class="deprecated">
 <p><span class="versionmodified deprecated">Deprecated since version 1.8.1: </span>Please use arcgis.raster.functions.gbl.distance_accumulation()with value specified for output_back_direction_raster_name, instead.</p>
 </div>
@@ -2066,7 +2145,7 @@ For a raster pour point dataset, Value is used by default.</p></li>
 <h2>zonal_statistics<a class="headerlink" href="#zonal-statistics" title="Permalink to this headline">¶</a></h2>
 <dl class="py function">
 <dt id="arcgis.raster.functions.gbl.zonal_statistics">
-<code class="sig-prename descclassname">arcgis.raster.functions.gbl.</code><code class="sig-name descname">zonal_statistics</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">in_zone_data</span></em>, <em class="sig-param"><span class="n">zone_field</span></em>, <em class="sig-param"><span class="n">in_value_raster</span></em>, <em class="sig-param"><span class="n">ignore_nodata</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="n">statistics_type</span><span class="o">=</span><span class="default_value">'MEAN'</span></em>, <em class="sig-param"><span class="n">process_as_multidimensional</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">percentile_value</span><span class="o">=</span><span class="default_value">90</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.raster.functions.gbl.zonal_statistics" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">arcgis.raster.functions.gbl.</code><code class="sig-name descname">zonal_statistics</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">in_zone_data</span></em>, <em class="sig-param"><span class="n">zone_field</span></em>, <em class="sig-param"><span class="n">in_value_raster</span></em>, <em class="sig-param"><span class="n">ignore_nodata</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="n">statistics_type</span><span class="o">=</span><span class="default_value">'MEAN'</span></em>, <em class="sig-param"><span class="n">process_as_multidimensional</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">percentile_value</span><span class="o">=</span><span class="default_value">90</span></em>, <em class="sig-param"><span class="n">percentile_interpolation_type</span><span class="o">=</span><span class="default_value">'AUTO_DETECT'</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.raster.functions.gbl.zonal_statistics" title="Permalink to this definition">¶</a></dt>
 <dd><p>”
 Calculates statistics on values of a raster within the zones of another dataset.
 For more information,
@@ -2117,12 +2196,39 @@ is calculated by default. You can specify other values (from 0 to 100)
 using the percentile_value parameter.</p>
 </p></li>
 <li><p><strong>process_as_multidimensional</strong> – Optional bool, Process as multidimensional if set to True. (If the input is multidimensional raster.)</p></li>
-<li><p><strong>percentile_value</strong> – <p>Optional int, The percentile to calculate. The default is 90, for the 90th percentile. The 
+<li><p><strong>percentile_value</strong> – <p>Optional Double, The percentile to calculate. The default is 90, for the 90th percentile. The 
 values can range from 0 to 100. The 0th percentile is essentially equivalent to the 
 Minimum statistic, and the 100th percentile is equivalent to Maximum. 
 A value of 50 will produce essentially the same result as the Median statistic.</p>
 <p>This parameter is honoured only available if the statistics_type parameter is 
 set to PERCENTILE.</p>
+</p></li>
+<li><p><strong>percentile_interpolation_type</strong> – <p>Optional str. Determines the type of percentile interpolation type when the 
+number of values from the input value raster to be calculated are even.</p>
+<blockquote>
+<div><ul>
+<li><dl class="simple">
+<dt>AUTO_DETECT - If the input value raster has integer pixel type, the </dt><dd><p>NEAREST method is used. If the input value raster 
+has floating point pixel type, then the LINEAR 
+method is used. This is the default.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>NEAREST - Nearest value to the desired percentile. In this case, </dt><dd><p>the output pixel type is same as that of the input value 
+raster.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>LINEAR - Weighted average of two surrounding values from the </dt><dd><p>desired percentile. In this case, the output pixel 
+type is floating point.</p>
+</dd>
+</dl>
+</li>
+</ul>
+</div></blockquote>
+<p>Parameter available in ArcGIS Image Server 10.9 and higher.</p>
 </p></li>
 </ul>
 </dd>
@@ -2157,7 +2263,7 @@ set to PERCENTILE.</p>
   <div role="contentinfo">
     <p>
         
-        &copy; Copyright 2016-2019, Esri
+        &copy; Copyright 2016-2021, Esri
 
     </p>
   </div>
@@ -2179,6 +2285,134 @@ set to PERCENTILE.</p>
 
   </div>
   
+    Options v: 1.8.3
+
+  <div class="rst-versions" data-toggle="rst-versions" role="note" aria-label="versions">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      <span class="fa fa-book"> Pick an earlier version</span>
+      v: 1.8.3
+      <span class="fa fa-caret-down"></span>
+    </span>
+    <div class="rst-other-versions">
+      
+      
+      <dl>
+        <dt>Versions</dt>
+        
+          
+          <dd><a href="1.8.2/">1.8.2</a></dd>
+          
+        
+          
+          <dd><a href="1.8.1/">1.8.1</a></dd>
+          
+        
+          
+          <dd><a href="1.8.0/">1.8.0</a></dd>
+          
+        
+          
+          <dd><a href="1.7.1/">1.7.1</a></dd>
+          
+        
+          
+          <dd><a href="1.7.0/">1.7.0</a></dd>
+          
+        
+          
+          <dd><a href="1.6.2/">1.6.2</a></dd>
+          
+        
+          
+          <dd><a href="1.6.1/">1.6.1</a></dd>
+          
+        
+          
+          <dd><a href="1.6.0/">1.6.0</a></dd>
+          
+        
+          
+          <dd><a href="1.5.3/">1.5.3</a></dd>
+          
+        
+          
+          <dd><a href="1.5.2/">1.5.2</a></dd>
+          
+        
+          
+          <dd><a href="1.5.1/">1.5.1</a></dd>
+          
+        
+          
+          <dd><a href="1.5.0/">1.5.0</a></dd>
+          
+        
+          
+          <dd><a href="1.4.2/">1.4.2</a></dd>
+          
+        
+          
+          <dd><a href="1.4.1/">1.4.1</a></dd>
+          
+        
+          
+          <dd><a href="1.4.0/">1.4.0</a></dd>
+          
+        
+          
+          <dd><a href="1.3.0/">1.3.0</a></dd>
+          
+        
+          
+          <dd><a href="1.2.5/">1.2.5</a></dd>
+          
+        
+          
+          <dd><a href="1.2.4/">1.2.4</a></dd>
+          
+        
+          
+          <dd><a href="1.2.3/">1.2.3</a></dd>
+          
+        
+          
+          <dd><a href="1.2.2/">1.2.2</a></dd>
+          
+        
+          
+          <dd><a href="1.2.1/">1.2.1</a></dd>
+          
+        
+          
+          <dd><a href="1.2.0/">1.2.0</a></dd>
+          
+        
+          
+          <dd><a href="1.0.1/">1.0.1</a></dd>
+          
+        
+          
+          <dd><a href="1.0.0/">1.0.0</a></dd>
+          
+        
+          
+          <dd><a href="0.3.0/">0.3.0</a></dd>
+          
+        
+          
+          <dd><a href="0.2.0/">0.2.0</a></dd>
+          
+        
+          
+          <dd><a href="0.1.0/">0.1.0</a></dd>
+          
+        
+      </dl>
+      
+      
+      
+    </div>
+
 
   <script type="text/javascript">
       jQuery(function () {
