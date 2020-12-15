@@ -57,6 +57,14 @@ RasterCollection
     :members:
     :undoc-members:
 
+RasterInfo
+----------
+.. autoclass:: arcgis.raster.RasterInfo
+    :inherited-members:
+    :members:
+    :undoc-members:
+
+
 Submodules
 --------------
 .. toctree::

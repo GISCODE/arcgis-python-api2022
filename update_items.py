@@ -36,6 +36,9 @@ NB_PORTAL_TYPE_KEYWORDS = "Notebook, Python"
 NB_ITEM_PROPERTIES_RUNTIME_STAMP_ADVANCED = \
     {'notebookRuntimeName': 'ArcGIS Notebook Python 3 Advanced',
      'notebookRuntimeVersion': '4.0'}
+NB_ITEM_PROPERTIES_RUNTIME_STAMP_ADVANCED_GPU = \
+     {'notebookRuntimeName': 'ArcGIS Notebook Python 3 Advanced with GPU support',
+      'notebookRuntimeVersion': '4.0'}
 NB_ITEM_PROPERTIES_RUNTIME_STAMP_STANDARD = \
     {'notebookRuntimeName': 'ArcGIS Notebook Python 3 Standard',
      'notebookRuntimeVersion': '4.0'}
@@ -222,7 +225,9 @@ class ItemsUploader:
 
     def _infer_runtime_stamp(self, sample_entry_runtime_field):
         if re.match(".*standard.*", sample_entry_runtime_field):
-            return NB_ITEM_PROPERTIES_RUNTIME_STAMP_STANDARD 
+            return NB_ITEM_PROPERTIES_RUNTIME_STAMP_STANDARD
+        elif re.match(".*advance.*gpu.*", sample_entry_runtime_field):
+            return NB_ITEM_PROPERTIES_RUNTIME_STAMP_ADVANCED_GPU 
         elif re.match(".*advance.*", sample_entry_runtime_field):
             return NB_ITEM_PROPERTIES_RUNTIME_STAMP_ADVANCED
         else:
