@@ -1,0 +1,429 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>arcgis.lyr &mdash; arcgis 0.1 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="arcgis 0.1 documentation" href="../../index.html"/>
+        <link rel="up" title="Module code" href="../index.html"/> 
+
+  
+  <script src="../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-nav-search">
+        
+
+        
+          <a href="../../index.html" class="icon icon-home"> arcgis
+        
+
+        
+        </a>
+
+        
+          
+          
+            <div class="version">
+              0.1
+            </div>
+          
+        
+
+        
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+        
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        
+          
+          
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../arcgis.html">arcgis package</a></li>
+</ul>
+
+          
+        
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../index.html">arcgis</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="../index.html">Module code</a> &raquo;</li>
+      
+    <li>arcgis.lyr</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <h1>Source code for arcgis.lyr</h1><div class="highlight"><pre>
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">The arcgis.lyr module is used for accessing layers exposed from ArcGIS Online </span>
+<span class="sd">or Portal.</span>
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="kn">import</span> <span class="nn">re</span>
+<span class="kn">import</span> <span class="nn">sys</span>
+<span class="kn">import</span> <span class="nn">json</span>
+<span class="kn">import</span> <span class="nn">types</span>
+<span class="kn">import</span> <span class="nn">json</span>
+<span class="kn">from</span> <span class="nn">pandas.io.json</span> <span class="kn">import</span> <span class="n">json_normalize</span>
+<span class="kn">from</span> <span class="nn">contextlib</span> <span class="kn">import</span> <span class="n">contextmanager</span>
+
+<span class="kn">import</span> <span class="nn">urllib.parse</span>
+<span class="kn">import</span> <span class="nn">inspect</span>
+<span class="kn">import</span> <span class="nn">datetime</span>
+<span class="kn">import</span> <span class="nn">collections</span>
+<span class="kn">import</span> <span class="nn">arcgis.gis</span>
+<span class="kn">import</span> <span class="nn">time</span>
+
+<span class="kn">import</span> <span class="nn">tempfile</span>
+<span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">import</span> <span class="nn">string</span>
+<span class="kn">import</span> <span class="nn">random</span>
+
+<div class="viewcode-block" id="ImageLayer"><a class="viewcode-back" href="../../arcgis.lyr.html#arcgis.lyr.ImageLayer">[docs]</a><span class="k">class</span> <span class="nc">ImageLayer</span><span class="p">(</span><span class="n">collections</span><span class="o">.</span><span class="n">OrderedDict</span><span class="p">):</span>
+    <span class="s">&quot;represents an image service layer&quot;</span>
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">item</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Constructs an Image Service Layer given it&#39;s item from ArcGIS Online or Portal.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="n">item</span><span class="o">.</span><span class="n">type</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span> <span class="o">!=</span> <span class="s">&#39;image service&#39;</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="s">&quot;item type must be image service&quot;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">url</span> <span class="o">=</span> <span class="n">item</span><span class="o">.</span><span class="n">url</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">item</span> <span class="o">=</span> <span class="n">item</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_portal</span> <span class="o">=</span> <span class="n">item</span><span class="o">.</span><span class="n">_portal</span>
+        <span class="n">params</span> <span class="o">=</span> <span class="p">{</span>
+            <span class="s">&quot;f&quot;</span> <span class="p">:</span> <span class="s">&quot;json&quot;</span>
+        <span class="p">}</span>
+        <span class="k">print</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">url</span><span class="p">)</span>
+        <span class="n">properties</span> <span class="o">=</span> <span class="p">{}</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">properties</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">item</span><span class="o">.</span><span class="n">_portal</span><span class="o">.</span><span class="n">con</span><span class="o">.</span><span class="n">post</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">url</span><span class="p">,</span> <span class="n">params</span><span class="p">)</span>
+        <span class="k">except</span><span class="p">:</span>
+            <span class="k">pass</span>
+            <span class="c">#TODO - why does token not work for public access?</span>
+        <span class="c">#if self.item[&#39;access&#39;] != &#39;public&#39;:</span>
+        <span class="c">#properties.update({&quot;url&quot; : self.url + &quot;?token=&quot; + self.item._portal.con.token })</span>
+        <span class="c">#else:</span>
+        <span class="n">properties</span><span class="o">.</span><span class="n">update</span><span class="p">({</span><span class="s">&quot;url&quot;</span> <span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">url</span><span class="p">})</span>
+            
+        <span class="n">collections</span><span class="o">.</span><span class="n">OrderedDict</span><span class="o">.</span><span class="n">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">properties</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
+</div>
+<div class="viewcode-block" id="FeatureService"><a class="viewcode-back" href="../../arcgis.lyr.html#arcgis.lyr.FeatureService">[docs]</a><span class="k">class</span> <span class="nc">FeatureService</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+    <span class="s">&quot;represents a feature service&quot;</span>
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">item</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Constructs a Feature Service object given it&#39;s item from ArcGIS Online or Portal.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="n">item</span><span class="o">.</span><span class="n">type</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span> <span class="o">!=</span> <span class="s">&#39;feature service&#39;</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="s">&quot;item type must be feature service&quot;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">url</span> <span class="o">=</span> <span class="n">item</span><span class="o">.</span><span class="n">url</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">item</span> <span class="o">=</span> <span class="n">item</span>
+
+        <span class="c">#print(&quot;URL of Feature Service: &quot; + self.url)</span>
+        
+        <span class="n">fsurl</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">url</span> <span class="o">+</span> <span class="s">&#39;/layers&#39;</span>
+
+        <span class="n">params</span> <span class="o">=</span> <span class="p">{</span>
+            <span class="s">&quot;f&quot;</span> <span class="p">:</span> <span class="s">&quot;json&quot;</span>
+        <span class="p">}</span>
+
+        <span class="n">allayers</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">item</span><span class="o">.</span><span class="n">_portal</span><span class="o">.</span><span class="n">con</span><span class="o">.</span><span class="n">post</span><span class="p">(</span><span class="n">fsurl</span><span class="p">,</span> <span class="n">params</span><span class="p">)</span>
+        <span class="n">layers</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="k">for</span> <span class="n">layer</span> <span class="ow">in</span> <span class="n">allayers</span><span class="p">[</span><span class="s">&#39;layers&#39;</span><span class="p">]:</span>
+            <span class="n">layers</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">Layer</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">url</span><span class="p">,</span> <span class="n">layer</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">item</span><span class="p">))</span>
+            <span class="c">#print(&quot;***&quot; + str(layer))</span>
+            <span class="c">#lyr_type = layer[&#39;type&#39;]</span>
+            <span class="c">#lyr_url = self.url + &#39;/&#39; + str(layer[&#39;id&#39;])</span>
+            <span class="c">#layers.append({&quot;type&quot;: lyr_type, &quot;url&quot; : lyr_url.replace(&#39; &#39;, &#39;%20&#39;)})</span>
+
+        <span class="c">#print(str(layers))</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">layers</span> <span class="o">=</span> <span class="n">layers</span>
+
+    <span class="k">def</span> <span class="nf">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="s">&quot;Feature service at &quot;</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">url</span>
+</div>
+<div class="viewcode-block" id="Layer"><a class="viewcode-back" href="../../arcgis.lyr.html#arcgis.lyr.Layer">[docs]</a><span class="k">class</span> <span class="nc">Layer</span><span class="p">(</span><span class="n">collections</span><span class="o">.</span><span class="n">OrderedDict</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">svcurl</span><span class="p">,</span> <span class="n">dictdata</span><span class="p">,</span> <span class="n">item</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">gis</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Constructs a layer given it&#39;s data</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">data</span> <span class="o">=</span> <span class="n">dictdata</span>
+        <span class="n">lyr_url</span> <span class="o">=</span> <span class="n">svcurl</span> <span class="o">+</span> <span class="s">&#39;/&#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">dictdata</span><span class="p">[</span><span class="s">&#39;id&#39;</span><span class="p">])</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">url</span> <span class="o">=</span> <span class="n">lyr_url</span> <span class="c">#.replace(&#39; &#39;, &#39;%20&#39;)</span>
+        <span class="k">if</span> <span class="n">item</span> <span class="ow">is</span> <span class="ow">not</span> <span class="bp">None</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_portal</span> <span class="o">=</span> <span class="n">item</span><span class="o">.</span><span class="n">_portal</span>
+        <span class="k">elif</span> <span class="n">gis</span> <span class="ow">is</span> <span class="ow">not</span> <span class="bp">None</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_portal</span> <span class="o">=</span> <span class="n">gis</span><span class="o">.</span><span class="n">_portal</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">print</span><span class="p">(</span><span class="s">&quot;Item or GIS must be passed&quot;</span><span class="p">)</span>
+
+        <span class="n">data</span><span class="o">.</span><span class="n">update</span><span class="p">({</span> <span class="s">&quot;url&quot;</span> <span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">url</span> <span class="p">})</span>
+        <span class="c">#print(self.url)</span>
+        <span class="n">collections</span><span class="o">.</span><span class="n">OrderedDict</span><span class="o">.</span><span class="n">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="p">)</span>
+                
+    <span class="k">def</span> <span class="nf">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
+
+<div class="viewcode-block" id="Layer.query"><a class="viewcode-back" href="../../arcgis.lyr.html#arcgis.lyr.Layer.query">[docs]</a>    <span class="k">def</span> <span class="nf">query</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span>
+              <span class="n">where</span><span class="o">=</span><span class="s">&quot;1=1&quot;</span><span class="p">,</span>
+              <span class="n">out_fields</span><span class="o">=</span><span class="s">&quot;*&quot;</span><span class="p">,</span>
+              <span class="n">timeFilter</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span>
+              <span class="n">geometryFilter</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span>
+              <span class="n">returnGeometry</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span>
+              <span class="n">returnIDsOnly</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span>
+              <span class="n">returnCountOnly</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span>
+              <span class="n">returnFeatureClass</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span>
+              <span class="n">returnDistinctValues</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span>
+              <span class="n">returnExtentOnly</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span>
+              <span class="n">groupByFieldsForStatistics</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span>
+              <span class="n">statisticFilter</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span>
+              <span class="n">out_fc</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span>
+              <span class="n">objectIds</span><span class="o">=</span><span class="s">&quot;&quot;</span><span class="p">,</span>
+              <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot; queries a feature service based on a sql statement</span>
+<span class="sd">            Inputs:</span>
+<span class="sd">               where - the selection sql statement</span>
+<span class="sd">               out_fields - the attribute fields to return</span>
+<span class="sd">               timeFilter - a TimeFilter object where either the start time</span>
+<span class="sd">                            or start and end time are defined to limit the</span>
+<span class="sd">                            search results for a given time.  The values in</span>
+<span class="sd">                            the timeFilter should be as UTC timestampes in</span>
+<span class="sd">                            milliseconds.  No checking occurs to see if they</span>
+<span class="sd">                            are in the right format.</span>
+<span class="sd">               geometryFilter - a GeometryFilter object to parse down a given</span>
+<span class="sd">                               query by another spatial dataset.</span>
+<span class="sd">               returnGeometry - true means a geometry will be returned,</span>
+<span class="sd">                                else just the attributes</span>
+<span class="sd">               returnIDsOnly - false is default.  True means only OBJECTIDs</span>
+<span class="sd">                               will be returned</span>
+<span class="sd">               returnCountOnly - if True, then an integer is returned only</span>
+<span class="sd">                                 based on the sql statement</span>
+<span class="sd">               returnFeatureClass - Default False. If true, query will be</span>
+<span class="sd">                                    returned as feature class</span>
+<span class="sd">               groupByFieldsForStatistics - One or more field names on</span>
+<span class="sd">                                    which the values need to be grouped for</span>
+<span class="sd">                                    calculating the statistics.</span>
+<span class="sd">               statisticFilter - object that performs statistic queries</span>
+<span class="sd">               out_fc - only valid if returnFeatureClass is set to True.</span>
+<span class="sd">                        Output location of query.</span>
+<span class="sd">               kwargs - optional parameters that can be passed to the Query</span>
+<span class="sd">                 function.  This will allow users to pass additional</span>
+<span class="sd">                 parameters not explicitly implemented on the function. A</span>
+<span class="sd">                 complete list of functions available is documented on the</span>
+<span class="sd">                 Query REST API.</span>
+<span class="sd">            Output:</span>
+<span class="sd">               A list of Feature Objects (default) or a path to the output featureclass if</span>
+<span class="sd">               returnFeatureClass is set to True.</span>
+<span class="sd">         &quot;&quot;&quot;</span>
+        <span class="n">params</span> <span class="o">=</span> <span class="p">{</span><span class="s">&quot;f&quot;</span><span class="p">:</span> <span class="s">&quot;json&quot;</span><span class="p">,</span>
+                  <span class="s">&quot;where&quot;</span><span class="p">:</span> <span class="n">where</span><span class="p">,</span>
+                  <span class="s">&quot;outFields&quot;</span><span class="p">:</span> <span class="n">out_fields</span><span class="p">,</span>
+                  <span class="s">&quot;returnGeometry&quot;</span> <span class="p">:</span> <span class="n">returnGeometry</span><span class="p">,</span>
+                  <span class="s">&quot;returnIdsOnly&quot;</span> <span class="p">:</span> <span class="n">returnIDsOnly</span><span class="p">,</span>
+                  <span class="s">&quot;returnCountOnly&quot;</span> <span class="p">:</span> <span class="n">returnCountOnly</span><span class="p">,</span>
+                  <span class="s">&quot;returnDistinctValues&quot;</span> <span class="p">:</span> <span class="n">returnDistinctValues</span><span class="p">,</span>
+                  <span class="s">&quot;returnExtentOnly&quot;</span> <span class="p">:</span> <span class="n">returnExtentOnly</span>
+                  <span class="p">}</span>
+        <span class="k">for</span> <span class="n">key</span><span class="p">,</span> <span class="n">value</span> <span class="ow">in</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+            <span class="n">params</span><span class="p">[</span><span class="n">key</span><span class="p">]</span> <span class="o">=</span> <span class="n">value</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">timeFilter</span> <span class="ow">is</span> <span class="bp">None</span> <span class="ow">and</span> \
+           <span class="nb">isinstance</span><span class="p">(</span><span class="n">timeFilter</span><span class="p">,</span> <span class="n">filters</span><span class="o">.</span><span class="n">TimeFilter</span><span class="p">):</span>
+            <span class="n">params</span><span class="p">[</span><span class="s">&#39;time&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">timeFilter</span><span class="o">.</span><span class="n">filter</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">geometryFilter</span> <span class="ow">is</span> <span class="bp">None</span> <span class="ow">and</span> \
+           <span class="nb">isinstance</span><span class="p">(</span><span class="n">geometryFilter</span><span class="p">,</span> <span class="n">filters</span><span class="o">.</span><span class="n">GeometryFilter</span><span class="p">):</span>
+            <span class="n">gf</span> <span class="o">=</span> <span class="n">geometryFilter</span><span class="o">.</span><span class="n">filter</span>
+            <span class="n">params</span><span class="p">[</span><span class="s">&#39;geometry&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">gf</span><span class="p">[</span><span class="s">&#39;geometry&#39;</span><span class="p">]</span>
+            <span class="n">params</span><span class="p">[</span><span class="s">&#39;geometryType&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">gf</span><span class="p">[</span><span class="s">&#39;geometryType&#39;</span><span class="p">]</span>
+            <span class="n">params</span><span class="p">[</span><span class="s">&#39;spatialRelationship&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">gf</span><span class="p">[</span><span class="s">&#39;spatialRel&#39;</span><span class="p">]</span>
+            <span class="n">params</span><span class="p">[</span><span class="s">&#39;inSR&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">gf</span><span class="p">[</span><span class="s">&#39;inSR&#39;</span><span class="p">]</span>
+        <span class="k">if</span> <span class="n">objectIds</span> <span class="ow">is</span> <span class="ow">not</span> <span class="bp">None</span> <span class="ow">and</span> <span class="n">objectIds</span> <span class="o">!=</span> <span class="s">&quot;&quot;</span><span class="p">:</span>
+            <span class="n">params</span><span class="p">[</span><span class="s">&#39;objectIds&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">objectIds</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">groupByFieldsForStatistics</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span>
+            <span class="n">params</span><span class="p">[</span><span class="s">&#39;groupByFieldsForStatistics&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">groupByFieldsForStatistics</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">statisticFilter</span> <span class="ow">is</span> <span class="bp">None</span> <span class="ow">and</span> \
+           <span class="nb">isinstance</span><span class="p">(</span><span class="n">statisticFilter</span><span class="p">,</span> <span class="n">filters</span><span class="o">.</span><span class="n">StatisticFilter</span><span class="p">):</span>
+            <span class="n">params</span><span class="p">[</span><span class="s">&#39;outStatistics&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">statisticFilter</span><span class="o">.</span><span class="n">filter</span>
+        <span class="n">fURL</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">url</span> <span class="o">+</span> <span class="s">&quot;/query&quot;</span>
+        <span class="c">#print(fURL)</span>
+        <span class="n">results</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_portal</span><span class="o">.</span><span class="n">con</span><span class="o">.</span><span class="n">post</span><span class="p">(</span><span class="n">fURL</span><span class="p">,</span> <span class="n">params</span><span class="p">)</span>
+        
+        <span class="k">if</span> <span class="s">&#39;error&#39;</span> <span class="ow">in</span> <span class="n">results</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span> <span class="p">(</span><span class="n">results</span><span class="p">)</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">returnCountOnly</span> <span class="ow">and</span> <span class="ow">not</span> <span class="n">returnIDsOnly</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">returnFeatureClass</span> <span class="o">==</span> <span class="bp">True</span><span class="p">:</span>
+                <span class="c">#json_text = json.dumps(results)</span>
+                <span class="c">#return results</span>
+                <span class="n">df</span> <span class="o">=</span> <span class="n">json_normalize</span><span class="p">(</span><span class="n">results</span><span class="p">[</span><span class="s">&#39;features&#39;</span><span class="p">])</span>
+                <span class="n">df</span><span class="o">.</span><span class="n">columns</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">columns</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s">&#39;attributes.&#39;</span><span class="p">,</span> <span class="s">&#39;&#39;</span><span class="p">)</span>
+                <span class="k">return</span> <span class="n">df</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="c">#return results #FeatureSet.fromJSON(json.dumps(results))</span>
+                <span class="c">#print(results)</span>
+                <span class="n">df</span> <span class="o">=</span> <span class="n">json_normalize</span><span class="p">(</span><span class="n">results</span><span class="p">[</span><span class="s">&#39;features&#39;</span><span class="p">])</span>
+                <span class="n">df</span><span class="o">.</span><span class="n">columns</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">columns</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s">&#39;attributes.&#39;</span><span class="p">,</span> <span class="s">&#39;&#39;</span><span class="p">)</span>
+                <span class="k">return</span> <span class="n">df</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">results</span>
+        <span class="k">return</span>
+</div></div>
+<div class="viewcode-block" id="FeatureCollection"><a class="viewcode-back" href="../../arcgis.lyr.html#arcgis.lyr.FeatureCollection">[docs]</a><span class="k">class</span> <span class="nc">FeatureCollection</span><span class="p">(</span><span class="n">collections</span><span class="o">.</span><span class="n">OrderedDict</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">dictdata</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Constructs a feature collection given it&#39;s data</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">dictdata</span><span class="p">,</span> <span class="n">arcgis</span><span class="o">.</span><span class="n">gis</span><span class="o">.</span><span class="n">Item</span><span class="p">):</span>
+            <span class="n">fcdict</span> <span class="o">=</span> <span class="n">dictdata</span><span class="o">.</span><span class="n">get_data</span><span class="p">()</span>
+            <span class="n">collections</span><span class="o">.</span><span class="n">OrderedDict</span><span class="o">.</span><span class="n">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">fcdict</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">fcdict</span> <span class="o">=</span> <span class="n">dictdata</span>
+            <span class="n">collections</span><span class="o">.</span><span class="n">OrderedDict</span><span class="o">.</span><span class="n">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">fcdict</span><span class="p">)</span>
+                
+    <span class="k">def</span> <span class="nf">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
+
+<div class="viewcode-block" id="FeatureCollection.to_df"><a class="viewcode-back" href="../../arcgis.lyr.html#arcgis.lyr.FeatureCollection.to_df">[docs]</a>    <span class="k">def</span> <span class="nf">to_df</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span> <span class="c">#TODO</span>
+        <span class="k">if</span> <span class="s">&#39;layers&#39;</span> <span class="ow">in</span> <span class="bp">self</span><span class="p">:</span>
+            <span class="n">df</span> <span class="o">=</span> <span class="n">json_normalize</span><span class="p">(</span><span class="bp">self</span><span class="p">[</span><span class="s">&#39;layers&#39;</span><span class="p">][</span><span class="mi">0</span><span class="p">][</span><span class="s">&#39;featureSet&#39;</span><span class="p">][</span><span class="s">&#39;features&#39;</span><span class="p">])</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">df</span> <span class="o">=</span> <span class="n">json_normalize</span><span class="p">(</span><span class="bp">self</span><span class="p">[</span><span class="s">&#39;featureSet&#39;</span><span class="p">][</span><span class="s">&#39;features&#39;</span><span class="p">])</span>
+
+        <span class="n">df</span><span class="o">.</span><span class="n">columns</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">columns</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s">&#39;attributes.&#39;</span><span class="p">,</span> <span class="s">&#39;&#39;</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">df</span></div></div>
+</pre></div>
+
+           </div>
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2016, Esri.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../',
+            VERSION:'0.1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

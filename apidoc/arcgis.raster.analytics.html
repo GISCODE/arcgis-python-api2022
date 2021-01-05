@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>arcgis.raster.analytics module &mdash; arcgis 1.8.2 documentation</title>
+  <title>arcgis.raster.analytics module &mdash; arcgis 1.8.3 documentation</title>
   
 
   
@@ -77,7 +77,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             
             
               <div class="version">
-                1.8.2
+                1.8.3
               </div>
             
           
@@ -115,6 +115,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <li class="toctree-l2"><a class="reference internal" href="arcgis.raster.toc.html#rastercatalogitem">RasterCatalogItem</a></li>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.raster.toc.html#rastermanager">RasterManager</a></li>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.raster.toc.html#rastercollection">RasterCollection</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.raster.toc.html#rasterinfo">RasterInfo</a></li>
 <li class="toctree-l2 current"><a class="reference internal" href="arcgis.raster.toc.html#submodules">Submodules</a><ul class="current">
 <li class="toctree-l3 current"><a class="current reference internal" href="#">arcgis.raster.analytics module</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#get-datastores">get_datastores</a></li>
@@ -156,6 +157,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <li class="toctree-l4"><a class="reference internal" href="#detect-change-using-change-analysis-raster">detect_change_using_change_analysis_raster</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#manage-multidimensional-raster">manage_multidimensional_raster</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#sample">sample</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#merge-multidimensional-rasters">merge_multidimensional_rasters</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="arcgis.raster.functions.html">arcgis.raster.functions module</a></li>
@@ -177,7 +179,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <li class="toctree-l1"><a class="reference internal" href="arcgis.schematics.html">arcgis.schematics module</a></li>
 <li class="toctree-l1"><a class="reference internal" href="arcgis.widgets.html">arcgis.widgets module</a></li>
 <li class="toctree-l1"><a class="reference internal" href="arcgis.apps.html">arcgis.apps module</a></li>
-<li class="toctree-l1"><a class="reference internal" href="arcgis.learn.html">arcgis.learn module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.learn.toc.html">arcgis.learn module</a></li>
 </ul>
 
             
@@ -251,6 +253,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <div class="section" id="arcgis-raster-analytics-module">
 <h1>arcgis.raster.analytics module<a class="headerlink" href="#arcgis-raster-analytics-module" title="Permalink to this headline">¶</a></h1>
 <span class="target" id="module-arcgis.raster.analytics"></span><p>Functions for calling the Raster Analysis Tools. The RasterAnalysisTools service is used by ArcGIS Server to provide distributed raster analysis.</p>
+<p>The Hosted Imagery &amp; Raster Analysis capabilities are available in ArcGIS Online at 8.2 as an invite only Beta through an Early Adopter Program (EAP)</p>
 <div class="section" id="get-datastores">
 <h2>get_datastores<a class="headerlink" href="#get-datastores" title="Permalink to this headline">¶</a></h2>
 <dl class="py function">
@@ -396,7 +399,7 @@ The supported values are: Bilinear, Nearest, Cubic.</p>
 </td>
 </tr>
 <tr class="row-odd"><td><p>gis</p></td>
-<td><p>Optional GIS object. If not speficied, the currently active connection
+<td><p>Optional GIS object. If not specified, the currently active connection
 is used.</p></td>
 </tr>
 <tr class="row-even"><td><p>future</p></td>
@@ -411,6 +414,13 @@ The dictionary returned by the gis.content.create_folder() can also be passed in
 <dt>Example:</dt><dd><p>{‘username’: ‘user1’, ‘id’: ‘6a3b77c187514ef7873ba73338cf1af8’, ‘title’: ‘trial’}</p>
 </dd>
 </dl>
+</td>
+</tr>
+<tr class="row-even"><td><p>tiles_only</p></td>
+<td><p>Keyword only parameter. Optional boolean.
+On AGOL, the default output image service for this function would be a Tiled Imagery Layer.
+To create Dynamic Imagery Layer as output on AGOL, set tiles_only parameter to False.</p>
+<p>Function will not honor tiles_only parameter on enterprise and will generate Dynamic Imagery Layer by default.</p>
 </td>
 </tr>
 </tbody>
@@ -594,7 +604,7 @@ specified by cell size.</p>
 </td>
 </tr>
 <tr class="row-even"><td><p>gis</p></td>
-<td><p>Optional GIS object. If not speficied, the currently active connection
+<td><p>Optional GIS object. If not specified, the currently active connection
 is used.</p></td>
 </tr>
 <tr class="row-odd"><td><p>future</p></td>
@@ -609,6 +619,13 @@ The dictionary returned by the gis.content.create_folder() can also be passed in
 <dt>Example:</dt><dd><p>{‘username’: ‘user1’, ‘id’: ‘6a3b77c187514ef7873ba73338cf1af8’, ‘title’: ‘trial’}</p>
 </dd>
 </dl>
+</td>
+</tr>
+<tr class="row-odd"><td><p>tiles_only</p></td>
+<td><p>Keyword only parameter. Optional boolean.
+On AGOL, the default output image service for this function would be a Tiled Imagery Layer.
+To create Dynamic Imagery Layer as output on AGOL, set tiles_only parameter to False.</p>
+<p>Function will not honor tiles_only parameter on enterprise and will generate Dynamic Imagery Layer by default.</p>
 </td>
 </tr>
 </tbody>
@@ -631,9 +648,9 @@ The dictionary returned by the gis.content.create_folder() can also be passed in
 </div>
 <div class="section" id="create-viewshed">
 <h2>create_viewshed<a class="headerlink" href="#create-viewshed" title="Permalink to this headline">¶</a></h2>
-<dl class="py method">
+<dl class="py function">
 <dt id="arcgis.raster.analytics.create_viewshed">
-<code class="sig-prename descclassname">arcgis.raster.analytics.</code><code class="sig-name descname">create_viewshed</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">input_observer_features</span></em>, <em class="sig-param"><span class="n">optimize_for</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">maximum_viewing_distance</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">maximum_viewing_distance_field</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">minimum_viewing_distance</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">minimum_viewing_distance_field</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">viewing_distance_is_3d</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">observers_elevation</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">observers_elevation_field</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">observers_height</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">observers_height_field</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">target_height</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">target_height_field</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">above_ground_level_output_name</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">output_name</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">context</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="o">*</span></em>, <em class="sig-param"><span class="n">gis</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">future</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.raster.analytics.create_viewshed" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">arcgis.raster.analytics.</code><code class="sig-name descname">create_viewshed</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">input_elevation_surface</span></em>, <em class="sig-param"><span class="n">input_observer_features</span></em>, <em class="sig-param"><span class="n">optimize_for</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">maximum_viewing_distance</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">maximum_viewing_distance_field</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">minimum_viewing_distance</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">minimum_viewing_distance_field</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">viewing_distance_is_3d</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">observers_elevation</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">observers_elevation_field</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">observers_height</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">observers_height_field</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">target_height</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">target_height_field</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">above_ground_level_output_name</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">output_name</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">context</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="o">*</span></em>, <em class="sig-param"><span class="n">gis</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">future</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.raster.analytics.create_viewshed" title="Permalink to this definition">¶</a></dt>
 <dd><img alt="_images/ra_create_viewshed.png" src="_images/ra_create_viewshed.png" />
 <p>Function  allows you to execute raster analysis on a distributed server deployment.</p>
 <table class="docutils align-default">
@@ -850,7 +867,7 @@ The supported values are: Bilinear, Nearest, Cubic.</p>
 </td>
 </tr>
 <tr class="row-odd"><td><p>gis</p></td>
-<td><p>Optional GIS object. If not speficied, the currently active connection
+<td><p>Optional GIS object. If not specified, the currently active connection
 is used.</p></td>
 </tr>
 <tr class="row-even"><td><p>future</p></td>
@@ -865,6 +882,13 @@ The dictionary returned by the gis.content.create_folder() can also be passed in
 <dt>Example:</dt><dd><p>{‘username’: ‘user1’, ‘id’: ‘6a3b77c187514ef7873ba73338cf1af8’, ‘title’: ‘trial’}</p>
 </dd>
 </dl>
+</td>
+</tr>
+<tr class="row-even"><td><p>tiles_only</p></td>
+<td><p>Keyword only parameter. Optional boolean.
+On AGOL, the default output image service for this function would be a Tiled Imagery Layer.
+To create Dynamic Imagery Layer as output on AGOL, set tiles_only parameter to False.</p>
+<p>Function will not honor tiles_only parameter on enterprise and will generate Dynamic Imagery Layer by default.</p>
 </td>
 </tr>
 </tbody>
@@ -886,9 +910,9 @@ The dictionary returned by the gis.content.create_folder() can also be passed in
 </div>
 <div class="section" id="summarize-raster-within">
 <h2>summarize_raster_within<a class="headerlink" href="#summarize-raster-within" title="Permalink to this headline">¶</a></h2>
-<dl class="py method">
+<dl class="py function">
 <dt id="arcgis.raster.analytics.summarize_raster_within">
-<code class="sig-prename descclassname">arcgis.raster.analytics.</code><code class="sig-name descname">summarize_raster_within</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">input_raster_layer_to_summarize</span></em>, <em class="sig-param"><span class="n">zone_field</span><span class="o">=</span><span class="default_value">'Value'</span></em>, <em class="sig-param"><span class="n">statistic_type</span><span class="o">=</span><span class="default_value">'Mean'</span></em>, <em class="sig-param"><span class="n">ignore_missing_values</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="n">output_name</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">context</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">process_as_multidimensional</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">percentile_value</span><span class="o">=</span><span class="default_value">90</span></em>, <em class="sig-param"><span class="o">*</span></em>, <em class="sig-param"><span class="n">gis</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">future</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.raster.analytics.summarize_raster_within" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">arcgis.raster.analytics.</code><code class="sig-name descname">summarize_raster_within</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">input_zone_layer</span></em>, <em class="sig-param"><span class="n">input_raster_layer_to_summarize</span></em>, <em class="sig-param"><span class="n">zone_field</span><span class="o">=</span><span class="default_value">'Value'</span></em>, <em class="sig-param"><span class="n">statistic_type</span><span class="o">=</span><span class="default_value">'Mean'</span></em>, <em class="sig-param"><span class="n">ignore_missing_values</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="n">output_name</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">context</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">process_as_multidimensional</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">percentile_value</span><span class="o">=</span><span class="default_value">90</span></em>, <em class="sig-param"><span class="n">percentile_interpolation_type</span><span class="o">=</span><span class="default_value">'AUTO_DETECT'</span></em>, <em class="sig-param"><span class="o">*</span></em>, <em class="sig-param"><span class="n">gis</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">future</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.raster.analytics.summarize_raster_within" title="Permalink to this definition">¶</a></dt>
 <dd><img alt="_images/ra_summarize_raster_within.png" src="_images/ra_summarize_raster_within.png" />
 <p>Summarizes a raster based on areas (zones) defined by the first input layer (input_zone_layer).</p>
 <table class="docutils align-default">
@@ -1032,27 +1056,58 @@ if the input is multidimensional raster.</p>
 <p>True - Statistics will be calculated from the current slice of a
 multidimensional image service. This is the default.</p>
 <p>False - Statistics will be calculated for all dimensions
-(such as time or depth) of a multidimensional image service.</p>
+(such as time or depth) of a multidimensional image service.
+Parameter available in ArcGIS Image Server 10.8.1 and higher.</p>
 </td>
 </tr>
 <tr class="row-even"><td><p>percentile_value</p></td>
-<td><p>Optional int, The percentile to calculate. The default is 90, for the 90th percentile.
+<td><p>Optional Double, The percentile to calculate. The default is 90, for the 90th percentile.
 The values can range from 0 to 100. The 0th percentile is essentially
 equivalent to the Minimum statistic, and the 100th percentile is equivalent to Maximum.
 A value of 50 will produce essentially the same result as the Median statistic.</p>
 <p>This parameter is honoured only available if the statistics_type parameter is
-set to Percentile.</p>
+set to Percentile.
+Parameter available in ArcGIS Image Server 10.8.1 and higher.</p>
 </td>
 </tr>
-<tr class="row-odd"><td><p>gis</p></td>
-<td><p>Optional GIS object. If not speficied, the currently active connection
+<tr class="row-odd"><td><p>percentile_interpolation_type</p></td>
+<td><p>Optional str. Determines the type of percentile interpolation type when the
+number of values from the input value raster to be calculated are even.</p>
+<blockquote>
+<div><ul class="simple">
+<li><dl class="simple">
+<dt>AUTO_DETECT - If the input value raster has integer pixel type, the</dt><dd><p>NEAREST method is used. If the input value raster
+has floating point pixel type, then the LINEAR
+method is used. This is the default.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>NEAREST - Nearest value to the desired percentile. In this case,</dt><dd><p>the output pixel type is same as that of the input value
+raster.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>LINEAR - Weighted average of two surrounding values from the</dt><dd><p>desired percentile. In this case, the output pixel
+type is floating point.</p>
+</dd>
+</dl>
+</li>
+</ul>
+</div></blockquote>
+<p>Parameter available in ArcGIS Image Server 10.9 and higher.</p>
+</td>
+</tr>
+<tr class="row-even"><td><p>gis</p></td>
+<td><p>Optional GIS object. If not specified, the currently active connection
 is used.</p></td>
 </tr>
-<tr class="row-even"><td><p>future</p></td>
+<tr class="row-odd"><td><p>future</p></td>
 <td><p>Keyword only parameter. Optional boolean. If True, the result will be a GPJob object and
 results will be returned asynchronously.</p></td>
 </tr>
-<tr class="row-odd"><td><p>folder</p></td>
+<tr class="row-even"><td><p>folder</p></td>
 <td><p>Keyword only parameter. Optional str or dict. Creates a folder in the portal, if it does
 not exist, with the given folder name and persists the output in this folder.
 The dictionary returned by the gis.content.create_folder() can also be passed in as input.</p>
@@ -1060,6 +1115,13 @@ The dictionary returned by the gis.content.create_folder() can also be passed in
 <dt>Example:</dt><dd><p>{‘username’: ‘user1’, ‘id’: ‘6a3b77c187514ef7873ba73338cf1af8’, ‘title’: ‘trial’}</p>
 </dd>
 </dl>
+</td>
+</tr>
+<tr class="row-odd"><td><p>tiles_only</p></td>
+<td><p>Keyword only parameter. Optional boolean.
+On AGOL, the default output image service for this function would be a Tiled Imagery Layer.
+To create Dynamic Imagery Layer as output on AGOL, set tiles_only parameter to False.</p>
+<p>Function will not honor tiles_only parameter on enterprise and will generate Dynamic Imagery Layer by default.</p>
 </td>
 </tr>
 </tbody>
@@ -1075,9 +1137,9 @@ The dictionary returned by the gis.content.create_folder() can also be passed in
 </div>
 <div class="section" id="calculate-density">
 <h2>calculate_density<a class="headerlink" href="#calculate-density" title="Permalink to this headline">¶</a></h2>
-<dl class="py method">
+<dl class="py function">
 <dt id="arcgis.raster.analytics.calculate_density">
-<code class="sig-prename descclassname">arcgis.raster.analytics.</code><code class="sig-name descname">calculate_density</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">count_field</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">search_distance</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">output_area_units</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">output_cell_size</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">output_name</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">context</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="o">*</span></em>, <em class="sig-param"><span class="n">gis</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">future</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.raster.analytics.calculate_density" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">arcgis.raster.analytics.</code><code class="sig-name descname">calculate_density</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">input_point_or_line_features</span></em>, <em class="sig-param"><span class="n">count_field</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">search_distance</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">output_area_units</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">output_cell_size</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">output_name</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">context</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">input_barriers</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="o">*</span></em>, <em class="sig-param"><span class="n">gis</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">future</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.raster.analytics.calculate_density" title="Permalink to this definition">¶</a></dt>
 <dd><img alt="_images/ra_calculate_density.png" src="_images/ra_calculate_density.png" />
 <p>Density analysis takes known quantities of some phenomenon and creates a density map by spreading
 these quantities across the map. You can use this function, for example, to show concentrations of
@@ -1218,15 +1280,21 @@ The supported values are: Bilinear, Nearest, Cubic.</p>
 </div></blockquote>
 </td>
 </tr>
-<tr class="row-odd"><td><p>gis</p></td>
-<td><p>Optional GIS object. If not speficied, the currently active connection
+<tr class="row-odd"><td><p>input_barriers</p></td>
+<td><p>Optional. The dataset that defines the barriers. The barriers can be
+a feature layer of polyline or polygon features.</p>
+<p>Parameter available in ArcGIS Image Server 10.9 and higher.</p>
+</td>
+</tr>
+<tr class="row-even"><td><p>gis</p></td>
+<td><p>Optional GIS object. If not specified, the currently active connection
 is used.</p></td>
 </tr>
-<tr class="row-even"><td><p>future</p></td>
+<tr class="row-odd"><td><p>future</p></td>
 <td><p>Keyword only parameter. Optional boolean. If True, the result will be a GPJob object and
 results will be returned asynchronously.</p></td>
 </tr>
-<tr class="row-odd"><td><p>folder</p></td>
+<tr class="row-even"><td><p>folder</p></td>
 <td><p>Keyword only parameter. Optional str or dict. Creates a folder in the portal, if it does
 not exist, with the given folder name and persists the output in this folder.
 The dictionary returned by the gis.content.create_folder() can also be passed in as input.</p>
@@ -1234,6 +1302,13 @@ The dictionary returned by the gis.content.create_folder() can also be passed in
 <dt>Example:</dt><dd><p>{‘username’: ‘user1’, ‘id’: ‘6a3b77c187514ef7873ba73338cf1af8’, ‘title’: ‘trial’}</p>
 </dd>
 </dl>
+</td>
+</tr>
+<tr class="row-odd"><td><p>tiles_only</p></td>
+<td><p>Keyword only parameter. Optional boolean.
+On AGOL, the default output image service for this function would be a Tiled Imagery Layer.
+To create Dynamic Imagery Layer as output on AGOL, set tiles_only parameter to False.</p>
+<p>Function will not honor tiles_only parameter on enterprise and will generate Dynamic Imagery Layer by default.</p>
 </td>
 </tr>
 </tbody>
@@ -1249,9 +1324,9 @@ The dictionary returned by the gis.content.create_folder() can also be passed in
 </div>
 <div class="section" id="classify">
 <h2>classify<a class="headerlink" href="#classify" title="Permalink to this headline">¶</a></h2>
-<dl class="py method">
+<dl class="py function">
 <dt id="arcgis.raster.analytics.classify">
-<code class="sig-prename descclassname">arcgis.raster.analytics.</code><code class="sig-name descname">classify</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">input_classifier_definition</span></em>, <em class="sig-param"><span class="n">additional_input_raster</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">output_name</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">context</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="o">*</span></em>, <em class="sig-param"><span class="n">gis</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">future</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.raster.analytics.classify" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">arcgis.raster.analytics.</code><code class="sig-name descname">classify</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">input_raster</span></em>, <em class="sig-param"><span class="n">input_classifier_definition</span></em>, <em class="sig-param"><span class="n">additional_input_raster</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">output_name</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">context</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="o">*</span></em>, <em class="sig-param"><span class="n">gis</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">future</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.raster.analytics.classify" title="Permalink to this definition">¶</a></dt>
 <dd><img alt="_images/ra_classify.png" src="_images/ra_classify.png" />
 <p>The Classify function will create categories of pixels based on the input raster and 
 the classifier definition dictionary that was generated from the train_classifier function.</p>
@@ -1364,7 +1439,7 @@ The supported values are: Bilinear, Nearest, Cubic.</p>
 </td>
 </tr>
 <tr class="row-odd"><td><p>gis</p></td>
-<td><p>Keyword only parameter. Optional GIS object. If not speficied, the currently active connection
+<td><p>Keyword only parameter. Optional GIS object. If not specified, the currently active connection
 is used.</p></td>
 </tr>
 <tr class="row-even"><td><p>future</p></td>
@@ -1381,6 +1456,13 @@ The dictionary returned by the gis.content.create_folder() can also be passed in
 </dl>
 </td>
 </tr>
+<tr class="row-even"><td><p>tiles_only</p></td>
+<td><p>Keyword only parameter. Optional boolean.
+On AGOL, the default output image service for this function would be a Tiled Imagery Layer.
+To create Dynamic Imagery Layer as output on AGOL, set tiles_only parameter to False.</p>
+<p>Function will not honor tiles_only parameter on enterprise and will generate Dynamic Imagery Layer by default.</p>
+</td>
+</tr>
 </tbody>
 </table>
 <dl class="field-list simple">
@@ -1393,9 +1475,9 @@ The dictionary returned by the gis.content.create_folder() can also be passed in
 </div>
 <div class="section" id="segment">
 <h2>segment<a class="headerlink" href="#segment" title="Permalink to this headline">¶</a></h2>
-<dl class="py method">
+<dl class="py function">
 <dt id="arcgis.raster.analytics.segment">
-<code class="sig-prename descclassname">arcgis.raster.analytics.</code><code class="sig-name descname">segment</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">spectral_detail</span><span class="o">=</span><span class="default_value">15.5</span></em>, <em class="sig-param"><span class="n">spatial_detail</span><span class="o">=</span><span class="default_value">15</span></em>, <em class="sig-param"><span class="n">minimum_segment_size_in_pixels</span><span class="o">=</span><span class="default_value">20</span></em>, <em class="sig-param"><span class="n">band_indexes</span><span class="o">=</span><span class="default_value">[0, 1, 2]</span></em>, <em class="sig-param"><span class="n">remove_tiling_artifacts</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">output_name</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">context</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="o">*</span></em>, <em class="sig-param"><span class="n">gis</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">future</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.raster.analytics.segment" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">arcgis.raster.analytics.</code><code class="sig-name descname">segment</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">input_raster</span></em>, <em class="sig-param"><span class="n">spectral_detail</span><span class="o">=</span><span class="default_value">15.5</span></em>, <em class="sig-param"><span class="n">spatial_detail</span><span class="o">=</span><span class="default_value">15</span></em>, <em class="sig-param"><span class="n">minimum_segment_size_in_pixels</span><span class="o">=</span><span class="default_value">20</span></em>, <em class="sig-param"><span class="n">band_indexes</span><span class="o">=</span><span class="default_value">[0, 1, 2]</span></em>, <em class="sig-param"><span class="n">remove_tiling_artifacts</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">output_name</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">context</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="o">*</span></em>, <em class="sig-param"><span class="n">gis</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">future</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.raster.analytics.segment" title="Permalink to this definition">¶</a></dt>
 <dd><img alt="_images/ra_segment.png" src="_images/ra_segment.png" />
 <p>Groups together adjacent pixels having similar spectral and spatial characteristics into
 segments, known as objects.</p>
@@ -1534,7 +1616,7 @@ The supported values are: Bilinear, Nearest, Cubic.</p>
 </td>
 </tr>
 <tr class="row-even"><td><p>gis</p></td>
-<td><p>Keyword only parameter. Optional GIS object. If not speficied, the currently active connection
+<td><p>Keyword only parameter. Optional GIS object. If not specified, the currently active connection
 is used.</p></td>
 </tr>
 <tr class="row-odd"><td><p>future</p></td>
@@ -1551,6 +1633,13 @@ The dictionary returned by the gis.content.create_folder() can also be passed in
 </dl>
 </td>
 </tr>
+<tr class="row-odd"><td><p>tiles_only</p></td>
+<td><p>Keyword only parameter. Optional boolean.
+On AGOL, the default output image service for this function would be a Tiled Imagery Layer.
+To create Dynamic Imagery Layer as output on AGOL, set tiles_only parameter to False.</p>
+<p>Function will not honor tiles_only parameter on enterprise and will generate Dynamic Imagery Layer by default.</p>
+</td>
+</tr>
 </tbody>
 </table>
 <dl class="field-list simple">
@@ -1563,9 +1652,9 @@ The dictionary returned by the gis.content.create_folder() can also be passed in
 </div>
 <div class="section" id="train-classifier">
 <h2>train_classifier<a class="headerlink" href="#train-classifier" title="Permalink to this headline">¶</a></h2>
-<dl class="py method">
+<dl class="py function">
 <dt id="arcgis.raster.analytics.train_classifier">
-<code class="sig-prename descclassname">arcgis.raster.analytics.</code><code class="sig-name descname">train_classifier</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">input_training_sample_json</span></em>, <em class="sig-param"><span class="n">classifier_parameters</span></em>, <em class="sig-param"><span class="n">segmented_raster</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">segment_attributes</span><span class="o">=</span><span class="default_value">'COLOR;MEAN'</span></em>, <em class="sig-param"><span class="o">*</span></em>, <em class="sig-param"><span class="n">gis</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">future</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.raster.analytics.train_classifier" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">arcgis.raster.analytics.</code><code class="sig-name descname">train_classifier</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">input_raster</span></em>, <em class="sig-param"><span class="n">input_training_sample_json</span></em>, <em class="sig-param"><span class="n">classifier_parameters</span></em>, <em class="sig-param"><span class="n">segmented_raster</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">segment_attributes</span><span class="o">=</span><span class="default_value">'COLOR;MEAN'</span></em>, <em class="sig-param"><span class="o">*</span></em>, <em class="sig-param"><span class="n">gis</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">future</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.raster.analytics.train_classifier" title="Permalink to this definition">¶</a></dt>
 <dd><img alt="_images/ra_train_classifier.png" src="_images/ra_train_classifier.png" />
 <p>The Train Classifier task is a service to train image classifiers and return an .ecs file in dictionary format. 
 The .ecs file is used in the classify function.</p>
@@ -1653,7 +1742,7 @@ It is the permutation of the following attributes: COLOR; MEAN; STD; COUNT; COMP
 </td>
 </tr>
 <tr class="row-odd"><td><p>gis</p></td>
-<td><p>Keyword only parameter. Optional GIS object. If not speficied, the currently active connection
+<td><p>Keyword only parameter. Optional GIS object. If not specified, the currently active connection
 is used.</p></td>
 </tr>
 <tr class="row-even"><td><p>future</p></td>
@@ -1664,7 +1753,7 @@ results will be returned asynchronously.</p></td>
 </table>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p>output_raster : Imagery Layer item</p>
+<dd class="field-odd"><p>Returns .ecs file in dictionary format</p>
 </dd>
 </dl>
 </dd></dl>
@@ -1672,9 +1761,9 @@ results will be returned asynchronously.</p></td>
 </div>
 <div class="section" id="convert-feature-to-raster">
 <h2>convert_feature_to_raster<a class="headerlink" href="#convert-feature-to-raster" title="Permalink to this headline">¶</a></h2>
-<dl class="py method">
+<dl class="py function">
 <dt id="arcgis.raster.analytics.convert_feature_to_raster">
-<code class="sig-prename descclassname">arcgis.raster.analytics.</code><code class="sig-name descname">convert_feature_to_raster</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">output_cell_size</span></em>, <em class="sig-param"><span class="n">value_field</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">output_name</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">context</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="o">*</span></em>, <em class="sig-param"><span class="n">gis</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">future</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.raster.analytics.convert_feature_to_raster" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">arcgis.raster.analytics.</code><code class="sig-name descname">convert_feature_to_raster</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">input_feature</span></em>, <em class="sig-param"><span class="n">output_cell_size</span></em>, <em class="sig-param"><span class="n">value_field</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">output_name</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">context</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="o">*</span></em>, <em class="sig-param"><span class="n">gis</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">future</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.raster.analytics.convert_feature_to_raster" title="Permalink to this definition">¶</a></dt>
 <dd><img alt="_images/ra_convert_feature_to_raster.png" src="_images/ra_convert_feature_to_raster.png" />
 <p>Creates a new ImageryLayer from an existing feature layer. 
 Any feature layer containing point, line, or polygon features can be converted to an ImageryLayer.</p>
@@ -1767,7 +1856,7 @@ processing instances:</p>
 </td>
 </tr>
 <tr class="row-odd"><td><p>gis</p></td>
-<td><p>Optional GIS object. If not speficied, the currently active connection
+<td><p>Optional GIS object. If not specified, the currently active connection
 is used.</p></td>
 </tr>
 <tr class="row-even"><td><p>future</p></td>
@@ -1784,6 +1873,13 @@ The dictionary returned by the gis.content.create_folder() can also be passed in
 </dl>
 </td>
 </tr>
+<tr class="row-even"><td><p>tiles_only</p></td>
+<td><p>Keyword only parameter. Optional boolean.
+On AGOL, the default output image service for this function would be a Tiled Imagery Layer.
+To create Dynamic Imagery Layer as output on AGOL, set tiles_only parameter to False.</p>
+<p>Function will not honor tiles_only parameter on enterprise and will generate Dynamic Imagery Layer by default.</p>
+</td>
+</tr>
 </tbody>
 </table>
 <dl class="field-list simple">
@@ -1797,9 +1893,9 @@ The dictionary returned by the gis.content.create_folder() can also be passed in
 </div>
 <div class="section" id="convert-raster-to-feature">
 <h2>convert_raster_to_feature<a class="headerlink" href="#convert-raster-to-feature" title="Permalink to this headline">¶</a></h2>
-<dl class="py method">
+<dl class="py function">
 <dt id="arcgis.raster.analytics.convert_raster_to_feature">
-<code class="sig-prename descclassname">arcgis.raster.analytics.</code><code class="sig-name descname">convert_raster_to_feature</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">field</span><span class="o">=</span><span class="default_value">'Value'</span></em>, <em class="sig-param"><span class="n">output_type</span><span class="o">=</span><span class="default_value">'Polygon'</span></em>, <em class="sig-param"><span class="n">simplify</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="n">output_name</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">context</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">create_multipart_features</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">max_vertices_per_feature</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="o">*</span></em>, <em class="sig-param"><span class="n">gis</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">future</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.raster.analytics.convert_raster_to_feature" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">arcgis.raster.analytics.</code><code class="sig-name descname">convert_raster_to_feature</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">input_raster</span></em>, <em class="sig-param"><span class="n">field</span><span class="o">=</span><span class="default_value">'Value'</span></em>, <em class="sig-param"><span class="n">output_type</span><span class="o">=</span><span class="default_value">'Polygon'</span></em>, <em class="sig-param"><span class="n">simplify</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="n">output_name</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">context</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">create_multipart_features</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">max_vertices_per_feature</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="o">*</span></em>, <em class="sig-param"><span class="n">gis</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">future</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.raster.analytics.convert_raster_to_feature" title="Permalink to this definition">¶</a></dt>
 <dd><img alt="_images/ra_convert_raster_to_feature.png" src="_images/ra_convert_raster_to_feature.png" />
 <p>Function converts imagery data to feature class vector data.</p>
 <table class="docutils align-default">
@@ -1879,7 +1975,7 @@ single-part or multipart features.</p>
 <td><p>Optional int. The vertex limit used to subdivide a polygon into smaller polygons.</p></td>
 </tr>
 <tr class="row-even"><td><p>gis</p></td>
-<td><p>Optional GIS object. If not speficied, the currently active connection
+<td><p>Optional GIS object. If not specified, the currently active connection
 is used.</p></td>
 </tr>
 <tr class="row-odd"><td><p>future</p></td>
@@ -1909,112 +2005,60 @@ The dictionary returned by the gis.content.create_folder() can also be passed in
 </div>
 <div class="section" id="copy-raster">
 <h2>copy_raster<a class="headerlink" href="#copy-raster" title="Permalink to this headline">¶</a></h2>
-<dl class="py method">
+<dl class="py function">
 <dt id="arcgis.raster.analytics.copy_raster">
-<code class="sig-prename descclassname">arcgis.raster.analytics.</code><code class="sig-name descname">copy_raster</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">output_cellsize</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">resampling_method</span><span class="o">=</span><span class="default_value">'NEAREST'</span></em>, <em class="sig-param"><span class="n">clip_setting</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">output_name</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">process_as_multidimensional</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">build_transpose</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">context</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="o">*</span></em>, <em class="sig-param"><span class="n">gis</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">future</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.raster.analytics.copy_raster" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">arcgis.raster.analytics.</code><code class="sig-name descname">copy_raster</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">input_raster</span></em>, <em class="sig-param"><span class="n">output_cellsize</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">resampling_method</span><span class="o">=</span><span class="default_value">'NEAREST'</span></em>, <em class="sig-param"><span class="n">clip_setting</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">output_name</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">process_as_multidimensional</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">build_transpose</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">context</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">raster_type_name</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">raster_type_params</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="o">*</span></em>, <em class="sig-param"><span class="n">gis</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">future</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.raster.analytics.copy_raster" title="Permalink to this definition">¶</a></dt>
 <dd><img alt="_images/ra_copy_raster.png" src="_images/ra_copy_raster.png" />
-<p>The Copy Raster task takes single raster input and generates the output image using parallel processing.</p>
-<p>The input raster can be clipped, resampled, and reprojected based on the setting.</p>
-<table class="docutils align-default">
-<colgroup>
-<col style="width: 22%" />
-<col style="width: 78%" />
-</colgroup>
-<tbody>
-<tr class="row-odd"><td><p><strong>Argument</strong></p></td>
-<td><p><strong>Description</strong></p></td>
-</tr>
-<tr class="row-even"><td><p>input_raster</p></td>
-<td><p>Required feature layer. The input feature layer to convert to a raster dataset.</p></td>
-</tr>
-<tr class="row-odd"><td><p>output_cellsize</p></td>
-<td><p>Required dict. The cell size and unit for the output imagery layer.
-The available units are Feet, Miles, Meters, and Kilometers.
-eg - {“distance”:60,”units”:meters}</p></td>
-</tr>
-<tr class="row-even"><td><p>resampling_method</p></td>
-<td><p>Optional string.  The field that will be used to assign values to the
-output raster.</p></td>
-</tr>
-<tr class="row-odd"><td><p>clip_setting</p></td>
-<td><p>Optional string.  The field that will be used to assign values to the
-output raster.</p></td>
-</tr>
-<tr class="row-even"><td><p>output_name</p></td>
-<td><p>Optional. If not provided, an Image Service is created by the method and used as the output raster.</p>
-<p>You can pass in an existing Image Service Item from your GIS to use that instead.</p>
-<p>Alternatively, you can pass in the name of the output Image Service that should be created by this method to be
-used as the output for the tool.
-A RuntimeError is raised if a service by that name already exists</p>
-</td>
-</tr>
-<tr class="row-odd"><td><p>process_as_multidimensional</p></td>
-<td><p>Optional bool, Process as multidimensional if set to True,
-if the input is multidimensional raster.</p></td>
-</tr>
-<tr class="row-even"><td><p>build_transpose</p></td>
-<td><p>Optional bool, if set to true, transforms the output multidimensional
-raster. Valid only if process_as_multidimensional is set to True.</p></td>
-</tr>
-<tr class="row-odd"><td><p>context</p></td>
-<td><p>context contains additional settings that affect task execution.</p>
-<p>context parameter overwrites values set through arcgis.env parameter</p>
-<p>This function has the following settings:</p>
-<blockquote>
-<div><ul>
-<li><p>Output Spatial Reference (outSR): The output raster will be
-projected into the output spatial reference.</p>
-<dl class="simple">
-<dt>Example:</dt><dd><p>{“outSR”: {spatial reference}}</p>
-</dd>
-</dl>
-</li>
-</ul>
-</div></blockquote>
-</td>
-</tr>
-<tr class="row-even"><td><p>gis</p></td>
-<td><p>Optional GIS object. If not speficied, the currently active connection
-is used.</p></td>
-</tr>
-<tr class="row-odd"><td><p>future</p></td>
-<td><p>Keyword only parameter. Optional boolean. If True, the result will be a GPJob object and
-results will be returned asynchronously.</p></td>
-</tr>
-<tr class="row-even"><td><p>folder</p></td>
-<td><p>Keyword only parameter. Optional str or dict. Creates a folder in the portal, if it does
-not exist, with the given folder name and persists the output in this folder.
-The dictionary returned by the gis.content.create_folder() can also be passed in as input.</p>
-<dl class="simple">
-<dt>Example:</dt><dd><p>{‘username’: ‘user1’, ‘id’: ‘6a3b77c187514ef7873ba73338cf1af8’, ‘title’: ‘trial’}</p>
-</dd>
-</dl>
-</td>
-</tr>
-</tbody>
-</table>
+<p>The Copy Raster task takes single raster input and generates the output image using parallel processing.
+The input raster can be clipped, resampled, and reprojected based on the setting.</p>
+<p>The function can also create hosted imagery layers on enterprise and AGOL from local raster datasets by uploading the data to the server.
+Multiple images are mosaicked into a single dataset to create one layer.
+For this functionality to work on AGOL, Azure library packages for Python (version - azure-storage-blob-12.5.0)
+needs to be pre-installed. Refer <a class="reference external" href="https://docs.microsoft.com/en-us/azure/developer/python/azure-sdk-install">https://docs.microsoft.com/en-us/azure/developer/python/azure-sdk-install</a></p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
 <dd class="field-odd"><p></p>
 </dd>
 </dl>
 <p>output_raster : Imagery layer item</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Usage Example 1: This example creates a tiled image layer in AGOL. (To create dynamic imagery layer set the tiles_only keyword argument to False)</span>
+
+<span class="n">copy_raster_op</span> <span class="o">=</span> <span class="n">copy_raster</span><span class="p">(</span><span class="n">input_raster</span><span class="o">=</span><span class="s2">&quot;C:\data\input_raster.tif&quot;</span><span class="p">,</span>
+                             <span class="n">output_name</span><span class="o">=</span><span class="s2">&quot;output_name&quot;</span><span class="p">,</span>
+                             <span class="n">raster_type_name</span><span class="o">=</span><span class="s2">&quot;Raster Dataset&quot;</span><span class="p">,</span>
+                             <span class="n">gis</span><span class="o">=</span><span class="n">gis</span><span class="p">,</span>
+                             <span class="n">tiles_only</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Usage Example 2: This example creates a tiled image layer in AGOL from the datasets detected in the input folder. (To create dynamic imagery layer set the tiles_only keyword argument to False)</span>
+
+<span class="n">copy_raster_op</span> <span class="o">=</span> <span class="n">copy_raster</span><span class="p">(</span><span class="n">input_raster</span><span class="o">=</span><span class="s2">&quot;C:\data&quot;</span><span class="p">,</span>
+                             <span class="n">output_name</span><span class="o">=</span><span class="s2">&quot;output_name&quot;</span><span class="p">,</span>
+                             <span class="n">raster_type_name</span><span class="o">=</span><span class="s2">&quot;Raster Dataset&quot;</span><span class="p">,</span>
+                             <span class="n">gis</span><span class="o">=</span><span class="n">gis</span><span class="p">,</span>
+                             <span class="n">tiles_only</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
 </dd></dl>
 
 </div>
 <div class="section" id="create-image-collection">
 <h2>create_image_collection<a class="headerlink" href="#create-image-collection" title="Permalink to this headline">¶</a></h2>
-<dl class="py method">
+<dl class="py function">
 <dt id="arcgis.raster.analytics.create_image_collection">
-<code class="sig-prename descclassname">arcgis.raster.analytics.</code><code class="sig-name descname">create_image_collection</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">input_rasters</span></em>, <em class="sig-param"><span class="n">raster_type_name</span></em>, <em class="sig-param"><span class="n">raster_type_params</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">out_sr</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">context</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="o">*</span></em>, <em class="sig-param"><span class="n">gis</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">future</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.raster.analytics.create_image_collection" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">arcgis.raster.analytics.</code><code class="sig-name descname">create_image_collection</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">image_collection</span></em>, <em class="sig-param"><span class="n">input_rasters</span></em>, <em class="sig-param"><span class="n">raster_type_name</span></em>, <em class="sig-param"><span class="n">raster_type_params</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">out_sr</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">context</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="o">*</span></em>, <em class="sig-param"><span class="n">gis</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">future</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.raster.analytics.create_image_collection" title="Permalink to this definition">¶</a></dt>
 <dd><img alt="_images/create_image_collection.png" src="_images/create_image_collection.png" />
 <p>Create a collection of images that will participate in the ortho-mapping project.
 Provides provision to use input rasters by reference 
 and to specify image collection properties through context parameter.</p>
+<p>The function can also create hosted imagery layers on enterprise and AGOL from local raster datasets by uploading the data to the server.
+A collection can be created from multiple input rasters.
+For this functionality to work on AGOL, Azure library packages for Python (version - azure-storage-blob-12.5.0)
+needs to be pre-installed. Refer <a class="reference external" href="https://docs.microsoft.com/en-us/azure/developer/python/azure-sdk-install">https://docs.microsoft.com/en-us/azure/developer/python/azure-sdk-install</a></p>
 <table class="docutils align-default">
 <colgroup>
-<col style="width: 12%" />
-<col style="width: 88%" />
+<col style="width: 11%" />
+<col style="width: 89%" />
 </colgroup>
 <tbody>
 <tr class="row-odd"><td><p><strong>Argument</strong></p></td>
@@ -2039,12 +2083,14 @@ be any one of the following:
 - List of portal Items of the images
 - An image service URL
 - Shared data path (this path must be accessible by the server)
-- Name of a folder on the portal</p></td>
+- Name of a folder on the portal
+The function can create hosted imagery layers on enterprise and AGOL from
+local raster datasets by uploading the data to the server.</p></td>
 </tr>
 <tr class="row-even"><td><p>raster_type_name</p></td>
 <td><p>Required string. The name of the raster type to use for adding data to
 the image collection.</p>
-<p>Choice list: [‘UAV/UAS’, ‘Aerial’, ‘ScannedAerial’, ‘Landsat 7 EMT+’, ‘Landsat 8’, ‘Sentinel-2’, ‘ZY3-SASMAC’, ‘ZY3-CRESDA’]</p>
+<p>Choice list: [‘Raster Dataset’, ‘UAV/UAS’, ‘Aerial’, ‘ScannedAerial’, ‘Landsat 7 EMT+’, ‘Landsat 8’, ‘Sentinel-2’, ‘ZY3-SASMAC’, ‘ZY3-CRESDA’]</p>
 </td>
 </tr>
 <tr class="row-odd"><td><p>raster_type_params</p></td>
@@ -2096,6 +2142,13 @@ The dictionary returned by the gis.content.create_folder() can also be passed in
 </dl>
 </td>
 </tr>
+<tr class="row-odd"><td><p>tiles_only</p></td>
+<td><p>Keyword only parameter. Optional boolean.
+On AGOL, the default output image service for this function would be a Tiled Imagery Layer.
+To create Dynamic Imagery Layer as output on AGOL, set tiles_only parameter to False.</p>
+<p>Function will not honor tiles_only parameter on enterprise and will generate Dynamic Imagery Layer by default.</p>
+</td>
+</tr>
 </tbody>
 </table>
 <dl class="field-list simple">
@@ -2103,7 +2156,7 @@ The dictionary returned by the gis.content.create_folder() can also be passed in
 <dd class="field-odd"><p>The imagery layer item</p>
 </dd>
 </dl>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Usage Example: To create an image collection.</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Usage Example 1: To create an image collection.</span>
 <span class="n">image_item_list</span> <span class="o">=</span> <span class="p">[</span><span class="o">&lt;</span><span class="n">Item</span> <span class="n">title</span><span class="p">:</span><span class="s2">&quot;YUN_0040.JPG&quot;</span> <span class="nb">type</span><span class="p">:</span><span class="n">Image</span> <span class="n">owner</span><span class="p">:</span><span class="n">admin</span><span class="o">&gt;</span><span class="p">,</span>
                    <span class="o">&lt;</span><span class="n">Item</span> <span class="n">title</span><span class="p">:</span><span class="s2">&quot;YUN_0041.JPG&quot;</span> <span class="nb">type</span><span class="p">:</span><span class="n">Image</span> <span class="n">owner</span><span class="p">:</span><span class="n">admin</span><span class="o">&gt;</span><span class="p">,</span>
                    <span class="o">&lt;</span><span class="n">Item</span> <span class="n">title</span><span class="p">:</span><span class="s2">&quot;YUN_0042.JPG&quot;</span> <span class="nb">type</span><span class="p">:</span><span class="n">Image</span> <span class="n">owner</span><span class="p">:</span><span class="n">admin</span><span class="o">&gt;</span><span class="p">,</span>
@@ -2126,14 +2179,23 @@ The dictionary returned by the gis.content.create_folder() can also be passed in
                                           <span class="n">out_sr</span><span class="o">=</span><span class="mi">32632</span><span class="p">)</span>
 </pre></div>
 </div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Usage Example 2: This example creates a dynamic image layer in AGOL from the datasets detected in the input folder.</span>
+
+<span class="n">img_coll_result</span> <span class="o">=</span> <span class="n">create_image_collection</span><span class="p">(</span><span class="n">image_collection</span><span class="o">=</span><span class="s2">&quot;imageCollection&quot;</span><span class="p">,</span>
+                                          <span class="n">input_rasters</span><span class="o">=</span><span class="s2">&quot;C:\data&quot;</span><span class="p">,</span>
+                                          <span class="n">raster_type_name</span><span class="o">=</span><span class="s2">&quot;Raster Dataset&quot;</span><span class="p">,</span>
+                                          <span class="n">gis</span><span class="o">=</span><span class="n">gis</span><span class="p">,</span>
+                                          <span class="n">tiles_only</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+</pre></div>
+</div>
 </dd></dl>
 
 </div>
 <div class="section" id="add-image">
 <h2>add_image<a class="headerlink" href="#add-image" title="Permalink to this headline">¶</a></h2>
-<dl class="py method">
+<dl class="py function">
 <dt id="arcgis.raster.analytics.add_image">
-<code class="sig-prename descclassname">arcgis.raster.analytics.</code><code class="sig-name descname">add_image</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">input_rasters</span></em>, <em class="sig-param"><span class="n">raster_type_name</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">raster_type_params</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">context</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="o">*</span></em>, <em class="sig-param"><span class="n">gis</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">future</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.raster.analytics.add_image" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">arcgis.raster.analytics.</code><code class="sig-name descname">add_image</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">image_collection</span></em>, <em class="sig-param"><span class="n">input_rasters</span></em>, <em class="sig-param"><span class="n">raster_type_name</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">raster_type_params</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">context</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="o">*</span></em>, <em class="sig-param"><span class="n">gis</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">future</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.raster.analytics.add_image" title="Permalink to this definition">¶</a></dt>
 <dd><img alt="_images/add_image.png" src="_images/add_image.png" />
 <p>Add a collection of images to an existing image collection. It provides provision to use input rasters by reference 
 and to specify image collection properties through context parameter.</p>
@@ -2226,9 +2288,9 @@ results will be returned asynchronously.</p></td>
 </div>
 <div class="section" id="delete-image">
 <h2>delete_image<a class="headerlink" href="#delete-image" title="Permalink to this headline">¶</a></h2>
-<dl class="py method">
+<dl class="py function">
 <dt id="arcgis.raster.analytics.delete_image">
-<code class="sig-prename descclassname">arcgis.raster.analytics.</code><code class="sig-name descname">delete_image</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">where</span></em>, <em class="sig-param"><span class="o">*</span></em>, <em class="sig-param"><span class="n">gis</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">future</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.raster.analytics.delete_image" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">arcgis.raster.analytics.</code><code class="sig-name descname">delete_image</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">image_collection</span></em>, <em class="sig-param"><span class="n">where</span></em>, <em class="sig-param"><span class="o">*</span></em>, <em class="sig-param"><span class="n">gis</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">future</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.raster.analytics.delete_image" title="Permalink to this definition">¶</a></dt>
 <dd><img alt="_images/delete_image.png" src="_images/delete_image.png" />
 <p><code class="docutils literal notranslate"><span class="pre">delete_image</span></code> allows users to remove existing images from the image collection (mosaic dataset). 
 The function will only delete the raster item in the mosaic dataset and will not remove the
@@ -2275,9 +2337,9 @@ results will be returned asynchronously.</p></td>
 </div>
 <div class="section" id="delete-image-collection">
 <h2>delete_image_collection<a class="headerlink" href="#delete-image-collection" title="Permalink to this headline">¶</a></h2>
-<dl class="py method">
+<dl class="py function">
 <dt id="arcgis.raster.analytics.delete_image_collection">
-<code class="sig-prename descclassname">arcgis.raster.analytics.</code><code class="sig-name descname">delete_image_collection</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">*</span></em>, <em class="sig-param"><span class="n">gis</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">future</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.raster.analytics.delete_image_collection" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">arcgis.raster.analytics.</code><code class="sig-name descname">delete_image_collection</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">image_collection</span></em>, <em class="sig-param"><span class="o">*</span></em>, <em class="sig-param"><span class="n">gis</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">future</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.raster.analytics.delete_image_collection" title="Permalink to this definition">¶</a></dt>
 <dd><img alt="_images/delete_image_collection.png" src="_images/delete_image_collection.png" />
 <p>Delete the image collection. This service tool will delete the image collection
 image service, that is, the portal-hosted image layer item. It will not delete 
@@ -2321,9 +2383,9 @@ results will be returned asynchronously.</p></td>
 </div>
 <div class="section" id="list-datastore-content">
 <h2>list_datastore_content<a class="headerlink" href="#list-datastore-content" title="Permalink to this headline">¶</a></h2>
-<dl class="py method">
+<dl class="py function">
 <dt id="arcgis.raster.analytics.list_datastore_content">
-<code class="sig-prename descclassname">arcgis.raster.analytics.</code><code class="sig-name descname">list_datastore_content</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">filter</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="o">*</span></em>, <em class="sig-param"><span class="n">gis</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">future</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.raster.analytics.list_datastore_content" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">arcgis.raster.analytics.</code><code class="sig-name descname">list_datastore_content</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">datastore</span></em>, <em class="sig-param"><span class="n">filter</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="o">*</span></em>, <em class="sig-param"><span class="n">gis</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">future</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.raster.analytics.list_datastore_content" title="Permalink to this definition">¶</a></dt>
 <dd><p>List the contents of the datastore registered with the server (fileShares, cloudStores, rasterStores).</p>
 <table class="docutils align-default">
 <colgroup>
@@ -2374,9 +2436,9 @@ results will be returned asynchronously.</p></td>
 </div>
 <div class="section" id="build-footprints">
 <h2>build_footprints<a class="headerlink" href="#build-footprints" title="Permalink to this headline">¶</a></h2>
-<dl class="py method">
+<dl class="py function">
 <dt id="arcgis.raster.analytics.build_footprints">
-<code class="sig-prename descclassname">arcgis.raster.analytics.</code><code class="sig-name descname">build_footprints</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">computation_method</span><span class="o">=</span><span class="default_value">'RADIOMETRY'</span></em>, <em class="sig-param"><span class="n">value_range</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">context</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="o">*</span></em>, <em class="sig-param"><span class="n">gis</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">future</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.raster.analytics.build_footprints" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">arcgis.raster.analytics.</code><code class="sig-name descname">build_footprints</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">image_collection</span></em>, <em class="sig-param"><span class="n">computation_method</span><span class="o">=</span><span class="default_value">'RADIOMETRY'</span></em>, <em class="sig-param"><span class="n">value_range</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">context</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="o">*</span></em>, <em class="sig-param"><span class="n">gis</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">future</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.raster.analytics.build_footprints" title="Permalink to this definition">¶</a></dt>
 <dd><p>Computes the extent of every raster in an image collection.</p>
 <table class="docutils align-default">
 <colgroup>
@@ -2422,7 +2484,7 @@ processing instances:</p>
 </td>
 </tr>
 <tr class="row-even"><td><p>gis</p></td>
-<td><p>Optional GIS object. If not speficied, the currently active connection
+<td><p>Optional GIS object. If not specified, the currently active connection
 is used.</p></td>
 </tr>
 <tr class="row-odd"><td><p>future</p></td>
@@ -2442,9 +2504,9 @@ results will be returned asynchronously.</p></td>
 </div>
 <div class="section" id="build-overview">
 <h2>build_overview<a class="headerlink" href="#build-overview" title="Permalink to this headline">¶</a></h2>
-<dl class="py method">
+<dl class="py function">
 <dt id="arcgis.raster.analytics.build_overview">
-<code class="sig-prename descclassname">arcgis.raster.analytics.</code><code class="sig-name descname">build_overview</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">cell_size</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">context</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="o">*</span></em>, <em class="sig-param"><span class="n">gis</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">future</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.raster.analytics.build_overview" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">arcgis.raster.analytics.</code><code class="sig-name descname">build_overview</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">image_collection</span></em>, <em class="sig-param"><span class="n">cell_size</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">context</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="o">*</span></em>, <em class="sig-param"><span class="n">gis</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">future</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.raster.analytics.build_overview" title="Permalink to this definition">¶</a></dt>
 <dd><p>Generates overviews on an image collection.</p>
 <table class="docutils align-default">
 <colgroup>
@@ -2485,7 +2547,7 @@ processing instances:</p>
 </td>
 </tr>
 <tr class="row-odd"><td><p>gis</p></td>
-<td><p>Optional GIS object. If not speficied, the currently active connection
+<td><p>Optional GIS object. If not specified, the currently active connection
 is used.</p></td>
 </tr>
 <tr class="row-even"><td><p>future</p></td>
@@ -2505,9 +2567,9 @@ results will be returned asynchronously.</p></td>
 </div>
 <div class="section" id="calculate-statistics">
 <h2>calculate_statistics<a class="headerlink" href="#calculate-statistics" title="Permalink to this headline">¶</a></h2>
-<dl class="py method">
+<dl class="py function">
 <dt id="arcgis.raster.analytics.calculate_statistics">
-<code class="sig-prename descclassname">arcgis.raster.analytics.</code><code class="sig-name descname">calculate_statistics</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">skip_factors</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">context</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="o">*</span></em>, <em class="sig-param"><span class="n">gis</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">future</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.raster.analytics.calculate_statistics" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">arcgis.raster.analytics.</code><code class="sig-name descname">calculate_statistics</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">image_collection</span></em>, <em class="sig-param"><span class="n">skip_factors</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">context</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="o">*</span></em>, <em class="sig-param"><span class="n">gis</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">future</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.raster.analytics.calculate_statistics" title="Permalink to this definition">¶</a></dt>
 <dd><p>Calculates statistics for an image collection</p>
 <table class="docutils align-default">
 <colgroup>
@@ -2555,7 +2617,7 @@ ignoreValues, skipExisting, areaOfInterest</p>
 </td>
 </tr>
 <tr class="row-odd"><td><p>gis</p></td>
-<td><p>Optional GIS object. If not speficied, the currently active connection
+<td><p>Optional GIS object. If not specified, the currently active connection
 is used.</p></td>
 </tr>
 <tr class="row-even"><td><p>future</p></td>
@@ -2575,9 +2637,9 @@ results will be returned asynchronously.</p></td>
 </div>
 <div class="section" id="optimum-travel-cost-network">
 <h2>optimum_travel_cost_network<a class="headerlink" href="#optimum-travel-cost-network" title="Permalink to this headline">¶</a></h2>
-<dl class="py method">
+<dl class="py function">
 <dt id="arcgis.raster.analytics.optimum_travel_cost_network">
-<code class="sig-prename descclassname">arcgis.raster.analytics.</code><code class="sig-name descname">optimum_travel_cost_network</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.raster.analytics.optimum_travel_cost_network" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">arcgis.raster.analytics.</code><code class="sig-name descname">optimum_travel_cost_network</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">input_regions_raster</span></em>, <em class="sig-param"><span class="n">input_cost_raster</span></em>, <em class="sig-param"><span class="n">output_optimum_network_name</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">output_neighbor_network_name</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">context</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="o">*</span></em>, <em class="sig-param"><span class="n">gis</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">future</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.raster.analytics.optimum_travel_cost_network" title="Permalink to this definition">¶</a></dt>
 <dd><div class="deprecated">
 <p><span class="versionmodified deprecated">Deprecated since version 1.8.1: </span>Please use arcgis.raster.analytics.optimal_region_connections() instead. </p>
 </div>
@@ -2648,7 +2710,7 @@ processing instances:</p>
 </td>
 </tr>
 <tr class="row-odd"><td><p>gis</p></td>
-<td><p>Optional GIS object. If not speficied, the currently active connection
+<td><p>Optional GIS object. If not specified, the currently active connection
 is used.</p></td>
 </tr>
 <tr class="row-even"><td><p>future</p></td>
@@ -2678,9 +2740,9 @@ The dictionary returned by the gis.content.create_folder() can also be passed in
 </div>
 <div class="section" id="determine-travel-costpath-as-polyline">
 <h2>determine_travel_costpath_as_polyline<a class="headerlink" href="#determine-travel-costpath-as-polyline" title="Permalink to this headline">¶</a></h2>
-<dl class="py method">
+<dl class="py function">
 <dt id="arcgis.raster.analytics.determine_travel_costpath_as_polyline">
-<code class="sig-prename descclassname">arcgis.raster.analytics.</code><code class="sig-name descname">determine_travel_costpath_as_polyline</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.raster.analytics.determine_travel_costpath_as_polyline" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">arcgis.raster.analytics.</code><code class="sig-name descname">determine_travel_costpath_as_polyline</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">input_source_data</span></em>, <em class="sig-param"><span class="n">input_cost_raster</span></em>, <em class="sig-param"><span class="n">input_destination_data</span></em>, <em class="sig-param"><span class="n">path_type</span><span class="o">=</span><span class="default_value">'BEST_SINGLE'</span></em>, <em class="sig-param"><span class="n">output_polyline_name</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">destination_field</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">context</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="o">*</span></em>, <em class="sig-param"><span class="n">gis</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">future</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.raster.analytics.determine_travel_costpath_as_polyline" title="Permalink to this definition">¶</a></dt>
 <dd><div class="deprecated">
 <p><span class="versionmodified deprecated">Deprecated since version 1.8.1: </span>Please use arcgis.raster.gbl.distance_accumulation()followed by arcgis.raster.analytics.optimal_path_as_line(), instead.</p>
 </div>
@@ -2779,9 +2841,9 @@ The dictionary returned by the gis.content.create_folder() can also be passed in
 </div>
 <div class="section" id="generate-multidimensional-anomaly">
 <h2>generate_multidimensional_anomaly<a class="headerlink" href="#generate-multidimensional-anomaly" title="Permalink to this headline">¶</a></h2>
-<dl class="py method">
+<dl class="py function">
 <dt id="arcgis.raster.analytics.generate_multidimensional_anomaly">
-<code class="sig-prename descclassname">arcgis.raster.analytics.</code><code class="sig-name descname">generate_multidimensional_anomaly</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">variables</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">method</span><span class="o">=</span><span class="default_value">'DIFFERENCE_FROM_MEAN'</span></em>, <em class="sig-param"><span class="n">calculation_interval</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">ignore_nodata</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="n">output_name</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">context</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">reference_mean_raster</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="o">*</span></em>, <em class="sig-param"><span class="n">gis</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">future</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.raster.analytics.generate_multidimensional_anomaly" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">arcgis.raster.analytics.</code><code class="sig-name descname">generate_multidimensional_anomaly</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">input_multidimensional_raster</span></em>, <em class="sig-param"><span class="n">variables</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">method</span><span class="o">=</span><span class="default_value">'DIFFERENCE_FROM_MEAN'</span></em>, <em class="sig-param"><span class="n">calculation_interval</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">ignore_nodata</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="n">output_name</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">context</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">reference_mean_raster</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="o">*</span></em>, <em class="sig-param"><span class="n">gis</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">future</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.raster.analytics.generate_multidimensional_anomaly" title="Permalink to this definition">¶</a></dt>
 <dd><p>Computes the anomaly for each slice in a multidimensional raster to generate a multidimensional dataset.
 An anomaly is the deviation of an observation from its standard or mean value.
 Function available in ArcGIS Image Server 10.8 and higher.</p>
@@ -2909,7 +2971,7 @@ processing instances:</p>
 </td>
 </tr>
 <tr class="row-odd"><td><p>reference_mean_raster</p></td>
-<td><p>Optional Imagery Layer object representing the reference mean raster.</p></td>
+<td><p>Optional Imagery Layer object representing the reference mean raster. Available in ArcGIS Image Server 10.8.1 and higher.</p></td>
 </tr>
 <tr class="row-even"><td><p>gis</p></td>
 <td><p>Keyword only parameter. Optional GIS. the GIS on which this tool runs. If not specified,
@@ -2927,6 +2989,13 @@ The dictionary returned by the gis.content.create_folder() can also be passed in
 <dt>Example:</dt><dd><p>{‘username’: ‘user1’, ‘id’: ‘6a3b77c187514ef7873ba73338cf1af8’, ‘title’: ‘trial’}</p>
 </dd>
 </dl>
+</td>
+</tr>
+<tr class="row-odd"><td><p>tiles_only</p></td>
+<td><p>Keyword only parameter. Optional boolean.
+On AGOL, the default output image service for this function would be a Tiled Imagery Layer.
+To create Dynamic Imagery Layer as output on AGOL, set tiles_only parameter to False.</p>
+<p>Function will not honor tiles_only parameter on enterprise and will generate Dynamic Imagery Layer by default.</p>
 </td>
 </tr>
 </tbody>
@@ -2955,9 +3024,9 @@ The dictionary returned by the gis.content.create_folder() can also be passed in
 </div>
 <div class="section" id="build-multidimensional-transpose">
 <h2>build_multidimensional_transpose<a class="headerlink" href="#build-multidimensional-transpose" title="Permalink to this headline">¶</a></h2>
-<dl class="py method">
+<dl class="py function">
 <dt id="arcgis.raster.analytics.build_multidimensional_transpose">
-<code class="sig-prename descclassname">arcgis.raster.analytics.</code><code class="sig-name descname">build_multidimensional_transpose</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">context</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="o">*</span></em>, <em class="sig-param"><span class="n">gis</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">future</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.raster.analytics.build_multidimensional_transpose" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">arcgis.raster.analytics.</code><code class="sig-name descname">build_multidimensional_transpose</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">input_multidimensional_raster</span></em>, <em class="sig-param"><span class="n">context</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">delete_transpose</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="o">*</span></em>, <em class="sig-param"><span class="n">gis</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">future</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.raster.analytics.build_multidimensional_transpose" title="Permalink to this definition">¶</a></dt>
 <dd><p>Transposes a multidimensional raster dataset, which chunks the multidimensional data along each dimension
 to optimize performance when accessing pixel values across all slices.
 Function available in ArcGIS Image Server 10.8 and higher.</p>
@@ -2994,11 +3063,30 @@ processing instances:</p>
 </div></blockquote>
 </td>
 </tr>
-<tr class="row-even"><td><p>gis</p></td>
+<tr class="row-even"><td><p>delete_tranpose</p></td>
+<td><p>Optional boolean. Specifies whether to delete an existing transpose.</p>
+<blockquote>
+<div><ul class="simple">
+<li><dl class="simple">
+<dt>True - The transpose, if it exists, will be deleted.</dt><dd><p>No new transpose will be built.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>False - The transpose will be built. If there is an existing transpose,</dt><dd><p>it will be overwritten. This is the default.</p>
+</dd>
+</dl>
+</li>
+</ul>
+</div></blockquote>
+<p>Parameter available in ArcGIS Image Server 10.9 and higher.</p>
+</td>
+</tr>
+<tr class="row-odd"><td><p>gis</p></td>
 <td><p>Keyword only parameter. Optional GIS object. the GIS on which this tool runs. If not specified,
 the active GIS is used.</p></td>
 </tr>
-<tr class="row-odd"><td><p>future</p></td>
+<tr class="row-even"><td><p>future</p></td>
 <td><p>Keyword only parameter. Optional Boolean. If True, the result will be a GPJob object and
 results will be returned asynchronously.</p></td>
 </tr>
@@ -3020,9 +3108,9 @@ results will be returned asynchronously.</p></td>
 </div>
 <div class="section" id="aggregate-multidimensional-raster">
 <h2>aggregate_multidimensional_raster<a class="headerlink" href="#aggregate-multidimensional-raster" title="Permalink to this headline">¶</a></h2>
-<dl class="py method">
+<dl class="py function">
 <dt id="arcgis.raster.analytics.aggregate_multidimensional_raster">
-<code class="sig-prename descclassname">arcgis.raster.analytics.</code><code class="sig-name descname">aggregate_multidimensional_raster</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">dimension</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">variables</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">aggregation_method</span><span class="o">=</span><span class="default_value">'MEAN'</span></em>, <em class="sig-param"><span class="n">aggregation_definition</span><span class="o">=</span><span class="default_value">'ALL'</span></em>, <em class="sig-param"><span class="n">interval_keyword</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">interval_value</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">interval_unit</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">interval_ranges</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">aggregation_function</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">ignore_nodata</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="n">output_name</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">context</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="o">*</span></em>, <em class="sig-param"><span class="n">gis</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">future</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.raster.analytics.aggregate_multidimensional_raster" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">arcgis.raster.analytics.</code><code class="sig-name descname">aggregate_multidimensional_raster</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">input_multidimensional_raster</span></em>, <em class="sig-param"><span class="n">dimension</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">variables</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">aggregation_method</span><span class="o">=</span><span class="default_value">'MEAN'</span></em>, <em class="sig-param"><span class="n">aggregation_definition</span><span class="o">=</span><span class="default_value">'ALL'</span></em>, <em class="sig-param"><span class="n">interval_keyword</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">interval_value</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">interval_unit</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">interval_ranges</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">aggregation_function</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">ignore_nodata</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="n">output_name</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">context</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="o">*</span></em>, <em class="sig-param"><span class="n">gis</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">future</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.raster.analytics.aggregate_multidimensional_raster" title="Permalink to this definition">¶</a></dt>
 <dd><p>Generates a multidimensional image service by aggregating existing multidimensional raster variables along a dimension.
 Function available in ArcGIS Image Server 10.8 and higher.</p>
 <table class="docutils align-default">
@@ -3260,6 +3348,13 @@ The dictionary returned by the gis.content.create_folder() can also be passed in
 </dl>
 </td>
 </tr>
+<tr class="row-even"><td><p>tiles_only</p></td>
+<td><p>Keyword only parameter. Optional boolean.
+On AGOL, the default output image service for this function would be a Tiled Imagery Layer.
+To create Dynamic Imagery Layer as output on AGOL, set tiles_only parameter to False.</p>
+<p>Function will not honor tiles_only parameter on enterprise and will generate Dynamic Imagery Layer by default.</p>
+</td>
+</tr>
 </tbody>
 </table>
 <dl class="field-list simple">
@@ -3318,9 +3413,9 @@ The dictionary returned by the gis.content.create_folder() can also be passed in
 </div>
 <div class="section" id="generate-trend-raster">
 <h2>generate_trend_raster<a class="headerlink" href="#generate-trend-raster" title="Permalink to this headline">¶</a></h2>
-<dl class="py method">
+<dl class="py function">
 <dt id="arcgis.raster.analytics.generate_trend_raster">
-<code class="sig-prename descclassname">arcgis.raster.analytics.</code><code class="sig-name descname">generate_trend_raster</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">dimension</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">variables</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">trend_line_type</span><span class="o">=</span><span class="default_value">'LINEAR'</span></em>, <em class="sig-param"><span class="n">frequency</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">ignore_nodata</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="n">output_name</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">context</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">cycle_length</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">cycle_unit</span><span class="o">=</span><span class="default_value">'YEARS'</span></em>, <em class="sig-param"><span class="n">rmse</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="n">r2</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">slope_p_value</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="o">*</span></em>, <em class="sig-param"><span class="n">gis</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">future</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.raster.analytics.generate_trend_raster" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">arcgis.raster.analytics.</code><code class="sig-name descname">generate_trend_raster</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">input_multidimensional_raster</span></em>, <em class="sig-param"><span class="n">dimension</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">variables</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">trend_line_type</span><span class="o">=</span><span class="default_value">'LINEAR'</span></em>, <em class="sig-param"><span class="n">frequency</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">ignore_nodata</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="n">output_name</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">context</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">cycle_length</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">cycle_unit</span><span class="o">=</span><span class="default_value">'YEARS'</span></em>, <em class="sig-param"><span class="n">rmse</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="n">r2</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">slope_p_value</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">seasonal_period</span><span class="o">=</span><span class="default_value">'DAYS'</span></em>, <em class="sig-param"><span class="o">*</span></em>, <em class="sig-param"><span class="n">gis</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">future</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.raster.analytics.generate_trend_raster" title="Permalink to this definition">¶</a></dt>
 <dd><p>Estimates the trend for each pixel along a dimension for a given variable in a multidimensional raster.
 Function available in ArcGIS Image Server 10.8 and higher.</p>
 <table class="docutils align-default">
@@ -3352,6 +3447,16 @@ pixel values along a dimension.</p>
 <li><p>LINEAR : Fits the pixel values for a variable along a linear trend line. This is the default.</p></li>
 <li><p>POLYNOMIAL : Fits the pixel values for a variable along a second order polynomial trend line.</p></li>
 <li><p>HARMONIC : Fits the pixel values for a variable along a harmonic trend line.</p></li>
+<li><dl class="simple">
+<dt>MANN-KENDALL<span class="classifier">Variable pixel values will be evaluated using the Mann-Kendall trend test.</span></dt><dd><p>Option available in ArcGIS Image Server 10.9 and higher.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>SEASONAL-KENDALL<span class="classifier">Variable pixel values will be evaluated using the Seasonal-Kendall trend test.</span></dt><dd><p>Option available in ArcGIS Image Server 10.9 and higher.</p>
+</dd>
+</dl>
+</li>
 </ul>
 </td>
 </tr>
@@ -3438,33 +3543,42 @@ when the Trend Line Type is set to Harmonic. For example,
 leaf greenness often has one strong cycle of variation in a
 single year, so the cycle length is 1 year. Hourly temperature
 data has one strong cycle of variation throughout a single day,
-so the cycle length is 1 day.</p></td>
+so the cycle length is 1 day. Available in ArcGIS Image Server 10.8.1 and higher.</p></td>
 </tr>
 <tr class="row-odd"><td><p>cycle_unit</p></td>
 <td><p>Optional String. Default is “YEARS”. Specifies the time unit to be
-used for the length of harmonic cycle.</p></td>
+used for the length of harmonic cycle. Available in ArcGIS Image Server 10.8.1 and higher.</p></td>
 </tr>
 <tr class="row-even"><td><p>rmse</p></td>
 <td><p>Optional Boolean. Default value is True. Specifies whether the root
-mean square error (RMSE) of the trend fit line will be calculated.</p></td>
+mean square error (RMSE) of the trend fit line will be calculated.
+Parameter available  in ArcGIS Image Server 10.8.1 and higher.</p></td>
 </tr>
 <tr class="row-odd"><td><p>r2</p></td>
 <td><p>Optional Boolean. Default value is False. Specifies whether the
-R-squared goodness-of-fit statistic for the trend fit line will be calculated.</p></td>
+R-squared goodness-of-fit statistic for the trend fit line will be calculated.
+Parameter available  in ArcGIS Image Server 10.8.1 and higher.</p></td>
 </tr>
 <tr class="row-even"><td><p>slope_p_value</p></td>
 <td><p>Optional Boolean. Default value is False. Specifies whether the
-p-value statistic for the slope coefficient of the trend line will be calculated.</p></td>
+p-value statistic for the slope coefficient of the trend line will be calculated.
+Parameter available in ArcGIS Image Server 10.8.1 and higher.</p></td>
 </tr>
-<tr class="row-odd"><td><p>gis</p></td>
+<tr class="row-odd"><td><p>seasonal_period</p></td>
+<td><p>Optional String. Specifies the seasonal period. Default - “DAYS”
+Possible Options - “DAYS”, “MONTHS”</p>
+<p>Parameter available in ArcGIS Image Server 10.9 and higher.</p>
+</td>
+</tr>
+<tr class="row-even"><td><p>gis</p></td>
 <td><p>Keyword only parameter. Optional GIS. the GIS on which this tool runs. If not specified,
 the active GIS is used.</p></td>
 </tr>
-<tr class="row-even"><td><p>future</p></td>
+<tr class="row-odd"><td><p>future</p></td>
 <td><p>Keyword only parameter. Optional Boolean. If True, the result will be a GPJob object and
 results will be returned asynchronously.</p></td>
 </tr>
-<tr class="row-odd"><td><p>folder</p></td>
+<tr class="row-even"><td><p>folder</p></td>
 <td><p>Keyword only parameter. Optional str or dict. Creates a folder in the portal, if it does
 not exist, with the given folder name and persists the output in this folder.
 The dictionary returned by the gis.content.create_folder() can also be passed in as input.</p>
@@ -3472,6 +3586,13 @@ The dictionary returned by the gis.content.create_folder() can also be passed in
 <dt>Example:</dt><dd><p>{‘username’: ‘user1’, ‘id’: ‘6a3b77c187514ef7873ba73338cf1af8’, ‘title’: ‘trial’}</p>
 </dd>
 </dl>
+</td>
+</tr>
+<tr class="row-odd"><td><p>tiles_only</p></td>
+<td><p>Keyword only parameter. Optional boolean.
+On AGOL, the default output image service for this function would be a Tiled Imagery Layer.
+To create Dynamic Imagery Layer as output on AGOL, set tiles_only parameter to False.</p>
+<p>Function will not honor tiles_only parameter on enterprise and will generate Dynamic Imagery Layer by default.</p>
 </td>
 </tr>
 </tbody>
@@ -3500,9 +3621,9 @@ The dictionary returned by the gis.content.create_folder() can also be passed in
 </div>
 <div class="section" id="predict-using-trend-raster">
 <h2>predict_using_trend_raster<a class="headerlink" href="#predict-using-trend-raster" title="Permalink to this headline">¶</a></h2>
-<dl class="py method">
+<dl class="py function">
 <dt id="arcgis.raster.analytics.predict_using_trend_raster">
-<code class="sig-prename descclassname">arcgis.raster.analytics.</code><code class="sig-name descname">predict_using_trend_raster</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">variables</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">dimension_definition</span><span class="o">=</span><span class="default_value">'BY_VALUE'</span></em>, <em class="sig-param"><span class="n">dimension_values</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">start</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">end</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">interval_value</span><span class="o">=</span><span class="default_value">1</span></em>, <em class="sig-param"><span class="n">interval_unit</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">output_name</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">context</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="o">*</span></em>, <em class="sig-param"><span class="n">gis</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">future</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.raster.analytics.predict_using_trend_raster" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">arcgis.raster.analytics.</code><code class="sig-name descname">predict_using_trend_raster</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">input_multidimensional_raster</span></em>, <em class="sig-param"><span class="n">variables</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">dimension_definition</span><span class="o">=</span><span class="default_value">'BY_VALUE'</span></em>, <em class="sig-param"><span class="n">dimension_values</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">start</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">end</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">interval_value</span><span class="o">=</span><span class="default_value">1</span></em>, <em class="sig-param"><span class="n">interval_unit</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">output_name</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">context</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="o">*</span></em>, <em class="sig-param"><span class="n">gis</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">future</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.raster.analytics.predict_using_trend_raster" title="Permalink to this definition">¶</a></dt>
 <dd><p>Estimates the trend for each pixel along a dimension for a given variable in a multidimensional raster.
 Function available in ArcGIS Image Server 10.8 and higher.</p>
 <table class="docutils align-default">
@@ -3644,6 +3765,13 @@ The dictionary returned by the gis.content.create_folder() can also be passed in
 </dl>
 </td>
 </tr>
+<tr class="row-odd"><td><p>tiles_only</p></td>
+<td><p>Keyword only parameter. Optional boolean.
+On AGOL, the default output image service for this function would be a Tiled Imagery Layer.
+To create Dynamic Imagery Layer as output on AGOL, set tiles_only parameter to False.</p>
+<p>Function will not honor tiles_only parameter on enterprise and will generate Dynamic Imagery Layer by default.</p>
+</td>
+</tr>
 </tbody>
 </table>
 <dl class="field-list simple">
@@ -3682,9 +3810,9 @@ The dictionary returned by the gis.content.create_folder() can also be passed in
 </div>
 <div class="section" id="find-argument-statistics">
 <h2>find_argument_statistics<a class="headerlink" href="#find-argument-statistics" title="Permalink to this headline">¶</a></h2>
-<dl class="py method">
+<dl class="py function">
 <dt id="arcgis.raster.analytics.find_argument_statistics">
-<code class="sig-prename descclassname">arcgis.raster.analytics.</code><code class="sig-name descname">find_argument_statistics</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">dimension</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">dimension_definition</span><span class="o">=</span><span class="default_value">'ALL'</span></em>, <em class="sig-param"><span class="n">interval_keyword</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">variables</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">statistics_type</span><span class="o">=</span><span class="default_value">'ARGUMENT_MIN'</span></em>, <em class="sig-param"><span class="n">min_value</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">max_value</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">multiple_occurrence_value</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">ignore_nodata</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="n">output_name</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">context</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="o">*</span></em>, <em class="sig-param"><span class="n">gis</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">future</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.raster.analytics.find_argument_statistics" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">arcgis.raster.analytics.</code><code class="sig-name descname">find_argument_statistics</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">input_raster</span></em>, <em class="sig-param"><span class="n">dimension</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">dimension_definition</span><span class="o">=</span><span class="default_value">'ALL'</span></em>, <em class="sig-param"><span class="n">interval_keyword</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">variables</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">statistics_type</span><span class="o">=</span><span class="default_value">'ARGUMENT_MIN'</span></em>, <em class="sig-param"><span class="n">min_value</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">max_value</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">multiple_occurrence_value</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">ignore_nodata</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="n">output_name</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">context</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="o">*</span></em>, <em class="sig-param"><span class="n">gis</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">future</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.raster.analytics.find_argument_statistics" title="Permalink to this definition">¶</a></dt>
 <dd><p>Extracts the dimension value at which a given statistic is attained for each pixel in a multidimensional raster.
 Function available in ArcGIS Image Server 10.8 and higher.</p>
 <table class="docutils align-default">
@@ -3853,6 +3981,13 @@ The dictionary returned by the gis.content.create_folder() can also be passed in
 </dl>
 </td>
 </tr>
+<tr class="row-odd"><td><p>tiles_only</p></td>
+<td><p>Keyword only parameter. Optional boolean.
+On AGOL, the default output image service for this function would be a Tiled Imagery Layer.
+To create Dynamic Imagery Layer as output on AGOL, set tiles_only parameter to False.</p>
+<p>Function will not honor tiles_only parameter on enterprise and will generate Dynamic Imagery Layer by default.</p>
+</td>
+</tr>
 </tbody>
 </table>
 <dl class="field-list simple">
@@ -3894,9 +4029,9 @@ The dictionary returned by the gis.content.create_folder() can also be passed in
 </div>
 <div class="section" id="linear-spectral-unmixing">
 <h2>linear_spectral_unmixing<a class="headerlink" href="#linear-spectral-unmixing" title="Permalink to this headline">¶</a></h2>
-<dl class="py method">
+<dl class="py function">
 <dt id="arcgis.raster.analytics.linear_spectral_unmixing">
-<code class="sig-prename descclassname">arcgis.raster.analytics.</code><code class="sig-name descname">linear_spectral_unmixing</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">input_spectral_profile</span></em>, <em class="sig-param"><span class="n">value_option</span><span class="o">=</span><span class="default_value">[]</span></em>, <em class="sig-param"><span class="n">output_name</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">context</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="o">*</span></em>, <em class="sig-param"><span class="n">gis</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">future</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.raster.analytics.linear_spectral_unmixing" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">arcgis.raster.analytics.</code><code class="sig-name descname">linear_spectral_unmixing</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">input_raster</span></em>, <em class="sig-param"><span class="n">input_spectral_profile</span></em>, <em class="sig-param"><span class="n">value_option</span><span class="o">=</span><span class="default_value">[]</span></em>, <em class="sig-param"><span class="n">output_name</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">context</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="o">*</span></em>, <em class="sig-param"><span class="n">gis</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">future</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.raster.analytics.linear_spectral_unmixing" title="Permalink to this definition">¶</a></dt>
 <dd><p>Performs subpixel classification and calculates the fractional abundance of endmembers for individual pixels.
 Function available in ArcGIS Image Server 10.8 and higher.</p>
 <table class="docutils align-default">
@@ -4002,6 +4137,13 @@ The dictionary returned by the gis.content.create_folder() can also be passed in
 </dl>
 </td>
 </tr>
+<tr class="row-even"><td><p>tiles_only</p></td>
+<td><p>Keyword only parameter. Optional boolean.
+On AGOL, the default output image service for this function would be a Tiled Imagery Layer.
+To create Dynamic Imagery Layer as output on AGOL, set tiles_only parameter to False.</p>
+<p>Function will not honor tiles_only parameter on enterprise and will generate Dynamic Imagery Layer by default.</p>
+</td>
+</tr>
 </tbody>
 </table>
 <dl class="field-list simple">
@@ -4040,9 +4182,9 @@ The dictionary returned by the gis.content.create_folder() can also be passed in
 </div>
 <div class="section" id="subset-multidimensional-raster">
 <h2>subset_multidimensional_raster<a class="headerlink" href="#subset-multidimensional-raster" title="Permalink to this headline">¶</a></h2>
-<dl class="py method">
+<dl class="py function">
 <dt id="arcgis.raster.analytics.subset_multidimensional_raster">
-<code class="sig-prename descclassname">arcgis.raster.analytics.</code><code class="sig-name descname">subset_multidimensional_raster</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">variables</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">dimension_definition</span><span class="o">=</span><span class="default_value">'ALL'</span></em>, <em class="sig-param"><span class="n">dimension_ranges</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">dimension_values</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">dimension</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">start_of_first_iteration</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">end_of_first_iteration</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">iteration_step</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">iteration_unit</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">output_name</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">context</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="o">*</span></em>, <em class="sig-param"><span class="n">gis</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">future</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.raster.analytics.subset_multidimensional_raster" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">arcgis.raster.analytics.</code><code class="sig-name descname">subset_multidimensional_raster</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">input_multidimensional_raster</span></em>, <em class="sig-param"><span class="n">variables</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">dimension_definition</span><span class="o">=</span><span class="default_value">'ALL'</span></em>, <em class="sig-param"><span class="n">dimension_ranges</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">dimension_values</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">dimension</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">start_of_first_iteration</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">end_of_first_iteration</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">iteration_step</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">iteration_unit</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">output_name</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">context</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="o">*</span></em>, <em class="sig-param"><span class="n">gis</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">future</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.raster.analytics.subset_multidimensional_raster" title="Permalink to this definition">¶</a></dt>
 <dd><p>Subsets a multidimensional raster by slicing data along defined variables and dimensions.
 Function available in ArcGIS Image Server 10.8 and higher.</p>
 <table class="docutils align-default">
@@ -4220,6 +4362,13 @@ The dictionary returned by the gis.content.create_folder() can also be passed in
 </dl>
 </td>
 </tr>
+<tr class="row-odd"><td><p>tiles_only</p></td>
+<td><p>Keyword only parameter. Optional boolean.
+On AGOL, the default output image service for this function would be a Tiled Imagery Layer.
+To create Dynamic Imagery Layer as output on AGOL, set tiles_only parameter to False.</p>
+<p>Function will not honor tiles_only parameter on enterprise and will generate Dynamic Imagery Layer by default.</p>
+</td>
+</tr>
 </tbody>
 </table>
 <dl class="field-list simple">
@@ -4246,9 +4395,9 @@ The dictionary returned by the gis.content.create_folder() can also be passed in
 </div>
 <div class="section" id="costpath-as-polyline">
 <h2>costpath_as_polyline<a class="headerlink" href="#costpath-as-polyline" title="Permalink to this headline">¶</a></h2>
-<dl class="py method">
+<dl class="py function">
 <dt id="arcgis.raster.analytics.costpath_as_polyline">
-<code class="sig-prename descclassname">arcgis.raster.analytics.</code><code class="sig-name descname">costpath_as_polyline</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.raster.analytics.costpath_as_polyline" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">arcgis.raster.analytics.</code><code class="sig-name descname">costpath_as_polyline</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">input_destination_data</span></em>, <em class="sig-param"><span class="n">input_cost_distance_raster</span></em>, <em class="sig-param"><span class="n">input_cost_backlink_raster</span></em>, <em class="sig-param"><span class="n">path_type</span><span class="o">=</span><span class="default_value">'BEST_SINGLE'</span></em>, <em class="sig-param"><span class="n">destination_field</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">output_polyline_name</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">context</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="o">*</span></em>, <em class="sig-param"><span class="n">gis</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">future</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.raster.analytics.costpath_as_polyline" title="Permalink to this definition">¶</a></dt>
 <dd><div class="deprecated">
 <p><span class="versionmodified deprecated">Deprecated since version 1.8.1: </span>Please use arcgis.raster.analytics.optimal_path_as_line() instead. </p>
 </div>
@@ -4354,9 +4503,9 @@ The dictionary returned by the gis.content.create_folder() can also be passed in
 </div>
 <div class="section" id="define-nodata">
 <h2>define_nodata<a class="headerlink" href="#define-nodata" title="Permalink to this headline">¶</a></h2>
-<dl class="py method">
+<dl class="py function">
 <dt id="arcgis.raster.analytics.define_nodata">
-<code class="sig-prename descclassname">arcgis.raster.analytics.</code><code class="sig-name descname">define_nodata</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">nodata</span></em>, <em class="sig-param"><span class="n">query_filter</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">num_of_bands</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">composite_value</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="o">*</span></em>, <em class="sig-param"><span class="n">gis</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">future</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.raster.analytics.define_nodata" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">arcgis.raster.analytics.</code><code class="sig-name descname">define_nodata</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">input_raster</span></em>, <em class="sig-param"><span class="n">nodata</span></em>, <em class="sig-param"><span class="n">query_filter</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">num_of_bands</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">composite_value</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="o">*</span></em>, <em class="sig-param"><span class="n">gis</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">future</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.raster.analytics.define_nodata" title="Permalink to this definition">¶</a></dt>
 <dd><p>Function specifies one or more values to be represented as NoData.
 Function available in ArcGIS Image Server 10.8 and higher.</p>
 <table class="docutils align-default">
@@ -4414,7 +4563,7 @@ order for the pixel to be classified as NoData.</p></li>
 </td>
 </tr>
 <tr class="row-odd"><td><p>gis</p></td>
-<td><p>Optional GIS object. If not speficied, the currently active connection
+<td><p>Optional GIS object. If not specified, the currently active connection
 is used.</p></td>
 </tr>
 <tr class="row-even"><td><p>future</p></td>
@@ -4455,9 +4604,9 @@ results will be returned asynchronously.</p></td>
 </div>
 <div class="section" id="optimal-path-as-line">
 <h2>optimal_path_as_line<a class="headerlink" href="#optimal-path-as-line" title="Permalink to this headline">¶</a></h2>
-<dl class="py method">
+<dl class="py function">
 <dt id="arcgis.raster.analytics.optimal_path_as_line">
-<code class="sig-prename descclassname">arcgis.raster.analytics.</code><code class="sig-name descname">optimal_path_as_line</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">input_distance_accumulation_raster</span></em>, <em class="sig-param"><span class="n">input_back_direction_raster</span></em>, <em class="sig-param"><span class="n">destination_field</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">path_type</span><span class="o">=</span><span class="default_value">'EACH_ZONE'</span></em>, <em class="sig-param"><span class="n">output_feature_name</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">context</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="o">*</span></em>, <em class="sig-param"><span class="n">gis</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">future</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.raster.analytics.optimal_path_as_line" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">arcgis.raster.analytics.</code><code class="sig-name descname">optimal_path_as_line</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">input_destination_data</span></em>, <em class="sig-param"><span class="n">input_distance_accumulation_raster</span></em>, <em class="sig-param"><span class="n">input_back_direction_raster</span></em>, <em class="sig-param"><span class="n">destination_field</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">path_type</span><span class="o">=</span><span class="default_value">'EACH_ZONE'</span></em>, <em class="sig-param"><span class="n">output_feature_name</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">context</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">create_network_paths</span><span class="o">=</span><span class="default_value">'DESTINATIONS_TO_SOURCES'</span></em>, <em class="sig-param"><span class="o">*</span></em>, <em class="sig-param"><span class="n">gis</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">future</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.raster.analytics.optimal_path_as_line" title="Permalink to this definition">¶</a></dt>
 <dd><p>Calculates the optimal path from a source to a destination as a feature.
 Function available in ArcGIS Image Server 10.8.1 and higher.</p>
 <table class="docutils align-default">
@@ -4539,13 +4688,38 @@ that instead.</p>
 A RuntimeError is raised if a service by that name already exists</p>
 </td>
 </tr>
+<tr class="row-even"><td><p>context</p></td>
+<td><p>Optional dict. Context contains additional settings that affect task execution.</p></td>
+</tr>
+<tr class="row-odd"><td><p>create_network_paths</p></td>
+<td><p>Optional string or boolean. Specifies whether complete, and possibly
+overlapping, paths from the destinations to the sources are calculated
+or if  nonoverlapping network paths are created.</p>
+<dl class="simple">
+<dt><cite>DESTINATIONS_TO_SOURCES</cite> (False): Complete paths from the destinations</dt><dd><p>to the sources are calculated, which can be overlapping.  This is default.</p>
+</dd>
+</dl>
+<p><cite>NETWORK_PATHS</cite> (True): Nonoverlapping network paths are calculated.</p>
+<p>Parameter available in ArcGIS Image Server 10.9 and higher.</p>
+</td>
+</tr>
 <tr class="row-even"><td><p>gis</p></td>
-<td><p>Optional GIS object. If not speficied, the currently active connection
+<td><p>Keyword only parameter. Optional GIS object. If not specified, the currently active connection
 is used.</p></td>
 </tr>
 <tr class="row-odd"><td><p>future</p></td>
 <td><p>Keyword only parameter. Optional boolean. If True, the result will be a GPJob object and
 results will be returned asynchronously.</p></td>
+</tr>
+<tr class="row-even"><td><p>folder</p></td>
+<td><p>Keyword only parameter. Optional str or dict. Creates a folder in the portal, if it does
+not exist, with the given folder name and persists the output in this folder.
+The dictionary returned by the gis.content.create_folder() can also be passed in as input.</p>
+<dl class="simple">
+<dt>Example:</dt><dd><p>{‘username’: ‘user1’, ‘id’: ‘6a3b77c187514ef7873ba73338cf1af8’, ‘title’: ‘trial’}</p>
+</dd>
+</dl>
+</td>
 </tr>
 </tbody>
 </table>
@@ -4559,9 +4733,9 @@ results will be returned asynchronously.</p></td>
 </div>
 <div class="section" id="optimal-region-connections">
 <h2>optimal_region_connections<a class="headerlink" href="#optimal-region-connections" title="Permalink to this headline">¶</a></h2>
-<dl class="py method">
+<dl class="py function">
 <dt id="arcgis.raster.analytics.optimal_region_connections">
-<code class="sig-prename descclassname">arcgis.raster.analytics.</code><code class="sig-name descname">optimal_region_connections</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">input_barrier_data</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">input_cost_raster</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">distance_method</span><span class="o">=</span><span class="default_value">'PLANAR'</span></em>, <em class="sig-param"><span class="n">connections_within_regions</span><span class="o">=</span><span class="default_value">'GENERATE_CONNECTIONS'</span></em>, <em class="sig-param"><span class="n">output_optimal_lines_name</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">output_neighbor_connections_name</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">context</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="o">*</span></em>, <em class="sig-param"><span class="n">gis</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">future</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.raster.analytics.optimal_region_connections" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">arcgis.raster.analytics.</code><code class="sig-name descname">optimal_region_connections</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">input_region_data</span></em>, <em class="sig-param"><span class="n">input_barrier_data</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">input_cost_raster</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">distance_method</span><span class="o">=</span><span class="default_value">'PLANAR'</span></em>, <em class="sig-param"><span class="n">connections_within_regions</span><span class="o">=</span><span class="default_value">'GENERATE_CONNECTIONS'</span></em>, <em class="sig-param"><span class="n">output_optimal_lines_name</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">output_neighbor_connections_name</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">context</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="o">*</span></em>, <em class="sig-param"><span class="n">gis</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">future</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.raster.analytics.optimal_region_connections" title="Permalink to this definition">¶</a></dt>
 <dd><p>Calculates the optimal connectivity network between two or more input regions.
 Function available in ArcGIS Image Server 10.8.1 and higher.</p>
 <table class="docutils align-default">
@@ -4685,12 +4859,22 @@ multiple lines in locations where paths travel the same route.</p>
 <td><p>Context contains additional settings that affect task execution.</p></td>
 </tr>
 <tr class="row-even"><td><p>gis</p></td>
-<td><p>Optional GIS object. If not speficied, the currently active connection
+<td><p>Optional GIS object. If not specified, the currently active connection
 is used.</p></td>
 </tr>
 <tr class="row-odd"><td><p>future</p></td>
 <td><p>Keyword only parameter. Optional boolean. If True, the result will be a GPJob object and
 results will be returned asynchronously.</p></td>
+</tr>
+<tr class="row-even"><td><p>folder</p></td>
+<td><p>Keyword only parameter. Optional str or dict. Creates a folder in the portal, if it does
+not exist, with the given folder name and persists the output in this folder.
+The dictionary returned by the gis.content.create_folder() can also be passed in as input.</p>
+<dl class="simple">
+<dt>Example:</dt><dd><p>{‘username’: ‘user1’, ‘id’: ‘6a3b77c187514ef7873ba73338cf1af8’, ‘title’: ‘trial’}</p>
+</dd>
+</dl>
+</td>
 </tr>
 </tbody>
 </table>
@@ -4704,9 +4888,9 @@ results will be returned asynchronously.</p></td>
 </div>
 <div class="section" id="analyze-changes-using-ccdc">
 <h2>analyze_changes_using_ccdc<a class="headerlink" href="#analyze-changes-using-ccdc" title="Permalink to this headline">¶</a></h2>
-<dl class="py method">
+<dl class="py function">
 <dt id="arcgis.raster.analytics.analyze_changes_using_ccdc">
-<code class="sig-prename descclassname">arcgis.raster.analytics.</code><code class="sig-name descname">analyze_changes_using_ccdc</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">bands_for_detecting_change</span><span class="o">=</span><span class="default_value">[]</span></em>, <em class="sig-param"><span class="n">bands_for_temporal_masking</span><span class="o">=</span><span class="default_value">[]</span></em>, <em class="sig-param"><span class="n">chi_squared_threshold</span><span class="o">=</span><span class="default_value">0.99</span></em>, <em class="sig-param"><span class="n">min_anomaly_observations</span><span class="o">=</span><span class="default_value">6</span></em>, <em class="sig-param"><span class="n">update_frequency</span><span class="o">=</span><span class="default_value">1</span></em>, <em class="sig-param"><span class="n">output_name</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">context</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="o">*</span></em>, <em class="sig-param"><span class="n">gis</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">future</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.raster.analytics.analyze_changes_using_ccdc" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">arcgis.raster.analytics.</code><code class="sig-name descname">analyze_changes_using_ccdc</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">input_multidimensional_raster</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">bands_for_detecting_change</span><span class="o">=</span><span class="default_value">[]</span></em>, <em class="sig-param"><span class="n">bands_for_temporal_masking</span><span class="o">=</span><span class="default_value">[]</span></em>, <em class="sig-param"><span class="n">chi_squared_threshold</span><span class="o">=</span><span class="default_value">0.99</span></em>, <em class="sig-param"><span class="n">min_anomaly_observations</span><span class="o">=</span><span class="default_value">6</span></em>, <em class="sig-param"><span class="n">update_frequency</span><span class="o">=</span><span class="default_value">1</span></em>, <em class="sig-param"><span class="n">output_name</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">context</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="o">*</span></em>, <em class="sig-param"><span class="n">gis</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">future</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.raster.analytics.analyze_changes_using_ccdc" title="Permalink to this definition">¶</a></dt>
 <dd><p>Function evaluates changes in pixel values over time using the CCDC algorithm, 
 and generates a multidimensional raster containing the model results.
 Function available in ArcGIS Image Server 10.8.1 and higher.</p>
@@ -4823,12 +5007,29 @@ processing instances:</p>
 </td>
 </tr>
 <tr class="row-even"><td><p>gis</p></td>
-<td><p>Optional GIS object. If not speficied, the currently active connection
+<td><p>Optional GIS object. If not specified, the currently active connection
 is used.</p></td>
 </tr>
 <tr class="row-odd"><td><p>future</p></td>
 <td><p>Keyword only parameter. Optional boolean. If True, the result will be a GPJob object and
 results will be returned asynchronously.</p></td>
+</tr>
+<tr class="row-even"><td><p>folder</p></td>
+<td><p>Keyword only parameter. Optional str or dict. Creates a folder in the portal, if it does
+not exist, with the given folder name and persists the output in this folder.
+The dictionary returned by the gis.content.create_folder() can also be passed in as input.</p>
+<dl class="simple">
+<dt>Example:</dt><dd><p>{‘username’: ‘user1’, ‘id’: ‘6a3b77c187514ef7873ba73338cf1af8’, ‘title’: ‘trial’}</p>
+</dd>
+</dl>
+</td>
+</tr>
+<tr class="row-odd"><td><p>tiles_only</p></td>
+<td><p>Keyword only parameter. Optional boolean.
+On AGOL, the default output image service for this function would be a Tiled Imagery Layer.
+To create Dynamic Imagery Layer as output on AGOL, set tiles_only parameter to False.</p>
+<p>Function will not honor tiles_only parameter on enterprise and will generate Dynamic Imagery Layer by default.</p>
+</td>
 </tr>
 </tbody>
 </table>
@@ -4868,9 +5069,9 @@ results will be returned asynchronously.</p></td>
 </div>
 <div class="section" id="detect-change-using-change-analysis-raster">
 <h2>detect_change_using_change_analysis_raster<a class="headerlink" href="#detect-change-using-change-analysis-raster" title="Permalink to this headline">¶</a></h2>
-<dl class="py method">
+<dl class="py function">
 <dt id="arcgis.raster.analytics.detect_change_using_change_analysis_raster">
-<code class="sig-prename descclassname">arcgis.raster.analytics.</code><code class="sig-name descname">detect_change_using_change_analysis_raster</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">change_type</span><span class="o">=</span><span class="default_value">'TIME_OF_LATEST_CHANGE'</span></em>, <em class="sig-param"><span class="n">max_number_of_changes</span><span class="o">=</span><span class="default_value">1</span></em>, <em class="sig-param"><span class="n">output_name</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">context</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="o">*</span></em>, <em class="sig-param"><span class="n">gis</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">future</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.raster.analytics.detect_change_using_change_analysis_raster" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">arcgis.raster.analytics.</code><code class="sig-name descname">detect_change_using_change_analysis_raster</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">input_change_analysis_raster</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">change_type</span><span class="o">=</span><span class="default_value">'TIME_OF_LATEST_CHANGE'</span></em>, <em class="sig-param"><span class="n">max_number_of_changes</span><span class="o">=</span><span class="default_value">1</span></em>, <em class="sig-param"><span class="n">output_name</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">context</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="o">*</span></em>, <em class="sig-param"><span class="n">gis</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">future</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.raster.analytics.detect_change_using_change_analysis_raster" title="Permalink to this definition">¶</a></dt>
 <dd><p>Function generates a raster containing pixel change information using the 
 output change analysis raster from the arcgis.raster.analytics.analyze_changes_using_ccdc function.
 Function available in ArcGIS Image Server 10.8.1 and higher.</p>
@@ -4976,12 +5177,29 @@ processing instances:</p>
 </td>
 </tr>
 <tr class="row-odd"><td><p>gis</p></td>
-<td><p>Optional GIS object. If not speficied, the currently active connection
+<td><p>Optional GIS object. If not specified, the currently active connection
 is used.</p></td>
 </tr>
 <tr class="row-even"><td><p>future</p></td>
 <td><p>Keyword only parameter. Optional boolean. If True, the result will be a GPJob object and
 results will be returned asynchronously.</p></td>
+</tr>
+<tr class="row-odd"><td><p>folder</p></td>
+<td><p>Keyword only parameter. Optional str or dict. Creates a folder in the portal, if it does
+not exist, with the given folder name and persists the output in this folder.
+The dictionary returned by the gis.content.create_folder() can also be passed in as input.</p>
+<dl class="simple">
+<dt>Example:</dt><dd><p>{‘username’: ‘user1’, ‘id’: ‘6a3b77c187514ef7873ba73338cf1af8’, ‘title’: ‘trial’}</p>
+</dd>
+</dl>
+</td>
+</tr>
+<tr class="row-even"><td><p>tiles_only</p></td>
+<td><p>Keyword only parameter. Optional boolean.
+On AGOL, the default output image service for this function would be a Tiled Imagery Layer.
+To create Dynamic Imagery Layer as output on AGOL, set tiles_only parameter to False.</p>
+<p>Function will not honor tiles_only parameter on enterprise and will generate Dynamic Imagery Layer by default.</p>
+</td>
 </tr>
 </tbody>
 </table>
@@ -5010,9 +5228,9 @@ results will be returned asynchronously.</p></td>
 </div>
 <div class="section" id="manage-multidimensional-raster">
 <h2>manage_multidimensional_raster<a class="headerlink" href="#manage-multidimensional-raster" title="Permalink to this headline">¶</a></h2>
-<dl class="py method">
+<dl class="py function">
 <dt id="arcgis.raster.analytics.manage_multidimensional_raster">
-<code class="sig-prename descclassname">arcgis.raster.analytics.</code><code class="sig-name descname">manage_multidimensional_raster</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">manage_mode</span><span class="o">=</span><span class="default_value">'APPEND_SLICES'</span></em>, <em class="sig-param"><span class="n">variables</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">input_multidimensional_rasters</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">dimension_name</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">dimension_value</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">dimension_description</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">dimension_unit</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="o">*</span></em>, <em class="sig-param"><span class="n">gis</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">future</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.raster.analytics.manage_multidimensional_raster" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">arcgis.raster.analytics.</code><code class="sig-name descname">manage_multidimensional_raster</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">target_multidimensional_raster</span></em>, <em class="sig-param"><span class="n">manage_mode</span><span class="o">=</span><span class="default_value">'APPEND_SLICES'</span></em>, <em class="sig-param"><span class="n">variables</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">input_multidimensional_rasters</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">dimension_name</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">dimension_value</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">dimension_description</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">dimension_unit</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="o">*</span></em>, <em class="sig-param"><span class="n">gis</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">future</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.raster.analytics.manage_multidimensional_raster" title="Permalink to this definition">¶</a></dt>
 <dd><p>Function edits a multidimensional raster by adding or deleting variables or dimensions.
 Function available in ArcGIS Image Server 10.8.1 and higher.</p>
 <table class="docutils align-default">
@@ -5100,9 +5318,9 @@ results will be returned asynchronously.</p></td>
 </div>
 <div class="section" id="sample">
 <h2>sample<a class="headerlink" href="#sample" title="Permalink to this headline">¶</a></h2>
-<dl class="py method">
+<dl class="py function">
 <dt id="arcgis.raster.analytics.sample">
-<code class="sig-prename descclassname">arcgis.raster.analytics.</code><code class="sig-name descname">sample</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">input_location_data</span></em>, <em class="sig-param"><span class="n">resampling_type</span><span class="o">=</span><span class="default_value">'NEAREST'</span></em>, <em class="sig-param"><span class="n">unique_id_field</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">acquisition_definition</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">statistics_type</span><span class="o">=</span><span class="default_value">'MEAN'</span></em>, <em class="sig-param"><span class="n">percentile_value</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">buffer_distance</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">layout</span><span class="o">=</span><span class="default_value">'ROW_WISE'</span></em>, <em class="sig-param"><span class="n">generate_feature_class</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">process_as_multidimensional</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">output_name</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">context</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="o">*</span></em>, <em class="sig-param"><span class="n">gis</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">future</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.raster.analytics.sample" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">arcgis.raster.analytics.</code><code class="sig-name descname">sample</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">input_rasters</span></em>, <em class="sig-param"><span class="n">input_location_data</span></em>, <em class="sig-param"><span class="n">resampling_type</span><span class="o">=</span><span class="default_value">'NEAREST'</span></em>, <em class="sig-param"><span class="n">unique_id_field</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">acquisition_definition</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">statistics_type</span><span class="o">=</span><span class="default_value">'MEAN'</span></em>, <em class="sig-param"><span class="n">percentile_value</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">buffer_distance</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">layout</span><span class="o">=</span><span class="default_value">'ROW_WISE'</span></em>, <em class="sig-param"><span class="n">generate_feature_class</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">process_as_multidimensional</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">output_name</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">context</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="o">*</span></em>, <em class="sig-param"><span class="n">gis</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">future</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.raster.analytics.sample" title="Permalink to this definition">¶</a></dt>
 <dd><p>Function creates a table that shows the values of cells from a raster, 
 or set of rasters, for defined locations. The locations are defined by raster cells, 
 polygon features, polyline features, or by a set of points.
@@ -5236,12 +5454,22 @@ If not provided, a random name is generated by the method and used as
 the output name.</p></td>
 </tr>
 <tr class="row-even"><td><p>gis</p></td>
-<td><p>Optional GIS object. If not speficied, the currently active connection
+<td><p>Optional GIS object. If not specified, the currently active connection
 is used.</p></td>
 </tr>
 <tr class="row-odd"><td><p>future</p></td>
 <td><p>Keyword only parameter. Optional boolean. If True, the result will be a GPJob object and
 results will be returned asynchronously.</p></td>
+</tr>
+<tr class="row-even"><td><p>folder</p></td>
+<td><p>Keyword only parameter. Optional str or dict. Creates a folder in the portal, if it does
+not exist, with the given folder name and persists the output in this folder.
+The dictionary returned by the gis.content.create_folder() can also be passed in as input.</p>
+<dl class="simple">
+<dt>Example:</dt><dd><p>{‘username’: ‘user1’, ‘id’: ‘6a3b77c187514ef7873ba73338cf1af8’, ‘title’: ‘trial’}</p>
+</dd>
+</dl>
+</td>
 </tr>
 </tbody>
 </table>
@@ -5250,6 +5478,148 @@ results will be returned asynchronously.</p></td>
 <dd class="field-odd"><p>Feature Layer or Table object</p>
 </dd>
 </dl>
+</dd></dl>
+
+</div>
+<div class="section" id="merge-multidimensional-rasters">
+<h2>merge_multidimensional_rasters<a class="headerlink" href="#merge-multidimensional-rasters" title="Permalink to this headline">¶</a></h2>
+<dl class="py function">
+<dt id="arcgis.raster.analytics.merge_multidimensional_rasters">
+<code class="sig-prename descclassname">arcgis.raster.analytics.</code><code class="sig-name descname">merge_multidimensional_rasters</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">input_multidimensional_rasters</span></em>, <em class="sig-param"><span class="n">resolve_overlap_method</span><span class="o">=</span><span class="default_value">'FIRST'</span></em>, <em class="sig-param"><span class="n">output_name</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">context</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="o">*</span></em>, <em class="sig-param"><span class="n">gis</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">future</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.raster.analytics.merge_multidimensional_rasters" title="Permalink to this definition">¶</a></dt>
+<dd><p>Function merges several multidimensional rasters spatially, or across variables and dimensions into one.  
+Function available in ArcGIS Image Server 10.9 and higher.</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 20%" />
+<col style="width: 80%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>Argument</strong></p></td>
+<td><p><strong>Description</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>input_multidimensional_rasters</p></td>
+<td><p>Required list of ImageryLayer object. List of input multidimensional rasters to be combined.</p></td>
+</tr>
+<tr class="row-odd"><td><p>resolve_overlap_method</p></td>
+<td><p>Optional string. Specifies the method used to handle overlapping pixels when merging rasters in the combined datasets.</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>FIRST - The pixel value in the overlapping areas will be the value from the first raster in the list of input rasters. This is the default.</p></li>
+<li><p>LAST - The pixel value in the overlapping areas will be the value from the last raster in the list of input rasters.</p></li>
+<li><p>MIN - The pixel value in the overlapping areas will be the minimum value of the overlapping pixels.</p></li>
+<li><p>MAX - The pixel value in the overlapping areas will be the maximum value of the overlapping pixels.</p></li>
+<li><p>MEAN - The pixel value in the overlapping areas will be the average of the overlapping pixels.</p></li>
+<li><p>SUM - The pixel value in the overlapping areas will be the total sum of the overlapping pixels.</p></li>
+</ul>
+</div></blockquote>
+</td>
+</tr>
+<tr class="row-even"><td><p>output_name</p></td>
+<td><p>Optional String. If not provided, an Image Service is created by the method and used as the output raster.
+You can pass in an existing Image Service Item from your GIS to use that instead.</p>
+<p>Alternatively, you can pass in the name of the output Image Service that should be created by this method to be
+used as the output for the tool.</p>
+<p>A RuntimeError is raised if a service by that name already exists</p>
+</td>
+</tr>
+<tr class="row-odd"><td><p>context</p></td>
+<td><p>context contains additional settings that affect task execution.</p>
+<p>context parameter overwrites values set through arcgis.env parameter</p>
+<p>This function has the following settings:</p>
+<blockquote>
+<div><ul>
+<li><p>Extent (extent): A bounding box that defines the analysis area.</p>
+<dl class="simple">
+<dt>Example:</dt><dd><p>{“extent”: {“xmin”: -122.68,
+“ymin”: 45.53,
+“xmax”: -122.45,
+“ymax”: 45.6,
+“spatialReference”: {“wkid”: 4326}}}</p>
+</dd>
+</dl>
+</li>
+<li><p>Output Spatial Reference (outSR): The output raster will be
+projected into the output spatial reference.</p>
+<dl class="simple">
+<dt>Example:</dt><dd><p>{“outSR”: {spatial reference}}</p>
+</dd>
+</dl>
+</li>
+<li><p>Snap Raster (snapRaster): The output raster will have its
+cells aligned with the specified snap raster.</p>
+<dl class="simple">
+<dt>Example:</dt><dd><p>{‘snapRaster’: {‘url’: ‘&lt;image_service_url&gt;’}}</p>
+</dd>
+</dl>
+</li>
+<li><p>Cell Size (cellSize): The output raster will have the resolution
+specified by cell size.</p>
+<dl class="simple">
+<dt>Example:</dt><dd><p>{‘cellSize’: {‘x’: 11}} or {‘cellSize’: {‘url’: &lt;image_service_url&gt;}}  or {‘cellSize’: ‘MaxOfIn’}</p>
+</dd>
+</dl>
+</li>
+<li><p>Parallel Processing Factor (parallelProcessingFactor): controls
+Raster Processing (CPU) service instances.</p>
+<dl>
+<dt>Example:</dt><dd><p>Syntax example with a specified number of processing instances:</p>
+<p>{“parallelProcessingFactor”: “2”}</p>
+<p>Syntax example with a specified percentage of total
+processing instances:</p>
+<p>{“parallelProcessingFactor”: “60%”}</p>
+</dd>
+</dl>
+</li>
+<li><p>Resampling Method (resamplingMethod): The output raster will be
+resampled to method specified.
+The supported values are: Bilinear, Nearest, Cubic.</p>
+<dl class="simple">
+<dt>Example:</dt><dd><p>{‘resamplingMethod’: “Nearest”}</p>
+</dd>
+</dl>
+</li>
+</ul>
+</div></blockquote>
+</td>
+</tr>
+<tr class="row-even"><td><p>gis</p></td>
+<td><p>Optional GIS. The GIS on which this tool runs. If not specified, the active GIS is used.</p></td>
+</tr>
+<tr class="row-odd"><td><p>future</p></td>
+<td><p>Keyword only parameter. Optional Boolean. If True, the result will be a GPJob object and
+results will be returned asynchronously.</p></td>
+</tr>
+<tr class="row-even"><td><p>tiles_only</p></td>
+<td><p>Keyword only parameter. Optional boolean.
+On AGOL, the default output image service for this function would be a Tiled Imagery Layer.
+To create Dynamic Imagery Layer as output on AGOL, set tiles_only parameter to False.</p>
+<p>Function will not honor tiles_only parameter on enterprise and will generate Dynamic Imagery Layer by default.</p>
+</td>
+</tr>
+<tr class="row-odd"><td><p>folder</p></td>
+<td><p>Keyword only parameter. Optional str or dict. Creates a folder in the portal, if it does
+not exist, with the given folder name and persists the output in this folder.
+The dictionary returned by the gis.content.create_folder() can also be passed in as input.</p>
+<dl class="simple">
+<dt>Example:</dt><dd><p>{‘username’: ‘user1’, ‘id’: ‘6a3b77c187514ef7873ba73338cf1af8’, ‘title’: ‘trial’}</p>
+</dd>
+</dl>
+</td>
+</tr>
+</tbody>
+</table>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>The output imagery layer item</p>
+</dd>
+</dl>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Usage Example 1: Merge two multidimensional rasters with different variables..</span>
+
+<span class="n">merge_mdim_rasters_op</span> <span class="o">=</span> <span class="n">merge_multidimensional_rasters</span><span class="p">(</span><span class="n">input_multidimensional_rasters</span><span class="o">=</span><span class="p">[</span><span class="n">input_multidimensional_raster_var1</span><span class="p">,</span> <span class="n">input_multidimensional_raster_var2</span><span class="p">],</span>
+                                                       <span class="n">resolve_overlap_method</span><span class="o">=</span><span class="s2">&quot;FIRST&quot;</span><span class="p">,</span>
+                                                       <span class="n">gis</span><span class="o">=</span><span class="n">gis</span><span class="p">)</span>
+</pre></div>
+</div>
 </dd></dl>
 
 </div>
@@ -5277,7 +5647,7 @@ results will be returned asynchronously.</p></td>
   <div role="contentinfo">
     <p>
         
-        &copy; Copyright 2016-2019, Esri
+        &copy; Copyright 2016-2021, Esri
 
     </p>
   </div>
@@ -5299,6 +5669,134 @@ results will be returned asynchronously.</p></td>
 
   </div>
   
+    Options v: 1.8.3
+
+  <div class="rst-versions" data-toggle="rst-versions" role="note" aria-label="versions">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      <span class="fa fa-book"> Pick an earlier version</span>
+      v: 1.8.3
+      <span class="fa fa-caret-down"></span>
+    </span>
+    <div class="rst-other-versions">
+      
+      
+      <dl>
+        <dt>Versions</dt>
+        
+          
+          <dd><a href="1.8.2/">1.8.2</a></dd>
+          
+        
+          
+          <dd><a href="1.8.1/">1.8.1</a></dd>
+          
+        
+          
+          <dd><a href="1.8.0/">1.8.0</a></dd>
+          
+        
+          
+          <dd><a href="1.7.1/">1.7.1</a></dd>
+          
+        
+          
+          <dd><a href="1.7.0/">1.7.0</a></dd>
+          
+        
+          
+          <dd><a href="1.6.2/">1.6.2</a></dd>
+          
+        
+          
+          <dd><a href="1.6.1/">1.6.1</a></dd>
+          
+        
+          
+          <dd><a href="1.6.0/">1.6.0</a></dd>
+          
+        
+          
+          <dd><a href="1.5.3/">1.5.3</a></dd>
+          
+        
+          
+          <dd><a href="1.5.2/">1.5.2</a></dd>
+          
+        
+          
+          <dd><a href="1.5.1/">1.5.1</a></dd>
+          
+        
+          
+          <dd><a href="1.5.0/">1.5.0</a></dd>
+          
+        
+          
+          <dd><a href="1.4.2/">1.4.2</a></dd>
+          
+        
+          
+          <dd><a href="1.4.1/">1.4.1</a></dd>
+          
+        
+          
+          <dd><a href="1.4.0/">1.4.0</a></dd>
+          
+        
+          
+          <dd><a href="1.3.0/">1.3.0</a></dd>
+          
+        
+          
+          <dd><a href="1.2.5/">1.2.5</a></dd>
+          
+        
+          
+          <dd><a href="1.2.4/">1.2.4</a></dd>
+          
+        
+          
+          <dd><a href="1.2.3/">1.2.3</a></dd>
+          
+        
+          
+          <dd><a href="1.2.2/">1.2.2</a></dd>
+          
+        
+          
+          <dd><a href="1.2.1/">1.2.1</a></dd>
+          
+        
+          
+          <dd><a href="1.2.0/">1.2.0</a></dd>
+          
+        
+          
+          <dd><a href="1.0.1/">1.0.1</a></dd>
+          
+        
+          
+          <dd><a href="1.0.0/">1.0.0</a></dd>
+          
+        
+          
+          <dd><a href="0.3.0/">0.3.0</a></dd>
+          
+        
+          
+          <dd><a href="0.2.0/">0.2.0</a></dd>
+          
+        
+          
+          <dd><a href="0.1.0/">0.1.0</a></dd>
+          
+        
+      </dl>
+      
+      
+      
+    </div>
+
 
   <script type="text/javascript">
       jQuery(function () {

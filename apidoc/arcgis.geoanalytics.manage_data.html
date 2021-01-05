@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>arcgis.geoanalytics.manage_data module &mdash; arcgis 1.8.2 documentation</title>
+  <title>arcgis.geoanalytics.manage_data module &mdash; arcgis 1.8.3 documentation</title>
   
 
   
@@ -77,7 +77,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             
             
               <div class="version">
-                1.8.2
+                1.8.3
               </div>
             
           
@@ -143,7 +143,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <li class="toctree-l1"><a class="reference internal" href="arcgis.schematics.html">arcgis.schematics module</a></li>
 <li class="toctree-l1"><a class="reference internal" href="arcgis.widgets.html">arcgis.widgets module</a></li>
 <li class="toctree-l1"><a class="reference internal" href="arcgis.apps.html">arcgis.apps module</a></li>
-<li class="toctree-l1"><a class="reference internal" href="arcgis.learn.html">arcgis.learn module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.learn.toc.html">arcgis.learn module</a></li>
 </ul>
 
             
@@ -364,7 +364,7 @@ specified, the active GIS is used.</p></td>
 <li><p>Extent (<code class="docutils literal notranslate"><span class="pre">extent</span></code>) - A bounding box that defines the analysis area. Only those features that intersect the bounding box will be analyzed.</p></li>
 <li><p>Processing spatial reference (<code class="docutils literal notranslate"><span class="pre">processSR</span></code>) - The features will be projected into this coordinate system for analysis.</p></li>
 <li><p>Output spatial reference (<code class="docutils literal notranslate"><span class="pre">outSR</span></code>) - The features will be projected into this coordinate system after the analysis to be saved. The output spatial reference for the spatiotemporal big data store is always WGS84.</p></li>
-<li><p>Data store (<code class="docutils literal notranslate"><span class="pre">dataStore</span></code>) - Results will be saved to the specified data store. The default is the spatiotemporal big data store.</p></li>
+<li><p>Data store (<code class="docutils literal notranslate"><span class="pre">dataStore</span></code>) - Results will be saved to the specified data store. For ArcGIS Enterprise, the default is the spatiotemporal big data store.</p></li>
 </ol>
 </td>
 </tr>
@@ -433,7 +433,7 @@ projected into this coordinate system for analysis.</p></li>
 into this coordinate system after the analysis to be saved.
 The output spatial reference for the spatiotemporal big data store is always WGS84.</p></li>
 <li><p>Data store (<code class="docutils literal notranslate"><span class="pre">dataStore</span></code>) - Results will be saved to the specified data store.
-The default is the spatiotemporal big data store.</p></li>
+For ArcGIS Enterprise, the default is the spatiotemporal big data store.</p></li>
 </ol>
 </td>
 </tr>
@@ -453,7 +453,7 @@ results. The GPJob can be queried on the status of the execution.</p></td>
 </dl>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Usage Example: To clip the buffered area in the shape of Capitol Hill boundary.</span>
 
-<span class="n">clipped</span> <span class="o">=</span> <span class="n">clip_layer</span><span class="p">(</span><span class="n">input_layer</span><span class="o">=</span><span class="n">buffer</span><span class="p">,</span> 
+<span class="n">clipped</span> <span class="o">=</span> <span class="n">clip_layer</span><span class="p">(</span><span class="n">input_layer</span><span class="o">=</span><span class="n">buffer</span><span class="p">,</span>
                      <span class="n">clip_layer</span><span class="o">=</span><span class="n">boundary</span><span class="p">,</span>
                      <span class="n">output_name</span><span class="o">=</span><span class="s2">&quot;clipped_buffer&quot;</span><span class="p">,</span>
                      <span class="n">context</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;extent&quot;</span><span class="p">:{</span><span class="s1">&#39;xmin&#39;</span><span class="p">:</span> <span class="o">-</span><span class="mf">77.50941999999998</span><span class="p">,</span><span class="s1">&#39;ymin&#39;</span><span class="p">:</span> <span class="mf">38.389560000000074</span><span class="p">,</span><span class="s1">&#39;xmax&#39;</span><span class="p">:</span> <span class="o">-</span><span class="mf">76.50941999999998</span><span class="p">,</span><span class="s1">&#39;ymax&#39;</span><span class="p">:</span> <span class="mf">39.389560000000074</span><span class="p">,</span><span class="s2">&quot;spatialReference&quot;</span><span class="p">:{</span><span class="s2">&quot;wkid&quot;</span><span class="p">:</span><span class="mi">102100</span><span class="p">,</span><span class="s2">&quot;latestWkid&quot;</span><span class="p">:</span><span class="mi">3857</span><span class="p">}}})</span>
@@ -468,8 +468,8 @@ results. The GPJob can be queried on the status of the execution.</p></td>
 <dt id="arcgis.geoanalytics.manage_data.copy_to_data_store">
 <code class="sig-prename descclassname">arcgis.geoanalytics.manage_data.</code><code class="sig-name descname">copy_to_data_store</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">input_layer</span></em>, <em class="sig-param"><span class="n">output_name</span><span class="p">:</span> <span class="n">str</span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="n">gis</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">context</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">future</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.geoanalytics.manage_data.copy_to_data_store" title="Permalink to this definition">¶</a></dt>
 <dd><img alt="_images/copy_to_data_store.png" src="_images/copy_to_data_store.png" />
-<p>The <code class="docutils literal notranslate"><span class="pre">copy_to_data_store</span></code> task takes an input layer and copies it to a data store. 
-Data is copied to ArcGIS Data Store, configured as either a relational or 
+<p>The <code class="docutils literal notranslate"><span class="pre">copy_to_data_store</span></code> task takes an input layer and copies it to a data store.
+Data is copied to ArcGIS Data Store, configured as either a relational or
 spatiotemporal big data store.</p>
 <p>For example</p>
 <blockquote>
@@ -478,10 +478,10 @@ spatiotemporal big data store.</p>
 <li><p>Copy the features in the current map extent that are stored in the spatiotemporal data store to the relational data store.</p></li>
 </ul>
 </div></blockquote>
-<p>This tool will take an input layer and copy it to a data store. Data will be copied to the ArcGIS Data Store 
+<p>This tool will take an input layer and copy it to a data store. Data will be copied to the ArcGIS Data Store
 and will be stored in your relational or spatiotemporal data store.</p>
-<p>For example, you could copy features that are stored in a big data file share to a relational data store 
-and specify that only features within the current map extent will be copied. This would create a hosted 
+<p>For example, you could copy features that are stored in a big data file share to a relational data store
+and specify that only features within the current map extent will be copied. This would create a hosted
 feature service with only those features that were within the specified map extent.</p>
 <table class="docutils align-default">
 <colgroup>
@@ -507,7 +507,7 @@ feature service with only those features that were within the specified map exte
 <li><p>Extent (<code class="docutils literal notranslate"><span class="pre">extent</span></code>) - A bounding box that defines the analysis area. Only those features that intersect the bounding box will be analyzed.</p></li>
 <li><p>Processing spatial reference (<code class="docutils literal notranslate"><span class="pre">processSR</span></code>) - The features will be projected into this coordinate system for analysis.</p></li>
 <li><p>Output spatial reference (<code class="docutils literal notranslate"><span class="pre">outSR</span></code>) - The features will be projected into this coordinate system after the analysis to be saved. The output spatial reference for the spatiotemporal big data store is always WGS84.</p></li>
-<li><p>Data store (<code class="docutils literal notranslate"><span class="pre">dataStore</span></code>) - Results will be saved to the specified data store. The default is the spatiotemporal big data store.</p></li>
+<li><p>Data store (<code class="docutils literal notranslate"><span class="pre">dataStore</span></code>) - Results will be saved to the specified data store. For ArcGIS Enterprise, the default is the spatiotemporal big data store.</p></li>
 <li><p>Default aggregation styles (<code class="docutils literal notranslate"><span class="pre">defaultAggregationStyles</span></code>) - If set to ‘True’, results will have square, hexagon, and triangle aggregation styles enabled on results map services.</p></li>
 </ol>
 </td>
@@ -524,7 +524,7 @@ feature service with only those features that were within the specified map exte
 <dd class="field-odd"><p>result_layer : Output Features as feature layer item.</p>
 </dd>
 </dl>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Usage Example: To copy input layer to a data store. </span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Usage Example: To copy input layer to a data store.</span>
 <span class="n">copy_result</span> <span class="o">=</span> <span class="n">copy_to_data_store</span><span class="p">(</span><span class="n">input_layer</span><span class="o">=</span><span class="n">earthquakes</span><span class="p">,</span>
                                  <span class="n">output_name</span><span class="o">=</span><span class="s2">&quot;copy earthquakes data&quot;</span><span class="p">)</span>
 </pre></div>
@@ -538,13 +538,13 @@ feature service with only those features that were within the specified map exte
 <dt id="arcgis.geoanalytics.manage_data.dissolve_boundaries">
 <code class="sig-prename descclassname">arcgis.geoanalytics.manage_data.</code><code class="sig-name descname">dissolve_boundaries</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">input_layer</span></em>, <em class="sig-param"><span class="n">dissolve_fields</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">summary_fields</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">multipart</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">output_name</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">gis</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">context</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">future</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.geoanalytics.manage_data.dissolve_boundaries" title="Permalink to this definition">¶</a></dt>
 <dd><img alt="_images/dissolve_boundaries.png" src="_images/dissolve_boundaries.png" />
-<p>The <code class="docutils literal notranslate"><span class="pre">dissolve_boundaries</span></code> task finds polygons that intersect or have the same field values 
+<p>The <code class="docutils literal notranslate"><span class="pre">dissolve_boundaries</span></code> task finds polygons that intersect or have the same field values
 and merges them together to form a single polygon.</p>
 <p>Example:</p>
 <blockquote>
-<div><p>A city council wants to control liquor sales by refusing new licenses to stores within 
-1,000 feet of schools, libraries, and parks. After creating a 1,000-foot buffer around 
-the schools, libraries, and parks, the buffered layers can be joined together and the 
+<div><p>A city council wants to control liquor sales by refusing new licenses to stores within
+1,000 feet of schools, libraries, and parks. After creating a 1,000-foot buffer around
+the schools, libraries, and parks, the buffered layers can be joined together and the
 boundaries can be dissolved to create a single layer of restricted areas.</p>
 </div></blockquote>
 <div class="admonition note">
@@ -616,7 +616,7 @@ will be created for each part.</p>
 <li><p>Extent (<code class="docutils literal notranslate"><span class="pre">extent</span></code>) - A bounding box that defines the analysis area. Only those features that intersect the bounding box will be analyzed.</p></li>
 <li><p>Processing spatial reference (<code class="docutils literal notranslate"><span class="pre">processSR</span></code>) - The features will be projected into this coordinate system for analysis.</p></li>
 <li><p>Output spatial reference (<code class="docutils literal notranslate"><span class="pre">outSR</span></code>) - The features will be projected into this coordinate system after the analysis to be saved. The output spatial reference for the spatiotemporal big data store is always WGS84.</p></li>
-<li><p>Data store (<code class="docutils literal notranslate"><span class="pre">dataStore</span></code>) - Results will be saved to the specified data store. The default is the spatiotemporal big data store.</p></li>
+<li><p>Data store (<code class="docutils literal notranslate"><span class="pre">dataStore</span></code>) - Results will be saved to the specified data store. For ArcGIS Enterprise, the default is the spatiotemporal big data store.</p></li>
 <li><p>Default aggregation styles (<code class="docutils literal notranslate"><span class="pre">defaultAggregationStyles</span></code>) - If set to true, results will have square, hexagon, and triangle aggregation styles enabled on results map services.</p></li>
 </ol>
 </td>
@@ -632,8 +632,8 @@ results. The GPJob can be queried on the status of the execution.</p></td>
 <dd class="field-odd"><p>result_layer : Output Features as feature layer collection item.</p>
 </dd>
 </dl>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Usage Example: This example dissolves boundaries of soil areas in Nebraska if they have </span>
-<span class="c1"># the same solubility. For dissolved features, it calculates the sum of the quadrat area, </span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Usage Example: This example dissolves boundaries of soil areas in Nebraska if they have</span>
+<span class="c1"># the same solubility. For dissolved features, it calculates the sum of the quadrat area,</span>
 <span class="c1"># the mean soil depth, and an example of the quadrat description.</span>
 
 <span class="n">arcgis</span><span class="o">.</span><span class="n">env</span><span class="o">.</span><span class="n">out_spatial_reference</span> <span class="o">=</span> <span class="mi">3310</span>
@@ -745,7 +745,7 @@ double to integer, integer to string) except for string to numeric.</p></li>
 <li><p>Extent (<code class="docutils literal notranslate"><span class="pre">extent</span></code>) - A bounding box that defines the analysis area. Only those features that intersect the bounding box will be analyzed.</p></li>
 <li><p>Processing spatial reference (<code class="docutils literal notranslate"><span class="pre">processSR</span></code>) - The features will be projected into this coordinate system for analysis.</p></li>
 <li><p>Output spatial reference (<code class="docutils literal notranslate"><span class="pre">outSR</span></code>) - The features will be projected into this coordinate system after the analysis to be saved. The output spatial reference for the spatiotemporal big data store is always WGS84.</p></li>
-<li><p>Data store (<code class="docutils literal notranslate"><span class="pre">dataStore</span></code>) - Results will be saved to the specified data store. The default is the spatiotemporal big data store.</p></li>
+<li><p>Data store (<code class="docutils literal notranslate"><span class="pre">dataStore</span></code>) - Results will be saved to the specified data store. For ArcGIS Enterprise, the default is the spatiotemporal big data store.</p></li>
 <li><p>Default aggregation styles (<code class="docutils literal notranslate"><span class="pre">defaultAggregationStyles</span></code>) - If set to ‘True’, results will have square, hexagon, and triangle aggregation styles enabled on results map services.</p></li>
 </ol>
 </td>
@@ -780,10 +780,10 @@ results. The GPJob can be queried on the status of the execution.</p>
 <dt id="arcgis.geoanalytics.manage_data.overlay_data">
 <code class="sig-prename descclassname">arcgis.geoanalytics.manage_data.</code><code class="sig-name descname">overlay_data</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">input_layer</span></em>, <em class="sig-param"><span class="n">overlay_layer</span></em>, <em class="sig-param"><span class="n">overlay_type</span><span class="o">=</span><span class="default_value">'intersect'</span></em>, <em class="sig-param"><span class="n">output_name</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">gis</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">include_overlaps</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="n">context</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">future</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.geoanalytics.manage_data.overlay_data" title="Permalink to this definition">¶</a></dt>
 <dd><img alt="_images/overlay_layers.png" src="_images/overlay_layers.png" />
-<p>The <code class="docutils literal notranslate"><span class="pre">overlay_data</span></code> task combines two or more layers into one single layer. 
-You can think of overlay as peering through a stack of maps and creating a single 
-map containing all the information found in the stack. Overlay is used to answer 
-one of the most basic questions of geography: What is on top of what? 
+<p>The <code class="docutils literal notranslate"><span class="pre">overlay_data</span></code> task combines two or more layers into one single layer.
+You can think of overlay as peering through a stack of maps and creating a single
+map containing all the information found in the stack. Overlay is used to answer
+one of the most basic questions of geography: What is on top of what?
 The following are examples:</p>
 <blockquote>
 <div><ul class="simple">
@@ -898,7 +898,7 @@ Setting this value to false will improve performance. This parameter is only use
 <li><p>Extent (<code class="docutils literal notranslate"><span class="pre">extent</span></code>) - A bounding box that defines the analysis area. Only those features that intersect the bounding box will be analyzed.</p></li>
 <li><p>Processing spatial reference (<code class="docutils literal notranslate"><span class="pre">processSR</span></code>) - The features will be projected into this coordinate system for analysis.</p></li>
 <li><p>Output spatial reference (<code class="docutils literal notranslate"><span class="pre">outSR</span></code>) - The features will be projected into this coordinate system after the analysis to be saved. The output spatial reference for the spatiotemporal big data store is always WGS84.</p></li>
-<li><p>Data store (<code class="docutils literal notranslate"><span class="pre">dataStore</span></code>) - Results will be saved to the specified data store. The default is the spatiotemporal big data store.</p></li>
+<li><p>Data store (<code class="docutils literal notranslate"><span class="pre">dataStore</span></code>) - Results will be saved to the specified data store. For ArcGIS Enterprise, the default is the spatiotemporal big data store.</p></li>
 </ol>
 </td>
 </tr>
@@ -917,10 +917,10 @@ results. The GPJob can be queried on the status of the execution.</p>
 </dl>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Usage Example: To find the intersecting areas between watersheds and grazing land in Missouri.</span>
 
-<span class="n">overlay_result</span> <span class="o">=</span> <span class="n">manage_data</span><span class="o">.</span><span class="n">overlay_data</span><span class="p">(</span><span class="n">input_layer</span><span class="o">=</span><span class="n">grazing_land</span><span class="p">,</span> 
-                              <span class="n">overlay_layer</span><span class="o">=</span><span class="n">watersheds_layer</span><span class="p">,</span> 
-                              <span class="n">overlay_type</span><span class="o">=</span><span class="s2">&quot;Intersect&quot;</span><span class="p">,</span> 
-                              <span class="n">output_name</span><span class="o">=</span><span class="s2">&quot;Watershed_intersections&quot;</span><span class="p">)</span>   
+<span class="n">overlay_result</span> <span class="o">=</span> <span class="n">manage_data</span><span class="o">.</span><span class="n">overlay_data</span><span class="p">(</span><span class="n">input_layer</span><span class="o">=</span><span class="n">grazing_land</span><span class="p">,</span>
+                              <span class="n">overlay_layer</span><span class="o">=</span><span class="n">watersheds_layer</span><span class="p">,</span>
+                              <span class="n">overlay_type</span><span class="o">=</span><span class="s2">&quot;Intersect&quot;</span><span class="p">,</span>
+                              <span class="n">output_name</span><span class="o">=</span><span class="s2">&quot;Watershed_intersections&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </dd></dl>
@@ -930,7 +930,7 @@ results. The GPJob can be queried on the status of the execution.</p>
 <h2>run_python_script<a class="headerlink" href="#run-python-script" title="Permalink to this headline">¶</a></h2>
 <dl class="py function">
 <dt id="arcgis.geoanalytics.manage_data.run_python_script">
-<code class="sig-prename descclassname">arcgis.geoanalytics.manage_data.</code><code class="sig-name descname">run_python_script</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">code</span></em>, <em class="sig-param"><span class="n">layers</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">gis</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">context</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">future</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.geoanalytics.manage_data.run_python_script" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">arcgis.geoanalytics.manage_data.</code><code class="sig-name descname">run_python_script</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">code</span></em>, <em class="sig-param"><span class="n">layers</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">gis</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">context</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">future</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">parameters</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">param_as_input</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.geoanalytics.manage_data.run_python_script" title="Permalink to this definition">¶</a></dt>
 <dd><p>The <code class="docutils literal notranslate"><span class="pre">run_python_script</span></code> method executes a Python script on your ArcGIS
 GeoAnalytics Server site. In the script, you can create an analysis
 pipeline by chaining together multiple GeoAnalytics Tools without
@@ -1013,6 +1013,18 @@ To learn more, see <a class="reference external" href="https://developers.arcgis
 <td><p>Optional boolean. If ‘True’, a GPJob is returned instead of
 results. The GPJob can be queried on the status of the execution.</p></td>
 </tr>
+<tr class="row-even"><td><p>parameters</p></td>
+<td><p>Optional dict. A global level variable that will be loaded into the given code.
+The variable name is called <strong>user_variables</strong>.</p>
+<p><code class="docutils literal notranslate"><span class="pre">`</span>
+<span class="pre">parameters=</span> <span class="pre">{&quot;param1&quot;:</span> <span class="pre">&quot;example&quot;,</span> <span class="pre">&quot;param2&quot;:</span> <span class="pre">1,</span> <span class="pre">&quot;val1&quot;:</span> <span class="pre">2.0,</span> <span class="pre">&quot;more_params&quot;:</span> <span class="pre">[False,</span> <span class="pre">True,</span> <span class="pre">None],</span> <span class="pre">&quot;status&quot;:</span> <span class="pre">4.0}</span>
+<span class="pre">`</span></code></p>
+<p>Only built-in types are supported.</p>
+</td>
+</tr>
+<tr class="row-odd"><td><p>param_as_input</p></td>
+<td><p>Optional Boolean. If True, the user_variable will be added if a method past. If False, the variable will not be given into the method.</p></td>
+</tr>
 </tbody>
 </table>
 <dl class="field-list simple">
@@ -1023,13 +1035,15 @@ results. The GPJob can be queried on the status of the execution.</p></td>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Usage Example: Execute calculate_density tool using run_python_script.</span>
 
 <span class="k">def</span> <span class="nf">density</span><span class="p">():</span>
-    <span class="k">def</span> <span class="nf">code</span><span class="p">():</span>
+    <span class="k">def</span> <span class="nf">code</span><span class="p">(</span><span class="n">ss</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
         <span class="kn">import</span> <span class="nn">time</span>
+        <span class="k">if</span> <span class="n">ss</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">ss</span> <span class="o">=</span> <span class="n">user_variables</span><span class="p">[</span><span class="s1">&#39;ss&#39;</span><span class="p">]</span>
         <span class="n">res</span> <span class="o">=</span> <span class="n">geoanalytics</span><span class="o">.</span><span class="n">describe_dataset</span><span class="p">(</span><span class="n">input_layer</span><span class="o">=</span><span class="n">layers</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span>
                    <span class="n">extent_output</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
-                   <span class="n">sample_size</span><span class="o">=</span><span class="mi">1000</span><span class="p">)</span>        
-    <span class="n">res</span><span class="o">.</span><span class="n">write</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="s1">&#39;webgis&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="s1">&#39;RunPythonScriptTest_</span><span class="si">{0}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()))</span>              
-<span class="n">run_python_script</span><span class="p">(</span><span class="n">code</span><span class="o">=</span><span class="n">code</span><span class="p">,</span> <span class="n">layers</span><span class="o">=</span><span class="p">[</span><span class="n">lyr0</span><span class="p">])</span> 
+                   <span class="n">sample_size</span><span class="o">=</span><span class="n">ss</span><span class="p">)</span>
+    <span class="n">res</span><span class="o">.</span><span class="n">write</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="s1">&#39;webgis&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="s1">&#39;RunPythonScriptTest_</span><span class="si">{0}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()))</span>
+<span class="n">run_python_script</span><span class="p">(</span><span class="n">code</span><span class="o">=</span><span class="n">code</span><span class="p">,</span> <span class="n">layers</span><span class="o">=</span><span class="p">[</span><span class="n">lyr0</span><span class="p">],</span> <span class="n">parameters</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;ss&#39;</span> <span class="p">:</span> <span class="mi">10000</span><span class="p">})</span>
 </pre></div>
 </div>
 </dd></dl>
@@ -1059,7 +1073,7 @@ results. The GPJob can be queried on the status of the execution.</p></td>
   <div role="contentinfo">
     <p>
         
-        &copy; Copyright 2016-2019, Esri
+        &copy; Copyright 2016-2021, Esri
 
     </p>
   </div>
@@ -1081,6 +1095,134 @@ results. The GPJob can be queried on the status of the execution.</p></td>
 
   </div>
   
+    Options v: 1.8.3
+
+  <div class="rst-versions" data-toggle="rst-versions" role="note" aria-label="versions">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      <span class="fa fa-book"> Pick an earlier version</span>
+      v: 1.8.3
+      <span class="fa fa-caret-down"></span>
+    </span>
+    <div class="rst-other-versions">
+      
+      
+      <dl>
+        <dt>Versions</dt>
+        
+          
+          <dd><a href="1.8.2/">1.8.2</a></dd>
+          
+        
+          
+          <dd><a href="1.8.1/">1.8.1</a></dd>
+          
+        
+          
+          <dd><a href="1.8.0/">1.8.0</a></dd>
+          
+        
+          
+          <dd><a href="1.7.1/">1.7.1</a></dd>
+          
+        
+          
+          <dd><a href="1.7.0/">1.7.0</a></dd>
+          
+        
+          
+          <dd><a href="1.6.2/">1.6.2</a></dd>
+          
+        
+          
+          <dd><a href="1.6.1/">1.6.1</a></dd>
+          
+        
+          
+          <dd><a href="1.6.0/">1.6.0</a></dd>
+          
+        
+          
+          <dd><a href="1.5.3/">1.5.3</a></dd>
+          
+        
+          
+          <dd><a href="1.5.2/">1.5.2</a></dd>
+          
+        
+          
+          <dd><a href="1.5.1/">1.5.1</a></dd>
+          
+        
+          
+          <dd><a href="1.5.0/">1.5.0</a></dd>
+          
+        
+          
+          <dd><a href="1.4.2/">1.4.2</a></dd>
+          
+        
+          
+          <dd><a href="1.4.1/">1.4.1</a></dd>
+          
+        
+          
+          <dd><a href="1.4.0/">1.4.0</a></dd>
+          
+        
+          
+          <dd><a href="1.3.0/">1.3.0</a></dd>
+          
+        
+          
+          <dd><a href="1.2.5/">1.2.5</a></dd>
+          
+        
+          
+          <dd><a href="1.2.4/">1.2.4</a></dd>
+          
+        
+          
+          <dd><a href="1.2.3/">1.2.3</a></dd>
+          
+        
+          
+          <dd><a href="1.2.2/">1.2.2</a></dd>
+          
+        
+          
+          <dd><a href="1.2.1/">1.2.1</a></dd>
+          
+        
+          
+          <dd><a href="1.2.0/">1.2.0</a></dd>
+          
+        
+          
+          <dd><a href="1.0.1/">1.0.1</a></dd>
+          
+        
+          
+          <dd><a href="1.0.0/">1.0.0</a></dd>
+          
+        
+          
+          <dd><a href="0.3.0/">0.3.0</a></dd>
+          
+        
+          
+          <dd><a href="0.2.0/">0.2.0</a></dd>
+          
+        
+          
+          <dd><a href="0.1.0/">0.1.0</a></dd>
+          
+        
+      </dl>
+      
+      
+      
+    </div>
+
 
   <script type="text/javascript">
       jQuery(function () {

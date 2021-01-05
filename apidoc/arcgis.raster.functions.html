@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>arcgis.raster.functions module &mdash; arcgis 1.8.2 documentation</title>
+  <title>arcgis.raster.functions module &mdash; arcgis 1.8.3 documentation</title>
   
 
   
@@ -77,7 +77,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             
             
               <div class="version">
-                1.8.2
+                1.8.3
               </div>
             
           
@@ -115,13 +115,16 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <li class="toctree-l2"><a class="reference internal" href="arcgis.raster.toc.html#rastercatalogitem">RasterCatalogItem</a></li>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.raster.toc.html#rastermanager">RasterManager</a></li>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.raster.toc.html#rastercollection">RasterCollection</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.raster.toc.html#rasterinfo">RasterInfo</a></li>
 <li class="toctree-l2 current"><a class="reference internal" href="arcgis.raster.toc.html#submodules">Submodules</a><ul class="current">
 <li class="toctree-l3"><a class="reference internal" href="arcgis.raster.analytics.html">arcgis.raster.analytics module</a></li>
 <li class="toctree-l3 current"><a class="current reference internal" href="#">arcgis.raster.functions module</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#abs">abs</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#acos">acos</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#acosh">acosh</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#aggregate">aggregate</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#aggregate-cells">aggregate_cells</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#apparent-reflectance">apparent_reflectance</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#apply">apply</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#arg-max">arg_max</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#arg-median">arg_median</a></li>
@@ -131,9 +134,11 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <li class="toctree-l4"><a class="reference internal" href="#asin">asin</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#asinh">asinh</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#aspect">aspect</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#aspect-slope">aspect_slope</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#atan">atan</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#atan2">atan2</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#atanh">atanh</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#bai">bai</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#band-arithmetic">band_arithmetic</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#bitwise-and">bitwise_and</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#bitwise-left-shift">bitwise_left_shift</a></li>
@@ -145,6 +150,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <li class="toctree-l4"><a class="reference internal" href="#boolean-not">boolean_not</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#boolean-or">boolean_or</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#boolean-xor">boolean_xor</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#buffered">buffered</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#cire">cire</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#cig">cig</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#classify">classify</a></li>
@@ -155,13 +161,16 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <li class="toctree-l4"><a class="reference internal" href="#colorspace-conversion">colorspace_conversion</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#complex">complex</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#composite-band">composite_band</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#compute-change">compute_change</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#con">con</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#constant-raster">constant_raster</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#contour">contour</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#contrast-brightness">contrast_brightness</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#convolution">convolution</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#cos">cos</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#cosh">cosh</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#curvature">curvature</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#detect-change-using-change-analysis-raster">detect_change_using_change_analysis_raster</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#divide">divide</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#duration">duration</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#elevation-void-fill">elevation_void_fill</a></li>
@@ -185,6 +194,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <li class="toctree-l4"><a class="reference internal" href="#greater-than">greater_than</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#greater-than-equal">greater_than_equal</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#gvitm">gvitm</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#heat-index">heat_index</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#hillshade">hillshade</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#identity">identity</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#int">INT</a></li>
@@ -208,11 +218,16 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <li class="toctree-l4"><a class="reference internal" href="#minority">minority</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#minus">minus</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#ml-classify">ml_classify</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#mndwi">mndwi</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#mod">mod</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#monitor-vegetation">monitor_vegetation</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#msavi">msavi</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#mtvi2">mtvi2</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#multidimensional-filter">multidimensional_filter</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#nbr">nbr</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#ndbi">ndbi</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#ndmi">ndmi</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#ndsi">ndsi</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#ndvi">ndvi</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#ndvire">ndvire</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#id3">NDVI</a></li>
@@ -228,7 +243,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <li class="toctree-l4"><a class="reference internal" href="#random-raster">random_raster</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#raster-calculator">raster_calculator</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#raster-collection-function">raster_collection_function</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#rasterize-features">rasterize_features</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#remap">remap</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#reproject">reproject</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#resample">resample</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#round-down">round_down</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#round-up">round_up</a></li>
@@ -260,6 +277,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <li class="toctree-l4"><a class="reference internal" href="#threshold">threshold</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#times">times</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#transpose-bits">transpose_bits</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#trend-to-rgb">trend_to_rgb</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#tsavi">tsavi</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#unit-conversion">unit_conversion</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#vari">vari</a></li>
@@ -268,6 +286,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <li class="toctree-l4"><a class="reference internal" href="#vector-field-renderer">vector_field_renderer</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#weighted-overlay">weighted_overlay</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#weighted-sum">weighted_sum</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#wind-chill">wind_chill</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="arcgis.raster.functions.gbl.html">arcgis.raster.functions.gbl module</a></li>
@@ -288,7 +307,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <li class="toctree-l1"><a class="reference internal" href="arcgis.schematics.html">arcgis.schematics module</a></li>
 <li class="toctree-l1"><a class="reference internal" href="arcgis.widgets.html">arcgis.widgets module</a></li>
 <li class="toctree-l1"><a class="reference internal" href="arcgis.apps.html">arcgis.apps module</a></li>
-<li class="toctree-l1"><a class="reference internal" href="arcgis.learn.html">arcgis.learn module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.learn.toc.html">arcgis.learn module</a></li>
 </ul>
 
             
@@ -439,6 +458,139 @@ processed product on disk, for which raster analytics tools like arcgis.raster.a
 </dd></dl>
 
 </div>
+<div class="section" id="aggregate">
+<h2>aggregate<a class="headerlink" href="#aggregate" title="Permalink to this headline">¶</a></h2>
+<dl class="py function">
+<dt id="arcgis.raster.functions.aggregate">
+<code class="sig-prename descclassname">arcgis.raster.functions.</code><code class="sig-name descname">aggregate</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">raster</span></em>, <em class="sig-param"><span class="n">dimension</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">aggregation_function</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">aggregation_definition_type</span><span class="o">=</span><span class="default_value">'ALL'</span></em>, <em class="sig-param"><span class="n">interval_keyword</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">interval_value</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">interval_unit</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">interval_ranges</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">ignore_nodata</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.raster.functions.aggregate" title="Permalink to this definition">¶</a></dt>
+<dd><blockquote>
+<div><p>Creates a new raster by applying an aggregation function</p>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>raster</strong> – Input Raster.</p></li>
+<li><p><strong>aggregation_function</strong> – <p>Optional String. Specifies the mathematical method that will be used
+to combine the aggregated slices in an interval.</p>
+<blockquote>
+<div><ul>
+<li><p>MEAN : Calculates the mean of a pixel’s values across all slices in the interval. This is the default.</p></li>
+<li><p>MAXIMUM : Calculates the maximum value of a pixel across all slices in the interval.</p></li>
+<li><p>MAJORITY : Calculates the value that occurred most frequently for a pixel across all slices in the interval.</p></li>
+<li><p>MINIMUM : Calculates the minimum value of a pixel across all slices in the interval.</p></li>
+<li><p>MINORITY : Calculates the value that occurred least frequently for a pixel across all slices in the interval.</p></li>
+<li><p>MEDIAN : Calculates the median value of a pixel across all slices in the interval.</p></li>
+<li><p>RANGE : Calculates the range of values for a pixel across all slices in the interval.</p></li>
+<li><p>STD : Calculates the standard deviation of a pixel’s values across all slices in the interval.</p></li>
+<li><p>SUM : Calculates the sum of a pixel’s values across all slices in the interval.</p></li>
+<li><p>VARIETY : Calculates the number of unique values of a pixel across all slices in the interval.</p></li>
+</ul>
+<p>You may also pass custom aggregaation function. 
+Create an RFT object out of the raster function template item on the portal and 
+specify that as the input to aggregation_function or directly specify the RFT in JSON format as the 
+aggregation_method.</p>
+</div></blockquote>
+</p></li>
+<li><p><strong>aggregation_definition_type</strong> – <p>Optional String. Specifies the dimension interval for which the data
+will be aggregated.</p>
+<ul>
+<li><p>ALL : The data values will be aggregated across all slices. This is the default.</p></li>
+<li><p>INTERVAL_KEYWORD : The variable data will be aggregated using a commonly known interval.</p></li>
+<li><p>INTERVAL_VALUE : The variable data will be aggregated using a user-specified interval and unit.</p></li>
+<li><p>INTERVAL_RANGES : The variable data will be aggregated between specified pairs of values or dates.</p></li>
+</ul>
+</p></li>
+<li><p><strong>dimension</strong> – Optional String. This is the dimension along which the variables will be aggregated.</p></li>
+<li><p><strong>interval_keyword</strong> – <p>Optional String. Specifies the keyword interval that will be used
+when aggregating along the dimension. This parameter is required
+when the aggregation_def parameter is set to INTERVAL_KEYWORD, and
+the aggregation must be across time.</p>
+<ul>
+<li><p>HOURLY : The data values will be aggregated into hourly time steps, 
+and the result will include every hour in the time series.</p></li>
+<li><p>DAILY : The data values will be aggregated into daily time steps, 
+and the result will include every day in the time series.</p></li>
+<li><p>WEEKLY : The data values will be aggregated into weekly time steps, 
+and the result will include every week in the time series.</p></li>
+<li><p>DEKADLY : Divides each month into 3 periods of 10 days each 
+(last period might have more or less than 10 days)
+and each month would output 3 slices.</p></li>
+<li><p>PENTADLY : Divides each month into 6 periods of 5 days each 
+(last period might have more or less than 5 days)
+and each month would output 6 slices.</p></li>
+<li><p>MONTHLY : The data values will be aggregated into monthly time steps, 
+and the result will include every month in the time series.</p></li>
+<li><p>QUARTERLY : The data values will be aggregated into quarterly time steps, 
+and the result will include every quarter in the time series.</p></li>
+<li><p>YEARLY : The data values will be aggregated into yearly time steps, 
+and the result will include every year in the time series.</p></li>
+<li><p>RECURRING_DAILY : The data values will be aggregated into daily time steps, 
+and the result includes each one aggregated value per day. 
+The output will include, at most, 366 daily time slices</p></li>
+<li><p>RECURRING_WEEKLY : The data values will be aggregated into weekly time steps, 
+and the result will include one aggregated value per week. 
+The output will include, at most, 53 weekly time slices.</p></li>
+<li><p>RECURRING_MONTHLY : The data values will be aggregated into weekly time steps, 
+and the result will include one aggregated value per month. 
+The output will include, at most, 12 monthly time slices.</p></li>
+<li><p>RECURRING_QUARTERLY : The data values will be aggregated into weekly time steps, 
+and the result will include one aggregated value per quarter. 
+The output will include, at most, 4 quarterly time slices.</p></li>
+</ul>
+</p></li>
+<li><p><strong>interval_value</strong> – <p>Optional String. The size of the interval that will be used for the
+aggregation. This parameter is required when the aggregation_def
+parameter is set to INTERVAL_VALUE.</p>
+<p>For example, to aggregate 30 years of monthly temperature data into
+5-year increments, enter 5 as the interval_value, and specify
+interval_unit as YEARS.</p>
+</p></li>
+<li><p><strong>interval_unit</strong> – <p>Optional String. The unit that will be used for the interval value.
+This parameter is required when the dimension parameter is set to a
+time field and the aggregation_def parameter is set to INTERVAL_VALUE.</p>
+<p>If you are aggregating over anything other than time, this option
+will not be available and the unit for the interval value will match
+the variable unit of the input multidimensional raster data.</p>
+<ul>
+<li><p>HOURS : The data values will be aggregated into hourly time slices at the interval provided.</p></li>
+<li><p>DAYS : The data values will be aggregated into daily time slices at the interval provided.</p></li>
+<li><p>WEEKS : The data values will be aggregated into weekly time slices at the interval provided.</p></li>
+<li><p>MONTHS : The data values will be aggregated into monthly time slices at the interval provided.</p></li>
+<li><p>YEARS : The data values will be aggregated into yearly time slices at the interval provided.</p></li>
+</ul>
+</p></li>
+<li><p><strong>interval_ranges</strong> – <p>Optional List of dictionary objects. Interval ranges specified as list of dictionary objects 
+that will be used to aggregate groups of values.</p>
+<p>This parameter is required when the aggregation_definition parameter is set to INTERVAL_RANGE.
+If dimension is StdTime, then the value must be specified in human readable time format (YYYY-MM-DDTHH:MM:SS).</p>
+<dl class="simple">
+<dt>Syntax: </dt><dd><p>[{“minValue”:”&lt;min value&gt;”,”maxValue”:”&lt;max value&gt;”},
+{“minValue”:”&lt;min value&gt;”,”maxValue”:”&lt;max value&gt;”}]</p>
+</dd>
+<dt>Example:</dt><dd><p>[{“minValue”:”2012-01-15T03:00:00”,”maxValue”:”2012-01-15T09:00:00”},
+{“minValue”:”2012-01-15T12:00:00”,”maxValue”:”2012-01-15T21:00:00”}]</p>
+</dd>
+</dl>
+</p></li>
+<li><p><strong>ignore_nodata</strong> – <p>Optional Boolean. Specifies whether NoData values are ignored.</p>
+<ul>
+<li><dl class="simple">
+<dt>True<span class="classifier">The function will include all valid pixels and ignore any NoData pixels.</span></dt><dd><p>This is the default.</p>
+</dd>
+</dl>
+</li>
+<li><p>False : The function will result in NoData if there are any NoData values.</p></li>
+</ul>
+</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>the output raster with function applied on it</p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
 <div class="section" id="aggregate-cells">
 <h2>aggregate_cells<a class="headerlink" href="#aggregate-cells" title="Permalink to this headline">¶</a></h2>
 <dl class="py function">
@@ -504,6 +656,90 @@ necessary to determine an output value.</p></li>
 </dd>
 <dt class="field-even">Returns</dt>
 <dd class="field-even"><p>output raster</p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+<div class="section" id="apparent-reflectance">
+<h2>apparent_reflectance<a class="headerlink" href="#apparent-reflectance" title="Permalink to this headline">¶</a></h2>
+<dl class="py function">
+<dt id="arcgis.raster.functions.apparent_reflectance">
+<code class="sig-prename descclassname">arcgis.raster.functions.</code><code class="sig-name descname">apparent_reflectance</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">raster</span></em>, <em class="sig-param"><span class="n">radiance_gain_values</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">radiance_bias_values</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">reflectance_gain_values</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">reflectance_bias_values</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">sun_elevation</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">albedo</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">scale_factor</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">offset</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.raster.functions.apparent_reflectance" title="Permalink to this definition">¶</a></dt>
+<dd><p>Function calibrates the digital number (DN) values of imagery from some satellite 
+sensors. The calibration uses sun elevation, acquisition date, sensor gain and 
+bias for each band to derive Top of Atmosphere reflectance, plus sun angle correction.</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 31%" />
+<col style="width: 69%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>Argument</strong></p></td>
+<td><p><strong>Description</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>raster</p></td>
+<td><p>Required ImageryLayer object.</p></td>
+</tr>
+<tr class="row-odd"><td><p>radiance_gain_values</p></td>
+<td><p>Optional list. The radiance gain values</p></td>
+</tr>
+<tr class="row-even"><td><p>radiance_bias_values</p></td>
+<td><p>Optional list. The radiance bias values</p></td>
+</tr>
+<tr class="row-odd"><td><p>reflectance_gain_values</p></td>
+<td><p>Optional list. The reflectance gain values</p></td>
+</tr>
+<tr class="row-even"><td><p>reflectance_bias_values</p></td>
+<td><p>Optional list. The reflectance bias values</p></td>
+</tr>
+<tr class="row-odd"><td><p>sun_elevation</p></td>
+<td><p>This is sun elevation value, expressed in degrees.</p></td>
+</tr>
+<tr class="row-even"><td><p>albedo</p></td>
+<td><p>Optional bool The results of the Apparent Reflectance function can also
+be expressed as albedo, which is the percentage of the available
+energy reflected by the planetary surface. Albedo data is used
+by scientific users for complex modeling and technical
+remote-sensing applications.</p>
+<blockquote>
+<div><dl class="simple">
+<dt>False - The function returns apparent reflectance values.</dt><dd><p>This is the default.</p>
+</dd>
+<dt>True - The function returns 32-bit floating-point values,</dt><dd><p>which most commonly are in the range of 0.0 to 1.0.
+No data clipping is performed if this option is selected.</p>
+</dd>
+</dl>
+</div></blockquote>
+</td>
+</tr>
+<tr class="row-odd"><td><p>scale_factor</p></td>
+<td><p>Optional int. Your apparent reflectance output value can be expressed
+as an integer. The scaling factor is multiplied by the albedo to
+convert all floating-point values into integer values.</p>
+<p>If the scale factor is either 0 or not specified, default scaling
+will be applied depending on the pixel type of the input data:</p>
+<blockquote>
+<div><p>For 16-bit unsigned data types, the default scale factor is 50,000.</p>
+<p>For 8-bit unsigned data types, default scale factor is 255.</p>
+<p>The scaling factor is always applied when the output is apparent reflectance.
+No scaling is applied when the output is albedo.</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="row-even"><td><p>offset</p></td>
+<td><p>Optional int.
+Your scaled albedo value can optionally have an offset value:</p>
+<p>For 16-bit unsigned data types, the default scale offset is 5,000.
+For 8-bit unsigned data types, the default scale offset is 0.
+No scaling is applied when the output is albedo.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>Imagery layer</p>
 </dd>
 </dl>
 </dd></dl>
@@ -722,6 +958,39 @@ and &lt;a href=”<a class="reference external" href="http://desktop.arcgis.com/
 </dd></dl>
 
 </div>
+<div class="section" id="aspect-slope">
+<h2>aspect_slope<a class="headerlink" href="#aspect-slope" title="Permalink to this headline">¶</a></h2>
+<dl class="py function">
+<dt id="arcgis.raster.functions.aspect_slope">
+<code class="sig-prename descclassname">arcgis.raster.functions.</code><code class="sig-name descname">aspect_slope</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">raster</span></em>, <em class="sig-param"><span class="n">z_factor</span><span class="o">=</span><span class="default_value">1</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.raster.functions.aspect_slope" title="Permalink to this definition">¶</a></dt>
+<dd><p>Creates a raster layer that simultaneously displays the aspect and slope of a surface.</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 32%" />
+<col style="width: 68%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>Argument</strong></p></td>
+<td><p><strong>Description</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>raster</p></td>
+<td><p>The input raster.</p></td>
+</tr>
+<tr class="row-odd"><td><p>z_factor</p></td>
+<td><p>A multiplication factor that converts the vertical (elevation) values
+to the linear units of the horizontal (x,y) coordinate system.
+“Use larger values to add vertical exaggeration.</p></td>
+</tr>
+</tbody>
+</table>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>the output raster</p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
 <div class="section" id="atan">
 <h2>atan<a class="headerlink" href="#atan" title="Permalink to this headline">¶</a></h2>
 <dl class="py function">
@@ -791,6 +1060,29 @@ and &lt;a href=”<a class="reference external" href="http://desktop.arcgis.com/
 </dd></dl>
 
 </div>
+<div class="section" id="bai">
+<h2>bai<a class="headerlink" href="#bai" title="Permalink to this headline">¶</a></h2>
+<dl class="py function">
+<dt id="arcgis.raster.functions.bai">
+<code class="sig-prename descclassname">arcgis.raster.functions.</code><code class="sig-name descname">bai</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">raster</span></em>, <em class="sig-param"><span class="n">band_indexes</span><span class="o">=</span><span class="default_value">'3 4'</span></em>, <em class="sig-param"><span class="n">astype</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.raster.functions.bai" title="Permalink to this definition">¶</a></dt>
+<dd><p>The Burn Area Index (BAI) uses the reflectance values in the red and NIR portion of the spectrum to identify
+the areas of the terrain affected by fire.</p>
+<p>BAI = 1/((0.1 -RED)^2 + (0.06 - NIR)^2)</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>raster</strong> – the input raster / imagery layer</p></li>
+<li><p><strong>band_indexes</strong> – “Red NIR”, e.g., “3 4” or [3,4]</p></li>
+<li><p><strong>astype</strong> – output pixel type</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>output raster</p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
 <div class="section" id="band-arithmetic">
 <h2>band_arithmetic<a class="headerlink" href="#band-arithmetic" title="Permalink to this headline">¶</a></h2>
 <dl class="py function">
@@ -829,7 +1121,13 @@ You can define your custom algorithm, or choose a predefined index.
 20 = IronOxide,
 21 = FerrousMinerals,
 22 = ClayMinerals,
-23 = WNDWI</p></li>
+23 = WNDWI,
+24 = BAI,
+25 = NBR,
+26 = NDBI,
+27 = NDMI,
+28 = NDSI,
+29 = MNDWI</p></li>
 </ul>
 </dd>
 <dt class="field-even">Returns</dt>
@@ -1069,6 +1367,24 @@ You can define your custom algorithm, or choose a predefined index.
 </dd></dl>
 
 </div>
+<div class="section" id="buffered">
+<h2>buffered<a class="headerlink" href="#buffered" title="Permalink to this headline">¶</a></h2>
+<dl class="py function">
+<dt id="arcgis.raster.functions.buffered">
+<code class="sig-prename descclassname">arcgis.raster.functions.</code><code class="sig-name descname">buffered</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">raster</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.raster.functions.buffered" title="Permalink to this definition">¶</a></dt>
+<dd><p>The Buffered function is used to optimize the performance of complex function chains. 
+It stores the output from the part of the function chain that comes before it in memory.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>raster</strong> – The input raster.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>output raster</p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
 <div class="section" id="cire">
 <h2>cire<a class="headerlink" href="#cire" title="Permalink to this headline">¶</a></h2>
 <dl class="py function">
@@ -1294,17 +1610,93 @@ no argument but an optional input raster. For more information, see
 <h2>composite_band<a class="headerlink" href="#composite-band" title="Permalink to this headline">¶</a></h2>
 <dl class="py function">
 <dt id="arcgis.raster.functions.composite_band">
-<code class="sig-prename descclassname">arcgis.raster.functions.</code><code class="sig-name descname">composite_band</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">rasters</span></em>, <em class="sig-param"><span class="n">astype</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.raster.functions.composite_band" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">arcgis.raster.functions.</code><code class="sig-name descname">composite_band</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">rasters</span></em>, <em class="sig-param"><span class="n">astype</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">cellsize_type</span><span class="o">=</span><span class="default_value">'MaxOf'</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.raster.functions.composite_band" title="Permalink to this definition">¶</a></dt>
 <dd><p>Combines multiple images to form a multiband image.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>rasters</strong> – input rasters</p></li>
 <li><p><strong>astype</strong> – output pixel type</p></li>
+<li><p><strong>cellsize_type</strong> – The cell size used to create the output raster.
+one of “FirstOf”, “MinOf”, “MaxOf “MeanOf”, “LastOf”</p></li>
 </ul>
 </dd>
 <dt class="field-even">Returns</dt>
 <dd class="field-even"><p>the multiband image</p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+<div class="section" id="compute-change">
+<h2>compute_change<a class="headerlink" href="#compute-change" title="Permalink to this headline">¶</a></h2>
+<dl class="py function">
+<dt id="arcgis.raster.functions.compute_change">
+<code class="sig-prename descclassname">arcgis.raster.functions.</code><code class="sig-name descname">compute_change</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">raster1</span></em>, <em class="sig-param"><span class="n">raster2</span></em>, <em class="sig-param"><span class="n">method</span><span class="o">=</span><span class="default_value">0</span></em>, <em class="sig-param"><span class="n">from_class_values</span><span class="o">=</span><span class="default_value">[]</span></em>, <em class="sig-param"><span class="n">to_class_values</span><span class="o">=</span><span class="default_value">[]</span></em>, <em class="sig-param"><span class="n">filter_method</span><span class="o">=</span><span class="default_value">1</span></em>, <em class="sig-param"><span class="n">define_transition_colors</span><span class="o">=</span><span class="default_value">0</span></em>, <em class="sig-param"><span class="n">extent_type</span><span class="o">=</span><span class="default_value">'IntersectionOf'</span></em>, <em class="sig-param"><span class="n">cellsize_type</span><span class="o">=</span><span class="default_value">'MaxOf'</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.raster.functions.compute_change" title="Permalink to this definition">¶</a></dt>
+<dd><p>Produce raster outputs representing of various changes.
+Function available in ArcGIS Image Server 10.8.1 and higher.</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 16%" />
+<col style="width: 84%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>Argument</strong></p></td>
+<td><p><strong>Description</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>raster1</p></td>
+<td><p>Required ImageryLayer object. The first raster for compute change function.
+To evaluate change from time 1 (earlier) to time 2 (later), enter the time 1 raster here.</p></td>
+</tr>
+<tr class="row-odd"><td><p>raster2</p></td>
+<td><p>Required ImageryLayer object. The second raster for compute change function.
+To evaluate change from time 1 (earlier) to time 2 (later), enter the time 2 raster.</p></td>
+</tr>
+<tr class="row-even"><td><p>method</p></td>
+<td><p>Optional string. Specifies the method to be used.
+- DIFFERENCE : The mathematical difference, or subtraction, between the pixel values in the input rasters will be calculated. This is the default.
+- RELATIVE_DIFFERENCE : The difference in pixel values, accounting for the magnitudes of the values being compared, will be calculated.
+- CATEGORICAL_DIFFERENCE : The difference between two categorical or thematic rasters will be calculated, where the output contains class transitions that occurred between the two rasters.</p>
+<dl class="simple">
+<dt>Example:</dt><dd><p>“DIFFERENCE”</p>
+</dd>
+</dl>
+</td>
+</tr>
+<tr class="row-odd"><td><p>from_class_values</p></td>
+<td><p>Optional list. List of integer values corresponding to the ClassValue
+field in raster1.
+Required if method is CATEGORICAL_DIFFERENCE.</p></td>
+</tr>
+<tr class="row-even"><td><p>to_class_values</p></td>
+<td><p>Optional list. List of integer values corresponding to the ClassValue
+field in raster2.
+Required if method is CATEGORICAL_DIFFERENCE.</p></td>
+</tr>
+<tr class="row-odd"><td><p>filter_method</p></td>
+<td><p>Optional string. Default value is “CHANGED_PIXELS_ONLY” (1).
+Possible options are:
+- ALL
+- CHANGED_PIXELS_ONLY
+- UNCHANGED_PIXELS_ONLY</p></td>
+</tr>
+<tr class="row-even"><td><p>define_transition_colors</p></td>
+<td><p>Optional string. Defines the method used to assign color for the output classes
+- AVERAGE : The color of the pixel will be the average of the color of its original class and the color of its final class.
+- FROM_COLOR : The color of the pixel will be the color of its original class.
+- TO_COLOR :The color of the pixel will be the color of its final class.</p></td>
+</tr>
+<tr class="row-odd"><td><p>extent_type</p></td>
+<td><p>Optional string.  One of “FirstOf”, “IntersectionOf” “UnionOf”, “LastOf”</p></td>
+</tr>
+<tr class="row-even"><td><p>cellsize_type</p></td>
+<td><p>Optional string. One of “FirstOf”, “MinOf”, “MaxOf “MeanOf”, “LastOf”</p></td>
+</tr>
+</tbody>
+</table>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>Imagery layer</p>
 </dd>
 </dl>
 </dd></dl>
@@ -1355,7 +1747,7 @@ no argument but an optional input raster. For more information, see
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>constant</strong> – Required list. The value of the constant to be added to the virtual raster.</p></li>
-<li><p><strong>raster_info</strong> – <p>Required Raster info dictionary or ImageryLayer object to set the properties of the output raster.
+<li><p><strong>raster_info</strong> – <p>Required Raster info dictionary or arcgis.raster.RasterInfo object or ImageryLayer object to set the properties of the output raster.
 if ImageryLayer is specified then the raster information is obtained from the ImageryLayer specified.</p>
 <p>Example for RasterInfo dict -</p>
 <p>{‘bandCount’: 3,’extent’: {“xmin”: 4488761.95,
@@ -1382,6 +1774,32 @@ If gis parameter is not specified the output of constant_raster() cannot be disp
 </dd>
 <dt class="field-even">Returns</dt>
 <dd class="field-even"><p>output raster</p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+<div class="section" id="contour">
+<h2>contour<a class="headerlink" href="#contour" title="Permalink to this headline">¶</a></h2>
+<dl class="py function">
+<dt id="arcgis.raster.functions.contour">
+<code class="sig-prename descclassname">arcgis.raster.functions.</code><code class="sig-name descname">contour</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">raster</span></em>, <em class="sig-param"><span class="n">adaptive_smoothing</span><span class="o">=</span><span class="default_value">2.5</span></em>, <em class="sig-param"><span class="n">contour_type</span><span class="o">=</span><span class="default_value">'CONTOUR_LINES'</span></em>, <em class="sig-param"><span class="n">z_base</span><span class="o">=</span><span class="default_value">0</span></em>, <em class="sig-param"><span class="n">number_of_contours</span><span class="o">=</span><span class="default_value">0</span></em>, <em class="sig-param"><span class="n">contour_interval</span><span class="o">=</span><span class="default_value">100</span></em>, <em class="sig-param"><span class="n">nth_contour_line_in_bold</span><span class="o">=</span><span class="default_value">5</span></em>, <em class="sig-param"><span class="n">z_factor</span><span class="o">=</span><span class="default_value">1</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.raster.functions.contour" title="Permalink to this definition">¶</a></dt>
+<dd><p>Creates contour lines.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>raster</strong> – the raster from which the contour is created</p></li>
+<li><p><strong>adaptive_smoothing</strong><strong>(</strong><strong>double</strong><strong>)</strong> – adaptive smooting value, e.g., 2.5</p></li>
+<li><p><strong>contour_type</strong><strong>(</strong><strong>string</strong><strong>)</strong> – contour type. Available values could be “CONTOUR_LINES”, “CONTOUR_FILL” or “SMOOTH_SURFACE_ONLY”</p></li>
+<li><p><strong>z_base</strong><strong>(</strong><strong>double</strong><strong>)</strong> – the z-base value, e.g., 0</p></li>
+<li><p><strong>number_of_contours</strong><strong>(</strong><strong>int</strong><strong>)</strong> – the number of contours, e.g., 0</p></li>
+<li><p><strong>contour_interval</strong><strong>(</strong><strong>double</strong><strong>)</strong> – the contour interval, e.g., 100</p></li>
+<li><p><strong>nth_contour_line_in_bold</strong><strong>(</strong><strong>int</strong><strong>)</strong> – the nth contour line that would be rendered in bold, e.g., 5</p></li>
+<li><p><strong>z_factor</strong><strong>(</strong><strong>double</strong><strong>)</strong> – the z-factor, e.g., 1</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p></p>
 </dd>
 </dl>
 </dd></dl>
@@ -1501,6 +1919,65 @@ of the surface. Refer to this conceptual help on how it works.</p>
 </dd>
 <dt class="field-even">Returns</dt>
 <dd class="field-even"><p>the output raster</p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+<div class="section" id="detect-change-using-change-analysis-raster">
+<h2>detect_change_using_change_analysis_raster<a class="headerlink" href="#detect-change-using-change-analysis-raster" title="Permalink to this headline">¶</a></h2>
+<dl class="py function">
+<dt id="arcgis.raster.functions.detect_change_using_change_analysis_raster">
+<code class="sig-prename descclassname">arcgis.raster.functions.</code><code class="sig-name descname">detect_change_using_change_analysis_raster</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">raster</span></em>, <em class="sig-param"><span class="n">change_type</span><span class="o">=</span><span class="default_value">'TIME_OF_LATEST_CHANGE'</span></em>, <em class="sig-param"><span class="n">max_number_of_changes</span><span class="o">=</span><span class="default_value">1</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.raster.functions.detect_change_using_change_analysis_raster" title="Permalink to this definition">¶</a></dt>
+<dd><p>Function generates a raster containing pixel change information using the 
+output change analysis raster from the arcgis.raster.analytics.analyze_changes_using_ccdc function.
+Function available in ArcGIS Image Server 10.8.1 and higher.</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 21%" />
+<col style="width: 79%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>Argument</strong></p></td>
+<td><p><strong>Description</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>raster</p></td>
+<td><p>Required ImageryLayer object. The raster generated from the analyze_changes_using_ccdc.</p></td>
+</tr>
+<tr class="row-odd"><td><p>change_type</p></td>
+<td><p>Optional String. Specifies the change information to calculate.</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>TIME_OF_LATEST_CHANGE (0) - Each pixel will contain the date of the most recent change for that pixel in the time series.</p></li>
+<li><p>TIME_OF_EARLIEST_CHANGE (1) - Each pixel will contain the date of the earliest change for that pixel in the time series.</p></li>
+<li><p>TIME_OF_LARGEST_CHANGE (2) - Each pixel will contain the date of the most significant change for that pixel in the time series.</p></li>
+<li><p>NUM_OF_CHANGES (3) - Each pixel will contain the total number of times the pixel changed in the time series.</p></li>
+</ul>
+</div></blockquote>
+<dl class="simple">
+<dt>Example:</dt><dd><p>“TIME_OF_LATEST_CHANGE”</p>
+</dd>
+</dl>
+</td>
+</tr>
+<tr class="row-even"><td><p>max_number_of_changes</p></td>
+<td><p>Optional Integer. The maximum number of changes per pixel that will
+be calculated when the change_type parameter is set to
+TIME_OF_LATEST_CHANGE, TIME_OF_EARLIEST_CHANGE, or TIME_OF_LARGEST_CHANGE.
+This number corresponds to the number of bands in the output raster.
+The default is 1, meaning only one change date will be calculated,
+and the output raster will contain only one band.</p>
+<dl class="simple">
+<dt>Example:</dt><dd><p>3</p>
+</dd>
+</dl>
+</td>
+</tr>
+</tbody>
+</table>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>Imagery layer</p>
 </dd>
 </dl>
 </dd></dl>
@@ -1938,7 +2415,7 @@ where eta = (2*(NIR^2-Red^2)+1.5*NIR+0.5*Red)/(NIR+Red+0.5)</p>
 <h2>generate_trend<a class="headerlink" href="#generate-trend" title="Permalink to this headline">¶</a></h2>
 <dl class="py function">
 <dt id="arcgis.raster.functions.generate_trend">
-<code class="sig-prename descclassname">arcgis.raster.functions.</code><code class="sig-name descname">generate_trend</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">raster</span></em>, <em class="sig-param"><span class="n">dimension_name</span></em>, <em class="sig-param"><span class="n">regression_type</span><span class="o">=</span><span class="default_value">0</span></em>, <em class="sig-param"><span class="n">cycle_length</span><span class="o">=</span><span class="default_value">1</span></em>, <em class="sig-param"><span class="n">cycle_unit</span><span class="o">=</span><span class="default_value">'YEARS'</span></em>, <em class="sig-param"><span class="n">harmonic_frequency</span><span class="o">=</span><span class="default_value">1</span></em>, <em class="sig-param"><span class="n">polynomial_order</span><span class="o">=</span><span class="default_value">2</span></em>, <em class="sig-param"><span class="n">ignore_nodata</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="n">rmse</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="n">r2</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">slope_p_value</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.raster.functions.generate_trend" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">arcgis.raster.functions.</code><code class="sig-name descname">generate_trend</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">raster</span></em>, <em class="sig-param"><span class="n">dimension_name</span></em>, <em class="sig-param"><span class="n">regression_type</span><span class="o">=</span><span class="default_value">0</span></em>, <em class="sig-param"><span class="n">cycle_length</span><span class="o">=</span><span class="default_value">1</span></em>, <em class="sig-param"><span class="n">cycle_unit</span><span class="o">=</span><span class="default_value">'YEARS'</span></em>, <em class="sig-param"><span class="n">harmonic_frequency</span><span class="o">=</span><span class="default_value">1</span></em>, <em class="sig-param"><span class="n">polynomial_order</span><span class="o">=</span><span class="default_value">2</span></em>, <em class="sig-param"><span class="n">ignore_nodata</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="n">rmse</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="n">r2</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">slope_p_value</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">seasonal_period</span><span class="o">=</span><span class="default_value">'DAYS'</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.raster.functions.generate_trend" title="Permalink to this definition">¶</a></dt>
 <dd><p>Estimates the trend for each pixel along a dimension for one or more variables in a multidimensional raster.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -1951,6 +2428,8 @@ variable or variables selected in the analysis.</p></li>
 <li><p>0 (LINEAR) : Fits the pixel values for a variable along a linear trend line. This is the default.</p></li>
 <li><p>1 (HARMONIC) : Fits the pixel values for a variable along a harmonic trend line.</p></li>
 <li><p>2 (POLYNOMIAL) : Fits the pixel values for a variable along a second-order polynomial trend line.</p></li>
+<li><p>3 (MANN-KENDALL) : Variable pixel values will be evaluated using the Mann-Kendall trend test.</p></li>
+<li><p>4 (SEASONAL-KENDALL) : Variable pixel values will be evaluated using the Seasonal-Kendall trend test.</p></li>
 </ul>
 </p></li>
 <li><p><strong>cycle_length</strong> – Optional Integer. The length of periodic variation to model. This parameter is required when Trend Line Type is
@@ -1988,6 +2467,8 @@ is only included in the trend analysis for a polynomial regression (regression_t
 <li><p>False : The p-value will not be calculated. This is the default.</p></li>
 </ul>
 </p></li>
+<li><p><strong>seasonal_period</strong> – Optional String. Specifies the seasonal period. Default - “DAYS”
+Possible Options - “DAYS”, “MONTHS”</p></li>
 </ul>
 </dd>
 <dt class="field-even">Returns</dt>
@@ -2001,24 +2482,28 @@ is only included in the trend analysis for a polynomial regression (regression_t
 <h2>geometric<a class="headerlink" href="#geometric" title="Permalink to this headline">¶</a></h2>
 <dl class="py function">
 <dt id="arcgis.raster.functions.geometric">
-<code class="sig-prename descclassname">arcgis.raster.functions.</code><code class="sig-name descname">geometric</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">raster</span></em>, <em class="sig-param"><span class="n">geodata_transforms</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">append_geodata_xform</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">z_factor</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">z_offset</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">constant_z</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">correct_geoid</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">astype</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.raster.functions.geometric" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">arcgis.raster.functions.</code><code class="sig-name descname">geometric</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">raster</span></em>, <em class="sig-param"><span class="n">geodata_transforms</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">append_geodata_xform</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">z_factor</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">z_offset</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">constant_z</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">correct_geoid</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">astype</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">tolerance</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">dem</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.raster.functions.geometric" title="Permalink to this definition">¶</a></dt>
 <dd><p>The geometric function transforms the image (for example, orthorectification) based on a sensor definition and a
 terrain model.This function was added at 10.1.The arguments for the geometric function are as follows:</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>raster</strong> – input raster</p></li>
+<li><p><strong>raster</strong> – The input raster.</p></li>
 <li><p><strong>geodata_transforms</strong> – Please refer to the Geodata Transformations documentation for more details.</p></li>
-<li><p><strong>append_geodata_xform</strong> – boolean</p></li>
-<li><p><strong>z_factor</strong> – double</p></li>
-<li><p><strong>z_offset</strong> – double</p></li>
-<li><p><strong>constant_z</strong> – double</p></li>
-<li><p><strong>correct_geoid</strong> – boolean</p></li>
-<li><p><strong>astype</strong> – output pixel type</p></li>
+<li><p><strong>append_geodata_xform</strong> – Optional boolean. Indicates whether the geodata transformation is appended to the existing one from the input raster.</p></li>
+<li><p><strong>z_factor</strong> – Optional double. Satellite rational polynomial coefficients (RPCs) are scaled for 
+elevation datasets with vertical units in meters. If your elevation uses other 
+vertical units, enter a Z Factor to rescale to meters. For example, if your 
+elevation units are in feet, you would use a value of 0.3048 to convert your 
+elevation units from feet to meters.</p></li>
+<li><p><strong>z_offset</strong> – Optional double. The base value to be added to the elevation value in the DEM. 
+This could be used to offset elevation values that do not start at sea level.</p></li>
+<li><p><strong>constant_z</strong> – Optional double. Specify a constant elevation to use for the Geometric function.</p></li>
+<li><p><strong>correct_geoid</strong> – Optional boolean. Set it to True to apply the geoid (EGM96) correction to the z-values, 
+unless your DEM is already referenced to ellipsoidal heights.</p></li>
+<li><p><strong>tolerance</strong> – Optional double. Specify the maximum tolerable error in the geometric function, given in number of pixels.</p></li>
+<li><p><strong>dem</strong> – Optional Raster. Specify the DEM to use for the Geometric function</p></li>
 </ul>
-</dd>
-<dt class="field-even">Returns</dt>
-<dd class="field-even"><p>the output raster</p>
 </dd>
 </dl>
 </dd></dl>
@@ -2133,6 +2618,47 @@ GVITM = -0.2848*Band1-0.2435*Band2-0.5436*Band3+0.7243*Band4+0.0840*Band5-0.1800
 </dd></dl>
 
 </div>
+<div class="section" id="heat-index">
+<h2>heat_index<a class="headerlink" href="#heat-index" title="Permalink to this headline">¶</a></h2>
+<dl class="py function">
+<dt id="arcgis.raster.functions.heat_index">
+<code class="sig-prename descclassname">arcgis.raster.functions.</code><code class="sig-name descname">heat_index</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">temperature_raster</span></em>, <em class="sig-param"><span class="n">relative_humidity_raster</span></em>, <em class="sig-param"><span class="n">temperature_units</span><span class="o">=</span><span class="default_value">'Fahrenheit'</span></em>, <em class="sig-param"><span class="n">heat_index_units</span><span class="o">=</span><span class="default_value">'Fahrenheit'</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.raster.functions.heat_index" title="Permalink to this definition">¶</a></dt>
+<dd><p>Calculates apparent temperature based on ambient temperature and relative humidity. The apparent temperature is often described as how hot it feels to the human body.</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 27%" />
+<col style="width: 73%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>Argument</strong></p></td>
+<td><p><strong>Description</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>temperature_raster</p></td>
+<td><p>The raster that represent temperature. A single-band raster where pixel
+values represent ambient air temperature.</p></td>
+</tr>
+<tr class="row-odd"><td><p>relative_humidity_raster</p></td>
+<td><p>The raster that represent relative humidity. A single-band raster
+where pixel values represent relative humidity as a percentage value between 0 and 100.</p></td>
+</tr>
+<tr class="row-even"><td><p>temperature_units</p></td>
+<td><p>Optional String. The unit of measurement associated with the input
+temperature raster. Available input units are Celsius, Fahrenheit, and Kelvin.</p></td>
+</tr>
+<tr class="row-odd"><td><p>heat_index_units</p></td>
+<td><p>Optional String. The unit of measurement associated with the output raster.
+Available output units are Celsius, Fahrenheit, and Kelvin.</p></td>
+</tr>
+</tbody>
+</table>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>the output raster</p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
 <div class="section" id="hillshade">
 <h2>hillshade<a class="headerlink" href="#hillshade" title="Permalink to this headline">¶</a></h2>
 <dl class="py function">
@@ -2225,7 +2751,7 @@ and takes no arguments except a raster. For more information, see
 <td><p><strong>Description</strong></p></td>
 </tr>
 <tr class="row-even"><td><p>point_feature_class</p></td>
-<td><p>Rquired. The input point feature layer.</p></td>
+<td><p>Required. The input point feature layer.</p></td>
 </tr>
 <tr class="row-odd"><td><p>value_field</p></td>
 <td><p>Optional string. The name of the field that contains the value of the points to be interpolated.</p></td>
@@ -2762,6 +3288,30 @@ The arguments for the ml_classify function are as follows:</p>
 </dd></dl>
 
 </div>
+<div class="section" id="mndwi">
+<h2>mndwi<a class="headerlink" href="#mndwi" title="Permalink to this headline">¶</a></h2>
+<dl class="py function">
+<dt id="arcgis.raster.functions.mndwi">
+<code class="sig-prename descclassname">arcgis.raster.functions.</code><code class="sig-name descname">mndwi</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">raster</span></em>, <em class="sig-param"><span class="n">band_indexes</span><span class="o">=</span><span class="default_value">'3 6'</span></em>, <em class="sig-param"><span class="n">astype</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.raster.functions.mndwi" title="Permalink to this definition">¶</a></dt>
+<dd><p>The Modified Normalized Difference Water Index (MNDWI) uses green and SWIR bands for the enhancement 
+of open water features. It also diminishes built-up area features that are often correlated with open
+water in other indices.</p>
+<p>MNDWI = (Green - SWIR) / (Green + SWIR)</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>raster</strong> – the input raster / imagery layer</p></li>
+<li><p><strong>band_indexes</strong> – “Green SWIR”, e.g., “3 6” or [3,6]</p></li>
+<li><p><strong>astype</strong> – output pixel type</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>output raster</p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
 <div class="section" id="mod">
 <h2>mod<a class="headerlink" href="#mod" title="Permalink to this headline">¶</a></h2>
 <dl class="py function">
@@ -2929,6 +3479,101 @@ and the dimension parameter is set to StdTime.</p>
 <li><p>False - The layer will have a dimension value. This is the default.</p></li>
 </ul>
 </p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>output raster</p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+<div class="section" id="nbr">
+<h2>nbr<a class="headerlink" href="#nbr" title="Permalink to this headline">¶</a></h2>
+<dl class="py function">
+<dt id="arcgis.raster.functions.nbr">
+<code class="sig-prename descclassname">arcgis.raster.functions.</code><code class="sig-name descname">nbr</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">raster</span></em>, <em class="sig-param"><span class="n">band_indexes</span><span class="o">=</span><span class="default_value">'7 5'</span></em>, <em class="sig-param"><span class="n">astype</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.raster.functions.nbr" title="Permalink to this definition">¶</a></dt>
+<dd><p>The Normalized Burn Ratio Index (NBRI) uses the NIR and SWIR bands to emphasize burned areas,
+while mitigating illumination and atmospheric effects. Your images should be corrected to reflectance values
+before using this index.</p>
+<p>NBR = (NIR - SWIR) / (NIR+ SWIR)</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>raster</strong> – the input raster / imagery layer</p></li>
+<li><p><strong>band_indexes</strong> – “SWIR NIR”, e.g., “7 5” or [7,5]</p></li>
+<li><p><strong>astype</strong> – output pixel type</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>output raster</p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+<div class="section" id="ndbi">
+<h2>ndbi<a class="headerlink" href="#ndbi" title="Permalink to this headline">¶</a></h2>
+<dl class="py function">
+<dt id="arcgis.raster.functions.ndbi">
+<code class="sig-prename descclassname">arcgis.raster.functions.</code><code class="sig-name descname">ndbi</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">raster</span></em>, <em class="sig-param"><span class="n">band_indexes</span><span class="o">=</span><span class="default_value">'6 5'</span></em>, <em class="sig-param"><span class="n">astype</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.raster.functions.ndbi" title="Permalink to this definition">¶</a></dt>
+<dd><p>The Normalized Difference Built-up Index (NDBI) uses the NIR and SWIR bands to emphasize  man-made built-up areas.
+It is ratio based to mitigate the effects of terrain illumination differences as well as atmospheric effects.</p>
+<p>NDBI = (SWIR - NIR) / (SWIR + NIR)</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>raster</strong> – the input raster / imagery layer</p></li>
+<li><p><strong>band_indexes</strong> – “SWIR NIR”, e.g., “6 5” or [6,5]</p></li>
+<li><p><strong>astype</strong> – output pixel type</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>output raster</p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+<div class="section" id="ndmi">
+<h2>ndmi<a class="headerlink" href="#ndmi" title="Permalink to this headline">¶</a></h2>
+<dl class="py function">
+<dt id="arcgis.raster.functions.ndmi">
+<code class="sig-prename descclassname">arcgis.raster.functions.</code><code class="sig-name descname">ndmi</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">raster</span></em>, <em class="sig-param"><span class="n">band_indexes</span><span class="o">=</span><span class="default_value">'5 6'</span></em>, <em class="sig-param"><span class="n">astype</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.raster.functions.ndmi" title="Permalink to this definition">¶</a></dt>
+<dd><p>The Normalized Difference Moisture Index (NDMI) is sensitive to the moisture levels in vegetation.
+It is used to monitor droughts as well as monitor fuel levels in fire-prone areas. It uses NIR and SWIR bands to
+create a ratio designed to mitigate illumination and atmospheric effects.</p>
+<p>NDMI = (NIR - SWIR1)/(NIR + SWIR1)</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>raster</strong> – the input raster / imagery layer</p></li>
+<li><p><strong>band_indexes</strong> – “NIR SWIR1”, e.g., “5 6” or [5,6]</p></li>
+<li><p><strong>astype</strong> – output pixel type</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>output raster</p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+<div class="section" id="ndsi">
+<h2>ndsi<a class="headerlink" href="#ndsi" title="Permalink to this headline">¶</a></h2>
+<dl class="py function">
+<dt id="arcgis.raster.functions.ndsi">
+<code class="sig-prename descclassname">arcgis.raster.functions.</code><code class="sig-name descname">ndsi</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">raster</span></em>, <em class="sig-param"><span class="n">band_indexes</span><span class="o">=</span><span class="default_value">'4 6'</span></em>, <em class="sig-param"><span class="n">astype</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.raster.functions.ndsi" title="Permalink to this definition">¶</a></dt>
+<dd><p>The Normalized Difference Snow Index (NDSI) is designed to use MODIS (band 4 and band 6) and
+Landsat TM (band 2 and band 5) for identification of snow cover while ignoring cloud cover. Since it is ratio based,
+it also mitigates atmospheric effects.</p>
+<p>NDSI = (Green - SWIR) / (Green + SWIR)</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>raster</strong> – the input raster / imagery layer</p></li>
+<li><p><strong>band_indexes</strong> – “Green SWIR”, e.g., “4 6” or [4,6]</p></li>
+<li><p><strong>astype</strong> – output pixel type</p></li>
 </ul>
 </dd>
 <dt class="field-even">Returns</dt>
@@ -3258,7 +3903,7 @@ PVI = (NIR-a*Red-b)/(sqrt(1+a^2))</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>raster_info</strong> – <p>Required Raster info dictionary or ImageryLayer object to set the properties of the output raster.
+<li><p><strong>raster_info</strong> – <p>Required Raster info dictionary or arcgis.raster.RasterInfo object or ImageryLayer object to set the properties of the output raster.
 if ImageryLayer is specified then the raster information is obtained from the ImageryLayer specified.</p>
 <p>Example for RasterInfo dict -</p>
 <p>{‘bandCount’: 3,’extent’: {“xmin”: 4488761.95,
@@ -3478,6 +4123,16 @@ If dimension is StdTime, then the value must be specified in human readable time
 </dd></dl>
 
 </div>
+<div class="section" id="rasterize-features">
+<h2>rasterize_features<a class="headerlink" href="#rasterize-features" title="Permalink to this headline">¶</a></h2>
+<dl class="py function">
+<dt id="arcgis.raster.functions.rasterize_features">
+<code class="sig-prename descclassname">arcgis.raster.functions.</code><code class="sig-name descname">rasterize_features</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">raster</span></em>, <em class="sig-param"><span class="n">feature_class</span></em>, <em class="sig-param"><span class="n">class_index_field</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">resolve_overlap_method</span><span class="o">=</span><span class="default_value">0</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.raster.functions.rasterize_features" title="Permalink to this definition">¶</a></dt>
+<dd><p>Converts features to raster. Features are assigned pixel values based on the feature’s OBJECTID (default). 
+Optionally, the pixel values can be based on a user defined value field in the input feature’s attribute table.</p>
+</dd></dl>
+
+</div>
 <div class="section" id="remap">
 <h2>remap<a class="headerlink" href="#remap" title="Permalink to this headline">¶</a></h2>
 <dl class="py function">
@@ -3501,6 +4156,73 @@ see &lt;a href=”<a class="reference external" href="http://desktop.arcgis.com/
 </dd>
 <dt class="field-even">Returns</dt>
 <dd class="field-even"><p>the output raster</p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+<div class="section" id="reproject">
+<h2>reproject<a class="headerlink" href="#reproject" title="Permalink to this headline">¶</a></h2>
+<dl class="py function">
+<dt id="arcgis.raster.functions.reproject">
+<code class="sig-prename descclassname">arcgis.raster.functions.</code><code class="sig-name descname">reproject</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">raster</span></em>, <em class="sig-param"><span class="n">spatial_reference</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">x_cell_size</span><span class="o">=</span><span class="default_value">0</span></em>, <em class="sig-param"><span class="n">y_cell_size</span><span class="o">=</span><span class="default_value">0</span></em>, <em class="sig-param"><span class="n">x_registration_point</span><span class="o">=</span><span class="default_value">0</span></em>, <em class="sig-param"><span class="n">y_registration_point</span><span class="o">=</span><span class="default_value">0</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.raster.functions.reproject" title="Permalink to this definition">¶</a></dt>
+<dd><p>Modifies the projection of a raster dataset, mosaic dataset, or raster item in a 
+mosaic dataset. It can also resample the data to a new cell size and define an origin.</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 28%" />
+<col style="width: 72%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>Argument</strong></p></td>
+<td><p><strong>Description</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>raster</p></td>
+<td><p>Required Imagery Layer object. The raster dataset to be reprojected or resampled.</p></td>
+</tr>
+<tr class="row-odd"><td><p>spatial_reference</p></td>
+<td><p>Optional dict. The coordinate system used to reproject the data.</p>
+<p>Example:
+{</p>
+<blockquote>
+<div><blockquote>
+<div><p>“wkid” : 4176,
+“latestWkid” : 4176</p>
+</div></blockquote>
+<p>}</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="row-even"><td><p>x_cell_size</p></td>
+<td><p>Optional.The x-dimension to which the data should be resampled.
+This is optional. If the value is 0 or less, the output envelope
+(extent and cell sizes) is calculated from the input raster.</p></td>
+</tr>
+<tr class="row-odd"><td><p>y_cell_size</p></td>
+<td><p>Optional.The y-dimension to which the data should be resampled.
+This is optional. If the value is 0 or less, the output envelope
+(extent and cell sizes) is calculated from the input raster.</p></td>
+</tr>
+<tr class="row-even"><td><p>x_registration_point</p></td>
+<td><p>Optional. The x-coordinate used to define the upper left corner
+of the dataset. This coordinate must be defined in the units of
+the new spatial reference. If both the x_cell_size and y_cell_size
+parameters are greater than 0,  they are used along with the
+x_registration_point and y_registration_point
+parameters to define the output envelope.</p></td>
+</tr>
+<tr class="row-odd"><td><p>y_registration_point</p></td>
+<td><p>Optional. The y-coordinate used to define the upper left corner of the dataset.
+This coordinate must be defined in the units of the new spatial reference.
+If both the x_cell_size and y_cell_size parameters are greater than 0,
+they are used along with the x_registration_point and y_registration_point
+parameters to define the output envelope.</p></td>
+</tr>
+</tbody>
+</table>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>output raster with function applied</p>
 </dd>
 </dl>
 </dd></dl>
@@ -4012,11 +4734,14 @@ The arguments for the statistics function are as follows:</p>
 <li><p><strong>kernel_rows</strong> – int (e.g. 3)</p></li>
 <li><p><strong>stat_type</strong> – int or string.
 There are four types of focal statistical functions:
-1=Min, 2=Max, 3=Mean, 4=StandardDeviation
+1=Min, 2=Max, 3=Mean, 4=StandardDeviation, 5=Median, 6=Majority, 7=Minority
 -Min-Calculates the minimum value of the pixels within the neighborhood
 -Max-Calculates the maximum value of the pixels within the neighborhood
 -Mean-Calculates the average value of the pixels within the neighborhood. This is the default.
--StandardDeviation-Calculates the standard deviation value of the pixels within the neighborhood</p></li>
+-StandardDeviation-Calculates the standard deviation value of the pixels within the neighborhood
+-Median-Calculates the median value of pixels within the neighborhood.
+-Majority-Calculates the majority value, or the value that occurs most frequently, of the pixels within the neighborhood.
+-Minority-Calculates the minority value, or the value that occurs least frequently, of the pixels within the neighborhood.</p></li>
 <li><p><strong>columns</strong> – int (e.g. 3). The number of pixel rows to use in your focal neighborhood dimension.</p></li>
 <li><p><strong>rows</strong> – int (e.g. 3). The number of pixel columns to use in your focal neighborhood dimension.</p></li>
 <li><p><strong>fill_no_data_only</strong> – bool</p></li>
@@ -4030,7 +4755,7 @@ There are four types of focal statistical functions:
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>The focal_statistics() function is different from the focal_stats() function in the following aspects:</p>
-<p>The focal_statistics() function supports  Minimum, Maximum, Mean, and Standard Deviation.
+<p>The focal_statistics() function supports  Minimum, Maximum, Mean, and Standard Deviation, Median, Majority, Minority.  
 The focal_stats() function supports Mean, Majority, Maximum, Median, Minimum, Minority, Range, Standard deviation, Sum, and Variety.</p>
 <p>The focal_statistics() function supports only Rectangle.
 The focal_stats() function supports Rectangle, Circle, Annulus, Wedge, Irregular, and Weight neighborhoods.</p>
@@ -4346,6 +5071,49 @@ confidence levels by mapping them to 0-3:
 </dd></dl>
 
 </div>
+<div class="section" id="trend-to-rgb">
+<h2>trend_to_rgb<a class="headerlink" href="#trend-to-rgb" title="Permalink to this headline">¶</a></h2>
+<dl class="py function">
+<dt id="arcgis.raster.functions.trend_to_rgb">
+<code class="sig-prename descclassname">arcgis.raster.functions.</code><code class="sig-name descname">trend_to_rgb</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">raster</span></em>, <em class="sig-param"><span class="n">model_type</span><span class="o">=</span><span class="default_value">0</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.raster.functions.trend_to_rgb" title="Permalink to this definition">¶</a></dt>
+<dd><p>Display the generate trend raster.
+Function available in ArcGIS Image Server 10.8.1 and higher.</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 35%" />
+<col style="width: 65%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>Argument</strong></p></td>
+<td><p><strong>Description</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>raster</p></td>
+<td><p>Required ImageryLayer object.</p></td>
+</tr>
+<tr class="row-odd"><td><p>model_type</p></td>
+<td><p>Optional String. Specifies the model type.</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>“LINEAR” (0)</p></li>
+<li><p>“HARMONIC” (1)</p></li>
+</ul>
+</div></blockquote>
+<dl class="simple">
+<dt>Example:</dt><dd><p>“LINEAR”</p>
+</dd>
+</dl>
+</td>
+</tr>
+</tbody>
+</table>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>Imagery layer</p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
 <div class="section" id="tsavi">
 <h2>tsavi<a class="headerlink" href="#tsavi" title="Permalink to this headline">¶</a></h2>
 <dl class="py function">
@@ -4558,6 +5326,64 @@ It can be any positive or negative decimal value.</p></li>
 </dd></dl>
 
 </div>
+<div class="section" id="wind-chill">
+<h2>wind_chill<a class="headerlink" href="#wind-chill" title="Permalink to this headline">¶</a></h2>
+<dl class="py function">
+<dt id="arcgis.raster.functions.wind_chill">
+<code class="sig-prename descclassname">arcgis.raster.functions.</code><code class="sig-name descname">wind_chill</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">temperature_raster</span></em>, <em class="sig-param"><span class="n">wind_speed_raster</span></em>, <em class="sig-param"><span class="n">temperature_units</span><span class="o">=</span><span class="default_value">'Fahrenheit'</span></em>, <em class="sig-param"><span class="n">wind_speed_units</span><span class="o">=</span><span class="default_value">'mph'</span></em>, <em class="sig-param"><span class="n">wind_chill_units</span><span class="o">=</span><span class="default_value">'Fahrenheit'</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.raster.functions.wind_chill" title="Permalink to this definition">¶</a></dt>
+<dd><p>The Wind Chill function is useful for identifying dangerous winter conditions that, depending on exposure times to
+the elements, can result in frostbite or even hypothermia. Wind chill is a way to measure how cold an individual
+feels when wind is taken into account with already cold temperatures. The faster the wind speed, the more 
+quickly the body will lose heat and the colder they will feel.</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 29%" />
+<col style="width: 71%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>Argument</strong></p></td>
+<td><p><strong>Description</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>temperature_raster</p></td>
+<td><p>The raster that represent temperature. A single-band raster where pixel
+values represent ambient air temperature.</p></td>
+</tr>
+<tr class="row-odd"><td><p>wind_speed_raster</p></td>
+<td><p>The raster that represent relative humidity. A single-band raster
+where pixel values represent wind speed.</p></td>
+</tr>
+<tr class="row-even"><td><p>temperature_units</p></td>
+<td><p>Optional String. The unit of measurement associated with the input
+temperature raster. Available input units are Celsius, Fahrenheit, and Kelvin.</p></td>
+</tr>
+<tr class="row-odd"><td><p>wind_speed_units</p></td>
+<td><p>Optional String.  Defines the unit of measurement for the wind-speed raster.
+Available input units are mph, km/h, ft/s and kn. Each represents</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Miles Per Hour (mph)</p></li>
+<li><p>Kilometers Per Hour (km/h)</p></li>
+<li><p>Meters Per Second (m/s)</p></li>
+<li><p>Feet Per Second (ft/s)</p></li>
+<li><p>Knots (kn)</p></li>
+</ul>
+</div></blockquote>
+</td>
+</tr>
+<tr class="row-even"><td><p>wind_chill_units</p></td>
+<td><p>Optional String. The unit of measurement associated with the output
+raster. Available output units are Celsius, Fahrenheit, and Kelvin.</p></td>
+</tr>
+</tbody>
+</table>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>the output raster</p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
 </div>
 
 
@@ -4582,7 +5408,7 @@ It can be any positive or negative decimal value.</p></li>
   <div role="contentinfo">
     <p>
         
-        &copy; Copyright 2016-2019, Esri
+        &copy; Copyright 2016-2021, Esri
 
     </p>
   </div>
@@ -4604,6 +5430,134 @@ It can be any positive or negative decimal value.</p></li>
 
   </div>
   
+    Options v: 1.8.3
+
+  <div class="rst-versions" data-toggle="rst-versions" role="note" aria-label="versions">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      <span class="fa fa-book"> Pick an earlier version</span>
+      v: 1.8.3
+      <span class="fa fa-caret-down"></span>
+    </span>
+    <div class="rst-other-versions">
+      
+      
+      <dl>
+        <dt>Versions</dt>
+        
+          
+          <dd><a href="1.8.2/">1.8.2</a></dd>
+          
+        
+          
+          <dd><a href="1.8.1/">1.8.1</a></dd>
+          
+        
+          
+          <dd><a href="1.8.0/">1.8.0</a></dd>
+          
+        
+          
+          <dd><a href="1.7.1/">1.7.1</a></dd>
+          
+        
+          
+          <dd><a href="1.7.0/">1.7.0</a></dd>
+          
+        
+          
+          <dd><a href="1.6.2/">1.6.2</a></dd>
+          
+        
+          
+          <dd><a href="1.6.1/">1.6.1</a></dd>
+          
+        
+          
+          <dd><a href="1.6.0/">1.6.0</a></dd>
+          
+        
+          
+          <dd><a href="1.5.3/">1.5.3</a></dd>
+          
+        
+          
+          <dd><a href="1.5.2/">1.5.2</a></dd>
+          
+        
+          
+          <dd><a href="1.5.1/">1.5.1</a></dd>
+          
+        
+          
+          <dd><a href="1.5.0/">1.5.0</a></dd>
+          
+        
+          
+          <dd><a href="1.4.2/">1.4.2</a></dd>
+          
+        
+          
+          <dd><a href="1.4.1/">1.4.1</a></dd>
+          
+        
+          
+          <dd><a href="1.4.0/">1.4.0</a></dd>
+          
+        
+          
+          <dd><a href="1.3.0/">1.3.0</a></dd>
+          
+        
+          
+          <dd><a href="1.2.5/">1.2.5</a></dd>
+          
+        
+          
+          <dd><a href="1.2.4/">1.2.4</a></dd>
+          
+        
+          
+          <dd><a href="1.2.3/">1.2.3</a></dd>
+          
+        
+          
+          <dd><a href="1.2.2/">1.2.2</a></dd>
+          
+        
+          
+          <dd><a href="1.2.1/">1.2.1</a></dd>
+          
+        
+          
+          <dd><a href="1.2.0/">1.2.0</a></dd>
+          
+        
+          
+          <dd><a href="1.0.1/">1.0.1</a></dd>
+          
+        
+          
+          <dd><a href="1.0.0/">1.0.0</a></dd>
+          
+        
+          
+          <dd><a href="0.3.0/">0.3.0</a></dd>
+          
+        
+          
+          <dd><a href="0.2.0/">0.2.0</a></dd>
+          
+        
+          
+          <dd><a href="0.1.0/">0.1.0</a></dd>
+          
+        
+      </dl>
+      
+      
+      
+    </div>
+
 
   <script type="text/javascript">
       jQuery(function () {
