@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>arcgis.features.summarize_data module &mdash; arcgis 1.8.2 documentation</title>
+  <title>arcgis.features.summarize_data module &mdash; arcgis 1.8.3 documentation</title>
   
 
   
@@ -77,7 +77,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             
             
               <div class="version">
-                1.8.2
+                1.8.3
               </div>
             
           
@@ -151,7 +151,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <li class="toctree-l1"><a class="reference internal" href="arcgis.schematics.html">arcgis.schematics module</a></li>
 <li class="toctree-l1"><a class="reference internal" href="arcgis.widgets.html">arcgis.widgets module</a></li>
 <li class="toctree-l1"><a class="reference internal" href="arcgis.apps.html">arcgis.apps module</a></li>
-<li class="toctree-l1"><a class="reference internal" href="arcgis.learn.html">arcgis.learn module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.learn.toc.html">arcgis.learn module</a></li>
 </ul>
 
             
@@ -233,7 +233,7 @@ summarize_within calculates statistics for area features and attributes that ove
 <h2>aggregate_points<a class="headerlink" href="#aggregate-points" title="Permalink to this headline">¶</a></h2>
 <dl class="py function">
 <dt id="arcgis.features.summarize_data.aggregate_points">
-<code class="sig-prename descclassname">arcgis.features.summarize_data.</code><code class="sig-name descname">aggregate_points</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">point_layer</span></em>, <em class="sig-param"><span class="n">polygon_layer</span></em>, <em class="sig-param"><span class="n">keep_boundaries_with_no_points</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="n">summary_fields</span><span class="o">=</span><span class="default_value">[]</span></em>, <em class="sig-param"><span class="n">group_by_field</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">minority_majority</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">percent_points</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">output_name</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">context</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">gis</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">estimate</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">future</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">bin_type</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">bin_size</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">bin_size_unit</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.features.summarize_data.aggregate_points" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">arcgis.features.summarize_data.</code><code class="sig-name descname">aggregate_points</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">point_layer</span></em>, <em class="sig-param"><span class="n">polygon_layer</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">keep_boundaries_with_no_points</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="n">summary_fields</span><span class="o">=</span><span class="default_value">[]</span></em>, <em class="sig-param"><span class="n">group_by_field</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">minority_majority</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">percent_points</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">output_name</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">context</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">gis</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">estimate</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">future</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">bin_type</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">bin_size</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">bin_size_unit</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.features.summarize_data.aggregate_points" title="Permalink to this definition">¶</a></dt>
 <dd><img alt="_images/aggregate_points.png" src="_images/aggregate_points.png" />
 <p>The Aggregate Points task works with a layer of point features and a layer of polygon features. It first figures out which points fall within each polygon’s area.
 After determining this point-in-polygon spatial relationship, statistics about all points in the polygon are calculated and assigned to the area. The most basic statistic is the count of the number of points within the polygon, but you can get other statistics as well.
@@ -251,7 +251,7 @@ For example, if your points represented coffee shops and each point has a TOTAL_
 <td><p>Required point layer. The point features that will be aggregated into the polygons in the polygon_layer. See <a class="reference internal" href="arcgis.features.analysis.html#featureinput"><span class="std std-ref">Feature Input</span></a>.</p></td>
 </tr>
 <tr class="row-odd"><td><p>polygon_layer</p></td>
-<td><p>Required polygon layer. The polygon features (areas) into which the input points will be aggregated. See <a class="reference internal" href="arcgis.features.analysis.html#featureinput"><span class="std std-ref">Feature Input</span></a>.</p></td>
+<td><p>Optional polygon layer. The polygon features (areas) into which the input points will be aggregated. See <a class="reference internal" href="arcgis.features.analysis.html#featureinput"><span class="std std-ref">Feature Input</span></a>. The <cite>polygon_layer</cite> is <strong>required</strong> if the <cite>bin_type</cite>, <cite>bin_size</cite> and <cite>bin_size_unit</cite> are not specified.</p></td>
 </tr>
 <tr class="row-even"><td><p>keep_boundaries_with_no_points</p></td>
 <td><p>Optional boolean. A Boolean value that specifies whether the polygons that have no points within them should be returned in the output. The default is true.</p></td>
@@ -307,7 +307,9 @@ For Hexagon, the number and units specified determine the distance between paral
 specified. If <cite>bin_type</cite> is chosen, then <cite>bin_size</cite> and <cite>bin_size_unit</cite> specifying the size of the bins must be included.</p></td>
 </tr>
 <tr class="row-odd"><td><p>bin_size</p></td>
-<td><p>Optional Float. The distance for the bins of type <cite>bin_type</cite> that the <cite>point_layer</cite> will be aggregated into.</p></td>
+<td><p>Optional Float. The distance for the bins of type <cite>bin_type</cite> that the <cite>point_layer</cite> will be aggregated into. When generating bins for
+<cite>Square</cite> the number and units specified determine the height and length of the square. For <cite>Hexagon</cite>, the number and units specified
+determine the distance between parallel sides.</p></td>
 </tr>
 <tr class="row-even"><td><p>bin_size_unit</p></td>
 <td><p>Optional String. The linear unit to be used with the distance value specified in <cite>bin_size</cite>.
@@ -343,7 +345,7 @@ Values: <cite>Meters, Kilometers, Feet, Miles, NauticalMiles, or Yards</cite></p
 <h2>join_features<a class="headerlink" href="#join-features" title="Permalink to this headline">¶</a></h2>
 <dl class="py function">
 <dt id="arcgis.features.summarize_data.join_features">
-<code class="sig-prename descclassname">arcgis.features.summarize_data.</code><code class="sig-name descname">join_features</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">target_layer</span></em>, <em class="sig-param"><span class="n">join_layer</span></em>, <em class="sig-param"><span class="n">spatial_relationship</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">spatial_relationship_distance</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">spatial_relationship_distance_units</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">attribute_relationship</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">join_operation</span><span class="o">=</span><span class="default_value">'JoinOneToOne'</span></em>, <em class="sig-param"><span class="n">summary_fields</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">output_name</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">context</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">gis</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">estimate</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">future</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.features.summarize_data.join_features" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">arcgis.features.summarize_data.</code><code class="sig-name descname">join_features</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">target_layer</span></em>, <em class="sig-param"><span class="n">join_layer</span></em>, <em class="sig-param"><span class="n">spatial_relationship</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">spatial_relationship_distance</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">spatial_relationship_distance_units</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">attribute_relationship</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">join_operation</span><span class="o">=</span><span class="default_value">'JoinOneToOne'</span></em>, <em class="sig-param"><span class="n">summary_fields</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">output_name</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">context</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">gis</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">estimate</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">future</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">join_type</span><span class="o">=</span><span class="default_value">'INNER'</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.features.summarize_data.join_features" title="Permalink to this definition">¶</a></dt>
 <dd><img alt="_images/join_features.png" src="_images/join_features.png" />
 <p>The <code class="docutils literal notranslate"><span class="pre">join_features</span></code> method works with two layers and joins the attributes
 from one feature to another based on spatial and attribute relationships.</p>
@@ -442,6 +444,9 @@ If <code class="docutils literal notranslate"><span class="pre">output_name</spa
 <tr class="row-odd"><td><p>future</p></td>
 <td><p>Optional boolean. If True, the result will be a GPJob object and results will be returned asynchronously.</p></td>
 </tr>
+<tr class="row-even"><td><p>join_type</p></td>
+<td><p>Optional String.  Determines the type of join performed on the datasets.  The allowed values are INNER or LEFT.</p></td>
+</tr>
 </tbody>
 </table>
 <dl class="field-list simple">
@@ -491,22 +496,40 @@ store accessibility.</p></li>
 <td><p>Required layer. Point, line, or polygon features. Features in this layer that are within the specified distance to features in the <code class="docutils literal notranslate"><span class="pre">sum_nearby_layer</span></code> will be summarized. See <a class="reference internal" href="arcgis.features.analysis.html#featureinput"><span class="std std-ref">Feature Input</span></a>.</p></td>
 </tr>
 <tr class="row-even"><td><p>near_type</p></td>
-<td><p>Optional string. Defines what kind of distance measurement you want to use: straight-line distance, or by measuring travel
-time or travel distance along a street network using various modes of transportation known as travel modes.</p>
-<p>The default is ‘StraightLine’.</p>
-<p>Choice list: [‘StraightLine’, ‘Driving Distance’, ‘Driving Time’, ‘Rural Driving Distance’, ‘Rural Driving Time’, ‘Trucking Distance’, ‘Trucking Time’, ‘Walking Distance’, ‘Walking Time’]</p>
+<td><p>Optional string.
+Defines what kind of distance measurement you want to use, either straight-line distance, travel
+time or travel distance along a street network using various modes of transportation known as travel modes.
+The default is <code class="docutils literal notranslate"><span class="pre">StraightLine</span></code>.</p>
+<p>Choice list:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">StraightLine</span></code>,</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Driving</span> <span class="pre">Distance</span></code>,</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Driving</span> <span class="pre">Time</span></code>,</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Rural</span> <span class="pre">Driving</span> <span class="pre">Distance</span></code>,</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Rural</span> <span class="pre">Driving</span> <span class="pre">Time</span></code>,</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Trucking</span> <span class="pre">Distance</span></code>,</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Trucking</span> <span class="pre">Time</span></code>,</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Walking</span> <span class="pre">Distance</span></code>,</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Walking</span> <span class="pre">Time</span></code></p></li>
+</ul>
 </td>
 </tr>
 <tr class="row-odd"><td><p>distances</p></td>
-<td><p>Optional float. Float values that defines the search distance (for ‘StraightLine’ and distance based travel modes) or time (for time based travel modes).
-You can enter a single distance value or multiple values, separating each value with a space. Features that are within (or equal to) the distances you
-enter will be summarized. The units of the distance values is supplied by the units parameter.</p></td>
+<td><p>Optional list of float values. Defines the search distance for ‘StraightLine’ and distance-based travel modes, or time
+duration for time-based travel modes. You can enter single or multiple values, separating each value with a space.
+Features that are within (or equal to) the distances you enter will be summarized. The unit for <cite>distances</cite> is
+supplied by the units parameter.</p></td>
 </tr>
 <tr class="row-even"><td><p>units</p></td>
-<td><p>Otional string. If <code class="docutils literal notranslate"><span class="pre">near_type</span></code> is ‘StraightLine’ or a distance-based travel mode, this is the linear unit to be used with the distance value(s) specified in distances.</p>
-<p>Choice list: [‘Meters’, ‘Kilometers’, ‘Feet’, ‘Yards’, ‘Miles’]</p>
-<p>If <code class="docutils literal notranslate"><span class="pre">near_type</span></code> is a time based travel mode, the following values can be used as units:</p>
-<p>Choice list: [‘Seconds’, ‘Minutes’, ‘Hours’]</p>
+<td><p>Optional string. If <code class="xref py py-attr docutils literal notranslate"><span class="pre">near_type</span></code> is <cite>StraightLine</cite> or a distance-based travel mode, this is the linear unit to be
+used with the distance value(s) specified in distances.</p>
+<p>Choice list:
+| [<code class="docutils literal notranslate"><span class="pre">Meters</span></code>, <code class="docutils literal notranslate"><span class="pre">Kilometers</span></code>, <code class="docutils literal notranslate"><span class="pre">Feet</span></code>, <code class="docutils literal notranslate"><span class="pre">Yards</span></code>, <code class="docutils literal notranslate"><span class="pre">Miles</span></code>]</p>
+<p>If <code class="docutils literal notranslate"><span class="pre">near_type</span></code> is a time-based travel mode, the following values can be used as units:</p>
+<p>Choice list:</p>
+<div class="line-block">
+<div class="line">[<code class="docutils literal notranslate"><span class="pre">Seconds</span></code>, <code class="docutils literal notranslate"><span class="pre">Minutes</span></code>, <code class="docutils literal notranslate"><span class="pre">Hours</span></code>]</div>
+</div>
 <p>The default is ‘Meters’.</p>
 </td>
 </tr>
@@ -751,7 +774,7 @@ You define the name of the service. If <code class="docutils literal notranslate
 <h2>summarize_within<a class="headerlink" href="#summarize-within" title="Permalink to this headline">¶</a></h2>
 <dl class="py function">
 <dt id="arcgis.features.summarize_data.summarize_within">
-<code class="sig-prename descclassname">arcgis.features.summarize_data.</code><code class="sig-name descname">summarize_within</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">sum_within_layer</span></em>, <em class="sig-param"><span class="n">summary_layer</span></em>, <em class="sig-param"><span class="n">sum_shape</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="n">shape_units</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">summary_fields</span><span class="o">=</span><span class="default_value">[]</span></em>, <em class="sig-param"><span class="n">group_by_field</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">minority_majority</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">percent_shape</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">output_name</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">context</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">gis</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">estimate</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">future</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.features.summarize_data.summarize_within" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">arcgis.features.summarize_data.</code><code class="sig-name descname">summarize_within</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">sum_within_layer</span></em>, <em class="sig-param"><span class="n">summary_layer</span></em>, <em class="sig-param"><span class="n">sum_shape</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="n">shape_units</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">summary_fields</span><span class="o">=</span><span class="default_value">[]</span></em>, <em class="sig-param"><span class="n">group_by_field</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">minority_majority</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">percent_shape</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">output_name</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">context</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">gis</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">estimate</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">future</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">bin_type</span><span class="o">=</span><span class="default_value">'Square'</span></em>, <em class="sig-param"><span class="n">bin_size</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">bin_size_unit</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.features.summarize_data.summarize_within" title="Permalink to this definition">¶</a></dt>
 <dd><img alt="_images/summarize_within.png" src="_images/summarize_within.png" />
 <p>The <code class="docutils literal notranslate"><span class="pre">summarize_within</span></code> method finds the point, line, or polygon features (or portions of these features)
 that are within the boundaries of polygons in another layer. For example:</p>
@@ -846,6 +869,23 @@ You define the name of the service. If <code class="docutils literal notranslate
 <tr class="row-odd"><td><p>future</p></td>
 <td><p>Optional boolean. If True, the result will be a GPJob object and results will be returned asynchronously.</p></td>
 </tr>
+<tr class="row-even"><td><p>bin_type</p></td>
+<td><p>Required string. The type of bin used to calculate density.</p>
+<p>Choice list: [‘Hexagon’, ‘Square’].</p>
+</td>
+</tr>
+<tr class="row-odd"><td><p>bin_size</p></td>
+<td><p>Required float. The distance for the bins that the <code class="docutils literal notranslate"><span class="pre">input_layer</span></code> will be analyzed using.
+When generating bins, for Square, the number and units specified determine the
+height and length of the square. For <code class="docutils literal notranslate"><span class="pre">Hexagon</span></code>, the number and units specified
+determine the distance between parallel sides.</p></td>
+</tr>
+<tr class="row-even"><td><p>bin_size_unit</p></td>
+<td><p>Required string. The distance unit for the bins for which the density will be calculated.
+The linear unit to be used with the value specified in <code class="docutils literal notranslate"><span class="pre">bin_size</span></code>.</p>
+<p>The default is ‘Meters’.</p>
+</td>
+</tr>
 </tbody>
 </table>
 <dl class="field-list simple">
@@ -897,7 +937,7 @@ You define the name of the service. If <code class="docutils literal notranslate
   <div role="contentinfo">
     <p>
         
-        &copy; Copyright 2016-2019, Esri
+        &copy; Copyright 2016-2021, Esri
 
     </p>
   </div>
@@ -919,6 +959,134 @@ You define the name of the service. If <code class="docutils literal notranslate
 
   </div>
   
+    Options v: 1.8.3
+
+  <div class="rst-versions" data-toggle="rst-versions" role="note" aria-label="versions">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      <span class="fa fa-book"> Pick an earlier version</span>
+      v: 1.8.3
+      <span class="fa fa-caret-down"></span>
+    </span>
+    <div class="rst-other-versions">
+      
+      
+      <dl>
+        <dt>Versions</dt>
+        
+          
+          <dd><a href="1.8.2/">1.8.2</a></dd>
+          
+        
+          
+          <dd><a href="1.8.1/">1.8.1</a></dd>
+          
+        
+          
+          <dd><a href="1.8.0/">1.8.0</a></dd>
+          
+        
+          
+          <dd><a href="1.7.1/">1.7.1</a></dd>
+          
+        
+          
+          <dd><a href="1.7.0/">1.7.0</a></dd>
+          
+        
+          
+          <dd><a href="1.6.2/">1.6.2</a></dd>
+          
+        
+          
+          <dd><a href="1.6.1/">1.6.1</a></dd>
+          
+        
+          
+          <dd><a href="1.6.0/">1.6.0</a></dd>
+          
+        
+          
+          <dd><a href="1.5.3/">1.5.3</a></dd>
+          
+        
+          
+          <dd><a href="1.5.2/">1.5.2</a></dd>
+          
+        
+          
+          <dd><a href="1.5.1/">1.5.1</a></dd>
+          
+        
+          
+          <dd><a href="1.5.0/">1.5.0</a></dd>
+          
+        
+          
+          <dd><a href="1.4.2/">1.4.2</a></dd>
+          
+        
+          
+          <dd><a href="1.4.1/">1.4.1</a></dd>
+          
+        
+          
+          <dd><a href="1.4.0/">1.4.0</a></dd>
+          
+        
+          
+          <dd><a href="1.3.0/">1.3.0</a></dd>
+          
+        
+          
+          <dd><a href="1.2.5/">1.2.5</a></dd>
+          
+        
+          
+          <dd><a href="1.2.4/">1.2.4</a></dd>
+          
+        
+          
+          <dd><a href="1.2.3/">1.2.3</a></dd>
+          
+        
+          
+          <dd><a href="1.2.2/">1.2.2</a></dd>
+          
+        
+          
+          <dd><a href="1.2.1/">1.2.1</a></dd>
+          
+        
+          
+          <dd><a href="1.2.0/">1.2.0</a></dd>
+          
+        
+          
+          <dd><a href="1.0.1/">1.0.1</a></dd>
+          
+        
+          
+          <dd><a href="1.0.0/">1.0.0</a></dd>
+          
+        
+          
+          <dd><a href="0.3.0/">0.3.0</a></dd>
+          
+        
+          
+          <dd><a href="0.2.0/">0.2.0</a></dd>
+          
+        
+          
+          <dd><a href="0.1.0/">0.1.0</a></dd>
+          
+        
+      </dl>
+      
+      
+      
+    </div>
+
 
   <script type="text/javascript">
       jQuery(function () {

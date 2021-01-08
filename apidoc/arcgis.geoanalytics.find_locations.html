@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>arcgis.geoanalytics.find_locations module &mdash; arcgis 1.8.2 documentation</title>
+  <title>arcgis.geoanalytics.find_locations module &mdash; arcgis 1.8.3 documentation</title>
   
 
   
@@ -77,7 +77,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             
             
               <div class="version">
-                1.8.2
+                1.8.3
               </div>
             
           
@@ -139,7 +139,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <li class="toctree-l1"><a class="reference internal" href="arcgis.schematics.html">arcgis.schematics module</a></li>
 <li class="toctree-l1"><a class="reference internal" href="arcgis.widgets.html">arcgis.widgets module</a></li>
 <li class="toctree-l1"><a class="reference internal" href="arcgis.apps.html">arcgis.apps module</a></li>
-<li class="toctree-l1"><a class="reference internal" href="arcgis.learn.html">arcgis.learn module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.learn.toc.html">arcgis.learn module</a></li>
 </ul>
 
             
@@ -331,7 +331,7 @@ specified, the active GIS is used.</p></td>
 <li><p>Extent (<code class="docutils literal notranslate"><span class="pre">extent</span></code>) - A bounding box that defines the analysis area. Only those features that intersect the bounding box will be analyzed.</p></li>
 <li><p>Processing spatial reference (<code class="docutils literal notranslate"><span class="pre">processSR</span></code>) - The features will be projected into this coordinate system for analysis.</p></li>
 <li><p>Output spatial reference (<code class="docutils literal notranslate"><span class="pre">outSR</span></code>) - The features will be projected into this coordinate system after the analysis to be saved. The output spatial reference for the spatiotemporal big data store is always WGS84.</p></li>
-<li><p>Data store (<code class="docutils literal notranslate"><span class="pre">dataStore</span></code>) - Results will be saved to the specified data store. The default is the spatiotemporal big data store.</p></li>
+<li><p>Data store (<code class="docutils literal notranslate"><span class="pre">dataStore</span></code>) - Results will be saved to the specified data store. For ArcGIS Enterprise, the default is the spatiotemporal big data store.</p></li>
 </ol>
 </td>
 </tr>
@@ -353,9 +353,9 @@ results. The GPJob can be queried on the status of the execution.</p>
 <span class="n">arcgis</span><span class="o">.</span><span class="n">env</span><span class="o">.</span><span class="n">verbose</span> <span class="o">=</span> <span class="kc">True</span> <span class="c1"># set environment</span>
 <span class="n">arcgis</span><span class="o">.</span><span class="n">env</span><span class="o">.</span><span class="n">defaultAggregations</span> <span class="o">=</span> <span class="kc">True</span> <span class="c1"># set environment</span>
 
-<span class="n">delay_incidents</span> <span class="o">=</span> <span class="n">output</span> <span class="o">=</span> <span class="n">detect_incidents</span><span class="p">(</span><span class="n">input_layer</span><span class="o">=</span><span class="n">snowplows</span><span class="p">,</span> 
-                                            <span class="n">track_fields</span><span class="o">=</span><span class="s2">&quot;plowID, dayOfYear&quot;</span><span class="p">,</span> 
-                                            <span class="n">start_condition_expression</span><span class="o">=</span><span class="s2">&quot;Mean($track.field[&quot;</span><span class="n">speed</span><span class="s2">&quot;].window(-5, 0)) &lt; 10&quot;</span><span class="p">,</span> 
+<span class="n">delay_incidents</span> <span class="o">=</span> <span class="n">output</span> <span class="o">=</span> <span class="n">detect_incidents</span><span class="p">(</span><span class="n">input_layer</span><span class="o">=</span><span class="n">snowplows</span><span class="p">,</span>
+                                            <span class="n">track_fields</span><span class="o">=</span><span class="s2">&quot;plowID, dayOfYear&quot;</span><span class="p">,</span>
+                                            <span class="n">start_condition_expression</span><span class="o">=</span><span class="s2">&quot;Mean($track.field[&quot;</span><span class="n">speed</span><span class="s2">&quot;].window(-5, 0)) &lt; 10&quot;</span><span class="p">,</span>
                                             <span class="n">output_name</span><span class="o">=</span><span class="s2">&quot;Slow_Plow_Incidents&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -366,32 +366,32 @@ results. The GPJob can be queried on the status of the execution.</p>
 <h2>find_dwell_locations<a class="headerlink" href="#find-dwell-locations" title="Permalink to this headline">¶</a></h2>
 <dl class="py function">
 <dt id="arcgis.geoanalytics.find_locations.find_dwell_locations">
-<code class="sig-prename descclassname">arcgis.geoanalytics.find_locations.</code><code class="sig-name descname">find_dwell_locations</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">input_layer</span></em>, <em class="sig-param"><span class="n">track_fields</span></em>, <em class="sig-param"><span class="n">distance_tolerance</span></em>, <em class="sig-param"><span class="n">distance_unit</span></em>, <em class="sig-param"><span class="n">time_tolerance</span></em>, <em class="sig-param"><span class="n">time_unit</span></em>, <em class="sig-param"><span class="n">summary_fields</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">method</span><span class="o">=</span><span class="default_value">'Planar'</span></em>, <em class="sig-param"><span class="n">dwell_type</span><span class="o">=</span><span class="default_value">'DwellMeanCenters'</span></em>, <em class="sig-param"><span class="n">output_name</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">gis</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">context</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">future</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">time_boundary_split</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">time_split_unit</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">time_reference</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.geoanalytics.find_locations.find_dwell_locations" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">arcgis.geoanalytics.find_locations.</code><code class="sig-name descname">find_dwell_locations</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">input_layer</span></em>, <em class="sig-param"><span class="n">track_fields</span></em>, <em class="sig-param"><span class="n">distance_tolerance</span></em>, <em class="sig-param"><span class="n">distance_unit</span></em>, <em class="sig-param"><span class="n">time_tolerance</span></em>, <em class="sig-param"><span class="n">time_unit</span></em>, <em class="sig-param"><span class="n">summary_fields</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">method</span><span class="o">=</span><span class="default_value">'Planar'</span></em>, <em class="sig-param"><span class="n">dwell_type</span><span class="o">=</span><span class="default_value">'DwellMeanCenters'</span></em>, <em class="sig-param"><span class="n">output_name</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">gis</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">context</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">future</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">time_boundary_split</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">time_boundary_unit</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">time_boundary_ref</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.geoanalytics.find_locations.find_dwell_locations" title="Permalink to this definition">¶</a></dt>
 <dd><img alt="_images/find_similar_locations.png" src="_images/find_similar_locations.png" />
-<p>The <code class="docutils literal notranslate"><span class="pre">find_dwell_locations</span></code> works with time-enabled points of type instant 
+<p>The <code class="docutils literal notranslate"><span class="pre">find_dwell_locations</span></code> works with time-enabled points of type instant
 to find where points dwell within a specific distance and duration.</p>
-<p>Dwell locations are determined using both time (<cite>time_tolerance</cite>) and distance 
-(<cite>distance_tolerance</cite>) values. First, the tool assigns features to a track using 
-a unique identifier. Track order is determined by the time of features. Next, 
-the distance between the first observation in a track and the next is 
-calculated. Features are considered to be part of a dwell if two temporally 
-consecutive points stay within the given distance for at least the given 
-duration. When two features are found to be part of a dwell, the first 
-feature in the dwell is used as a reference point, and the tool finds 
+<p>Dwell locations are determined using both time (<cite>time_tolerance</cite>) and distance
+(<cite>distance_tolerance</cite>) values. First, the tool assigns features to a track using
+a unique identifier. Track order is determined by the time of features. Next,
+the distance between the first observation in a track and the next is
+calculated. Features are considered to be part of a dwell if two temporally
+consecutive points stay within the given distance for at least the given
+duration. When two features are found to be part of a dwell, the first
+feature in the dwell is used as a reference point, and the tool finds
 consecutive features that are within the specified distance of the reference
-point in the dwell. Once all features within the specified distance are 
-found, the tool collects the dwell features and calculates their mean 
-center. Features before and after the current dwell are added to the dwell 
-if they are within the given distance of the dwell location’s mean center. 
+point in the dwell. Once all features within the specified distance are
+found, the tool collects the dwell features and calculates their mean
+center. Features before and after the current dwell are added to the dwell
+if they are within the given distance of the dwell location’s mean center.
 This process continues until the end of the track.</p>
-<p>For example, ecologists and conservation workers can use the Find Dwell 
+<p>For example, ecologists and conservation workers can use the Find Dwell
 Locations tool to improve the safety of elk during migratory seasons. Leverage
-the results to implement or improve protected areas in locations where the 
+the results to implement or improve protected areas in locations where the
 animals are spending the most time.</p>
-<p>For another example, let’s say you work with the Department of Transportation 
-and you want to improve traffic congestion on highways near exits. Using the 
-Find Dwell Locations tool, you can isolate areas experiencing congestion by 
-identifying vehicle tracks that stay within a certain distance for a certain 
+<p>For another example, let’s say you work with the Department of Transportation
+and you want to improve traffic congestion on highways near exits. Using the
+Find Dwell Locations tool, you can isolate areas experiencing congestion by
+identifying vehicle tracks that stay within a certain distance for a certain
 amount of time.</p>
 <table class="docutils align-default">
 <colgroup>
@@ -495,7 +495,7 @@ You define the name of the service.</p></td>
 <li><p>Extent (<code class="docutils literal notranslate"><span class="pre">extent</span></code>) - A bounding box that defines the analysis area. Only those features that intersect the bounding box will be analyzed.</p></li>
 <li><p>Processing spatial reference (<code class="docutils literal notranslate"><span class="pre">processSR</span></code>) - The features will be projected into this coordinate system for analysis.</p></li>
 <li><p>Output spatial reference (<code class="docutils literal notranslate"><span class="pre">outSR</span></code>) - The features will be projected into this coordinate system after the analysis to be saved. The output spatial reference for the spatiotemporal big data store is always WGS84.</p></li>
-<li><p>Data store (<code class="docutils literal notranslate"><span class="pre">dataStore</span></code>) - Results will be saved to the specified data store. The default is the spatiotemporal big data store.</p></li>
+<li><p>Data store (<code class="docutils literal notranslate"><span class="pre">dataStore</span></code>) - Results will be saved to the specified data store. For ArcGIS Enterprise, the default is the spatiotemporal big data store.</p></li>
 </ol>
 </td>
 </tr>
@@ -515,12 +515,12 @@ In the case above, this would be 1. See the portal documentation for
 this tool to learn more.</p>
 </td>
 </tr>
-<tr class="row-even"><td><p>time_split_unit</p></td>
+<tr class="row-even"><td><p>time_boundary_unit</p></td>
 <td><p>Optional string. The unit to detect an incident is <cite>time_boundary_split</cite> is used. This was introduced in ArcGIS Enterprise 10.8.1.</p>
 <p>Choice list: [‘Years’, ‘Months’, ‘Weeks’, ‘Days’, ‘Hours’, ‘Minutes’, ‘Seconds’, ‘Milliseconds’].</p>
 </td>
 </tr>
-<tr class="row-odd"><td><p>time_reference</p></td>
+<tr class="row-odd"><td><p>time_boundary_ref</p></td>
 <td><p>Optional datetime.detetime. The starting date/time where analysis will
 begin from. This parameter was introduced in ArcGIS Enterprise 10.8.1.</p></td>
 </tr>
@@ -546,12 +546,12 @@ begin from. This parameter was introduced in ArcGIS Enterprise 10.8.1.</p></td>
 <div><ul class="simple">
 <li><p>Which of your stores are most similar to your top performers with regard to customer profiles?</p></li>
 <li><p>Based on characteristics of villages hardest hit by the disease, which other villages are high risk?</p></li>
-<li><p>To answer questions such as these, you provide the reference locations (the <code class="docutils literal notranslate"><span class="pre">input_layer</span></code> parameter), 
-the candidate locations (the <code class="docutils literal notranslate"><span class="pre">search_layer</span></code> parameter), and the fields representing the criteria 
-you want to match. For example, the <code class="docutils literal notranslate"><span class="pre">input_layer</span></code> might be a layer containing your top performing stores 
-or the villages hardest hit by the disease. The <code class="docutils literal notranslate"><span class="pre">search_layer</span></code> contains your candidate locations to search. 
-This might be all of your stores or all other villages. Finally, you supply a list of fields to use for 
-measuring similarity. The <code class="docutils literal notranslate"><span class="pre">find_similar_locations</span></code> task will rank all of the candidate locations by how 
+<li><p>To answer questions such as these, you provide the reference locations (the <code class="docutils literal notranslate"><span class="pre">input_layer</span></code> parameter),
+the candidate locations (the <code class="docutils literal notranslate"><span class="pre">search_layer</span></code> parameter), and the fields representing the criteria
+you want to match. For example, the <code class="docutils literal notranslate"><span class="pre">input_layer</span></code> might be a layer containing your top performing stores
+or the villages hardest hit by the disease. The <code class="docutils literal notranslate"><span class="pre">search_layer</span></code> contains your candidate locations to search.
+This might be all of your stores or all other villages. Finally, you supply a list of fields to use for
+measuring similarity. The <code class="docutils literal notranslate"><span class="pre">find_similar_locations</span></code> task will rank all of the candidate locations by how
 closely they match your reference locations across all of the fields you have selected.</p></li>
 </ul>
 </div></blockquote>
@@ -645,7 +645,7 @@ You define the name of the service.</p></td>
 <li><p>Extent (<code class="docutils literal notranslate"><span class="pre">extent</span></code>) - A bounding box that defines the analysis area. Only those features that intersect the bounding box will be analyzed.</p></li>
 <li><p>Processing spatial reference (<code class="docutils literal notranslate"><span class="pre">processSR</span></code>) - The features will be projected into this coordinate system for analysis.</p></li>
 <li><p>Output spatial reference (<code class="docutils literal notranslate"><span class="pre">outSR</span></code>) - The features will be projected into this coordinate system after the analysis to be saved. The output spatial reference for the spatiotemporal big data store is always WGS84.</p></li>
-<li><p>Data store (<code class="docutils literal notranslate"><span class="pre">dataStore</span></code>) - Results will be saved to the specified data store. The default is the spatiotemporal big data store.</p></li>
+<li><p>Data store (<code class="docutils literal notranslate"><span class="pre">dataStore</span></code>) - Results will be saved to the specified data store. For ArcGIS Enterprise, the default is the spatiotemporal big data store.</p></li>
 </ol>
 </td>
 </tr>
@@ -675,9 +675,9 @@ You define the name of the service.</p></td>
 <span class="n">similar_location_result</span> <span class="o">=</span> <span class="n">find_similar_locations</span><span class="p">(</span><span class="n">input_layer</span><span class="o">=</span><span class="n">stores_layer</span><span class="p">,</span>
                                                  <span class="n">search_layer</span><span class="o">=</span><span class="n">locations</span><span class="p">,</span>
                                                  <span class="n">analysis_fields</span><span class="o">=</span><span class="s2">&quot;median_income, population, nearest_competitor&quot;</span><span class="p">,</span>
-                                                 <span class="n">most_or_least_similar</span><span class="o">=</span><span class="s2">&quot;MostSimilar&quot;</span><span class="p">,</span> 
-                                                 <span class="n">match_method</span><span class="o">=</span><span class="s2">&quot;AttributeValues&quot;</span><span class="p">,</span> 
-                                                 <span class="n">number_of_results</span><span class="o">=</span><span class="mi">50</span><span class="p">,</span> 
+                                                 <span class="n">most_or_least_similar</span><span class="o">=</span><span class="s2">&quot;MostSimilar&quot;</span><span class="p">,</span>
+                                                 <span class="n">match_method</span><span class="o">=</span><span class="s2">&quot;AttributeValues&quot;</span><span class="p">,</span>
+                                                 <span class="n">number_of_results</span><span class="o">=</span><span class="mi">50</span><span class="p">,</span>
                                                  <span class="n">output_name</span><span class="o">=</span><span class="s2">&quot;similar_locations&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -690,12 +690,12 @@ You define the name of the service.</p></td>
 <dt id="arcgis.geoanalytics.find_locations.geocode_locations">
 <code class="sig-prename descclassname">arcgis.geoanalytics.find_locations.</code><code class="sig-name descname">geocode_locations</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">input_layer</span></em>, <em class="sig-param"><span class="n">country</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">category</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">include_attributes</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="n">locator_parameters</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">output_name</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">geocode_service</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">geocode_parameters</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">gis</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">context</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">future</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.geoanalytics.find_locations.geocode_locations" title="Permalink to this definition">¶</a></dt>
 <dd><img alt="_images/geocode_locations.png" src="_images/geocode_locations.png" />
-<p>The <code class="docutils literal notranslate"><span class="pre">geocode_locations</span></code> task geocodes a table from a big data file share. 
-The task uses a geocode utility service configured with your portal. If you 
-do not have a geocode utility service configured, talk to your administrator. 
-<a class="reference external" href="https://enterprise.arcgis.com/en/portal/latest/administer/windows/configure-portal-to-geocode-addresses.htm">Learn more about configuring a locator 
+<p>The <code class="docutils literal notranslate"><span class="pre">geocode_locations</span></code> task geocodes a table from a big data file share.
+The task uses a geocode utility service configured with your portal. If you
+do not have a geocode utility service configured, talk to your administrator.
+<a class="reference external" href="https://enterprise.arcgis.com/en/portal/latest/administer/windows/configure-portal-to-geocode-addresses.htm">Learn more about configuring a locator
 service</a>.</p>
-<p>When preparing to use the Geocode Location task be sure to review <a class="reference external" href="https://enterprise.arcgis.com/en/portal/latest/use/geoanalytics-geocoding-best-practices.htm">Best Practices 
+<p>When preparing to use the Geocode Location task be sure to review <a class="reference external" href="https://enterprise.arcgis.com/en/portal/latest/use/geoanalytics-geocoding-best-practices.htm">Best Practices
 for geocoding with GeoAnalytics Server</a>.</p>
 <table class="docutils align-default">
 <colgroup>
@@ -778,7 +778,7 @@ specified, the active GIS is used.</p></td>
 For this task, there are three settings:</p>
 <p>Processing spatial reference (<code class="docutils literal notranslate"><span class="pre">processSR</span></code>) - The features will be projected into this coordinate system for analysis.
 Output spatial reference (<code class="docutils literal notranslate"><span class="pre">outSR</span></code>) - The features will be projected into this coordinate system after the analysis to be saved. The output spatial reference for the spatiotemporal big data store is always WGS84.
-Data store (<code class="docutils literal notranslate"><span class="pre">dataStore</span></code>) - Results will be saved to the specified data store. The default is the spatiotemporal big data store.</p>
+Data store (<code class="docutils literal notranslate"><span class="pre">dataStore</span></code>) - Results will be saved to the specified data store. For ArcGIS Enterprise, the default is the spatiotemporal big data store.</p>
 </td>
 </tr>
 <tr class="row-even"><td><p>future</p></td>
@@ -796,7 +796,7 @@ results. The GPJob can be queried on the status of the execution.</p></td>
 
 <span class="n">geocode_server</span> <span class="o">=</span> <span class="s2">&quot;https://mymachine.domain.com/server/rest/services/USALocator/GeocodeServer&quot;</span>
 <span class="n">geo_parameters</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;field_info&quot;</span><span class="p">:</span> <span class="s2">&quot;[(&#39;ObjectID&#39;, &#39;TEXT&#39;, 255), (&#39;Street&#39;, &#39;TEXT&#39;, 255), (&#39;City&#39;, &#39;TEXT&#39;, 255), (&#39;Region&#39;, &#39;TEXT&#39;, 255), (&#39;State&#39;, &#39;TEXT&#39;, 255)]&quot;</span><span class="p">,</span> <span class="s2">&quot;column_names&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="s2">&quot;file_type&quot;</span><span class="p">:</span> <span class="s2">&quot;table&quot;</span><span class="p">,</span> <span class="s2">&quot;header_row_exists&quot;</span><span class="p">:</span> <span class="s2">&quot;true&quot;</span><span class="p">,</span> <span class="s2">&quot;field_mapping&quot;</span><span class="p">:</span> <span class="s2">&quot;[[&quot;</span><span class="n">Street</span><span class="s2">&quot;, &quot;</span><span class="n">Street</span><span class="s2">&quot;], [&quot;</span><span class="n">City</span><span class="s2">&quot;, &quot;</span><span class="n">City</span><span class="s2">&quot;], [&quot;</span><span class="n">State</span><span class="s2">&quot;, &quot;</span><span class="n">State</span><span class="s2">&quot;], [&quot;</span><span class="n">ZIP</span><span class="s2">&quot;, &quot;</span><span class="n">ZIP</span><span class="s2">&quot;]]&quot;</span><span class="p">}</span>
-<span class="n">geocode_result</span> <span class="o">=</span> <span class="n">find_locations</span><span class="o">.</span><span class="n">geocode_locations</span><span class="p">(</span><span class="n">input_layer</span><span class="o">=</span><span class="n">NW_addresses</span><span class="p">,</span> 
+<span class="n">geocode_result</span> <span class="o">=</span> <span class="n">find_locations</span><span class="o">.</span><span class="n">geocode_locations</span><span class="p">(</span><span class="n">input_layer</span><span class="o">=</span><span class="n">NW_addresses</span><span class="p">,</span>
                                             <span class="n">output_name</span><span class="o">=</span><span class="s2">&quot;geocoded_NW_USA&quot;</span><span class="p">,</span>
                                             <span class="n">geocode_service</span><span class="o">=</span><span class="n">geocode_server</span><span class="p">,</span>
                                             <span class="n">geocode_parameters</span> <span class="o">=</span> <span class="n">geo_parameters</span><span class="p">)</span>
@@ -829,7 +829,7 @@ results. The GPJob can be queried on the status of the execution.</p></td>
   <div role="contentinfo">
     <p>
         
-        &copy; Copyright 2016-2019, Esri
+        &copy; Copyright 2016-2021, Esri
 
     </p>
   </div>
@@ -851,6 +851,134 @@ results. The GPJob can be queried on the status of the execution.</p></td>
 
   </div>
   
+    Options v: 1.8.3
+
+  <div class="rst-versions" data-toggle="rst-versions" role="note" aria-label="versions">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      <span class="fa fa-book"> Pick an earlier version</span>
+      v: 1.8.3
+      <span class="fa fa-caret-down"></span>
+    </span>
+    <div class="rst-other-versions">
+      
+      
+      <dl>
+        <dt>Versions</dt>
+        
+          
+          <dd><a href="1.8.2/">1.8.2</a></dd>
+          
+        
+          
+          <dd><a href="1.8.1/">1.8.1</a></dd>
+          
+        
+          
+          <dd><a href="1.8.0/">1.8.0</a></dd>
+          
+        
+          
+          <dd><a href="1.7.1/">1.7.1</a></dd>
+          
+        
+          
+          <dd><a href="1.7.0/">1.7.0</a></dd>
+          
+        
+          
+          <dd><a href="1.6.2/">1.6.2</a></dd>
+          
+        
+          
+          <dd><a href="1.6.1/">1.6.1</a></dd>
+          
+        
+          
+          <dd><a href="1.6.0/">1.6.0</a></dd>
+          
+        
+          
+          <dd><a href="1.5.3/">1.5.3</a></dd>
+          
+        
+          
+          <dd><a href="1.5.2/">1.5.2</a></dd>
+          
+        
+          
+          <dd><a href="1.5.1/">1.5.1</a></dd>
+          
+        
+          
+          <dd><a href="1.5.0/">1.5.0</a></dd>
+          
+        
+          
+          <dd><a href="1.4.2/">1.4.2</a></dd>
+          
+        
+          
+          <dd><a href="1.4.1/">1.4.1</a></dd>
+          
+        
+          
+          <dd><a href="1.4.0/">1.4.0</a></dd>
+          
+        
+          
+          <dd><a href="1.3.0/">1.3.0</a></dd>
+          
+        
+          
+          <dd><a href="1.2.5/">1.2.5</a></dd>
+          
+        
+          
+          <dd><a href="1.2.4/">1.2.4</a></dd>
+          
+        
+          
+          <dd><a href="1.2.3/">1.2.3</a></dd>
+          
+        
+          
+          <dd><a href="1.2.2/">1.2.2</a></dd>
+          
+        
+          
+          <dd><a href="1.2.1/">1.2.1</a></dd>
+          
+        
+          
+          <dd><a href="1.2.0/">1.2.0</a></dd>
+          
+        
+          
+          <dd><a href="1.0.1/">1.0.1</a></dd>
+          
+        
+          
+          <dd><a href="1.0.0/">1.0.0</a></dd>
+          
+        
+          
+          <dd><a href="0.3.0/">0.3.0</a></dd>
+          
+        
+          
+          <dd><a href="0.2.0/">0.2.0</a></dd>
+          
+        
+          
+          <dd><a href="0.1.0/">0.1.0</a></dd>
+          
+        
+      </dl>
+      
+      
+      
+    </div>
+
 
   <script type="text/javascript">
       jQuery(function () {

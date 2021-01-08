@@ -30,3 +30,8 @@ summarize_attributes
 summarize_within
 --------------
 .. autofunction:: arcgis.geoanalytics.summarize_data.summarize_within
+
+summarize_center_and_dispersion
+--------------
+.. autofunction:: arcgis.geoanalytics.summarize_data.summarize_center_and_dispersion
+

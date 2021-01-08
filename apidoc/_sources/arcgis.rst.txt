@@ -46,6 +46,9 @@ arcgis.widgets module
 arcgis.apps module
 ------------------
 
+arcgis.workflowmanager module
+------------------
+
 Module contents
 ---------------
 

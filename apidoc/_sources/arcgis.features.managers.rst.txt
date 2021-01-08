@@ -63,3 +63,17 @@ ValidationManager
     :inherited-members:
     :members:
     :undoc-members:
+
+WebHookServiceManager
+--------------
+.. autoclass:: arcgis.features.managers.WebHookServiceManager
+    :inherited-members:
+    :members:
+    :undoc-members:
+
+WebHook
+--------------
+.. autoclass:: arcgis.features.managers.WebHook
+    :inherited-members:
+    :members:
+    :undoc-members:

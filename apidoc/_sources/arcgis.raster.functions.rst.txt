@@ -15,9 +15,17 @@ acosh
 _____
 .. autofunction:: arcgis.raster.functions.acosh
 
+aggregate
+_________
+.. autofunction:: arcgis.raster.functions.aggregate
+
 aggregate_cells
 _______________
 .. autofunction:: arcgis.raster.functions.aggregate_cells
+
+apparent_reflectance
+____________________
+.. autofunction:: arcgis.raster.functions.apparent_reflectance
 
 apply
 _____
@@ -55,6 +63,10 @@ aspect
 ______
 .. autofunction:: arcgis.raster.functions.aspect
 
+aspect_slope
+____________
+.. autofunction:: arcgis.raster.functions.aspect_slope
+
 atan
 ____
 .. autofunction:: arcgis.raster.functions.atan
@@ -66,6 +78,10 @@ _____
 atanh
 _____
 .. autofunction:: arcgis.raster.functions.atanh
+
+bai
+_______________
+.. autofunction:: arcgis.raster.functions.bai
 
 band_arithmetic
 _______________
@@ -111,6 +127,10 @@ boolean_xor
 ___________
 .. autofunction:: arcgis.raster.functions.boolean_xor
 
+buffered
+________
+.. autofunction:: arcgis.raster.functions.buffered
+
 cire
 ____
 .. autofunction:: arcgis.raster.functions.cire
@@ -151,6 +171,10 @@ composite_band
 ______________
 .. autofunction:: arcgis.raster.functions.composite_band
 
+compute_change
+______________
+.. autofunction:: arcgis.raster.functions.compute_change
+
 con
 ___
 .. autofunction:: arcgis.raster.functions.con
@@ -158,6 +182,10 @@ ___
 constant_raster
 _______________
 .. autofunction:: arcgis.raster.functions.constant_raster
+
+contour
+_______
+.. autofunction:: arcgis.raster.functions.contour
 
 contrast_brightness
 ___________________
@@ -178,6 +206,10 @@ ____
 curvature
 _________
 .. autofunction:: arcgis.raster.functions.curvature
+
+detect_change_using_change_analysis_raster
+__________________________________________
+.. autofunction:: arcgis.raster.functions.detect_change_using_change_analysis_raster
 
 divide
 ______
@@ -271,6 +303,10 @@ gvitm
 _____
 .. autofunction:: arcgis.raster.functions.gvitm
 
+heat_index
+__________
+.. autofunction:: arcgis.raster.functions.heat_index
+
 hillshade
 _________
 .. autofunction:: arcgis.raster.functions.hillshade
@@ -362,6 +398,10 @@ ml_classify
 ___________
 .. autofunction:: arcgis.raster.functions.ml_classify
 
+mndwi
+___________
+.. autofunction:: arcgis.raster.functions.mndwi
+
 mod
 ___
 .. autofunction:: arcgis.raster.functions.mod
@@ -382,6 +422,22 @@ _____
 multidimensional_filter
 _______________________
 .. autofunction:: arcgis.raster.functions.multidimensional_filter
+
+nbr
+____
+.. autofunction:: arcgis.raster.functions.nbr
+
+ndbi
+____
+.. autofunction:: arcgis.raster.functions.ndbi
+
+ndmi
+____
+.. autofunction:: arcgis.raster.functions.ndmi
+
+ndsi
+____
+.. autofunction:: arcgis.raster.functions.ndsi
 
 ndvi
 ____
@@ -443,9 +499,17 @@ raster_collection_function
 _________________
 .. autofunction:: arcgis.raster.functions.raster_collection_function
 
+rasterize_features
+_________________
+.. autofunction:: arcgis.raster.functions.rasterize_features
+
 remap
 _____
 .. autofunction:: arcgis.raster.functions.remap
+
+reproject
+_________
+.. autofunction:: arcgis.raster.functions.reproject
 
 resample
 ________
@@ -572,6 +636,10 @@ transpose_bits
 ______________
 .. autofunction:: arcgis.raster.functions.transpose_bits
 
+trend_to_rgb
+____________
+.. autofunction:: arcgis.raster.functions.trend_to_rgb
+
 tsavi
 _____
 .. autofunction:: arcgis.raster.functions.tsavi
@@ -603,4 +671,8 @@ _____________________
 weighted_sum
 _____________________
 .. autofunction:: arcgis.raster.functions.weighted_sum
+
+wind_chill
+__________
+.. autofunction:: arcgis.raster.functions.wind_chill
 
