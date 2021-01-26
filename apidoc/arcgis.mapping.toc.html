@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>arcgis.mapping module &mdash; arcgis 1.8.3 documentation</title>
+  <title>arcgis.mapping module &mdash; arcgis 1.8.4 documentation</title>
   
 
   
@@ -77,7 +77,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             
             
               <div class="version">
-                1.8.3
+                1.8.4
               </div>
             
           
@@ -140,6 +140,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <li class="toctree-l2"><a class="reference internal" href="#visual-variables">visual_variables</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#submodules">Submodules</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="arcgis.mapping.ogc.html">arcgis.mapping.ogc module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="arcgis.mapping.forms.html">arcgis.mapping.forms module</a></li>
 </ul>
 </li>
 </ul>
@@ -448,6 +449,22 @@ for the table that is added. If not specified, appropriate defaults are applied.
 <dd class="field-odd"><p>list of events attached to the widget.</p>
 </dd>
 </dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.mapping.WebMap.forms">
+<em class="property">property </em><code class="sig-name descname">forms</code><a class="headerlink" href="#arcgis.mapping.WebMap.forms" title="Permalink to this definition">¶</a></dt>
+<dd><p>The smart forms corresponding to each layer and table in the webmap
+:return: an instance of <a class="reference internal" href="arcgis.mapping.forms.html#arcgis.mapping.forms.FormCollection" title="arcgis.mapping.forms.FormCollection"><code class="xref py py-class docutils literal notranslate"><span class="pre">arcgis.mapping.forms.FormCollection</span></code></a>
+.. code-block:: python</p>
+<blockquote>
+<div><p>wm = WebMap()
+wm.add_layer(table)
+forms = wm.forms
+form = forms.get(title=”Manhole Inspection”)
+form.title = “Manhole Inspection Form”
+form.update()</p>
+</div></blockquote>
 </dd></dl>
 
 <dl class="py method">
@@ -1738,8 +1755,8 @@ allows clients to export cache tiles. The result of this operation
 is Map Service Job. This job response contains a reference to the
 Map Service Result resource, which returns a URL to the resulting
 tile package (.tpk) or a cache raster dataset.
-exportTiles can be enabled in a service by using ArcGIS for Desktop
-or the ArcGIS Server Administrator Directory. In ArcGIS for Desktop
+exportTiles can be enabled in a service by using ArcGIS Desktop
+or the ArcGIS Server Administrator Directory. In ArcGIS Desktop
 make an admin or publisher connection to the server, go to service
 properties, and enable Allow Clients to Export Cache Tiles in the
 advanced caching page of the Service Editor. You can also specify
@@ -1747,7 +1764,7 @@ the maximum tiles clients will be allowed to download. The default
 maximum allowed tile count is 100,000. To enable this capability
 using the Administrator Directory, edit the service, and set the
 properties exportTilesAllowed=true and maxExportTilesCount=100000.</p>
-<p>At 10.2.2 and later versions, exportTiles is supported as an
+<p>In ArcGIS Server 10.2.2 and later versions, exportTiles is supported as an
 operation of the Map Server. The use of the
 <a class="reference external" href="http://Map">http://Map</a> Service/exportTiles/submitJob operation is deprecated.
 You can provide arguments to the exportTiles operation as defined
@@ -2240,7 +2257,7 @@ the dynamic layer/table is allowed.</p></td>
 <dt id="arcgis.mapping.MapFeatureLayer.get_html_popup">
 <code class="sig-name descname">get_html_popup</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">oid</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.mapping.MapFeatureLayer.get_html_popup" title="Permalink to this definition">¶</a></dt>
 <dd><p>The htmlPopup resource provides details about the HTML pop-up
-authored by the user using ArcGIS for Desktop.</p>
+authored by the user using ArcGIS Pro or ArcGIS Desktop.</p>
 <table class="docutils align-default">
 <colgroup>
 <col style="width: 18%" />
@@ -4487,6 +4504,15 @@ Must be one of the following values:</p>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.mapping.ogc.html#wmtslayer">WMTSLayer</a></li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.mapping.forms.html">arcgis.mapping.forms module</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.mapping.forms.html#formcollection">FormCollection</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.mapping.forms.html#forminfo">FormInfo</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.mapping.forms.html#formelement">FormElement</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.mapping.forms.html#formfieldelement">FormFieldElement</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.mapping.forms.html#formgroupelement">FormGroupElement</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.mapping.forms.html#formexpressioninfo">FormExpressionInfo</a></li>
+</ul>
+</li>
 </ul>
 </div>
 </div>
@@ -4536,12 +4562,12 @@ Must be one of the following values:</p>
 
   </div>
   
-    Options v: 1.8.3
+    Options v: 1.8.4
 
   <div class="rst-versions" data-toggle="rst-versions" role="note" aria-label="versions">
     <span class="rst-current-version" data-toggle="rst-current-version">
       <span class="fa fa-book"> Pick an earlier version</span>
-      v: 1.8.3
+      v: 1.8.4
       <span class="fa fa-caret-down"></span>
     </span>
     <div class="rst-other-versions">
@@ -4549,6 +4575,10 @@ Must be one of the following values:</p>
       
       <dl>
         <dt>Versions</dt>
+        
+          
+          <dd><a href="1.8.3/">1.8.3</a></dd>
+          
         
           
           <dd><a href="1.8.2/">1.8.2</a></dd>

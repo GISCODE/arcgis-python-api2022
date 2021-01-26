@@ -179,3 +179,11 @@ sample
 merge_multidimensional_rasters
 ------------------------------
 .. autofunction:: arcgis.raster.analytics.merge_multidimensional_rasters
+
+analyze_changes_using_landtrendr
+--------------------------------
+.. autofunction:: arcgis.raster.analytics.analyze_changes_using_landtrendr
+
+zonal_statistics_as_table
+-------------------------
+.. autofunction:: arcgis.raster.analytics.zonal_statistics_as_table

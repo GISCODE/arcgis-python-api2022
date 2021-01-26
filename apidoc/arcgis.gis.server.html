@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>arcgis.gis.server module &mdash; arcgis 1.8.3 documentation</title>
+  <title>arcgis.gis.server module &mdash; arcgis 1.8.4 documentation</title>
   
 
   
@@ -77,7 +77,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             
             
               <div class="version">
-                1.8.3
+                1.8.4
               </div>
             
           
@@ -254,25 +254,26 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
   <div class="section" id="module-arcgis.gis.server">
 <span id="arcgis-gis-server-module"></span><h1>arcgis.gis.server module<a class="headerlink" href="#module-arcgis.gis.server" title="Permalink to this headline">¶</a></h1>
-<p>A collection of classes for administering an ArcGIS Enterprise server.</p>
+<p>A collection of classes for administering ArcGIS Server sites.</p>
 <div class="section" id="server">
 <h2>Server<a class="headerlink" href="#server" title="Permalink to this headline">¶</a></h2>
 <dl class="py class">
 <dt id="arcgis.gis.server.Server">
 <em class="property">class </em><code class="sig-prename descclassname">arcgis.gis.server.</code><code class="sig-name descname">Server</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">url</span></em>, <em class="sig-param"><span class="n">gis</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.server.Server" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">arcgis.gis.server._common._base.BaseServer</span></code></p>
-<p>An ArcGIS Enterprise Server site used for hosting GIS Web services. This class is not
-created by users directly to access server instances in an Enterprise configuration. Use the
+<p>An ArcGIS Server site used for hosting GIS web services.</p>
+<p>This class can be directly instantied when working with stand-alone (unfederated) ArcGIS Server sites.</p>
+<p>This class is not directly created when working with federated ArcGIS Server sites, instead use the
 <a class="reference internal" href="#arcgis.gis.server.ServerManager" title="arcgis.gis.server.ServerManager"><code class="xref py py-class docutils literal notranslate"><span class="pre">ServerManager</span></code></a> <a class="reference internal" href="#arcgis.gis.server.ServerManager.list" title="arcgis.gis.server.ServerManager.list"><code class="xref py py-func docutils literal notranslate"><span class="pre">list()</span></code></a> or <a class="reference internal" href="#arcgis.gis.server.ServerManager.get" title="arcgis.gis.server.ServerManager.get"><code class="xref py py-func docutils literal notranslate"><span class="pre">get()</span></code></a> methods.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Usage Example 1: Get a GIS server federated with Enterprise</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Usage Example 1: Get an object for an ArcGIS Server site federated with an ArcGIS Enterprise portal</span>
 
 <span class="n">gis</span> <span class="o">=</span> <span class="n">GIS</span><span class="p">(</span><span class="n">profile</span><span class="o">=</span><span class="s2">&quot;your_ent_admin_profile&quot;</span><span class="p">)</span>
 
 <span class="n">hosting_server</span> <span class="o">=</span> <span class="n">gis</span><span class="o">.</span><span class="n">servers</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">role</span><span class="o">=</span><span class="s2">&quot;HOSTING_SERVER&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>For stand alone servers, directly create a <a class="reference internal" href="#arcgis.gis.server.Server" title="arcgis.gis.server.Server"><code class="xref py py-class docutils literal notranslate"><span class="pre">Server</span></code></a> instance.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Usage Example 2: Get a stand alone server that has Web Adaptor installed</span>
+<p>For stand-alone ArcGIS Server sites, directly create a <a class="reference internal" href="#arcgis.gis.server.Server" title="arcgis.gis.server.Server"><code class="xref py py-class docutils literal notranslate"><span class="pre">Server</span></code></a> instance.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Usage Example 2: Get a stand-alone ArcGIS Server site that has Web Adaptor installed</span>
 
 <span class="n">server_base_url</span> <span class="o">=</span> <span class="s2">&quot;https://example.site.com&quot;</span>
 
@@ -284,8 +285,8 @@ created by users directly to access server instances in an Enterprise configurat
 </div>
 <table class="docutils align-default">
 <colgroup>
-<col style="width: 19%" />
-<col style="width: 81%" />
+<col style="width: 17%" />
+<col style="width: 83%" />
 </colgroup>
 <tbody>
 <tr class="row-odd"><td><p><strong>Argument</strong></p></td>
@@ -293,7 +294,7 @@ created by users directly to access server instances in an Enterprise configurat
 </tr>
 <tr class="row-even"><td><p>url</p></td>
 <td><p>Required string. The URL to the ArcGIS Server administration
-end point for the ArcGIS Server Site.</p>
+end point for the ArcGIS Server site.</p>
 <p>Example: <a class="reference external" href="https://gis.mysite.com/arcgis/admin">https://gis.mysite.com/arcgis/admin</a></p>
 <p>The URL should be formatted as follows:
 &lt;scheme&gt;://&lt;fully_qualified_domain_name&gt;:&lt;port (optional)&gt;/&lt;web adaptor&gt;/admin</p>
@@ -303,16 +304,16 @@ the web server uses this hostname.</p>
 </td>
 </tr>
 <tr class="row-odd"><td><p>gis</p></td>
-<td><p>Optional string. The GIS object representing the Portal which thi
-Server is federated with. The GIS object should be logged in with a username
-in the publisher or administrator Role in order to administer the Server</p></td>
+<td><p>Optional string. The GIS object representing the ArcGIS Enterprise portal which this
+ArcGIS Server site is federated with. The GIS object should be logged in with a username
+in the publisher or administrator Role in order to administer the server.</p></td>
 </tr>
 </tbody>
 </table>
 <table class="docutils align-default">
 <colgroup>
-<col style="width: 23%" />
-<col style="width: 77%" />
+<col style="width: 21%" />
+<col style="width: 79%" />
 </colgroup>
 <tbody>
 <tr class="row-odd"><td><p><strong>Optional Argument</strong></p></td>
@@ -324,16 +325,15 @@ Example: <a class="reference external" href="https://mysite.com/arcgis">https://
 </tr>
 <tr class="row-odd"><td><p>tokenurl</p></td>
 <td><p>Optional string. Used when a site is federated or when the token
-URL differs from the site’s baseurl.  If a site is federated, the
-token URL will return as the Portal token and ArcGIS Server users
+URL differs from the site’s base url.  If a site is federated, the
+token URL will return as the portal token and ArcGIS Server users
 will not validate correctly.</p></td>
 </tr>
 <tr class="row-even"><td><p>username</p></td>
-<td><p>Optional string. The login username for BUILT-IN GIS Server security.</p></td>
+<td><p>Optional string. The login username when using built-in ArcGIS Server security.</p></td>
 </tr>
 <tr class="row-odd"><td><p>password</p></td>
-<td><p>Optional string. A secret word or phrase that must be used to gain
-access to the account above.</p></td>
+<td><p>Optional string. The password for the specified username.</p></td>
 </tr>
 <tr class="row-even"><td><p>key_file</p></td>
 <td><p>Optional string. The path to a PKI key file used to authenticate the
@@ -341,7 +341,7 @@ user to the Web Server in front of the ArcGIS Server site.</p></td>
 </tr>
 <tr class="row-odd"><td><p>cert_file</p></td>
 <td><p>Optional string. The path to PKI cert file used to authenticate the
-user to the Web Server in front of the ArcGIS Server site.</p></td>
+user to the web server in front of the ArcGIS Server site.</p></td>
 </tr>
 <tr class="row-even"><td><p>proxy_host</p></td>
 <td><p>Optional string. The web address to the proxy host if the environment
@@ -365,7 +365,7 @@ of HTTP. The default is False.</p></td>
 </tr>
 <tr class="row-even"><td><p>portal_connection</p></td>
 <td><p>Optional string. This is used when a site is federated. It is the
-ArcGIS Online or Portal GIS object used.</p></td>
+ArcGIS Enterprise portal GIS object representing the portal managing the site.</p></td>
 </tr>
 <tr class="row-odd"><td><p>initialize</p></td>
 <td><p>Optional boolean. If True, the object will attempt to reach out to
@@ -380,7 +380,7 @@ the URL resource and populate at creation time. The default is False.</p></td>
 services available on a particular server. A service represents a
 local GIS resource whose functionality has been made available on
 the server to a wider audience. For example, an ArcGIS Server
-administrator can publish an ArcMap document (.mxd) as a map
+administrator can publish a Pro map or ArcMap map document (.mxd) as a map
 service. Developers and clients can display the map service and
 query its contents.</p>
 <p>The Services Directory is available as part of the REST services
@@ -403,7 +403,7 @@ service, or the necessary model inputs for a geoprocessing service.</p>
 <dt id="arcgis.gis.server.Server.datastores">
 <em class="property">property </em><code class="sig-name descname">datastores</code><a class="headerlink" href="#arcgis.gis.server.Server.datastores" title="Permalink to this definition">¶</a></dt>
 <dd><p>Gets the information about the data holdings of the server.
-Data items are used by ArcGIS for Desktop and other clients
+Data items are used by ArcGIS Pro, ArcGIS Desktop, and other clients
 to validate data paths referenced by GIS services.
 You can register new data items with the server by using the
 Register Data Item operation. Use the Find Data Items operation to
@@ -904,7 +904,7 @@ capable of performing all these administrative tasks and hence a
 site can be thought of as a distributed peer-to-peer network of
 machines. The server machine communicates with its peers over a
 range of TCP and UDP ports that can be configured using the edit operation
-(<a class="reference external" href="http://resources.arcgis.com/en/help/arcgis-rest-api/index.html#/Edit_Machine/02r3000001st000000/">http://resources.arcgis.com/en/help/arcgis-rest-api/index.html#/Edit_Machine/02r3000001st000000/</a> ).</p>
+(<a class="reference external" href="https://developers.arcgis.com/rest/enterprise-administration/server/editmachine.htm">https://developers.arcgis.com/rest/enterprise-administration/server/editmachine.htm</a> ).</p>
 </div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
@@ -915,7 +915,7 @@ fundamental component in enabling SSL on your server. Before you
 enable SSL on your server, you need to generate a certificate and
 get it signed by a trusted CA.</p>
 <p>The Generate Certificate
-(<a class="reference external" href="http://resources.arcgis.com/en/help/arcgis-rest-api/index.html#/Generate_Certificate/02r3000001tt000000/">http://resources.arcgis.com/en/help/arcgis-rest-api/index.html#/Generate_Certificate/02r3000001tt000000/</a> )
+(<a class="reference external" href="https://developers.arcgis.com/rest/enterprise-administration/server/generatecertificate.htm">https://developers.arcgis.com/rest/enterprise-administration/server/generatecertificate.htm</a> )
 operation creates a new self-signed certificate and adds it to
 the keystore. For your convenience, the server is capable of generating
 self-signed certificates that can be used during development or
@@ -2680,7 +2680,7 @@ statistics are persisted forever.</p>
 <p>This resource provides information about the data holdings of the
 server, as well as the ability to manage (add new items, update primary
 data store, remove a data store item, etc) the data store. Data items
-are used by ArcGIS for Desktop and other clients to validate data paths
+are used by ArcGIS Pro, ArcGIS Desktop, and other clients to validate data paths
 referenced by GIS services.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
@@ -2716,8 +2716,8 @@ items.</p>
 <dd><p>Registers a new data item with the data store.</p>
 <table class="docutils align-default">
 <colgroup>
-<col style="width: 17%" />
-<col style="width: 83%" />
+<col style="width: 18%" />
+<col style="width: 82%" />
 </colgroup>
 <tbody>
 <tr class="row-odd"><td><p><strong>Argument</strong></p></td>
@@ -2728,7 +2728,7 @@ items.</p>
 </tr>
 <tr class="row-odd"><td><p>item</p></td>
 <td><p>Required string. The dictionary representing the data item.
-See <a class="reference external" href="http://resources.arcgis.com/en/help/arcgis-rest-api/index.html#//02r3000001s9000000">http://resources.arcgis.com/en/help/arcgis-rest-api/index.html#//02r3000001s9000000</a></p></td>
+See <a class="reference external" href="https://developers.arcgis.com/rest/enterprise-administration/server/dataitem.htm">https://developers.arcgis.com/rest/enterprise-administration/server/dataitem.htm</a></p></td>
 </tr>
 </tbody>
 </table>
@@ -3014,8 +3014,8 @@ applications must provide when creating a Relational Database
 Connection portal item.</p>
 <table class="docutils align-default">
 <colgroup>
-<col style="width: 14%" />
-<col style="width: 86%" />
+<col style="width: 15%" />
+<col style="width: 85%" />
 </colgroup>
 <tbody>
 <tr class="row-odd"><td><p><strong>Argument</strong></p></td>
@@ -3023,7 +3023,7 @@ Connection portal item.</p>
 </tr>
 <tr class="row-even"><td><p>type_id</p></td>
 <td><p>Required string. The datastore type ID of interest.
-See <a class="reference external" href="http://resources.arcgis.com/en/help/arcgis-rest-api/index.html#/Relational_Data_Store_Types/02r300000303000000/">http://resources.arcgis.com/en/help/arcgis-rest-api/index.html#/Relational_Data_Store_Types/02r300000303000000/</a></p></td>
+See <a class="reference external" href="https://developers.arcgis.com/rest/enterprise-administration/server/relational-data-store-types.htm">https://developers.arcgis.com/rest/enterprise-administration/server/relational-data-store-types.htm</a></p></td>
 </tr>
 </tbody>
 </table>
@@ -3858,8 +3858,8 @@ you can publish GIS services and deploy them to your server
 machines.</p>
 <table class="docutils align-default">
 <colgroup>
-<col style="width: 13%" />
-<col style="width: 87%" />
+<col style="width: 14%" />
+<col style="width: 86%" />
 </colgroup>
 <tbody>
 <tr class="row-odd"><td><p><strong>Argument</strong></p></td>
@@ -3894,7 +3894,7 @@ site will create a cluster called ‘default’ with the first available
 port numbers starting from 4004.</p></td>
 </tr>
 <tr class="row-odd"><td><p>logsSettings</p></td>
-<td><p>Optional string. Optional log settings, see <a class="reference external" href="http://resources.arcgis.com/en/help/arcgis-rest-api/index.html#/Log_Settings/02r3000001t6000000/">http://resources.arcgis.com/en/help/arcgis-rest-api/index.html#/Log_Settings/02r3000001t6000000/</a> .</p></td>
+<td><p>Optional string. Optional log settings, see <a class="reference external" href="https://developers.arcgis.com/rest/enterprise-administration/server/logssettings.htm">https://developers.arcgis.com/rest/enterprise-administration/server/logssettings.htm</a> .</p></td>
 </tr>
 <tr class="row-even"><td><p>runAsync</p></td>
 <td><p>Optional boolean. A flag to indicate if the operation needs to be run
@@ -3904,8 +3904,8 @@ asynchronously.</p></td>
 </table>
 <table class="docutils align-default">
 <colgroup>
-<col style="width: 23%" />
-<col style="width: 77%" />
+<col style="width: 21%" />
+<col style="width: 79%" />
 </colgroup>
 <tbody>
 <tr class="row-odd"><td><p><strong>Optional Argument</strong></p></td>
@@ -3913,7 +3913,7 @@ asynchronously.</p></td>
 </tr>
 <tr class="row-even"><td><p>baseurl</p></td>
 <td><p>Optional string. The root URL to a site.
-Example: <a class="reference external" href="https://mysite.com/arcgis">https://mysite.com/arcgis</a></p></td>
+Example: <a class="reference external" href="https://mysite.example.com/arcgis">https://mysite.example.com/arcgis</a></p></td>
 </tr>
 <tr class="row-odd"><td><p>tokenurl</p></td>
 <td><p>Optional string. Used when a site is federated or when the token
@@ -3922,11 +3922,10 @@ token URL will return as the Portal token and ArcGIS Server users
 will not validate correctly.</p></td>
 </tr>
 <tr class="row-even"><td><p>username</p></td>
-<td><p>Optional string. The login username for BUILT-IN security.</p></td>
+<td><p>Optional string. The login username when using built-in ArcGIS Server security.</p></td>
 </tr>
 <tr class="row-odd"><td><p>password</p></td>
-<td><p>Optional string. A secret word or phrase that must be used to gain
-access to the account above.</p></td>
+<td><p>Optional string. The password for the specified username.</p></td>
 </tr>
 <tr class="row-even"><td><p>key_file</p></td>
 <td><p>Optional string. The path to PKI key file.</p></td>
@@ -3952,7 +3951,7 @@ of HTTP. The default is False.</p></td>
 </tr>
 <tr class="row-even"><td><p>portal_connection</p></td>
 <td><p>Optional string. This is used when a site is federated. It is the
-ArcGIS Online or Portal GIS object used.</p></td>
+ArcGIS Enterprise portal GIS object representing the portal managing the site.</p></td>
 </tr>
 <tr class="row-odd"><td><p>initialize</p></td>
 <td><p>Optional boolean. If True, the object will attempt to reach out to
@@ -4786,7 +4785,7 @@ byReference is false.</p>
 <blockquote>
 <div><ul class="simple">
 <li><dl class="simple">
-<dt>clientName - Machine where ArcGIS for Desktop was used to</dt><dd><p>publish the service.</p>
+<dt>clientName - Machine where ArcGIS Pro or ArcGIS Desktop was used to</dt><dd><p>publish the service.</p>
 </dd>
 </dl>
 </li>
@@ -4906,12 +4905,12 @@ file must be uploaded.</p></td>
 
   </div>
   
-    Options v: 1.8.3
+    Options v: 1.8.4
 
   <div class="rst-versions" data-toggle="rst-versions" role="note" aria-label="versions">
     <span class="rst-current-version" data-toggle="rst-current-version">
       <span class="fa fa-book"> Pick an earlier version</span>
-      v: 1.8.3
+      v: 1.8.4
       <span class="fa fa-caret-down"></span>
     </span>
     <div class="rst-other-versions">
@@ -4919,6 +4918,10 @@ file must be uploaded.</p></td>
       
       <dl>
         <dt>Versions</dt>
+        
+          
+          <dd><a href="1.8.3/">1.8.3</a></dd>
+          
         
           
           <dd><a href="1.8.2/">1.8.2</a></dd>

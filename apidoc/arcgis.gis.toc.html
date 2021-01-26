@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>arcgis.gis module &mdash; arcgis 1.8.3 documentation</title>
+  <title>arcgis.gis module &mdash; arcgis 1.8.4 documentation</title>
   
 
   
@@ -77,7 +77,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             
             
               <div class="version">
-                1.8.3
+                1.8.4
               </div>
             
           
@@ -239,7 +239,7 @@ provides helper objects to manage (search, create, retrieve) GIS resources such 
 <p>The GIS provides a mapping widget that can be used in the Jupyter Notebook environment for visualizing GIS content
 as well as the results of your analysis. To create a new map, call the map() method.</p>
 <p>The constructor constructs a GIS object given a url and user credentials to ArcGIS Online
-or an ArcGIS Enterprise Portal. User credentials can be passed in using username/password
+or an ArcGIS Enterprise portal. User credentials can be passed in using username/password
 pair, or key_file/cert_file pair (in case of PKI). Supports built-in users, LDAP, PKI, Integrated Windows Authentication
 (using NTLM and Kerberos) and Anonymous access.</p>
 <p>If no url is provided, ArcGIS Online is used. If username/password
@@ -254,8 +254,8 @@ file/password manager by that profile name. Multiple profiles can be created and
 <p>See <a class="reference external" href="https://developers.arcgis.com/python/guide/working-with-different-authentication-schemes/">https://developers.arcgis.com/python/guide/working-with-different-authentication-schemes/</a> for examples.</p>
 <table class="docutils align-default">
 <colgroup>
-<col style="width: 17%" />
-<col style="width: 83%" />
+<col style="width: 16%" />
+<col style="width: 84%" />
 </colgroup>
 <tbody>
 <tr class="row-odd"><td><p><strong>Argument</strong></p></td>
@@ -263,9 +263,9 @@ file/password manager by that profile name. Multiple profiles can be created and
 </tr>
 <tr class="row-even"><td><p>url</p></td>
 <td><p>Optional string. If URL is None, then the URL will be ArcGIS
-Online.  This should be a web address to either a local Portal
+Online.  This should be a web address to either an ArcGIS Enterprise portal
 or to ArcGIS Online in the form:
-&lt;scheme&gt;://&lt;fully_qualified_domain_name&gt;/&lt;web_adaptor&gt; (Portal Example)
+&lt;scheme&gt;://&lt;fully_qualified_domain_name&gt;/&lt;web_adaptor&gt; (ArcGIS Enterprise example)
 <a class="reference external" href="https://gis.example.com/portal">https://gis.example.com/portal</a></p></td>
 </tr>
 <tr class="row-odd"><td><p>username</p></td>
@@ -401,7 +401,7 @@ and modify API Keys for controlled application access.</p>
 <dl class="py method">
 <dt id="arcgis.gis.GIS.datastore">
 <em class="property">property </em><code class="sig-name descname">datastore</code><a class="headerlink" href="#arcgis.gis.GIS.datastore" title="Permalink to this definition">¶</a></dt>
-<dd><p>The resource managers for GIS datastores. This is only available with Enterprises version 10.7+.
+<dd><p>The resource managers for GIS datastores. This is only available with ArcGIS Enterprise 10.7+.
 See <a class="reference internal" href="#arcgis.gis._impl._datastores.PortalDataStore" title="arcgis.gis._impl._datastores.PortalDataStore"><code class="xref py py-class docutils literal notranslate"><span class="pre">PortalDataStore</span></code></a> for more information.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
@@ -463,9 +463,9 @@ to the specified zoomlevel. See <a class="reference internal" href="arcgis.widge
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>Note: If the Jupyter Notebook server is running over http, you need to
-configure your portal/organization to allow your host and port; or else
-you will run into CORs issues when displaying this map widget.</p>
-<p>This can be accomplished by signing into your portal/organization in a
+configure your ArcGIS Enterprise portal or ArcGIS Online organization to allow your host and port; or else
+you will run into CORS issues when displaying this map widget.</p>
+<p>This can be accomplished by signing into your ArcGIS Enterprise portal or ArcGIS Online organization in a
 browser, then navigating to:</p>
 <p><cite>Organization</cite> &gt; <cite>Settings</cite> &gt; <cite>Security</cite> &gt; <cite>Allow origins</cite> &gt; <cite>Add</cite> &gt; <a class="reference external" href="http://localhost:8888">http://localhost:8888</a> (replace with the host/port you are running on)</p>
 </div>
@@ -851,6 +851,65 @@ want the service to be owned by another user, pass in this value.</p></td>
 </dd></dl>
 
 <dl class="py method">
+<dt id="arcgis.gis.Item.copy_item">
+<code class="sig-name descname">copy_item</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">*</span></em>, <em class="sig-param"><span class="n">title</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">tags</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">folder</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">include_resources</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">include_private</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.Item.copy_item" title="Permalink to this definition">¶</a></dt>
+<dd><p>The copy item operation creates a new item that is a copy of the original item on the server side.</p>
+<p>Copy operation is allowed for the following:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Original item being copied is owned by the user invoking the copy operation.</p></li>
+<li><p>User is an administrator.</p></li>
+<li><p>User has itemControl update capability.</p></li>
+</ul>
+</div></blockquote>
+<p>The new item created by the copy operation will have system generated itemID.</p>
+<p>Hosted services are copied as reference only. Reserved keywords, ratings, views, comments and listing properties are reset for the new item.</p>
+<p>Sharing access of the original item is not preserved. Sharing access of new item is set to private.</p>
+<p>Relationships and dependencies of the original item are not maintained in the new item.</p>
+<p><strong>This method is only available on ArcGIS Online</strong></p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 12%" />
+<col style="width: 88%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>Argument</strong></p></td>
+<td><p><strong>Description</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>title</p></td>
+<td><p>Optional string. The title of the destination item. If not specified, title of the original item is used.</p></td>
+</tr>
+<tr class="row-odd"><td><p>tags</p></td>
+<td><p>Optional String. New set of tags (comma separated) of the destination item.</p></td>
+</tr>
+<tr class="row-even"><td><p>folder</p></td>
+<td><p>Optional String. Folder Id of the destination item. If the folder Id is not specified, then the item remains in the same folder.</p>
+<p>If the administrator invokes a copy of an item belonging to another user, and does not specify the folder Id, the item gets created in the root folder of the administrator.</p>
+</td>
+</tr>
+<tr class="row-odd"><td><p>include_resources</p></td>
+<td><p>Optional boolean. If true, the file resources of the original
+item will be copied over to the new item. Private file resources
+will not be copied over. If false, the file resources of the
+original item will not be copied over to the new item. The
+default is false.</p></td>
+</tr>
+<tr class="row-even"><td><p>include_private</p></td>
+<td><p>If true, and if <cite>include_resources</cite> is set to true as well, then
+the private resources of the original item will be copied over to
+the new item. If false, the private file resources of the original
+item will not be copied over to the new item. The default is false.</p></td>
+</tr>
+</tbody>
+</table>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>Item</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
 <dt id="arcgis.gis.Item.create_thumbnail">
 <code class="sig-name descname">create_thumbnail</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">update</span><span class="o">=</span><span class="default_value">True</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.Item.create_thumbnail" title="Permalink to this definition">¶</a></dt>
 <dd><p>Creates a Thumbnail for a feature service portal item using the service’s symbology
@@ -885,8 +944,8 @@ The default is True.</p></td>
 layers and hosted feature layer views as a tile service.</p>
 <table class="docutils align-default">
 <colgroup>
-<col style="width: 20%" />
-<col style="width: 80%" />
+<col style="width: 18%" />
+<col style="width: 82%" />
 </colgroup>
 <tbody>
 <tr class="row-odd"><td><p><strong>Argument</strong></p></td>
@@ -906,7 +965,7 @@ Example: 80000.0</p></td>
 </tr>
 <tr class="row-odd"><td><p>cache_info</p></td>
 <td><p>Optional dictionary. If not none, administrator provides the
-tile cache info for the service. The default is the AGOL scheme.</p></td>
+tile cache info for the service. The default is the ArcGIS Online scheme.</p></td>
 </tr>
 <tr class="row-even"><td><p>build_cache</p></td>
 <td><p>Optional boolean. Default is False; if True, the cache will be
@@ -1139,8 +1198,8 @@ Service or Location Tracking View.
 This is useful for long running exports that could hold up a script.</p>
 <table class="docutils align-default">
 <colgroup>
-<col style="width: 10%" />
-<col style="width: 90%" />
+<col style="width: 11%" />
+<col style="width: 89%" />
 </colgroup>
 <tbody>
 <tr class="row-odd"><td><p><strong>Argument</strong></p></td>
@@ -1159,7 +1218,7 @@ This is useful for long running exports that could hold up a script.</p>
 </tr>
 <tr class="row-even"><td><p>parameters</p></td>
 <td><p>Optional string. A JSON object describing the layers to be exported
-and the export parameters for each layer.  See <a class="reference external" href="http://resources.arcgis.com/en/help/arcgis-rest-api/index.html#/Export_Item/02r30000008s000000/">http://resources.arcgis.com/en/help/arcgis-rest-api/index.html#/Export_Item/02r30000008s000000/</a>
+and the export parameters for each layer.  See <a class="reference external" href="https://developers.arcgis.com/rest/users-groups-and-items/export-item.htm">https://developers.arcgis.com/rest/users-groups-and-items/export-item.htm</a>
 for guidance.</p></td>
 </tr>
 <tr class="row-odd"><td><p>wait</p></td>
@@ -1352,7 +1411,7 @@ Shapefiles and file geodatabases should be packaged as <a href="#id3"><span clas
 <p>Tiled map services can be created from service definition (<a href="#id5"><span class="problematic" id="id6">*</span></a>.sd) files, tile packages, and existing feature services.</p>
 <p>Vector tile services can be created from vector tile package (<a href="#id7"><span class="problematic" id="id8">*</span></a>.vtpk) files.</p>
 <p>Scene services can be created from scene layer package (<a href="#id9"><span class="problematic" id="id10">*</span></a>.spk, <a href="#id11"><span class="problematic" id="id12">*</span></a>.slpk) files.</p>
-<p>Service definitions are authored in ArcGIS for Desktop and contain both the cartographic definition for a map
+<p>Service definitions are authored in ArcGIS Pro or ArcGIS Desktop and contain both the cartographic definition for a map
 as well as its packaged data together with the definition of the geo-service to be created.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
@@ -1360,8 +1419,8 @@ as well as its packaged data together with the definition of the geo-service to 
 </div>
 <table class="docutils align-default">
 <colgroup>
-<col style="width: 11%" />
-<col style="width: 89%" />
+<col style="width: 13%" />
+<col style="width: 87%" />
 </colgroup>
 <tbody>
 <tr class="row-odd"><td><p><strong>Argument</strong></p></td>
@@ -1369,7 +1428,7 @@ as well as its packaged data together with the definition of the geo-service to 
 </tr>
 <tr class="row-even"><td><p>publish_parameters</p></td>
 <td><p>Optional dictionary. containing publish instructions and customizations.
-Cannot be combined with overwrite.  See <a class="reference external" href="http://resources.arcgis.com/en/help/arcgis-rest-api/index.html#/Publish_Item/02r300000080000000/">http://resources.arcgis.com/en/help/arcgis-rest-api/index.html#/Publish_Item/02r300000080000000/</a> for details.</p></td>
+Cannot be combined with overwrite.  See <a class="reference external" href="https://developers.arcgis.com/rest/users-groups-and-items/publish-item.htm">https://developers.arcgis.com/rest/users-groups-and-items/publish-item.htm</a> for details.</p></td>
 </tr>
 <tr class="row-odd"><td><p>address_fields</p></td>
 <td><p>Optional dictionary. containing mapping of df columns to address fields,
@@ -1381,7 +1440,7 @@ eg: output_type=’Tiles’</p></td>
 </tr>
 <tr class="row-odd"><td><p>overwrite</p></td>
 <td><p>Optional boolean.   If True, the hosted feature service is overwritten.
-Only available in ArcGIS Online and Portal for ArcGIS 10.5 or later.</p></td>
+Only available in ArcGIS Enterprise 10.5+ and ArcGIS Online.</p></td>
 </tr>
 <tr class="row-even"><td><p>file_type</p></td>
 <td><p>Optional string.  Some formats are not automatically detected, when this occurs, the
@@ -1397,8 +1456,10 @@ and applicable for the file_type, the value will built cache
 for the service.</p></td>
 </tr>
 <tr class="row-even"><td><p>item_id</p></td>
-<td><p>Optionl String. <strong>Available in Enterprise/AGOL 10.8.1+</strong>.  A string
-of 32 character UID without any special characters.</p>
+<td><p>Optional string. Available in ArcGIS Enterprise 10.8.1+. Not available in ArcGIS Online.
+This parameter allows the desired item id to be specified during creation which
+can be useful for cloning and automated content creation scenarios.
+The specified id must be a 32 character GUID string without any special characters.</p>
 <p>If the <cite>item_id</cite> is already being used, an error will be raised
 during the <cite>publish</cite> process.</p>
 <p>Example: item_id=9311d21a9a2047d19c0faaebd6f2cca6</p>
@@ -1411,7 +1472,7 @@ during the <cite>publish</cite> process.</p>
 <dd class="field-odd"><p>An arcgis.gis.Item object corresponding to the published web layer.</p>
 </dd>
 </dl>
-<p>For publish_parameters, see <a class="reference external" href="http://resources.arcgis.com/en/help/arcgis-rest-api/index.html#/Publish_Item/02r300000080000000/">http://resources.arcgis.com/en/help/arcgis-rest-api/index.html#/Publish_Item/02r300000080000000/</a></p>
+<p>For publish_parameters, see <a class="reference external" href="https://developers.arcgis.com/rest/users-groups-and-items/publish-item.htm">https://developers.arcgis.com/rest/users-groups-and-items/publish-item.htm</a></p>
 </dd></dl>
 
 <dl class="py method">
@@ -1823,7 +1884,7 @@ or not allowed (false).</p></td>
 </tr>
 </tbody>
 </table>
-<p>URL 1: <a class="reference external" href="http://resources.arcgis.com/en/help/arcgis-rest-api/index.html#//02r3000000ms000000">http://resources.arcgis.com/en/help/arcgis-rest-api/index.html#//02r3000000ms000000</a></p>
+<p>URL 1: <a class="reference external" href="https://developers.arcgis.com/rest/users-groups-and-items/items-and-item-types.htm">https://developers.arcgis.com/rest/users-groups-and-items/items-and-item-types.htm</a></p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
 <dd class="field-odd"><p>A boolean indicating success (True) or failure (False).</p>
@@ -1921,7 +1982,7 @@ as a dictionary when False</p></td>
 <dt id="arcgis.gis.User">
 <em class="property">class </em><code class="sig-prename descclassname">arcgis.gis.</code><code class="sig-name descname">User</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">gis</span></em>, <em class="sig-param"><span class="n">username</span></em>, <em class="sig-param"><span class="n">userdict</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.User" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">dict</span></code></p>
-<p>Represents a registered user of the GIS (ArcGIS Online, or Portal for ArcGIS).</p>
+<p>Represents a registered user of the GIS (ArcGIS Online or ArcGIS Enterprise).</p>
 <table class="docutils align-default">
 <colgroup>
 <col style="width: 8%" />
@@ -2044,7 +2105,7 @@ For storage estimate of a user’s items, see code example in the <a class="refe
 <td><p>The identity provider for the organization.&lt;br&gt;Values: arcgis (for built-in users) ,enterprise (for external users managed by an enterprise identity store), facebook (for public accounts in ArcGIS Online), google (for public accounts in ArcGIS Online)</p></td>
 </tr>
 <tr class="row-even"><td><p>id</p></td>
-<td><p>(optional) The unique identifier of the user used on AGOL/ArcGIS Enterprise 10.7+</p></td>
+<td><p>(optional) The unique identifier of the user used in ArcGIS Online or ArcGIS Enterprise 10.7+</p></td>
 </tr>
 </tbody>
 </table>
@@ -2672,7 +2733,7 @@ returns the user type and assigned applications</p>
 <dt id="arcgis.gis.Group">
 <em class="property">class </em><code class="sig-prename descclassname">arcgis.gis.</code><code class="sig-name descname">Group</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">gis</span></em>, <em class="sig-param"><span class="n">groupid</span></em>, <em class="sig-param"><span class="n">groupdict</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.Group" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">dict</span></code></p>
-<p>Represents a group within the GIS (ArcGIS Online or Portal for ArcGIS).</p>
+<p>Represents a group within the GIS (ArcGIS Online or ArcGIS Enterprise).</p>
 <dl class="py method">
 <dt id="arcgis.gis.Group.add_users">
 <code class="sig-name descname">add_users</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">usernames</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">admins</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.Group.add_users" title="Permalink to this definition">¶</a></dt>
@@ -3236,6 +3297,34 @@ is False.</p></td>
 </dl>
 </dd></dl>
 
+<dl class="py method">
+<dt id="arcgis.gis.Group.update_users_roles">
+<code class="sig-name descname">update_users_roles</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">managers</span><span class="p">:</span> <span class="n">list</span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="n">users</span><span class="p">:</span> <span class="n">list</span> <span class="o">=</span> <span class="default_value">None</span></em><span class="sig-paren">)</span> &#x2192; list<a class="headerlink" href="#arcgis.gis.Group.update_users_roles" title="Permalink to this definition">¶</a></dt>
+<dd><p>Updates a set of users to either Group’s Managers or Members</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 15%" />
+<col style="width: 85%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>Argument</strong></p></td>
+<td><p><strong>Description</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>managers</p></td>
+<td><p>Required List.  A comma-separated array of User objects to upgrade to a group manager role.</p></td>
+</tr>
+<tr class="row-odd"><td><p>users</p></td>
+<td><p>Required List.  A comma-separated array of User objects to make group member roles.</p></td>
+</tr>
+</tbody>
+</table>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>List[dict]</p>
+</dd>
+</dl>
+</dd></dl>
+
 </dd></dl>
 
 </div>
@@ -3383,7 +3472,7 @@ is accessible to every server node in the site.</p>
 <li><p>portal:admin:deleteGroups: grants the ability to delete groups within organization.</p></li>
 <li><p>portal:admin:reassignGroups: grants the ability to reassign groups to other members within organization.</p></li>
 <li><p>portal:admin:assignToGroups: grants the ability to assign members to, and remove members from, groups within organization.</p></li>
-<li><p>portal:admin:manageEnterpriseGroups: grants the ability to link group membership to an enterprise group. (This privilege is only applicable to Portal for ArcGIS.)</p></li>
+<li><p>portal:admin:manageEnterpriseGroups: grants the ability to link group membership to an enterprise group. (This privilege is only applicable to ArcGIS Enterprise.)</p></li>
 </ul>
 <p>Content</p>
 <ul class="simple">
@@ -3500,7 +3589,7 @@ GIS. Layer objects can be obtained through the layers attribute on layer Items i
 <em class="property">class </em><code class="sig-prename descclassname">arcgis.gis.</code><code class="sig-name descname">GroupApplication</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">url</span></em>, <em class="sig-param"><span class="n">gis</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.GroupApplication" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
 <p>Represents a single group application on the GIS (ArcGIS Online or
-Portal for ArcGIS).</p>
+ArcGIS Enterprise).</p>
 <dl class="py method">
 <dt id="arcgis.gis.GroupApplication.accept">
 <code class="sig-name descname">accept</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.GroupApplication.accept" title="Permalink to this definition">¶</a></dt>
@@ -3612,7 +3701,9 @@ categories.</p>
 <dd class="field-odd"><p>A <cite>dict</cite> of <cite>item_id</cite> : <cite>status</cite>, with <cite>status</cite> being</p>
 </dd>
 </dl>
-<p>whether the content categories were successfully added</p>
+<p>whether the content categories were successfully added. If the <cite>status</cite> is
+unsuccessfully updated, a message will provide information to help you debug
+the issue.</p>
 </dd></dl>
 
 <dl class="py method">
@@ -3685,7 +3776,7 @@ call methods on this ‘content’ object to manipulate (create, get, search,
 etc) items.</p>
 <dl class="py method">
 <dt id="arcgis.gis.ContentManager.add">
-<code class="sig-name descname">add</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">item_properties</span></em>, <em class="sig-param"><span class="n">data</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">thumbnail</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">metadata</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">owner</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">folder</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">item_id</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.ContentManager.add" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">add</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">item_properties</span></em>, <em class="sig-param"><span class="n">data</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">thumbnail</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">metadata</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">owner</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">folder</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">item_id</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.ContentManager.add" title="Permalink to this definition">¶</a></dt>
 <dd><p>Adds content to the GIS by creating an item.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
@@ -3703,8 +3794,8 @@ snippet, and description be provided.</p>
 </div>
 <table class="docutils align-default">
 <colgroup>
-<col style="width: 18%" />
-<col style="width: 82%" />
+<col style="width: 15%" />
+<col style="width: 85%" />
 </colgroup>
 <tbody>
 <tr class="row-odd"><td><p><strong>Argument</strong></p></td>
@@ -3729,12 +3820,30 @@ snippet, and description be provided.</p>
 <td><p>Optional string. Name of the folder where placing item.</p></td>
 </tr>
 <tr class="row-even"><td><p>item_id</p></td>
-<td><p>Optionl String. <strong>Available in Enterprise/AGOL 10.8.1+</strong>.  A string
-of 32 character UID without any special characters.</p>
+<td><p>Optional string. Available in ArcGIS Enterprise 10.8.1+. Not available in ArcGIS Online.
+This parameter allows the desired item id to be specified during creation which
+can be useful for cloning and automated content creation scenarios.
+The specified id must be a 32 character GUID string without any special characters.</p>
 <p>If the <cite>item_id</cite> is already being used, an error will be raised
 during the <cite>add</cite> process.</p>
 <p>Example: item_id=9311d21a9a2047d19c0faaebd6f2cca6</p>
 </td>
+</tr>
+</tbody>
+</table>
+<p><em>Optional Input Parameters for the `add` method</em></p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 25%" />
+<col style="width: 75%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>Optional Argument</strong></p></td>
+<td><p><strong>Description</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>upload_size</p></td>
+<td><p>Optional float.  The default value is 1e7 bytes or ~10 MBs.  This the
+minimum default value for the size of the file when uploading by parts.</p></td>
 </tr>
 </tbody>
 </table>
@@ -4219,8 +4328,10 @@ all the parameters above are ignored.</p></td>
 <td><p>Optional boolean. Indicating if the service is a hosted feature layer view</p></td>
 </tr>
 <tr class="row-odd"><td><p>item_id</p></td>
-<td><p>Optionl String. <strong>Available in Enterprise/AGOL 10.8.1+</strong>.  A string
-of 32 character UID without any special characters.</p>
+<td><p>Optional string. Available in ArcGIS Enterprise 10.8.1+. Not available in ArcGIS Online.
+This parameter allows the desired item id to be specified during creation which
+can be useful for cloning and automated content creation scenarios.
+The specified id must be a 32 character GUID string without any special characters.</p>
 <p>If the <cite>item_id</cite> is already being used, an error will be raised
 during the <cite>add</cite> process.</p>
 <p>Example: item_id=9311d21a9a2047d19c0faaebd6f2cca6</p>
@@ -4466,8 +4577,10 @@ dataframes. This limit isn’t there for spatial dataframes.</p>
 <td><p>Optional string. Tags listed as comma-separated values, or a list of strings. Provide tags when publishing a spatial dataframe to the the GIS.</p></td>
 </tr>
 <tr class="row-odd"><td><p>item_id</p></td>
-<td><p>Optionl String. <strong>Available in Enterprise/AGOL 10.8.1+</strong>.  A string
-of 32 character UID without any special characters.</p>
+<td><p>Optional string. Available in ArcGIS Enterprise 10.8.1+. Not available in ArcGIS Online.
+This parameter allows the desired item id to be specified during creation which
+can be useful for cloning and automated content creation scenarios.
+The specified id must be a 32 character GUID string without any special characters.</p>
 <p>If the <cite>item_id</cite> is already being used, an error will be raised
 during the <cite>add</cite> process.</p>
 <p>Example: item_id=9311d21a9a2047d19c0faaebd6f2cca6</p>
@@ -4750,7 +4863,7 @@ set outside_org to True.</p></li>
 </tr>
 <tr class="row-odd"><td><p>item_type</p></td>
 <td><p>Optional string. Set type of item to search.
-<a class="reference external" href="http://resources.arcgis.com/en/help/arcgis-rest-api/index.html#//02r3000000ms000000">http://resources.arcgis.com/en/help/arcgis-rest-api/index.html#//02r3000000ms000000</a></p></td>
+<a class="reference external" href="https://developers.arcgis.com/rest/users-groups-and-items/items-and-item-types.htm">https://developers.arcgis.com/rest/users-groups-and-items/items-and-item-types.htm</a></p></td>
 </tr>
 <tr class="row-even"><td><p>sort_field</p></td>
 <td><p>Optional string. Valid values can be title, uploaded, type, owner, modified,
@@ -4990,7 +5103,7 @@ it is returned as a list of dictionaries.</p></td>
 <dl class="py method">
 <dt id="arcgis.gis.UserManager.create">
 <code class="sig-name descname">create</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">username</span></em>, <em class="sig-param"><span class="n">password</span></em>, <em class="sig-param"><span class="n">firstname</span></em>, <em class="sig-param"><span class="n">lastname</span></em>, <em class="sig-param"><span class="n">email</span></em>, <em class="sig-param"><span class="n">description</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">role</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">provider</span><span class="o">=</span><span class="default_value">'arcgis'</span></em>, <em class="sig-param"><span class="n">idp_username</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">level</span><span class="o">=</span><span class="default_value">2</span></em>, <em class="sig-param"><span class="n">thumbnail</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">user_type</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">credits</span><span class="o">=</span><span class="default_value">- 1</span></em>, <em class="sig-param"><span class="n">groups</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.UserManager.create" title="Permalink to this definition">¶</a></dt>
-<dd><p>This operation is used to pre-create built-in or enterprise accounts within the portal,
+<dd><p>This operation is used to pre-create built-in or enterprise accounts within the Enterprise portal,
 or built-in users in an ArcGIS Online organization account. Only an administrator
 can call this method.</p>
 <p>To create a viewer account, choose role=’org_viewer’ and level=’viewer’</p>
@@ -5004,15 +5117,14 @@ can call this method.</p>
 <td><p><strong>Description</strong></p></td>
 </tr>
 <tr class="row-even"><td><p>username</p></td>
-<td><p>Required string. The user name, which must be unique in the Portal, and
-6-24 characters long.</p></td>
+<td><p>Required string. The username must be unique and 6-24 characters long.</p></td>
 </tr>
 <tr class="row-odd"><td><p>password</p></td>
 <td><p>Required string. The password for the user.  It must be at least 8 characters.
-This is a required parameter only if
+This is a required parameter if
 the provider is arcgis; otherwise, the password parameter is ignored.
 If creating an account in an ArcGIS Online org, it can be set as None to let
-the user set their password by clicking on a link that is emailed to him/her.</p></td>
+the user set their password by clicking on a link that is emailed to them.</p></td>
 </tr>
 <tr class="row-even"><td><p>firstname</p></td>
 <td><p>Required string. The first name for the user</p></td>
@@ -5068,22 +5180,22 @@ The other possible value is enterprise.</p></td>
 This parameter is only required if the provider parameter is enterprise.</p></td>
 </tr>
 <tr class="row-even"><td><p>level</p></td>
-<td><p>Optional string. The account level. (Pre 10.7 Portal)
+<td><p>Optional string. The account level. (ArcGIS Enterprise prior to version 10.7)
 See <a class="reference external" href="http://server.arcgis.com/en/portal/latest/administer/linux/roles.htm">http://server.arcgis.com/en/portal/latest/administer/linux/roles.htm</a></p></td>
 </tr>
 <tr class="row-odd"><td><p>user_type</p></td>
 <td><p>Required string. The account user type. This can be creator or viewer.  The
 type effects what applications a user can use and what actions they can do in
-the organization. (10.7+)
+the organization. (ArcGIS Enterprise 10.7+ and ArcGIS Online)
 See <a class="reference external" href="http://server.arcgis.com/en/portal/latest/administer/linux/roles.htm">http://server.arcgis.com/en/portal/latest/administer/linux/roles.htm</a></p></td>
 </tr>
 <tr class="row-even"><td><p>credits</p></td>
 <td><p>Optional Float. The number of credits to assign a user.  The default is None,
-which means unlimited. (10.7+)</p></td>
+which means unlimited. (ArcGIS Online only)</p></td>
 </tr>
 <tr class="row-odd"><td><p>groups</p></td>
 <td><p>Optional List. An array of Group objects to provide access to for a given
-user. (10.7+)</p></td>
+user. (ArcGIS Enterprise 10.7+ and ArcGIS Online)</p></td>
 </tr>
 </tbody>
 </table>
@@ -5260,7 +5372,8 @@ type.</p>
 <dl class="py method">
 <dt id="arcgis.gis.UserManager.roles">
 <em class="property">property </em><code class="sig-name descname">roles</code><a class="headerlink" href="#arcgis.gis.UserManager.roles" title="Permalink to this definition">¶</a></dt>
-<dd><p>Helper object to manage custom roles for users</p>
+<dd><p>Helper object to manage custom roles for users. Returns an instance
+of the <a class="reference internal" href="#arcgis.gis.RoleManager" title="arcgis.gis.RoleManager"><code class="xref py py-class docutils literal notranslate"><span class="pre">RoleManager</span></code></a></p>
 </dd></dl>
 
 <dl class="py method">
@@ -5385,7 +5498,7 @@ allows for the filting of the users based on a roleId.</p></td>
 <dl class="py method">
 <dt id="arcgis.gis.UserManager.signup">
 <code class="sig-name descname">signup</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">username</span></em>, <em class="sig-param"><span class="n">password</span></em>, <em class="sig-param"><span class="n">fullname</span></em>, <em class="sig-param"><span class="n">email</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.UserManager.signup" title="Permalink to this definition">¶</a></dt>
-<dd><p>Signs up a user to an instance of Portal for ArcGIS.</p>
+<dd><p>Create a new user account in an ArcGIS Enterprise deployment.</p>
 <table class="docutils align-default">
 <colgroup>
 <col style="width: 16%" />
@@ -5842,12 +5955,12 @@ future to <cite>True</cite> to reduce time.</p></td>
 <dt id="arcgis.gis.DatastoreManager">
 <em class="property">class </em><code class="sig-prename descclassname">arcgis.gis.</code><code class="sig-name descname">DatastoreManager</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">gis</span></em>, <em class="sig-param"><span class="n">admin_url</span></em>, <em class="sig-param"><span class="n">server</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.DatastoreManager" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
-<p>Helper class for managing the GIS data stores in on-premises ArcGIS Portals.
+<p>Helper class for managing the GIS data stores in ArcGIS Enterprise.
 This class is not created by users directly.
 Instances of this class are returned from arcgis.geoanalytics.get_datastores() and
 arcgis.raster.analytics.get_datastores() functions to get the corresponding datastores.
 Users call methods on this ‘datastores’ object to manage the datastores in a site
-federated with the portal.</p>
+federated with the Enterprise portal.</p>
 <dl class="py method">
 <dt id="arcgis.gis.DatastoreManager.add">
 <code class="sig-name descname">add</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">name</span></em>, <em class="sig-param"><span class="n">item</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.DatastoreManager.add" title="Permalink to this definition">¶</a></dt>
@@ -5865,7 +5978,7 @@ federated with the portal.</p>
 <td><p>Required string. The name of the item to be added on the server.</p></td>
 </tr>
 <tr class="row-odd"><td><p>item</p></td>
-<td><p>Required dictionary. The dictionary representing the data item.  See <a class="reference external" href="http://resources.arcgis.com/en/help/arcgis-rest-api/index.html#//02r3000001s9000000">http://resources.arcgis.com/en/help/arcgis-rest-api/index.html#//02r3000001s9000000</a></p></td>
+<td><p>Required dictionary. The dictionary representing the data item.  See <a class="reference external" href="https://developers.arcgis.com/rest/enterprise-administration/server/dataitem.htm">https://developers.arcgis.com/rest/enterprise-administration/server/dataitem.htm</a></p></td>
 </tr>
 </tbody>
 </table>
@@ -6209,12 +6322,24 @@ at once, you can invoke this operation.</p>
 <dt id="arcgis.gis.RoleManager">
 <em class="property">class </em><code class="sig-prename descclassname">arcgis.gis.</code><code class="sig-name descname">RoleManager</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">gis</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.RoleManager" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
-<p>Helper class to manage custom <a class="reference internal" href="#arcgis.gis.Role" title="arcgis.gis.Role"><code class="xref py py-class docutils literal notranslate"><span class="pre">roles</span></code></a> for users in a GIS.</p>
+<p>Helper class to manage custom <a class="reference internal" href="#arcgis.gis.Role" title="arcgis.gis.Role"><code class="xref py py-class docutils literal notranslate"><span class="pre">roles</span></code></a> for users in a GIS.
+Users don’t create this class directly. It is available as the <a class="reference internal" href="#arcgis.gis.UserManager.roles" title="arcgis.gis.UserManager.roles"><code class="xref py py-attr docutils literal notranslate"><span class="pre">roles</span></code></a>
+property of the <a class="reference internal" href="#arcgis.gis.UserManager" title="arcgis.gis.UserManager"><code class="xref py py-class docutils literal notranslate"><span class="pre">UserManager</span></code></a></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span># Usage Example
+
+&gt;&gt;&gt; role_mgr = gis.users.roles
+&gt;&gt;&gt; type(role_mgr)
+
+&lt;class &#39;arcgis.gis.RoleManager&#39;&gt;
+</pre></div>
+</div>
 <dl class="py method">
 <dt id="arcgis.gis.RoleManager.all">
 <code class="sig-name descname">all</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">max_roles</span><span class="o">=</span><span class="default_value">1000</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.RoleManager.all" title="Permalink to this definition">¶</a></dt>
-<dd><p>Provides the list of all non-default roles in the GIS. (The <code class="docutils literal notranslate"><span class="pre">org_admin</span></code>, <code class="docutils literal notranslate"><span class="pre">org_user</span></code>,
-and <code class="docutils literal notranslate"><span class="pre">org_publisher</span></code> roles are not returned)</p>
+<dd><p>Provides a list containing the default <code class="docutils literal notranslate"><span class="pre">Viewer</span></code> and <code class="docutils literal notranslate"><span class="pre">Data</span> <span class="pre">Editor</span></code> roles, plus any
+custom roles defined in the <a class="reference internal" href="#arcgis.gis.GIS" title="arcgis.gis.GIS"><code class="xref py py-class docutils literal notranslate"><span class="pre">GIS</span></code></a>. (The <code class="docutils literal notranslate"><span class="pre">org_admin</span></code>, <code class="docutils literal notranslate"><span class="pre">org_user</span></code>,
+and <code class="docutils literal notranslate"><span class="pre">org_publisher</span></code> default roles are not returned. See <a class="reference external" href="https://enterprise.arcgis.com/en/portal/latest/administer/windows/roles.htm#ESRI_SECTION2_CB9BF0951AC647529EBB7CB09B8B3EDA">Default roles</a>
+for detailed descriptions of each role.)</p>
 <table class="docutils align-default">
 <colgroup>
 <col style="width: 19%" />
@@ -6231,9 +6356,34 @@ and <code class="docutils literal notranslate"><span class="pre">org_publisher</
 </table>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p>The list of all non-default <a class="reference internal" href="#arcgis.gis.Role" title="arcgis.gis.Role"><code class="xref py py-class docutils literal notranslate"><span class="pre">roles</span></code></a> in the GIS.</p>
+<dd class="field-odd"><p>The list of all custom <a class="reference internal" href="#arcgis.gis.Role" title="arcgis.gis.Role"><code class="xref py py-class docutils literal notranslate"><span class="pre">roles</span></code></a>, plus the default <code class="docutils literal notranslate"><span class="pre">Viewer</span></code>
+and <code class="docutils literal notranslate"><span class="pre">Data</span> <span class="pre">Editor</span></code> roles defined in the GIS.</p>
 </dd>
 </dl>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span> <span class="c1"># Usage Example</span>
+
+ <span class="o">&gt;&gt;&gt;</span> <span class="n">primary_default_roles</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;org_admin&#39;</span><span class="p">,</span> <span class="s1">&#39;org_publisher&#39;</span><span class="p">,</span> <span class="s1">&#39;org_user&#39;</span><span class="p">]</span>
+
+ <span class="o">&gt;&gt;&gt;</span> <span class="n">role_mgr</span> <span class="o">=</span> <span class="n">gis</span><span class="o">.</span><span class="n">users</span><span class="o">.</span><span class="n">roles</span>
+<span class="hll"> <span class="o">&gt;&gt;&gt;</span> <span class="n">org_roles</span> <span class="o">=</span> <span class="n">role_mgr</span><span class="o">.</span><span class="n">all</span><span class="p">()</span>
+</span>
+ <span class="o">&gt;&gt;&gt;</span> <span class="k">for</span> <span class="n">role</span> <span class="ow">in</span> <span class="n">org_roles</span><span class="p">:</span>
+     <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">role</span><span class="o">.</span><span class="n">name</span><span class="si">:</span><span class="s2">25</span><span class="si">}{</span><span class="n">role</span><span class="o">.</span><span class="n">role_id</span><span class="si">}</span><span class="s2">&quot;</span>
+
+     <span class="n">Viewer</span>                   <span class="n">iAAAAAAAAAAAAAAA</span>
+     <span class="n">Data</span> <span class="n">Editor</span>              <span class="n">iBBBBBBBBBBBBBBB</span>
+     <span class="n">Analyzer</span>                 <span class="mi">8</span><span class="n">KqWobO1p1vDLZ2O</span>
+     <span class="n">Sharing_analyst</span>          <span class="n">ZllNulU2kqaFwsaH</span>
+     <span class="n">Group_creator</span>            <span class="n">uT3334C4LtnQ99Cj</span>
+
+ <span class="o">&gt;&gt;&gt;</span> <span class="n">all_org_roles</span> <span class="o">=</span> <span class="n">primary_default_roles</span> <span class="o">+</span> <span class="p">[</span><span class="n">r</span><span class="o">.</span><span class="n">name</span> <span class="k">for</span> <span class="n">r</span> <span class="ow">in</span> <span class="n">org_roles</span><span class="p">]</span>
+ <span class="o">&gt;&gt;&gt;</span> <span class="nb">print</span><span class="p">(</span><span class="n">all_org_roles</span><span class="p">)</span>
+
+     <span class="p">[</span><span class="s1">&#39;org_admin&#39;</span><span class="p">,</span> <span class="s1">&#39;org_publisher&#39;</span><span class="p">,</span> <span class="s1">&#39;org_user&#39;</span><span class="p">,</span> <span class="s1">&#39;Viewer&#39;</span><span class="p">,</span> <span class="s1">&#39;Data Editor&#39;</span><span class="p">,</span> <span class="s1">&#39;Analyzer&#39;</span><span class="p">,</span> <span class="s1">&#39;Sharing_analyst&#39;</span><span class="p">,</span> <span class="s1">&#39;Group_creator&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>See <a class="reference internal" href="#arcgis.gis.UserManager.create" title="arcgis.gis.UserManager.create"><code class="xref py py-attr docutils literal notranslate"><span class="pre">create</span></code></a> method of <a class="reference internal" href="#arcgis.gis.UserManager" title="arcgis.gis.UserManager"><code class="xref py py-class docutils literal notranslate"><span class="pre">UserManager</span></code></a> for using
+role information when creating users.</p>
 </dd></dl>
 
 <dl class="py method">
@@ -6242,8 +6392,8 @@ and <code class="docutils literal notranslate"><span class="pre">org_publisher</
 <dd><p>Creates a custom role with the specified parameters.</p>
 <table class="docutils align-default">
 <colgroup>
-<col style="width: 16%" />
-<col style="width: 84%" />
+<col style="width: 20%" />
+<col style="width: 80%" />
 </colgroup>
 <tbody>
 <tr class="row-odd"><td><p><strong>Argument</strong></p></td>
@@ -6258,7 +6408,7 @@ and <code class="docutils literal notranslate"><span class="pre">org_publisher</
 <tr class="row-even"><td><p>privileges</p></td>
 <td><p>Optional string. An array of strings with predefined permissions within
 each privilege.  For supported privileges see
-<a class="reference external" href="http://resources.arcgis.com/en/help/arcgis-rest-api/index.html#/Privileges/02r3000002wq000000/">http://resources.arcgis.com/en/help/arcgis-rest-api/index.html#/Privileges/02r3000002wq000000/</a></p></td>
+<a class="reference external" href="https://developers.arcgis.com/rest/users-groups-and-items/privileges.htm">https://developers.arcgis.com/rest/users-groups-and-items/privileges.htm</a></p></td>
 </tr>
 </tbody>
 </table>
@@ -7775,12 +7925,12 @@ registered on multiple servers.</p></td>
 
   </div>
   
-    Options v: 1.8.3
+    Options v: 1.8.4
 
   <div class="rst-versions" data-toggle="rst-versions" role="note" aria-label="versions">
     <span class="rst-current-version" data-toggle="rst-current-version">
       <span class="fa fa-book"> Pick an earlier version</span>
-      v: 1.8.3
+      v: 1.8.4
       <span class="fa fa-caret-down"></span>
     </span>
     <div class="rst-other-versions">
@@ -7788,6 +7938,10 @@ registered on multiple servers.</p></td>
       
       <dl>
         <dt>Versions</dt>
+        
+          
+          <dd><a href="1.8.3/">1.8.3</a></dd>
+          
         
           
           <dd><a href="1.8.2/">1.8.2</a></dd>
