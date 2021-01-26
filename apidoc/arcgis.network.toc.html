@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>arcgis.network module &mdash; arcgis 1.8.3 documentation</title>
+  <title>arcgis.network module &mdash; arcgis 1.8.4 documentation</title>
   
 
   
@@ -77,7 +77,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             
             
               <div class="version">
-                1.8.3
+                1.8.4
               </div>
             
           
@@ -348,30 +348,25 @@ in the sequence. The default is as defined in the network layer.</p></td>
 <td><p>Optional boolean. If true, the solver should consider time windows.
 The default is as defined in the network layer.</p></td>
 </tr>
-<tr class="row-odd"><td><p>time_windows_are_utc</p></td>
-<td><p>Optional boolean. Specify whether the TimeWindowStart and TimeWindowEnd
-attribute values on stops are specified in coordinated universal time (UTC)
-or geographically local time.</p></td>
-</tr>
-<tr class="row-even"><td><p>start_time</p></td>
+<tr class="row-odd"><td><p>start_time</p></td>
 <td><p>Optional string. The time the route begins. If not specified, the
 solver will use the default as defined in the network layer.</p></td>
 </tr>
-<tr class="row-odd"><td><p>start_time_is_utc</p></td>
+<tr class="row-even"><td><p>start_time_is_utc</p></td>
 <td><p>Optional boolean. The time zone of the startTime parameter.</p></td>
 </tr>
-<tr class="row-even"><td><p>accumulate_attribute_names</p></td>
+<tr class="row-odd"><td><p>accumulate_attribute_names</p></td>
 <td><p>Optional string. A list of network attribute names to be accumulated
 with the analysis. The default is as defined in the network layer.
 The value should be specified as a comma separated list of attribute
 names. You can also specify a value of none to indicate that no
 network attributes should be accumulated.</p></td>
 </tr>
-<tr class="row-odd"><td><p>impedance_attribute_name</p></td>
+<tr class="row-even"><td><p>impedance_attribute_name</p></td>
 <td><p>Optional string. The network attribute name to be used as the impedance
 attribute in analysis. The default is as defined in the network layer.</p></td>
 </tr>
-<tr class="row-even"><td><p>restriction_attribute_names</p></td>
+<tr class="row-odd"><td><p>restriction_attribute_names</p></td>
 <td><p>Optional string. -The list of network attribute names to be
 used as restrictions with the analysis. The default is as defined in
 the network layer. The value should be specified as a comma
@@ -379,7 +374,7 @@ separated list of attribute names. You can also specify a value of
 none to indicate that no network attributes should be used as
 restrictions.</p></td>
 </tr>
-<tr class="row-odd"><td><p>restrict_u_turns</p></td>
+<tr class="row-even"><td><p>restrict_u_turns</p></td>
 <td><p>Optional boolean. Specifies how U-Turns should be restricted in the
 analysis. The default is as defined in the network layer.
 Values: esriNFSBAllowBacktrack | esriNFSBAtDeadEndsOnly |</p>
@@ -388,17 +383,17 @@ Values: esriNFSBAllowBacktrack | esriNFSBAtDeadEndsOnly |</p>
 </div></blockquote>
 </td>
 </tr>
-<tr class="row-even"><td><p>use_hierarchy</p></td>
+<tr class="row-odd"><td><p>use_hierarchy</p></td>
 <td><p>Optional boolean.  If true, the hierarchy attribute for the network
 should be used in analysis. The default is as defined in the network
 layer.</p></td>
 </tr>
-<tr class="row-odd"><td><p>directions_language</p></td>
+<tr class="row-even"><td><p>directions_language</p></td>
 <td><p>Optional string. The language to be used when computing directions.
 The default is the language of the server’s operating system. The list
 of supported languages can be found in REST layer description.</p></td>
 </tr>
-<tr class="row-even"><td><p>directions_output_type</p></td>
+<tr class="row-odd"><td><p>directions_output_type</p></td>
 <td><p>Optional string.  Defines content, verbosity of returned directions.
 The default is esriDOTInstructionsOnly.
 Values: esriDOTComplete | esriDOTCompleteNoEvents</p>
@@ -410,12 +405,12 @@ Values: esriDOTComplete | esriDOTCompleteNoEvents</p>
 </div></blockquote>
 </td>
 </tr>
-<tr class="row-odd"><td><p>directions_style_name</p></td>
+<tr class="row-even"><td><p>directions_style_name</p></td>
 <td><p>Optional string. The style to be used when returning the directions.
 The default is as defined in the network layer. The list of
 supported styles can be found in REST layer description.</p></td>
 </tr>
-<tr class="row-even"><td><p>directions_length_units</p></td>
+<tr class="row-odd"><td><p>directions_length_units</p></td>
 <td><p>Optional string. The length units to use when computing directions.
 The default is as defined in the network layer.
 Values: esriNAUFeet | esriNAUKilometers | esriNAUMeters |</p>
@@ -425,18 +420,18 @@ esriNAUUnknown</p>
 </div></blockquote>
 </td>
 </tr>
-<tr class="row-odd"><td><p>directions_time_attribute_name</p></td>
+<tr class="row-even"><td><p>directions_time_attribute_name</p></td>
 <td><p>Optional string. The name of network attribute to use for the drive
 time when computing directions. The default is as defined in the network
 layer.</p></td>
 </tr>
-<tr class="row-even"><td><p>output_geometry_precision</p></td>
+<tr class="row-odd"><td><p>output_geometry_precision</p></td>
 <td><p>Optional float.  The precision of the output geometry after
 generalization. If 0, no generalization of output geometry is
 performed. The default is as defined in the network service
 configuration.</p></td>
 </tr>
-<tr class="row-odd"><td><p>output_geometry_precision_units</p></td>
+<tr class="row-even"><td><p>output_geometry_precision_units</p></td>
 <td><p>Optional string. The units of the output geometry precision. The
 default value is esriUnknownUnits.
 Values: esriUnknownUnits | esriCentimeters | esriDecimalDegrees |</p>
@@ -447,24 +442,29 @@ esriNauticalMiles | esriPoints | esriYards</p>
 </div></blockquote>
 </td>
 </tr>
-<tr class="row-even"><td><p>return_z</p></td>
+<tr class="row-odd"><td><p>return_z</p></td>
 <td><p>Optional boolean. If true, Z values will be included in the returned
 routes and compressed geometry if the network dataset is Z-aware.
 The default is false.</p></td>
 </tr>
-<tr class="row-odd"><td><p>overrides</p></td>
+<tr class="row-even"><td><p>overrides</p></td>
 <td><p>Optional dictionary. Specify additional settings that can influence
 the behavior of the solver.  A list of supported override settings
 for each solver and their acceptable values can be obtained by
 contacting Esri Technical Support.</p></td>
 </tr>
-<tr class="row-even"><td><p>preserve_objectid</p></td>
+<tr class="row-odd"><td><p>preserve_objectid</p></td>
 <td><p>Optional Boolean.  If True, all objectid values are maintained.  The
 default is False.</p></td>
 </tr>
-<tr class="row-odd"><td><p>future</p></td>
+<tr class="row-even"><td><p>future</p></td>
 <td><p>Optional Boolean.  If True, the process is run asynchronously. The
 default is False.</p></td>
+</tr>
+<tr class="row-odd"><td><p>time_windows_are_utc</p></td>
+<td><p>Optional boolean. Specify whether the TimeWindowStart and TimeWindowEnd
+attribute values on stops are specified in coordinated universal time (UTC)
+or geographically local time.</p></td>
 </tr>
 </tbody>
 </table>
@@ -1135,12 +1135,12 @@ ignored when finding the best solution. The default is True.</p></td>
 
   </div>
   
-    Options v: 1.8.3
+    Options v: 1.8.4
 
   <div class="rst-versions" data-toggle="rst-versions" role="note" aria-label="versions">
     <span class="rst-current-version" data-toggle="rst-current-version">
       <span class="fa fa-book"> Pick an earlier version</span>
-      v: 1.8.3
+      v: 1.8.4
       <span class="fa fa-caret-down"></span>
     </span>
     <div class="rst-other-versions">
@@ -1148,6 +1148,10 @@ ignored when finding the best solution. The default is True.</p></td>
       
       <dl>
         <dt>Versions</dt>
+        
+          
+          <dd><a href="1.8.3/">1.8.3</a></dd>
+          
         
           
           <dd><a href="1.8.2/">1.8.2</a></dd>

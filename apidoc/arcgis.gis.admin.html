@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>arcgis.gis.admin module &mdash; arcgis 1.8.3 documentation</title>
+  <title>arcgis.gis.admin module &mdash; arcgis 1.8.4 documentation</title>
   
 
   
@@ -77,7 +77,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             
             
               <div class="version">
-                1.8.3
+                1.8.4
               </div>
             
           
@@ -438,7 +438,7 @@ for a GIS.</p>
 <dl class="py method">
 <dt id="arcgis.gis.admin.AGOLAdminManager.usage_reports">
 <em class="property">property </em><code class="sig-name descname">usage_reports</code><a class="headerlink" href="#arcgis.gis.admin.AGOLAdminManager.usage_reports" title="Permalink to this definition">¶</a></dt>
-<dd><p>provides access to the usage reports of the AGOL organization</p>
+<dd><p>provides access to the usage reports of the ArcGIS Online organization</p>
 </dd></dl>
 
 <dl class="py method">
@@ -2064,7 +2064,7 @@ content. Workspaces can only be created by the collaboration owner.</p>
 <dt id="arcgis.gis.admin.CreditManager">
 <em class="property">class </em><code class="sig-prename descclassname">arcgis.gis.admin.</code><code class="sig-name descname">CreditManager</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">gis</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.admin.CreditManager" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
-<p>Manages an AGOL Site’s Credits for users and sites</p>
+<p>Manages an ArcGIS Online organization’s credits for users and sites</p>
 <p><strong>Example Usage</strong></p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">arcgis.gis</span> <span class="kn">import</span> <span class="n">GIS</span>
 <span class="n">gis</span> <span class="o">=</span> <span class="n">GIS</span><span class="p">(</span><span class="n">profile</span><span class="o">=</span><span class="s1">&#39;agol_account&#39;</span><span class="p">)</span>
@@ -2164,19 +2164,19 @@ organizational users in ArcGIS Online</p>
 <dl class="py method">
 <dt id="arcgis.gis.admin.CreditManager.default_limit">
 <em class="property">property </em><code class="sig-name descname">default_limit</code><a class="headerlink" href="#arcgis.gis.admin.CreditManager.default_limit" title="Permalink to this definition">¶</a></dt>
-<dd><p>Gets/Sets the default credit allocation for AGOL</p>
+<dd><p>Gets/Sets the default credit allocation for ArcGIS Online</p>
 </dd></dl>
 
 <dl class="py method">
 <dt id="arcgis.gis.admin.CreditManager.disable">
 <code class="sig-name descname">disable</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.admin.CreditManager.disable" title="Permalink to this definition">¶</a></dt>
-<dd><p>disables credit allocation on AGOL</p>
+<dd><p>disables credit allocation on ArcGIS Online</p>
 </dd></dl>
 
 <dl class="py method">
 <dt id="arcgis.gis.admin.CreditManager.enable">
 <code class="sig-name descname">enable</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.admin.CreditManager.enable" title="Permalink to this definition">¶</a></dt>
-<dd><p>enables credit allocation on AGOL</p>
+<dd><p>enables credit allocation on ArcGIS Online</p>
 </dd></dl>
 
 <dl class="py method">
@@ -2259,6 +2259,32 @@ user that their entitlements have changed.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
 <dd class="field-odd"><p>boolean</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.gis.admin.License.check">
+<code class="sig-name descname">check</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">user</span></em><span class="sig-paren">)</span> &#x2192; list<a class="headerlink" href="#arcgis.gis.admin.License.check" title="Permalink to this definition">¶</a></dt>
+<dd><p>Checks if the entitlement is assigned or not.</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 22%" />
+<col style="width: 78%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>Argument</strong></p></td>
+<td><p><strong>Description</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>user</p></td>
+<td><p>required string, the name of the user you want to
+examine the entitlements for.</p></td>
+</tr>
+</tbody>
+</table>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>list</p>
 </dd>
 </dl>
 </dd></dl>
@@ -2586,18 +2612,18 @@ geocoding, geoenrichment, network analysis, elevation analysis, and
 spatial analysis.</p>
 <table class="docutils align-default">
 <colgroup>
-<col style="width: 22%" />
-<col style="width: 78%" />
+<col style="width: 21%" />
+<col style="width: 79%" />
 </colgroup>
 <tbody>
 <tr class="row-odd"><td><p><strong>Argument</strong></p></td>
 <td><p><strong>Description</strong></p></td>
 </tr>
 <tr class="row-even"><td><p>username</p></td>
-<td><p>required string, username for AGOL</p></td>
+<td><p>required string, username for ArcGIS Online</p></td>
 </tr>
 <tr class="row-odd"><td><p>password</p></td>
-<td><p>required string, login password for AGOL account</p></td>
+<td><p>required string, login password for ArcGIS Online account</p></td>
 </tr>
 </tbody>
 </table>
@@ -2670,7 +2696,7 @@ apps for geographic analysis.</p>
 <dl class="py method">
 <dt id="arcgis.gis.admin.LivingAtlas.enable_subscriber_atlas">
 <code class="sig-name descname">enable_subscriber_atlas</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">username</span></em>, <em class="sig-param"><span class="n">password</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.admin.LivingAtlas.enable_subscriber_atlas" title="Permalink to this definition">¶</a></dt>
-<dd><p>Enables the Subscriber level Living Atlas Content for a local portal.</p>
+<dd><p>Enables the Subscriber level Living Atlas Content for an ArcGIS Enterprise portal.</p>
 <p>Subscriber content is the collection of ready-to-use map layers,
 analytic tools, and services published by Esri that requires an
 ArcGIS Online organizational subscription account to access.
@@ -2682,24 +2708,24 @@ Layers included in the Living Atlas subscriber content are suitable
 for use with analysis tools.</p>
 <table class="docutils align-default">
 <colgroup>
-<col style="width: 22%" />
-<col style="width: 78%" />
+<col style="width: 18%" />
+<col style="width: 82%" />
 </colgroup>
 <tbody>
 <tr class="row-odd"><td><p><strong>Argument</strong></p></td>
 <td><p><strong>Description</strong></p></td>
 </tr>
 <tr class="row-even"><td><p>username</p></td>
-<td><p>required string, username for AGOL</p></td>
+<td><p>required string, username for ArcGIS Online</p></td>
 </tr>
 <tr class="row-odd"><td><p>password</p></td>
-<td><p>required string, login password for AGOL account</p></td>
+<td><p>required string, login password for the specific ArcGIS Online account</p></td>
 </tr>
 </tbody>
 </table>
 <dl class="field-list simple">
 <dt class="field-odd">Note</dt>
-<dd class="field-odd"><p>This will <strong>not</strong> cost your organization credits.</p>
+<dd class="field-odd"><p>Use of these layers will <strong>not</strong> incur a credit cost for your organization.</p>
 </dd>
 </dl>
 </dd></dl>
@@ -2836,18 +2862,18 @@ for details.</p>
 ArcGIS Online Organization.</p>
 <table class="docutils align-default">
 <colgroup>
-<col style="width: 22%" />
-<col style="width: 78%" />
+<col style="width: 21%" />
+<col style="width: 79%" />
 </colgroup>
 <tbody>
 <tr class="row-odd"><td><p><strong>Argument</strong></p></td>
 <td><p><strong>Description</strong></p></td>
 </tr>
 <tr class="row-even"><td><p>username</p></td>
-<td><p>required string, username for AGOL</p></td>
+<td><p>required string, username for ArcGIS Online</p></td>
 </tr>
 <tr class="row-odd"><td><p>password</p></td>
-<td><p>required string, login password for AGOL account</p></td>
+<td><p>required string, login password for ArcGIS Online account</p></td>
 </tr>
 <tr class="row-even"><td><p>online_url</p></td>
 <td><p>optional string, Url to ArcGIS Online site.
@@ -3254,8 +3280,7 @@ to set banner, background, logo, name etc.</p>
 <dl class="py method">
 <dt id="arcgis.gis.admin.UX.featured_content">
 <em class="property">property </em><code class="sig-name descname">featured_content</code><a class="headerlink" href="#arcgis.gis.admin.UX.featured_content" title="Permalink to this definition">¶</a></dt>
-<dd><p>Returns the featured content group information.  The information
-can then be set using the ‘set_featured_content()’.</p>
+<dd><p>Gets/Sets the featured content group information.</p>
 <blockquote>
 <div><dl class="field-list simple">
 <dt class="field-odd">return</dt>
@@ -3966,7 +3991,7 @@ built-in groups using the built-in identity store for accounts. To
 configure your portal to connect to your enterprise authentication
 mechanism and group store, it must be configured to use an
 enterprise identity store such as Windows Active Directory or LDAP.</p>
-<p>See: <a class="reference external" href="http://resources.arcgis.com/en/help/arcgis-rest-api/index.html#/Update_Identity_Store/02r300000249000000/">http://resources.arcgis.com/en/help/arcgis-rest-api/index.html#/Update_Identity_Store/02r300000249000000/</a></p>
+<p>See: <a class="reference external" href="https://developers.arcgis.com/rest/enterprise-administration/portal/update-identity-store.htm">https://developers.arcgis.com/rest/enterprise-administration/portal/update-identity-store.htm</a></p>
 <table class="docutils align-default">
 <colgroup>
 <col style="width: 28%" />
@@ -5804,7 +5829,7 @@ Adaptor configured with the portal.</p>
 <dl class="py class">
 <dt id="arcgis.gis.admin.WebhookManager">
 <em class="property">class </em><code class="sig-prename descclassname">arcgis.gis.admin.</code><code class="sig-name descname">WebhookManager</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">url</span></em>, <em class="sig-param"><span class="n">gis</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.admin.WebhookManager" title="Permalink to this definition">¶</a></dt>
-<dd><p>Creates and manages ArcGIS Portal WebHooks.  Webhooks allow you to be
+<dd><p>Creates and manages ArcGIS Enterprise webhooks.  Webhooks allow you to be
 automatically notified when events associated with items, groups, and
 users occur. Once a webhook has been triggered, an HTTP request is
 made to a user-defined URL to provide information regarding the event.</p>
@@ -6297,12 +6322,12 @@ the message on your receiver.</p></td>
 
   </div>
   
-    Options v: 1.8.3
+    Options v: 1.8.4
 
   <div class="rst-versions" data-toggle="rst-versions" role="note" aria-label="versions">
     <span class="rst-current-version" data-toggle="rst-current-version">
       <span class="fa fa-book"> Pick an earlier version</span>
-      v: 1.8.3
+      v: 1.8.4
       <span class="fa fa-caret-down"></span>
     </span>
     <div class="rst-other-versions">
@@ -6310,6 +6335,10 @@ the message on your receiver.</p></td>
       
       <dl>
         <dt>Versions</dt>
+        
+          
+          <dd><a href="1.8.3/">1.8.3</a></dd>
+          
         
           
           <dd><a href="1.8.2/">1.8.2</a></dd>

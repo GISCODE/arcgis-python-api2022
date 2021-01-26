@@ -162,3 +162,4 @@ Submodules
    :maxdepth: 3
 
    arcgis.mapping.ogc
+   arcgis.mapping.forms

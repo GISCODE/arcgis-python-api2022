@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>arcgis package &mdash; arcgis 1.8.3 documentation</title>
+  <title>arcgis package &mdash; arcgis 1.8.4 documentation</title>
   
 
   
@@ -75,7 +75,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             
             
               <div class="version">
-                1.8.3
+                1.8.4
               </div>
             
           
@@ -248,7 +248,7 @@ provides helper objects to manage (search, create, retrieve) GIS resources such 
 <p>The GIS provides a mapping widget that can be used in the Jupyter Notebook environment for visualizing GIS content
 as well as the results of your analysis. To create a new map, call the map() method.</p>
 <p>The constructor constructs a GIS object given a url and user credentials to ArcGIS Online
-or an ArcGIS Enterprise Portal. User credentials can be passed in using username/password
+or an ArcGIS Enterprise portal. User credentials can be passed in using username/password
 pair, or key_file/cert_file pair (in case of PKI). Supports built-in users, LDAP, PKI, Integrated Windows Authentication
 (using NTLM and Kerberos) and Anonymous access.</p>
 <p>If no url is provided, ArcGIS Online is used. If username/password
@@ -263,8 +263,8 @@ file/password manager by that profile name. Multiple profiles can be created and
 <p>See <a class="reference external" href="https://developers.arcgis.com/python/guide/working-with-different-authentication-schemes/">https://developers.arcgis.com/python/guide/working-with-different-authentication-schemes/</a> for examples.</p>
 <table class="docutils align-default">
 <colgroup>
-<col style="width: 17%" />
-<col style="width: 83%" />
+<col style="width: 16%" />
+<col style="width: 84%" />
 </colgroup>
 <tbody>
 <tr class="row-odd"><td><p><strong>Argument</strong></p></td>
@@ -272,9 +272,9 @@ file/password manager by that profile name. Multiple profiles can be created and
 </tr>
 <tr class="row-even"><td><p>url</p></td>
 <td><p>Optional string. If URL is None, then the URL will be ArcGIS
-Online.  This should be a web address to either a local Portal
+Online.  This should be a web address to either an ArcGIS Enterprise portal
 or to ArcGIS Online in the form:
-&lt;scheme&gt;://&lt;fully_qualified_domain_name&gt;/&lt;web_adaptor&gt; (Portal Example)
+&lt;scheme&gt;://&lt;fully_qualified_domain_name&gt;/&lt;web_adaptor&gt; (ArcGIS Enterprise example)
 <a class="reference external" href="https://gis.example.com/portal">https://gis.example.com/portal</a></p></td>
 </tr>
 <tr class="row-odd"><td><p>username</p></td>
@@ -410,7 +410,7 @@ and modify API Keys for controlled application access.</p>
 <dl class="py method">
 <dt id="arcgis.GIS.datastore">
 <em class="property">property </em><code class="sig-name descname">datastore</code><a class="headerlink" href="#arcgis.GIS.datastore" title="Permalink to this definition">¶</a></dt>
-<dd><p>The resource managers for GIS datastores. This is only available with Enterprises version 10.7+.
+<dd><p>The resource managers for GIS datastores. This is only available with ArcGIS Enterprise 10.7+.
 See <a class="reference internal" href="arcgis.gis.toc.html#arcgis.gis._impl._datastores.PortalDataStore" title="arcgis.gis._impl._datastores.PortalDataStore"><code class="xref py py-class docutils literal notranslate"><span class="pre">PortalDataStore</span></code></a> for more information.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
@@ -472,9 +472,9 @@ to the specified zoomlevel. See <a class="reference internal" href="arcgis.widge
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>Note: If the Jupyter Notebook server is running over http, you need to
-configure your portal/organization to allow your host and port; or else
-you will run into CORs issues when displaying this map widget.</p>
-<p>This can be accomplished by signing into your portal/organization in a
+configure your ArcGIS Enterprise portal or ArcGIS Online organization to allow your host and port; or else
+you will run into CORS issues when displaying this map widget.</p>
+<p>This can be accomplished by signing into your ArcGIS Enterprise portal or ArcGIS Online organization in a
 browser, then navigating to:</p>
 <p><cite>Organization</cite> &gt; <cite>Settings</cite> &gt; <cite>Security</cite> &gt; <cite>Allow origins</cite> &gt; <cite>Add</cite> &gt; <a class="reference external" href="http://localhost:8888">http://localhost:8888</a> (replace with the host/port you are running on)</p>
 </div>
@@ -3106,7 +3106,7 @@ a user will search for places and addresses only
 within the current map extent.</p></td>
 </tr>
 <tr class="row-even"><td><p>location</p></td>
-<td><p>Optionl [x,y], Defines an origin point location that
+<td><p>Optional [x,y], Defines an origin point location that
 is used with the distance parameter to sort
 geocoding candidates based upon their proximity to
 the location.</p></td>
@@ -4578,12 +4578,12 @@ You define the name of the service. If <code class="docutils literal notranslate
 
   </div>
   
-    Options v: 1.8.3
+    Options v: 1.8.4
 
   <div class="rst-versions" data-toggle="rst-versions" role="note" aria-label="versions">
     <span class="rst-current-version" data-toggle="rst-current-version">
       <span class="fa fa-book"> Pick an earlier version</span>
-      v: 1.8.3
+      v: 1.8.4
       <span class="fa fa-caret-down"></span>
     </span>
     <div class="rst-other-versions">
@@ -4591,6 +4591,10 @@ You define the name of the service. If <code class="docutils literal notranslate
       
       <dl>
         <dt>Versions</dt>
+        
+          
+          <dd><a href="1.8.3/">1.8.3</a></dd>
+          
         
           
           <dd><a href="1.8.2/">1.8.2</a></dd>

@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>arcgis.features module &mdash; arcgis 1.8.3 documentation</title>
+  <title>arcgis.features module &mdash; arcgis 1.8.4 documentation</title>
   
 
   
@@ -75,7 +75,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             
             
               <div class="version">
-                1.8.3
+                1.8.4
               </div>
             
           
@@ -391,7 +391,7 @@ tools.</p>
 GIS. Feature layer objects can be obtained through the layers attribute on feature layer Items in the GIS.</p>
 <dl class="py method">
 <dt id="arcgis.features.FeatureLayer.append">
-<code class="sig-name descname">append</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">item_id</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">upload_format</span><span class="o">=</span><span class="default_value">'featureCollection'</span></em>, <em class="sig-param"><span class="n">source_table_name</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">field_mappings</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">edits</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">source_info</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">upsert</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="n">skip_updates</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">use_globalids</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">update_geometry</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="n">append_fields</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">rollback</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">skip_inserts</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">upsert_matching_field</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.features.FeatureLayer.append" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">append</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">item_id</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">upload_format</span><span class="o">=</span><span class="default_value">'featureCollection'</span></em>, <em class="sig-param"><span class="n">source_table_name</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">field_mappings</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">edits</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">source_info</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">upsert</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="n">skip_updates</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">use_globalids</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">update_geometry</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="n">append_fields</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">rollback</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">skip_inserts</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">upsert_matching_field</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">upload_id</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.features.FeatureLayer.append" title="Permalink to this definition">¶</a></dt>
 <dd><p>Only available in ArcGIS Online</p>
 <p>Update an existing hosted feature layer using append.</p>
 <table class="docutils align-default">
@@ -479,6 +479,12 @@ This parameter overrides use_globalids; e.g., specifying
 upsert_matching_field will be used even if you specify
 use_globalids = True.
 Example: upsert_matching_field=”MyfieldWithUniqueIndex”</p></td>
+</tr>
+<tr class="row-even"><td><p>upload_id</p></td>
+<td><p>Optional string. The itemID field from an
+<a class="reference internal" href="arcgis.features.toc.html#arcgis.features.FeatureLayerCollection.upload" title="arcgis.features.FeatureLayerCollection.upload"><code class="xref py py-func docutils literal notranslate"><span class="pre">upload()</span></code></a> response, corresponding with
+the <cite>appendUploadId</cite> REST API argument. This argument should not be
+used along side the <cite>item_id</cite> argument.</p></td>
 </tr>
 </tbody>
 </table>
@@ -862,7 +868,7 @@ the dynamic layer/table is allowed.</p></td>
 <dt id="arcgis.features.FeatureLayer.get_html_popup">
 <code class="sig-name descname">get_html_popup</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">oid</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.features.FeatureLayer.get_html_popup" title="Permalink to this definition">¶</a></dt>
 <dd><p>The htmlPopup resource provides details about the HTML pop-up
-authored by the user using ArcGIS for Desktop.</p>
+authored by the user using ArcGIS Pro or ArcGIS Desktop.</p>
 <table class="docutils align-default">
 <colgroup>
 <col style="width: 18%" />
@@ -1878,7 +1884,7 @@ features, the GIS can also work with non-spatial entities as rows in tables.</p>
 have a geometry, and tables ignore any geometry related operation.</p>
 <dl class="py method">
 <dt id="arcgis.features.Table.append">
-<code class="sig-name descname">append</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">item_id</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">upload_format</span><span class="o">=</span><span class="default_value">'featureCollection'</span></em>, <em class="sig-param"><span class="n">source_table_name</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">field_mappings</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">edits</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">source_info</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">upsert</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="n">skip_updates</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">use_globalids</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">update_geometry</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="n">append_fields</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">rollback</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">skip_inserts</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">upsert_matching_field</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.features.Table.append" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">append</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">item_id</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">upload_format</span><span class="o">=</span><span class="default_value">'featureCollection'</span></em>, <em class="sig-param"><span class="n">source_table_name</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">field_mappings</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">edits</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">source_info</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">upsert</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="n">skip_updates</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">use_globalids</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">update_geometry</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="n">append_fields</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">rollback</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">skip_inserts</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">upsert_matching_field</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">upload_id</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.features.Table.append" title="Permalink to this definition">¶</a></dt>
 <dd><p>Only available in ArcGIS Online</p>
 <p>Update an existing hosted feature layer using append.</p>
 <table class="docutils align-default">
@@ -1966,6 +1972,12 @@ This parameter overrides use_globalids; e.g., specifying
 upsert_matching_field will be used even if you specify
 use_globalids = True.
 Example: upsert_matching_field=”MyfieldWithUniqueIndex”</p></td>
+</tr>
+<tr class="row-even"><td><p>upload_id</p></td>
+<td><p>Optional string. The itemID field from an
+<a class="reference internal" href="arcgis.features.toc.html#arcgis.features.FeatureLayerCollection.upload" title="arcgis.features.FeatureLayerCollection.upload"><code class="xref py py-func docutils literal notranslate"><span class="pre">upload()</span></code></a> response, corresponding with
+the <cite>appendUploadId</cite> REST API argument. This argument should not be
+used along side the <cite>item_id</cite> argument.</p></td>
 </tr>
 </tbody>
 </table>
@@ -2349,7 +2361,7 @@ the dynamic layer/table is allowed.</p></td>
 <dt id="arcgis.features.Table.get_html_popup">
 <code class="sig-name descname">get_html_popup</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">oid</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.features.Table.get_html_popup" title="Permalink to this definition">¶</a></dt>
 <dd><p>The htmlPopup resource provides details about the HTML pop-up
-authored by the user using ArcGIS for Desktop.</p>
+authored by the user using ArcGIS Pro or ArcGIS Desktop.</p>
 <table class="docutils align-default">
 <colgroup>
 <col style="width: 18%" />
@@ -3619,7 +3631,8 @@ their properties.</p>
 <dt id="arcgis.features.FeatureLayerCollection.upload">
 <code class="sig-name descname">upload</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">path</span></em>, <em class="sig-param"><span class="n">description</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.features.FeatureLayerCollection.upload" title="Permalink to this definition">¶</a></dt>
 <dd><p>Uploads a new item to the server. Once the operation is completed
-successfully, the JSON structure of the uploaded item is returned.</p>
+successfully, the following is returned as a 2 element tuple:
+the success Boolean, and the JSON structure of the uploaded item</p>
 <table class="docutils align-default">
 <colgroup>
 <col style="width: 18%" />
@@ -3639,7 +3652,7 @@ successfully, the JSON structure of the uploaded item is returned.</p>
 </table>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p>boolean</p>
+<dd class="field-odd"><p>A tuple of (Boolean, dict)</p>
 </dd>
 </dl>
 </dd></dl>
@@ -5306,8 +5319,41 @@ function will build a quadtree index on the fly.</p>
 
 <dl class="py method">
 <dt id="arcgis.features.GeoAccessor.set_geometry">
-<code class="sig-name descname">set_geometry</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">col</span></em>, <em class="sig-param"><span class="n">sr</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.features.GeoAccessor.set_geometry" title="Permalink to this definition">¶</a></dt>
-<dd><p>Assigns the Geometry Column by Name or by List</p>
+<code class="sig-name descname">set_geometry</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">col</span></em>, <em class="sig-param"><span class="n">sr</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">inplace</span><span class="o">=</span><span class="default_value">True</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.features.GeoAccessor.set_geometry" title="Permalink to this definition">¶</a></dt>
+<dd><p>Assigns the geometry column by name or by list</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 19%" />
+<col style="width: 81%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>Argument</strong></p></td>
+<td><p><strong>Description</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>col</p></td>
+<td><p>Required string, Pandas Series, GeoArray, list or tuple. If a string, this
+is the name of the column containing the geometry. If a Pandas Series
+GeoArray, list or tuple, it is an iterable of Geometry objects.</p></td>
+</tr>
+<tr class="row-odd"><td><p>sr</p></td>
+<td><p>Optional integer or spatial reference of the geometries described in
+the first parameter. If the geometry objects already have the spatial
+reference defined, this is not necessary. If the spatial reference for
+the geometry objects is NOT define, it will default to WGS84 (wkid 4326).</p></td>
+</tr>
+<tr class="row-even"><td><p>inplace</p></td>
+<td><p>Optional bool. Whether or not to modify the dataframe in place, or return
+a new dataframe. If True, nothing is returned and the dataframe is modified
+in place. If False, a new dataframe is returned with the geometry set.
+Defaults to True.</p></td>
+</tr>
+</tbody>
+</table>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>Spatially Enabled DataFrame or None</p>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="py method">
@@ -5333,8 +5379,8 @@ the following command: <cite>conda install -c conda-forge rtree</cite></p>
 <dd><p>Converts a spatially enabled pd.DataFrame to a Feature Collection</p>
 <table class="docutils align-default">
 <colgroup>
-<col style="width: 17%" />
-<col style="width: 83%" />
+<col style="width: 20%" />
+<col style="width: 80%" />
 </colgroup>
 <tbody>
 <tr class="row-odd"><td><p><strong>optional argument</strong></p></td>
@@ -5347,7 +5393,7 @@ the following command: <cite>conda install -c conda-forge rtree</cite></p>
 <td><p>Optional dictionary. This is the rendering information for a
 Feature Collection.  Rendering information is a dictionary with
 the symbology, labelling and other properties defined.  See:
-<a class="reference external" href="http://resources.arcgis.com/en/help/arcgis-rest-api/index.html#/Renderer_objects/02r30000019t000000/">http://resources.arcgis.com/en/help/arcgis-rest-api/index.html#/Renderer_objects/02r30000019t000000/</a></p></td>
+<a class="reference external" href="https://developers.arcgis.com/documentation/common-data-types/renderer-objects.htm">https://developers.arcgis.com/documentation/common-data-types/renderer-objects.htm</a></p></td>
 </tr>
 <tr class="row-even"><td><p>extent</p></td>
 <td><p>Optional dictionary.  If desired, a custom extent can be
@@ -23074,8 +23120,8 @@ Starting with pyarrow 0.17, this includes the <cite>compression</cite>,
 <dd><p>converts a Spatial DataFrame to a Feature Collection</p>
 <table class="docutils align-default">
 <colgroup>
-<col style="width: 17%" />
-<col style="width: 83%" />
+<col style="width: 20%" />
+<col style="width: 80%" />
 </colgroup>
 <tbody>
 <tr class="row-odd"><td><p><strong>optional argument</strong></p></td>
@@ -23088,7 +23134,7 @@ Starting with pyarrow 0.17, this includes the <cite>compression</cite>,
 <td><p>Optional dictionary. This is the rendering information for a
 Feature Collection.  Rendering information is a dictionary with
 the symbology, labelling and other properties defined.  See:
-<a class="reference external" href="http://resources.arcgis.com/en/help/arcgis-rest-api/index.html#/Renderer_objects/02r30000019t000000/">http://resources.arcgis.com/en/help/arcgis-rest-api/index.html#/Renderer_objects/02r30000019t000000/</a></p></td>
+<a class="reference external" href="https://developers.arcgis.com/documentation/common-data-types/renderer-objects.htm">https://developers.arcgis.com/documentation/common-data-types/renderer-objects.htm</a></p></td>
 </tr>
 <tr class="row-even"><td><p>extent</p></td>
 <td><p>Optional dictionary.  If desired, a custom extent can be
@@ -25703,12 +25749,12 @@ It is a superset of <cite>xs</cite> functionality, see
 
   </div>
   
-    Options v: 1.8.3
+    Options v: 1.8.4
 
   <div class="rst-versions" data-toggle="rst-versions" role="note" aria-label="versions">
     <span class="rst-current-version" data-toggle="rst-current-version">
       <span class="fa fa-book"> Pick an earlier version</span>
-      v: 1.8.3
+      v: 1.8.4
       <span class="fa fa-caret-down"></span>
     </span>
     <div class="rst-other-versions">
@@ -25716,6 +25762,10 @@ It is a superset of <cite>xs</cite> functionality, see
       
       <dl>
         <dt>Versions</dt>
+        
+          
+          <dd><a href="1.8.3/">1.8.3</a></dd>
+          
         
           
           <dd><a href="1.8.2/">1.8.2</a></dd>

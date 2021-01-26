@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>arcgis.learn module &mdash; arcgis 1.8.3 documentation</title>
+  <title>arcgis.learn module &mdash; arcgis 1.8.4 documentation</title>
   
 
   
@@ -77,7 +77,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             
             
               <div class="version">
-                1.8.3
+                1.8.4
               </div>
             
           
@@ -640,10 +640,11 @@ for this model are - [‘ner_json’,’BIO’, ‘LBIOU’].</p></td>
 </tr>
 <tr class="row-odd"><td><p>resize_to</p></td>
 <td><p>Optional integer. Resize the images to a given size.
-Works only for “PASCAL_VOC_rectangles” and “superres”.
-First resizes the image to the given size and
-then crops images of size equal to chip_size.
-Note: Keep chip_size &lt; resize_to</p></td>
+Works only for “PASCAL_VOC_rectangles”,  “Labelled_Tiles”
+and  “superres”. First resizes the image to the given
+size and then crops images of size equal to chip_size.
+Note: If resize_to is less than chip_size, the
+resize_to is used as chip_size.</p></td>
 </tr>
 </tbody>
 </table>
@@ -1187,6 +1188,11 @@ inferencing.</p></td>
 </dd></dl>
 
 <dl class="py method">
+<dt id="arcgis.learn.FeatureClassifier.gradCAM">
+<code class="sig-name descname">gradCAM</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">im</span></em>, <em class="sig-param"><span class="n">cl</span></em>, <em class="sig-param"><span class="n">heatmap_thresh</span><span class="p">:</span> <span class="n">int</span> <span class="o">=</span> <span class="default_value">16</span></em>, <em class="sig-param"><span class="n">image</span><span class="p">:</span> <span class="n">bool</span> <span class="o">=</span> <span class="default_value">True</span></em>, <em class="sig-param"><span class="n">grad_vis</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.learn.FeatureClassifier.gradCAM" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
 <dt id="arcgis.learn.FeatureClassifier.load">
 <code class="sig-name descname">load</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">name_or_path</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.learn.FeatureClassifier.load" title="Permalink to this definition">¶</a></dt>
 <dd><p>Loads a compatible saved model for inferencing or fine tuning from the disk.</p>
@@ -1251,7 +1257,7 @@ kwargs: ‘thresh’ - confidence score threshold for multilabel predictions, de
 
 <dl class="py method">
 <dt id="arcgis.learn.FeatureClassifier.predict">
-<code class="sig-name descname">predict</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">img_path</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.learn.FeatureClassifier.predict" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">predict</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">img_path</span></em>, <em class="sig-param"><span class="n">visualize</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">gradcam</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.learn.FeatureClassifier.predict" title="Permalink to this definition">¶</a></dt>
 <dd><p>Runs prediction on an Image. Works with RGB images only.</p>
 <table class="docutils align-default">
 <colgroup>
@@ -1265,6 +1271,17 @@ kwargs: ‘thresh’ - confidence score threshold for multilabel predictions, de
 <tr class="row-even"><td><p>image_path</p></td>
 <td><p>Required. Path to the image file to make the
 predictions on.</p></td>
+</tr>
+<tr class="row-odd"><td><p>visualize</p></td>
+<td><p>Optional: Set this parameter to True to
+visualize the image being predicted.</p></td>
+</tr>
+<tr class="row-even"><td><p>gradcam</p></td>
+<td><p>Optional: Set this parameter to True to
+get gradcam visualization to help with
+explanability of the prediction. If set
+to True, visualize parameter must also
+be set to True.</p></td>
 </tr>
 </tbody>
 </table>
@@ -5377,9 +5394,8 @@ the item on ArcGIS Online/Enterprise, default False.</p></td>
 <dl class="py class">
 <dt id="arcgis.learn.MultiTaskRoadExtractor">
 <em class="property">class </em><code class="sig-prename descclassname">arcgis.learn.</code><code class="sig-name descname">MultiTaskRoadExtractor</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">data</span></em>, <em class="sig-param"><span class="n">backbone</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">pretrained_path</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="o">*</span><span class="n">args</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.learn.MultiTaskRoadExtractor" title="Permalink to this definition">¶</a></dt>
-<dd><p>Creates a Multi-Task Learning model for binary segmentation. Supports 8 bit
-RGB imagery and offers experimental support for 16 bit RGB imagery.
-Does not support Multispectral imagery yet.
+<dd><p>Creates a Multi-Task Learning model for binary segmentation. Supports RGB
+and Multispectral Imagery.
 Implementation based on <a class="reference external" href="https://doi.org/10.1109/CVPR.2019.01063">https://doi.org/10.1109/CVPR.2019.01063</a> .</p>
 <table class="docutils align-default">
 <colgroup>
@@ -5454,7 +5470,7 @@ Default:8</p></td>
 </dl>
 <dl class="py method">
 <dt id="arcgis.learn.MultiTaskRoadExtractor.fit">
-<code class="sig-name descname">fit</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">epoch</span><span class="o">=</span><span class="default_value">10</span></em>, <em class="sig-param"><span class="n">lr</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.learn.MultiTaskRoadExtractor.fit" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">fit</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">epochs</span><span class="o">=</span><span class="default_value">10</span></em>, <em class="sig-param"><span class="n">lr</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.learn.MultiTaskRoadExtractor.fit" title="Permalink to this definition">¶</a></dt>
 <dd><p>Train the model for the specified number of epochs and using the
 specified learning rates</p>
 <table class="docutils align-default">
@@ -5567,6 +5583,37 @@ Helps in choosing the optimum learning rate for training the model.</p>
 </dd></dl>
 
 <dl class="py method">
+<dt id="arcgis.learn.MultiTaskRoadExtractor.mIOU">
+<code class="sig-name descname">mIOU</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">mean</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">show_progress</span><span class="o">=</span><span class="default_value">True</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.learn.MultiTaskRoadExtractor.mIOU" title="Permalink to this definition">¶</a></dt>
+<dd><p>Computes mean IOU on the validation set for each class.</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 67%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>Argument</strong></p></td>
+<td><p><strong>Description</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>mean</p></td>
+<td><p>Optional bool. If False returns class-wise
+mean IOU, otherwise returns mean iou of all
+classes combined.</p></td>
+</tr>
+<tr class="row-odd"><td><p>show_progress</p></td>
+<td><p>Optional bool. Displays the prgress bar if
+True.</p></td>
+</tr>
+</tbody>
+</table>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><cite>dict</cite> if mean is False otherwise <cite>float</cite></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
 <dt id="arcgis.learn.MultiTaskRoadExtractor.plot_losses">
 <code class="sig-name descname">plot_losses</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.learn.MultiTaskRoadExtractor.plot_losses" title="Permalink to this definition">¶</a></dt>
 <dd><p>Plot validation and training losses after fitting the model.</p>
@@ -5636,27 +5683,20 @@ the item on ArcGIS Online/Enterprise, default False.</p></td>
 <code class="sig-name descname">show_results</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">rows</span><span class="o">=</span><span class="default_value">2</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.learn.MultiTaskRoadExtractor.show_results" title="Permalink to this definition">¶</a></dt>
 <dd><p>Shows the ground truth and predictions of model side by side.</p>
 <p><strong>kwargs</strong></p>
-<table class="docutils align-default">
-<colgroup>
-<col style="width: 33%" />
-<col style="width: 67%" />
-</colgroup>
-<tbody>
-<tr class="row-odd"><td><p><strong>Argument</strong></p></td>
-<td><p><strong>Description</strong></p></td>
-</tr>
-<tr class="row-even"><td><p>rows</p></td>
-<td><p>Number of rows of data to be displayed, if
-batch size is smaller, then the rows will
-display the value provided for batch size.</p></td>
-</tr>
-<tr class="row-odd"><td><p>alpha</p></td>
-<td><p>Optional Float. Opacity parameter for label
-overlay on image. Float [0.0 - 1.0]
-Default: 0.6</p></td>
-</tr>
-</tbody>
-</table>
+<p>=====================   ===========================================def
+<strong>Argument</strong>            <strong>Description</strong>
+———————   ——————————————-
+rows                    Number of rows of data to be displayed, if</p>
+<blockquote>
+<div><p>batch size is smaller, then the rows will
+display the value provided for batch size.</p>
+</div></blockquote>
+<p>———————   ——————————————-
+alpha                   Optional Float. Opacity parameter for label</p>
+<blockquote>
+<div><p>overlay on image. Float [0.0 - 1.0]
+Default: 0.6</p>
+</div></blockquote>
 </dd></dl>
 
 <dl class="py method">
@@ -6290,8 +6330,9 @@ saved.</p></td>
 </dl>
 <dl class="py method">
 <dt id="arcgis.learn.Pix2Pix.compute_metrics">
-<code class="sig-name descname">compute_metrics</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.learn.Pix2Pix.compute_metrics" title="Permalink to this definition">¶</a></dt>
-<dd><p>Computes Frechet Inception Distance (FID) on validation set.</p>
+<code class="sig-name descname">compute_metrics</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">accuracy</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="n">show_progress</span><span class="o">=</span><span class="default_value">True</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.learn.Pix2Pix.compute_metrics" title="Permalink to this definition">¶</a></dt>
+<dd><p>Computes Peak Signal-to-Noise Ratio (PSNR) and 
+Structural Similarity Index Measure (SSIM) on validation set.</p>
 </dd></dl>
 
 <dl class="py method">
@@ -9101,9 +9142,9 @@ variable for this particular function.</p>
 </tr>
 <tr class="row-even"><td><p>tiles_only</p></td>
 <td><p>Keyword only parameter. Optional boolean.
-On AGOL, the default output image service for this function would be a Tiled Imagery Layer.
-To create Dynamic Imagery Layer as output on AGOL, set tiles_only parameter to False.</p>
-<p>Function will not honor tiles_only parameter on enterprise and will generate Dynamic Imagery Layer by default.</p>
+In ArcGIS Online, the default output image service for this function would be a Tiled Imagery Layer.
+To create Dynamic Imagery Layer as output in ArcGIS Online, set tiles_only parameter to False.</p>
+<p>Function will not honor tiles_only parameter in ArcGIS Enterprise and will generate Dynamic Imagery Layer by default.</p>
 </td>
 </tr>
 </tbody>
@@ -9691,12 +9732,12 @@ the item on ArcGIS Online/Enterprise, default False.</p></td>
 
   </div>
   
-    Options v: 1.8.3
+    Options v: 1.8.4
 
   <div class="rst-versions" data-toggle="rst-versions" role="note" aria-label="versions">
     <span class="rst-current-version" data-toggle="rst-current-version">
       <span class="fa fa-book"> Pick an earlier version</span>
-      v: 1.8.3
+      v: 1.8.4
       <span class="fa fa-caret-down"></span>
     </span>
     <div class="rst-other-versions">
@@ -9704,6 +9745,10 @@ the item on ArcGIS Online/Enterprise, default False.</p></td>
       
       <dl>
         <dt>Versions</dt>
+        
+          
+          <dd><a href="1.8.3/">1.8.3</a></dd>
+          
         
           
           <dd><a href="1.8.2/">1.8.2</a></dd>
