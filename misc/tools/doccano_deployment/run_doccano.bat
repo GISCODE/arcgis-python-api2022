@@ -1,7 +1,9 @@
 @echo off
-
-SET DIR=%~dp0%
-cd %DIR%doccano/app
+SET DIR_=%~dp0
 call "c:/doccano/venv/scripts/activate"
-python manage.py runserver
-cd %DIR%
+cd \doccano
+doccano --username %1 --password %2
+cd %DIR_%
+
+
+

@@ -1,65 +1,91 @@
 @echo off
-SET DIR=%~dp0%
+
+SET DIR_=%~dp0
+for /f "delims=" %%i in ('powershell -file  %DIR_%elevated_prompt_check.ps1') do set admin=%%i
+
+if  %admin%==0 (
+    powershell start '%~f0' ' %*' -verb runas 2>nul && exit /b
+    echo Need to run this installation as an administrator
+    pause
+    exit)
+
 cd /
 mkdir doccano
 cd c:/doccano
 mkdir logs
-cd %DIR%
+cd %DIR_%
 set hr=%time:~0,2%
 set hr=%hr: =0%
 set LOGFILE=C:\doccano\logs\install_log_%date:~-4,4%%date:~-10,2%%date:~-7,2%_%hr%%time:~3,2%%time:~6,2%.txt
 
-call :LOG1 2> %LOGFILE%
-
-python "%DIR%doccano\app\manage.py" migrate
-python "%DIR%doccano\app\manage.py" createsuperuser
-
-call :LOG2 2>> %LOGFILE%
-
+echo "-----Installing chocolatey-----"> %LOGFILE%
+call :install_chocolatey 2>> %LOGFILE%
+choco feature enable -n allowGlobalConfirmation
+echo "-----Installing dependencies-----">> %LOGFILE%
+call :install_deps 2>> %LOGFILE%
+echo "-----Setting doccano username-----">> %LOGFILE%
+call :getusrname 2>> %LOGFILE%
+echo "-----Setting doccano password-----">> %LOGFILE%
+call :getpwd 2>> %LOGFILE%
+echo "-----Setting up doccano service-----">> %LOGFILE%
+@REM GOTO :end
+call :setup_doccano_service 2>> %LOGFILE%
+echo Doccano successfully installed
+echo Starting doccano at http://localhost:8000 ......
+timeout 20 > %temp%\null
+start explorer http://localhost:8000
 exit /B
 
-:LOG2
-
-call "C:/doccano/venv/scripts/deactivate"
-cd "%DIR%doccano\app\server\static"
-call npm install
-cd "%DIR%"
-copy "%DIR%annotation.html" "%DIR%doccano\app\server\templates" /Y
-net stop doccano /Y
-nssm remove doccano confirm
-nssm install doccano %DIR%run_doccano.bat %DIR%
-nssm start doccano
-net stop start_webpack /Y
-nssm remove start_webpack confirm
-nssm install start_webpack %DIR%start_webpack.bat %DIR%
-nssm start start_webpack
-pause
-exit /B
-
-:LOG1
+:install_chocolatey
 
 ::install chocolatey
-echo installing chocolatey
-%systemroot%\System32\WindowsPowerShell\v1.0\powershell.exe -NoProfile -ExecutionPolicy Bypass -Command "& '%DIR%install_chocolatey.ps1' %*" -Verb RunAs
+echo Installing chocolatey...
+%systemroot%\System32\WindowsPowerShell\v1.0\powershell.exe -NoProfile -ExecutionPolicy Bypass -Command "& '%DIR_%install_chocolatey.ps1' %*" -Verb RunAs
 call refresh_path.bat
-echo installing git,node and python
-::install git,node and python
-%systemroot%\System32\WindowsPowerShell\v1.0\powershell.exe -NoProfile -ExecutionPolicy Bypass -Command "& '%DIR%install_deps.ps1' %*" -Verb RunAs
-SET PATH=%PATH%;C:\Program Files\Git\bin;C:\Program Files\nodejs
+echo Installing python...
+::install python
+%systemroot%\System32\WindowsPowerShell\v1.0\powershell.exe -NoProfile -ExecutionPolicy Bypass -Command "& '%DIR_%install_deps.ps1' %*" -Verb RunAs
 call refresh_path.bat
+exit /B
+
+
+:install_deps
 pip install virtualenv 
 virtualenv "C:/doccano/venv"
 call C:/doccano/venv/scripts/activate
-python -m pip install --force-reinstall pip
-call git clone https://github.com/doccano/doccano.git doccano
-cd "%DIR%doccano"
-call git checkout bdba2961bf7942eb529a1591a7499b5d15af73bf
-git config --global url."https://".insteadOf git://
-pip install -r "%DIR%doccano\requirements.txt"
-cd "%DIR%doccano\frontend"
-SET PATH=%PATH%;%systemroot%\System32\WindowsPowerShell\v1.0\
-call npm install --global windows-build-tools --vs2015
-SET NODE_GYP_FORCE_PYTHON=%userprofile%\.windows-build-tools\python27\python.exe
-call npm install
-call npm run build
-cd "%DIR%doccano\app"
+pip install doccano==1.2.4
+cd "%DIR_%"
+net stop doccano /Y >%temp%\null
+nssm remove doccano confirm
+@REM set /p doccano_username="Enter username:"
+@REM set /p doccano_password="Enter Password:"
+@REM :getpwd
+exit /B
+
+
+
+:setup_doccano_service
+call refresh_path.bat
+nssm install doccano %DIR_%run_doccano.bat  "%doccano_username% %doccano_password%"
+nssm start doccano > %temp%\null
+call C:/doccano/venv/scripts/deactivate
+exit /B
+
+:getpwd
+
+for /f "delims=" %%i in ('powershell -file  getpwd.ps1') do set doccano_password=%%i
+if /I  %doccano_password%==0 echo Passwords don't match && GOTO :getpwd
+if /I  %doccano_password%==1 echo "Password does not meet length(>5) requirement" && GOTO :getpwd
+exit /B
+
+
+:getusrname
+for /f "delims=" %%i in ('powershell -file  get_username.ps1') do set doccano_username=%%i
+if /I  %doccano_username%==0 echo Username does not meet length(^>5) requirement && GOTO :getusrname
+exit /B
+
+
+:end
+
+
+
