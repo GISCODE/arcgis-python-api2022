@@ -28,20 +28,20 @@ from arcgis.gis import GIS
 
 ITEMS_METADATA_YAML_PATH = os.path.join(".", "items_metadata.yaml")
 THUMBNAILS_DIR = os.path.join(".", "static", "thumbnails")
-REPLACE_PROFILES_SCRIPT = os.path.join(".", "misc", "tools", 
+REPLACE_PROFILES_SCRIPT = os.path.join(".", "misc", "tools",
                                        "replace_profiles.py")
 
 NB_PORTAL_TYPE = "Notebook"
 NB_PORTAL_TYPE_KEYWORDS = "Notebook, Python"
 NB_ITEM_PROPERTIES_RUNTIME_STAMP_ADVANCED = \
     {'notebookRuntimeName': 'ArcGIS Notebook Python 3 Advanced',
-     'notebookRuntimeVersion': '4.0'}
+     'notebookRuntimeVersion': '5.0'}
 NB_ITEM_PROPERTIES_RUNTIME_STAMP_ADVANCED_GPU = \
      {'notebookRuntimeName': 'ArcGIS Notebook Python 3 Advanced with GPU support',
-      'notebookRuntimeVersion': '4.0'}
+      'notebookRuntimeVersion': '5.0'}
 NB_ITEM_PROPERTIES_RUNTIME_STAMP_STANDARD = \
     {'notebookRuntimeName': 'ArcGIS Notebook Python 3 Standard',
-     'notebookRuntimeVersion': '4.0'}
+     'notebookRuntimeVersion': '5.0'}
 NB_ITEM_FOLDER = "Notebook Samples"
 
 def _main():
@@ -104,7 +104,7 @@ def _read_items_metadata_yaml():
         return yaml.safe_load(f)
 
 def _replace_profiles():
-    """Runs misc/tools/replace_profiles.py to go through each notebook in the 
+    """Runs misc/tools/replace_profiles.py to go through each notebook in the
     repo and replace profiles with usernames/passwords
     """
     cmd = f"{sys.executable} {REPLACE_PROFILES_SCRIPT}"
@@ -166,8 +166,8 @@ class ItemsUploader:
         if not os.path.exists(nb_path):
             raise Exception(f"Couldn't find {nb_path}")
 
-    def update_item(self, item_id, item_type, item_type_keywords, title, categories, 
-                    snippet, description, license_info, tags, nb_path, 
+    def update_item(self, item_id, item_type, item_type_keywords, title, categories,
+                    snippet, description, license_info, tags, nb_path,
                     runtime_stamp, thumbnail):
         """Actually uploads the notebook item to the portal"""
         item_properties = {"title" : title,
@@ -227,12 +227,12 @@ class ItemsUploader:
         if re.match(".*standard.*", sample_entry_runtime_field):
             return NB_ITEM_PROPERTIES_RUNTIME_STAMP_STANDARD
         elif re.match(".*advance.*gpu.*", sample_entry_runtime_field):
-            return NB_ITEM_PROPERTIES_RUNTIME_STAMP_ADVANCED_GPU 
+            return NB_ITEM_PROPERTIES_RUNTIME_STAMP_ADVANCED_GPU
         elif re.match(".*advance.*", sample_entry_runtime_field):
             return NB_ITEM_PROPERTIES_RUNTIME_STAMP_ADVANCED
         else:
             # Default to standard
-            return NB_ITEM_PROPERTIES_RUNTIME_STAMP_STANDARD 
+            return NB_ITEM_PROPERTIES_RUNTIME_STAMP_STANDARD
 
     def _stamp_file_with_runtime(self, notebook_file_path, runtime_stamp):
         nb = nbformat.read(notebook_file_path, nbformat.NO_CONVERT)
@@ -247,4 +247,3 @@ if __name__ == "__main__":
         log.exception(e)
         log.info("Program did not succesfully complete (unhandled exception)")
         sys.exit(1)
-
