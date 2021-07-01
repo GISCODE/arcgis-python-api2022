@@ -9,4 +9,5 @@ for /f "tokens=3*" %%A in ('reg query "HKLM\SYSTEM\CurrentControlSet\Control\Ses
 for /f "tokens=3*" %%A in ('reg query "HKCU\Environment" /v Path') do set userpath=%%A%%B
 
 :: Set Refreshed Path
-set PATH=%PATH%;%userpath%;%syspath%
+set PATH=%path%;%syspath%;%userpath%
+::;%syspath%
