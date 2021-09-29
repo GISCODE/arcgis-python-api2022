@@ -3,11 +3,11 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" />
+  <meta charset="utf-8">
   
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>arcgis.geoanalytics.use_proximity module &mdash; arcgis 1.9 documentation</title>
+  <title>arcgis.geoanalytics.use_proximity module &mdash; arcgis 1.9.1 documentation</title>
   
 
   
@@ -19,10 +19,7 @@
   
     <link rel="shortcut icon" href="_static/favicon.ico"/>
   
-
   
-  
-
   
 
   
@@ -36,7 +33,7 @@
         <script src="_static/underscore.js"></script>
         <script src="_static/doctools.js"></script>
         <script src="_static/language_data.js"></script>
-        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     
     <script type="text/javascript" src="_static/js/theme.js"></script>
 
@@ -67,7 +64,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
           
 
           
-            <a href="index.html" class="icon icon-home"> arcgis
+            <a href="index.html" class="icon icon-home" alt="Documentation Home"> arcgis
           
 
           
@@ -80,7 +77,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             
             
               <div class="version">
-                1.9
+                1.9.1
               </div>
             
           
@@ -125,6 +122,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <li class="toctree-l3 current"><a class="current reference internal" href="#">arcgis.geoanalytics.use_proximity module</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#create-buffers">create_buffers</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#trace-proximity-events">trace_proximity_events</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#group-by-proximity">group_by_proximity</a></li>
 </ul>
 </li>
 </ul>
@@ -181,8 +179,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
 
 
-
-
 <div role="navigation" aria-label="breadcrumbs navigation">
 
   <ul class="wy-breadcrumbs">
@@ -196,7 +192,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     
       <li class="wy-breadcrumbs-aside">
         
-          
+            
         
       </li>
     
@@ -216,12 +212,12 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <div class="section" id="arcgis-geoanalytics-use-proximity-module">
 <h1>arcgis.geoanalytics.use_proximity module<a class="headerlink" href="#arcgis-geoanalytics-use-proximity-module" title="Permalink to this headline">¶</a></h1>
 <span class="target" id="module-arcgis.geoanalytics.use_proximity"></span><p>These tools help answer one of the most common questions posed in spatial analysis: What is near what?</p>
-<p>create_buffers() creates areas of a specified distance from features.</p>
+<p><code class="docutils literal notranslate"><span class="pre">`create_buffers()`</span></code> creates areas of a specified distance from features.</p>
 <div class="section" id="create-buffers">
 <h2>create_buffers<a class="headerlink" href="#create-buffers" title="Permalink to this headline">¶</a></h2>
-<dl class="function">
+<dl class="py function">
 <dt id="arcgis.geoanalytics.use_proximity.create_buffers">
-<code class="sig-prename descclassname">arcgis.geoanalytics.use_proximity.</code><code class="sig-name descname">create_buffers</code><span class="sig-paren">(</span><em class="sig-param">input_layer</em>, <em class="sig-param">distance=1</em>, <em class="sig-param">distance_unit='Miles'</em>, <em class="sig-param">field=None</em>, <em class="sig-param">method='Planar'</em>, <em class="sig-param">dissolve_option='None'</em>, <em class="sig-param">dissolve_fields=None</em>, <em class="sig-param">summary_fields=None</em>, <em class="sig-param">multipart=False</em>, <em class="sig-param">output_name=None</em>, <em class="sig-param">context=None</em>, <em class="sig-param">gis=None</em>, <em class="sig-param">future=False</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.geoanalytics.use_proximity.create_buffers" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">arcgis.geoanalytics.use_proximity.</code><code class="sig-name descname">create_buffers</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">input_layer</span></em>, <em class="sig-param"><span class="n">distance</span><span class="o">=</span><span class="default_value">1</span></em>, <em class="sig-param"><span class="n">distance_unit</span><span class="o">=</span><span class="default_value">'Miles'</span></em>, <em class="sig-param"><span class="n">field</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">method</span><span class="o">=</span><span class="default_value">'Planar'</span></em>, <em class="sig-param"><span class="n">dissolve_option</span><span class="o">=</span><span class="default_value">'None'</span></em>, <em class="sig-param"><span class="n">dissolve_fields</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">summary_fields</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">multipart</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">output_name</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">context</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">gis</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">future</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.geoanalytics.use_proximity.create_buffers" title="Permalink to this definition">¶</a></dt>
 <dd><img alt="_images/create_buffers_geo.png" src="_images/create_buffers_geo.png" />
 <p>Buffers are typically used to create areas that can be further analyzed
 using other tools such as <code class="docutils literal notranslate"><span class="pre">aggregate_points</span></code>. For example, ask the question,
@@ -359,7 +355,7 @@ This option is only available if a <code class="docutils literal notranslate"><s
 </table>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p>Output Features as a feature layer collection item</p>
+<dd class="field-odd"><p>Output Features as a <a class="reference internal" href="arcgis.features.toc.html#arcgis.features.FeatureLayerCollection" title="arcgis.features.FeatureLayerCollection"><code class="xref py py-class docutils literal notranslate"><span class="pre">FeatureLayerCollection</span></code></a></p>
 </dd>
 </dl>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Usage Example: To create buffer based on distance field.</span>
@@ -376,9 +372,9 @@ This option is only available if a <code class="docutils literal notranslate"><s
 </div>
 <div class="section" id="trace-proximity-events">
 <h2>trace_proximity_events<a class="headerlink" href="#trace-proximity-events" title="Permalink to this headline">¶</a></h2>
-<dl class="function">
+<dl class="py function">
 <dt id="arcgis.geoanalytics.use_proximity.trace_proximity_events">
-<code class="sig-prename descclassname">arcgis.geoanalytics.use_proximity.</code><code class="sig-name descname">trace_proximity_events</code><span class="sig-paren">(</span><em class="sig-param">input_points</em>, <em class="sig-param">spatial_search_distance</em>, <em class="sig-param">spatial_search_distance_unit</em>, <em class="sig-param">temporal_search_distance</em>, <em class="sig-param">temporal_search_distance_unit</em>, <em class="sig-param">entity_id_field=None</em>, <em class="sig-param">entities_of_interest_ids=None</em>, <em class="sig-param">entities_of_interest_layer=None</em>, <em class="sig-param">distance_method='Planar'</em>, <em class="sig-param">include_tracks_layer=False</em>, <em class="sig-param">max_trace_depth=None</em>, <em class="sig-param">attribute_match_criteria=None</em>, <em class="sig-param">output_name=None</em>, <em class="sig-param">context=None</em>, <em class="sig-param">gis=None</em>, <em class="sig-param">future=False</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.geoanalytics.use_proximity.trace_proximity_events" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">arcgis.geoanalytics.use_proximity.</code><code class="sig-name descname">trace_proximity_events</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">input_points</span></em>, <em class="sig-param"><span class="n">spatial_search_distance</span></em>, <em class="sig-param"><span class="n">spatial_search_distance_unit</span></em>, <em class="sig-param"><span class="n">temporal_search_distance</span></em>, <em class="sig-param"><span class="n">temporal_search_distance_unit</span></em>, <em class="sig-param"><span class="n">entity_id_field</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">entities_of_interest_ids</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">entities_of_interest_layer</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">distance_method</span><span class="o">=</span><span class="default_value">'Planar'</span></em>, <em class="sig-param"><span class="n">include_tracks_layer</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">max_trace_depth</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">attribute_match_criteria</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">output_name</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">context</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">gis</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">future</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.geoanalytics.use_proximity.trace_proximity_events" title="Permalink to this definition">¶</a></dt>
 <dd><p>The Trace Proximity Events task analyzes time-enabled point features representing moving entities.
 The task will follow entities of interest in space (location) and time to see which other entities
 the entities of interest have interacted with. The trace will continue from entity to entity to a
@@ -468,7 +464,85 @@ equal values of the attributes specified.</p></td>
 </table>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p>Item when Future=False or GAJob when Future=True</p>
+<dd class="field-odd"><p><a class="reference internal" href="arcgis.gis.toc.html#arcgis.gis.Item" title="arcgis.gis.Item"><code class="xref py py-class docutils literal notranslate"><span class="pre">Item</span></code></a> when Future=False or GAJob when Future=True</p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+<div class="section" id="group-by-proximity">
+<h2>group_by_proximity<a class="headerlink" href="#group-by-proximity" title="Permalink to this headline">¶</a></h2>
+<dl class="py function">
+<dt id="arcgis.geoanalytics.use_proximity.group_by_proximity">
+<code class="sig-prename descclassname">arcgis.geoanalytics.use_proximity.</code><code class="sig-name descname">group_by_proximity</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">input_layer</span></em>, <em class="sig-param"><span class="n">spatial_relationship</span></em>, <em class="sig-param"><span class="n">spatial_near_distance</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">spatial_near_distance_unit</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">temporal_relationship</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">temporal_near_distance</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">temporal_near_distance_unit</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">output_name</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">context</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">gis</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">future</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.geoanalytics.use_proximity.group_by_proximity" title="Permalink to this definition">¶</a></dt>
+<dd><p>The Group By Proximity tool groups features that are within spatial
+proximity or spatiotemporal proximity of each other.</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 24%" />
+<col style="width: 76%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>Argument</strong></p></td>
+<td><p><strong>Description</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>input_layer</p></td>
+<td><p>Required layer. The point, line, or polygon features to be grouped.
+See <a class="reference internal" href="arcgis.geoanalytics.toc.html#gaxfeatureinput"><span class="std std-ref">Feature Input</span></a>.</p></td>
+</tr>
+<tr class="row-odd"><td><p>spatial_relationship</p></td>
+<td><p>Required String. The type of relationship to group by.</p>
+<p>Values: <code class="docutils literal notranslate"><span class="pre">`Intersects,</span> <span class="pre">Touches,</span> <span class="pre">NearGeodesic,</span> <span class="pre">NearPlanar`</span></code></p>
+</td>
+</tr>
+<tr class="row-even"><td><p>spatial_near_distance</p></td>
+<td><p>Optional Float. A float value used for the search distance to determine if
+features are near one another. This is only applied if <cite>NewGeodesic</cite> or
+<cite>NewPlanar</cite> is the selected <cite>spatial_relationship</cite>.</p></td>
+</tr>
+<tr class="row-odd"><td><p>spatial_near_distance_unit</p></td>
+<td><p>Optional String. The linear unit to be used with the distance value specified
+in <cite>spatial_near_distance</cite>. The default value is Meters.</p>
+<p>Values: Meters | Kilometers | Feet | Miles | NauticalMiles | Yards</p>
+</td>
+</tr>
+<tr class="row-even"><td><p>temporal_relationship</p></td>
+<td><p>Optional String. The type of temporal relationship to group by.</p>
+<p>Values: Intersects | Near</p>
+</td>
+</tr>
+<tr class="row-odd"><td><p>temporal_near_distance</p></td>
+<td><p>Optional Float. A float value used for the temporal search distance to determine if features are near one another.</p></td>
+</tr>
+<tr class="row-even"><td><p>temporal_near_distance_unit</p></td>
+<td><p>Optional String. The temporal unit to be used with the distance value specified in <cite>temporal_near_distance</cite>.</p>
+<p>Values: Milliseconds | Seconds | Minutes | Hours | Days | Weeks| Months | Years</p>
+</td>
+</tr>
+<tr class="row-odd"><td><p>output_name</p></td>
+<td><p>Optional string. The task will create a feature service of the results. You define the name of the service.</p></td>
+</tr>
+<tr class="row-even"><td><p>gis</p></td>
+<td><p>Optional GIS. The GIS object where the analysis will take place.</p></td>
+</tr>
+<tr class="row-odd"><td><p>context</p></td>
+<td><p>Optional string. The context parameter contains additional settings that affect task execution. For this task, there are four settings:</p>
+<ol class="arabic simple">
+<li><p>Extent (<code class="docutils literal notranslate"><span class="pre">extent</span></code>) - a bounding box that defines the analysis area. Only those features that intersect the bounding box will be analyzed.</p></li>
+<li><p>Processing spatial reference (<code class="docutils literal notranslate"><span class="pre">processSR</span></code>) The features will be projected into this coordinate system for analysis.</p></li>
+<li><p>Output Spatial Reference (<code class="docutils literal notranslate"><span class="pre">outSR</span></code>) - the features will be projected into this coordinate system after the analysis to be saved. The output spatial reference for the spatiotemporal big data store is always WGS84.</p></li>
+<li><p>Data store (<code class="docutils literal notranslate"><span class="pre">dataStore</span></code>) Results will be saved to the specified data store. For ArcGIS Enterprise, the default is the spatiotemporal big data store.</p></li>
+</ol>
+</td>
+</tr>
+<tr class="row-even"><td><p>future</p></td>
+<td><p>optional Boolean. If True, a GAJob is returned instead of results. The GAJob can be queried on the status of the execution.</p></td>
+</tr>
+</tbody>
+</table>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><a class="reference internal" href="arcgis.gis.toc.html#arcgis.gis.Item" title="arcgis.gis.Item"><code class="xref py py-class docutils literal notranslate"><span class="pre">Item</span></code></a> when Future=False or GAJob when Future=True</p>
 </dd>
 </dl>
 </dd></dl>
@@ -482,29 +556,37 @@ equal values of the attributes specified.</p></td>
            
           </div>
           <footer>
+  
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-        <a href="arcgis.geocoding.html" class="btn btn-neutral float-right" title="arcgis.geocoding module" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
-        <a href="arcgis.geoanalytics.summarize_data.html" class="btn btn-neutral float-left" title="arcgis.geoanalytics.summarize_data module" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+      
+        <a href="arcgis.geocoding.html" class="btn btn-neutral float-right" title="arcgis.geocoding module" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="arcgis.geoanalytics.summarize_data.html" class="btn btn-neutral float-left" title="arcgis.geoanalytics.summarize_data module" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
     </div>
+  
 
   <hr/>
 
   <div role="contentinfo">
     <p>
-        &#169; Copyright 2016-2021, Esri.
+        
+        &copy; Copyright 2016-2021, Esri
 
     </p>
   </div>
     
     
     
-    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
     
-    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
     
     provided by <a href="https://readthedocs.org">Read the Docs</a>. 
 
 </footer>
+
         </div>
       </div>
 
@@ -512,12 +594,12 @@ equal values of the attributes specified.</p></td>
 
   </div>
   
-    Options v: 1.9
+    Options v: 1.9.1
 
   <div class="rst-versions" data-toggle="rst-versions" role="note" aria-label="versions">
     <span class="rst-current-version" data-toggle="rst-current-version">
       <span class="fa fa-book"> Pick an earlier version</span>
-      v: 1.9
+      v: 1.9.1
       <span class="fa fa-caret-down"></span>
     </span>
     <div class="rst-other-versions">
@@ -525,6 +607,10 @@ equal values of the attributes specified.</p></td>
       
       <dl>
         <dt>Versions</dt>
+        
+          
+          <dd><a href="1.9.0/">1.9.0</a></dd>
+          
         
           
           <dd><a href="1.8.5/">1.8.5</a></dd>

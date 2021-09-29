@@ -1,5 +1,5 @@
 arcgis.gis.workflowmanager module
-===========================
+=================================
 
 .. automodule:: arcgis.gis.workflowmanager
 
@@ -29,8 +29,41 @@ Job
 --------------
 .. autoclass:: arcgis.gis.workflowmanager.Job
     :members:
+    :show-inheritance:
 
 JobDiagram
 --------------
 .. autoclass:: arcgis.gis.workflowmanager.JobDiagram
     :members:
+    :show-inheritance:
+
+JobLocation
+--------------
+.. autoclass:: arcgis.gis.workflowmanager.JobLocation
+    :members:
+    :show-inheritance:
+    
+JobTemplate
+--------------
+.. autoclass:: arcgis.gis.workflowmanager.JobTemplate
+    :members:
+    :show-inheritance:
+    
+Group
+--------------
+.. autoclass:: arcgis.gis.workflowmanager.Group
+    :members:
+    :show-inheritance:
+
+SavedSearchesManager
+--------------------
+.. autoclass:: arcgis.gis.workflowmanager.SavedSearchesManager
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
+WMRole
+--------------
+.. autoclass:: arcgis.gis.workflowmanager.WMRole
+    :members:
+    :show-inheritance:

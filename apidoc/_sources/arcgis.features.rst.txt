@@ -62,3 +62,10 @@ arcgis.features.SpatialDataFrame
     :inherited-members:
     :members:
     :undoc-members:
+
+arcgis.features.EditFeatureJob
+--------------
+.. autoclass:: arcgis.features._async.EditFeatureJob
+    :inherited-members:
+    :members:
+    :undoc-members:

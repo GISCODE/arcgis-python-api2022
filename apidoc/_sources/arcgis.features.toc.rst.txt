@@ -67,6 +67,13 @@ SpatialDataFrame
     :members:
     :undoc-members:
 
+EditFeatureJob
+--------------
+.. autoclass:: arcgis.features._async.EditFeatureJob
+    :inherited-members:
+    :members:
+    :undoc-members:
+    
 Submodules
 --------------
 .. toctree::
