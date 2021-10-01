@@ -1,6 +1,21 @@
 arcgis.geometry.functions module
 ================================
 
+AreaUnits
+--------------
+.. autoclass:: arcgis.geometry.functions.AreaUnits
+    :inherited-members:
+    :members:
+    :undoc-members:
+
+LengthUnits
+--------------
+.. autoclass:: arcgis.geometry.functions.LengthUnits
+    :inherited-members:
+    :members:
+    :undoc-members:
+
+
 .. automodule:: arcgis.geometry.functions
 
 areas_and_lengths
