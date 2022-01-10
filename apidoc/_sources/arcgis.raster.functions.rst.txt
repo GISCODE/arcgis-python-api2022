@@ -676,3 +676,6 @@ wind_chill
 __________
 .. autofunction:: arcgis.raster.functions.wind_chill
 
+wndwi
+__________
+.. autofunction:: arcgis.raster.functions.wndwi

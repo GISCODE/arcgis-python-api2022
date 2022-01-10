@@ -121,3 +121,17 @@ SecurityManager
     :members:
     :undoc-members:
     :show-inheritance:
+
+NotebookDataAccess
+----------------
+.. autoclass:: arcgis.gis.nb._dataaccess.NotebookDataAccess
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
+NotebookFile
+----------------
+.. autoclass:: arcgis.gis.nb._dataaccess.NotebookFile
+    :members:
+    :undoc-members:
+    :show-inheritance:

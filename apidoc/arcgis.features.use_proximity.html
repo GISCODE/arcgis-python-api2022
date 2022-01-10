@@ -3,11 +3,11 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" />
+  <meta charset="utf-8">
   
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>arcgis.features.use_proximity module &mdash; arcgis 1.9 documentation</title>
+  <title>arcgis.features.use_proximity module &mdash; arcgis 1.9.1 documentation</title>
   
 
   
@@ -19,10 +19,7 @@
   
     <link rel="shortcut icon" href="_static/favicon.ico"/>
   
-
   
-  
-
   
 
   
@@ -36,7 +33,7 @@
         <script src="_static/underscore.js"></script>
         <script src="_static/doctools.js"></script>
         <script src="_static/language_data.js"></script>
-        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     
     <script type="text/javascript" src="_static/js/theme.js"></script>
 
@@ -67,7 +64,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
           
 
           
-            <a href="index.html" class="icon icon-home"> arcgis
+            <a href="index.html" class="icon icon-home" alt="Documentation Home"> arcgis
           
 
           
@@ -80,7 +77,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             
             
               <div class="version">
-                1.9
+                1.9.1
               </div>
             
           
@@ -119,6 +116,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <li class="toctree-l2"><a class="reference internal" href="arcgis.features.toc.html#geoaccessor">GeoAccessor</a></li>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.features.toc.html#geoseriesaccessor">GeoSeriesAccessor</a></li>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.features.toc.html#spatialdataframe">SpatialDataFrame</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.features.toc.html#editfeaturejob">EditFeatureJob</a></li>
 <li class="toctree-l2 current"><a class="reference internal" href="arcgis.features.toc.html#submodules">Submodules</a><ul class="current">
 <li class="toctree-l3"><a class="reference internal" href="arcgis.features.analysis.html">arcgis.features.analysis module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="arcgis.features.analyze_patterns.html">arcgis.features.analyze_patterns module</a></li>
@@ -194,8 +192,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
 
 
-
-
 <div role="navigation" aria-label="breadcrumbs navigation">
 
   <ul class="wy-breadcrumbs">
@@ -209,7 +205,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     
       <li class="wy-breadcrumbs-aside">
         
-          
+            
         
       </li>
     
@@ -236,9 +232,9 @@ find_nearest identifies those places that are the closest to known locations.
 plan_routes determines the best way to route a fleet of vehicles to visit many stops.</p>
 <div class="section" id="connect-origins-to-destinations">
 <h2>connect_origins_to_destinations<a class="headerlink" href="#connect-origins-to-destinations" title="Permalink to this headline">¶</a></h2>
-<dl class="function">
+<dl class="py function">
 <dt id="arcgis.features.use_proximity.connect_origins_to_destinations">
-<code class="sig-prename descclassname">arcgis.features.use_proximity.</code><code class="sig-name descname">connect_origins_to_destinations</code><span class="sig-paren">(</span><em class="sig-param">origins_layer</em>, <em class="sig-param">destinations_layer</em>, <em class="sig-param">measurement_type='DrivingTime'</em>, <em class="sig-param">origins_layer_route_id_field=None</em>, <em class="sig-param">destinations_layer_route_id_field=None</em>, <em class="sig-param">time_of_day=None</em>, <em class="sig-param">time_zone_for_time_of_day='GeoLocal'</em>, <em class="sig-param">output_name=None</em>, <em class="sig-param">context=None</em>, <em class="sig-param">gis=None</em>, <em class="sig-param">estimate=False</em>, <em class="sig-param">point_barrier_layer=None</em>, <em class="sig-param">line_barrier_layer=None</em>, <em class="sig-param">polygon_barrier_layer=None</em>, <em class="sig-param">future=False</em>, <em class="sig-param">route_shape='FollowStreets'</em>, <em class="sig-param">include_route_layers=False</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.features.use_proximity.connect_origins_to_destinations" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">arcgis.features.use_proximity.</code><code class="sig-name descname">connect_origins_to_destinations</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">origins_layer</span></em>, <em class="sig-param"><span class="n">destinations_layer</span></em>, <em class="sig-param"><span class="n">measurement_type</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">origins_layer_route_id_field</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">destinations_layer_route_id_field</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">time_of_day</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">time_zone_for_time_of_day</span><span class="o">=</span><span class="default_value">'GeoLocal'</span></em>, <em class="sig-param"><span class="n">output_name</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">context</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">gis</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">estimate</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">point_barrier_layer</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">line_barrier_layer</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">polygon_barrier_layer</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">future</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">route_shape</span><span class="o">=</span><span class="default_value">'FollowStreets'</span></em>, <em class="sig-param"><span class="n">include_route_layers</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.features.use_proximity.connect_origins_to_destinations" title="Permalink to this definition">¶</a></dt>
 <dd><img alt="_images/connect_origins_to_destinations.png" src="_images/connect_origins_to_destinations.png" />
 <p>The Connect Origins to Destinations task measures the travel time or distance between pairs of points. Using this tool, you can</p>
 <ul class="simple">
@@ -248,182 +244,16 @@ plan_routes determines the best way to route a fleet of vehicles to visit many s
 </ul>
 <p>You provide starting and ending points, and the tool returns a layer containing route lines, including measurements, between the
 paired origins and destinations.</p>
-<table class="docutils align-default">
-<colgroup>
-<col style="width: 11%" />
-<col style="width: 89%" />
-</colgroup>
-<tbody>
-<tr class="row-odd"><td><p><strong>Argument</strong></p></td>
-<td><p><strong>Description</strong></p></td>
-</tr>
-<tr class="row-even"><td><p>origins_layer</p></td>
-<td><p>Required layer. The starting point or points of the routes to be generated. See <a class="reference internal" href="arcgis.features.analysis.html#featureinput"><span class="std std-ref">Feature Input</span></a>.</p></td>
-</tr>
-<tr class="row-odd"><td><p>destinations_layer</p></td>
-<td><p>Required layer. The routes end at points in the destinations layer. See <a class="reference internal" href="arcgis.features.analysis.html#featureinput"><span class="std std-ref">Feature Input</span></a>.</p></td>
-</tr>
-<tr class="row-even"><td><p>measurement_type</p></td>
-<td><p>Required string. The origins and destinations can be connected by measuring straight-line distance,
-or by measuring travel time or travel distance along a street network using various modes of transportation
-known as travel modes.</p>
-<p>Valid values are a string, StraightLine, which indicates Euclidean distance to be used as distance measure or
-a Python dictionary representing settings for a travel mode.</p>
-<p>When using a travel mode for the measurement_type, you need to specify a dictionary
-containing the settings for a travel mode supported by your organization. The code in the example section below generates
-a valid Python dictionary and then passes it as the value for the measurement_type parameter.</p>
-<p>Supported travel modes: [‘Driving Distance’, ‘Driving Time’, ‘Rural Driving Distance’, ‘Rural Driving Time’,
-‘Trucking Distance’, ‘Trucking Time’, ‘Walking Distance’, ‘Walking Time’]</p>
-</td>
-</tr>
-<tr class="row-odd"><td><p>origins_layer_route_id_field</p></td>
-<td><p>Optional string. Specify the field in the origins layer containing the IDs that pair origins with destinations.</p>
-<ul class="simple">
-<li><p>The ID values must uniquely identify points in the origins layer.</p></li>
-<li><p>Each ID value must also correspond with exactly one route ID value in the destinations layer. Route IDs that match
-across the layers create origin-destination pairs, which the tool connects together.</p></li>
-<li><p>Specifying origins_layer_route_id_field is optional when there is exactly one point feature in the origins or
-destinations layer. The tool will connect all origins to the one destination or the one origin to all destinations,
-depending on which layer contains one point.</p></li>
-</ul>
-</td>
-</tr>
-<tr class="row-even"><td><p>destinations_layer_route_id_field</p></td>
-<td><p>Optional string. Specify the field in the destinations layer containing the IDs that pair origins with destinations.</p>
-<ul class="simple">
-<li><p>The ID values must uniquely identify points in the destinations layer.</p></li>
-<li><p>Each ID value must also correspond with exactly one route ID value in the origins layer. Route IDs that match across the
-layers create origin-destination pairs, which the tool connects together.</p></li>
-<li><p>Specifying destinations_layer_route_id_field is optional when there is exactly one point feature in the origins or
-destinations layer. The tool will connect all origins to the one destination or the one origin to all destinations,
-depending on which layer contains one point.</p></li>
-</ul>
-</td>
-</tr>
-<tr class="row-odd"><td><p>time_of_day</p></td>
-<td><p>Optional datetime.datetime. Specify whether travel times should consider traffic conditions. To use traffic in the analysis,
-set measurement_type to a travel mode object whose impedance_attribute_name property is set to travel_time and assign a value
-to time_of_day. (A travel mode with other impedance_attribute_name values don’t support traffic.) The time_of_day value represents
-the time at which travel begins, or departs, from the origin points. The time is specified as datetime.datetime.</p>
-<p>The service supports two kinds of traffic: typical and live. Typical traffic references travel speeds that are made up of historical
-averages for each five-minute interval spanning a week. Live traffic retrieves speeds from a traffic feed that processes phone probe
-records, sensors, and other data sources to record actual travel speeds and predict speeds for the near future.</p>
-<p>The <a class="reference external" href="http://www.arcgis.com/home/webmap/viewer.html?webmap=b7a893e8e1e04311bd925ea25cb8d7c7">data coverage</a> page shows the countries
-Esri currently provides traffic data for.</p>
-<p>Typical Traffic:</p>
-<p>To ensure the task uses typical traffic in locations where it is available, choose a time and day of the week, and then convert the day
-of the week to one of the following dates from 1990:</p>
-<ul class="simple">
-<li><p>Monday - 1/1/1990</p></li>
-<li><p>Tuesday - 1/2/1990</p></li>
-<li><p>Wednesday - 1/3/1990</p></li>
-<li><p>Thursday - 1/4/1990</p></li>
-<li><p>Friday - 1/5/1990</p></li>
-<li><p>Saturday - 1/6/1990</p></li>
-<li><p>Sunday - 1/7/1990</p></li>
-</ul>
-<p>Set the time and date as datetime.datetime.</p>
-<p>For example, to solve for 1:03 p.m. on Thursdays, set the time and date to 1:03 p.m., 4 January 1990; and convert to
-datetime eg. datetime.datetime(1990, 1, 4, 1, 3).</p>
-<p>Live Traffic:</p>
-<p>To use live traffic when and where it is available, choose a time and date and convert to datetime.</p>
-<p>Esri saves live traffic data for 12 hours and references predictive data extending 12 hours into the future. If the time and date you
-specify for this parameter is outside the 24-hour time window, or the travel time in the analysis continues past the predictive data window, the task falls back to typical traffic speeds.</p>
-<p>Examples:
-from datetime import datetime</p>
-<ul class="simple">
-<li><p>“time_of_day”: datetime(1990, 1, 4, 1, 3) # 13:03, 4 January 1990. Typical traffic on Thursdays at 1:03 p.m.</p></li>
-<li><p>“time_of_day”: datetime(1990, 1, 7, 17, 0) # 17:00, 7 January 1990. Typical traffic on Sundays at 5:00 p.m.</p></li>
-<li><p>“time_of_day”: datetime(2014, 10, 22, 8, 0) # 8:00, 22 October 2014. If the current time is between 8:00 p.m., 21 Oct. 2014 and 8:00 p.m., 22 Oct. 2014,
-live traffic speeds are referenced in the analysis; otherwise, typical traffic speeds are referenced.</p></li>
-<li><p>“time_of_day”: datetime(2015, 3, 18, 10, 20) # 10:20, 18 March 2015. If the current time is between 10:20 p.m., 17 Mar. 2015 and 10:20 p.m., 18 Mar. 2015,
-live traffic speeds are referenced in the analysis; otherwise, typical traffic speeds are referenced.</p></li>
-</ul>
-</td>
-</tr>
-<tr class="row-even"><td><p>time_zone_for_time_of_day</p></td>
-<td><p>Optional string. Specify the time zone or zones of the timeOfDay parameter.
-Choice list: [‘GeoLocal’, ‘UTC’]</p>
-<p>GeoLocal-refers to the time zone in which the originsLayer points are located.</p>
-<p>UTC-refers to Coordinated Universal Time.</p>
-</td>
-</tr>
-<tr class="row-odd"><td><p>include_route_layers</p></td>
-<td><p>Optional Boolean. When include_route_layers is set to True, each route from the result is also saved as a route layer item. A route layer includes all the
-information for a particular route such as the stops assigned to the route as well as the travel directions. Creating route layers is useful if you want
-to share individual routes with other members in your organization. The route layers use the output feature service name provided in the outputName
-parameter as a prefix and the route name generated as part of the analysis is added to create a unique name for each route layer.</p>
-<p>Caution: Route layers cannot be created when the output is a feature collection. The task will raise an error if output_name is not specified
-(which indicates feature collection output) and include_route_layers is True.</p>
-<p>The maximum number of route layers that can be created is 1,000. If the result contains more than 1,000 routes and include_route_layers is True,
-the task will only create the output feature service.</p>
-</td>
-</tr>
-<tr class="row-even"><td><p>output_name</p></td>
-<td><p>Optional string. If provided, the task will create a feature layer of the results. You define the name of the layer. If output_name is not supplied,
-the task will return a feature collection.</p></td>
-</tr>
-<tr class="row-odd"><td><p>context</p></td>
-<td><p>Optional string. Additional settings such as processing extent and output spatial reference. For calculate_density, there are two settings.</p>
-<ol class="arabic simple">
-<li><p>Extent (extent)-a bounding box that defines the analysis area. Only those points in the origins_layer and destinations_layer that intersect the
-bounding box will be analyzed.</p></li>
-<li><p>Output Spatial Reference (outSR)-If the output is a feature service, the spatial reference will be the same as originsLayer. Setting outSR for feature services has no effect.
-If the output is a feature collection, the features will be in the spatial reference of the outSRvalue or the spatial reference of originsLayer when outSR is not specified.</p></li>
-</ol>
-</td>
-</tr>
-<tr class="row-even"><td><p>gis</p></td>
-<td><p>Optional, the GIS on which this tool runs. If not specified, the active GIS is used.</p></td>
-</tr>
-<tr class="row-odd"><td><p>estimate</p></td>
-<td><p>Optional Boolean. Is True, the number of credits needed to run the operation will be returned as a float.</p></td>
-</tr>
-<tr class="row-even"><td><p>point_barrier_layer</p></td>
-<td><p>Optional layer. Specify one or more point features that act as temporary restrictions (in other words, barriers) when traveling on the underlying streets.</p>
-<p>A point barrier can model a fallen tree, an accident, a downed electrical line, or anything that completely blocks traffic at a specific position along
-the street. Travel is permitted on the street but not through the barrier. See <a class="reference internal" href="arcgis.features.analysis.html#featureinput"><span class="std std-ref">Feature Input</span></a>.</p>
-</td>
-</tr>
-<tr class="row-odd"><td><p>line_barrier_layer</p></td>
-<td><p>Optional layer. Specify one or more line features that prohibit travel anywhere the lines intersect the streets.</p>
-<p>A line barrier prohibits travel anywhere the barrier intersects the streets. For example, a parade or protest that blocks traffic across several street
-segments can be modeled with a line barrier. See <a class="reference internal" href="arcgis.features.analysis.html#featureinput"><span class="std std-ref">Feature Input</span></a>.</p>
-</td>
-</tr>
-<tr class="row-even"><td><p>polygon_barrier_layer</p></td>
-<td><p>Optional string. Specify one or more polygon features that completely restrict travel on the streets intersected by the polygons.</p>
-<p>One use of this type of barrier is to model floods covering areas of the street network and making road travel there impossible. See <a class="reference internal" href="arcgis.features.analysis.html#featureinput"><span class="std std-ref">Feature Input</span></a>.</p>
-</td>
-</tr>
-<tr class="row-odd"><td><p>future</p></td>
-<td><p>Optional boolean. If True, the result will be a GPJob object and results will be returned asynchronously.</p></td>
-</tr>
-<tr class="row-even"><td><p>route_shape</p></td>
-<td><p>Optional String. Specify the shape of the route that connects each origin to it’s destination when using a travel mode.</p>
-<p>Values: FollowStreets or StraightLine</p>
-<p>Default: FollowStreets</p>
-<blockquote>
-<div><ul class="simple">
-<li><p>FollowStreets - The shape is based on the underlying street network. This option is best when you want to generate the routes between origins and destinations. This is the default value when using a travel mode.</p></li>
-<li><p>StraightLine - The shape is a straight line connecting the origin-destination pair. This option is best when you want to generate spider diagrams or desire lines (for example, to show which stores customers are visiting). This is the default value when not using a travel mode.</p></li>
-</ul>
-</div></blockquote>
-<p>The best route between an origin and it’s matched destination is always calculated based on the travel mode, regardless of which route shape is chosen.</p>
-</td>
-</tr>
-</tbody>
-</table>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p><p>dict with the following keys:</p>
-<p>”routes_layer” : layer (FeatureCollection)</p>
-<p>”unassigned_origins_layer” : layer (FeatureCollection)</p>
-<p>”unassigned_destinations_layer” : layer (FeatureCollection)</p>
+<dd class="field-odd"><p><p>A dictionary with the following keys:</p>
+<p>”routes_layer” : layer (<a class="reference internal" href="arcgis.features.toc.html#arcgis.features.FeatureCollection" title="arcgis.features.FeatureCollection"><code class="xref py py-class docutils literal notranslate"><span class="pre">FeatureCollection</span></code></a>)</p>
+<p>”unassigned_origins_layer” : layer (<a class="reference internal" href="arcgis.features.toc.html#arcgis.features.FeatureCollection" title="arcgis.features.FeatureCollection"><code class="xref py py-class docutils literal notranslate"><span class="pre">FeatureCollection</span></code></a>)</p>
+<p>”unassigned_destinations_layer” : layer (<a class="reference internal" href="arcgis.features.toc.html#arcgis.features.FeatureCollection" title="arcgis.features.FeatureCollection"><code class="xref py py-class docutils literal notranslate"><span class="pre">FeatureCollection</span></code></a>)</p>
 </p>
 </dd>
 </dl>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">USAGE</span> <span class="n">EXAMPLE</span><span class="p">:</span> <span class="n">To</span> <span class="n">retrieve</span> <span class="n">trvel</span> <span class="n">modes</span> <span class="ow">and</span> <span class="n">run</span> <span class="n">connect_origins_to_destinations</span> <span class="n">tool</span><span class="o">.</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># USAGE EXAMPLE: To retrieve trvel modes and run connect_origins_to_destinations tool.</span>
 
 <span class="n">This</span> <span class="n">example</span> <span class="n">creates</span> <span class="n">route</span> <span class="n">between</span> <span class="n">esri</span> <span class="n">regional</span> <span class="n">offices</span> <span class="n">to</span> <span class="n">esri</span> <span class="n">headquarter</span><span class="o">.</span>
 
@@ -439,9 +269,9 @@ segments can be modeled with a line barrier. See <a class="reference internal" h
 </div>
 <div class="section" id="create-buffers">
 <h2>create_buffers<a class="headerlink" href="#create-buffers" title="Permalink to this headline">¶</a></h2>
-<dl class="function">
+<dl class="py function">
 <dt id="arcgis.features.use_proximity.create_buffers">
-<code class="sig-prename descclassname">arcgis.features.use_proximity.</code><code class="sig-name descname">create_buffers</code><span class="sig-paren">(</span><em class="sig-param">input_layer</em>, <em class="sig-param">distances=[]</em>, <em class="sig-param">field=None</em>, <em class="sig-param">units='Meters'</em>, <em class="sig-param">dissolve_type='None'</em>, <em class="sig-param">ring_type='Disks'</em>, <em class="sig-param">side_type='Full'</em>, <em class="sig-param">end_type='Round'</em>, <em class="sig-param">output_name=None</em>, <em class="sig-param">context=None</em>, <em class="sig-param">gis=None</em>, <em class="sig-param">estimate=False</em>, <em class="sig-param">future=False</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.features.use_proximity.create_buffers" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">arcgis.features.use_proximity.</code><code class="sig-name descname">create_buffers</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">input_layer</span></em>, <em class="sig-param"><span class="n">distances</span><span class="o">=</span><span class="default_value">[]</span></em>, <em class="sig-param"><span class="n">field</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">units</span><span class="o">=</span><span class="default_value">'Meters'</span></em>, <em class="sig-param"><span class="n">dissolve_type</span><span class="o">=</span><span class="default_value">'None'</span></em>, <em class="sig-param"><span class="n">ring_type</span><span class="o">=</span><span class="default_value">'Disks'</span></em>, <em class="sig-param"><span class="n">side_type</span><span class="o">=</span><span class="default_value">'Full'</span></em>, <em class="sig-param"><span class="n">end_type</span><span class="o">=</span><span class="default_value">'Round'</span></em>, <em class="sig-param"><span class="n">output_name</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">context</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">gis</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">estimate</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">future</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.features.use_proximity.create_buffers" title="Permalink to this definition">¶</a></dt>
 <dd><img alt="_images/create_buffers.png" src="_images/create_buffers.png" />
 <p>The <code class="docutils literal notranslate"><span class="pre">create_buffers</span></code> task creates polygons that cover a given distance from a point,
 line, or polygon feature. Buffers are typically used to create areas that can be
@@ -452,8 +282,8 @@ containing building footprints. The end result is a layer of those buildings wit
 one mile of the school.</p>
 <table class="docutils align-default">
 <colgroup>
-<col style="width: 16%" />
-<col style="width: 84%" />
+<col style="width: 14%" />
+<col style="width: 86%" />
 </colgroup>
 <tbody>
 <tr class="row-odd"><td><p><strong>Parameter</strong></p></td>
@@ -489,7 +319,7 @@ Unlike the <code class="docutils literal notranslate"><span class="pre">distance
 <tr class="row-odd"><td><p><img alt="None" src="_images/None.png" /></p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">None</span></code>-Overlapping areas are kept. This is the default.</p></td>
 </tr>
-<tr class="row-even"><td><p><img alt="Dissolve" src="_images/Dissolve.png" /></p></td>
+<tr class="row-even"><td><p><img alt="Dissolve" src="_images/Dissolve1.png" /></p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">Dissolve</span></code>-Overlapping areas are combined.</p></td>
 </tr>
 </tbody>
@@ -575,15 +405,33 @@ straight across (Flat).</p>
 </td>
 </tr>
 <tr class="row-odd"><td><p>output_name</p></td>
-<td><p>Optional string. Output feature service name. If not provided, a feature collection is returned.</p></td>
+<td><p>Optional string or <a class="reference internal" href="arcgis.features.toc.html#arcgis.features.FeatureLayer" title="arcgis.features.FeatureLayer"><code class="xref py py-class docutils literal notranslate"><span class="pre">FeatureLayer</span></code></a>. Existing
+feature layer will cause the new layer to be appended to the Feature Service.
+If overwrite is True in context, new layer will overwrite existing layer.
+If output_name not indicated then new <a class="reference internal" href="arcgis.features.toc.html#arcgis.features.FeatureCollection" title="arcgis.features.FeatureCollection"><code class="xref py py-class docutils literal notranslate"><span class="pre">FeatureCollection</span></code></a> created.</p></td>
 </tr>
 <tr class="row-even"><td><p>context</p></td>
-<td><p>Optional dict. Context contains additional settings that affect task execution. For <code class="docutils literal notranslate"><span class="pre">create_buffers</span></code>, there are two settings.</p>
-<ol class="arabic simple">
-<li><p>Extent (<code class="docutils literal notranslate"><span class="pre">extent</span></code>)-a bounding box that defines the analysis area. Only those points in the <code class="docutils literal notranslate"><span class="pre">input_layer</span></code>
-that intersect the bounding box will be analyzed.</p></li>
-<li><p>Output Spatial Reference (<code class="docutils literal notranslate"><span class="pre">outSR</span></code>) - the output features will be projected into the output spatial reference.</p></li>
-</ol>
+<td><p>Optional dict. Additional settings such as processing extent
+and output spatial reference.
+For create_buffers, there are three settings.</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">extent</span></code> - a bounding box that defines the analysis area. Only those features in the input_layer that intersect the bounding box will be analyzed.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">outSR</span></code> - the output features will be projected into the output spatial reference referred to by the <cite>wkid</cite>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">overwrite</span></code> - if True, then the feature layer in output_name will be overwritten with new feature layer.</p>
+<blockquote>
+<div><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Example Usage</span>
+<span class="n">context</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;extent&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;xmin&quot;</span><span class="p">:</span> <span class="mf">3164569.408035</span><span class="p">,</span>
+                    <span class="s2">&quot;ymin&quot;</span><span class="p">:</span> <span class="o">-</span><span class="mf">9187921.892449</span><span class="p">,</span>
+                    <span class="s2">&quot;xmax&quot;</span><span class="p">:</span> <span class="mf">3174104.927313</span><span class="p">,</span>
+                    <span class="s2">&quot;ymax&quot;</span><span class="p">:</span> <span class="o">-</span><span class="mf">9175500.875353</span><span class="p">,</span>
+                    <span class="s2">&quot;spatialReference&quot;</span><span class="p">:{</span><span class="s2">&quot;wkid&quot;</span><span class="p">:</span><span class="mi">102100</span><span class="p">,</span><span class="s2">&quot;latestWkid&quot;</span><span class="p">:</span><span class="mi">3857</span><span class="p">}},</span>
+            <span class="s2">&quot;outSR&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;wkid&quot;</span><span class="p">:</span> <span class="mi">3857</span><span class="p">},</span>
+            <span class="s2">&quot;overwrite&quot;</span><span class="p">:</span> <span class="kc">True</span><span class="p">}</span>
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+</ul>
 </td>
 </tr>
 <tr class="row-odd"><td><p>gis</p></td>
@@ -599,7 +447,7 @@ that intersect the bounding box will be analyzed.</p></li>
 </table>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p>result_layer : feature layer Item if output_name is specified, else Feature Collection.</p>
+<dd class="field-odd"><p>result_layer : <a class="reference internal" href="arcgis.features.toc.html#arcgis.features.FeatureLayer" title="arcgis.features.FeatureLayer"><code class="xref py py-class docutils literal notranslate"><span class="pre">FeatureLayer</span></code></a> if output_name is specified, else <a class="reference internal" href="arcgis.features.toc.html#arcgis.features.FeatureCollection" title="arcgis.features.FeatureCollection"><code class="xref py py-class docutils literal notranslate"><span class="pre">FeatureCollection</span></code></a>.</p>
 </dd>
 </dl>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">USAGE</span> <span class="n">EXAMPLE</span><span class="p">:</span> <span class="n">To</span> <span class="n">create</span> <span class="mi">5</span> <span class="n">mile</span> <span class="n">buffer</span> <span class="n">around</span> <span class="n">US</span> <span class="n">parks</span><span class="p">,</span> <span class="n">within</span> <span class="n">the</span> <span class="n">specified</span> <span class="n">extent</span><span class="o">.</span>
@@ -618,9 +466,9 @@ that intersect the bounding box will be analyzed.</p></li>
 </div>
 <div class="section" id="create-drive-time-areas">
 <h2>create_drive_time_areas<a class="headerlink" href="#create-drive-time-areas" title="Permalink to this headline">¶</a></h2>
-<dl class="function">
+<dl class="py function">
 <dt id="arcgis.features.use_proximity.create_drive_time_areas">
-<code class="sig-prename descclassname">arcgis.features.use_proximity.</code><code class="sig-name descname">create_drive_time_areas</code><span class="sig-paren">(</span><em class="sig-param">input_layer, break_values=[5, 10, 15], break_units='Minutes', travel_mode=None, overlap_policy='Overlap', time_of_day=None, time_zone_for_time_of_day='GeoLocal', output_name=None, context=None, gis=None, estimate=False, point_barrier_layer=None, line_barrier_layer=None, polygon_barrier_layer=None, future=False, travel_direction='AwayFromFacility', show_holes=False, include_reachable_streets=False</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.features.use_proximity.create_drive_time_areas" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">arcgis.features.use_proximity.</code><code class="sig-name descname">create_drive_time_areas</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">input_layer</span></em>, <em class="sig-param"><span class="n">break_values</span><span class="o">=</span><span class="default_value">[5, 10, 15]</span></em>, <em class="sig-param"><span class="n">break_units</span><span class="o">=</span><span class="default_value">'Minutes'</span></em>, <em class="sig-param"><span class="n">travel_mode</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">overlap_policy</span><span class="o">=</span><span class="default_value">'Overlap'</span></em>, <em class="sig-param"><span class="n">time_of_day</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">time_zone_for_time_of_day</span><span class="o">=</span><span class="default_value">'GeoLocal'</span></em>, <em class="sig-param"><span class="n">output_name</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">context</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">gis</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">estimate</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">point_barrier_layer</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">line_barrier_layer</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">polygon_barrier_layer</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">future</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">travel_direction</span><span class="o">=</span><span class="default_value">'AwayFromFacility'</span></em>, <em class="sig-param"><span class="n">show_holes</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">include_reachable_streets</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.features.use_proximity.create_drive_time_areas" title="Permalink to this definition">¶</a></dt>
 <dd><img alt="_images/create_drive_time_areas.png" src="_images/create_drive_time_areas.png" />
 <p>The <code class="docutils literal notranslate"><span class="pre">create_drive_time_areas</span></code> method creates areas that can be reached within a
 given drive time or drive distance. It can help you answer questions such as:</p>
@@ -681,7 +529,7 @@ travel_mode is distance based, a distance unit should be specified for the break
 <tr class="row-odd"><td><p><img alt="Overlap" src="_images/Overlap.png" /></p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">Overlap</span></code>-Overlapping areas are kept. This is the default.</p></td>
 </tr>
-<tr class="row-even"><td><p><img alt="Dissolve" src="_images/Dissolve.png" /></p></td>
+<tr class="row-even"><td><p><img alt="Dissolve" src="_images/Dissolve1.png" /></p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">Dissolve</span></code>-Overlapping areas are combined by break value. Because the areas are dissolved,
 use this option when you need to know the areas that can be reached within a
 given time or distance, but you don’t need to know which input points are nearest.</p></td>
@@ -745,15 +593,30 @@ live traffic speeds are referenced in the analysis; otherwise, typical traffic s
 </td>
 </tr>
 <tr class="row-even"><td><p>output_name</p></td>
-<td><p>Optional string. Output feature service name. If not provided, a feature collection is returned.</p></td>
+<td><p>Optional string or <a class="reference internal" href="arcgis.features.toc.html#arcgis.features.FeatureLayer" title="arcgis.features.FeatureLayer"><code class="xref py py-class docutils literal notranslate"><span class="pre">FeatureLayer</span></code></a>. Existing
+feature layer will cause the new layer to be appended to the Feature Service.
+If overwrite is True in context, new layer will overwrite existing layer.
+If output_name not indicated then new <a class="reference internal" href="arcgis.features.toc.html#arcgis.features.FeatureCollection" title="arcgis.features.FeatureCollection"><code class="xref py py-class docutils literal notranslate"><span class="pre">FeatureCollection</span></code></a> created.</p></td>
 </tr>
 <tr class="row-odd"><td><p>context</p></td>
-<td><p>Optional dict. Context contains additional settings that affect task execution. For <code class="docutils literal notranslate"><span class="pre">create_drive_time_areas</span></code>, there are two settings.</p>
-<ol class="arabic simple">
-<li><p>Extent (<code class="docutils literal notranslate"><span class="pre">extent</span></code>)-a bounding box that defines the analysis area. Only those points in the <code class="docutils literal notranslate"><span class="pre">input_layer</span></code>
-that intersect the bounding box will be analyzed.</p></li>
-<li><p>Output Spatial Reference (<code class="docutils literal notranslate"><span class="pre">outSR</span></code>) - the output features will be projected into the output spatial reference.</p></li>
-</ol>
+<td><p>Optional dict. Additional settings such as processing extent
+and output spatial reference.
+For create_drive_time_areas, there are three settings.</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">extent</span></code> - a bounding box that defines the analysis area. Only those features in the input_layer that intersect the bounding box will be analyzed.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">outSR</span></code> - the output features will be projected into the output spatial reference referred to by the <cite>wkid</cite>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">overwrite</span></code> - if True, then the feature layer in output_name will be overwritten with new feature layer.</p></li>
+</ul>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Example Usage</span>
+     <span class="n">context</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;extent&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;xmin&quot;</span><span class="p">:</span> <span class="mf">3164569.408035</span><span class="p">,</span>
+                         <span class="s2">&quot;ymin&quot;</span><span class="p">:</span> <span class="o">-</span><span class="mf">9187921.892449</span><span class="p">,</span>
+                         <span class="s2">&quot;xmax&quot;</span><span class="p">:</span> <span class="mf">3174104.927313</span><span class="p">,</span>
+                         <span class="s2">&quot;ymax&quot;</span><span class="p">:</span> <span class="o">-</span><span class="mf">9175500.875353</span><span class="p">,</span>
+                         <span class="s2">&quot;spatialReference&quot;</span><span class="p">:{</span><span class="s2">&quot;wkid&quot;</span><span class="p">:</span><span class="mi">102100</span><span class="p">,</span><span class="s2">&quot;latestWkid&quot;</span><span class="p">:</span><span class="mi">3857</span><span class="p">}},</span>
+                 <span class="s2">&quot;outSR&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;wkid&quot;</span><span class="p">:</span> <span class="mi">3857</span><span class="p">},</span>
+                 <span class="s2">&quot;overwrite&quot;</span><span class="p">:</span> <span class="kc">True</span><span class="p">}</span>
+</pre></div>
+</div>
 </td>
 </tr>
 <tr class="row-even"><td><p>gis</p></td>
@@ -802,14 +665,11 @@ result of which streets are actually covered within a specific travel
 distance than what the drive-time areas would contain.</p>
 </td>
 </tr>
-<tr class="row-odd"><td></td>
-<td></td>
-</tr>
 </tbody>
 </table>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p>result_layer : feature layer Item if output_name is specified, else Feature Collection.</p>
+<dd class="field-odd"><p>result_layer : <a class="reference internal" href="arcgis.features.toc.html#arcgis.features.FeatureLayer" title="arcgis.features.FeatureLayer"><code class="xref py py-class docutils literal notranslate"><span class="pre">FeatureLayer</span></code></a> if output_name is specified, else Feature Collection.</p>
 </dd>
 </dl>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">USAGE</span> <span class="n">EXAMPLE</span><span class="p">:</span> <span class="n">To</span> <span class="n">create</span> <span class="n">drive</span> <span class="n">time</span> <span class="n">areas</span> <span class="n">around</span> <span class="n">USA</span> <span class="n">airports</span><span class="p">,</span> <span class="n">within</span> <span class="n">the</span> <span class="n">specified</span> <span class="n">extent</span><span class="o">.</span>
@@ -829,9 +689,9 @@ distance than what the drive-time areas would contain.</p>
 </div>
 <div class="section" id="find-nearest">
 <h2>find_nearest<a class="headerlink" href="#find-nearest" title="Permalink to this headline">¶</a></h2>
-<dl class="function">
+<dl class="py function">
 <dt id="arcgis.features.use_proximity.find_nearest">
-<code class="sig-prename descclassname">arcgis.features.use_proximity.</code><code class="sig-name descname">find_nearest</code><span class="sig-paren">(</span><em class="sig-param">analysis_layer</em>, <em class="sig-param">near_layer</em>, <em class="sig-param">measurement_type='StraightLine'</em>, <em class="sig-param">max_count=100</em>, <em class="sig-param">search_cutoff=2147483647</em>, <em class="sig-param">search_cutoff_units=None</em>, <em class="sig-param">time_of_day=None</em>, <em class="sig-param">time_zone_for_time_of_day='GeoLocal'</em>, <em class="sig-param">output_name=None</em>, <em class="sig-param">context=None</em>, <em class="sig-param">gis=None</em>, <em class="sig-param">estimate=False</em>, <em class="sig-param">include_route_layers=None</em>, <em class="sig-param">point_barrier_layer=None</em>, <em class="sig-param">line_barrier_layer=None</em>, <em class="sig-param">polygon_barrier_layer=None</em>, <em class="sig-param">future=False</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.features.use_proximity.find_nearest" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">arcgis.features.use_proximity.</code><code class="sig-name descname">find_nearest</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">analysis_layer</span></em>, <em class="sig-param"><span class="n">near_layer</span></em>, <em class="sig-param"><span class="n">measurement_type</span><span class="o">=</span><span class="default_value">'StraightLine'</span></em>, <em class="sig-param"><span class="n">max_count</span><span class="o">=</span><span class="default_value">100</span></em>, <em class="sig-param"><span class="n">search_cutoff</span><span class="o">=</span><span class="default_value">2147483647</span></em>, <em class="sig-param"><span class="n">search_cutoff_units</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">time_of_day</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">time_zone_for_time_of_day</span><span class="o">=</span><span class="default_value">'GeoLocal'</span></em>, <em class="sig-param"><span class="n">output_name</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">context</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">gis</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">estimate</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">include_route_layers</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">point_barrier_layer</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">line_barrier_layer</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">polygon_barrier_layer</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">future</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.features.use_proximity.find_nearest" title="Permalink to this definition">¶</a></dt>
 <dd><img alt="_images/find_nearest.png" src="_images/find_nearest.png" />
 <p>The <code class="docutils literal notranslate"><span class="pre">find_nearest</span></code> method measures the straight-line distance, driving distance, or driving time from
 features in the analysis layer to features in the near layer, and copies the nearest features in the near
@@ -955,15 +815,33 @@ several street segments can be modeled with a line barrier.</p>
 </td>
 </tr>
 <tr class="row-even"><td><p>output_name</p></td>
-<td><p>Optional string. Output feature layer collection. If not provided, a feature collection is returned.</p></td>
+<td><p>Optional string or <a class="reference internal" href="arcgis.features.toc.html#arcgis.features.FeatureLayer" title="arcgis.features.FeatureLayer"><code class="xref py py-class docutils literal notranslate"><span class="pre">FeatureLayer</span></code></a>. Existing
+feature layer will cause the new layer to be appended to the Feature Service.
+If overwrite is True in context, new layer will overwrite existing layer.
+If output_name not indicated then new <a class="reference internal" href="arcgis.features.toc.html#arcgis.features.FeatureCollection" title="arcgis.features.FeatureCollection"><code class="xref py py-class docutils literal notranslate"><span class="pre">FeatureCollection</span></code></a> created.</p></td>
 </tr>
 <tr class="row-odd"><td><p>context</p></td>
-<td><p>Optional dict. Context contains additional settings that affect task execution. For <code class="docutils literal notranslate"><span class="pre">find_nearest</span></code>, there are two settings.</p>
-<ol class="arabic simple">
-<li><p>Extent (<code class="docutils literal notranslate"><span class="pre">extent</span></code>)-a bounding box that defines the analysis area. Only those points in the <code class="docutils literal notranslate"><span class="pre">input_layer</span></code>
-that intersect the bounding box will be analyzed.</p></li>
-<li><p>Output Spatial Reference (<code class="docutils literal notranslate"><span class="pre">outSR</span></code>) - the output features will be projected into the output spatial reference.</p></li>
-</ol>
+<td><p>Optional dict. Additional settings such as processing extent
+and output spatial reference.
+For find_nearest, there are three settings.</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">extent</span></code> - a bounding box that defines the analysis area. Only those features in the input_layer that intersect the bounding box will be analyzed.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">outSR</span></code> - the output features will be projected into the output spatial reference referred to by the <cite>wkid</cite>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">overwrite</span></code> - if True, then the feature layer in output_name will be overwritten with new feature layer.</p>
+<blockquote>
+<div><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Example Usage</span>
+<span class="n">context</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;extent&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;xmin&quot;</span><span class="p">:</span> <span class="mf">3164569.408035</span><span class="p">,</span>
+                    <span class="s2">&quot;ymin&quot;</span><span class="p">:</span> <span class="o">-</span><span class="mf">9187921.892449</span><span class="p">,</span>
+                    <span class="s2">&quot;xmax&quot;</span><span class="p">:</span> <span class="mf">3174104.927313</span><span class="p">,</span>
+                    <span class="s2">&quot;ymax&quot;</span><span class="p">:</span> <span class="o">-</span><span class="mf">9175500.875353</span><span class="p">,</span>
+                    <span class="s2">&quot;spatialReference&quot;</span><span class="p">:{</span><span class="s2">&quot;wkid&quot;</span><span class="p">:</span><span class="mi">102100</span><span class="p">,</span><span class="s2">&quot;latestWkid&quot;</span><span class="p">:</span><span class="mi">3857</span><span class="p">}},</span>
+            <span class="s2">&quot;outSR&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;wkid&quot;</span><span class="p">:</span> <span class="mi">3857</span><span class="p">},</span>
+            <span class="s2">&quot;overwrite&quot;</span><span class="p">:</span> <span class="kc">True</span><span class="p">}</span>
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+</ul>
 </td>
 </tr>
 <tr class="row-even"><td><p>gis</p></td>
@@ -979,13 +857,12 @@ that intersect the bounding box will be analyzed.</p></li>
 </table>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p></p></dd>
+<dd class="field-odd"><p><p>A dictionary with the following keys:</p>
+<p>”nearest_layer” : layer (<a class="reference internal" href="arcgis.features.toc.html#arcgis.features.FeatureCollection" title="arcgis.features.FeatureCollection"><code class="xref py py-class docutils literal notranslate"><span class="pre">FeatureCollection</span></code></a>)</p>
+<p>”connecting_lines_layer” : layer (<a class="reference internal" href="arcgis.features.toc.html#arcgis.features.FeatureCollection" title="arcgis.features.FeatureCollection"><code class="xref py py-class docutils literal notranslate"><span class="pre">FeatureCollection</span></code></a>)</p>
+</p>
+</dd>
 </dl>
-<p>dict with the following keys:</p>
-<blockquote>
-<div><p>“nearest_layer” : layer (FeatureCollection)</p>
-<p>“connecting_lines_layer” : layer (FeatureCollection)</p>
-</div></blockquote>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1">#USAGE EXAMPLE: To find which regional office can be reached in the shortest drive time from esri headquarter.</span>
 
 <span class="n">result1</span> <span class="o">=</span> <span class="n">find_nearest</span><span class="p">(</span><span class="n">analysis_layer</span><span class="o">=</span><span class="n">esri_hq_lyr</span><span class="p">,</span>
@@ -1001,9 +878,9 @@ that intersect the bounding box will be analyzed.</p></li>
 </div>
 <div class="section" id="plan-routes">
 <h2>plan_routes<a class="headerlink" href="#plan-routes" title="Permalink to this headline">¶</a></h2>
-<dl class="function">
+<dl class="py function">
 <dt id="arcgis.features.use_proximity.plan_routes">
-<code class="sig-prename descclassname">arcgis.features.use_proximity.</code><code class="sig-name descname">plan_routes</code><span class="sig-paren">(</span><em class="sig-param">stops_layer</em>, <em class="sig-param">route_count</em>, <em class="sig-param">max_stops_per_route</em>, <em class="sig-param">route_start_time</em>, <em class="sig-param">start_layer</em>, <em class="sig-param">start_layer_route_id_field=None</em>, <em class="sig-param">return_to_start=True</em>, <em class="sig-param">end_layer=None</em>, <em class="sig-param">end_layer_route_id_field=None</em>, <em class="sig-param">travel_mode=None</em>, <em class="sig-param">stop_service_time=0</em>, <em class="sig-param">max_route_time=525600</em>, <em class="sig-param">include_route_layers=False</em>, <em class="sig-param">output_name=None</em>, <em class="sig-param">context=None</em>, <em class="sig-param">gis=None</em>, <em class="sig-param">estimate=False</em>, <em class="sig-param">point_barrier_layer=None</em>, <em class="sig-param">line_barrier_layer=None</em>, <em class="sig-param">polygon_barrier_layer=None</em>, <em class="sig-param">future=False</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.features.use_proximity.plan_routes" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">arcgis.features.use_proximity.</code><code class="sig-name descname">plan_routes</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">stops_layer</span></em>, <em class="sig-param"><span class="n">route_count</span></em>, <em class="sig-param"><span class="n">max_stops_per_route</span></em>, <em class="sig-param"><span class="n">route_start_time</span></em>, <em class="sig-param"><span class="n">start_layer</span></em>, <em class="sig-param"><span class="n">start_layer_route_id_field</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">return_to_start</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="n">end_layer</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">end_layer_route_id_field</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">travel_mode</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">stop_service_time</span><span class="o">=</span><span class="default_value">0</span></em>, <em class="sig-param"><span class="n">max_route_time</span><span class="o">=</span><span class="default_value">525600</span></em>, <em class="sig-param"><span class="n">include_route_layers</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">output_name</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">context</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">gis</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">estimate</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">point_barrier_layer</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">line_barrier_layer</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">polygon_barrier_layer</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">future</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.features.use_proximity.plan_routes" title="Permalink to this definition">¶</a></dt>
 <dd><img alt="_images/plan_routes.png" src="_images/plan_routes.png" />
 <p>The <code class="docutils literal notranslate"><span class="pre">plan_routes</span></code> method determines how to efficiently divide tasks among a mobile workforce.</p>
 <p>You provide the input, which includes a set of stops and the number of vehicles available to
@@ -1071,7 +948,7 @@ and visit a total of six stops.</p>
 <tbody>
 <tr class="row-odd"><td><p><img alt="balanced" src="_images/balanced.png" /></p></td>
 <td><p>Balanced travel times and stops per route:</p>
-<p>The stops are more or less uniformly spread apart, so setting <a href="#id4"><span class="problematic" id="id5">``</span></a>max_stops_per_route``=3 to evenly
+<p>The stops are more or less uniformly spread apart, so setting <a href="#id3"><span class="problematic" id="id4">``</span></a>max_stops_per_route``=3 to evenly
 distribute the workload results in routes that are roughly the same duration.</p>
 </td>
 </tr>
@@ -1079,7 +956,7 @@ distribute the workload results in routes that are roughly the same duration.</p
 <td><p>Balanced stops per route but unbalanced travel times:</p>
 <p>Five of the six stops are clustered near the starting location, but one stop is set apart
 and requires a much longer drive to be reached. Dividing the stops equally between the two
-routes (<a href="#id6"><span class="problematic" id="id7">``</span></a>max_stops_per_route``=3) causes unbalanced travel times.</p>
+routes (<a href="#id5"><span class="problematic" id="id6">``</span></a>max_stops_per_route``=3) causes unbalanced travel times.</p>
 </td>
 </tr>
 <tr class="row-odd"><td><p><img alt="unbalanced" src="_images/unbalanced.png" /></p></td>
@@ -1218,16 +1095,32 @@ members in your organization. The route layers use the output feature service na
 prefix and the route name generated as part of the analysis is added to create a unique name for each route layer.</p></td>
 </tr>
 <tr class="row-even"><td><p>output_name</p></td>
-<td><p>Optional string. If provided, the method will create a feature service of the results. You define
-the name of the service. If <code class="docutils literal notranslate"><span class="pre">output_name</span></code> is not supplied, the method will return a feature collection.</p></td>
+<td><p>Optional string or <a class="reference internal" href="arcgis.features.toc.html#arcgis.features.FeatureLayer" title="arcgis.features.FeatureLayer"><code class="xref py py-class docutils literal notranslate"><span class="pre">FeatureLayer</span></code></a>. Existing
+feature layer will cause the new layer to be appended to the Feature Service.
+If overwrite is True in context, new layer will overwrite existing layer.
+If output_name not indicated then new <a class="reference internal" href="arcgis.features.toc.html#arcgis.features.FeatureCollection" title="arcgis.features.FeatureCollection"><code class="xref py py-class docutils literal notranslate"><span class="pre">FeatureCollection</span></code></a> created.</p></td>
 </tr>
 <tr class="row-odd"><td><p>context</p></td>
-<td><p>Optional string. Context contains additional settings that affect task execution. For <code class="docutils literal notranslate"><span class="pre">plan_routes</span></code>, there are two settings:</p>
-<ol class="arabic simple">
-<li><p>Extent (<code class="docutils literal notranslate"><span class="pre">extent</span></code>) - a bounding box that defines the analysis area. Only those points in the inputLayer, start_layer, and endLayer that are within the bounding box can be visited by routes.</p></li>
-<li><p>Output Spatial Reference (<code class="docutils literal notranslate"><span class="pre">outSR</span></code>)-If the output is a feature service, the spatial reference will be the same as <code class="docutils literal notranslate"><span class="pre">stops_layer</span></code>. Setting outSR for feature services has no effect.
-If the output is a feature collection, the features will be in the spatial reference of the outSR value or the spatial reference of <code class="docutils literal notranslate"><span class="pre">stops_layer</span></code> when outSR is not specified.</p></li>
-</ol>
+<td><p>Optional dict. Additional settings such as processing extent and output spatial reference.
+For plan_routes, there are three settings.</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">extent</span></code> - a bounding box that defines the analysis area. Only those features in the input_layer that intersect the bounding box will be analyzed.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">outSR</span></code> - the output features will be projected into the output spatial reference referred to by the <cite>wkid</cite>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">overwrite</span></code> - if True, then the feature layer in output_name will be overwritten with new feature layer.</p>
+<blockquote>
+<div><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Example Usage</span>
+<span class="n">context</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;extent&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;xmin&quot;</span><span class="p">:</span> <span class="mf">3164569.408035</span><span class="p">,</span>
+                    <span class="s2">&quot;ymin&quot;</span><span class="p">:</span> <span class="o">-</span><span class="mf">9187921.892449</span><span class="p">,</span>
+                    <span class="s2">&quot;xmax&quot;</span><span class="p">:</span> <span class="mf">3174104.927313</span><span class="p">,</span>
+                    <span class="s2">&quot;ymax&quot;</span><span class="p">:</span> <span class="o">-</span><span class="mf">9175500.875353</span><span class="p">,</span>
+                    <span class="s2">&quot;spatialReference&quot;</span><span class="p">:{</span><span class="s2">&quot;wkid&quot;</span><span class="p">:</span><span class="mi">102100</span><span class="p">,</span><span class="s2">&quot;latestWkid&quot;</span><span class="p">:</span><span class="mi">3857</span><span class="p">}},</span>
+            <span class="s2">&quot;outSR&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;wkid&quot;</span><span class="p">:</span> <span class="mi">3857</span><span class="p">},</span>
+            <span class="s2">&quot;overwrite&quot;</span><span class="p">:</span> <span class="kc">True</span><span class="p">}</span>
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+</ul>
 </td>
 </tr>
 <tr class="row-even"><td><p>gis</p></td>
@@ -1258,10 +1151,10 @@ If the output is a feature collection, the features will be in the spatial refer
 </table>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p><p>feature layer Item if <code class="docutils literal notranslate"><span class="pre">output_name</span></code> is specified, else dict with the following keys:</p>
-<p>”routes_layer” : layer (FeatureCollection)</p>
-<p>”assigned_stops_layer” : layer (FeatureCollection)</p>
-<p>”unassigned_stops_layer” : layer (FeatureCollection)</p>
+<dd class="field-odd"><p><p><a class="reference internal" href="arcgis.features.toc.html#arcgis.features.FeatureLayer" title="arcgis.features.FeatureLayer"><code class="xref py py-class docutils literal notranslate"><span class="pre">FeatureLayer</span></code></a> if <code class="docutils literal notranslate"><span class="pre">output_name</span></code> is specified, else dict with the following keys:</p>
+<p>”routes_layer” : layer (<a class="reference internal" href="arcgis.features.toc.html#arcgis.features.FeatureCollection" title="arcgis.features.FeatureCollection"><code class="xref py py-class docutils literal notranslate"><span class="pre">FeatureCollection</span></code></a>)</p>
+<p>”assigned_stops_layer” : layer (<a class="reference internal" href="arcgis.features.toc.html#arcgis.features.FeatureCollection" title="arcgis.features.FeatureCollection"><code class="xref py py-class docutils literal notranslate"><span class="pre">FeatureCollection</span></code></a>)</p>
+<p>”unassigned_stops_layer” : layer (<a class="reference internal" href="arcgis.features.toc.html#arcgis.features.FeatureCollection" title="arcgis.features.FeatureCollection"><code class="xref py py-class docutils literal notranslate"><span class="pre">FeatureCollection</span></code></a>)</p>
 </p>
 </dd>
 </dl>
@@ -1292,29 +1185,37 @@ If the output is a feature collection, the features will be in the spatial refer
            
           </div>
           <footer>
+  
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-        <a href="arcgis.raster.toc.html" class="btn btn-neutral float-right" title="arcgis.raster module" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
-        <a href="arcgis.features.summarize_data.html" class="btn btn-neutral float-left" title="arcgis.features.summarize_data module" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+      
+        <a href="arcgis.raster.toc.html" class="btn btn-neutral float-right" title="arcgis.raster module" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="arcgis.features.summarize_data.html" class="btn btn-neutral float-left" title="arcgis.features.summarize_data module" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
     </div>
+  
 
   <hr/>
 
   <div role="contentinfo">
     <p>
-        &#169; Copyright 2016-2021, Esri.
+        
+        &copy; Copyright 2016-2021, Esri
 
     </p>
   </div>
     
     
     
-    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
     
-    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
     
     provided by <a href="https://readthedocs.org">Read the Docs</a>. 
 
 </footer>
+
         </div>
       </div>
 
@@ -1322,12 +1223,12 @@ If the output is a feature collection, the features will be in the spatial refer
 
   </div>
   
-    Options v: 1.9
+    Options v: 1.9.1
 
   <div class="rst-versions" data-toggle="rst-versions" role="note" aria-label="versions">
     <span class="rst-current-version" data-toggle="rst-current-version">
       <span class="fa fa-book"> Pick an earlier version</span>
-      v: 1.9
+      v: 1.9.1
       <span class="fa fa-caret-down"></span>
     </span>
     <div class="rst-other-versions">
@@ -1335,6 +1236,10 @@ If the output is a feature collection, the features will be in the spatial refer
       
       <dl>
         <dt>Versions</dt>
+        
+          
+          <dd><a href="1.9.0/">1.9.0</a></dd>
+          
         
           
           <dd><a href="1.8.5/">1.8.5</a></dd>

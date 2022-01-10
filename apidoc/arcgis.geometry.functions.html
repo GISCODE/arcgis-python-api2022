@@ -3,11 +3,11 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" />
+  <meta charset="utf-8">
   
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>arcgis.geometry.functions module &mdash; arcgis 1.9 documentation</title>
+  <title>arcgis.geometry.functions module &mdash; arcgis 1.9.1 documentation</title>
   
 
   
@@ -19,10 +19,7 @@
   
     <link rel="shortcut icon" href="_static/favicon.ico"/>
   
-
   
-  
-
   
 
   
@@ -36,7 +33,7 @@
         <script src="_static/underscore.js"></script>
         <script src="_static/doctools.js"></script>
         <script src="_static/language_data.js"></script>
-        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     
     <script type="text/javascript" src="_static/js/theme.js"></script>
 
@@ -67,7 +64,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
           
 
           
-            <a href="index.html" class="icon icon-home"> arcgis
+            <a href="index.html" class="icon icon-home" alt="Documentation Home"> arcgis
           
 
           
@@ -80,7 +77,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             
             
               <div class="version">
-                1.9
+                1.9.1
               </div>
             
           
@@ -147,28 +144,32 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <li class="toctree-l2 current"><a class="reference internal" href="arcgis.geometry.html#submodules">Submodules</a><ul class="current">
 <li class="toctree-l3"><a class="reference internal" href="arcgis.geometry.filters.html">arcgis.geometry.filters module</a></li>
 <li class="toctree-l3 current"><a class="current reference internal" href="#">arcgis.geometry.functions module</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#areas-and-lengths">areas_and_lengths</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#auto-complete">auto_complete</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#buffer">buffer</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#convex-hull">convex_hull</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#cut">cut</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#densify">densify</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#difference">difference</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#distance">distance</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#find-transformation">find_transformation</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#from-geo-coordinate-string">from_geo_coordinate_string</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#generalize">generalize</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#intersect">intersect</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#label-points">label_points</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#lengths">lengths</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#offset">offset</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#project">project</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#relation">relation</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#reshape">reshape</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#simplify">simplify</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#to-geo-coordinate-string">to_geo_coordinate_string</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#trim-extend">trim_extend</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#union">union</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#areaunits">AreaUnits</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#lengthunits">LengthUnits</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="#areas-and-lengths">areas_and_lengths</a></li>
+<li class="toctree-l5"><a class="reference internal" href="#auto-complete">auto_complete</a></li>
+<li class="toctree-l5"><a class="reference internal" href="#buffer">buffer</a></li>
+<li class="toctree-l5"><a class="reference internal" href="#convex-hull">convex_hull</a></li>
+<li class="toctree-l5"><a class="reference internal" href="#cut">cut</a></li>
+<li class="toctree-l5"><a class="reference internal" href="#densify">densify</a></li>
+<li class="toctree-l5"><a class="reference internal" href="#difference">difference</a></li>
+<li class="toctree-l5"><a class="reference internal" href="#distance">distance</a></li>
+<li class="toctree-l5"><a class="reference internal" href="#find-transformation">find_transformation</a></li>
+<li class="toctree-l5"><a class="reference internal" href="#from-geo-coordinate-string">from_geo_coordinate_string</a></li>
+<li class="toctree-l5"><a class="reference internal" href="#generalize">generalize</a></li>
+<li class="toctree-l5"><a class="reference internal" href="#intersect">intersect</a></li>
+<li class="toctree-l5"><a class="reference internal" href="#label-points">label_points</a></li>
+<li class="toctree-l5"><a class="reference internal" href="#lengths">lengths</a></li>
+<li class="toctree-l5"><a class="reference internal" href="#offset">offset</a></li>
+<li class="toctree-l5"><a class="reference internal" href="#project">project</a></li>
+<li class="toctree-l5"><a class="reference internal" href="#relation">relation</a></li>
+<li class="toctree-l5"><a class="reference internal" href="#reshape">reshape</a></li>
+<li class="toctree-l5"><a class="reference internal" href="#simplify">simplify</a></li>
+<li class="toctree-l5"><a class="reference internal" href="#to-geo-coordinate-string">to_geo_coordinate_string</a></li>
+<li class="toctree-l5"><a class="reference internal" href="#trim-extend">trim_extend</a></li>
+<li class="toctree-l5"><a class="reference internal" href="#union">union</a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -222,8 +223,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
 
 
-
-
 <div role="navigation" aria-label="breadcrumbs navigation">
 
   <ul class="wy-breadcrumbs">
@@ -237,7 +236,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     
       <li class="wy-breadcrumbs-aside">
         
-          
+            
         
       </li>
     
@@ -254,15 +253,414 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NJGGV5"
 height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
-  <div class="section" id="module-arcgis.geometry.functions">
-<span id="arcgis-geometry-functions-module"></span><h1>arcgis.geometry.functions module<a class="headerlink" href="#module-arcgis.geometry.functions" title="Permalink to this headline">¶</a></h1>
-<p>The <code class="docutils literal notranslate"><span class="pre">Functions</span></code> module is used to take <a class="reference internal" href="arcgis.geometry.html#arcgis.geometry.Geometry" title="arcgis.geometry.Geometry"><code class="xref py py-class docutils literal notranslate"><span class="pre">Geometry</span></code></a> types as parameters and return
+  <div class="section" id="arcgis-geometry-functions-module">
+<h1>arcgis.geometry.functions module<a class="headerlink" href="#arcgis-geometry-functions-module" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="areaunits">
+<h2>AreaUnits<a class="headerlink" href="#areaunits" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt id="arcgis.geometry.functions.AreaUnits">
+<em class="property">class </em><code class="sig-prename descclassname">arcgis.geometry.functions.</code><code class="sig-name descname">AreaUnits</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">value</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.geometry.functions.AreaUnits" title="Permalink to this definition">¶</a></dt>
+<dd><p>Represents the Supported Geometry Service Area Units Enumerations.
+Example: areas_and_lengths(polygons=[geom],area_unit=AreaUnits.ACRES)</p>
+<dl class="py attribute">
+<dt id="arcgis.geometry.functions.AreaUnits.ACRES">
+<code class="sig-name descname">ACRES</code><em class="property"> = {'areaUnit': 'esriAcres'}</em><a class="headerlink" href="#arcgis.geometry.functions.AreaUnits.ACRES" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="arcgis.geometry.functions.AreaUnits.ARES">
+<code class="sig-name descname">ARES</code><em class="property"> = {'areaUnit': 'esriAres'}</em><a class="headerlink" href="#arcgis.geometry.functions.AreaUnits.ARES" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="arcgis.geometry.functions.AreaUnits.HECTARES">
+<code class="sig-name descname">HECTARES</code><em class="property"> = {'areaUnit': 'esriHectares'}</em><a class="headerlink" href="#arcgis.geometry.functions.AreaUnits.HECTARES" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="arcgis.geometry.functions.AreaUnits.SQUARECENTIMETERS">
+<code class="sig-name descname">SQUARECENTIMETERS</code><em class="property"> = {'areaUnit': 'esriSquareCentimeters'}</em><a class="headerlink" href="#arcgis.geometry.functions.AreaUnits.SQUARECENTIMETERS" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="arcgis.geometry.functions.AreaUnits.SQUAREDECIMETERS">
+<code class="sig-name descname">SQUAREDECIMETERS</code><em class="property"> = {'areaUnit': 'esriSquareDecimeters'}</em><a class="headerlink" href="#arcgis.geometry.functions.AreaUnits.SQUAREDECIMETERS" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="arcgis.geometry.functions.AreaUnits.SQUAREFEET">
+<code class="sig-name descname">SQUAREFEET</code><em class="property"> = {'areaUnit': 'esriSquareFeet'}</em><a class="headerlink" href="#arcgis.geometry.functions.AreaUnits.SQUAREFEET" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="arcgis.geometry.functions.AreaUnits.SQUAREINCHES">
+<code class="sig-name descname">SQUAREINCHES</code><em class="property"> = {'areaUnit': 'esriSquareInches'}</em><a class="headerlink" href="#arcgis.geometry.functions.AreaUnits.SQUAREINCHES" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="arcgis.geometry.functions.AreaUnits.SQUAREKILOMETERS">
+<code class="sig-name descname">SQUAREKILOMETERS</code><em class="property"> = {'areaUnit': 'esriSquareKilometers'}</em><a class="headerlink" href="#arcgis.geometry.functions.AreaUnits.SQUAREKILOMETERS" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="arcgis.geometry.functions.AreaUnits.SQUAREMETERS">
+<code class="sig-name descname">SQUAREMETERS</code><em class="property"> = {'areaUnit': 'esriSquareMeters'}</em><a class="headerlink" href="#arcgis.geometry.functions.AreaUnits.SQUAREMETERS" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="arcgis.geometry.functions.AreaUnits.SQUAREMILES">
+<code class="sig-name descname">SQUAREMILES</code><em class="property"> = {'areaUnit': 'esriSquareMiles'}</em><a class="headerlink" href="#arcgis.geometry.functions.AreaUnits.SQUAREMILES" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="arcgis.geometry.functions.AreaUnits.SQUAREMILLIMETERS">
+<code class="sig-name descname">SQUAREMILLIMETERS</code><em class="property"> = {'areaUnit': 'esriSquareMillimeters'}</em><a class="headerlink" href="#arcgis.geometry.functions.AreaUnits.SQUAREMILLIMETERS" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="arcgis.geometry.functions.AreaUnits.SQUAREYARDS">
+<code class="sig-name descname">SQUAREYARDS</code><em class="property"> = {'areaUnit': 'esriSquareYards'}</em><a class="headerlink" href="#arcgis.geometry.functions.AreaUnits.SQUAREYARDS" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="arcgis.geometry.functions.AreaUnits.UNKNOWNAREAUNITS">
+<code class="sig-name descname">UNKNOWNAREAUNITS</code><em class="property"> = {'areaUnit': 'esriUnknownAreaUnits'}</em><a class="headerlink" href="#arcgis.geometry.functions.AreaUnits.UNKNOWNAREAUNITS" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="lengthunits">
+<h2>LengthUnits<a class="headerlink" href="#lengthunits" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt id="arcgis.geometry.functions.LengthUnits">
+<em class="property">class </em><code class="sig-prename descclassname">arcgis.geometry.functions.</code><code class="sig-name descname">LengthUnits</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">value</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.geometry.functions.LengthUnits" title="Permalink to this definition">¶</a></dt>
+<dd><p>Represents the Geometry Service Length Units Enumerations
+Example: areas_and_lengths(polygons=[geom],length_unit=LengthUnits.FOOT)</p>
+<dl class="py attribute">
+<dt id="arcgis.geometry.functions.LengthUnits.ARCMINUTE">
+<code class="sig-name descname">ARCMINUTE</code><em class="property"> = 9103</em><a class="headerlink" href="#arcgis.geometry.functions.LengthUnits.ARCMINUTE" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="arcgis.geometry.functions.LengthUnits.ARCMINUTECENTESIMAL">
+<code class="sig-name descname">ARCMINUTECENTESIMAL</code><em class="property"> = 9112</em><a class="headerlink" href="#arcgis.geometry.functions.LengthUnits.ARCMINUTECENTESIMAL" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="arcgis.geometry.functions.LengthUnits.ARCSECOND">
+<code class="sig-name descname">ARCSECOND</code><em class="property"> = 9104</em><a class="headerlink" href="#arcgis.geometry.functions.LengthUnits.ARCSECOND" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="arcgis.geometry.functions.LengthUnits.ARCSECONDCENTESIMAL">
+<code class="sig-name descname">ARCSECONDCENTESIMAL</code><em class="property"> = 9113</em><a class="headerlink" href="#arcgis.geometry.functions.LengthUnits.ARCSECONDCENTESIMAL" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="arcgis.geometry.functions.LengthUnits.BENOIT1895A_CHAIN">
+<code class="sig-name descname">BENOIT1895A_CHAIN</code><em class="property"> = 9052</em><a class="headerlink" href="#arcgis.geometry.functions.LengthUnits.BENOIT1895A_CHAIN" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="arcgis.geometry.functions.LengthUnits.BENOIT1895A_FOOT">
+<code class="sig-name descname">BENOIT1895A_FOOT</code><em class="property"> = 9051</em><a class="headerlink" href="#arcgis.geometry.functions.LengthUnits.BENOIT1895A_FOOT" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="arcgis.geometry.functions.LengthUnits.BENOIT1895A_LINK">
+<code class="sig-name descname">BENOIT1895A_LINK</code><em class="property"> = 9053</em><a class="headerlink" href="#arcgis.geometry.functions.LengthUnits.BENOIT1895A_LINK" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="arcgis.geometry.functions.LengthUnits.BENOIT1895A_YARD">
+<code class="sig-name descname">BENOIT1895A_YARD</code><em class="property"> = 9050</em><a class="headerlink" href="#arcgis.geometry.functions.LengthUnits.BENOIT1895A_YARD" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="arcgis.geometry.functions.LengthUnits.BENOIT1895B_CHAIN">
+<code class="sig-name descname">BENOIT1895B_CHAIN</code><em class="property"> = 9062</em><a class="headerlink" href="#arcgis.geometry.functions.LengthUnits.BENOIT1895B_CHAIN" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="arcgis.geometry.functions.LengthUnits.BENOIT1895B_FOOT">
+<code class="sig-name descname">BENOIT1895B_FOOT</code><em class="property"> = 9061</em><a class="headerlink" href="#arcgis.geometry.functions.LengthUnits.BENOIT1895B_FOOT" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="arcgis.geometry.functions.LengthUnits.BENOIT1895B_LINK">
+<code class="sig-name descname">BENOIT1895B_LINK</code><em class="property"> = 9063</em><a class="headerlink" href="#arcgis.geometry.functions.LengthUnits.BENOIT1895B_LINK" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="arcgis.geometry.functions.LengthUnits.BENOIT1895B_YARD">
+<code class="sig-name descname">BENOIT1895B_YARD</code><em class="property"> = 9060</em><a class="headerlink" href="#arcgis.geometry.functions.LengthUnits.BENOIT1895B_YARD" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="arcgis.geometry.functions.LengthUnits.BRITISH1936FOOT">
+<code class="sig-name descname">BRITISH1936FOOT</code><em class="property"> = 9095</em><a class="headerlink" href="#arcgis.geometry.functions.LengthUnits.BRITISH1936FOOT" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="arcgis.geometry.functions.LengthUnits.CENTIMETER">
+<code class="sig-name descname">CENTIMETER</code><em class="property"> = 1033</em><a class="headerlink" href="#arcgis.geometry.functions.LengthUnits.CENTIMETER" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="arcgis.geometry.functions.LengthUnits.CLARKECHAIN">
+<code class="sig-name descname">CLARKECHAIN</code><em class="property"> = 9038</em><a class="headerlink" href="#arcgis.geometry.functions.LengthUnits.CLARKECHAIN" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="arcgis.geometry.functions.LengthUnits.CLARKEFOOT">
+<code class="sig-name descname">CLARKEFOOT</code><em class="property"> = 9005</em><a class="headerlink" href="#arcgis.geometry.functions.LengthUnits.CLARKEFOOT" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="arcgis.geometry.functions.LengthUnits.CLARKELINK">
+<code class="sig-name descname">CLARKELINK</code><em class="property"> = 9039</em><a class="headerlink" href="#arcgis.geometry.functions.LengthUnits.CLARKELINK" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="arcgis.geometry.functions.LengthUnits.CLARKEYARD">
+<code class="sig-name descname">CLARKEYARD</code><em class="property"> = 9037</em><a class="headerlink" href="#arcgis.geometry.functions.LengthUnits.CLARKEYARD" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="arcgis.geometry.functions.LengthUnits.DECIMETER">
+<code class="sig-name descname">DECIMETER</code><em class="property"> = 109005</em><a class="headerlink" href="#arcgis.geometry.functions.LengthUnits.DECIMETER" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="arcgis.geometry.functions.LengthUnits.DEGREE">
+<code class="sig-name descname">DEGREE</code><em class="property"> = 9102</em><a class="headerlink" href="#arcgis.geometry.functions.LengthUnits.DEGREE" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="arcgis.geometry.functions.LengthUnits.FATHOM">
+<code class="sig-name descname">FATHOM</code><em class="property"> = 9014</em><a class="headerlink" href="#arcgis.geometry.functions.LengthUnits.FATHOM" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="arcgis.geometry.functions.LengthUnits.FIFTYKMLENGTH">
+<code class="sig-name descname">FIFTYKMLENGTH</code><em class="property"> = 109030</em><a class="headerlink" href="#arcgis.geometry.functions.LengthUnits.FIFTYKMLENGTH" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="arcgis.geometry.functions.LengthUnits.FOOT">
+<code class="sig-name descname">FOOT</code><em class="property"> = 9002</em><a class="headerlink" href="#arcgis.geometry.functions.LengthUnits.FOOT" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="arcgis.geometry.functions.LengthUnits.FOOT1865">
+<code class="sig-name descname">FOOT1865</code><em class="property"> = 9070</em><a class="headerlink" href="#arcgis.geometry.functions.LengthUnits.FOOT1865" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="arcgis.geometry.functions.LengthUnits.GERMANMETER">
+<code class="sig-name descname">GERMANMETER</code><em class="property"> = 9031</em><a class="headerlink" href="#arcgis.geometry.functions.LengthUnits.GERMANMETER" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="arcgis.geometry.functions.LengthUnits.GOLDCOASTFOOT">
+<code class="sig-name descname">GOLDCOASTFOOT</code><em class="property"> = 9094</em><a class="headerlink" href="#arcgis.geometry.functions.LengthUnits.GOLDCOASTFOOT" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="arcgis.geometry.functions.LengthUnits.GON">
+<code class="sig-name descname">GON</code><em class="property"> = 9106</em><a class="headerlink" href="#arcgis.geometry.functions.LengthUnits.GON" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="arcgis.geometry.functions.LengthUnits.GRAD">
+<code class="sig-name descname">GRAD</code><em class="property"> = 9105</em><a class="headerlink" href="#arcgis.geometry.functions.LengthUnits.GRAD" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="arcgis.geometry.functions.LengthUnits.INDIAN1937FOOT">
+<code class="sig-name descname">INDIAN1937FOOT</code><em class="property"> = 9081</em><a class="headerlink" href="#arcgis.geometry.functions.LengthUnits.INDIAN1937FOOT" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="arcgis.geometry.functions.LengthUnits.INDIAN1937YARD">
+<code class="sig-name descname">INDIAN1937YARD</code><em class="property"> = 9085</em><a class="headerlink" href="#arcgis.geometry.functions.LengthUnits.INDIAN1937YARD" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="arcgis.geometry.functions.LengthUnits.INDIAN1962FOOT">
+<code class="sig-name descname">INDIAN1962FOOT</code><em class="property"> = 9082</em><a class="headerlink" href="#arcgis.geometry.functions.LengthUnits.INDIAN1962FOOT" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="arcgis.geometry.functions.LengthUnits.INDIAN1962YARD">
+<code class="sig-name descname">INDIAN1962YARD</code><em class="property"> = 9086</em><a class="headerlink" href="#arcgis.geometry.functions.LengthUnits.INDIAN1962YARD" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="arcgis.geometry.functions.LengthUnits.INDIAN1975FOOT">
+<code class="sig-name descname">INDIAN1975FOOT</code><em class="property"> = 9083</em><a class="headerlink" href="#arcgis.geometry.functions.LengthUnits.INDIAN1975FOOT" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="arcgis.geometry.functions.LengthUnits.INDIAN1975YARD">
+<code class="sig-name descname">INDIAN1975YARD</code><em class="property"> = 9087</em><a class="headerlink" href="#arcgis.geometry.functions.LengthUnits.INDIAN1975YARD" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="arcgis.geometry.functions.LengthUnits.INDIANFOOT">
+<code class="sig-name descname">INDIANFOOT</code><em class="property"> = 9080</em><a class="headerlink" href="#arcgis.geometry.functions.LengthUnits.INDIANFOOT" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="arcgis.geometry.functions.LengthUnits.INDIANYARD">
+<code class="sig-name descname">INDIANYARD</code><em class="property"> = 9084</em><a class="headerlink" href="#arcgis.geometry.functions.LengthUnits.INDIANYARD" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="arcgis.geometry.functions.LengthUnits.INTERNATIONALCHAIN">
+<code class="sig-name descname">INTERNATIONALCHAIN</code><em class="property"> = 9097</em><a class="headerlink" href="#arcgis.geometry.functions.LengthUnits.INTERNATIONALCHAIN" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="arcgis.geometry.functions.LengthUnits.INTERNATIONALINCH">
+<code class="sig-name descname">INTERNATIONALINCH</code><em class="property"> = 109008</em><a class="headerlink" href="#arcgis.geometry.functions.LengthUnits.INTERNATIONALINCH" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="arcgis.geometry.functions.LengthUnits.INTERNATIONALLINK">
+<code class="sig-name descname">INTERNATIONALLINK</code><em class="property"> = 9098</em><a class="headerlink" href="#arcgis.geometry.functions.LengthUnits.INTERNATIONALLINK" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="arcgis.geometry.functions.LengthUnits.INTERNATIONALROD">
+<code class="sig-name descname">INTERNATIONALROD</code><em class="property"> = 109010</em><a class="headerlink" href="#arcgis.geometry.functions.LengthUnits.INTERNATIONALROD" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="arcgis.geometry.functions.LengthUnits.INTERNATIONALYARD">
+<code class="sig-name descname">INTERNATIONALYARD</code><em class="property"> = 9096</em><a class="headerlink" href="#arcgis.geometry.functions.LengthUnits.INTERNATIONALYARD" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="arcgis.geometry.functions.LengthUnits.KILOMETER">
+<code class="sig-name descname">KILOMETER</code><em class="property"> = 9036</em><a class="headerlink" href="#arcgis.geometry.functions.LengthUnits.KILOMETER" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="arcgis.geometry.functions.LengthUnits.METER">
+<code class="sig-name descname">METER</code><em class="property"> = 9001</em><a class="headerlink" href="#arcgis.geometry.functions.LengthUnits.METER" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="arcgis.geometry.functions.LengthUnits.MICRORADIAN">
+<code class="sig-name descname">MICRORADIAN</code><em class="property"> = 9109</em><a class="headerlink" href="#arcgis.geometry.functions.LengthUnits.MICRORADIAN" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="arcgis.geometry.functions.LengthUnits.MIL6400">
+<code class="sig-name descname">MIL6400</code><em class="property"> = 9114</em><a class="headerlink" href="#arcgis.geometry.functions.LengthUnits.MIL6400" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="arcgis.geometry.functions.LengthUnits.MILLIMETER">
+<code class="sig-name descname">MILLIMETER</code><em class="property"> = 1025</em><a class="headerlink" href="#arcgis.geometry.functions.LengthUnits.MILLIMETER" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="arcgis.geometry.functions.LengthUnits.NAUTICALMILE">
+<code class="sig-name descname">NAUTICALMILE</code><em class="property"> = 9030</em><a class="headerlink" href="#arcgis.geometry.functions.LengthUnits.NAUTICALMILE" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="arcgis.geometry.functions.LengthUnits.ONEFIFTYKMLENGTH">
+<code class="sig-name descname">ONEFIFTYKMLENGTH</code><em class="property"> = 109031</em><a class="headerlink" href="#arcgis.geometry.functions.LengthUnits.ONEFIFTYKMLENGTH" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="arcgis.geometry.functions.LengthUnits.RADIAN">
+<code class="sig-name descname">RADIAN</code><em class="property"> = 9101</em><a class="headerlink" href="#arcgis.geometry.functions.LengthUnits.RADIAN" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="arcgis.geometry.functions.LengthUnits.SEARSCHAIN">
+<code class="sig-name descname">SEARSCHAIN</code><em class="property"> = 9042</em><a class="headerlink" href="#arcgis.geometry.functions.LengthUnits.SEARSCHAIN" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="arcgis.geometry.functions.LengthUnits.SEARSFOOT">
+<code class="sig-name descname">SEARSFOOT</code><em class="property"> = 9041</em><a class="headerlink" href="#arcgis.geometry.functions.LengthUnits.SEARSFOOT" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="arcgis.geometry.functions.LengthUnits.SEARSLINK">
+<code class="sig-name descname">SEARSLINK</code><em class="property"> = 9043</em><a class="headerlink" href="#arcgis.geometry.functions.LengthUnits.SEARSLINK" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="arcgis.geometry.functions.LengthUnits.SEARSYARD">
+<code class="sig-name descname">SEARSYARD</code><em class="property"> = 9040</em><a class="headerlink" href="#arcgis.geometry.functions.LengthUnits.SEARSYARD" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="arcgis.geometry.functions.LengthUnits.STATUTEMILE">
+<code class="sig-name descname">STATUTEMILE</code><em class="property"> = 9093</em><a class="headerlink" href="#arcgis.geometry.functions.LengthUnits.STATUTEMILE" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="arcgis.geometry.functions.LengthUnits.SURVEYCHAIN">
+<code class="sig-name descname">SURVEYCHAIN</code><em class="property"> = 9033</em><a class="headerlink" href="#arcgis.geometry.functions.LengthUnits.SURVEYCHAIN" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="arcgis.geometry.functions.LengthUnits.SURVEYFOOT">
+<code class="sig-name descname">SURVEYFOOT</code><em class="property"> = 9003</em><a class="headerlink" href="#arcgis.geometry.functions.LengthUnits.SURVEYFOOT" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="arcgis.geometry.functions.LengthUnits.SURVEYLINK">
+<code class="sig-name descname">SURVEYLINK</code><em class="property"> = 9034</em><a class="headerlink" href="#arcgis.geometry.functions.LengthUnits.SURVEYLINK" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="arcgis.geometry.functions.LengthUnits.SURVEYMILE">
+<code class="sig-name descname">SURVEYMILE</code><em class="property"> = 9035</em><a class="headerlink" href="#arcgis.geometry.functions.LengthUnits.SURVEYMILE" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="arcgis.geometry.functions.LengthUnits.SURVEYYARD">
+<code class="sig-name descname">SURVEYYARD</code><em class="property"> = 109002</em><a class="headerlink" href="#arcgis.geometry.functions.LengthUnits.SURVEYYARD" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="arcgis.geometry.functions.LengthUnits.UKNAUTICALMILE">
+<code class="sig-name descname">UKNAUTICALMILE</code><em class="property"> = 109013</em><a class="headerlink" href="#arcgis.geometry.functions.LengthUnits.UKNAUTICALMILE" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="arcgis.geometry.functions.LengthUnits.USNAUTICALMILE">
+<code class="sig-name descname">USNAUTICALMILE</code><em class="property"> = 109012</em><a class="headerlink" href="#arcgis.geometry.functions.LengthUnits.USNAUTICALMILE" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="arcgis.geometry.functions.LengthUnits.USSURVEYINCH">
+<code class="sig-name descname">USSURVEYINCH</code><em class="property"> = 109009</em><a class="headerlink" href="#arcgis.geometry.functions.LengthUnits.USSURVEYINCH" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="arcgis.geometry.functions.LengthUnits.USSURVEYROD">
+<code class="sig-name descname">USSURVEYROD</code><em class="property"> = 109011</em><a class="headerlink" href="#arcgis.geometry.functions.LengthUnits.USSURVEYROD" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<span class="target" id="module-arcgis.geometry.functions"></span><p>The <code class="docutils literal notranslate"><span class="pre">Functions</span></code> module is used to take <a class="reference internal" href="arcgis.geometry.html#arcgis.geometry.Geometry" title="arcgis.geometry.Geometry"><code class="xref py py-class docutils literal notranslate"><span class="pre">Geometry</span></code></a> types as parameters and return
 <a class="reference internal" href="arcgis.geometry.html#arcgis.geometry.Geometry" title="arcgis.geometry.Geometry"><code class="xref py py-class docutils literal notranslate"><span class="pre">Geometry</span></code></a> type results.</p>
 <div class="section" id="areas-and-lengths">
-<h2>areas_and_lengths<a class="headerlink" href="#areas-and-lengths" title="Permalink to this headline">¶</a></h2>
-<dl class="function">
+<h3>areas_and_lengths<a class="headerlink" href="#areas-and-lengths" title="Permalink to this headline">¶</a></h3>
+<dl class="py function">
 <dt id="arcgis.geometry.functions.areas_and_lengths">
-<code class="sig-prename descclassname">arcgis.geometry.functions.</code><code class="sig-name descname">areas_and_lengths</code><span class="sig-paren">(</span><em class="sig-param">polygons</em>, <em class="sig-param">length_unit</em>, <em class="sig-param">area_unit</em>, <em class="sig-param">calculation_type</em>, <em class="sig-param">spatial_ref=4326</em>, <em class="sig-param">gis=None</em>, <em class="sig-param">future=False</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.geometry.functions.areas_and_lengths" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">arcgis.geometry.functions.</code><code class="sig-name descname">areas_and_lengths</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">polygons</span></em>, <em class="sig-param"><span class="n">length_unit</span></em>, <em class="sig-param"><span class="n">area_unit</span></em>, <em class="sig-param"><span class="n">calculation_type</span></em>, <em class="sig-param"><span class="n">spatial_ref</span><span class="o">=</span><span class="default_value">4326</span></em>, <em class="sig-param"><span class="n">gis</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">future</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.geometry.functions.areas_and_lengths" title="Permalink to this definition">¶</a></dt>
 <dd><p>The <code class="docutils literal notranslate"><span class="pre">areas_and_lengths</span></code> function calculates areas and perimeter lengths
 for each <a class="reference internal" href="arcgis.geometry.html#arcgis.geometry.Polygon" title="arcgis.geometry.Polygon"><code class="xref py py-class docutils literal notranslate"><span class="pre">Polygon</span></code></a> specified in the input array.</p>
 <table class="docutils align-default">
@@ -281,27 +679,26 @@ for each <a class="reference internal" href="arcgis.geometry.html#arcgis.geometr
 <td><p>The length unit in which the perimeters of
 polygons will be calculated. If <code class="docutils literal notranslate"><span class="pre">calculation_type</span></code>
 is planar, then <code class="docutils literal notranslate"><span class="pre">length_unit</span></code> can be any esriUnits
-constant. If <code class="docutils literal notranslate"><span class="pre">length_unit</span></code> is not specified, the
-units are derived from <code class="docutils literal notranslate"><span class="pre">spatial_ref</span></code>. If <code class="docutils literal notranslate"><span class="pre">calculationType</span></code> is
+constant (string or integer). If <code class="docutils literal notranslate"><span class="pre">calculationType</span></code> is
 not planar, then <code class="docutils literal notranslate"><span class="pre">length_unit</span></code> must be a linear
-esriUnits constant, such as <cite>esriSRUnit_Meter</cite> or
-<cite>esriSRUnit_SurveyMile</cite>. If <code class="docutils literal notranslate"><span class="pre">length_unit</span></code> is not
-specified, the units are meters. For a list of
+esriUnits constant, such as <cite>esriSRUnit_Meter`(i.e. `9001`|`LengthUnits.METER</cite>) or
+<cite>esriSRUnit_SurveyMile`(i.e. `9035`|`LengthUnits.SURVEYMILE</cite>). If <code class="docutils literal notranslate"><span class="pre">length_unit</span></code> is not
+specified, the units are derived from <code class="docutils literal notranslate"><span class="pre">spatial_ref</span></code>. If <code class="docutils literal notranslate"><span class="pre">spatial_ref</span></code> is not
+specified as well, the units are in meters. For a list of
 valid units, see <cite>esriSRUnitType Constants</cite> and
-<cite>esriSRUnit2Type Constant</cite>.</p></td>
+<cite>esriSRUnit2Type Constants</cite>.</p></td>
 </tr>
 <tr class="row-even"><td><p>area_unit</p></td>
 <td><p>The area unit in which areas of polygons will be
 calculated. If calculation_type is planar, then
-area_unit can be any <cite>esriUnits</cite> constant. If
+area_unit can be any <cite>esriAreaUnits</cite> constant (dict or enum). If <code class="docutils literal notranslate"><span class="pre">calculation_type</span></code> is
+not planar, then <code class="docutils literal notranslate"><span class="pre">area_unit</span></code> must be a <cite>esriAreaUnits</cite> constant such
+as <cite>AreaUnits.SQUAREMETERS</cite> (i.e. <cite>{“areaUnit”: “esriSquareMeters”}</cite>) or
+<cite>AreaUnits.SQUAREMILES</cite> (i.e. <cite>{“areaUnit”: “esriSquareMiles”}</cite>). If
 <code class="docutils literal notranslate"><span class="pre">area_unit</span></code> is not specified, the units are derived
-from <code class="docutils literal notranslate"><span class="pre">spatial_ref</span></code>. If <code class="docutils literal notranslate"><span class="pre">calculation_type</span></code> is not planar, then
-<code class="docutils literal notranslate"><span class="pre">area_unit</span></code> must be a linear <cite>esriUnits</cite> constant such
-as esriSRUnit_Meter or esriSRUnit_SurveyMile. If
-area_unit is not specified, then the units are
+from <code class="docutils literal notranslate"><span class="pre">spatial_ref</span></code>. If <code class="docutils literal notranslate"><span class="pre">spatial_ref</span></code> is not specified, then the units are in square
 meters. For a list of valid units, see
-<cite>esriSRUnitType Constants</cite> and <cite>esriSRUnit2Type
-constant</cite>.
+<cite>esriAreaUnits Constants</cite>.
 The list of valid esriAreaUnits constants include,
 <cite>esriSquareInches | esriSquareFeet |
 esriSquareYards | esriAcres | esriSquareMiles |
@@ -330,32 +727,33 @@ the Earth ellipsoid. The shape of the geometry in its coordinate system is prese
 </tr>
 </tbody>
 </table>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">geom</span> <span class="o">=</span> <span class="n">Geometry</span><span class="p">({</span>
-<span class="gp">&gt;&gt;&gt; </span>  <span class="s2">&quot;rings&quot;</span> <span class="p">:</span> <span class="p">[[[</span><span class="o">-</span><span class="mf">97.06138</span><span class="p">,</span><span class="mf">32.837</span><span class="p">],[</span><span class="o">-</span><span class="mf">97.06133</span><span class="p">,</span><span class="mf">32.836</span><span class="p">],[</span><span class="o">-</span><span class="mf">97.06124</span><span class="p">,</span><span class="mf">32.834</span><span class="p">],[</span><span class="o">-</span><span class="mf">97.06127</span><span class="p">,</span><span class="mf">32.832</span><span class="p">],</span>
-<span class="gp">&gt;&gt;&gt; </span>              <span class="p">[</span><span class="o">-</span><span class="mf">97.06138</span><span class="p">,</span><span class="mf">32.837</span><span class="p">]],[[</span><span class="o">-</span><span class="mf">97.06326</span><span class="p">,</span><span class="mf">32.759</span><span class="p">],[</span><span class="o">-</span><span class="mf">97.06298</span><span class="p">,</span><span class="mf">32.755</span><span class="p">],[</span><span class="o">-</span><span class="mf">97.06153</span><span class="p">,</span><span class="mf">32.749</span><span class="p">],</span>
-<span class="gp">&gt;&gt;&gt; </span>              <span class="p">[</span><span class="o">-</span><span class="mf">97.06326</span><span class="p">,</span><span class="mf">32.759</span><span class="p">]]],</span>
-<span class="gp">&gt;&gt;&gt; </span>  <span class="s2">&quot;spatialReference&quot;</span> <span class="p">:</span> <span class="p">{</span><span class="s2">&quot;wkid&quot;</span> <span class="p">:</span> <span class="mi">4326</span><span class="p">}</span>
-<span class="gp">&gt;&gt;&gt; </span>                <span class="p">})</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">geom</span><span class="o">.</span><span class="n">areas_and_lengths</span><span class="p">(</span><span class="n">polygons</span> <span class="o">=</span><span class="p">[</span><span class="n">polygon1</span><span class="p">,</span> <span class="n">polygon2</span><span class="p">,</span><span class="o">...</span><span class="p">],</span>
-<span class="go">                           length_unit = &quot;esriMeters&quot;,</span>
-<span class="go">                           area_unit = &quot;esriSquareMeters&quot;,</span>
-<span class="go">                           calculation_type = &quot;planar&quot;,</span>
-<span class="go">                           future = True)</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="c1"># Use case 1</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">areas_and_lengths</span><span class="p">(</span><span class="n">polygons</span> <span class="o">=</span><span class="p">[</span><span class="n">polygon1</span><span class="p">,</span> <span class="n">polygon2</span><span class="p">,</span><span class="o">...</span><span class="p">],</span>
+<span class="go">                      length_unit = 9001,</span>
+<span class="go">                      area_unit = {&quot;areaUnit&quot;: &quot;esriSquareMeters&quot;},</span>
+<span class="go">                      calculation_type = &quot;planar&quot;)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># Use case 2</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">arcgis.geometry</span> <span class="kn">import</span> <span class="n">LengthUnits</span><span class="p">,</span> <span class="n">AreaUnits</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">areas_and_lengths</span><span class="p">(</span><span class="n">polygons</span> <span class="o">=</span><span class="p">[</span><span class="n">polygon1</span><span class="p">,</span> <span class="n">polygon2</span><span class="p">,</span><span class="o">...</span><span class="p">],</span>
+<span class="go">                      length_unit = LengthUnits.METER,</span>
+<span class="go">                      area_unit = AreaUnits.SQUAREMETERS,</span>
+<span class="go">                      calculation_type = &quot;planar&quot;,</span>
+<span class="go">                      future = True)</span>
 </pre></div>
 </div>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p>JSON as dictionary</p>
+<dd class="field-odd"><p>A JSON as dictionary, or a <cite>GeometryJob</cite> object</p>
 </dd>
 </dl>
 </dd></dl>
 
 </div>
 <div class="section" id="auto-complete">
-<h2>auto_complete<a class="headerlink" href="#auto-complete" title="Permalink to this headline">¶</a></h2>
-<dl class="function">
+<h3>auto_complete<a class="headerlink" href="#auto-complete" title="Permalink to this headline">¶</a></h3>
+<dl class="py function">
 <dt id="arcgis.geometry.functions.auto_complete">
-<code class="sig-prename descclassname">arcgis.geometry.functions.</code><code class="sig-name descname">auto_complete</code><span class="sig-paren">(</span><em class="sig-param">polygons=None</em>, <em class="sig-param">polylines=None</em>, <em class="sig-param">spatial_ref=None</em>, <em class="sig-param">gis=None</em>, <em class="sig-param">future=False</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.geometry.functions.auto_complete" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">arcgis.geometry.functions.</code><code class="sig-name descname">auto_complete</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">polygons</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">polylines</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">spatial_ref</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">gis</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">future</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.geometry.functions.auto_complete" title="Permalink to this definition">¶</a></dt>
 <dd><p>The <code class="docutils literal notranslate"><span class="pre">auto_complete</span></code> function simplifies the process of
 constructing new <a class="reference internal" href="arcgis.geometry.html#arcgis.geometry.Polygon" title="arcgis.geometry.Polygon"><code class="xref py py-class docutils literal notranslate"><span class="pre">Polygon</span></code></a> objects that are adjacent to other polygons.
 It constructs polygons that fill in the gaps between existing
@@ -385,17 +783,17 @@ polygons and a set of <a class="reference internal" href="arcgis.geometry.html#a
 </table>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p>A <a class="reference internal" href="arcgis.geometry.html#arcgis.geometry.Polygon" title="arcgis.geometry.Polygon"><code class="xref py py-class docutils literal notranslate"><span class="pre">Polygon</span></code></a> object</p>
+<dd class="field-odd"><p>A <a class="reference internal" href="arcgis.geometry.html#arcgis.geometry.Polygon" title="arcgis.geometry.Polygon"><code class="xref py py-class docutils literal notranslate"><span class="pre">Polygon</span></code></a> object, or a <cite>GeometryJob</cite> object</p>
 </dd>
 </dl>
 </dd></dl>
 
 </div>
 <div class="section" id="buffer">
-<h2>buffer<a class="headerlink" href="#buffer" title="Permalink to this headline">¶</a></h2>
-<dl class="function">
+<h3>buffer<a class="headerlink" href="#buffer" title="Permalink to this headline">¶</a></h3>
+<dl class="py function">
 <dt id="arcgis.geometry.functions.buffer">
-<code class="sig-prename descclassname">arcgis.geometry.functions.</code><code class="sig-name descname">buffer</code><span class="sig-paren">(</span><em class="sig-param">geometries</em>, <em class="sig-param">in_sr</em>, <em class="sig-param">distances</em>, <em class="sig-param">unit</em>, <em class="sig-param">out_sr=None</em>, <em class="sig-param">buffer_sr=None</em>, <em class="sig-param">union_results=None</em>, <em class="sig-param">geodesic=None</em>, <em class="sig-param">gis=None</em>, <em class="sig-param">future=False</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.geometry.functions.buffer" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">arcgis.geometry.functions.</code><code class="sig-name descname">buffer</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">geometries</span></em>, <em class="sig-param"><span class="n">in_sr</span></em>, <em class="sig-param"><span class="n">distances</span></em>, <em class="sig-param"><span class="n">unit</span></em>, <em class="sig-param"><span class="n">out_sr</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">buffer_sr</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">union_results</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">geodesic</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">gis</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">future</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.geometry.functions.buffer" title="Permalink to this definition">¶</a></dt>
 <dd><p>The <code class="docutils literal notranslate"><span class="pre">buffer</span></code> function is performed on a geometry service resource
 The result of this function is a buffered <a class="reference internal" href="arcgis.geometry.html#arcgis.geometry.Polygon" title="arcgis.geometry.Polygon"><code class="xref py py-class docutils literal notranslate"><span class="pre">Polygon</span></code></a> at the
 specified distances for the input <a class="reference internal" href="arcgis.geometry.html#arcgis.geometry.Geometry" title="arcgis.geometry.Geometry"><code class="xref py py-class docutils literal notranslate"><span class="pre">Geometry</span></code></a> array.</p>
@@ -459,37 +857,29 @@ to buffer the input geometries.</p>
 </tr>
 </tbody>
 </table>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">geom</span> <span class="o">=</span> <span class="n">Geometry</span><span class="p">({</span>
-<span class="gp">&gt;&gt;&gt; </span>  <span class="s2">&quot;rings&quot;</span> <span class="p">:</span> <span class="p">[[[</span><span class="o">-</span><span class="mf">97.06138</span><span class="p">,</span><span class="mf">32.837</span><span class="p">],[</span><span class="o">-</span><span class="mf">97.06133</span><span class="p">,</span><span class="mf">32.836</span><span class="p">],[</span><span class="o">-</span><span class="mf">97.06124</span><span class="p">,</span><span class="mf">32.834</span><span class="p">],[</span><span class="o">-</span><span class="mf">97.06127</span><span class="p">,</span><span class="mf">32.832</span><span class="p">],</span>
-<span class="gp">&gt;&gt;&gt; </span>              <span class="p">[</span><span class="o">-</span><span class="mf">97.06138</span><span class="p">,</span><span class="mf">32.837</span><span class="p">]],[[</span><span class="o">-</span><span class="mf">97.06326</span><span class="p">,</span><span class="mf">32.759</span><span class="p">],[</span><span class="o">-</span><span class="mf">97.06298</span><span class="p">,</span><span class="mf">32.755</span><span class="p">],[</span><span class="o">-</span><span class="mf">97.06153</span><span class="p">,</span><span class="mf">32.749</span><span class="p">],</span>
-<span class="gp">&gt;&gt;&gt; </span>              <span class="p">[</span><span class="o">-</span><span class="mf">97.06326</span><span class="p">,</span><span class="mf">32.759</span><span class="p">]]],</span>
-<span class="gp">&gt;&gt;&gt; </span>  <span class="s2">&quot;spatialReference&quot;</span> <span class="p">:</span> <span class="p">{</span><span class="s2">&quot;wkid&quot;</span> <span class="p">:</span> <span class="mi">4326</span><span class="p">}</span>
-<span class="gp">&gt;&gt;&gt; </span>                <span class="p">})</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">new_poly</span> <span class="o">=</span> <span class="n">geom</span><span class="o">.</span><span class="n">buffer</span><span class="p">(</span><span class="n">geometries</span> <span class="o">=</span><span class="p">[</span><span class="n">geom1</span><span class="p">,</span> <span class="n">geom2</span><span class="p">,</span><span class="o">...</span><span class="p">],</span>
-<span class="go">                           in_sr = &quot;wkid_in&quot;,</span>
-<span class="go">                           unit = &quot;esriMeters&quot;,</span>
-<span class="go">                           out_sr = &quot;wkid_out&quot;,</span>
-<span class="go">                           buffer_sr = &quot;wkid_buffer&quot;,</span>
-<span class="go">                           union_results =True,</span>
-<span class="go">                           geodesic = True,</span>
-<span class="go">                           future = True)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">new_poly</span><span class="o">.</span><span class="n">type</span>
-<span class="go">    &quot;POLYGON&quot;</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">buffer</span><span class="p">(</span><span class="n">geometries</span> <span class="o">=</span><span class="p">[</span><span class="n">geom1</span><span class="p">,</span> <span class="n">geom2</span><span class="p">,</span><span class="o">...</span><span class="p">],</span>
+<span class="go">           in_sr = &quot;wkid_in&quot;,</span>
+<span class="go">           unit = &quot;esriMeters&quot;,</span>
+<span class="go">           out_sr = &quot;wkid_out&quot;,</span>
+<span class="go">           buffer_sr = &quot;wkid_buffer&quot;,</span>
+<span class="go">           union_results =True,</span>
+<span class="go">           geodesic = True,</span>
+<span class="go">           future = True)</span>
 </pre></div>
 </div>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p>A <a class="reference internal" href="arcgis.geometry.html#arcgis.geometry.Polygon" title="arcgis.geometry.Polygon"><code class="xref py py-class docutils literal notranslate"><span class="pre">Polygon</span></code></a> object</p>
+<dd class="field-odd"><p>A list of <a class="reference internal" href="arcgis.geometry.html#arcgis.geometry.Polygon" title="arcgis.geometry.Polygon"><code class="xref py py-class docutils literal notranslate"><span class="pre">Polygon</span></code></a> object, or a <cite>GeometryJob</cite> object</p>
 </dd>
 </dl>
 </dd></dl>
 
 </div>
 <div class="section" id="convex-hull">
-<h2>convex_hull<a class="headerlink" href="#convex-hull" title="Permalink to this headline">¶</a></h2>
-<dl class="function">
+<h3>convex_hull<a class="headerlink" href="#convex-hull" title="Permalink to this headline">¶</a></h3>
+<dl class="py function">
 <dt id="arcgis.geometry.functions.convex_hull">
-<code class="sig-prename descclassname">arcgis.geometry.functions.</code><code class="sig-name descname">convex_hull</code><span class="sig-paren">(</span><em class="sig-param">geometries</em>, <em class="sig-param">spatial_ref=None</em>, <em class="sig-param">gis=None</em>, <em class="sig-param">future=False</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.geometry.functions.convex_hull" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">arcgis.geometry.functions.</code><code class="sig-name descname">convex_hull</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">geometries</span></em>, <em class="sig-param"><span class="n">spatial_ref</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">gis</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">future</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.geometry.functions.convex_hull" title="Permalink to this definition">¶</a></dt>
 <dd><p>The <cite>convex_hull</cite> function is performed on a <a class="reference internal" href="arcgis.geometry.html#arcgis.geometry.Geometry" title="arcgis.geometry.Geometry"><code class="xref py py-class docutils literal notranslate"><span class="pre">Geometry</span></code></a> service
 resource. It returns the convex hull of the input geometry. The
 input geometry can be a <a class="reference internal" href="arcgis.geometry.html#arcgis.geometry.Point" title="arcgis.geometry.Point"><code class="xref py py-class docutils literal notranslate"><span class="pre">Point</span></code></a>, <a class="reference internal" href="arcgis.geometry.html#arcgis.geometry.MultiPoint" title="arcgis.geometry.MultiPoint"><code class="xref py py-class docutils literal notranslate"><span class="pre">MultiPoint</span></code></a>,
@@ -525,17 +915,17 @@ the ArcGIS REST API.</p></td>
 </table>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p>The convex hull of the <a class="reference internal" href="arcgis.geometry.html#arcgis.geometry.Geometry" title="arcgis.geometry.Geometry"><code class="xref py py-class docutils literal notranslate"><span class="pre">Geometry</span></code></a> object</p>
+<dd class="field-odd"><p>The convex hull of the <a class="reference internal" href="arcgis.geometry.html#arcgis.geometry.Geometry" title="arcgis.geometry.Geometry"><code class="xref py py-class docutils literal notranslate"><span class="pre">Geometry</span></code></a> object, or a <cite>GeometryJob</cite> object</p>
 </dd>
 </dl>
 </dd></dl>
 
 </div>
 <div class="section" id="cut">
-<h2>cut<a class="headerlink" href="#cut" title="Permalink to this headline">¶</a></h2>
-<dl class="function">
+<h3>cut<a class="headerlink" href="#cut" title="Permalink to this headline">¶</a></h3>
+<dl class="py function">
 <dt id="arcgis.geometry.functions.cut">
-<code class="sig-prename descclassname">arcgis.geometry.functions.</code><code class="sig-name descname">cut</code><span class="sig-paren">(</span><em class="sig-param">cutter</em>, <em class="sig-param">target</em>, <em class="sig-param">spatial_ref=None</em>, <em class="sig-param">gis=None</em>, <em class="sig-param">future=False</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.geometry.functions.cut" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">arcgis.geometry.functions.</code><code class="sig-name descname">cut</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">cutter</span></em>, <em class="sig-param"><span class="n">target</span></em>, <em class="sig-param"><span class="n">spatial_ref</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">gis</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">future</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.geometry.functions.cut" title="Permalink to this definition">¶</a></dt>
 <dd><p>The <cite>cut</cite> function is performed on a <a class="reference internal" href="arcgis.geometry.html#arcgis.geometry.Geometry" title="arcgis.geometry.Geometry"><code class="xref py py-class docutils literal notranslate"><span class="pre">Geometry</span></code></a> service resource. This
 function splits the target <a class="reference internal" href="arcgis.geometry.html#arcgis.geometry.Polyline" title="arcgis.geometry.Polyline"><code class="xref py py-class docutils literal notranslate"><span class="pre">Polyline</span></code></a> or <a class="reference internal" href="arcgis.geometry.html#arcgis.geometry.Polygon" title="arcgis.geometry.Polygon"><code class="xref py py-class docutils literal notranslate"><span class="pre">Polygon</span></code></a> where it is
 crossed by the cutter polyline.</p>
@@ -583,17 +973,17 @@ object for the output geometry</p></td>
 </table>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p>A List of <a class="reference internal" href="arcgis.geometry.html#arcgis.geometry.Geometry" title="arcgis.geometry.Geometry"><code class="xref py py-class docutils literal notranslate"><span class="pre">Geometry</span></code></a> objects</p>
+<dd class="field-odd"><p>A List of <a class="reference internal" href="arcgis.geometry.html#arcgis.geometry.Geometry" title="arcgis.geometry.Geometry"><code class="xref py py-class docutils literal notranslate"><span class="pre">Geometry</span></code></a> objects, or a <cite>GeometryJob</cite> object</p>
 </dd>
 </dl>
 </dd></dl>
 
 </div>
 <div class="section" id="densify">
-<h2>densify<a class="headerlink" href="#densify" title="Permalink to this headline">¶</a></h2>
-<dl class="function">
+<h3>densify<a class="headerlink" href="#densify" title="Permalink to this headline">¶</a></h3>
+<dl class="py function">
 <dt id="arcgis.geometry.functions.densify">
-<code class="sig-prename descclassname">arcgis.geometry.functions.</code><code class="sig-name descname">densify</code><span class="sig-paren">(</span><em class="sig-param">geometries</em>, <em class="sig-param">spatial_ref</em>, <em class="sig-param">max_segment_length</em>, <em class="sig-param">length_unit</em>, <em class="sig-param">geodesic=False</em>, <em class="sig-param">gis=None</em>, <em class="sig-param">future=False</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.geometry.functions.densify" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">arcgis.geometry.functions.</code><code class="sig-name descname">densify</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">geometries</span></em>, <em class="sig-param"><span class="n">spatial_ref</span></em>, <em class="sig-param"><span class="n">max_segment_length</span></em>, <em class="sig-param"><span class="n">length_unit</span></em>, <em class="sig-param"><span class="n">geodesic</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">gis</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">future</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.geometry.functions.densify" title="Permalink to this definition">¶</a></dt>
 <dd><p>The <code class="docutils literal notranslate"><span class="pre">densify</span></code> function is performed using the <a class="reference internal" href="arcgis.gis.toc.html#arcgis.gis.GIS" title="arcgis.gis.GIS"><code class="xref py py-class docutils literal notranslate"><span class="pre">GIS</span></code></a> geometry engine.
 This function densifies <a class="reference internal" href="arcgis.geometry.html#arcgis.geometry.Geometry" title="arcgis.geometry.Geometry"><code class="xref py py-class docutils literal notranslate"><span class="pre">Geometry</span></code></a> objects by plotting <a class="reference internal" href="arcgis.geometry.html#arcgis.geometry.Point" title="arcgis.geometry.Point"><code class="xref py py-class docutils literal notranslate"><span class="pre">Point</span></code></a>
 objects between existing vertices.</p>
@@ -648,35 +1038,27 @@ is used to calculate max_segment_length. The default is false.</p></td>
 </tr>
 </tbody>
 </table>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">geom</span> <span class="o">=</span> <span class="n">Geometry</span><span class="p">({</span>
-<span class="gp">&gt;&gt;&gt; </span>  <span class="s2">&quot;rings&quot;</span> <span class="p">:</span> <span class="p">[[[</span><span class="o">-</span><span class="mf">97.06138</span><span class="p">,</span><span class="mf">32.837</span><span class="p">],[</span><span class="o">-</span><span class="mf">97.06133</span><span class="p">,</span><span class="mf">32.836</span><span class="p">],[</span><span class="o">-</span><span class="mf">97.06124</span><span class="p">,</span><span class="mf">32.834</span><span class="p">],[</span><span class="o">-</span><span class="mf">97.06127</span><span class="p">,</span><span class="mf">32.832</span><span class="p">],</span>
-<span class="gp">&gt;&gt;&gt; </span>              <span class="p">[</span><span class="o">-</span><span class="mf">97.06138</span><span class="p">,</span><span class="mf">32.837</span><span class="p">]],[[</span><span class="o">-</span><span class="mf">97.06326</span><span class="p">,</span><span class="mf">32.759</span><span class="p">],[</span><span class="o">-</span><span class="mf">97.06298</span><span class="p">,</span><span class="mf">32.755</span><span class="p">],[</span><span class="o">-</span><span class="mf">97.06153</span><span class="p">,</span><span class="mf">32.749</span><span class="p">],</span>
-<span class="gp">&gt;&gt;&gt; </span>              <span class="p">[</span><span class="o">-</span><span class="mf">97.06326</span><span class="p">,</span><span class="mf">32.759</span><span class="p">]]],</span>
-<span class="gp">&gt;&gt;&gt; </span>  <span class="s2">&quot;spatialReference&quot;</span> <span class="p">:</span> <span class="p">{</span><span class="s2">&quot;wkid&quot;</span> <span class="p">:</span> <span class="mi">4326</span><span class="p">}</span>
-<span class="gp">&gt;&gt;&gt; </span>                <span class="p">})</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">new_geom</span> <span class="o">=</span> <span class="n">geom</span><span class="o">.</span><span class="n">densify</span><span class="p">(</span><span class="n">geometries</span> <span class="o">=</span><span class="p">[</span><span class="n">geom1</span><span class="p">,</span> <span class="n">geom2</span><span class="p">,</span><span class="o">...</span><span class="p">],</span>
-<span class="go">                            spatial_ref = &quot;wkid&quot;,</span>
-<span class="go">                            max_segment_length = 100.0,</span>
-<span class="go">                            length_unit = &quot;esriMeters&quot;,</span>
-<span class="go">                            geodesic = True,</span>
-<span class="go">                            future = True)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">new_geom</span><span class="o">.</span><span class="n">type</span>
-<span class="go">    &quot;GEOMETRY&quot;</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">densify</span><span class="p">(</span><span class="n">geometries</span> <span class="o">=</span><span class="p">[</span><span class="n">geom1</span><span class="p">,</span> <span class="n">geom2</span><span class="p">,</span><span class="o">...</span><span class="p">],</span>
+<span class="go">            spatial_ref = &quot;wkid&quot;,</span>
+<span class="go">            max_segment_length = 100.0,</span>
+<span class="go">            length_unit = &quot;esriMeters&quot;,</span>
+<span class="go">            geodesic = True,</span>
+<span class="go">            future = False)</span>
 </pre></div>
 </div>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p>A <a class="reference internal" href="arcgis.geometry.html#arcgis.geometry.Geometry" title="arcgis.geometry.Geometry"><code class="xref py py-class docutils literal notranslate"><span class="pre">Geometry</span></code></a> object</p>
+<dd class="field-odd"><p>A list of <a class="reference internal" href="arcgis.geometry.html#arcgis.geometry.Geometry" title="arcgis.geometry.Geometry"><code class="xref py py-class docutils literal notranslate"><span class="pre">Geometry</span></code></a> object, or a <cite>GeometryJob</cite> object</p>
 </dd>
 </dl>
 </dd></dl>
 
 </div>
 <div class="section" id="difference">
-<h2>difference<a class="headerlink" href="#difference" title="Permalink to this headline">¶</a></h2>
-<dl class="function">
+<h3>difference<a class="headerlink" href="#difference" title="Permalink to this headline">¶</a></h3>
+<dl class="py function">
 <dt id="arcgis.geometry.functions.difference">
-<code class="sig-prename descclassname">arcgis.geometry.functions.</code><code class="sig-name descname">difference</code><span class="sig-paren">(</span><em class="sig-param">geometries</em>, <em class="sig-param">spatial_ref</em>, <em class="sig-param">geometry</em>, <em class="sig-param">gis=None</em>, <em class="sig-param">future=False</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.geometry.functions.difference" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">arcgis.geometry.functions.</code><code class="sig-name descname">difference</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">geometries</span></em>, <em class="sig-param"><span class="n">spatial_ref</span></em>, <em class="sig-param"><span class="n">geometry</span></em>, <em class="sig-param"><span class="n">gis</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">future</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.geometry.functions.difference" title="Permalink to this definition">¶</a></dt>
 <dd><p>The <code class="docutils literal notranslate"><span class="pre">difference</span></code> function is performed on a geometry service
 resource. This function constructs the set-theoretic difference
 between each element of an array of geometries and another geometry
@@ -716,33 +1098,34 @@ syntax is not supported.</p></td>
 </table>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p>A <a class="reference internal" href="arcgis.geometry.html#arcgis.geometry.Geometry" title="arcgis.geometry.Geometry"><code class="xref py py-class docutils literal notranslate"><span class="pre">Geometry</span></code></a> object</p>
+<dd class="field-odd"><p>A list of <a class="reference internal" href="arcgis.geometry.html#arcgis.geometry.Geometry" title="arcgis.geometry.Geometry"><code class="xref py py-class docutils literal notranslate"><span class="pre">Geometry</span></code></a> objects, or a <cite>GeometryJob</cite> object</p>
 </dd>
 </dl>
 </dd></dl>
 
 </div>
 <div class="section" id="distance">
-<h2>distance<a class="headerlink" href="#distance" title="Permalink to this headline">¶</a></h2>
-<dl class="function">
+<h3>distance<a class="headerlink" href="#distance" title="Permalink to this headline">¶</a></h3>
+<dl class="py function">
 <dt id="arcgis.geometry.functions.distance">
-<code class="sig-prename descclassname">arcgis.geometry.functions.</code><code class="sig-name descname">distance</code><span class="sig-paren">(</span><em class="sig-param">spatial_ref</em>, <em class="sig-param">geometry1</em>, <em class="sig-param">geometry2</em>, <em class="sig-param">distance_unit=''</em>, <em class="sig-param">geodesic=False</em>, <em class="sig-param">gis=None</em>, <em class="sig-param">future=False</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.geometry.functions.distance" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">arcgis.geometry.functions.</code><code class="sig-name descname">distance</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">spatial_ref</span></em>, <em class="sig-param"><span class="n">geometry1</span></em>, <em class="sig-param"><span class="n">geometry2</span></em>, <em class="sig-param"><span class="n">distance_unit</span><span class="o">=</span><span class="default_value">''</span></em>, <em class="sig-param"><span class="n">geodesic</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">gis</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">future</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.geometry.functions.distance" title="Permalink to this definition">¶</a></dt>
 <dd><p>The <code class="docutils literal notranslate"><span class="pre">distance</span></code> function is performed on a geometry service resource.
 It reports the <cite>2D Euclidean</cite> or <cite>geodesic</cite> distance between the two
 <a class="reference internal" href="arcgis.geometry.html#arcgis.geometry.Geometry" title="arcgis.geometry.Geometry"><code class="xref py py-class docutils literal notranslate"><span class="pre">Geometry</span></code></a> objects.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p>The 2D or geodesic distance between the two <a class="reference internal" href="arcgis.geometry.html#arcgis.geometry.Geometry" title="arcgis.geometry.Geometry"><code class="xref py py-class docutils literal notranslate"><span class="pre">Geometry</span></code></a> objects</p>
+<dd class="field-odd"><p>The 2D or geodesic distance between the two <a class="reference internal" href="arcgis.geometry.html#arcgis.geometry.Geometry" title="arcgis.geometry.Geometry"><code class="xref py py-class docutils literal notranslate"><span class="pre">Geometry</span></code></a> objects, or
+a <cite>GeometryJob</cite> object</p>
 </dd>
 </dl>
 </dd></dl>
 
 </div>
 <div class="section" id="find-transformation">
-<h2>find_transformation<a class="headerlink" href="#find-transformation" title="Permalink to this headline">¶</a></h2>
-<dl class="function">
+<h3>find_transformation<a class="headerlink" href="#find-transformation" title="Permalink to this headline">¶</a></h3>
+<dl class="py function">
 <dt id="arcgis.geometry.functions.find_transformation">
-<code class="sig-prename descclassname">arcgis.geometry.functions.</code><code class="sig-name descname">find_transformation</code><span class="sig-paren">(</span><em class="sig-param">in_sr</em>, <em class="sig-param">out_sr</em>, <em class="sig-param">extent_of_interest=None</em>, <em class="sig-param">num_of_results=1</em>, <em class="sig-param">gis=None</em>, <em class="sig-param">future=False</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.geometry.functions.find_transformation" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">arcgis.geometry.functions.</code><code class="sig-name descname">find_transformation</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">in_sr</span></em>, <em class="sig-param"><span class="n">out_sr</span></em>, <em class="sig-param"><span class="n">extent_of_interest</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">num_of_results</span><span class="o">=</span><span class="default_value">1</span></em>, <em class="sig-param"><span class="n">gis</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">future</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.geometry.functions.find_transformation" title="Permalink to this definition">¶</a></dt>
 <dd><p>The <code class="docutils literal notranslate"><span class="pre">find_transformations</span></code> function is performed on a <a class="reference internal" href="arcgis.geometry.html#arcgis.geometry.Geometry" title="arcgis.geometry.Geometry"><code class="xref py py-class docutils literal notranslate"><span class="pre">Geometry</span></code></a>
 service resource. This function returns a list of applicable
 geographic transformations you should use when projecting
@@ -807,17 +1190,17 @@ return. The default value is 1.</p>
 </table>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p>A List of geographic transformations</p>
+<dd class="field-odd"><p>A List of geographic transformations, or a <cite>GeometryJob</cite> object</p>
 </dd>
 </dl>
 </dd></dl>
 
 </div>
 <div class="section" id="from-geo-coordinate-string">
-<h2>from_geo_coordinate_string<a class="headerlink" href="#from-geo-coordinate-string" title="Permalink to this headline">¶</a></h2>
-<dl class="function">
+<h3>from_geo_coordinate_string<a class="headerlink" href="#from-geo-coordinate-string" title="Permalink to this headline">¶</a></h3>
+<dl class="py function">
 <dt id="arcgis.geometry.functions.from_geo_coordinate_string">
-<code class="sig-prename descclassname">arcgis.geometry.functions.</code><code class="sig-name descname">from_geo_coordinate_string</code><span class="sig-paren">(</span><em class="sig-param">spatial_ref</em>, <em class="sig-param">strings</em>, <em class="sig-param">conversion_type</em>, <em class="sig-param">conversion_mode=None</em>, <em class="sig-param">gis=None</em>, <em class="sig-param">future=False</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.geometry.functions.from_geo_coordinate_string" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">arcgis.geometry.functions.</code><code class="sig-name descname">from_geo_coordinate_string</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">spatial_ref</span></em>, <em class="sig-param"><span class="n">strings</span></em>, <em class="sig-param"><span class="n">conversion_type</span></em>, <em class="sig-param"><span class="n">conversion_mode</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">gis</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">future</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.geometry.functions.from_geo_coordinate_string" title="Permalink to this definition">¶</a></dt>
 <dd><p>The <code class="docutils literal notranslate"><span class="pre">from_geo_coordinate_string</span></code> function is performed on a <a class="reference internal" href="arcgis.geometry.html#arcgis.geometry.Geometry" title="arcgis.geometry.Geometry"><code class="xref py py-class docutils literal notranslate"><span class="pre">Geometry</span></code></a>
 service resource. The function converts an array of well-known
 strings into xy-coordinates based on the conversion type and
@@ -881,34 +1264,28 @@ Syntax: [&lt;string1&gt;,…,&lt;stringN&gt;]</p></td>
 </tr>
 </tbody>
 </table>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">geom</span> <span class="o">=</span> <span class="n">Geometry</span><span class="p">({</span>
-<span class="gp">&gt;&gt;&gt; </span>  <span class="s2">&quot;rings&quot;</span> <span class="p">:</span> <span class="p">[[[</span><span class="o">-</span><span class="mf">97.06138</span><span class="p">,</span><span class="mf">32.837</span><span class="p">],[</span><span class="o">-</span><span class="mf">97.06133</span><span class="p">,</span><span class="mf">32.836</span><span class="p">],[</span><span class="o">-</span><span class="mf">97.06124</span><span class="p">,</span><span class="mf">32.834</span><span class="p">],[</span><span class="o">-</span><span class="mf">97.06127</span><span class="p">,</span><span class="mf">32.832</span><span class="p">],</span>
-<span class="gp">&gt;&gt;&gt; </span>              <span class="p">[</span><span class="o">-</span><span class="mf">97.06138</span><span class="p">,</span><span class="mf">32.837</span><span class="p">]],[[</span><span class="o">-</span><span class="mf">97.06326</span><span class="p">,</span><span class="mf">32.759</span><span class="p">],[</span><span class="o">-</span><span class="mf">97.06298</span><span class="p">,</span><span class="mf">32.755</span><span class="p">],[</span><span class="o">-</span><span class="mf">97.06153</span><span class="p">,</span><span class="mf">32.749</span><span class="p">],</span>
-<span class="gp">&gt;&gt;&gt; </span>              <span class="p">[</span><span class="o">-</span><span class="mf">97.06326</span><span class="p">,</span><span class="mf">32.759</span><span class="p">]]],</span>
-<span class="gp">&gt;&gt;&gt; </span>  <span class="s2">&quot;spatialReference&quot;</span> <span class="p">:</span> <span class="p">{</span><span class="s2">&quot;wkid&quot;</span> <span class="p">:</span> <span class="mi">4326</span><span class="p">}</span>
-<span class="gp">&gt;&gt;&gt; </span>                <span class="p">})</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">coords</span> <span class="o">=</span> <span class="n">from_geo_coordinate_string</span><span class="p">(</span><span class="n">spatial_ref</span> <span class="o">=</span> <span class="s2">&quot;wkid&quot;</span><span class="p">,</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">coords</span> <span class="o">=</span> <span class="n">from_geo_coordinate_string</span><span class="p">(</span><span class="n">spatial_ref</span> <span class="o">=</span> <span class="s2">&quot;wkid&quot;</span><span class="p">,</span>
 <span class="go">                                strings = [&quot;01N AA 66021 00000&quot;,&quot;11S NT 00000 62155&quot;, &quot;31U BT 94071 65288&quot;]</span>
 <span class="go">                                conversion_type = &quot;MGRS&quot;,</span>
 <span class="go">                                conversion_mode = &quot;mgrs_default&quot;,</span>
-<span class="go">                                future = True)</span>
+<span class="go">                                future = False)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">coords</span>
 <span class="go">    [[x1,y1], [x2,y2], [x3,y3]]</span>
 </pre></div>
 </div>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p>An array of (x,y) coordinates</p>
+<dd class="field-odd"><p>An array of (x,y) coordinates, or a <cite>GeometryJob</cite> object</p>
 </dd>
 </dl>
 </dd></dl>
 
 </div>
 <div class="section" id="generalize">
-<h2>generalize<a class="headerlink" href="#generalize" title="Permalink to this headline">¶</a></h2>
-<dl class="function">
+<h3>generalize<a class="headerlink" href="#generalize" title="Permalink to this headline">¶</a></h3>
+<dl class="py function">
 <dt id="arcgis.geometry.functions.generalize">
-<code class="sig-prename descclassname">arcgis.geometry.functions.</code><code class="sig-name descname">generalize</code><span class="sig-paren">(</span><em class="sig-param">spatial_ref</em>, <em class="sig-param">geometries</em>, <em class="sig-param">max_deviation</em>, <em class="sig-param">deviation_unit</em>, <em class="sig-param">gis=None</em>, <em class="sig-param">future=False</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.geometry.functions.generalize" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">arcgis.geometry.functions.</code><code class="sig-name descname">generalize</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">spatial_ref</span></em>, <em class="sig-param"><span class="n">geometries</span></em>, <em class="sig-param"><span class="n">max_deviation</span></em>, <em class="sig-param"><span class="n">deviation_unit</span></em>, <em class="sig-param"><span class="n">gis</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">future</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.geometry.functions.generalize" title="Permalink to this definition">¶</a></dt>
 <dd><p>The <code class="docutils literal notranslate"><span class="pre">generalize</span></code> function is performed on a <a class="reference internal" href="arcgis.geometry.html#arcgis.geometry.Geometry" title="arcgis.geometry.Geometry"><code class="xref py py-class docutils literal notranslate"><span class="pre">Geometry</span></code></a> service
 resource. The <cite>generalize</cite> function simplifies the input geometries
 using the <cite>Douglas-Peucker</cite> algorithm with a specified maximum
@@ -956,17 +1333,17 @@ specified, the planar distance is returned. The default value is false.</p>
 </table>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p>An array of the simplified <a class="reference internal" href="arcgis.geometry.html#arcgis.geometry.Geometry" title="arcgis.geometry.Geometry"><code class="xref py py-class docutils literal notranslate"><span class="pre">Geometry</span></code></a> objects</p>
+<dd class="field-odd"><p>An array of the simplified <a class="reference internal" href="arcgis.geometry.html#arcgis.geometry.Geometry" title="arcgis.geometry.Geometry"><code class="xref py py-class docutils literal notranslate"><span class="pre">Geometry</span></code></a> objects, or a <cite>GeometryJob</cite> object</p>
 </dd>
 </dl>
 </dd></dl>
 
 </div>
 <div class="section" id="intersect">
-<h2>intersect<a class="headerlink" href="#intersect" title="Permalink to this headline">¶</a></h2>
-<dl class="function">
+<h3>intersect<a class="headerlink" href="#intersect" title="Permalink to this headline">¶</a></h3>
+<dl class="py function">
 <dt id="arcgis.geometry.functions.intersect">
-<code class="sig-prename descclassname">arcgis.geometry.functions.</code><code class="sig-name descname">intersect</code><span class="sig-paren">(</span><em class="sig-param">spatial_ref</em>, <em class="sig-param">geometries</em>, <em class="sig-param">geometry</em>, <em class="sig-param">gis=None</em>, <em class="sig-param">future=False</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.geometry.functions.intersect" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">arcgis.geometry.functions.</code><code class="sig-name descname">intersect</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">spatial_ref</span></em>, <em class="sig-param"><span class="n">geometries</span></em>, <em class="sig-param"><span class="n">geometry</span></em>, <em class="sig-param"><span class="n">gis</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">future</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.geometry.functions.intersect" title="Permalink to this definition">¶</a></dt>
 <dd><p>The <code class="docutils literal notranslate"><span class="pre">intersect</span></code> function is performed on a <a class="reference internal" href="arcgis.geometry.html#arcgis.geometry.Geometry" title="arcgis.geometry.Geometry"><code class="xref py py-class docutils literal notranslate"><span class="pre">Geometry</span></code></a> service
 resource. This function constructs the set-theoretic intersection
 between an array of geometries and another geometry.</p>
@@ -1008,17 +1385,17 @@ syntax is not supported.</p></td>
 </table>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p>The set-theoretic dimension between <a class="reference internal" href="arcgis.geometry.html#arcgis.geometry.Geometry" title="arcgis.geometry.Geometry"><code class="xref py py-class docutils literal notranslate"><span class="pre">Geometry</span></code></a> objects</p>
+<dd class="field-odd"><p>The set-theoretic dimension between <a class="reference internal" href="arcgis.geometry.html#arcgis.geometry.Geometry" title="arcgis.geometry.Geometry"><code class="xref py py-class docutils literal notranslate"><span class="pre">Geometry</span></code></a> objects, or a <cite>GeometryJob</cite> object</p>
 </dd>
 </dl>
 </dd></dl>
 
 </div>
 <div class="section" id="label-points">
-<h2>label_points<a class="headerlink" href="#label-points" title="Permalink to this headline">¶</a></h2>
-<dl class="function">
+<h3>label_points<a class="headerlink" href="#label-points" title="Permalink to this headline">¶</a></h3>
+<dl class="py function">
 <dt id="arcgis.geometry.functions.label_points">
-<code class="sig-prename descclassname">arcgis.geometry.functions.</code><code class="sig-name descname">label_points</code><span class="sig-paren">(</span><em class="sig-param">spatial_ref</em>, <em class="sig-param">polygons</em>, <em class="sig-param">gis=None</em>, <em class="sig-param">future=False</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.geometry.functions.label_points" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">arcgis.geometry.functions.</code><code class="sig-name descname">label_points</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">spatial_ref</span></em>, <em class="sig-param"><span class="n">polygons</span></em>, <em class="sig-param"><span class="n">gis</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">future</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.geometry.functions.label_points" title="Permalink to this definition">¶</a></dt>
 <dd><p>The <code class="docutils literal notranslate"><span class="pre">label_points</span></code> function is performed on a <a class="reference internal" href="arcgis.geometry.html#arcgis.geometry.Geometry" title="arcgis.geometry.Geometry"><code class="xref py py-class docutils literal notranslate"><span class="pre">Geometry</span></code></a> service
 resource. The <code class="docutils literal notranslate"><span class="pre">labelPoints</span></code> function calculates an interior <a class="reference internal" href="arcgis.geometry.html#arcgis.geometry.Point" title="arcgis.geometry.Point"><code class="xref py py-class docutils literal notranslate"><span class="pre">Point</span></code></a>
 for each <a class="reference internal" href="arcgis.geometry.html#arcgis.geometry.Polygon" title="arcgis.geometry.Polygon"><code class="xref py py-class docutils literal notranslate"><span class="pre">Polygon</span></code></a> specified in the input array. These interior
@@ -1047,17 +1424,17 @@ objects are to be computed. The spatial reference of the polygons is specified b
 </table>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p>An array of <a class="reference internal" href="arcgis.geometry.html#arcgis.geometry.Point" title="arcgis.geometry.Point"><code class="xref py py-class docutils literal notranslate"><span class="pre">Point</span></code></a> objects</p>
+<dd class="field-odd"><p>An array of <a class="reference internal" href="arcgis.geometry.html#arcgis.geometry.Point" title="arcgis.geometry.Point"><code class="xref py py-class docutils literal notranslate"><span class="pre">Point</span></code></a> objects, or a <cite>GeometryJob</cite> object</p>
 </dd>
 </dl>
 </dd></dl>
 
 </div>
 <div class="section" id="lengths">
-<h2>lengths<a class="headerlink" href="#lengths" title="Permalink to this headline">¶</a></h2>
-<dl class="function">
+<h3>lengths<a class="headerlink" href="#lengths" title="Permalink to this headline">¶</a></h3>
+<dl class="py function">
 <dt id="arcgis.geometry.functions.lengths">
-<code class="sig-prename descclassname">arcgis.geometry.functions.</code><code class="sig-name descname">lengths</code><span class="sig-paren">(</span><em class="sig-param">spatial_ref</em>, <em class="sig-param">polylines</em>, <em class="sig-param">length_unit</em>, <em class="sig-param">calculation_type</em>, <em class="sig-param">gis=None</em>, <em class="sig-param">future=False</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.geometry.functions.lengths" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">arcgis.geometry.functions.</code><code class="sig-name descname">lengths</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">spatial_ref</span></em>, <em class="sig-param"><span class="n">polylines</span></em>, <em class="sig-param"><span class="n">length_unit</span></em>, <em class="sig-param"><span class="n">calculation_type</span></em>, <em class="sig-param"><span class="n">gis</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">future</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.geometry.functions.lengths" title="Permalink to this definition">¶</a></dt>
 <dd><p>The <code class="docutils literal notranslate"><span class="pre">lengths</span></code> function is performed on a <a class="reference internal" href="arcgis.geometry.html#arcgis.geometry.Geometry" title="arcgis.geometry.Geometry"><code class="xref py py-class docutils literal notranslate"><span class="pre">Geometry</span></code></a> service resource.
 This function calculates the` 2D Euclidean` or <cite>geodesic</cite> lengths of
 each <a class="reference internal" href="arcgis.geometry.html#arcgis.geometry.Polyline" title="arcgis.geometry.Polyline"><code class="xref py py-class docutils literal notranslate"><span class="pre">Polyline</span></code></a> specified in the input array.</p>
@@ -1109,17 +1486,17 @@ the Earth ellipsoid. The shape of the geometry in its coordinate system is prese
 </table>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p>A list of floats of 2D-Euclidean or Geodesic lengths</p>
+<dd class="field-odd"><p>A list of floats of 2D-Euclidean or Geodesic lengths, or a <cite>GeometryJob</cite> object</p>
 </dd>
 </dl>
 </dd></dl>
 
 </div>
 <div class="section" id="offset">
-<h2>offset<a class="headerlink" href="#offset" title="Permalink to this headline">¶</a></h2>
-<dl class="function">
+<h3>offset<a class="headerlink" href="#offset" title="Permalink to this headline">¶</a></h3>
+<dl class="py function">
 <dt id="arcgis.geometry.functions.offset">
-<code class="sig-prename descclassname">arcgis.geometry.functions.</code><code class="sig-name descname">offset</code><span class="sig-paren">(</span><em class="sig-param">geometries</em>, <em class="sig-param">offset_distance</em>, <em class="sig-param">offset_unit</em>, <em class="sig-param">offset_how='esriGeometryOffsetRounded'</em>, <em class="sig-param">bevel_ratio=10</em>, <em class="sig-param">simplify_result=False</em>, <em class="sig-param">spatial_ref=None</em>, <em class="sig-param">gis=None</em>, <em class="sig-param">future=False</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.geometry.functions.offset" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">arcgis.geometry.functions.</code><code class="sig-name descname">offset</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">geometries</span></em>, <em class="sig-param"><span class="n">offset_distance</span></em>, <em class="sig-param"><span class="n">offset_unit</span></em>, <em class="sig-param"><span class="n">offset_how</span><span class="o">=</span><span class="default_value">'esriGeometryOffsetRounded'</span></em>, <em class="sig-param"><span class="n">bevel_ratio</span><span class="o">=</span><span class="default_value">10</span></em>, <em class="sig-param"><span class="n">simplify_result</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">spatial_ref</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">gis</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">future</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.geometry.functions.offset" title="Permalink to this definition">¶</a></dt>
 <dd><p>The <code class="docutils literal notranslate"><span class="pre">offset</span></code> function is performed on a <a class="reference internal" href="arcgis.geometry.html#arcgis.geometry.Geometry" title="arcgis.geometry.Geometry"><code class="xref py py-class docutils literal notranslate"><span class="pre">Geometry</span></code></a> service resource.
 This function constructs geometries that are offset from the
 given input geometries. If the offset parameter is positive, the
@@ -1198,13 +1575,7 @@ intersecting loops will be removed from the result offset geometries. The defaul
 </tr>
 </tbody>
 </table>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">geom</span> <span class="o">=</span> <span class="n">Geometry</span><span class="p">({</span>
-<span class="gp">&gt;&gt;&gt; </span>  <span class="s2">&quot;rings&quot;</span> <span class="p">:</span> <span class="p">[[[</span><span class="o">-</span><span class="mf">97.06138</span><span class="p">,</span><span class="mf">32.837</span><span class="p">],[</span><span class="o">-</span><span class="mf">97.06133</span><span class="p">,</span><span class="mf">32.836</span><span class="p">],[</span><span class="o">-</span><span class="mf">97.06124</span><span class="p">,</span><span class="mf">32.834</span><span class="p">],[</span><span class="o">-</span><span class="mf">97.06127</span><span class="p">,</span><span class="mf">32.832</span><span class="p">],</span>
-<span class="gp">&gt;&gt;&gt; </span>              <span class="p">[</span><span class="o">-</span><span class="mf">97.06138</span><span class="p">,</span><span class="mf">32.837</span><span class="p">]],[[</span><span class="o">-</span><span class="mf">97.06326</span><span class="p">,</span><span class="mf">32.759</span><span class="p">],[</span><span class="o">-</span><span class="mf">97.06298</span><span class="p">,</span><span class="mf">32.755</span><span class="p">],[</span><span class="o">-</span><span class="mf">97.06153</span><span class="p">,</span><span class="mf">32.749</span><span class="p">],</span>
-<span class="gp">&gt;&gt;&gt; </span>              <span class="p">[</span><span class="o">-</span><span class="mf">97.06326</span><span class="p">,</span><span class="mf">32.759</span><span class="p">]]],</span>
-<span class="gp">&gt;&gt;&gt; </span>  <span class="s2">&quot;spatialReference&quot;</span> <span class="p">:</span> <span class="p">{</span><span class="s2">&quot;wkid&quot;</span> <span class="p">:</span> <span class="mi">4326</span><span class="p">}</span>
-<span class="gp">&gt;&gt;&gt; </span>                <span class="p">})</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">new_geom</span> <span class="o">=</span> <span class="n">offset</span><span class="p">(</span><span class="n">geometries</span> <span class="o">=</span> <span class="p">[</span><span class="n">geom1</span><span class="p">,</span><span class="n">geom2</span><span class="p">,</span><span class="o">...</span><span class="p">],</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">new_job</span> <span class="o">=</span> <span class="n">offset</span><span class="p">(</span> <span class="n">geometries</span> <span class="o">=</span> <span class="p">[</span><span class="n">geom1</span><span class="p">,</span><span class="n">geom2</span><span class="p">,</span><span class="o">...</span><span class="p">],</span>
 <span class="go">                      offset_distance = 100,</span>
 <span class="go">                      offset_unit = &quot;esriMeters&quot;,</span>
 <span class="go">                      offset_how = &quot;esriGeometryOffsetRounded&quot;,</span>
@@ -1212,23 +1583,21 @@ intersecting loops will be removed from the result offset geometries. The defaul
 <span class="go">                      simplify_result = True</span>
 <span class="go">                      spatial_ref = &quot;wkid&quot;,</span>
 <span class="go">                      future = True)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">new_geom</span><span class="o">.</span><span class="n">type</span>
-<span class="go">    arcgis.geometry.Geometry</span>
 </pre></div>
 </div>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p>A <a class="reference internal" href="arcgis.geometry.html#arcgis.geometry.Geometry" title="arcgis.geometry.Geometry"><code class="xref py py-class docutils literal notranslate"><span class="pre">Geometry</span></code></a> object</p>
+<dd class="field-odd"><p>A list of <a class="reference internal" href="arcgis.geometry.html#arcgis.geometry.Geometry" title="arcgis.geometry.Geometry"><code class="xref py py-class docutils literal notranslate"><span class="pre">Geometry</span></code></a> objects, or a <cite>GeometryJob</cite> object</p>
 </dd>
 </dl>
 </dd></dl>
 
 </div>
 <div class="section" id="project">
-<h2>project<a class="headerlink" href="#project" title="Permalink to this headline">¶</a></h2>
-<dl class="function">
+<h3>project<a class="headerlink" href="#project" title="Permalink to this headline">¶</a></h3>
+<dl class="py function">
 <dt id="arcgis.geometry.functions.project">
-<code class="sig-prename descclassname">arcgis.geometry.functions.</code><code class="sig-name descname">project</code><span class="sig-paren">(</span><em class="sig-param">geometries</em>, <em class="sig-param">in_sr</em>, <em class="sig-param">out_sr</em>, <em class="sig-param">transformation=''</em>, <em class="sig-param">transform_forward=False</em>, <em class="sig-param">gis=None</em>, <em class="sig-param">future=False</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.geometry.functions.project" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">arcgis.geometry.functions.</code><code class="sig-name descname">project</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">geometries</span></em>, <em class="sig-param"><span class="n">in_sr</span></em>, <em class="sig-param"><span class="n">out_sr</span></em>, <em class="sig-param"><span class="n">transformation</span><span class="o">=</span><span class="default_value">''</span></em>, <em class="sig-param"><span class="n">transform_forward</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">gis</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">future</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.geometry.functions.project" title="Permalink to this definition">¶</a></dt>
 <dd><p>The <code class="docutils literal notranslate"><span class="pre">project</span></code> function is performed on a <a class="reference internal" href="arcgis.geometry.html#arcgis.geometry.Geometry" title="arcgis.geometry.Geometry"><code class="xref py py-class docutils literal notranslate"><span class="pre">Geometry</span></code></a> service resource.
 This function projects an array of input geometries from the input
 <a class="reference internal" href="arcgis.geometry.html#arcgis.geometry.SpatialReference" title="arcgis.geometry.SpatialReference"><code class="xref py py-class docutils literal notranslate"><span class="pre">SpatialReference</span></code></a> to the output <a class="reference internal" href="arcgis.geometry.html#arcgis.geometry.SpatialReference" title="arcgis.geometry.SpatialReference"><code class="xref py py-class docutils literal notranslate"><span class="pre">SpatialReference</span></code></a></p>
@@ -1281,8 +1650,7 @@ parameter must also be specified. The default value is false.</p></td>
 </table>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1">#Usage Example</span>
 
-<span class="o">&gt;&gt;&gt;</span> <span class="n">input_geom</span> <span class="o">=</span> <span class="p">[{</span><span class="s2">&quot;x&quot;</span><span class="p">:</span> <span class="o">-</span><span class="mf">17568824.55</span><span class="p">,</span> <span class="s2">&quot;y&quot;</span><span class="p">:</span> <span class="mf">2428377.35</span><span class="p">},</span> <span class="p">{</span><span class="s2">&quot;x&quot;</span><span class="p">:</span> <span class="o">-</span><span class="mf">17568456.88</span><span class="p">,</span> <span class="s2">&quot;y&quot;</span><span class="p">:</span> <span class="mf">2428431.352</span><span class="p">}]</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">result</span> <span class="o">=</span> <span class="n">project</span><span class="p">(</span><span class="n">geometries</span> <span class="o">=</span> <span class="n">input_geom</span><span class="p">,</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">result</span> <span class="o">=</span> <span class="n">project</span><span class="p">(</span><span class="n">geometries</span> <span class="o">=</span> <span class="p">[{</span><span class="s2">&quot;x&quot;</span><span class="p">:</span> <span class="o">-</span><span class="mf">17568824.55</span><span class="p">,</span> <span class="s2">&quot;y&quot;</span><span class="p">:</span> <span class="mf">2428377.35</span><span class="p">},</span> <span class="p">{</span><span class="s2">&quot;x&quot;</span><span class="p">:</span> <span class="o">-</span><span class="mf">17568456.88</span><span class="p">,</span> <span class="s2">&quot;y&quot;</span><span class="p">:</span> <span class="mf">2428431.352</span><span class="p">}],</span>
                      <span class="n">in_sr</span> <span class="o">=</span> <span class="mi">3857</span><span class="p">,</span>
                      <span class="n">out_sr</span> <span class="o">=</span> <span class="mi">4326</span><span class="p">)</span>
     <span class="p">[{</span><span class="s2">&quot;x&quot;</span><span class="p">:</span> <span class="o">-</span><span class="mf">157.82343617279275</span><span class="p">,</span> <span class="s2">&quot;y&quot;</span><span class="p">:</span> <span class="mf">21.305781607280093</span><span class="p">},</span> <span class="p">{</span><span class="s2">&quot;x&quot;</span><span class="p">:</span> <span class="o">-</span><span class="mf">157.8201333369876</span><span class="p">,</span> <span class="s2">&quot;y&quot;</span><span class="p">:</span> <span class="mf">21.306233559873714</span><span class="p">}]</span>
@@ -1290,17 +1658,18 @@ parameter must also be specified. The default value is false.</p></td>
 </div>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p>A list of <a class="reference internal" href="arcgis.geometry.html#arcgis.geometry.Geometry" title="arcgis.geometry.Geometry"><code class="xref py py-class docutils literal notranslate"><span class="pre">Geometry</span></code></a> objects in the <code class="docutils literal notranslate"><span class="pre">out_sr</span></code> coordinate system</p>
+<dd class="field-odd"><p>A list of <a class="reference internal" href="arcgis.geometry.html#arcgis.geometry.Geometry" title="arcgis.geometry.Geometry"><code class="xref py py-class docutils literal notranslate"><span class="pre">Geometry</span></code></a> objects in the <code class="docutils literal notranslate"><span class="pre">out_sr</span></code> coordinate system, or
+a <cite>GeometryJob</cite> object</p>
 </dd>
 </dl>
 </dd></dl>
 
 </div>
 <div class="section" id="relation">
-<h2>relation<a class="headerlink" href="#relation" title="Permalink to this headline">¶</a></h2>
-<dl class="function">
+<h3>relation<a class="headerlink" href="#relation" title="Permalink to this headline">¶</a></h3>
+<dl class="py function">
 <dt id="arcgis.geometry.functions.relation">
-<code class="sig-prename descclassname">arcgis.geometry.functions.</code><code class="sig-name descname">relation</code><span class="sig-paren">(</span><em class="sig-param">geometries1</em>, <em class="sig-param">geometries2</em>, <em class="sig-param">spatial_ref</em>, <em class="sig-param">spatial_relation='esriGeometryRelationIntersection'</em>, <em class="sig-param">relation_param=''</em>, <em class="sig-param">gis=None</em>, <em class="sig-param">future=False</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.geometry.functions.relation" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">arcgis.geometry.functions.</code><code class="sig-name descname">relation</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">geometries1</span></em>, <em class="sig-param"><span class="n">geometries2</span></em>, <em class="sig-param"><span class="n">spatial_ref</span></em>, <em class="sig-param"><span class="n">spatial_relation</span><span class="o">=</span><span class="default_value">'esriGeometryRelationIntersection'</span></em>, <em class="sig-param"><span class="n">relation_param</span><span class="o">=</span><span class="default_value">''</span></em>, <em class="sig-param"><span class="n">gis</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">future</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.geometry.functions.relation" title="Permalink to this definition">¶</a></dt>
 <dd><p>The <code class="docutils literal notranslate"><span class="pre">relation</span></code> function is performed on a <a class="reference internal" href="arcgis.geometry.html#arcgis.geometry.Geometry" title="arcgis.geometry.Geometry"><code class="xref py py-class docutils literal notranslate"><span class="pre">Geometry</span></code></a> service resource.
 This function determines the pairs of geometries from the input
 geometry arrays that participate in the specified spatial relation.
@@ -1346,35 +1715,29 @@ esriGeometryRelationWithin | esriGeometryRelationRelation</cite></p></td>
 </tr>
 </tbody>
 </table>
-<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">geom</span> <span class="o">=</span> <span class="n">Geometry</span><span class="p">({</span>
-<span class="go">        &gt;&gt;&gt;   &quot;rings&quot; : [[[-97.06138,32.837],[-97.06133,32.836],[-97.06124,32.834],[-97.06127,32.832],</span>
-<span class="go">        &gt;&gt;&gt;               [-97.06138,32.837]],[[-97.06326,32.759],[-97.06298,32.755],[-97.06153,32.749],</span>
-<span class="go">        &gt;&gt;&gt;               [-97.06326,32.759]]],</span>
-<span class="go">        &gt;&gt;&gt;   &quot;spatialReference&quot; : {&quot;wkid&quot; : 4326}</span>
-<span class="go">        &gt;&gt;&gt;                 })</span>
-<span class="go">        &gt;&gt;&gt; new_geom = relation(geometry1 = [geom1,geom2,...],</span>
-<span class="go">                              geometry2 = [geom21,geom22,..],</span>
-<span class="go">                              relation_param = &quot;relationParameter&quot;,</span>
-<span class="go">                              spatial_relation = &quot;esriGeometryRelationPointTouch&quot;</span>
-<span class="go">                              spatial_ref = &quot;wkid&quot;,</span>
-<span class="go">                              future = True)</span>
-<span class="go">        &gt;&gt;&gt; new_geom</span>
-<span class="go">            [[geom1,geom22], [geom2,geom21]]</span>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">new_res</span> <span class="o">=</span> <span class="n">relation</span><span class="p">(</span><span class="n">geometry1</span> <span class="o">=</span> <span class="p">[</span><span class="n">geom1</span><span class="p">,</span><span class="n">geom2</span><span class="p">,</span><span class="o">...</span><span class="p">],</span>
+<span class="go">                       geometry2 = [geom21,geom22,..],</span>
+<span class="go">                       relation_param = &quot;relationParameter&quot;,</span>
+<span class="go">                       spatial_relation = &quot;esriGeometryRelationPointTouch&quot;</span>
+<span class="go">                       spatial_ref = &quot;wkid&quot;,</span>
+<span class="go">                       future = False)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">new_res</span>
+<span class="go">    {&#39;relations&#39;: [{&#39;geometry1Index&#39;: 0, &#39;geometry2Index&#39;: 0}]}</span>
 </pre></div>
 </div>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p>An array of paired <a class="reference internal" href="arcgis.geometry.html#arcgis.geometry.Geometry" title="arcgis.geometry.Geometry"><code class="xref py py-class docutils literal notranslate"><span class="pre">Geometry</span></code></a> objects</p>
+<dd class="field-odd"><p>A JSON dict of geometryNIndex between two lists of geometries, or a <cite>GeometryJob</cite> object</p>
 </dd>
 </dl>
 </dd></dl>
 
 </div>
 <div class="section" id="reshape">
-<h2>reshape<a class="headerlink" href="#reshape" title="Permalink to this headline">¶</a></h2>
-<dl class="function">
+<h3>reshape<a class="headerlink" href="#reshape" title="Permalink to this headline">¶</a></h3>
+<dl class="py function">
 <dt id="arcgis.geometry.functions.reshape">
-<code class="sig-prename descclassname">arcgis.geometry.functions.</code><code class="sig-name descname">reshape</code><span class="sig-paren">(</span><em class="sig-param">spatial_ref</em>, <em class="sig-param">target</em>, <em class="sig-param">reshaper</em>, <em class="sig-param">gis=None</em>, <em class="sig-param">future=False</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.geometry.functions.reshape" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">arcgis.geometry.functions.</code><code class="sig-name descname">reshape</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">spatial_ref</span></em>, <em class="sig-param"><span class="n">target</span></em>, <em class="sig-param"><span class="n">reshaper</span></em>, <em class="sig-param"><span class="n">gis</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">future</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.geometry.functions.reshape" title="Permalink to this definition">¶</a></dt>
 <dd><p>The <code class="docutils literal notranslate"><span class="pre">reshape</span></code> function is performed on a <a class="reference internal" href="arcgis.geometry.html#arcgis.geometry.Geometry" title="arcgis.geometry.Geometry"><code class="xref py py-class docutils literal notranslate"><span class="pre">Geometry</span></code></a> service resource.
 It reshapes a <a class="reference internal" href="arcgis.geometry.html#arcgis.geometry.Polyline" title="arcgis.geometry.Polyline"><code class="xref py py-class docutils literal notranslate"><span class="pre">Polyline</span></code></a> or <a class="reference internal" href="arcgis.geometry.html#arcgis.geometry.Polygon" title="arcgis.geometry.Polygon"><code class="xref py py-class docutils literal notranslate"><span class="pre">Polygon</span></code></a> feature by constructing a
 polyline over the feature. The feature takes the shape of the
@@ -1406,17 +1769,18 @@ object for the input geometry</p></td>
 </table>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p>A reshaped <a class="reference internal" href="arcgis.geometry.html#arcgis.geometry.Polyline" title="arcgis.geometry.Polyline"><code class="xref py py-class docutils literal notranslate"><span class="pre">Polyline</span></code></a> or <a class="reference internal" href="arcgis.geometry.html#arcgis.geometry.Polygon" title="arcgis.geometry.Polygon"><code class="xref py py-class docutils literal notranslate"><span class="pre">Polygon</span></code></a> object</p>
+<dd class="field-odd"><p>A reshaped <a class="reference internal" href="arcgis.geometry.html#arcgis.geometry.Polyline" title="arcgis.geometry.Polyline"><code class="xref py py-class docutils literal notranslate"><span class="pre">Polyline</span></code></a> or <a class="reference internal" href="arcgis.geometry.html#arcgis.geometry.Polygon" title="arcgis.geometry.Polygon"><code class="xref py py-class docutils literal notranslate"><span class="pre">Polygon</span></code></a> object, or
+a <cite>GeometryJob</cite> object</p>
 </dd>
 </dl>
 </dd></dl>
 
 </div>
 <div class="section" id="simplify">
-<h2>simplify<a class="headerlink" href="#simplify" title="Permalink to this headline">¶</a></h2>
-<dl class="function">
+<h3>simplify<a class="headerlink" href="#simplify" title="Permalink to this headline">¶</a></h3>
+<dl class="py function">
 <dt id="arcgis.geometry.functions.simplify">
-<code class="sig-prename descclassname">arcgis.geometry.functions.</code><code class="sig-name descname">simplify</code><span class="sig-paren">(</span><em class="sig-param">spatial_ref</em>, <em class="sig-param">geometries</em>, <em class="sig-param">gis=None</em>, <em class="sig-param">future=False</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.geometry.functions.simplify" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">arcgis.geometry.functions.</code><code class="sig-name descname">simplify</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">spatial_ref</span></em>, <em class="sig-param"><span class="n">geometries</span></em>, <em class="sig-param"><span class="n">gis</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">future</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.geometry.functions.simplify" title="Permalink to this definition">¶</a></dt>
 <dd><p>The <code class="docutils literal notranslate"><span class="pre">simplify</span></code> function is performed on a <a class="reference internal" href="arcgis.geometry.html#arcgis.geometry.Geometry" title="arcgis.geometry.Geometry"><code class="xref py py-class docutils literal notranslate"><span class="pre">Geometry</span></code></a> service resource.
 <code class="docutils literal notranslate"><span class="pre">simplify</span></code> permanently alters the input geometry so that the geometry
 becomes topologically consistent. This resource applies the ArcGIS
@@ -1447,17 +1811,17 @@ the ArcGIS REST API.</p></td>
 </table>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p>An array of <a class="reference internal" href="arcgis.geometry.html#arcgis.geometry.Geometry" title="arcgis.geometry.Geometry"><code class="xref py py-class docutils literal notranslate"><span class="pre">Geometry</span></code></a> objects</p>
+<dd class="field-odd"><p>An array of <a class="reference internal" href="arcgis.geometry.html#arcgis.geometry.Geometry" title="arcgis.geometry.Geometry"><code class="xref py py-class docutils literal notranslate"><span class="pre">Geometry</span></code></a> objects, or a <cite>GeometryJob</cite> object</p>
 </dd>
 </dl>
 </dd></dl>
 
 </div>
 <div class="section" id="to-geo-coordinate-string">
-<h2>to_geo_coordinate_string<a class="headerlink" href="#to-geo-coordinate-string" title="Permalink to this headline">¶</a></h2>
-<dl class="function">
+<h3>to_geo_coordinate_string<a class="headerlink" href="#to-geo-coordinate-string" title="Permalink to this headline">¶</a></h3>
+<dl class="py function">
 <dt id="arcgis.geometry.functions.to_geo_coordinate_string">
-<code class="sig-prename descclassname">arcgis.geometry.functions.</code><code class="sig-name descname">to_geo_coordinate_string</code><span class="sig-paren">(</span><em class="sig-param">spatial_ref</em>, <em class="sig-param">coordinates</em>, <em class="sig-param">conversion_type</em>, <em class="sig-param">conversion_mode='mgrsDefault'</em>, <em class="sig-param">num_of_digits=None</em>, <em class="sig-param">rounding=True</em>, <em class="sig-param">add_spaces=True</em>, <em class="sig-param">gis=None</em>, <em class="sig-param">future=False</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.geometry.functions.to_geo_coordinate_string" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">arcgis.geometry.functions.</code><code class="sig-name descname">to_geo_coordinate_string</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">spatial_ref</span></em>, <em class="sig-param"><span class="n">coordinates</span></em>, <em class="sig-param"><span class="n">conversion_type</span></em>, <em class="sig-param"><span class="n">conversion_mode</span><span class="o">=</span><span class="default_value">'mgrsDefault'</span></em>, <em class="sig-param"><span class="n">num_of_digits</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">rounding</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="n">add_spaces</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="n">gis</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">future</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.geometry.functions.to_geo_coordinate_string" title="Permalink to this definition">¶</a></dt>
 <dd><p>The <code class="docutils literal notranslate"><span class="pre">to_geo_coordinate_string</span></code> function is performed on a <a class="reference internal" href="arcgis.geometry.html#arcgis.geometry.Geometry" title="arcgis.geometry.Geometry"><code class="xref py py-class docutils literal notranslate"><span class="pre">Geometry</span></code></a>
 service resource. The function converts an array of
 xy-coordinates into well-known strings based on the conversion type
@@ -1542,17 +1906,11 @@ applies only to conversion types <cite>MGRS</cite>, <cite>USNG</cite> and <cite>
 </tbody>
 </table>
 <blockquote>
-<div><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">geom</span> <span class="o">=</span> <span class="n">Geometry</span><span class="p">({</span>
-<span class="gp">&gt;&gt;&gt; </span>  <span class="s2">&quot;rings&quot;</span> <span class="p">:</span> <span class="p">[[[</span><span class="o">-</span><span class="mf">97.06138</span><span class="p">,</span><span class="mf">32.837</span><span class="p">],[</span><span class="o">-</span><span class="mf">97.06133</span><span class="p">,</span><span class="mf">32.836</span><span class="p">],[</span><span class="o">-</span><span class="mf">97.06124</span><span class="p">,</span><span class="mf">32.834</span><span class="p">],[</span><span class="o">-</span><span class="mf">97.06127</span><span class="p">,</span><span class="mf">32.832</span><span class="p">],</span>
-<span class="gp">&gt;&gt;&gt; </span>              <span class="p">[</span><span class="o">-</span><span class="mf">97.06138</span><span class="p">,</span><span class="mf">32.837</span><span class="p">]],[[</span><span class="o">-</span><span class="mf">97.06326</span><span class="p">,</span><span class="mf">32.759</span><span class="p">],[</span><span class="o">-</span><span class="mf">97.06298</span><span class="p">,</span><span class="mf">32.755</span><span class="p">],[</span><span class="o">-</span><span class="mf">97.06153</span><span class="p">,</span><span class="mf">32.749</span><span class="p">],</span>
-<span class="gp">&gt;&gt;&gt; </span>              <span class="p">[</span><span class="o">-</span><span class="mf">97.06326</span><span class="p">,</span><span class="mf">32.759</span><span class="p">]]],</span>
-<span class="gp">&gt;&gt;&gt; </span>  <span class="s2">&quot;spatialReference&quot;</span> <span class="p">:</span> <span class="p">{</span><span class="s2">&quot;wkid&quot;</span> <span class="p">:</span> <span class="mi">4326</span><span class="p">}</span>
-<span class="gp">&gt;&gt;&gt; </span>                <span class="p">})</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">strings</span> <span class="o">=</span> <span class="n">from_geo_coordinate_string</span><span class="p">(</span><span class="n">spatial_ref</span> <span class="o">=</span> <span class="s2">&quot;wkid&quot;</span><span class="p">,</span>
-<span class="go">                                coordinates = [[x1,y1], [x2,y2], [x3,y3]]</span>
-<span class="go">                                conversion_type = &quot;MGRS&quot;,</span>
-<span class="go">                                conversion_mode = &quot;mgrs_default&quot;,</span>
-<span class="go">                                future = True)</span>
+<div><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">strings</span> <span class="o">=</span> <span class="n">from_geo_coordinate_string</span><span class="p">(</span><span class="n">spatial_ref</span> <span class="o">=</span> <span class="s2">&quot;wkid&quot;</span><span class="p">,</span>
+<span class="go">                                         coordinates = [[x1,y1], [x2,y2], [x3,y3]]</span>
+<span class="go">                                         conversion_type = &quot;MGRS&quot;,</span>
+<span class="go">                                         conversion_mode = &quot;mgrs_default&quot;,</span>
+<span class="go">                                         future = False)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">strings</span>
 <span class="go">    [&quot;01N AA 66021 00000&quot;,&quot;11S NT 00000 62155&quot;, &quot;31U BT 94071 65288&quot;]</span>
 </pre></div>
@@ -1560,17 +1918,17 @@ applies only to conversion types <cite>MGRS</cite>, <cite>USNG</cite> and <cite>
 </div></blockquote>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p>An array of Strings</p>
+<dd class="field-odd"><p>An array of Strings, or a <cite>GeometryJob</cite> object</p>
 </dd>
 </dl>
 </dd></dl>
 
 </div>
 <div class="section" id="trim-extend">
-<h2>trim_extend<a class="headerlink" href="#trim-extend" title="Permalink to this headline">¶</a></h2>
-<dl class="function">
+<h3>trim_extend<a class="headerlink" href="#trim-extend" title="Permalink to this headline">¶</a></h3>
+<dl class="py function">
 <dt id="arcgis.geometry.functions.trim_extend">
-<code class="sig-prename descclassname">arcgis.geometry.functions.</code><code class="sig-name descname">trim_extend</code><span class="sig-paren">(</span><em class="sig-param">spatial_ref</em>, <em class="sig-param">polylines</em>, <em class="sig-param">trim_extend_to</em>, <em class="sig-param">extend_how=0</em>, <em class="sig-param">gis=None</em>, <em class="sig-param">future=False</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.geometry.functions.trim_extend" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">arcgis.geometry.functions.</code><code class="sig-name descname">trim_extend</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">spatial_ref</span></em>, <em class="sig-param"><span class="n">polylines</span></em>, <em class="sig-param"><span class="n">trim_extend_to</span></em>, <em class="sig-param"><span class="n">extend_how</span><span class="o">=</span><span class="default_value">0</span></em>, <em class="sig-param"><span class="n">gis</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">future</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.geometry.functions.trim_extend" title="Permalink to this definition">¶</a></dt>
 <dd><p>The <code class="docutils literal notranslate"><span class="pre">trim_extend</span></code> function is performed on a <a class="reference internal" href="arcgis.geometry.html#arcgis.geometry.Geometry" title="arcgis.geometry.Geometry"><code class="xref py py-class docutils literal notranslate"><span class="pre">Geometry</span></code></a> service
 resource. This function trims or extends each <a class="reference internal" href="arcgis.geometry.html#arcgis.geometry.Polyline" title="arcgis.geometry.Polyline"><code class="xref py py-class docutils literal notranslate"><span class="pre">Polyline</span></code></a> specified
 in the input array, using the user-specified guide polylines.</p>
@@ -1623,34 +1981,28 @@ its attributes empty. Incompatible with esriKeepAttributes.</p>
 </tr>
 </tbody>
 </table>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">geom</span> <span class="o">=</span> <span class="n">Geometry</span><span class="p">({</span>
-<span class="gp">&gt;&gt;&gt; </span>  <span class="s2">&quot;rings&quot;</span> <span class="p">:</span> <span class="p">[[[</span><span class="o">-</span><span class="mf">97.06138</span><span class="p">,</span><span class="mf">32.837</span><span class="p">],[</span><span class="o">-</span><span class="mf">97.06133</span><span class="p">,</span><span class="mf">32.836</span><span class="p">],[</span><span class="o">-</span><span class="mf">97.06124</span><span class="p">,</span><span class="mf">32.834</span><span class="p">],[</span><span class="o">-</span><span class="mf">97.06127</span><span class="p">,</span><span class="mf">32.832</span><span class="p">],</span>
-<span class="gp">&gt;&gt;&gt; </span>              <span class="p">[</span><span class="o">-</span><span class="mf">97.06138</span><span class="p">,</span><span class="mf">32.837</span><span class="p">]],[[</span><span class="o">-</span><span class="mf">97.06326</span><span class="p">,</span><span class="mf">32.759</span><span class="p">],[</span><span class="o">-</span><span class="mf">97.06298</span><span class="p">,</span><span class="mf">32.755</span><span class="p">],[</span><span class="o">-</span><span class="mf">97.06153</span><span class="p">,</span><span class="mf">32.749</span><span class="p">],</span>
-<span class="gp">&gt;&gt;&gt; </span>              <span class="p">[</span><span class="o">-</span><span class="mf">97.06326</span><span class="p">,</span><span class="mf">32.759</span><span class="p">]]],</span>
-<span class="gp">&gt;&gt;&gt; </span>  <span class="s2">&quot;spatialReference&quot;</span> <span class="p">:</span> <span class="p">{</span><span class="s2">&quot;wkid&quot;</span> <span class="p">:</span> <span class="mi">4326</span><span class="p">}</span>
-<span class="gp">&gt;&gt;&gt; </span>                <span class="p">})</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">polylines_arr</span> <span class="o">=</span> <span class="n">trim_extends</span><span class="p">(</span><span class="n">polylines</span> <span class="o">=</span> <span class="p">[</span><span class="n">polyline1</span><span class="p">,</span><span class="n">polyline2</span><span class="p">,</span> <span class="o">...</span><span class="p">],</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">polylines_arr</span> <span class="o">=</span> <span class="n">trim_extends</span><span class="p">(</span><span class="n">polylines</span> <span class="o">=</span> <span class="p">[</span><span class="n">polyline1</span><span class="p">,</span><span class="n">polyline2</span><span class="p">,</span> <span class="o">...</span><span class="p">],</span>
 <span class="go">                                 trim_extend_to = polyline_trimmer</span>
 <span class="go">                                 extend_how = 2,</span>
 <span class="go">                                 spatial_ref = &quot;wkid&quot;,</span>
-<span class="go">                                 future = True)</span>
+<span class="go">                                 future = False)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">polyline_arr</span>
 <span class="go">    [polyline1, polyline2,...]</span>
 </pre></div>
 </div>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p>An array of <a class="reference internal" href="arcgis.geometry.html#arcgis.geometry.Polyline" title="arcgis.geometry.Polyline"><code class="xref py py-class docutils literal notranslate"><span class="pre">Polyline</span></code></a> objects</p>
+<dd class="field-odd"><p>An array of <a class="reference internal" href="arcgis.geometry.html#arcgis.geometry.Polyline" title="arcgis.geometry.Polyline"><code class="xref py py-class docutils literal notranslate"><span class="pre">Polyline</span></code></a> objects, or a <cite>GeometryJob</cite> object</p>
 </dd>
 </dl>
 </dd></dl>
 
 </div>
 <div class="section" id="union">
-<h2>union<a class="headerlink" href="#union" title="Permalink to this headline">¶</a></h2>
-<dl class="function">
+<h3>union<a class="headerlink" href="#union" title="Permalink to this headline">¶</a></h3>
+<dl class="py function">
 <dt id="arcgis.geometry.functions.union">
-<code class="sig-prename descclassname">arcgis.geometry.functions.</code><code class="sig-name descname">union</code><span class="sig-paren">(</span><em class="sig-param">spatial_ref</em>, <em class="sig-param">geometries</em>, <em class="sig-param">gis=None</em>, <em class="sig-param">future=False</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.geometry.functions.union" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">arcgis.geometry.functions.</code><code class="sig-name descname">union</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">spatial_ref</span></em>, <em class="sig-param"><span class="n">geometries</span></em>, <em class="sig-param"><span class="n">gis</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">future</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.geometry.functions.union" title="Permalink to this definition">¶</a></dt>
 <dd><p>The <code class="docutils literal notranslate"><span class="pre">union</span></code> function is performed on a <a class="reference internal" href="arcgis.geometry.html#arcgis.geometry.Geometry" title="arcgis.geometry.Geometry"><code class="xref py py-class docutils literal notranslate"><span class="pre">Geometry</span></code></a> service resource.
 This function constructs the set-theoretic union of the geometries
 in the input array.</p>
@@ -1684,11 +2036,12 @@ the ArcGIS REST API.</p></td>
 </table>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p>The set-theoretic union of the <a class="reference internal" href="arcgis.geometry.html#arcgis.geometry.Geometry" title="arcgis.geometry.Geometry"><code class="xref py py-class docutils literal notranslate"><span class="pre">Geometry</span></code></a> objects</p>
+<dd class="field-odd"><p>The set-theoretic union of the <a class="reference internal" href="arcgis.geometry.html#arcgis.geometry.Geometry" title="arcgis.geometry.Geometry"><code class="xref py py-class docutils literal notranslate"><span class="pre">Geometry</span></code></a> objects, or a <cite>GeometryJob</cite> object</p>
 </dd>
 </dl>
 </dd></dl>
 
+</div>
 </div>
 </div>
 
@@ -1698,29 +2051,37 @@ the ArcGIS REST API.</p></td>
            
           </div>
           <footer>
+  
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-        <a href="arcgis.geoprocessing.html" class="btn btn-neutral float-right" title="arcgis.geoprocessing module" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
-        <a href="arcgis.geometry.filters.html" class="btn btn-neutral float-left" title="arcgis.geometry.filters module" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+      
+        <a href="arcgis.geoprocessing.html" class="btn btn-neutral float-right" title="arcgis.geoprocessing module" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="arcgis.geometry.filters.html" class="btn btn-neutral float-left" title="arcgis.geometry.filters module" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
     </div>
+  
 
   <hr/>
 
   <div role="contentinfo">
     <p>
-        &#169; Copyright 2016-2021, Esri.
+        
+        &copy; Copyright 2016-2021, Esri
 
     </p>
   </div>
     
     
     
-    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
     
-    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
     
     provided by <a href="https://readthedocs.org">Read the Docs</a>. 
 
 </footer>
+
         </div>
       </div>
 
@@ -1728,12 +2089,12 @@ the ArcGIS REST API.</p></td>
 
   </div>
   
-    Options v: 1.9
+    Options v: 1.9.1
 
   <div class="rst-versions" data-toggle="rst-versions" role="note" aria-label="versions">
     <span class="rst-current-version" data-toggle="rst-current-version">
       <span class="fa fa-book"> Pick an earlier version</span>
-      v: 1.9
+      v: 1.9.1
       <span class="fa fa-caret-down"></span>
     </span>
     <div class="rst-other-versions">
@@ -1741,6 +2102,10 @@ the ArcGIS REST API.</p></td>
       
       <dl>
         <dt>Versions</dt>
+        
+          
+          <dd><a href="1.9.0/">1.9.0</a></dd>
+          
         
           
           <dd><a href="1.8.5/">1.8.5</a></dd>
