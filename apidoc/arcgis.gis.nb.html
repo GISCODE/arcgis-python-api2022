@@ -3,11 +3,12 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8">
+  <meta charset="utf-8" />
+  <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  
-  <title>arcgis.gis.nb module &mdash; arcgis 1.9.1 documentation</title>
+  <title>arcgis.gis.nb module &mdash; arcgis 2.0.0 documentation</title>
   
 
   
@@ -19,7 +20,10 @@
   
     <link rel="shortcut icon" href="_static/favicon.ico"/>
   
+
   
+  
+
   
 
   
@@ -33,7 +37,6 @@
         <script src="_static/underscore.js"></script>
         <script src="_static/doctools.js"></script>
         <script src="_static/language_data.js"></script>
-        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     
     <script type="text/javascript" src="_static/js/theme.js"></script>
 
@@ -64,7 +67,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
           
 
           
-            <a href="index.html" class="icon icon-home" alt="Documentation Home"> arcgis
+            <a href="index.html" class="icon icon-home"> arcgis
           
 
           
@@ -77,7 +80,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             
             
               <div class="version">
-                1.9.1
+                2.0.0
               </div>
             
           
@@ -102,7 +105,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
               
             
             
-              <p class="caption"><span class="caption-text">arcgis</span></p>
+              <p><span class="caption-text">arcgis</span></p>
 <ul class="current">
 <li class="toctree-l1 current"><a class="reference internal" href="arcgis.gis.toc.html">arcgis.gis module</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="arcgis.gis.toc.html#gis">GIS</a></li>
@@ -130,6 +133,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <li class="toctree-l2 current"><a class="reference internal" href="arcgis.gis.toc.html#submodules">Submodules</a><ul class="current">
 <li class="toctree-l3"><a class="reference internal" href="arcgis.gis.admin.html">arcgis.gis.admin module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="arcgis.gis.server.html">arcgis.gis.server module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="arcgis.gis.agoserver.html">arcgis.gis.agoserver module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="arcgis.gis.mission.html">arcgis.gis.mission module</a></li>
 <li class="toctree-l3 current"><a class="current reference internal" href="#">arcgis.gis.nb module</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#notebookserver">NotebookServer</a></li>
@@ -151,6 +155,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <li class="toctree-l4"><a class="reference internal" href="#securitymanager">SecurityManager</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#notebookdataaccess">NotebookDataAccess</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#notebookfile">NotebookFile</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#nbservicesmanager">NBServicesManager</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#nbservice">NBService</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="arcgis.gis.workflowmanager.html">arcgis.gis.workflowmanager module</a></li>
@@ -174,6 +180,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <li class="toctree-l1"><a class="reference internal" href="arcgis.widgets.html">arcgis.widgets module</a></li>
 <li class="toctree-l1"><a class="reference internal" href="arcgis.apps.html">arcgis.apps module</a></li>
 <li class="toctree-l1"><a class="reference internal" href="arcgis.learn.toc.html">arcgis.learn module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.auth.html">arcgis.auth package</a></li>
 </ul>
 
             
@@ -214,6 +221,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
 
 
+
+
 <div role="navigation" aria-label="breadcrumbs navigation">
 
   <ul class="wy-breadcrumbs">
@@ -227,7 +236,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     
       <li class="wy-breadcrumbs-aside">
         
-            
+          
         
       </li>
     
@@ -244,9 +253,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NJGGV5"
 height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
-  <div class="section" id="module-arcgis.gis.nb">
+  <section id="module-arcgis.gis.nb">
 <span id="arcgis-gis-nb-module"></span><h1>arcgis.gis.nb module<a class="headerlink" href="#module-arcgis.gis.nb" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="notebookserver">
+<section id="notebookserver">
 <h2>NotebookServer<a class="headerlink" href="#notebookserver" title="Permalink to this headline">¶</a></h2>
 <dl class="py class">
 <dt id="arcgis.gis.nb.NotebookServer">
@@ -338,6 +347,17 @@ settings.</p>
 </dd></dl>
 
 <dl class="py method">
+<dt id="arcgis.gis.nb.NotebookServer.services">
+<code class="sig-name descname">services</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.nb.NotebookServer.services" title="Permalink to this definition">¶</a></dt>
+<dd><p>Provices access to managing notebook created geoprocessing tools</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">NBServicesManager</span></code></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
 <dt id="arcgis.gis.nb.NotebookServer.site">
 <em class="property">property </em><code class="sig-name descname">site</code><a class="headerlink" href="#arcgis.gis.nb.NotebookServer.site" title="Permalink to this definition">¶</a></dt>
 <dd><p>Provides access to the notebook server’s site management operations</p>
@@ -378,8 +398,8 @@ settings.</p>
 
 </dd></dl>
 
-</div>
-<div class="section" id="notebookmanager">
+</section>
+<section id="notebookmanager">
 <h2>NotebookManager<a class="headerlink" href="#notebookmanager" title="Permalink to this headline">¶</a></h2>
 <dl class="py class">
 <dt id="arcgis.gis.nb.NotebookManager">
@@ -551,8 +571,8 @@ Notebook Python 3 Advanced - to their original settings.</p>
 
 </dd></dl>
 
-</div>
-<div class="section" id="notebook">
+</section>
+<section id="notebook">
 <h2>Notebook<a class="headerlink" href="#notebook" title="Permalink to this headline">¶</a></h2>
 <dl class="py class">
 <dt id="arcgis.gis.nb.Notebook">
@@ -582,8 +602,8 @@ is 24 hours.</p>
 
 </dd></dl>
 
-</div>
-<div class="section" id="runtime">
+</section>
+<section id="runtime">
 <h2>Runtime<a class="headerlink" href="#runtime" title="Permalink to this headline">¶</a></h2>
 <dl class="py class">
 <dt id="arcgis.gis.nb.Runtime">
@@ -637,8 +657,8 @@ processing units (GPUs).</p>
 
 </dd></dl>
 
-</div>
-<div class="section" id="snapshotmanager">
+</section>
+<section id="snapshotmanager">
 <h2>SnapshotManager<a class="headerlink" href="#snapshotmanager" title="Permalink to this headline">¶</a></h2>
 <dl class="py class">
 <dt id="arcgis.gis.nb.SnapshotManager">
@@ -717,8 +737,8 @@ than what is in the current notebook provide it here.</p></td>
 
 </dd></dl>
 
-</div>
-<div class="section" id="snapshot">
+</section>
+<section id="snapshot">
 <h2>SnapShot<a class="headerlink" href="#snapshot" title="Permalink to this headline">¶</a></h2>
 <dl class="py class">
 <dt id="arcgis.gis.nb.SnapShot">
@@ -822,8 +842,8 @@ than what is in the current notebook provide it here.</p></td>
 
 </dd></dl>
 
-</div>
-<div class="section" id="systemmanager">
+</section>
+<section id="systemmanager">
 <h2>SystemManager<a class="headerlink" href="#systemmanager" title="Permalink to this headline">¶</a></h2>
 <dl class="py class">
 <dt id="arcgis.gis.nb.SystemManager">
@@ -1032,8 +1052,8 @@ objects and extensions through the server environment interface.</p>
 
 </dd></dl>
 
-</div>
-<div class="section" id="container">
+</section>
+<section id="container">
 <h2>Container<a class="headerlink" href="#container" title="Permalink to this headline">¶</a></h2>
 <dl class="py class">
 <dt id="arcgis.gis.nb.Container">
@@ -1139,8 +1159,8 @@ to provide information about current notebook sessions.</p>
 
 </dd></dl>
 
-</div>
-<div class="section" id="containernotebook">
+</section>
+<section id="containernotebook">
 <h2>ContainerNotebook<a class="headerlink" href="#containernotebook" title="Permalink to this headline">¶</a></h2>
 <dl class="py class">
 <dt id="arcgis.gis.nb.ContainerNotebook">
@@ -1171,8 +1191,8 @@ to provide information about current notebook sessions.</p>
 
 </dd></dl>
 
-</div>
-<div class="section" id="directorymanager">
+</section>
+<section id="directorymanager">
 <h2>DirectoryManager<a class="headerlink" href="#directorymanager" title="Permalink to this headline">¶</a></h2>
 <dl class="py class">
 <dt id="arcgis.gis.nb.DirectoryManager">
@@ -1258,8 +1278,8 @@ Notebook Server site.</p>
 
 </dd></dl>
 
-</div>
-<div class="section" id="webadaptor">
+</section>
+<section id="webadaptor">
 <h2>WebAdaptor<a class="headerlink" href="#webadaptor" title="Permalink to this headline">¶</a></h2>
 <dl class="py class">
 <dt id="arcgis.gis.nb.WebAdaptor">
@@ -1295,8 +1315,8 @@ site’s webSocketMaxHeapSize property.</p>
 
 </dd></dl>
 
-</div>
-<div class="section" id="webadaptormanager">
+</section>
+<section id="webadaptormanager">
 <h2>WebAdaptorManager<a class="headerlink" href="#webadaptormanager" title="Permalink to this headline">¶</a></h2>
 <dl class="py class">
 <dt id="arcgis.gis.nb.WebAdaptorManager">
@@ -1391,8 +1411,8 @@ adaptor. Always include the web adaptor’s sharedkey attribute.</p></td>
 
 </dd></dl>
 
-</div>
-<div class="section" id="sitemanager">
+</section>
+<section id="sitemanager">
 <h2>SiteManager<a class="headerlink" href="#sitemanager" title="Permalink to this headline">¶</a></h2>
 <dl class="py class">
 <dt id="arcgis.gis.nb.SiteManager">
@@ -1481,8 +1501,8 @@ operation completes, as a report will be delivered to the page.</p>
 
 </dd></dl>
 
-</div>
-<div class="section" id="logmanager">
+</section>
+<section id="logmanager">
 <h2>LogManager<a class="headerlink" href="#logmanager" title="Permalink to this headline">¶</a></h2>
 <dl class="py class">
 <dt id="arcgis.gis.nb.LogManager">
@@ -1613,8 +1633,8 @@ output log file path is returned.</p>
 
 </dd></dl>
 
-</div>
-<div class="section" id="machinemanager">
+</section>
+<section id="machinemanager">
 <h2>MachineManager<a class="headerlink" href="#machinemanager" title="Permalink to this headline">¶</a></h2>
 <dl class="py class">
 <dt id="arcgis.gis.nb.MachineManager">
@@ -1636,8 +1656,8 @@ Server machine in the site.</p>
 
 </dd></dl>
 
-</div>
-<div class="section" id="machine">
+</section>
+<section id="machine">
 <h2>Machine<a class="headerlink" href="#machine" title="Permalink to this headline">¶</a></h2>
 <dl class="py class">
 <dt id="arcgis.gis.nb.Machine">
@@ -2016,8 +2036,8 @@ or join an existing site.</p>
 
 </dd></dl>
 
-</div>
-<div class="section" id="securitymanager">
+</section>
+<section id="securitymanager">
 <h2>SecurityManager<a class="headerlink" href="#securitymanager" title="Permalink to this headline">¶</a></h2>
 <dl class="py class">
 <dt id="arcgis.gis.nb.SecurityManager">
@@ -2131,8 +2151,8 @@ By default, all of the above options are enabled. Values must be comma separated
 
 </dd></dl>
 
-</div>
-<div class="section" id="notebookdataaccess">
+</section>
+<section id="notebookdataaccess">
 <h2>NotebookDataAccess<a class="headerlink" href="#notebookdataaccess" title="Permalink to this headline">¶</a></h2>
 <dl class="py class">
 <dt id="arcgis.gis.nb._dataaccess.NotebookDataAccess">
@@ -2177,8 +2197,8 @@ By default, all of the above options are enabled. Values must be comma separated
 
 </dd></dl>
 
-</div>
-<div class="section" id="notebookfile">
+</section>
+<section id="notebookfile">
 <h2>NotebookFile<a class="headerlink" href="#notebookfile" title="Permalink to this headline">¶</a></h2>
 <dl class="py class">
 <dt id="arcgis.gis.nb._dataaccess.NotebookFile">
@@ -2214,8 +2234,14 @@ By default, all of the above options are enabled. Values must be comma separated
 
 </dd></dl>
 
-</div>
-</div>
+</section>
+<section id="nbservicesmanager">
+<h2>NBServicesManager<a class="headerlink" href="#nbservicesmanager" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="nbservice">
+<h2>NBService<a class="headerlink" href="#nbservice" title="Permalink to this headline">¶</a></h2>
+</section>
+</section>
 
 
 
@@ -2223,37 +2249,29 @@ By default, all of the above options are enabled. Values must be comma separated
            
           </div>
           <footer>
-  
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-      
-        <a href="arcgis.gis.workflowmanager.html" class="btn btn-neutral float-right" title="arcgis.gis.workflowmanager module" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
-      
-      
-        <a href="arcgis.gis.mission.html" class="btn btn-neutral float-left" title="arcgis.gis.mission module" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
-      
+        <a href="arcgis.gis.workflowmanager.html" class="btn btn-neutral float-right" title="arcgis.gis.workflowmanager module" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="arcgis.gis.mission.html" class="btn btn-neutral float-left" title="arcgis.gis.mission module" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
     </div>
-  
 
   <hr/>
 
   <div role="contentinfo">
     <p>
-        
-        &copy; Copyright 2016-2021, Esri
+        &#169; Copyright 2016-2022, Esri.
 
     </p>
   </div>
     
     
     
-    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
     
-    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
     
     provided by <a href="https://readthedocs.org">Read the Docs</a>. 
 
 </footer>
-
         </div>
       </div>
 
@@ -2261,12 +2279,12 @@ By default, all of the above options are enabled. Values must be comma separated
 
   </div>
   
-    Options v: 1.9.1
+    Options v: 2.0.0
 
   <div class="rst-versions" data-toggle="rst-versions" role="note" aria-label="versions">
     <span class="rst-current-version" data-toggle="rst-current-version">
       <span class="fa fa-book"> Pick an earlier version</span>
-      v: 1.9.1
+      v: 2.0.0
       <span class="fa fa-caret-down"></span>
     </span>
     <div class="rst-other-versions">
@@ -2274,6 +2292,10 @@ By default, all of the above options are enabled. Values must be comma separated
       
       <dl>
         <dt>Versions</dt>
+        
+          
+          <dd><a href="1.9.1/">1.9.1</a></dd>
+          
         
           
           <dd><a href="1.9.0/">1.9.0</a></dd>

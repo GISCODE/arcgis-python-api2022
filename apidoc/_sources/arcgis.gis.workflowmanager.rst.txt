@@ -62,6 +62,12 @@ SavedSearchesManager
     :undoc-members:
     :show-inheritance:
 
+LookUpTable
+--------------------
+.. autoclass:: arcgis.gis.workflowmanager.LookUpTable
+    :members:
+    :show-inheritance:
+
 WMRole
 --------------
 .. autoclass:: arcgis.gis.workflowmanager.WMRole

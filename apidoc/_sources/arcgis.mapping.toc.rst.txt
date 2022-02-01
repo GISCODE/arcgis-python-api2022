@@ -32,7 +32,7 @@ PackagingJob
     :show-inheritance:
 
 Working with 3D Maps
--------------------
+--------------------
 WebScene
 ^^^^^^^^
 .. autoclass:: arcgis.mapping.WebScene
@@ -43,6 +43,20 @@ WebScene
 SceneLayer
 ^^^^^^^^^^
 .. autoclass:: arcgis.mapping.SceneLayer
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
+SceneLayerManager
+^^^^^^^^^^^^^^^^^
+.. autoclass:: arcgis.mapping.SceneLayerManager
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
+EnterpriseSceneLayerManager
+^^^^^^^^^^^^^^^^^^^^^^^^^^^
+.. autoclass:: arcgis.mapping.EnterpriseSceneLayerManager
     :members:
     :undoc-members:
     :show-inheritance:
@@ -120,6 +134,13 @@ MapImageLayerManager
     :undoc-members:
     :show-inheritance:
 
+EnterpriseMapImageLayerManager
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+.. autoclass:: arcgis.mapping.EnterpriseMapImageLayerManager
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
 MapTable
 ^^^^^^^^
 .. autoclass:: arcgis.mapping.MapTable
@@ -130,6 +151,20 @@ MapTable
 VectorTileLayer
 ^^^^^^^^^^^^^^^
 .. autoclass:: arcgis.mapping.VectorTileLayer
+    :members:
+    :undoc-members:
+    :show-inheritance:
+    
+VectorTileLayerManager
+^^^^^^^^^^^^^^^^^^^^^^
+.. autoclass:: arcgis.mapping.VectorTileLayerManager
+    :members:
+    :undoc-members:
+    :show-inheritance:
+    
+EnterpriseVectorTileLayerManager
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+.. autoclass:: arcgis.mapping.EnterpriseVectorTileLayerManager
     :members:
     :undoc-members:
     :show-inheritance:
