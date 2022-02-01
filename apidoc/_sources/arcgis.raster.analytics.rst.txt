@@ -191,3 +191,11 @@ zonal_statistics_as_table
 compute_change_raster
 -------------------------
 .. autofunction:: arcgis.raster.analytics.compute_change_raster
+
+train_random_trees_regression_model
+----------------------------------
+.. autofunction:: arcgis.raster.analytics.train_random_trees_regression_model
+
+summarize_categorical_raster
+----------------------------
+.. autofunction:: arcgis.raster.analytics.summarize_categorical_raster

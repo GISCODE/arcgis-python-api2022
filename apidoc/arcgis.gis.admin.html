@@ -3,11 +3,12 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8">
+  <meta charset="utf-8" />
+  <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  
-  <title>arcgis.gis.admin module &mdash; arcgis 1.9.1 documentation</title>
+  <title>arcgis.gis.admin module &mdash; arcgis 2.0.0 documentation</title>
   
 
   
@@ -19,7 +20,10 @@
   
     <link rel="shortcut icon" href="_static/favicon.ico"/>
   
+
   
+  
+
   
 
   
@@ -33,7 +37,6 @@
         <script src="_static/underscore.js"></script>
         <script src="_static/doctools.js"></script>
         <script src="_static/language_data.js"></script>
-        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     
     <script type="text/javascript" src="_static/js/theme.js"></script>
 
@@ -64,7 +67,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
           
 
           
-            <a href="index.html" class="icon icon-home" alt="Documentation Home"> arcgis
+            <a href="index.html" class="icon icon-home"> arcgis
           
 
           
@@ -77,7 +80,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             
             
               <div class="version">
-                1.9.1
+                2.0.0
               </div>
             
           
@@ -102,7 +105,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
               
             
             
-              <p class="caption"><span class="caption-text">arcgis</span></p>
+              <p><span class="caption-text">arcgis</span></p>
 <ul class="current">
 <li class="toctree-l1 current"><a class="reference internal" href="arcgis.gis.toc.html">arcgis.gis module</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="arcgis.gis.toc.html#gis">GIS</a></li>
@@ -144,7 +147,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <li class="toctree-l4"><a class="reference internal" href="#passwordpolicy">PasswordPolicy</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#portalresourcemanager">PortalResourceManager</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#ux">UX</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#emailmanager">EmailManager</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#federation">Federation</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#indexer">Indexer</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#logs">Logs</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#machines">Machines</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#security">Security</a></li>
@@ -165,6 +170,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="arcgis.gis.server.html">arcgis.gis.server module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="arcgis.gis.agoserver.html">arcgis.gis.agoserver module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="arcgis.gis.mission.html">arcgis.gis.mission module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="arcgis.gis.nb.html">arcgis.gis.nb module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="arcgis.gis.workflowmanager.html">arcgis.gis.workflowmanager module</a></li>
@@ -188,6 +194,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <li class="toctree-l1"><a class="reference internal" href="arcgis.widgets.html">arcgis.widgets module</a></li>
 <li class="toctree-l1"><a class="reference internal" href="arcgis.apps.html">arcgis.apps module</a></li>
 <li class="toctree-l1"><a class="reference internal" href="arcgis.learn.toc.html">arcgis.learn module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.auth.html">arcgis.auth package</a></li>
 </ul>
 
             
@@ -228,6 +235,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
 
 
+
+
 <div role="navigation" aria-label="breadcrumbs navigation">
 
   <ul class="wy-breadcrumbs">
@@ -241,7 +250,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     
       <li class="wy-breadcrumbs-aside">
         
-            
+          
         
       </li>
     
@@ -258,14 +267,14 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NJGGV5"
 height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
-  <div class="section" id="arcgis-gis-admin-module">
+  <section id="arcgis-gis-admin-module">
 <h1>arcgis.gis.admin module<a class="headerlink" href="#arcgis-gis-admin-module" title="Permalink to this headline">¶</a></h1>
 <span class="target" id="module-arcgis.gis.admin"></span><p>Classes for administering your GIS.</p>
 <p>The gis.admin property is dynamically set at runtime based on what kind of GIS (ArcGIS Enterprise or ArcGIS Online) an
 administrator connects to.
 For ArcGIS Online GIS, administrators will get an instance of AGOLAdminManager from the gis.admin property.
 For ArcGIS Enterprise GIS , administrators will get an instance of PortalAdminManager from the gis.admin property.</p>
-<div class="section" id="agoladminmanager">
+<section id="agoladminmanager">
 <h2>AGOLAdminManager<a class="headerlink" href="#agoladminmanager" title="Permalink to this headline">¶</a></h2>
 <dl class="py class">
 <dt id="arcgis.gis.admin.AGOLAdminManager">
@@ -459,6 +468,12 @@ entitlements.</p>
 </dd></dl>
 
 <dl class="py method">
+<dt id="arcgis.gis.admin.AGOLAdminManager.servers">
+<em class="property">property </em><code class="sig-name descname">servers</code><a class="headerlink" href="#arcgis.gis.admin.AGOLAdminManager.servers" title="Permalink to this definition">¶</a></dt>
+<dd><p>Provides access to managing the services hosted on ArcGIS Online</p>
+</dd></dl>
+
+<dl class="py method">
 <dt id="arcgis.gis.admin.AGOLAdminManager.social_providers">
 <em class="property">property </em><code class="sig-name descname">social_providers</code><a class="headerlink" href="#arcgis.gis.admin.AGOLAdminManager.social_providers" title="Permalink to this definition">¶</a></dt>
 <dd><p>This resource allows for the setting and configuration of the social providers
@@ -485,8 +500,8 @@ for a GIS.</p>
 
 </dd></dl>
 
-</div>
-<div class="section" id="portaladminmanager">
+</section>
+<section id="portaladminmanager">
 <h2>PortalAdminManager<a class="headerlink" href="#portaladminmanager" title="Permalink to this headline">¶</a></h2>
 <dl class="py class">
 <dt id="arcgis.gis.admin.PortalAdminManager">
@@ -724,8 +739,8 @@ your portal.</p>
 
 </dd></dl>
 
-</div>
-<div class="section" id="agolusagereports">
+</section>
+<section id="agolusagereports">
 <h2>AGOLUsageReports<a class="headerlink" href="#agolusagereports" title="Permalink to this headline">¶</a></h2>
 <dl class="py class">
 <dt id="arcgis.gis.admin.AGOLUsageReports">
@@ -784,8 +799,8 @@ None, the current time is used.</p></td>
 </tr>
 <tr class="row-odd"><td><p>time_frame</p></td>
 <td><p>optional string, is the timeframe report to create.
-Allowed values: today, week, 14days, 30days, 60days,
-90days, 6months, year</p></td>
+Allowed values: today, week (default), 14days, 30days,
+60days, 90days, 6months, year</p></td>
 </tr>
 <tr class="row-even"><td><p>export</p></td>
 <td><p>optional boolean, if True, a csv is generated from
@@ -887,8 +902,8 @@ Allowed values: today, week, 14days, 30days, 60days,
 
 </dd></dl>
 
-</div>
-<div class="section" id="bundle">
+</section>
+<section id="bundle">
 <h2>Bundle<a class="headerlink" href="#bundle" title="Permalink to this headline">¶</a></h2>
 <dl class="py class">
 <dt id="arcgis.gis.admin.Bundle">
@@ -961,8 +976,8 @@ to remove the current application bundle to.</p></td>
 
 </dd></dl>
 
-</div>
-<div class="section" id="categorymanager">
+</section>
+<section id="categorymanager">
 <h2>CategoryManager<a class="headerlink" href="#categorymanager" title="Permalink to this headline">¶</a></h2>
 <dl class="py class">
 <dt id="arcgis.gis.admin.CategoryManager">
@@ -1124,8 +1139,8 @@ Syntax Example:
 
 </dd></dl>
 
-</div>
-<div class="section" id="collaborationmanager">
+</section>
+<section id="collaborationmanager">
 <h2>CollaborationManager<a class="headerlink" href="#collaborationmanager" title="Permalink to this headline">¶</a></h2>
 <dl class="py class">
 <dt id="arcgis.gis.admin.CollaborationManager">
@@ -1369,8 +1384,8 @@ web-tier authentication certificate password.</p></td>
 
 </dd></dl>
 
-</div>
-<div class="section" id="collaboration">
+</section>
+<section id="collaboration">
 <h2>Collaboration<a class="headerlink" href="#collaboration" title="Permalink to this headline">¶</a></h2>
 <dl class="py class">
 <dt id="arcgis.gis.admin.Collaboration">
@@ -2237,8 +2252,8 @@ content. Workspaces can only be created by the collaboration owner.</p>
 
 </dd></dl>
 
-</div>
-<div class="section" id="creditmanager">
+</section>
+<section id="creditmanager">
 <h2>CreditManager<a class="headerlink" href="#creditmanager" title="Permalink to this headline">¶</a></h2>
 <dl class="py class">
 <dt id="arcgis.gis.admin.CreditManager">
@@ -2284,12 +2299,12 @@ is provided, it sets user to unlimited credits.</p></td>
 
 <dl class="py method">
 <dt id="arcgis.gis.admin.CreditManager.credit_usage">
-<code class="sig-name descname">credit_usage</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">start_time</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">end_time</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.admin.CreditManager.credit_usage" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">credit_usage</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">start_time</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">end_time</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">time_frame</span><span class="o">=</span><span class="default_value">'week'</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.admin.CreditManager.credit_usage" title="Permalink to this definition">¶</a></dt>
 <dd><p>returns the total credit consumption for a given time period.</p>
 <table class="docutils align-default">
 <colgroup>
-<col style="width: 29%" />
-<col style="width: 71%" />
+<col style="width: 26%" />
+<col style="width: 74%" />
 </colgroup>
 <tbody>
 <tr class="row-odd"><td><p><strong>arguements</strong></p></td>
@@ -2303,6 +2318,13 @@ start at.</p></td>
 <td><p>datetime.datetime object. This is the stop time
 to look for credit consumption. It needs to be
 at least 1 day previous than then start_time.</p></td>
+</tr>
+<tr class="row-even"><td><p>time_frame</p></td>
+<td><p>Optional string. is the timeframe report to create.
+Allowed values: today, week (default), 14days, 30days,
+60days, 90days, 6months, year</p>
+<p>If end_time is specified, this parameter is ignored.</p>
+</td>
 </tr>
 </tbody>
 </table>
@@ -2367,8 +2389,8 @@ organizational users in ArcGIS Online</p>
 
 </dd></dl>
 
-</div>
-<div class="section" id="license">
+</section>
+<section id="license">
 <h2>License<a class="headerlink" href="#license" title="Permalink to this headline">¶</a></h2>
 <dl class="py class">
 <dt id="arcgis.gis.admin.License">
@@ -2407,7 +2429,7 @@ and listing information.</p></td>
 
 <dl class="py method">
 <dt id="arcgis.gis.admin.License.assign">
-<code class="sig-name descname">assign</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">username</span></em>, <em class="sig-param"><span class="n">entitlements</span></em>, <em class="sig-param"><span class="n">suppress_email</span><span class="o">=</span><span class="default_value">True</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.admin.License.assign" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">assign</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">username</span></em>, <em class="sig-param"><span class="n">entitlements</span></em>, <em class="sig-param"><span class="n">suppress_email</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="n">overwrite</span><span class="o">=</span><span class="default_value">True</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.admin.License.assign" title="Permalink to this definition">¶</a></dt>
 <dd><p>grants a user an entitlement.</p>
 <table class="docutils align-default">
 <colgroup>
@@ -2422,17 +2444,18 @@ and listing information.</p></td>
 <td><p>required string, the name of the user you wish to
 assign an entitlement to.</p></td>
 </tr>
-<tr class="row-odd"><td><p>entitlments</p></td>
+<tr class="row-odd"><td><p>entitlements</p></td>
 <td><p>required list, a list of entitlements values</p></td>
 </tr>
 <tr class="row-even"><td><p>suppress_email</p></td>
-<td><blockquote>
-<div><p>optional boolean, if True, the org will not notify</p>
-</div></blockquote>
-<p>a user that their entitlements has changed (default)
+<td><p>optional boolean, if True, the org will not notify
+a user that their entitlements has changed (default)
 If False, the org will send an email notifying a
-user that their entitlements have changed.</p>
-</td>
+user that their entitlements have changed.</p></td>
+</tr>
+<tr class="row-odd"><td><p>overwrite</p></td>
+<td><p>optional boolean, if True, existing entitlements
+for the user are dropped</p></td>
 </tr>
 </tbody>
 </table>
@@ -2550,8 +2573,8 @@ examine the entitlements for.</p></td>
 
 </dd></dl>
 
-</div>
-<div class="section" id="licensemanager">
+</section>
+<section id="licensemanager">
 <h2>LicenseManager<a class="headerlink" href="#licensemanager" title="Permalink to this headline">¶</a></h2>
 <dl class="py class">
 <dt id="arcgis.gis.admin.LicenseManager">
@@ -2666,8 +2689,8 @@ Value: True | False</p></td>
 
 </dd></dl>
 
-</div>
-<div class="section" id="livingatlas">
+</section>
+<section id="livingatlas">
 <h2>LivingAtlas<a class="headerlink" href="#livingatlas" title="Permalink to this headline">¶</a></h2>
 <dl class="py class">
 <dt id="arcgis.gis.admin.LivingAtlas">
@@ -3098,8 +3121,8 @@ default is <a class="reference external" href="https://www.arcgis.com">https://w
 
 </dd></dl>
 
-</div>
-<div class="section" id="identityprovidermanager">
+</section>
+<section id="identityprovidermanager">
 <h2>IdentityProviderManager<a class="headerlink" href="#identityprovidermanager" title="Permalink to this headline">¶</a></h2>
 <dl class="py class">
 <dt id="arcgis.gis.admin.IdentityProviderManager">
@@ -3243,8 +3266,8 @@ default is -1 (infinite).</p></td>
 
 </dd></dl>
 
-</div>
-<div class="section" id="passwordpolicy">
+</section>
+<section id="passwordpolicy">
 <h2>PasswordPolicy<a class="headerlink" href="#passwordpolicy" title="Permalink to this headline">¶</a></h2>
 <dl class="py class">
 <dt id="arcgis.gis.admin.PasswordPolicy">
@@ -3266,8 +3289,8 @@ reset the site’s security policy.</p>
 
 </dd></dl>
 
-</div>
-<div class="section" id="portalresourcemanager">
+</section>
+<section id="portalresourcemanager">
 <h2>PortalResourceManager<a class="headerlink" href="#portalresourcemanager" title="Permalink to this headline">¶</a></h2>
 <dl class="py class">
 <dt id="arcgis.gis.admin.PortalResourceManager">
@@ -3417,8 +3440,8 @@ Default: 100</p></td>
 
 </dd></dl>
 
-</div>
-<div class="section" id="ux">
+</section>
+<section id="ux">
 <h2>UX<a class="headerlink" href="#ux" title="Permalink to this headline">¶</a></h2>
 <dl class="py class">
 <dt id="arcgis.gis.admin.UX">
@@ -3874,8 +3897,103 @@ a given site.</p></td>
 
 </dd></dl>
 
-</div>
-<div class="section" id="federation">
+</section>
+<section id="emailmanager">
+<h2>EmailManager<a class="headerlink" href="#emailmanager" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt id="arcgis.gis.admin.EmailManager">
+<em class="property">class </em><code class="sig-prename descclassname">arcgis.gis.admin.</code><code class="sig-name descname">EmailManager</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">url</span></em>, <em class="sig-param"><span class="n">gis</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.admin.EmailManager" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">arcgis.gis.admin._base.BasePortalAdmin</span></code></p>
+<dl class="py method">
+<dt id="arcgis.gis.admin.EmailManager.delete">
+<code class="sig-name descname">delete</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.admin.EmailManager.delete" title="Permalink to this definition">¶</a></dt>
+<dd><p>Deletes the current email configuration</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>Boolean. True if successful else False.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.gis.admin.EmailManager.test">
+<code class="sig-name descname">test</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">email</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.admin.EmailManager.test" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sends a test email to a provided email account to ensure the
+configuration is correct.</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 28%" />
+<col style="width: 72%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>Argument</strong></p></td>
+<td><p><strong>Description</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>email</p></td>
+<td><p>Required String. The test email to send to.</p></td>
+</tr>
+</tbody>
+</table>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>Boolean. True if successful else False.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.gis.admin.EmailManager.update">
+<code class="sig-name descname">update</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">server</span></em>, <em class="sig-param"><span class="n">from_email</span></em>, <em class="sig-param"><span class="n">require_auth</span></em>, <em class="sig-param"><span class="n">email_label</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">port</span><span class="o">=</span><span class="default_value">25</span></em>, <em class="sig-param"><span class="n">encryption</span><span class="o">=</span><span class="default_value">'SSL'</span></em>, <em class="sig-param"><span class="n">username</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">password</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.admin.EmailManager.update" title="Permalink to this definition">¶</a></dt>
+<dd><p>Configures the Email Server for Portal</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 28%" />
+<col style="width: 72%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>Argument</strong></p></td>
+<td><p><strong>Description</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>server</p></td>
+<td><p>Required String. The email address</p></td>
+</tr>
+<tr class="row-odd"><td><p>from_email</p></td>
+<td><p>Required String.  The email address the email originates from.</p></td>
+</tr>
+<tr class="row-even"><td><p>require_auth</p></td>
+<td><p>Required Boolean.  If True, the smtp requires authentication and
+the username and password must be provided.  If False, no
+authentication is needed for the smtp server.</p></td>
+</tr>
+<tr class="row-odd"><td><p>email_label</p></td>
+<td><p>Optional String. The email label.</p></td>
+</tr>
+<tr class="row-even"><td><p>port</p></td>
+<td><p>Optional Integer.  The port number for the smtp server.</p></td>
+</tr>
+<tr class="row-odd"><td><p>encryption</p></td>
+<td><p>Optional String. The encryption method used for the email server. The
+allowed values are: SSL, TLS, or NONE.</p></td>
+</tr>
+<tr class="row-even"><td><p>username</p></td>
+<td><p>Optional String. The username to use to login to the smtp server.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Password</p></td>
+<td><p>Optional String. The password to use to login to the smtp server.</p></td>
+</tr>
+</tbody>
+</table>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>Boolean. True if successful else False.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="federation">
 <h2>Federation<a class="headerlink" href="#federation" title="Permalink to this headline">¶</a></h2>
 <dl class="py class">
 <dt id="arcgis.gis.admin.Federation">
@@ -4044,8 +4162,77 @@ registered with Portal for ArcGIS.</p>
 
 </dd></dl>
 
-</div>
-<div class="section" id="logs">
+</section>
+<section id="indexer">
+<h2>Indexer<a class="headerlink" href="#indexer" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt id="arcgis.gis.admin.Indexer">
+<em class="property">class </em><code class="sig-prename descclassname">arcgis.gis.admin.</code><code class="sig-name descname">Indexer</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">url</span></em>, <em class="sig-param"><span class="n">gis</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.admin.Indexer" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">arcgis.gis.admin._base.BasePortalAdmin</span></code></p>
+<p>This resource contains connection information to the default indexing service.</p>
+<dl class="py method">
+<dt id="arcgis.gis.admin.Indexer.reconfigure">
+<code class="sig-name descname">reconfigure</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; bool<a class="headerlink" href="#arcgis.gis.admin.Indexer.reconfigure" title="Permalink to this definition">¶</a></dt>
+<dd><p>This operation recreates the index service metadata, schema, and data in the event it becomes corrupted.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>Boolean</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.gis.admin.Indexer.reindex">
+<code class="sig-name descname">reindex</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">mode</span></em>, <em class="sig-param"><span class="n">includes</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.admin.Indexer.reindex" title="Permalink to this definition">¶</a></dt>
+<dd><p>The operation allows you to generate or update the indexes for content, such as users, groups, and items stored in the database store.</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 18%" />
+<col style="width: 82%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>Argument</strong></p></td>
+<td><p><strong>Description</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>mode</p></td>
+<td><p>Required String. The mode in which the indexer should run.
+Values: USER_MODE, GROUP_MODE, SEARCH_MODE, or FULL_MODE</p></td>
+</tr>
+<tr class="row-odd"><td><p>includes</p></td>
+<td><p>Optional String. A comma separated list of elements to include in
+the index. This is useful if you want to only index certain items
+or user accounts.</p></td>
+</tr>
+</tbody>
+</table>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>Boolean</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.gis.admin.Indexer.status">
+<em class="property">property </em><code class="sig-name descname">status</code><a class="headerlink" href="#arcgis.gis.admin.Indexer.status" title="Permalink to this definition">¶</a></dt>
+<dd><p><cite>status</cite> allows you to view the status of the indexing service. You
+can view the number of users, groups, and search items in both the
+database (store) and the index. If the database and index do not
+match, indexing is either in progress or there is a problem with
+the index. It is recommended that you reindex to correct any
+issues. If indexing is in progress, you can monitor the status by
+refreshing the page.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>dict</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="logs">
 <h2>Logs<a class="headerlink" href="#logs" title="Permalink to this headline">¶</a></h2>
 <dl class="py class">
 <dt id="arcgis.gis.admin.Logs">
@@ -4228,8 +4415,8 @@ default is 1000</p></td>
 
 </dd></dl>
 
-</div>
-<div class="section" id="machines">
+</section>
+<section id="machines">
 <h2>Machines<a class="headerlink" href="#machines" title="Permalink to this headline">¶</a></h2>
 <dl class="py class">
 <dt id="arcgis.gis.admin.Machines">
@@ -4253,8 +4440,8 @@ registered name.</p>
 
 </dd></dl>
 
-</div>
-<div class="section" id="security">
+</section>
+<section id="security">
 <h2>Security<a class="headerlink" href="#security" title="Permalink to this headline">¶</a></h2>
 <dl class="py class">
 <dt id="arcgis.gis.admin.Security">
@@ -4450,8 +4637,8 @@ enterprise identity store such as Windows Active Directory or LDAP.</p>
 
 </dd></dl>
 
-</div>
-<div class="section" id="oauth">
+</section>
+<section id="oauth">
 <h2>OAuth<a class="headerlink" href="#oauth" title="Permalink to this headline">¶</a></h2>
 <dl class="py class">
 <dt id="arcgis.gis.admin.OAuth">
@@ -4505,8 +4692,8 @@ developer.</p>
 
 </dd></dl>
 
-</div>
-<div class="section" id="sslcertificate">
+</section>
+<section id="sslcertificate">
 <h2>SSLCertificate<a class="headerlink" href="#sslcertificate" title="Permalink to this headline">¶</a></h2>
 <dl class="py class">
 <dt id="arcgis.gis.admin.SSLCertificate">
@@ -4588,8 +4775,8 @@ the key store.</p>
 
 </dd></dl>
 
-</div>
-<div class="section" id="sslcertificates">
+</section>
+<section id="sslcertificates">
 <h2>SSLCertificates<a class="headerlink" href="#sslcertificates" title="Permalink to this headline">¶</a></h2>
 <dl class="py class">
 <dt id="arcgis.gis.admin.SSLCertificates">
@@ -4908,8 +5095,8 @@ comma separated.</p>
 
 </dd></dl>
 
-</div>
-<div class="section" id="enterpriseusers">
+</section>
+<section id="enterpriseusers">
 <h2>EnterpriseUsers<a class="headerlink" href="#enterpriseusers" title="Permalink to this headline">¶</a></h2>
 <dl class="py class">
 <dt id="arcgis.gis.admin.EnterpriseUsers">
@@ -5113,8 +5300,8 @@ username. For LDAP users, the format is always username.</p></td>
 
 </dd></dl>
 
-</div>
-<div class="section" id="enterprisegroups">
+</section>
+<section id="enterprisegroups">
 <h2>EnterpriseGroups<a class="headerlink" href="#enterprisegroups" title="Permalink to this headline">¶</a></h2>
 <dl class="py class">
 <dt id="arcgis.gis.admin.EnterpriseGroups">
@@ -5251,8 +5438,8 @@ store. You can narrow down the search using the filter parameter.</p>
 
 </dd></dl>
 
-</div>
-<div class="section" id="site">
+</section>
+<section id="site">
 <h2>Site<a class="headerlink" href="#site" title="Permalink to this headline">¶</a></h2>
 <dl class="py class">
 <dt id="arcgis.gis.admin.Site">
@@ -5490,8 +5677,8 @@ of the existing portal site.</p></td>
 
 </dd></dl>
 
-</div>
-<div class="section" id="system">
+</section>
+<section id="system">
 <h2>System<a class="headerlink" href="#system" title="Permalink to this headline">¶</a></h2>
 <dl class="py class">
 <dt id="arcgis.gis.admin.System">
@@ -5578,7 +5765,7 @@ the Edit Directory operation.</p>
 <dd><p>Provides access to the email configuration setting on enterprise.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">EmailManager</span></code></p>
+<dd class="field-odd"><p><a class="reference internal" href="#arcgis.gis.admin.EmailManager" title="arcgis.gis.admin.EmailManager"><code class="xref py py-class docutils literal notranslate"><span class="pre">EmailManager</span></code></a></p>
 </dd>
 </dl>
 </dd></dl>
@@ -5640,6 +5827,17 @@ you can monitor the status by refreshing the page.</p>
 <span class="p">}</span>
 </pre></div>
 </div>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.gis.admin.System.indexer">
+<em class="property">property </em><code class="sig-name descname">indexer</code><a class="headerlink" href="#arcgis.gis.admin.System.indexer" title="Permalink to this definition">¶</a></dt>
+<dd><p>Allows user to manage the site’s indexer</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><a class="reference internal" href="#arcgis.gis.admin.Indexer" title="arcgis.gis.admin.Indexer"><code class="xref py py-class docutils literal notranslate"><span class="pre">Indexer</span></code></a></p>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="py method">
@@ -5755,8 +5953,8 @@ the installation.</p>
 
 </dd></dl>
 
-</div>
-<div class="section" id="licenses-deprecated-10-7">
+</section>
+<section id="licenses-deprecated-10-7">
 <h2>Licenses (Deprecated 10.7+)<a class="headerlink" href="#licenses-deprecated-10-7" title="Permalink to this headline">¶</a></h2>
 <dl class="py class">
 <dt id="arcgis.gis.admin.Licenses">
@@ -5946,8 +6144,8 @@ connection information.</p></td>
 
 </dd></dl>
 
-</div>
-<div class="section" id="portallicense">
+</section>
+<section id="portallicense">
 <h2>PortalLicense<a class="headerlink" href="#portallicense" title="Permalink to this headline">¶</a></h2>
 <dl class="py class">
 <dt id="arcgis.gis.admin.PortalLicense">
@@ -6150,8 +6348,8 @@ a portal.</p></td>
 
 </dd></dl>
 
-</div>
-<div class="section" id="directory">
+</section>
+<section id="directory">
 <h2>Directory<a class="headerlink" href="#directory" title="Permalink to this headline">¶</a></h2>
 <dl class="py class">
 <dt id="arcgis.gis.admin.Directory">
@@ -6178,8 +6376,8 @@ independently by the system administrator.</p>
 
 </dd></dl>
 
-</div>
-<div class="section" id="webadaptor">
+</section>
+<section id="webadaptor">
 <h2>WebAdaptor<a class="headerlink" href="#webadaptor" title="Permalink to this headline">¶</a></h2>
 <dl class="py class">
 <dt id="arcgis.gis.admin.WebAdaptor">
@@ -6213,8 +6411,8 @@ be updated.</p>
 
 </dd></dl>
 
-</div>
-<div class="section" id="webadaptors">
+</section>
+<section id="webadaptors">
 <h2>WebAdaptors<a class="headerlink" href="#webadaptors" title="Permalink to this headline">¶</a></h2>
 <dl class="py class">
 <dt id="arcgis.gis.admin.WebAdaptors">
@@ -6264,7 +6462,7 @@ communicate with the portal</p></td>
 
 <span class="c1"># Output</span>
 <span class="n">machineName</span> <span class="p">:</span> <span class="n">yourportal</span><span class="o">.</span><span class="n">com</span>
-<span class="n">machineIP</span> <span class="p">:</span> <span class="mf">10.11</span><span class="o">.</span><span class="mf">12.13</span>
+<span class="n">machineIP</span> <span class="p">:</span> <span class="mf">10.11.12.13</span>
 <span class="n">webAdaptorURL</span> <span class="p">:</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">yourwebserver</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">portal</span>
 <span class="nb">id</span> <span class="p">:</span> <span class="n">ac17d7b9</span><span class="o">-</span><span class="n">adbd</span><span class="o">-</span><span class="mi">4</span><span class="n">c45</span><span class="o">-</span><span class="n">ae13</span><span class="o">-</span><span class="mi">77</span><span class="n">b0ad6f14e8</span>
 <span class="n">description</span> <span class="p">:</span>
@@ -6283,8 +6481,8 @@ communicate with the portal</p></td>
 
 </dd></dl>
 
-</div>
-<div class="section" id="webhookmanager">
+</section>
+<section id="webhookmanager">
 <h2>WebhookManager<a class="headerlink" href="#webhookmanager" title="Permalink to this headline">¶</a></h2>
 <dl class="py class">
 <dt id="arcgis.gis.admin.WebhookManager">
@@ -6295,7 +6493,7 @@ users occur. Once a webhook has been triggered, an HTTP request is
 made to a user-defined URL to provide information regarding the event.</p>
 <dl class="py method">
 <dt id="arcgis.gis.admin.WebhookManager.create">
-<code class="sig-name descname">create</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">name</span></em>, <em class="sig-param"><span class="n">url</span></em>, <em class="sig-param"><span class="n">events</span><span class="o">=</span><span class="default_value">'ALL'</span></em>, <em class="sig-param"><span class="n">number_of_failures</span><span class="o">=</span><span class="default_value">5</span></em>, <em class="sig-param"><span class="n">days_in_past</span><span class="o">=</span><span class="default_value">5</span></em>, <em class="sig-param"><span class="n">secret</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.admin.WebhookManager.create" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">create</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">name</span></em>, <em class="sig-param"><span class="n">url</span></em>, <em class="sig-param"><span class="n">events</span><span class="o">=</span><span class="default_value">'ALL'</span></em>, <em class="sig-param"><span class="n">number_of_failures</span><span class="o">=</span><span class="default_value">5</span></em>, <em class="sig-param"><span class="n">days_in_past</span><span class="o">=</span><span class="default_value">5</span></em>, <em class="sig-param"><span class="n">secret</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">properties</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.admin.WebhookManager.create" title="Permalink to this definition">¶</a></dt>
 <dd><p>Creates a WebHook to monitor REST endpoints and report activities</p>
 <table class="docutils align-default">
 <colgroup>
@@ -6445,6 +6643,9 @@ provided, a specific endpoint can be monitored.</p>
 <td><p>Optional String. Add a Secret to your payload that can be used to authenticate
 the message on your receiver.</p></td>
 </tr>
+<tr class="row-odd"><td><p>properties</p></td>
+<td><p>Optional Dict. At 10.9.1+ users can provide additional configuration properties.</p></td>
+</tr>
 </tbody>
 </table>
 <p>:returns a <a class="reference internal" href="#arcgis.gis.admin.Webhook" title="arcgis.gis.admin.Webhook"><code class="xref py py-class docutils literal notranslate"><span class="pre">WebHook</span></code></a> instance</p>
@@ -6519,8 +6720,8 @@ and a minimum of one second.</p></td>
 
 </dd></dl>
 
-</div>
-<div class="section" id="webhook">
+</section>
+<section id="webhook">
 <h2>Webhook<a class="headerlink" href="#webhook" title="Permalink to this headline">¶</a></h2>
 <dl class="py class">
 <dt id="arcgis.gis.admin.Webhook">
@@ -6715,17 +6916,22 @@ provided, a specific endpoint can be monitored.</p>
 </tbody>
 </table>
 </div></blockquote>
-<p>Example Syntax: [‘/users’, ‘/groups/abcd1234….’]</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1">#Example Usage:</span>
+
+<span class="o">&gt;&gt;&gt;</span> <span class="n">events</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;/users&#39;</span><span class="p">,</span> <span class="s1">&#39;/groups/abcd1234....&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
 </td>
 </tr>
 <tr class="row-even"><td><p>number_of_failures</p></td>
-<td><p>Optional Integer. The number of failures to allow before the service</p></td>
+<td><p>Optional Integer. The number of failures to allow before the webhook is
+deactivated.</p></td>
 </tr>
 <tr class="row-odd"><td><p>days_in_past</p></td>
 <td><p>Option Integer. The number of days to report back on.</p></td>
 </tr>
 <tr class="row-even"><td><p>secret</p></td>
-<td><p>Optional String. Add a Secret to your payload that can be used to authenticate
+<td><p>Optional String. Add a secret to your payload that can be used to authenticate
 the message on your receiver.</p></td>
 </tr>
 </tbody>
@@ -6735,8 +6941,8 @@ the message on your receiver.</p></td>
 
 </dd></dl>
 
-</div>
-</div>
+</section>
+</section>
 
 
 
@@ -6744,37 +6950,29 @@ the message on your receiver.</p></td>
            
           </div>
           <footer>
-  
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-      
-        <a href="arcgis.gis.server.html" class="btn btn-neutral float-right" title="arcgis.gis.server module" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
-      
-      
-        <a href="arcgis.gis.toc.html" class="btn btn-neutral float-left" title="arcgis.gis module" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
-      
+        <a href="arcgis.gis.server.html" class="btn btn-neutral float-right" title="arcgis.gis.server module" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="arcgis.gis.toc.html" class="btn btn-neutral float-left" title="arcgis.gis module" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
     </div>
-  
 
   <hr/>
 
   <div role="contentinfo">
     <p>
-        
-        &copy; Copyright 2016-2021, Esri
+        &#169; Copyright 2016-2022, Esri.
 
     </p>
   </div>
     
     
     
-    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
     
-    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
     
     provided by <a href="https://readthedocs.org">Read the Docs</a>. 
 
 </footer>
-
         </div>
       </div>
 
@@ -6782,12 +6980,12 @@ the message on your receiver.</p></td>
 
   </div>
   
-    Options v: 1.9.1
+    Options v: 2.0.0
 
   <div class="rst-versions" data-toggle="rst-versions" role="note" aria-label="versions">
     <span class="rst-current-version" data-toggle="rst-current-version">
       <span class="fa fa-book"> Pick an earlier version</span>
-      v: 1.9.1
+      v: 2.0.0
       <span class="fa fa-caret-down"></span>
     </span>
     <div class="rst-other-versions">
@@ -6795,6 +6993,10 @@ the message on your receiver.</p></td>
       
       <dl>
         <dt>Versions</dt>
+        
+          
+          <dd><a href="1.9.1/">1.9.1</a></dd>
+          
         
           
           <dd><a href="1.9.0/">1.9.0</a></dd>
