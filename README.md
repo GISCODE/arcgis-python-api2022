@@ -11,11 +11,10 @@ This SDK repository contains the following items:
 
 You have multiple ways of executing these notebooks as listed below:
 
- - Execute locally on your computer by installing anaconda and the API. See help [here](https://developers.arcgis.com/python/guide/install-and-set-up/#Get-Conda-with-Anaconda-for-Python-Distribution)
- - Execute with ArcGIS Pro. See help [here](https://developers.arcgis.com/python/guide/install-and-set-up/#Get-Conda-with-ArcGIS-Pro)
- - Execute with ArcGIS Hosted Notebooks. See [here](https://www.esri.com/en-us/arcgis/products/arcgis-notebook-server)
- - Execute on a hosted sandbox environment. Go to [notebooks.esri.com](http://notebooks.esri.com/)
- - Execute in a Dockerised environment. See help [here](https://developers.arcgis.com/python/guide/install-and-set-up/#Install-as-a-Docker-image)
+ - Execute locally on your computer by installing anaconda and the API. See help [here](https://developers.arcgis.com/python/guide/install-and-set-up/#Installation-using-Anaconda-for-Python-Distribution)
+ - Execute with ArcGIS Pro. See help [here](https://developers.arcgis.com/python/guide/install-and-set-up/#Installation-for-ArcGIS-Pro-2.5.x-and-later)
+ - Execute with ArcGIS Notebooks, hosted on ArcGIS Online. Checkout [this group](https://www.arcgis.com/home/group.html?id=2464da88f55e45d89aedcae843167f51#overview) with sample notebooks.
+ - Execute in a Dockerised environment. See help [here](https://developers.arcgis.com/python/guide/install-and-set-up/#Installation-as-a-Docker-image)
  - Execute with Binder. See help [here](https://mybinder.org/)
 
 ## Issues
@@ -27,7 +26,7 @@ Find a bug or want to request a new feature?  Please let us know by submitting a
 Anyone and everyone is welcome to contribute. Please see our contribution guideline [here](https://github.com/Esri/arcgis-python-api/wiki/How-to-contribute-samples-and-guide-chapters).
 
 ## Licensing
-Copyright 2018-2019 Esri
+Copyright 2018-2022 Esri
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
