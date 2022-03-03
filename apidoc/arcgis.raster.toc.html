@@ -3,11 +3,12 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8">
+  <meta charset="utf-8" />
+  <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  
-  <title>arcgis.raster module &mdash; arcgis 1.9.1 documentation</title>
+  <title>arcgis.raster module &mdash; arcgis 2.0.0 documentation</title>
   
 
   
@@ -19,7 +20,10 @@
   
     <link rel="shortcut icon" href="_static/favicon.ico"/>
   
+
   
+  
+
   
 
   
@@ -33,7 +37,6 @@
         <script src="_static/underscore.js"></script>
         <script src="_static/doctools.js"></script>
         <script src="_static/language_data.js"></script>
-        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     
     <script type="text/javascript" src="_static/js/theme.js"></script>
 
@@ -64,7 +67,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
           
 
           
-            <a href="index.html" class="icon icon-home" alt="Documentation Home"> arcgis
+            <a href="index.html" class="icon icon-home"> arcgis
           
 
           
@@ -77,7 +80,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             
             
               <div class="version">
-                1.9.1
+                2.0.0
               </div>
             
           
@@ -102,7 +105,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
               
             
             
-              <p class="caption"><span class="caption-text">arcgis</span></p>
+              <p><span class="caption-text">arcgis</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="arcgis.gis.toc.html">arcgis.gis module</a></li>
 <li class="toctree-l1"><a class="reference internal" href="arcgis.env.html">arcgis.env module</a></li>
@@ -139,6 +142,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <li class="toctree-l1"><a class="reference internal" href="arcgis.widgets.html">arcgis.widgets module</a></li>
 <li class="toctree-l1"><a class="reference internal" href="arcgis.apps.html">arcgis.apps module</a></li>
 <li class="toctree-l1"><a class="reference internal" href="arcgis.learn.toc.html">arcgis.learn module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.auth.html">arcgis.auth package</a></li>
 </ul>
 
             
@@ -179,6 +183,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
 
 
+
+
 <div role="navigation" aria-label="breadcrumbs navigation">
 
   <ul class="wy-breadcrumbs">
@@ -190,7 +196,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     
       <li class="wy-breadcrumbs-aside">
         
-            
+          
         
       </li>
     
@@ -207,7 +213,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NJGGV5"
 height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
-  <div class="section" id="module-arcgis.raster">
+  <section id="module-arcgis.raster">
 <span id="arcgis-raster-module"></span><h1>arcgis.raster module<a class="headerlink" href="#module-arcgis.raster" title="Permalink to this headline">¶</a></h1>
 <p>The <code class="docutils literal notranslate"><span class="pre">arcgis.raster</span></code> module contains classes and analysis functions for working with raster data and
 imagery layers.</p>
@@ -215,15 +221,14 @@ imagery layers.</p>
 for storing data that varies continuously, as in a satellite image, a surface of chemical concentrations, or
 an elevation surface.</p>
 <p>Use <a class="reference internal" href="arcgis.raster.analytics.html#arcgis.raster.analytics.is_supported" title="arcgis.raster.analytics.is_supported"><code class="xref py py-meth docutils literal notranslate"><span class="pre">arcgis.raster.analytics.is_supported()</span></code></a> to check if raster analysis is supported in your GIS.</p>
-<div class="section" id="imagerylayer">
+<section id="imagerylayer">
 <h2>ImageryLayer<a class="headerlink" href="#imagerylayer" title="Permalink to this headline">¶</a></h2>
 <dl class="py class">
 <dt id="arcgis.raster.ImageryLayer">
 <em class="property">class </em><code class="sig-prename descclassname">arcgis.raster.</code><code class="sig-name descname">ImageryLayer</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">url</span></em>, <em class="sig-param"><span class="n">gis</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.raster.ImageryLayer" title="Permalink to this definition">¶</a></dt>
-<dd><p>The <code class="docutils literal notranslate"><span class="pre">ImageryLayer</span></code> class can be used to represent an image service resource as a layer.
-An <code class="docutils literal notranslate"><span class="pre">ImageryLayer</span></code> object retrieves and
-displays data from image services. <code class="docutils literal notranslate"><span class="pre">ImageryLayer</span></code> allows you to and apply server defined or client-defined raster
-functions (e.g. remap, colormap), and mosaic rules.</p>
+<dd><p>The <code class="docutils literal notranslate"><span class="pre">ImageryLayer</span></code> class can be used to represent an image service resource as a layer.</p>
+<p>An <code class="docutils literal notranslate"><span class="pre">ImageryLayer</span></code> object retrieves and displays data from image services. <code class="docutils literal notranslate"><span class="pre">ImageryLayer</span></code>
+allows you to apply server-defined or client-defined raster functions (e.g. remap, colormap), and mosaic rules.</p>
 <p><code class="docutils literal notranslate"><span class="pre">ImageryLayer</span></code> objects can also be created using raster datasets or raster products present in datastores registered with the server/active GIS
 (types: <code class="docutils literal notranslate"><span class="pre">fileShares</span></code>, <code class="docutils literal notranslate"><span class="pre">cloudStores</span></code>, <code class="docutils literal notranslate"><span class="pre">rasterStores</span></code>).
 To learn more about datastores, visit the
@@ -257,7 +262,7 @@ should be enabled in the active GIS connection</p>
 </td>
 </tr>
 <tr class="row-odd"><td><p>gis</p></td>
-<td><p>Optional. <a class="reference internal" href="arcgis.gis.toc.html#arcgis.gis.GIS" title="arcgis.gis.GIS"><code class="xref py py-class docutils literal notranslate"><span class="pre">GIS</span></code></a> of the ImageryLayer object.</p></td>
+<td><p>Optional GIS. <a class="reference internal" href="arcgis.gis.toc.html#arcgis.gis.GIS" title="arcgis.gis.GIS"><code class="xref py py-class docutils literal notranslate"><span class="pre">GIS</span></code></a> of the ImageryLayer object.</p></td>
 </tr>
 </tbody>
 </table>
@@ -504,6 +509,114 @@ can be queried from <a class="reference internal" href="#arcgis.raster.ImageryLa
 <dd class="field-odd"><p>An Integer</p>
 </dd>
 </dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.raster.ImageryLayer.compute_angles">
+<code class="sig-name descname">compute_angles</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">raster_id</span></em>, <em class="sig-param"><span class="n">point</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">angle_name</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">spatial_reference</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.raster.ImageryLayer.compute_angles" title="Permalink to this definition">¶</a></dt>
+<dd><p>The <code class="docutils literal notranslate"><span class="pre">compute_angles</span></code> method computes the rotation angle of a raster for a user-specified
+angle direction, and optionally, a user-specified rotation point and user-specified
+spatial reference.</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 91%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>Argument</strong></p></td>
+<td><p><strong>Description</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>raster_id</p></td>
+<td><p>Required integer. Specifies the object ID of the raster catalog which
+will determine the raster and image coordinate system to use in a
+mosaic dataset.</p></td>
+</tr>
+<tr class="row-odd"><td><p>point</p></td>
+<td><p>Optional dictionary or <a class="reference internal" href="arcgis.geometry.html#arcgis.geometry.Point" title="arcgis.geometry.Point"><code class="xref py py-class docutils literal notranslate"><span class="pre">Point</span></code></a> object.
+The point geometry that defines the reference point of rotation to
+compute the angle direction. By default, takes the centroid of image
+as point of rotation.</p></td>
+</tr>
+<tr class="row-even"><td><p>angle_name</p></td>
+<td><p>Optional string. Specifies the name (or names) of the rotation
+angle to be computed.</p>
+<p>Possible options are:</p>
+<ul class="simple">
+<li><p>“up”: The computed angle after rotating the map so the top of the image is always                               oriented to the direction of the sensor when it acquired the image.</p></li>
+<li><p>“north”: The computed angle after rotating so the top of the image is always                               toward north.</p></li>
+</ul>
+<p>You can specify multiple angle names by separating the names with a
+comma. By default, angles are computed for all directions.</p>
+</td>
+</tr>
+<tr class="row-odd"><td><p>spatial_reference</p></td>
+<td><p>Optional dictionary. Specifies the spatial reference to be used by
+the image. By default, the spatial reference of the image is used.</p></td>
+</tr>
+</tbody>
+</table>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>A dictionary with the computed rotation angle of a raster.</p>
+</dd>
+</dl>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Example Usage: Compute angles for a given point and rotation angle.</span>
+
+<span class="n">my_point</span> <span class="o">=</span> <span class="p">{</span>
+            <span class="s2">&quot;x&quot;</span><span class="p">:</span> <span class="mf">7952916.33</span><span class="p">,</span> 
+            <span class="s2">&quot;y&quot;</span><span class="p">:</span> <span class="mf">3869525.96</span><span class="p">,</span>
+            <span class="s2">&quot;spatialReference&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;wkid&quot;</span><span class="p">:</span> <span class="mi">3857</span><span class="p">}</span>
+           <span class="p">}</span>
+
+<span class="n">my_point_object</span> <span class="o">=</span> <span class="n">Point</span><span class="p">(</span><span class="n">my_point</span><span class="p">)</span>
+
+<span class="n">compute_angles_op</span> <span class="o">=</span> <span class="n">img_lyr</span><span class="o">.</span><span class="n">compute_angles</span><span class="p">(</span><span class="n">raster_id</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
+                                           <span class="n">point</span><span class="o">=</span><span class="n">my_point_object</span><span class="p">,</span>
+                                           <span class="n">angle_name</span><span class="o">=</span><span class="s2">&quot;north&quot;</span><span class="p">,</span>
+                                           <span class="n">spatial_reference</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;wkid&quot;</span><span class="p">:</span> <span class="mi">54004</span><span class="p">})</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.raster.ImageryLayer.compute_cache_info">
+<code class="sig-name descname">compute_cache_info</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">out_sr</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.raster.ImageryLayer.compute_cache_info" title="Permalink to this definition">¶</a></dt>
+<dd><p>The <code class="docutils literal notranslate"><span class="pre">compute_cache_info</span></code> method computes and generates new image service tile cache
+schemes for image services.
+If the corresponding image tile cache scheme is missing, it will also create a new set of
+cached image tiles in the cache directory of the image service. This operation only
+generates image tile cache schemes based on raster tiles (LERC2D format).</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This applies to image services that have dynamic service caching capability enabled.</p>
+</div>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 20%" />
+<col style="width: 80%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>Argument</strong></p></td>
+<td><p><strong>Description</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>out_sr</p></td>
+<td><p>Optional integer. The spatial reference of the boundary’s geometry.
+The spatial reference can be specified as a well-known ID.
+If the <code class="docutils literal notranslate"><span class="pre">out_sr</span></code> is not specified, it will use the spatial
+reference of the image service.</p></td>
+</tr>
+</tbody>
+</table>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>A dictionary with the image tile cache scheme information.</p>
+</dd>
+</dl>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Example Usage: Compute the cache info for a given spatial reference.</span>
+
+<span class="n">cache_info_op</span> <span class="o">=</span> <span class="n">img_lyr</span><span class="o">.</span><span class="n">compute_cache_info</span><span class="p">(</span><span class="n">out_sr</span><span class="o">=</span><span class="mi">3857</span><span class="p">)</span>
+</pre></div>
+</div>
 </dd></dl>
 
 <dl class="py method">
@@ -1389,7 +1502,7 @@ Example: out_format=’TIFF’</p>
 
 <dl class="py method">
 <dt id="arcgis.raster.ImageryLayer.get_histograms">
-<code class="sig-name descname">get_histograms</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">variable</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.raster.ImageryLayer.get_histograms" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">get_histograms</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">variable</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">rendering_rule</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.raster.ImageryLayer.get_histograms" title="Permalink to this definition">¶</a></dt>
 <dd><p>The <code class="docutils literal notranslate"><span class="pre">get_histograms</span></code> method retrieves the histograms of each band in the <a class="reference internal" href="#arcgis.raster.ImageryLayer" title="arcgis.raster.ImageryLayer"><code class="xref py py-class docutils literal notranslate"><span class="pre">ImageryLayer</span></code></a>
 as a list of dictionaries corresponding to each band.</p>
 <div class="admonition note">
@@ -1402,8 +1515,8 @@ as a list of dictionaries corresponding to each band.</p>
 </div>
 <table class="docutils align-default">
 <colgroup>
-<col style="width: 20%" />
-<col style="width: 80%" />
+<col style="width: 15%" />
+<col style="width: 85%" />
 </colgroup>
 <tbody>
 <tr class="row-odd"><td><p><strong>Arguments</strong></p></td>
@@ -1415,6 +1528,14 @@ information, this parameter can be used to request histograms for
 each variable. It will return histograms for the whole ImageryLayer
 if not specified.
 This parameter is available from 10.8.1</p></td>
+</tr>
+<tr class="row-odd"><td><p>rendering_rule</p></td>
+<td><p>Optional dictionary. Specifies the rendering rule for how the requested image should be rendered.</p>
+<p>In the context of accessing image service histograms resource,
+this parameter is used to retrieve histograms info in attached
+predefined raster function templates (inside a StatisticsHistogram function).</p>
+<p>This parameter is available from 10.9.1</p>
+</td>
 </tr>
 </tbody>
 </table>
@@ -1473,7 +1594,7 @@ None, the OS temporary directory is used.</p></td>
 
 <dl class="py method">
 <dt id="arcgis.raster.ImageryLayer.get_samples">
-<code class="sig-name descname">get_samples</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">geometry</span></em>, <em class="sig-param"><span class="n">geometry_type</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">sample_distance</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">sample_count</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">mosaic_rule</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">pixel_size</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">return_first_value_only</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">interpolation</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">out_fields</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.raster.ImageryLayer.get_samples" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">get_samples</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">geometry</span></em>, <em class="sig-param"><span class="n">geometry_type</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">sample_distance</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">sample_count</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">mosaic_rule</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">pixel_size</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">return_first_value_only</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">interpolation</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">out_fields</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">slice_id</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.raster.ImageryLayer.get_samples" title="Permalink to this definition">¶</a></dt>
 <dd><p>The <code class="docutils literal notranslate"><span class="pre">get_samples</span></code> operation is supported by both mosaic dataset and raster
 dataset imagery layers.
 The result of this operation includes sample point locations, pixel
@@ -1565,6 +1686,11 @@ RSP_NearestNeighbor</p></td>
 This list is a comma-delimited list of field names. You can also
 specify the wildcard character (*) as the value of this parameter to
 include all the field values in the results.</p></td>
+</tr>
+<tr class="row-odd"><td><p>slice_id</p></td>
+<td><p>Optional integer. The slice ID of a multidimensional raster. The operation
+will be performed for the specified slice.
+This parameter is available from 10.9 onwards.</p></td>
 </tr>
 </tbody>
 </table>
@@ -1661,7 +1787,8 @@ overall mosaic.</p>
 defines the location to be identified.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>The location can be a point or polygon.</p>
+<p>The location can be a point or polygon or envelope.
+Support for envelope was added at 10.9.1.</p>
 </div>
 </td>
 </tr>
@@ -2440,7 +2567,7 @@ conflicts with wkid</p>
 
 <dl class="py method">
 <dt id="arcgis.raster.ImageryLayer.query">
-<code class="sig-name descname">query</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">where</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">out_fields</span><span class="o">=</span><span class="default_value">'*'</span></em>, <em class="sig-param"><span class="n">time_filter</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">geometry_filter</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">return_geometry</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="n">return_ids_only</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">return_count_only</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">pixel_size</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">order_by_fields</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">return_distinct_values</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">out_statistics</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">group_by_fields_for_statistics</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">out_sr</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">return_all_records</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">object_ids</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">multi_dimensional_def</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">result_offset</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">result_record_count</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">max_allowable_offset</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">true_curves</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">as_df</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">raster_query</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.raster.ImageryLayer.query" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">query</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">where</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">out_fields</span><span class="o">=</span><span class="default_value">'*'</span></em>, <em class="sig-param"><span class="n">time_filter</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">geometry_filter</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">return_geometry</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="n">return_ids_only</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">return_count_only</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">pixel_size</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">order_by_fields</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">return_distinct_values</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">out_statistics</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">group_by_fields_for_statistics</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">out_sr</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">return_all_records</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">object_ids</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">multi_dimensional_def</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">result_offset</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">result_record_count</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">max_allowable_offset</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">true_curves</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">as_df</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">raster_query</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">return_extent_only</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.raster.ImageryLayer.query" title="Permalink to this definition">¶</a></dt>
 <dd><p>The <code class="docutils literal notranslate"><span class="pre">query</span></code> method queries an <a class="reference internal" href="#arcgis.raster.ImageryLayer" title="arcgis.raster.ImageryLayer"><code class="xref py py-class docutils literal notranslate"><span class="pre">ImageryLayer</span></code></a> by applying the filter specified by
 the user. The result of this operation is
 either a set of features or an array of raster IDs (if return_ids_only is set to True),
@@ -2493,7 +2620,11 @@ be returned</p></td>
 <td><p>optional boolean. If True, then an integer is returned only based on
 the sql statement</p></td>
 </tr>
-<tr class="row-odd"><td><p>pixel_size</p></td>
+<tr class="row-odd"><td><p>return_extent_only</p></td>
+<td><p>optional boolean. If True, then only the extent is returned.
+This parameter is available from 10.8.1 onwards.</p></td>
+</tr>
+<tr class="row-even"><td><p>pixel_size</p></td>
 <td><p>optional dict or string. Query visible rasters at a given pixel size.
 If pixel_size is not specified, rasters at all resolutions can be
 queried.
@@ -2513,34 +2644,34 @@ Syntax:</p>
 </dl>
 </td>
 </tr>
-<tr class="row-even"><td><p>order_by_fields</p></td>
+<tr class="row-odd"><td><p>order_by_fields</p></td>
 <td><p>optional string. Order results by one or more field names. Use ASC
 or DESC for ascending or descending order, respectively.</p></td>
 </tr>
-<tr class="row-odd"><td><p>return_distinct_values</p></td>
+<tr class="row-even"><td><p>return_distinct_values</p></td>
 <td><p>optional boolean. If true, returns distinct values based on the
 fields specified in out_fields. This parameter applies only if the
 supportsAdvancedQueries property of the image layer is true.</p></td>
 </tr>
-<tr class="row-even"><td><p>out_statistics</p></td>
+<tr class="row-odd"><td><p>out_statistics</p></td>
 <td><p>optional dict or string. The definitions for one or more field-based
 statistics to be calculated.</p></td>
 </tr>
-<tr class="row-odd"><td><p>group_by_fields_for_statistics</p></td>
+<tr class="row-even"><td><p>group_by_fields_for_statistics</p></td>
 <td><p>optional dict/string. One or more field names using the
 values that need to be grouped for calculating the
 statistics.</p></td>
 </tr>
-<tr class="row-even"><td><p>out_sr</p></td>
+<tr class="row-odd"><td><p>out_sr</p></td>
 <td><p>optional dict, SpatialReference. If the returning geometry needs to
 be in a different spatial reference, provide the function with the
 desired WKID.</p></td>
 </tr>
-<tr class="row-odd"><td><p>return_all_records</p></td>
+<tr class="row-even"><td><p>return_all_records</p></td>
 <td><p>optional boolean. If True(default) all records will be returned.
 False means only the limit of records will be returned.</p></td>
 </tr>
-<tr class="row-even"><td><p>object_ids</p></td>
+<tr class="row-odd"><td><p>object_ids</p></td>
 <td><p>optional string. The object IDs of this raster catalog to be
 queried. When this parameter is specified, any other filter
 parameters (including where) are ignored.
@@ -2549,16 +2680,16 @@ invalid.
 Syntax: objectIds=&lt;objectId1&gt;, &lt;objectId2&gt;
 Example: objectIds=37, 462</p></td>
 </tr>
-<tr class="row-odd"><td><p>multi_dimensional_def</p></td>
+<tr class="row-even"><td><p>multi_dimensional_def</p></td>
 <td><p>optional dict. The filters defined by multiple dimensional
 definitions.</p></td>
 </tr>
-<tr class="row-even"><td><p>result_offset</p></td>
+<tr class="row-odd"><td><p>result_offset</p></td>
 <td><p>optional integer. This option fetches query results by skipping a
 specified number of records. The query results start from the next
 record (i.e., resultOffset + 1). The Default value is None.</p></td>
 </tr>
-<tr class="row-odd"><td><p>result_record_count</p></td>
+<tr class="row-even"><td><p>result_record_count</p></td>
 <td><p>optional integer. This option fetches query results up to the
 resultRecordCount specified. When resultOffset is specified and this
 parameter is not, image layer defaults to maxRecordCount. The
@@ -2570,14 +2701,14 @@ by the query operation. The max_allowable_offset is in the units of
 the out_sr. If outSR is not specified, max_allowable_offset is
 assumed to be in the unit of the spatial reference of the Layer.</p></td>
 </tr>
-<tr class="row-even"><td><p>true_curves</p></td>
+<tr class="row-odd"><td><p>true_curves</p></td>
 <td><p>optional boolean. If true, returns true curves in output geometries,
 otherwise curves get converted to densified polylines or polygons.</p></td>
 </tr>
-<tr class="row-odd"><td><p>as_df</p></td>
+<tr class="row-even"><td><p>as_df</p></td>
 <td><p>optional boolean. Returns the query result as a dataframe object</p></td>
 </tr>
-<tr class="row-even"><td><p>raster_query</p></td>
+<tr class="row-odd"><td><p>raster_query</p></td>
 <td><p>optional string.  Make query based on key properties of each
 raster catalog item. Any legal SQL where clause operating on the
 key properties of raster catalog items is allowed.</p>
@@ -2717,7 +2848,7 @@ To get the slice index use slices method on the ImageryLayer object.</p></td>
 
 <dl class="py method">
 <dt id="arcgis.raster.ImageryLayer.save">
-<code class="sig-name descname">save</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">output_name</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">for_viz</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">process_as_multidimensional</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">build_transpose</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="o">*</span></em>, <em class="sig-param"><span class="n">gis</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">future</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.raster.ImageryLayer.save" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">save</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">output_name</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">for_viz</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">process_as_multidimensional</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">build_transpose</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">context</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="o">*</span></em>, <em class="sig-param"><span class="n">gis</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">future</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.raster.ImageryLayer.save" title="Permalink to this definition">¶</a></dt>
 <dd><p>The <code class="docutils literal notranslate"><span class="pre">save</span></code> method saves this imagery layer to the GIS as an <a class="reference internal" href="#arcgis.raster.ImageryLayer" title="arcgis.raster.ImageryLayer"><code class="xref py py-class docutils literal notranslate"><span class="pre">ImageryLayer</span></code></a> item.
 If <code class="docutils literal notranslate"><span class="pre">for_viz</span></code> is <code class="docutils literal notranslate"><span class="pre">True</span></code>, a new <a class="reference internal" href="arcgis.gis.toc.html#arcgis.gis.Item" title="arcgis.gis.Item"><code class="xref py py-class docutils literal notranslate"><span class="pre">Item</span></code></a> is created that
 uses the applied raster functions for visualization at display resolution using on-the-fly image processing.
@@ -2725,8 +2856,8 @@ If <code class="docutils literal notranslate"><span class="pre">for_viz</span></
 applying raster functions at source resolution across the extent of the output imagery layer.</p>
 <table class="docutils align-default">
 <colgroup>
-<col style="width: 34%" />
-<col style="width: 66%" />
+<col style="width: 27%" />
+<col style="width: 73%" />
 </colgroup>
 <tbody>
 <tr class="row-odd"><td><p><strong>Argument</strong></p></td>
@@ -2759,14 +2890,91 @@ will be processed as multidimensional if set to True</p></td>
 multidimensional raster. Valid only if process_as_multidimensional
 is set to True</p></td>
 </tr>
-<tr class="row-even"><td><p>gis</p></td>
+<tr class="row-even"><td><p>context</p></td>
+<td><p>context contains additional settings that affect task execution.</p>
+<p>context parameter overwrites values set through arcgis.env parameter</p>
+<p>This function has the following settings:</p>
+<blockquote>
+<div><ul>
+<li><p>Extent (extent): A bounding box that defines the analysis area.</p>
+<dl class="simple">
+<dt>Example:</dt><dd><p>{“extent”: {“xmin”: -122.68,
+“ymin”: 45.53,
+“xmax”: -122.45,
+“ymax”: 45.6,
+“spatialReference”: {“wkid”: 4326}}}</p>
+</dd>
+</dl>
+</li>
+<li><p>Output Spatial Reference (outSR): The output raster will be
+projected into the output spatial reference.</p>
+<dl class="simple">
+<dt>Example:</dt><dd><p>{“outSR”: {spatial reference}}</p>
+</dd>
+</dl>
+</li>
+<li><p>Snap Raster (snapRaster): The output raster will have its
+cells aligned with the specified snap raster.</p>
+<dl class="simple">
+<dt>Example:</dt><dd><p>{‘snapRaster’: {‘url’: ‘&lt;image_service_url&gt;’}}</p>
+</dd>
+</dl>
+</li>
+<li><p>Mask (mask): Only cells that fall within the analysis
+mask will be considered in the operation.</p>
+<dl class="simple">
+<dt>Example:</dt><dd><p>{“mask”: {“url”: “&lt;image_service_url&gt;”}}</p>
+</dd>
+</dl>
+</li>
+<li><p>Cell Size (cellSize): The output raster will have the resolution
+specified by cell size.</p>
+<dl class="simple">
+<dt>Example:</dt><dd><p>{‘cellSize’: 11} or {‘cellSize’: {‘url’: &lt;image_service_url&gt;}}  or {‘cellSize’: ‘MaxOfIn’}</p>
+</dd>
+</dl>
+</li>
+<li><p>Parallel Processing Factor (parallelProcessingFactor): controls
+Raster Processing (CPU) service instances.</p>
+<dl>
+<dt>Example:</dt><dd><p>Syntax example with a specified number of processing instances:</p>
+<p>{“parallelProcessingFactor”: “2”}</p>
+<p>Syntax example with a specified percentage of total
+processing instances:</p>
+<p>{“parallelProcessingFactor”: “60%”}</p>
+</dd>
+</dl>
+</li>
+<li><p>Resampling Method (resamplingMethod): The output raster will be
+resampled to method specified.
+The supported values are: BILINEAR, NEAREST, CUBIC.</p>
+<dl class="simple">
+<dt>Example:</dt><dd><p>{‘resamplingMethod’: “NEAREST”}</p>
+</dd>
+</dl>
+</li>
+</ul>
+</div></blockquote>
+</td>
+</tr>
+<tr class="row-odd"><td><p>gis</p></td>
 <td><p>Optional <a class="reference internal" href="arcgis.gis.toc.html#arcgis.gis.GIS" title="arcgis.gis.GIS"><code class="xref py py-class docutils literal notranslate"><span class="pre">GIS</span></code></a> object.
 The GIS to be used for saving the
 output. Keyword only parameter.</p></td>
 </tr>
-<tr class="row-odd"><td><p>future</p></td>
+<tr class="row-even"><td><p>future</p></td>
 <td><p>Optional boolean. If True, the result will be a GPJob object and
 results will be returned asynchronously. Keyword only parameter.</p></td>
+</tr>
+<tr class="row-odd"><td><p>folder</p></td>
+<td><p>Optional string or dictionary. Creates a folder in the portal, if it does
+not exist, with the given folder name and persists the output in this folder.
+The dictionary returned by the gis.content.create_folder() can also be passed in as input.</p>
+<dl class="simple">
+<dt>Example:</dt><dd><p>{‘username’: ‘user1’, ‘id’: ‘6a3b77c187514ef7873ba73338cf1af8’, ‘title’: ‘trial’}</p>
+</dd>
+</dl>
+</td>
 </tr>
 <tr class="row-even"><td><p>tiles_only</p></td>
 <td><p>In ArcGIS Online, the default output image service for this function
@@ -2789,6 +2997,7 @@ will generate Dynamic Imagery Layer by default.</p>
 <span class="n">img_lyr</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="n">output_name</span><span class="o">=</span><span class="s2">&quot;saved_imagery_layer&quot;</span><span class="p">,</span>
              <span class="n">process_as_multidimensional</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
              <span class="n">build_transpose</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+             <span class="n">folder</span><span class="o">=</span><span class="s2">&quot;my_imagery_layers&quot;</span><span class="p">,</span>
              <span class="n">gis</span><span class="o">=</span><span class="n">gis</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -2892,7 +3101,7 @@ page in the ArcGIS REST API documentation for more information.</p>
 
 <dl class="py method">
 <dt id="arcgis.raster.ImageryLayer.statistics">
-<code class="sig-name descname">statistics</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">variable</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.raster.ImageryLayer.statistics" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">statistics</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">variable</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">rendering_rule</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.raster.ImageryLayer.statistics" title="Permalink to this definition">¶</a></dt>
 <dd><p>The <code class="docutils literal notranslate"><span class="pre">statistics</span></code> method retrieves the statistics of the raster.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
@@ -2900,8 +3109,8 @@ page in the ArcGIS REST API documentation for more information.</p>
 </div>
 <table class="docutils align-default">
 <colgroup>
-<col style="width: 20%" />
-<col style="width: 80%" />
+<col style="width: 15%" />
+<col style="width: 85%" />
 </colgroup>
 <tbody>
 <tr class="row-odd"><td><p><strong>Arguments</strong></p></td>
@@ -2913,6 +3122,14 @@ information, this parameter can be used to request statistics for
 each variable. If not specified, it will return statistics for the
 whole image service. Eligible variable names can be queried from
 multidimensional_info property of the Imagery Layer object.</p></td>
+</tr>
+<tr class="row-odd"><td><p>rendering_rule</p></td>
+<td><p>Optional dictionary. Specifies the rendering rule for how the requested image should be rendered.</p>
+<p>In the context of accessing image service statistics resource,
+this parameter is used to retrieve statistics info in attached
+predefined raster function templates (inside a StatisticsHistogram function).</p>
+<p>This parameter is available from 10.9.1</p>
+</td>
 </tr>
 </tbody>
 </table>
@@ -3092,7 +3309,7 @@ This manager helps perform edits on the tiles of the Image Layer.</p>
 
 <dl class="py method">
 <dt id="arcgis.raster.ImageryLayer.to_features">
-<code class="sig-name descname">to_features</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">field</span><span class="o">=</span><span class="default_value">'Value'</span></em>, <em class="sig-param"><span class="n">output_type</span><span class="o">=</span><span class="default_value">'Polygon'</span></em>, <em class="sig-param"><span class="n">simplify</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="n">output_name</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">create_multipart_features</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">max_vertices_per_feature</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="o">*</span></em>, <em class="sig-param"><span class="n">gis</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">future</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.raster.ImageryLayer.to_features" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">to_features</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">field</span><span class="o">=</span><span class="default_value">'Value'</span></em>, <em class="sig-param"><span class="n">output_type</span><span class="o">=</span><span class="default_value">'Polygon'</span></em>, <em class="sig-param"><span class="n">simplify</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="n">output_name</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">create_multipart_features</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">max_vertices_per_feature</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">context</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="o">*</span></em>, <em class="sig-param"><span class="n">gis</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">future</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.raster.ImageryLayer.to_features" title="Permalink to this definition">¶</a></dt>
 <dd><p>The <code class="docutils literal notranslate"><span class="pre">to_features</span></code> method converts this raster to a persisted <a class="reference internal" href="arcgis.features.toc.html#arcgis.features.FeatureLayer" title="arcgis.features.FeatureLayer"><code class="xref py py-class docutils literal notranslate"><span class="pre">FeatureLayer</span></code></a>
 of the specified type using Raster Analytics.</p>
 <div class="admonition note">
@@ -3147,11 +3364,38 @@ single-part or multipart features.</p>
 <tr class="row-odd"><td><p>max_vertices_per_feature</p></td>
 <td><p>Optional int. The vertex limit used to subdivide a polygon into smaller polygons.</p></td>
 </tr>
-<tr class="row-even"><td><p>gis</p></td>
+<tr class="row-even"><td><p>context</p></td>
+<td><p>context contains additional settings that affect task execution.</p>
+<p>context parameter overwrites values set through arcgis.env parameter</p>
+<p>This function has the following settings:</p>
+<blockquote>
+<div><ul>
+<li><p>Extent (extent): A bounding box that defines the analysis area.</p>
+<dl class="simple">
+<dt>Example:</dt><dd><p>{“extent”: {“xmin”: -122.68,
+“ymin”: 45.53,
+“xmax”: -122.45,
+“ymax”: 45.6,
+“spatialReference”: {“wkid”: 4326}}}</p>
+</dd>
+</dl>
+</li>
+<li><p>Output Spatial Reference (outSR): The output raster will be
+projected into the output spatial reference.</p>
+<dl class="simple">
+<dt>Example:</dt><dd><p>{“outSR”: {spatial reference}}</p>
+</dd>
+</dl>
+</li>
+</ul>
+</div></blockquote>
+</td>
+</tr>
+<tr class="row-odd"><td><p>gis</p></td>
 <td><p>Optional GIS object. If not speficied, the currently active connection
 is used.</p></td>
 </tr>
-<tr class="row-odd"><td><p>future</p></td>
+<tr class="row-even"><td><p>future</p></td>
 <td><p>Keyword only parameter. Optional boolean. If True, the result will be a GPJob object and
 results will be returned asynchronously.</p></td>
 </tr>
@@ -3167,7 +3411,7 @@ results will be returned asynchronously.</p></td>
 <span class="n">feature_layer</span> <span class="o">=</span> <span class="n">img_lyr</span><span class="o">.</span><span class="n">to_features</span><span class="p">(</span><span class="n">output_type</span><span class="o">=</span><span class="s2">&quot;Polygon&quot;</span><span class="p">,</span>
                                     <span class="n">simplify</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
                                     <span class="n">output_name</span><span class="o">=</span><span class="s2">&quot;new_feature_layer&quot;</span><span class="p">,</span>
-                                    <span class="n">create_multipart_freatures</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span>
+                                    <span class="n">create_multipart_features</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span>
                                     <span class="p">)</span>
 </pre></div>
 </div>
@@ -3214,8 +3458,8 @@ results will be returned asynchronously.</p></td>
 
 </dd></dl>
 
-</div>
-<div class="section" id="imagerylayercachemanager">
+</section>
+<section id="imagerylayercachemanager">
 <h2>ImageryLayerCacheManager<a class="headerlink" href="#imagerylayercachemanager" title="Permalink to this headline">¶</a></h2>
 <dl class="py class">
 <dt id="arcgis.raster.ImageryLayerCacheManager">
@@ -3291,7 +3535,13 @@ Example, 0-5,10,11-20 or 1,2,3 or 0-5</p></td>
 <dd class="field-odd"><p>A dictionary</p>
 </dd>
 </dl>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Example Usage</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">arcgis.mapping</span> <span class="kn">import</span> <span class="n">ImageryLayer</span>
+<span class="kn">from</span> <span class="nn">arcgis.gis</span> <span class="kn">import</span> <span class="n">GIS</span>
+
+<span class="c1"># Example Usage</span>
+<span class="n">gis</span> <span class="o">=</span> <span class="n">GIS</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">username</span><span class="p">,</span> <span class="n">password</span><span class="p">)</span>
+<span class="n">img_lyr</span> <span class="o">=</span> <span class="n">ImageryLayer</span><span class="p">(</span><span class="s2">&quot;&lt;url&gt;&quot;</span><span class="p">,</span> <span class="n">gis</span><span class="p">)</span>
+<span class="n">img_lyr_cache_manager</span> <span class="o">=</span> <span class="n">img_lyr</span><span class="o">.</span><span class="n">cache_manager</span>
 <span class="n">deleted_tiles</span> <span class="o">=</span> <span class="n">img_lyr_cache_manager</span><span class="o">.</span><span class="n">delete_tiles</span><span class="p">(</span><span class="n">levels</span> <span class="o">=</span> <span class="s2">&quot;11-20&quot;</span><span class="p">,</span>
                                                    <span class="n">extent</span> <span class="o">=</span> <span class="p">{</span>
                                                                 <span class="s2">&quot;xmin&quot;</span><span class="p">:</span><span class="mf">6224324.092137296</span><span class="p">,</span>
@@ -3418,7 +3668,13 @@ replace the existing ones when merging bundles.</p></td>
 <dd class="field-odd"><p>A dictionary</p>
 </dd>
 </dl>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Example Usage</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">arcgis.mapping</span> <span class="kn">import</span> <span class="n">ImageryLayer</span>
+<span class="kn">from</span> <span class="nn">arcgis.gis</span> <span class="kn">import</span> <span class="n">GIS</span>
+
+<span class="c1"># Example Usage</span>
+<span class="n">gis</span> <span class="o">=</span> <span class="n">GIS</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">username</span><span class="p">,</span> <span class="n">password</span><span class="p">)</span>
+<span class="n">img_lyr</span> <span class="o">=</span> <span class="n">ImageryLayer</span><span class="p">(</span><span class="s2">&quot;&lt;url&gt;&quot;</span><span class="p">,</span> <span class="n">gis</span><span class="p">)</span>
+<span class="n">img_lyr_cache_manager</span> <span class="o">=</span> <span class="n">img_lyr</span><span class="o">.</span><span class="n">cache_manager</span>
 <span class="n">imported_tiles</span> <span class="o">=</span> <span class="n">img_lyr_cache_manager</span><span class="o">.</span><span class="n">import_tiles</span><span class="p">(</span><span class="n">item</span> <span class="o">=</span> <span class="n">item1</span><span class="p">,</span>
                                                     <span class="n">levels</span> <span class="o">=</span> <span class="s2">&quot;11-20&quot;</span><span class="p">,</span>
                                                     <span class="n">extent</span> <span class="o">=</span> <span class="p">{</span>
@@ -3540,6 +3796,35 @@ code: <code class="docutils literal notranslate"><span class="pre">ALL</span></c
 </dd></dl>
 
 <dl class="py method">
+<dt id="arcgis.raster.ImageryLayerCacheManager.swap">
+<code class="sig-name descname">swap</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">target_service_name</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.raster.ImageryLayerCacheManager.swap" title="Permalink to this definition">¶</a></dt>
+<dd><p>The swap operation replaces the current service cache with an existing one.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">swap</span></code> operation is for ArcGIS Online only.</p>
+</div>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 27%" />
+<col style="width: 73%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>Argument</strong></p></td>
+<td><p><strong>Description</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>target_service_name</p></td>
+<td><p>Required string. Name of service you want to swap with.</p></td>
+</tr>
+</tbody>
+</table>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>dictionary indicating success or error</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
 <dt id="arcgis.raster.ImageryLayerCacheManager.update_tiles">
 <code class="sig-name descname">update_tiles</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">levels</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">extent</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">merge</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">replace</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.raster.ImageryLayerCacheManager.update_tiles" title="Permalink to this definition">¶</a></dt>
 <dd><p>The <code class="docutils literal notranslate"><span class="pre">update_tiles</span></code> method starts tile generation for ArcGIS Online.  The levels of detail
@@ -3583,7 +3868,13 @@ tiles will remove the existing tiles.</p></td>
 result will be None.</p>
 </dd>
 </dl>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Example Usage</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">arcgis.mapping</span> <span class="kn">import</span> <span class="n">ImageryLayer</span>
+<span class="kn">from</span> <span class="nn">arcgis.gis</span> <span class="kn">import</span> <span class="n">GIS</span>
+
+<span class="c1"># Example Usage</span>
+<span class="n">gis</span> <span class="o">=</span> <span class="n">GIS</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">username</span><span class="p">,</span> <span class="n">password</span><span class="p">)</span>
+<span class="n">img_lyr</span> <span class="o">=</span> <span class="n">ImageryLayer</span><span class="p">(</span><span class="s2">&quot;&lt;url&gt;&quot;</span><span class="p">,</span> <span class="n">gis</span><span class="p">)</span>
+<span class="n">img_lyr_cache_manager</span> <span class="o">=</span> <span class="n">img_lyr</span><span class="o">.</span><span class="n">cache_manager</span>
 <span class="n">updated_tiles</span> <span class="o">=</span> <span class="n">img_lyr_cache_manager</span><span class="o">.</span><span class="n">update_tiles</span><span class="p">(</span><span class="n">levels</span> <span class="o">=</span> <span class="s2">&quot;11-20&quot;</span><span class="p">,</span>
                                                    <span class="n">extent</span> <span class="o">=</span> <span class="p">{</span>
                                                                 <span class="s2">&quot;xmin&quot;</span><span class="p">:</span><span class="mf">6224324.092137296</span><span class="p">,</span>
@@ -3599,8 +3890,8 @@ result will be None.</p>
 
 </dd></dl>
 
-</div>
-<div class="section" id="imagerytilemanager">
+</section>
+<section id="imagerytilemanager">
 <h2>ImageryTileManager<a class="headerlink" href="#imagerytilemanager" title="Permalink to this headline">¶</a></h2>
 <dl class="py class">
 <dt id="arcgis.raster.ImageryTileManager">
@@ -3884,8 +4175,8 @@ for a blank/missing tile.</p></td>
 
 </dd></dl>
 
-</div>
-<div class="section" id="raster">
+</section>
+<section id="raster">
 <h2>Raster<a class="headerlink" href="#raster" title="Permalink to this headline">¶</a></h2>
 <dl class="py class">
 <dt id="arcgis.raster.Raster">
@@ -3976,7 +4267,7 @@ Possible options:</p>
 </td>
 </tr>
 <tr class="row-even"><td><p>gis</p></td>
-<td><p>Optional. <a class="reference internal" href="arcgis.gis.toc.html#arcgis.gis.GIS" title="arcgis.gis.GIS"><code class="xref py py-class docutils literal notranslate"><span class="pre">GIS</span></code></a> of the Raster object.</p></td>
+<td><p>Optional GIS. <a class="reference internal" href="arcgis.gis.toc.html#arcgis.gis.GIS" title="arcgis.gis.GIS"><code class="xref py py-class docutils literal notranslate"><span class="pre">GIS</span></code></a> of the Raster object.</p></td>
 </tr>
 </tbody>
 </table>
@@ -5207,7 +5498,7 @@ raster function on the Raster object for slicing the data along defined variable
 
 <dl class="py method">
 <dt id="arcgis.raster.Raster.read">
-<code class="sig-name descname">read</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">upper_left_corner</span><span class="o">=</span><span class="default_value">(0, 0)</span></em>, <em class="sig-param"><span class="n">origin_coordinate</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">ncols</span><span class="o">=</span><span class="default_value">0</span></em>, <em class="sig-param"><span class="n">nrows</span><span class="o">=</span><span class="default_value">0</span></em>, <em class="sig-param"><span class="n">nodata_to_value</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">cell_size</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.raster.Raster.read" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">read</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">upper_left_corner</span><span class="o">=</span><span class="default_value">0, 0</span></em>, <em class="sig-param"><span class="n">origin_coordinate</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">ncols</span><span class="o">=</span><span class="default_value">0</span></em>, <em class="sig-param"><span class="n">nrows</span><span class="o">=</span><span class="default_value">0</span></em>, <em class="sig-param"><span class="n">nodata_to_value</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">cell_size</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.raster.Raster.read" title="Permalink to this definition">¶</a></dt>
 <dd><p>The <code class="docutils literal notranslate"><span class="pre">read</span></code> method reads a numpy array from the calling <a class="reference internal" href="#arcgis.raster.Raster" title="arcgis.raster.Raster"><code class="xref py py-class docutils literal notranslate"><span class="pre">Raster</span></code></a> object.</p>
 <table class="docutils align-default">
 <colgroup>
@@ -5429,7 +5720,18 @@ results will be returned asynchronously. Keyword only parameter.</p>
 <p>(Available only when image_server engine is used)</p>
 </td>
 </tr>
-<tr class="row-even"><td><p>tiles_only</p></td>
+<tr class="row-even"><td><p>folder</p></td>
+<td><p>Optional string or dictionary. Creates a folder in the portal, if it does
+not exist, with the given folder name and persists the output in this folder.
+The dictionary returned by the gis.content.create_folder() can also be passed in as input.</p>
+<p>(Available only when image_server engine is used)</p>
+<dl class="simple">
+<dt>Example:</dt><dd><p>{‘username’: ‘user1’, ‘id’: ‘6a3b77c187514ef7873ba73338cf1af8’, ‘title’: ‘trial’}</p>
+</dd>
+</dl>
+</td>
+</tr>
+<tr class="row-odd"><td><p>tiles_only</p></td>
 <td><p>In ArcGIS Online, the default output image service for this function would be a Tiled Imagery Layer.</p>
 <p>To create Dynamic Imagery Layer as output on ArcGIS Online, set tiles_only parameter to False.</p>
 <p>Function will not honor tiles_only parameter in ArcGIS Enterprise and will generate Dynamic Imagery Layer by default.</p>
@@ -5451,6 +5753,7 @@ results will be returned asynchronously. Keyword only parameter.</p>
 <span class="c1"># Usage Example 2: Saves the raster to the active GIS as an Imagery Layer Item (usecase for image_server engine rasters)</span>
 
 <span class="n">raster2</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="n">output_name</span><span class="o">=</span><span class="s2">&quot;output_imagery_layer_name&quot;</span><span class="p">,</span>
+             <span class="n">folder</span><span class="o">=</span><span class="s2">&quot;my_rasters&quot;</span><span class="p">,</span>
              <span class="n">gis</span><span class="o">=</span><span class="n">gis</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -5886,7 +6189,7 @@ The <code class="docutils literal notranslate"><span class="pre">vmin</span></co
 
 <dl class="py method">
 <dt id="arcgis.raster.Raster.write">
-<code class="sig-name descname">write</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">array</span></em>, <em class="sig-param"><span class="n">upper_left_corner</span><span class="o">=</span><span class="default_value">(0, 0)</span></em>, <em class="sig-param"><span class="n">origin_coordinate</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">value_to_nodata</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.raster.Raster.write" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">write</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">array</span></em>, <em class="sig-param"><span class="n">upper_left_corner</span><span class="o">=</span><span class="default_value">0, 0</span></em>, <em class="sig-param"><span class="n">origin_coordinate</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">value_to_nodata</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.raster.Raster.write" title="Permalink to this definition">¶</a></dt>
 <dd><p>The <code class="docutils literal notranslate"><span class="pre">write</span></code> method writes a numpy array to the calling <a class="reference internal" href="#arcgis.raster.Raster" title="arcgis.raster.Raster"><code class="xref py py-class docutils literal notranslate"><span class="pre">Raster</span></code></a> object.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
@@ -5943,8 +6246,8 @@ be used. Default None</p>
 
 </dd></dl>
 
-</div>
-<div class="section" id="rastercatalogitem">
+</section>
+<section id="rastercatalogitem">
 <h2>RasterCatalogItem<a class="headerlink" href="#rastercatalogitem" title="Permalink to this headline">¶</a></h2>
 <dl class="py class">
 <dt id="arcgis.raster.RasterCatalogItem">
@@ -6085,6 +6388,15 @@ quality are from 0 to 100.</p></td>
 </dd></dl>
 
 <dl class="py method">
+<dt id="arcgis.raster.RasterCatalogItem.image_support_data">
+<em class="property">property </em><code class="sig-name descname">image_support_data</code><a class="headerlink" href="#arcgis.raster.RasterCatalogItem.image_support_data" title="Permalink to this definition">¶</a></dt>
+<dd><p>The <code class="docutils literal notranslate"><span class="pre">image_support_data</span></code> property returns  image support data of
+the NITF based raster catalog item. Specifically, the Image Support
+Data resource returns the NITF file structure and contents in XML
+format to provide more detailed information about a particular NITF file.</p>
+</dd></dl>
+
+<dl class="py method">
 <dt id="arcgis.raster.RasterCatalogItem.info">
 <em class="property">property </em><code class="sig-name descname">info</code><a class="headerlink" href="#arcgis.raster.RasterCatalogItem.info" title="Permalink to this definition">¶</a></dt>
 <dd><p>The <code class="docutils literal notranslate"><span class="pre">info</span></code> property returns information about the associated raster
@@ -6136,6 +6448,19 @@ raster catalog item.</p>
 </dd></dl>
 
 <dl class="py method">
+<dt id="arcgis.raster.RasterCatalogItem.sensor">
+<em class="property">property </em><code class="sig-name descname">sensor</code><a class="headerlink" href="#arcgis.raster.RasterCatalogItem.sensor" title="Permalink to this definition">¶</a></dt>
+<dd><p>The <code class="docutils literal notranslate"><span class="pre">sensor</span></code> property returns information about the sensor.
+Example:
+{</p>
+<blockquote>
+<div><p>“name”: “IdentityXform”,
+“sensor_provider”: “esri”</p>
+</div></blockquote>
+<p>}</p>
+</dd></dl>
+
+<dl class="py method">
 <dt id="arcgis.raster.RasterCatalogItem.thumbnail">
 <em class="property">property </em><code class="sig-name descname">thumbnail</code><a class="headerlink" href="#arcgis.raster.RasterCatalogItem.thumbnail" title="Permalink to this definition">¶</a></dt>
 <dd><p>The <code class="docutils literal notranslate"><span class="pre">thumbnail</span></code> property returns a thumbnail of the current item.</p>
@@ -6148,8 +6473,8 @@ raster catalog item.</p>
 
 </dd></dl>
 
-</div>
-<div class="section" id="rastermanager">
+</section>
+<section id="rastermanager">
 <h2>RasterManager<a class="headerlink" href="#rastermanager" title="Permalink to this headline">¶</a></h2>
 <dl class="py class">
 <dt id="arcgis.raster.RasterManager">
@@ -6499,8 +6824,8 @@ transformations will be applied to the updated dataset.</p></td>
 
 </dd></dl>
 
-</div>
-<div class="section" id="rastercollection">
+</section>
+<section id="rastercollection">
 <h2>RasterCollection<a class="headerlink" href="#rastercollection" title="Permalink to this headline">¶</a></h2>
 <dl class="py class">
 <dt id="arcgis.raster.RasterCollection">
@@ -7120,7 +7445,7 @@ the search needs to be performed.</p>
 used to query a STAC API’s search endpoint. (keys/values would depend
 on the specification of the STAC API in use and the request_method
 parameter value).</p>
-<p>For the “bbox” query parameter, <a class="reference internal" href="arcgis.geometry.html#arcgis.geometry.Envelope" title="arcgis.geometry.Envelope"><code class="xref py py-class docutils literal notranslate"><span class="pre">Envelope</span></code></a>
+<p>For the <cite>bbox</cite> query parameter, <a class="reference internal" href="arcgis.geometry.html#arcgis.geometry.Envelope" title="arcgis.geometry.Envelope"><code class="xref py py-class docutils literal notranslate"><span class="pre">Envelope</span></code></a>
 and <a class="reference internal" href="arcgis.geometry.html#arcgis.geometry.Polygon" title="arcgis.geometry.Polygon"><code class="xref py py-class docutils literal notranslate"><span class="pre">Polygon</span></code></a>
 objects are also accepted (in any spatial reference).</p>
 <dl>
@@ -7958,8 +8283,8 @@ dimension_field_names = [“Time”, “Depth”]).</p>
 
 </dd></dl>
 
-</div>
-<div class="section" id="rasterinfo">
+</section>
+<section id="rasterinfo">
 <h2>RasterInfo<a class="headerlink" href="#rasterinfo" title="Permalink to this headline">¶</a></h2>
 <dl class="py class">
 <dt id="arcgis.raster.RasterInfo">
@@ -8084,8 +8409,8 @@ the y direction.</p>
 
 </dd></dl>
 
-</div>
-<div class="section" id="submodules">
+</section>
+<section id="submodules">
 <h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this headline">¶</a></h2>
 <div class="toctree-wrapper compound">
 <ul>
@@ -8133,6 +8458,8 @@ the y direction.</p>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.raster.analytics.html#analyze-changes-using-landtrendr">analyze_changes_using_landtrendr</a></li>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.raster.analytics.html#zonal-statistics-as-table">zonal_statistics_as_table</a></li>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.raster.analytics.html#compute-change-raster">compute_change_raster</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.raster.analytics.html#train-random-trees-regression-model">train_random_trees_regression_model</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.raster.analytics.html#summarize-categorical-raster">summarize_categorical_raster</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="arcgis.raster.functions.html">arcgis.raster.functions module</a><ul>
@@ -8168,6 +8495,7 @@ the y direction.</p>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.raster.functions.html#boolean-or">boolean_or</a></li>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.raster.functions.html#boolean-xor">boolean_xor</a></li>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.raster.functions.html#buffered">buffered</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.raster.functions.html#ccdc-analysis">ccdc_analysis</a></li>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.raster.functions.html#cire">cire</a></li>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.raster.functions.html#cig">cig</a></li>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.raster.functions.html#classify">classify</a></li>
@@ -8188,6 +8516,7 @@ the y direction.</p>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.raster.functions.html#cosh">cosh</a></li>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.raster.functions.html#curvature">curvature</a></li>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.raster.functions.html#detect-change-using-change-analysis-raster">detect_change_using_change_analysis_raster</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.raster.functions.html#dimensional-moving-statistics">dimensional_moving_statistics</a></li>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.raster.functions.html#divide">divide</a></li>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.raster.functions.html#duration">duration</a></li>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.raster.functions.html#elevation-void-fill">elevation_void_fill</a></li>
@@ -8216,8 +8545,10 @@ the y direction.</p>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.raster.functions.html#identity">identity</a></li>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.raster.functions.html#int">INT</a></li>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.raster.functions.html#interpolate-irregular-data">interpolate_irregular_data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.raster.functions.html#interpolate-raster-by-dimension">interpolate_raster_by_dimension</a></li>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.raster.functions.html#iron-oxide">iron_oxide</a></li>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.raster.functions.html#is-null">is_null</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.raster.functions.html#landtrendr-analysis">landtrendr_analysis</a></li>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.raster.functions.html#less-than">less_than</a></li>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.raster.functions.html#less-than-equal">less_than_equal</a></li>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.raster.functions.html#linear-spectral-unmixing">linear_spectral_unmixing</a></li>
@@ -8238,6 +8569,7 @@ the y direction.</p>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.raster.functions.html#mndwi">mndwi</a></li>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.raster.functions.html#mod">mod</a></li>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.raster.functions.html#monitor-vegetation">monitor_vegetation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.raster.functions.html#mosaic-rasters">mosaic_rasters</a></li>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.raster.functions.html#msavi">msavi</a></li>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.raster.functions.html#mtvi2">mtvi2</a></li>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.raster.functions.html#multidimensional-filter">multidimensional_filter</a></li>
@@ -8252,6 +8584,7 @@ the y direction.</p>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.raster.functions.html#negate">negate</a></li>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.raster.functions.html#not-equal">not_equal</a></li>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.raster.functions.html#pansharpen">pansharpen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.raster.functions.html#percentile">percentile</a></li>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.raster.functions.html#plus">plus</a></li>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.raster.functions.html#power">power</a></li>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.raster.functions.html#predict-using-trend">predict_using_trend</a></li>
@@ -8373,8 +8706,8 @@ the y direction.</p>
 </li>
 </ul>
 </div>
-</div>
-</div>
+</section>
+</section>
 
 
 
@@ -8382,37 +8715,29 @@ the y direction.</p>
            
           </div>
           <footer>
-  
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-      
-        <a href="arcgis.raster.analytics.html" class="btn btn-neutral float-right" title="arcgis.raster.analytics module" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
-      
-      
-        <a href="arcgis.features.use_proximity.html" class="btn btn-neutral float-left" title="arcgis.features.use_proximity module" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
-      
+        <a href="arcgis.raster.analytics.html" class="btn btn-neutral float-right" title="arcgis.raster.analytics module" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="arcgis.features.use_proximity.html" class="btn btn-neutral float-left" title="arcgis.features.use_proximity module" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
     </div>
-  
 
   <hr/>
 
   <div role="contentinfo">
     <p>
-        
-        &copy; Copyright 2016-2021, Esri
+        &#169; Copyright 2016-2022, Esri.
 
     </p>
   </div>
     
     
     
-    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
     
-    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
     
     provided by <a href="https://readthedocs.org">Read the Docs</a>. 
 
 </footer>
-
         </div>
       </div>
 
@@ -8420,12 +8745,12 @@ the y direction.</p>
 
   </div>
   
-    Options v: 1.9.1
+    Options v: 2.0.0
 
   <div class="rst-versions" data-toggle="rst-versions" role="note" aria-label="versions">
     <span class="rst-current-version" data-toggle="rst-current-version">
       <span class="fa fa-book"> Pick an earlier version</span>
-      v: 1.9.1
+      v: 2.0.0
       <span class="fa fa-caret-down"></span>
     </span>
     <div class="rst-other-versions">
@@ -8433,6 +8758,10 @@ the y direction.</p>
       
       <dl>
         <dt>Versions</dt>
+        
+          
+          <dd><a href="1.9.1/">1.9.1</a></dd>
+          
         
           
           <dd><a href="1.9.0/">1.9.0</a></dd>

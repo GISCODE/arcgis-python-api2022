@@ -135,3 +135,17 @@ NotebookFile
     :members:
     :undoc-members:
     :show-inheritance:
+
+NBServicesManager
+-----------------
+.. autoclass:: arcgis.gis.nb._services.NBServicesManager
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
+NBService
+-----------------
+.. autoclass:: arcgis.gis.nb._services.NBService
+    :members:
+    :undoc-members:
+    :show-inheritance:

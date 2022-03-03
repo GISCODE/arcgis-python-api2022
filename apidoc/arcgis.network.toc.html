@@ -3,11 +3,12 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8">
+  <meta charset="utf-8" />
+  <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  
-  <title>arcgis.network module &mdash; arcgis 1.9.1 documentation</title>
+  <title>arcgis.network module &mdash; arcgis 2.0.0 documentation</title>
   
 
   
@@ -19,7 +20,10 @@
   
     <link rel="shortcut icon" href="_static/favicon.ico"/>
   
+
   
+  
+
   
 
   
@@ -33,7 +37,6 @@
         <script src="_static/underscore.js"></script>
         <script src="_static/doctools.js"></script>
         <script src="_static/language_data.js"></script>
-        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     
     <script type="text/javascript" src="_static/js/theme.js"></script>
 
@@ -64,7 +67,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
           
 
           
-            <a href="index.html" class="icon icon-home" alt="Documentation Home"> arcgis
+            <a href="index.html" class="icon icon-home"> arcgis
           
 
           
@@ -77,7 +80,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             
             
               <div class="version">
-                1.9.1
+                2.0.0
               </div>
             
           
@@ -102,7 +105,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
               
             
             
-              <p class="caption"><span class="caption-text">arcgis</span></p>
+              <p><span class="caption-text">arcgis</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="arcgis.gis.toc.html">arcgis.gis module</a></li>
 <li class="toctree-l1"><a class="reference internal" href="arcgis.env.html">arcgis.env module</a></li>
@@ -132,6 +135,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <li class="toctree-l1"><a class="reference internal" href="arcgis.widgets.html">arcgis.widgets module</a></li>
 <li class="toctree-l1"><a class="reference internal" href="arcgis.apps.html">arcgis.apps module</a></li>
 <li class="toctree-l1"><a class="reference internal" href="arcgis.learn.toc.html">arcgis.learn module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.auth.html">arcgis.auth package</a></li>
 </ul>
 
             
@@ -172,6 +176,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
 
 
+
+
 <div role="navigation" aria-label="breadcrumbs navigation">
 
   <ul class="wy-breadcrumbs">
@@ -183,7 +189,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     
       <li class="wy-breadcrumbs-aside">
         
-            
+          
         
       </li>
     
@@ -200,12 +206,12 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NJGGV5"
 height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
-  <div class="section" id="module-arcgis.network">
+  <section id="module-arcgis.network">
 <span id="arcgis-network-module"></span><h1>arcgis.network module<a class="headerlink" href="#module-arcgis.network" title="Permalink to this headline">¶</a></h1>
 <p>The arcgis.network module contains classes and functions for network analysis. Network layers and analysis can be used
 for operations such as finding the closest facility, the best route for a vehicle, the best routes for a fleet of
 vehicles, locating facilities using location allocation, calculating an OD cost matrix, and generating service areas.</p>
-<div class="section" id="networklayer">
+<section id="networklayer">
 <h2>NetworkLayer<a class="headerlink" href="#networklayer" title="Permalink to this headline">¶</a></h2>
 <dl class="py class">
 <dt id="arcgis.network.NetworkLayer">
@@ -225,8 +231,8 @@ network dataset or in the portal if the GIS server is federated</p>
 
 </dd></dl>
 
-</div>
-<div class="section" id="routelayer">
+</section>
+<section id="routelayer">
 <h2>RouteLayer<a class="headerlink" href="#routelayer" title="Permalink to this headline">¶</a></h2>
 <dl class="py class">
 <dt id="arcgis.network.RouteLayer">
@@ -235,15 +241,15 @@ network dataset or in the portal if the GIS server is federated</p>
 as well as some attributes unique to Route Network Layer only.</p>
 <dl class="py method">
 <dt id="arcgis.network.RouteLayer.solve">
-<code class="sig-name descname">solve</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">stops</span></em>, <em class="sig-param"><span class="n">barriers</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">polyline_barriers</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">polygon_barriers</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">travel_mode</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">attribute_parameter_values</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">return_directions</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="n">return_routes</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="n">return_stops</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">return_barriers</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">return_polyline_barriers</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="n">return_polygon_barriers</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="n">out_sr</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">ignore_invalid_locations</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="n">output_lines</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">find_best_sequence</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">preserve_first_stop</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="n">preserve_last_stop</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="n">use_time_windows</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">start_time</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">start_time_is_utc</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">accumulate_attribute_names</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">impedance_attribute_name</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">restriction_attribute_names</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">restrict_u_turns</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">use_hierarchy</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="n">directions_language</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">directions_output_type</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">directions_style_name</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">directions_length_units</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">directions_time_attribute_name</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">output_geometry_precision</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">output_geometry_precision_units</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">return_z</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">overrides</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">preserve_objectid</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">future</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">time_windows_are_utc</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.network.RouteLayer.solve" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">solve</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">stops</span></em>, <em class="sig-param"><span class="n">barriers</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">polyline_barriers</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">polygon_barriers</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">travel_mode</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">attribute_parameter_values</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">return_directions</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="n">return_routes</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="n">return_stops</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">return_barriers</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">return_polyline_barriers</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="n">return_polygon_barriers</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="n">out_sr</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">ignore_invalid_locations</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="n">output_lines</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">find_best_sequence</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">preserve_first_stop</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="n">preserve_last_stop</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="n">use_time_windows</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">start_time</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">start_time_is_utc</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">accumulate_attribute_names</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">impedance_attribute_name</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">restriction_attribute_names</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">restrict_u_turns</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">use_hierarchy</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="n">directions_language</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">directions_output_type</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">directions_style_name</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">directions_length_units</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">directions_time_attribute_name</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">output_geometry_precision</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">output_geometry_precision_units</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">return_z</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">overrides</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">preserve_objectid</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">future</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">time_windows_are_utc</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">return_traversed_edges</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">return_traversed_junctions</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">return_traversed_turns</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">geometry_precision</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">geometry_precision_z</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">geometry_precision_m</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.network.RouteLayer.solve" title="Permalink to this definition">¶</a></dt>
 <dd><p>The solve operation is performed on a network layer resource.
 The solve operation is supported on a network layer whose layerType
 is esriNAServerRouteLayer. You can provide arguments to the solve
 route operation as query parameters.</p>
 <table class="docutils align-default">
 <colgroup>
-<col style="width: 32%" />
-<col style="width: 68%" />
+<col style="width: 16%" />
+<col style="width: 84%" />
 </colgroup>
 <tbody>
 <tr class="row-odd"><td><p><strong>Argument</strong></p></td>
@@ -466,6 +472,24 @@ default is False.</p></td>
 attribute values on stops are specified in coordinated universal time (UTC)
 or geographically local time.</p></td>
 </tr>
+<tr class="row-even"><td><p>return_traversed_edges</p></td>
+<td><p>Optional boolean. Specify whether traversed edges will be returned by the service.</p></td>
+</tr>
+<tr class="row-odd"><td><p>return_traversed_junctions</p></td>
+<td><p>Optional boolean. Specify whether traversed junctions will be returned by the service.</p></td>
+</tr>
+<tr class="row-even"><td><p>return_traversed_turns</p></td>
+<td><p>Optional boolean. Specify whether traversed turns will be returned by the service.</p></td>
+</tr>
+<tr class="row-odd"><td><p>geometry_precision</p></td>
+<td><p>Optional Integer. Use this parameter to specify the number of decimal places in the response geometries returned by solve operation. This applies to x/y values only (not m- or z-values).</p></td>
+</tr>
+<tr class="row-even"><td><p>geometry_precision_z</p></td>
+<td><p>Optional Integer. Use this parameter specify the number of decimal places in the response geometries returned by solve operation. This applies to z-value only.</p></td>
+</tr>
+<tr class="row-odd"><td><p>geometry_precision_m</p></td>
+<td><p>Optional Integer. Use this parameter to specify the number of decimal places in the response geometries returned by solve operation. This applies to m-value only.</p></td>
+</tr>
 </tbody>
 </table>
 <dl class="field-list simple">
@@ -495,8 +519,8 @@ or geographically local time.</p></td>
 
 </dd></dl>
 
-</div>
-<div class="section" id="servicearealayer">
+</section>
+<section id="servicearealayer">
 <h2>ServiceAreaLayer<a class="headerlink" href="#servicearealayer" title="Permalink to this headline">¶</a></h2>
 <dl class="py class">
 <dt id="arcgis.network.ServiceAreaLayer">
@@ -506,7 +530,7 @@ Layer as well as some attributes unique to Service Area Layer
 only.</p>
 <dl class="py method">
 <dt id="arcgis.network.ServiceAreaLayer.solve_service_area">
-<code class="sig-name descname">solve_service_area</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">facilities</span></em>, <em class="sig-param"><span class="n">barriers</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">polyline_barriers</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">polygon_barriers</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">travel_mode</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">attribute_parameter_values</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">default_breaks</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">exclude_sources_from_polygons</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">merge_similar_polygon_ranges</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">output_lines</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">output_polygons</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">overlap_lines</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">overlap_polygons</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">split_lines_at_breaks</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">split_polygons_at_breaks</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">trim_outer_polygon</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">trim_polygon_distance</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">trim_polygon_distance_units</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">return_facilities</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">return_barriers</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">return_polyline_barriers</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">return_polygon_barriers</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">out_sr</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">accumulate_attribute_names</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">impedance_attribute_name</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">restriction_attribute_names</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">restrict_u_turns</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">output_geometry_precision</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">output_geometry_precision_units</span><span class="o">=</span><span class="default_value">'esriUnknownUnits'</span></em>, <em class="sig-param"><span class="n">use_hierarchy</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">time_of_day</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">time_of_day_is_utc</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">travel_direction</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">return_z</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">overrides</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">preserve_objectid</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">future</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">ignore_invalid_locations</span><span class="o">=</span><span class="default_value">True</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.network.ServiceAreaLayer.solve_service_area" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">solve_service_area</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">facilities</span></em>, <em class="sig-param"><span class="n">barriers</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">polyline_barriers</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">polygon_barriers</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">travel_mode</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">attribute_parameter_values</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">default_breaks</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">exclude_sources_from_polygons</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">merge_similar_polygon_ranges</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">output_lines</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">output_polygons</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">overlap_lines</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">overlap_polygons</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">split_lines_at_breaks</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">split_polygons_at_breaks</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">trim_outer_polygon</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">trim_polygon_distance</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">trim_polygon_distance_units</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">return_facilities</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">return_barriers</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">return_polyline_barriers</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">return_polygon_barriers</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">out_sr</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">accumulate_attribute_names</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">impedance_attribute_name</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">restriction_attribute_names</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">restrict_u_turns</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">output_geometry_precision</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">output_geometry_precision_units</span><span class="o">=</span><span class="default_value">'esriUnknownUnits'</span></em>, <em class="sig-param"><span class="n">use_hierarchy</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">time_of_day</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">time_of_day_is_utc</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">travel_direction</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">return_z</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">overrides</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">preserve_objectid</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">future</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">ignore_invalid_locations</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="n">geometry_precision</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">geometry_precision_z</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">geometry_precision_m</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.network.ServiceAreaLayer.solve_service_area" title="Permalink to this definition">¶</a></dt>
 <dd><p>The solve service area operation is performed on a network layer
 resource of type service area (layerType is esriNAServerServiceArea).
 You can provide arguments to the solve service area operation as
@@ -664,13 +688,16 @@ results.</p>
 Default is true.</p>
 </dd>
 </dl>
+<p>geometry_precision - Optional Integer. Use this parameter to specify the number of decimal places in the response geometries returned by solve operation. This applies to x/y values only (not m- or z-values).
+geometry_precision_z - Optional Integer. Use this parameter to specify the number of decimal places in the response geometries returned by solve operation. This applies to z values only.
+geometry_precision_m - Optional Integer. Use this parameter to specify the number of decimal places in the response geometries returned by solve operation. This applies to m values only.</p>
 </div></blockquote>
 </dd></dl>
 
 </dd></dl>
 
-</div>
-<div class="section" id="closestfacilitylayer">
+</section>
+<section id="closestfacilitylayer">
 <h2>ClosestFacilityLayer<a class="headerlink" href="#closestfacilitylayer" title="Permalink to this headline">¶</a></h2>
 <dl class="py class">
 <dt id="arcgis.network.ClosestFacilityLayer">
@@ -680,7 +707,7 @@ Layer as well as some attributes unique to Closest Facility Layer
 only.</p>
 <dl class="py method">
 <dt id="arcgis.network.ClosestFacilityLayer.solve_closest_facility">
-<code class="sig-name descname">solve_closest_facility</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">incidents</span></em>, <em class="sig-param"><span class="n">facilities</span></em>, <em class="sig-param"><span class="n">barriers</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">polyline_barriers</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">polygon_barriers</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">travel_mode</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">attribute_parameter_values</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">return_directions</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">directions_language</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">directions_style_name</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">directions_length_units</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">directions_time_attribute_name</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">return_cf_routes</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="n">return_facilities</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">return_incidents</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">return_barriers</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">return_polyline_barriers</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">return_polygon_barriers</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">output_lines</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">default_cutoff</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">default_target_facility_count</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">travel_direction</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">out_sr</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">accumulate_attribute_names</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">impedance_attribute_name</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">restriction_attribute_names</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">restrict_u_turns</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">use_hierarchy</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="n">output_geometry_precision</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">output_geometry_precision_units</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">time_of_day</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">time_of_day_is_utc</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">time_of_day_usage</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">return_z</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">overrides</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">preserve_objectid</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">future</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">ignore_invalid_locations</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="n">directions_output_type</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.network.ClosestFacilityLayer.solve_closest_facility" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">solve_closest_facility</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">incidents</span></em>, <em class="sig-param"><span class="n">facilities</span></em>, <em class="sig-param"><span class="n">barriers</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">polyline_barriers</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">polygon_barriers</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">travel_mode</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">attribute_parameter_values</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">return_directions</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">directions_language</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">directions_style_name</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">directions_length_units</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">directions_time_attribute_name</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">return_cf_routes</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="n">return_facilities</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">return_incidents</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">return_barriers</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">return_polyline_barriers</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">return_polygon_barriers</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">output_lines</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">default_cutoff</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">default_target_facility_count</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">travel_direction</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">out_sr</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">accumulate_attribute_names</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">impedance_attribute_name</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">restriction_attribute_names</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">restrict_u_turns</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">use_hierarchy</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="n">output_geometry_precision</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">output_geometry_precision_units</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">time_of_day</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">time_of_day_is_utc</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">time_of_day_usage</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">return_z</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">overrides</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">preserve_objectid</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">future</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">ignore_invalid_locations</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="n">directions_output_type</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">return_traversed_edges</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">return_traversed_junctions</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">return_traversed_turns</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">geometry_precision</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">geometry_precision_z</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">geometry_precision_m</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.network.ClosestFacilityLayer.solve_closest_facility" title="Permalink to this definition">¶</a></dt>
 <dd><p>The solve operation is performed on a network layer resource of
 type closest facility (layerType is esriNAServerClosestFacilityLayer).
 You can provide arguments to the solve route operation as query
@@ -847,13 +874,19 @@ results.</p>
 Default is true.</p>
 </dd>
 </dl>
+<p>return_traversed_edges - Optional boolean. Specify whether traversed edges will be returned by the service.
+return_traversed_junctions - Optional boolean. Specify whether traversed junctions will be returned by the service.
+return_traversed_turns - Optional boolean. Specify whether traversed turns will be returned by the service.
+geometry_precision - Optional Integer. Use this parameter to specify the number of decimal places in the response geometries returned by solve operation. This applies to x/y values only (not m- or z-values).
+geometry_precision_z - Optional Integer. Use this parameter specify the number of decimal places in the response geometries returned by solve operation. This applies to z-value only.
+geometry_precision_m - Optional Integer. Use this parameter to specify the number of decimal places in the response geometries returned by solve operation. This applies to m-value only.</p>
 </div></blockquote>
 </dd></dl>
 
 </dd></dl>
 
-</div>
-<div class="section" id="networkdataset">
+</section>
+<section id="networkdataset">
 <h2>NetworkDataset<a class="headerlink" href="#networkdataset" title="Permalink to this headline">¶</a></h2>
 <dl class="py class">
 <dt id="arcgis.network.NetworkDataset">
@@ -897,8 +930,8 @@ service area layers and closest facility layers.</p>
 
 </dd></dl>
 
-</div>
-<div class="section" id="odcostmatrixlayer">
+</section>
+<section id="odcostmatrixlayer">
 <h2>ODCostMatrixLayer<a class="headerlink" href="#odcostmatrixlayer" title="Permalink to this headline">¶</a></h2>
 <dl class="py class">
 <dt id="arcgis.network.ODCostMatrixLayer">
@@ -919,7 +952,7 @@ network dataset or in the portal if the GIS server is federated</p>
 
 <dl class="py method">
 <dt id="arcgis.network.ODCostMatrixLayer.solve_od_cost_matrix">
-<code class="sig-name descname">solve_od_cost_matrix</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">origins</span></em>, <em class="sig-param"><span class="n">destinations</span></em>, <em class="sig-param"><span class="n">default_cutoff</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">default_target_destination_count</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">travel_mode</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">output_type</span><span class="o">=</span><span class="default_value">'Sparse Matrix'</span></em>, <em class="sig-param"><span class="n">time_of_day</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">time_of_day_is_utc</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">barriers</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">polyline_barriers</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">polygon_barriers</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">impedance_attribute_name</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">accumulate_attribute_names</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">restriction_attribute_names</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">attribute_parameter_values</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">restrict_u_turns</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">use_hierarchy</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="n">return_origins</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">return_destinations</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">return_barriers</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">return_polyline_barriers</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">return_polygon_barriers</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">out_sr</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">ignore_invalid_locations</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="n">return_z</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">overrides</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">future</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.network.ODCostMatrixLayer.solve_od_cost_matrix" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">solve_od_cost_matrix</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">origins</span></em>, <em class="sig-param"><span class="n">destinations</span></em>, <em class="sig-param"><span class="n">default_cutoff</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">default_target_destination_count</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">travel_mode</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">output_type</span><span class="o">=</span><span class="default_value">'Sparse Matrix'</span></em>, <em class="sig-param"><span class="n">time_of_day</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">time_of_day_is_utc</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">barriers</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">polyline_barriers</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">polygon_barriers</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">impedance_attribute_name</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">accumulate_attribute_names</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">restriction_attribute_names</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">attribute_parameter_values</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">restrict_u_turns</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">use_hierarchy</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="n">return_origins</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">return_destinations</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">return_barriers</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">return_polyline_barriers</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">return_polygon_barriers</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">out_sr</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">ignore_invalid_locations</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="n">return_z</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">overrides</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">future</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">geometry_precision</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">geometry_precision_z</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.network.ODCostMatrixLayer.solve_od_cost_matrix" title="Permalink to this definition">¶</a></dt>
 <dd><p>The Origin Destination Cost Matrix service helps you to create an
 origin-destination (OD) cost matrix from multiple origins to
 multiple destinations. An Origin Destination Cost Matrix is a table
@@ -942,8 +975,8 @@ travel time and/or travel distance based on the street network, not
 based on Euclidean distance.</p>
 <table class="docutils align-default">
 <colgroup>
-<col style="width: 22%" />
-<col style="width: 78%" />
+<col style="width: 16%" />
+<col style="width: 84%" />
 </colgroup>
 <tbody>
 <tr class="row-odd"><td><p><strong>Argument</strong></p></td>
@@ -1059,6 +1092,12 @@ ignored when finding the best solution. The default is True.</p></td>
 <tr class="row-even"><td><p>future</p></td>
 <td><p>Optional boolean. If True, the result will be a <cite>SolveJob</cite> object and results will be returned asynchronously.</p></td>
 </tr>
+<tr class="row-odd"><td><p>geometry_precision</p></td>
+<td><p>Optional Integer. Use this parameter to specify the number of decimal places in the response geometries returned by solve operation. This applies to x/y values only (not m- or z-values).</p></td>
+</tr>
+<tr class="row-even"><td><p>geometry_precision_z</p></td>
+<td><p>Optional Integer. Use this parameter specify the number of decimal places in the response geometries returned by solve operation. This applies to z-value only.</p></td>
+</tr>
 </tbody>
 </table>
 <dl class="field-list simple">
@@ -1070,8 +1109,8 @@ ignored when finding the best solution. The default is True.</p></td>
 
 </dd></dl>
 
-</div>
-<div class="section" id="submodules">
+</section>
+<section id="submodules">
 <h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this headline">¶</a></h2>
 <div class="toctree-wrapper compound">
 <ul>
@@ -1088,8 +1127,8 @@ ignored when finding the best solution. The default is True.</p></td>
 </li>
 </ul>
 </div>
-</div>
-</div>
+</section>
+</section>
 
 
 
@@ -1097,37 +1136,29 @@ ignored when finding the best solution. The default is True.</p></td>
            
           </div>
           <footer>
-  
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-      
-        <a href="arcgis.network.analysis.html" class="btn btn-neutral float-right" title="arcgis.network.analysis module" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
-      
-      
-        <a href="arcgis.raster.utils.html" class="btn btn-neutral float-left" title="arcgis.raster.utils module" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
-      
+        <a href="arcgis.network.analysis.html" class="btn btn-neutral float-right" title="arcgis.network.analysis module" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="arcgis.raster.utils.html" class="btn btn-neutral float-left" title="arcgis.raster.utils module" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
     </div>
-  
 
   <hr/>
 
   <div role="contentinfo">
     <p>
-        
-        &copy; Copyright 2016-2021, Esri
+        &#169; Copyright 2016-2022, Esri.
 
     </p>
   </div>
     
     
     
-    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
     
-    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
     
     provided by <a href="https://readthedocs.org">Read the Docs</a>. 
 
 </footer>
-
         </div>
       </div>
 
@@ -1135,12 +1166,12 @@ ignored when finding the best solution. The default is True.</p></td>
 
   </div>
   
-    Options v: 1.9.1
+    Options v: 2.0.0
 
   <div class="rst-versions" data-toggle="rst-versions" role="note" aria-label="versions">
     <span class="rst-current-version" data-toggle="rst-current-version">
       <span class="fa fa-book"> Pick an earlier version</span>
-      v: 1.9.1
+      v: 2.0.0
       <span class="fa fa-caret-down"></span>
     </span>
     <div class="rst-other-versions">
@@ -1148,6 +1179,10 @@ ignored when finding the best solution. The default is True.</p></td>
       
       <dl>
         <dt>Versions</dt>
+        
+          
+          <dd><a href="1.9.1/">1.9.1</a></dd>
+          
         
           
           <dd><a href="1.9.0/">1.9.0</a></dd>
