@@ -26,8 +26,32 @@ RasterData
     :members:
     :undoc-members:
 
+GPService
+--------------
+.. autoclass:: arcgis.geoprocessing.GPService
+    :members:
+    :undoc-members:
+
+GPTask
+--------------
+.. autoclass:: arcgis.geoprocessing.GPTask
+    :members:
+    :undoc-members:
+
+GPInfo
+--------------
+.. autoclass:: arcgis.geoprocessing.GPInfo
+    :members:
+    :undoc-members:
+	
 GPJob
 --------------
 .. autoclass:: arcgis.geoprocessing.GPJob
+    :members:
+    :undoc-members:
+    
+Toolbox
+------------- 
+.. autoclass:: arcgis.geoprocessing._tool.Toolbox
     :members:
     :undoc-members:

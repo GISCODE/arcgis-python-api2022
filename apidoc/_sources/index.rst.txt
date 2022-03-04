@@ -28,6 +28,7 @@ Contents:
    arcgis.widgets
    arcgis.apps
    arcgis.learn.toc
+   arcgis.auth
 
 Indices and tables
 ==================

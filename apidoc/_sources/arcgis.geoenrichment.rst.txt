@@ -26,7 +26,7 @@ enrich
 
 
 standard_geography_query
----------------
+------------------------
 .. autofunction:: arcgis.geoenrichment.standard_geography_query
 
 service_limits

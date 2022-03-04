@@ -3,11 +3,12 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8">
+  <meta charset="utf-8" />
+  <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  
-  <title>arcgis.gis module &mdash; arcgis 1.9.1 documentation</title>
+  <title>arcgis.gis module &mdash; arcgis 2.0.0 documentation</title>
   
 
   
@@ -19,7 +20,10 @@
   
     <link rel="shortcut icon" href="_static/favicon.ico"/>
   
+
   
+  
+
   
 
   
@@ -33,7 +37,6 @@
         <script src="_static/underscore.js"></script>
         <script src="_static/doctools.js"></script>
         <script src="_static/language_data.js"></script>
-        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     
     <script type="text/javascript" src="_static/js/theme.js"></script>
 
@@ -64,7 +67,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
           
 
           
-            <a href="index.html" class="icon icon-home" alt="Documentation Home"> arcgis
+            <a href="index.html" class="icon icon-home"> arcgis
           
 
           
@@ -77,7 +80,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             
             
               <div class="version">
-                1.9.1
+                2.0.0
               </div>
             
           
@@ -102,7 +105,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
               
             
             
-              <p class="caption"><span class="caption-text">arcgis</span></p>
+              <p><span class="caption-text">arcgis</span></p>
 <ul class="current">
 <li class="toctree-l1 current"><a class="current reference internal" href="#">arcgis.gis module</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#gis">GIS</a></li>
@@ -130,6 +133,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <li class="toctree-l2"><a class="reference internal" href="#submodules">Submodules</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="arcgis.gis.admin.html">arcgis.gis.admin module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="arcgis.gis.server.html">arcgis.gis.server module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="arcgis.gis.agoserver.html">arcgis.gis.agoserver module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="arcgis.gis.mission.html">arcgis.gis.mission module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="arcgis.gis.nb.html">arcgis.gis.nb module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="arcgis.gis.workflowmanager.html">arcgis.gis.workflowmanager module</a></li>
@@ -153,6 +157,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <li class="toctree-l1"><a class="reference internal" href="arcgis.widgets.html">arcgis.widgets module</a></li>
 <li class="toctree-l1"><a class="reference internal" href="arcgis.apps.html">arcgis.apps module</a></li>
 <li class="toctree-l1"><a class="reference internal" href="arcgis.learn.toc.html">arcgis.learn module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.auth.html">arcgis.auth package</a></li>
 </ul>
 
             
@@ -193,6 +198,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
 
 
+
+
 <div role="navigation" aria-label="breadcrumbs navigation">
 
   <ul class="wy-breadcrumbs">
@@ -204,7 +211,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     
       <li class="wy-breadcrumbs-aside">
         
-            
+          
         
       </li>
     
@@ -221,14 +228,14 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NJGGV5"
 height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
-  <div class="section" id="module-arcgis.gis">
+  <section id="module-arcgis.gis">
 <span id="arcgis-gis-module"></span><h1>arcgis.gis module<a class="headerlink" href="#module-arcgis.gis" title="Permalink to this headline">¶</a></h1>
 <p>The <strong>gis</strong> module provides an information model for GIS hosted
 within ArcGIS Online or ArcGIS Enterprise, serving as an entry point to the GIS.
 This module, the most important in the ArcGIS API for Python, provides functionality to manage
 (create, read, update and delete) GIS users, groups and content. The module allows for access to the GIS services using
 Python and is an invaluable tool in the API.</p>
-<div class="section" id="gis">
+<section id="gis">
 <h2>GIS<a class="headerlink" href="#gis" title="Permalink to this headline">¶</a></h2>
 <dl class="py class">
 <dt id="arcgis.gis.GIS">
@@ -341,25 +348,30 @@ access in the network where the script is run.</p>
 <p>ex: 127.0.0.1</p>
 </td>
 </tr>
-<tr class="row-odd"><td><p>proxy_port</p></td>
+<tr class="row-odd"><td><p>use_gen_token</p></td>
+<td><p>Optional Boolean. The default is <cite>False</cite>. For older
+Enterprises, the BUILT-IN users can specify using the
+generateToken end point for creating the token.</p></td>
+</tr>
+<tr class="row-even"><td><p>proxy_port</p></td>
 <td><p>Optional integer. The proxy host port.  The default is 80.</p></td>
 </tr>
-<tr class="row-even"><td><p>token</p></td>
+<tr class="row-odd"><td><p>token</p></td>
 <td><p>Optional string. This is the Enterprise token for built-in
 logins. This parameter is only honored if the username/password
 is None and the security for the site uses BUILT-IN security.</p></td>
 </tr>
-<tr class="row-odd"><td><p>api_key</p></td>
+<tr class="row-even"><td><p>api_key</p></td>
 <td><p>Optional string.  This is a key generated by the developer site
 to allow for a limited subset of the REST API functionality.</p></td>
 </tr>
-<tr class="row-even"><td><p>trust_env</p></td>
+<tr class="row-odd"><td><p>trust_env</p></td>
 <td><p>Optional Boolean. Trust environment settings for proxy
 configuration, default authentication and similar. If <cite>False</cite>
 the GIS class will ignore the <cite>netrc</cite> files defined on the
 system.</p></td>
 </tr>
-<tr class="row-odd"><td><p>proxy</p></td>
+<tr class="row-even"><td><p>proxy</p></td>
 <td><p>Optional Dictionary.  If you need to use a proxy, you can
 configure individual requests with the proxy argument to any
 request method.  See <code class="docutils literal notranslate"><span class="pre">`Usage</span> <span class="pre">Exmaple</span> <span class="pre">9:</span> <span class="pre">Using</span> <span class="pre">a</span> <span class="pre">Proxy`</span></code> for
@@ -370,11 +382,16 @@ example usage.</p>
 </dl>
 <dl class="simple">
 <dt>{</dt><dd><p>“http” : “<a class="reference external" href="http://10.343.10.22:111">http://10.343.10.22:111</a>”,
-“https” : “<a class="reference external" href="https://127.343.13.22:6443">https://127.343.13.22:6443</a>”,</p>
+“https” : “<a class="reference external" href="https://127.343.13.22:6443">https://127.343.13.22:6443</a>”</p>
 </dd>
 </dl>
 <p>}</p>
 </td>
+</tr>
+<tr class="row-odd"><td><p>expiration</p></td>
+<td><p>Optional Integer.  The default is 60 minutes.  The expiration
+time for a given token.  This is used for user provided tokens
+and API Keys.</p></td>
 </tr>
 </tbody>
 </table>
@@ -475,6 +492,17 @@ See <a class="reference internal" href="#arcgis.gis._impl._datastores.PortalData
 <em class="property">property </em><code class="sig-name descname">groups</code><a class="headerlink" href="#arcgis.gis.GIS.groups" title="Permalink to this definition">¶</a></dt>
 <dd><p>The <code class="docutils literal notranslate"><span class="pre">groups</span></code> property is resource manager for GIS groups. See <a class="reference internal" href="#arcgis.gis.GroupManager" title="arcgis.gis.GroupManager"><code class="xref py py-class docutils literal notranslate"><span class="pre">GroupManager</span></code></a> for more
 information.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.gis.GIS.hosting_servers">
+<em class="property">property </em><code class="sig-name descname">hosting_servers</code><a class="headerlink" href="#arcgis.gis.GIS.hosting_servers" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the hosting servers for the GIS</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>list</p>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="py method">
@@ -733,8 +761,8 @@ information.</p>
 
 </dd></dl>
 
-</div>
-<div class="section" id="item">
+</section>
+<section id="item">
 <h2>Item<a class="headerlink" href="#item" title="Permalink to this headline">¶</a></h2>
 <dl class="py class">
 <dt id="arcgis.gis.Item">
@@ -1033,7 +1061,7 @@ Sharing access of the original item is not preserved and sharing access of new i
 Lastly, relationships and dependencies of the original item are not maintained in the new item.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>This method is only available on ArcGIS Online</p>
+<p>This method is only available on ArcGIS Online or ArcGIS Enterprise 10.9 or higher</p>
 </div>
 <table class="docutils align-default">
 <colgroup>
@@ -1287,9 +1315,12 @@ for more information on this parameter.</p></td>
 <dl class="py method">
 <dt id="arcgis.gis.Item.dependent_upon">
 <code class="sig-name descname">dependent_upon</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.Item.dependent_upon" title="Permalink to this definition">¶</a></dt>
-<dd><p>The <code class="docutils literal notranslate"><span class="pre">dependent_upon</span></code> method returns items, urls, etc that this item is dependent on.
-This capability (item dependencies) is not yet available on ArcGIS Online - Currently, it is available only
+<dd><p>The <code class="docutils literal notranslate"><span class="pre">dependent_upon</span></code> method returns items, urls, etc that this item is dependent on.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This capability (item dependencies) is not yet available on ArcGIS Online - Currently, it is available only
 with an ArcGIS Enterprise.</p>
+</div>
 </dd></dl>
 
 <dl class="py method">
@@ -1380,7 +1411,7 @@ the specified item id. Items with metadata have ‘Metadata’ in their typeKeyw
 
 <dl class="py method">
 <dt id="arcgis.gis.Item.export">
-<code class="sig-name descname">export</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">title</span></em>, <em class="sig-param"><span class="n">export_format</span></em>, <em class="sig-param"><span class="n">parameters</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">wait</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="n">enforce_fld_vis</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">tags</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">snippet</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">overwrite</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.Item.export" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">export</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">title</span></em>, <em class="sig-param"><span class="n">export_format</span></em>, <em class="sig-param"><span class="n">parameters</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">wait</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="n">enforce_fld_vis</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">tags</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">snippet</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.Item.export" title="Permalink to this definition">¶</a></dt>
 <dd><p>The <code class="docutils literal notranslate"><span class="pre">export</span></code> method is used to export a service item to the specified export format.
 However, it is available only to users with an organizational subscription and can only be invoked by the
 service item owner or an administrator, unless a Location Tracking Service or Location Tracking View is used.
@@ -1429,10 +1460,6 @@ columns will be exported.</p></td>
 </tr>
 <tr class="row-even"><td><p>snippet</p></td>
 <td><p>Optional String. A short descriptive piece of text.</p></td>
-</tr>
-<tr class="row-odd"><td><p>overwrite</p></td>
-<td><p>Optional Boolean. If the export Item exists, the item will be
-replaced with the new one.</p></td>
 </tr>
 </tbody>
 </table>
@@ -1668,11 +1695,12 @@ in the ArcGIS REST API for details.</p></td>
 Only available in ArcGIS Enterprise 10.5+ and ArcGIS Online.</p></td>
 </tr>
 <tr class="row-even"><td><p>file_type</p></td>
-<td><p>Optional string.  Some formats are not automatically detected, when this occurs, the
-file_type can be specified: serviceDefinition,shapefile,csv,
-tilePackage, featureService, featureCollection, fileGeodatabase,
-geojson, scenepackage, vectortilepackage, imageCollection,
-mapService, and sqliteGeodatabase are valid entries. This is an
+<td><p>Optional string.  Some formats are not automatically detected,
+when this occurs, the file_type can be specified:
+serviceDefinition, shapefile, csv, excel, tilePackage,
+featureService, featureCollection, fileGeodatabase, geojson,
+scenepackage, vectortilepackage, imageCollection, mapService,
+and sqliteGeodatabase are valid entries. This is an
 optional parameter.</p></td>
 </tr>
 <tr class="row-odd"><td><p>build_initial_cache</p></td>
@@ -2123,7 +2151,8 @@ item’s description, then only provide the description argument in item_propert
 <td><p>Required dictionary. See table below for the keys and values.</p></td>
 </tr>
 <tr class="row-odd"><td><p>data</p></td>
-<td><p>Optional string. Either a path or URL to the data.</p></td>
+<td><p>Optional string, io.StringIO, or io.BytesIO. Either a path or URL to
+the data or an instance of <cite>StringIO</cite> or <cite>BytesIO</cite> objects.</p></td>
 </tr>
 <tr class="row-even"><td><p>thumbnail</p></td>
 <td><p>Optional string. Either a path or URL to a thumbnail image.</p></td>
@@ -2299,8 +2328,8 @@ as a dictionary when False</p></td>
 
 </dd></dl>
 
-</div>
-<div class="section" id="user">
+</section>
+<section id="user">
 <h2>User<a class="headerlink" href="#user" title="Permalink to this headline">¶</a></h2>
 <dl class="py class">
 <dt id="arcgis.gis.User">
@@ -2601,6 +2630,33 @@ access a given individual’s organization.</p></td>
 </dd></dl>
 
 <dl class="py method">
+<dt id="arcgis.gis.User.expire_password">
+<code class="sig-name descname">expire_password</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">temporary_password</span><span class="p">:</span> <span class="n">Optional<span class="p">[</span>str<span class="p">]</span></span> <span class="o">=</span> <span class="default_value">None</span></em><span class="sig-paren">)</span> &#x2192; bool<a class="headerlink" href="#arcgis.gis.User.expire_password" title="Permalink to this definition">¶</a></dt>
+<dd><p>Expires the current user’s Password.</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 27%" />
+<col style="width: 73%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>Argument</strong></p></td>
+<td><p><strong>Description</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>temporary_password</p></td>
+<td><p>Optional String. Allows the administrator to set a new
+temporary password for a given user. This is available on
+ArcGIS Enterprise Only.</p></td>
+</tr>
+</tbody>
+</table>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>Boolean</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
 <dt id="arcgis.gis.User.folders">
 <em class="property">property </em><code class="sig-name descname">folders</code><a class="headerlink" href="#arcgis.gis.User.folders" title="Permalink to this definition">¶</a></dt>
 <dd><p>The <code class="docutils literal notranslate"><span class="pre">folders</span></code> property, when called, retrieves the list of the user’s folders.</p>
@@ -2759,6 +2815,39 @@ to get a list of items in.</p></td>
     <span class="n">items</span> <span class="o">=</span> <span class="n">user</span><span class="o">.</span><span class="n">items</span><span class="p">(</span><span class="n">folder</span><span class="o">=</span><span class="n">folder</span><span class="p">[</span><span class="s2">&quot;title&quot;</span><span class="p">])</span>
     <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">items</span><span class="p">:</span>
         <span class="nb">print</span><span class="p">(</span><span class="n">item</span><span class="p">,</span> <span class="n">folder</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.gis.User.landing_page">
+<em class="property">property </em><code class="sig-name descname">landing_page</code><a class="headerlink" href="#arcgis.gis.User.landing_page" title="Permalink to this definition">¶</a></dt>
+<dd><p>Gets or sets the User’s login page,</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 22%" />
+<col style="width: 78%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>Argument</strong></p></td>
+<td><p><strong>Description</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>value</p></td>
+<td><p>Required string. The values are <cite>home</cite>, <cite>gallery</cite>, <cite>map</cite>,
+<cite>scene</cite>, <cite>groups</cite>, <cite>content</cite>, or <cite>organization</cite></p></td>
+</tr>
+</tbody>
+</table>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Usage example: Setting login page</span>
+
+<span class="o">&gt;&gt;&gt;</span> <span class="n">user1</span> <span class="o">=</span> <span class="n">gis</span><span class="o">.</span><span class="n">users</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;org_data_viewer&quot;</span><span class="p">)</span>
+
+<span class="o">&gt;&gt;&gt;</span> <span class="n">user1</span><span class="o">.</span><span class="n">landing_page</span> <span class="o">=</span> <span class="s2">&quot;map&quot;</span>
 </pre></div>
 </div>
 </dd></dl>
@@ -3233,6 +3322,31 @@ or a custom role object (from gis.users.roles).</p></td>
 </dd></dl>
 
 <dl class="py method">
+<dt id="arcgis.gis.User.user_settings">
+<em class="property">property </em><code class="sig-name descname">user_settings</code><a class="headerlink" href="#arcgis.gis.User.user_settings" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get/set the current user’s settings that are defined in the user profile.</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 21%" />
+<col style="width: 79%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>Argument</strong></p></td>
+<td><p><strong>Description</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>value</p></td>
+<td><p>Required dict. The <cite>landingPage</cite> and <cite>appLauncher</cite> settings.</p></td>
+</tr>
+</tbody>
+</table>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>dict</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
 <dt id="arcgis.gis.User.user_types">
 <code class="sig-name descname">user_types</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.User.user_types" title="Permalink to this definition">¶</a></dt>
 <dd><p>The <code class="docutils literal notranslate"><span class="pre">user_types</span></code> method is used to retrieve the user type and any assigned applications of the user.</p>
@@ -3244,8 +3358,8 @@ or a custom role object (from gis.users.roles).</p></td>
 
 </dd></dl>
 
-</div>
-<div class="section" id="group">
+</section>
+<section id="group">
 <h2>Group<a class="headerlink" href="#group" title="Permalink to this headline">¶</a></h2>
 <dl class="py class">
 <dt id="arcgis.gis.Group">
@@ -3289,6 +3403,32 @@ The list of usernames or single username to be added.</p></td>
 
 <span class="o">&gt;&gt;&gt;</span> <span class="n">group</span><span class="o">.</span><span class="n">add_users</span><span class="p">(</span><span class="n">usernames</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;User1234&quot;</span><span class="p">,</span><span class="s2">&quot;User5678&quot;</span><span class="p">],</span> <span class="n">admin</span><span class="o">=</span><span class="s2">&quot;Admin9012&quot;</span><span class="p">)</span>
 </pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.gis.Group.application">
+<code class="sig-name descname">application</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">user</span><span class="p">:</span> <span class="n">str</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.Group.application" title="Permalink to this definition">¶</a></dt>
+<dd><p>The <code class="docutils literal notranslate"><span class="pre">application</span></code> method retrieves one group application for the given group.</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 67%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>Argument</strong></p></td>
+<td><p><strong>Description</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>user</p></td>
+<td><p>Required String. The username of
+the user applying to join the group.</p></td>
+</tr>
+</tbody>
+</table>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">application</span></code> method is available to administrators of the group or administrators of an organization
+if the group is part of one.</p>
 </div>
 </dd></dl>
 
@@ -3703,19 +3843,20 @@ Values: True (protect group) | False (unprotect)</p></td>
 
 <dl class="py method">
 <dt id="arcgis.gis.Group.remove_users">
-<code class="sig-name descname">remove_users</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">usernames</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.Group.remove_users" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">remove_users</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">usernames</span><span class="p">:</span> <span class="n">list<span class="p">[</span>str<span class="p">]</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.Group.remove_users" title="Permalink to this definition">¶</a></dt>
 <dd><p>The <code class="docutils literal notranslate"><span class="pre">remove_users</span></code> method is used to remove users from this group.</p>
 <table class="docutils align-default">
 <colgroup>
-<col style="width: 20%" />
-<col style="width: 80%" />
+<col style="width: 22%" />
+<col style="width: 78%" />
 </colgroup>
 <tbody>
 <tr class="row-odd"><td><p><strong>Argument</strong></p></td>
 <td><p><strong>Description</strong></p></td>
 </tr>
 <tr class="row-even"><td><p>usernames</p></td>
-<td><p>Required string.  A comma-separated list of users to be removed.</p></td>
+<td><p>Required list of strings.
+A comma-separated list of users to be removed.</p></td>
 </tr>
 </tbody>
 </table>
@@ -3893,7 +4034,7 @@ is False.</p></td>
 
 <dl class="py method">
 <dt id="arcgis.gis.Group.update_users_roles">
-<code class="sig-name descname">update_users_roles</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">managers</span><span class="p">:</span> <span class="n">list</span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="n">users</span><span class="p">:</span> <span class="n">list</span> <span class="o">=</span> <span class="default_value">None</span></em><span class="sig-paren">)</span> &#x2192; list<a class="headerlink" href="#arcgis.gis.Group.update_users_roles" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">update_users_roles</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">managers</span><span class="p">:</span> <span class="n">Optional<span class="p">[</span>list<span class="p">]</span></span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="n">users</span><span class="p">:</span> <span class="n">Optional<span class="p">[</span>list<span class="p">]</span></span> <span class="o">=</span> <span class="default_value">None</span></em><span class="sig-paren">)</span> &#x2192; list<a class="headerlink" href="#arcgis.gis.Group.update_users_roles" title="Permalink to this definition">¶</a></dt>
 <dd><p>The <code class="docutils literal notranslate"><span class="pre">update_users_roles</span></code> upgrades a set of users to become either Group Members or Group Managers.</p>
 <table class="docutils align-default">
 <colgroup>
@@ -3936,8 +4077,8 @@ is False.</p></td>
 
 </dd></dl>
 
-</div>
-<div class="section" id="datastore">
+</section>
+<section id="datastore">
 <h2>Datastore<a class="headerlink" href="#datastore" title="Permalink to this headline">¶</a></h2>
 <dl class="py class">
 <dt id="arcgis.gis.Datastore">
@@ -4038,8 +4179,8 @@ connection string (for databases) is accessible to every server node in the site
 
 </dd></dl>
 
-</div>
-<div class="section" id="role">
+</section>
+<section id="role">
 <h2>Role<a class="headerlink" href="#role" title="Permalink to this headline">¶</a></h2>
 <dl class="py class">
 <dt id="arcgis.gis.Role">
@@ -4192,8 +4333,8 @@ connection string (for databases) is accessible to every server node in the site
 
 </dd></dl>
 
-</div>
-<div class="section" id="layer">
+</section>
+<section id="layer">
 <h2>Layer<a class="headerlink" href="#layer" title="Permalink to this headline">¶</a></h2>
 <dl class="py class">
 <dt id="arcgis.gis.Layer">
@@ -4240,8 +4381,8 @@ the GIS.</p>
 
 </dd></dl>
 
-</div>
-<div class="section" id="groupapplication">
+</section>
+<section id="groupapplication">
 <h2>GroupApplication<a class="headerlink" href="#groupapplication" title="Permalink to this headline">¶</a></h2>
 <dl class="py class">
 <dt id="arcgis.gis.GroupApplication">
@@ -4280,21 +4421,21 @@ rather than accepts the application to join a group.</p>
 <dl class="py method">
 <dt id="arcgis.gis.GroupApplication.decline">
 <code class="sig-name descname">decline</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.GroupApplication.decline" title="Permalink to this definition">¶</a></dt>
-<dd><p>The <code class="docutils literal notranslate"><span class="pre">accept</span></code> method is used to manage a <a class="reference internal" href="#arcgis.gis.User" title="arcgis.gis.User"><code class="xref py py-class docutils literal notranslate"><span class="pre">User</span></code></a> application. When a
-<a class="reference internal" href="#arcgis.gis.User" title="arcgis.gis.User"><code class="xref py py-class docutils literal notranslate"><span class="pre">User</span></code></a> to join a <a class="reference internal" href="#arcgis.gis.Group" title="arcgis.gis.Group"><code class="xref py py-class docutils literal notranslate"><span class="pre">Group</span></code></a>, a
-<code class="docutils literal notranslate"><span class="pre">GroupApplication</span></code> object is created. Group administrators choose to delete this application
-using the <code class="docutils literal notranslate"><span class="pre">delete</span></code> operation. This operation deletes the application and creates a notification for the user
+<dd><p>The <code class="docutils literal notranslate"><span class="pre">decline</span></code> method is used to manage a <a class="reference internal" href="#arcgis.gis.User" title="arcgis.gis.User"><code class="xref py py-class docutils literal notranslate"><span class="pre">User</span></code></a> application. When a
+<a class="reference internal" href="#arcgis.gis.User" title="arcgis.gis.User"><code class="xref py py-class docutils literal notranslate"><span class="pre">User</span></code></a> asks to join a <a class="reference internal" href="#arcgis.gis.Group" title="arcgis.gis.Group"><code class="xref py py-class docutils literal notranslate"><span class="pre">Group</span></code></a>, a
+<code class="docutils literal notranslate"><span class="pre">GroupApplication</span></code> object is created. Group administrators choose to decline this application
+using the <code class="docutils literal notranslate"><span class="pre">decline</span></code> operation. This operation deletes the application and creates a notification for the user
 indicating that the user’s group application was declined. This method is very similar to the
 <a class="reference internal" href="#arcgis.gis.GroupApplication.accept" title="arcgis.gis.GroupApplication.accept"><code class="xref py py-attr docutils literal notranslate"><span class="pre">accept</span></code></a> method, which accepts rather than declines the application to
 join a group.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>The <code class="docutils literal notranslate"><span class="pre">delete</span></code> method is only available to group owners and administrators.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">decline</span></code> method is only available to group owners and administrators.</p>
 </div>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Usage Example</span>
 
 <span class="o">&gt;&gt;&gt;</span> <span class="n">group_app</span> <span class="o">=</span> <span class="n">group</span><span class="o">.</span><span class="n">applications</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">groupapplication</span><span class="o">.</span><span class="n">delete</span><span class="p">()</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">groupapplication</span><span class="o">.</span><span class="n">decline</span><span class="p">()</span>
 </pre></div>
 </div>
 <dl class="field-list simple">
@@ -4312,8 +4453,8 @@ join a group.</p>
 
 </dd></dl>
 
-</div>
-<div class="section" id="categoryschemamanager">
+</section>
+<section id="categoryschemamanager">
 <h2>CategorySchemaManager<a class="headerlink" href="#categoryschemamanager" title="Permalink to this headline">¶</a></h2>
 <dl class="py class">
 <dt id="arcgis.gis.CategorySchemaManager">
@@ -4445,8 +4586,8 @@ so on.</p></td>
 
 </dd></dl>
 
-</div>
-<div class="section" id="contentmanager">
+</section>
+<section id="contentmanager">
 <h2>ContentManager<a class="headerlink" href="#contentmanager" title="Permalink to this headline">¶</a></h2>
 <dl class="py class">
 <dt id="arcgis.gis.ContentManager">
@@ -4490,7 +4631,8 @@ snippet, and description be provided.</p>
 <td><p>Required dictionary. See table below for the keys and values.</p></td>
 </tr>
 <tr class="row-odd"><td><p>data</p></td>
-<td><p>Optional string. Either a path or URL to the data.</p></td>
+<td><p>Optional string, io.StringIO, or io.BytesIO. Either a path or URL to
+the data or an instance of <cite>StringIO</cite> or <cite>BytesIO</cite> objects.</p></td>
 </tr>
 <tr class="row-even"><td><p>thumbnail</p></td>
 <td><p>Optional string. Either a path or URL to a thumbnail image.</p></td>
@@ -5373,7 +5515,7 @@ dataframes. This limit isn’t there for spatial dataframes.</p>
 <td><p><strong>Description</strong></p></td>
 </tr>
 <tr class="row-even"><td><p>df</p></td>
-<td><p>Required string. Pandas dataframe or arcgis.SpatialDataFrame</p></td>
+<td><p>Required DataFrame. Pandas dataframe</p></td>
 </tr>
 <tr class="row-odd"><td><p>address_fields</p></td>
 <td><p>Optional dictionary. Dictionary containing mapping of df columns to address fields, eg: { “CountryCode” : “Country”} or { “Address” : “Address” }.</p></td>
@@ -5507,6 +5649,13 @@ items. The default is FGDB.</p></td>
 <tr class="row-odd"><td><p>capabilities</p></td>
 <td><p>optional string. specifies the operations that can be performed on the
 feature layer service. The default is Query.</p></td>
+</tr>
+<tr class="row-even"><td><p>sanitize_columns</p></td>
+<td><p>Optional boolean. The default is False.  When true, the column name will
+modified in order to allow for successful publishing.</p></td>
+</tr>
+<tr class="row-odd"><td><p>service_name</p></td>
+<td><p>Optional String. The name for the service that will be added to the Item.</p></td>
 </tr>
 </tbody>
 </table>
@@ -5836,8 +5985,8 @@ item will not be shared with all organization users.</p></td>
 
 </dd></dl>
 
-</div>
-<div class="section" id="usermanager">
+</section>
+<section id="usermanager">
 <h2>UserManager<a class="headerlink" href="#usermanager" title="Permalink to this headline">¶</a></h2>
 <dl class="py class">
 <dt id="arcgis.gis.UserManager">
@@ -5889,7 +6038,7 @@ only required if paging is needed.</p></td>
 </tr>
 <tr class="row-even"><td><p>sort_field</p></td>
 <td><p>Optional String. Responses from the <cite>search</cite> operation can be
-sorted on various fields. <cite>avgrating</cite> is the default.</p></td>
+sorted on various fields. <cite>username</cite> is the default.</p></td>
 </tr>
 <tr class="row-odd"><td><p>sort_order</p></td>
 <td><p>Optional String. The sequence into which a collection of
@@ -5897,7 +6046,7 @@ records are arranged after they have been sorted. The allowed
 values are: asc for ascending and desc for descending.</p></td>
 </tr>
 <tr class="row-even"><td><p>as_dict</p></td>
-<td><p>Required Boolean. If True, the response comes back as a dictionary.</p></td>
+<td><p>Optional Boolean. If True, the response comes back as a dictionary.</p></td>
 </tr>
 </tbody>
 </table>
@@ -5908,7 +6057,7 @@ values are: asc for ascending and desc for descending.</p></td>
 </dl>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Usage Example</span>
 
-<span class="o">&gt;&gt;&gt;</span> <span class="n">gis</span><span class="o">.</span><span class="n">users</span><span class="o">.</span><span class="n">advanced_search</span><span class="p">(</span><span class="n">query</span> <span class="o">=</span><span class="s2">&quot;1234&quot;</span><span class="p">,</span> <span class="n">sort_order</span> <span class="o">=</span> <span class="s2">&quot;username&quot;</span><span class="p">,</span> <span class="n">max_users</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span> <span class="n">as_dict</span><span class="o">=</span><span class="mi">20</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">gis</span><span class="o">.</span><span class="n">users</span><span class="o">.</span><span class="n">advanced_search</span><span class="p">(</span><span class="n">query</span> <span class="o">=</span><span class="s2">&quot;1234&quot;</span><span class="p">,</span> <span class="n">sort_field</span> <span class="o">=</span> <span class="s2">&quot;username&quot;</span><span class="p">,</span> <span class="n">max_users</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span> <span class="n">as_dict</span><span class="o">=</span><span class="mi">20</span><span class="p">)</span>
 </pre></div>
 </div>
 </dd></dl>
@@ -5984,12 +6133,14 @@ or built-in users in an ArcGIS Online organization account.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>Only an administrator can call this method.</p>
+<p>A member’s <cite>user_type</cite> determines the default <cite>role</cite> that can be assigned to the member. User types
+compatible with each role are noted in the table below (within the <cite>user_type</cite> section).</p>
 </div>
-<p><strong>To create a viewer account, choose role=’org_viewer’ and level=’viewer’</strong></p>
+<p><strong>To create a viewer account, choose role=’viewer’ and user_type=’viewer’</strong></p>
 <table class="docutils align-default">
 <colgroup>
-<col style="width: 12%" />
-<col style="width: 88%" />
+<col style="width: 9%" />
+<col style="width: 91%" />
 </colgroup>
 <tbody>
 <tr class="row-odd"><td><p><strong>Argument</strong></p></td>
@@ -6004,7 +6155,8 @@ or built-in users in an ArcGIS Online organization account.</p>
 This is a required parameter only if
 the provider is arcgis; otherwise, the password parameter is ignored.
 If creating an account in an ArcGIS Online org, it can be set as None to let
-the user set their password by clicking on a link that is emailed to him/her.</p></td>
+the user set their password by clicking on a link that is emailed to him/her.
+When the <cite>provider</cite> is <strong>enterprise</strong>, password is optional.</p></td>
 </tr>
 <tr class="row-even"><td><p>firstname</p></td>
 <td><p>Required string. The first name for the user</p></td>
@@ -6038,14 +6190,30 @@ This parameter is only required if the provider parameter is enterprise.</p></td
 <tr class="row-even"><td><p>level</p></td>
 <td><p>Optional string. The account level. (ArcGIS Enterprise prior to version 10.7.
 See <a class="reference external" href="https://enterprise.arcgis.com/en/portal/latest/administer/windows/roles.htm">User types, roles, and privileges</a>
-for full details.)</p></td>
+for full details.) The GIS Professional <cite>user_type</cite> can be assigned at the following three levels, which correspond to the three license levels of ArcGIS Pro:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>GIS Professional Basic</p></li>
+<li><p>GIS Professional Standard</p></li>
+<li><p>GIS Professional Advanced</p></li>
+</ul>
+</div></blockquote>
+</td>
 </tr>
 <tr class="row-odd"><td><p>user_type</p></td>
-<td><p>Required string. The account user type. This can be creator or viewer.  The
+<td><p>Required string. The account user type. This can be creator, viewer, etc.  The
 type effects what applications a user can use and what actions they can do in
 the organization. (ArcGIS Enterprise 10.7+ and ArcGIS Online.
 See <a class="reference external" href="https://enterprise.arcgis.com/en/portal/latest/administer/windows/roles.htm">User types, roles, and privileges</a>
-for full details.)</p></td>
+for full details.)</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Members assigned the <code class="docutils literal notranslate"><span class="pre">viewer</span></code> role cannot create or share content, or perform analysis, and the <code class="docutils literal notranslate"><span class="pre">viewer</span></code> role is compatible with all user types.</p></li>
+<li><p>The Data Editor role <code class="docutils literal notranslate"><span class="pre">viewplusedit</span></code> is compatible with all user types except <code class="docutils literal notranslate"><span class="pre">viewer</span></code>.</p></li>
+<li><p>The <code class="docutils literal notranslate"><span class="pre">org_user</span></code>, <code class="docutils literal notranslate"><span class="pre">org_publisher</span></code>, and <code class="docutils literal notranslate"><span class="pre">org_admin</span></code> roles are compatible with the Creator, GIS Professional, Storyteller, and Insights Analyst user types.</p></li>
+</ul>
+</div></blockquote>
+</td>
 </tr>
 <tr class="row-even"><td><p>credits</p></td>
 <td><p>Optional Float. The number of credits to assign a user.  The default is None,
@@ -6205,7 +6373,7 @@ user’s login name or the user’s ID.</p></td>
 
 <dl class="py method">
 <dt id="arcgis.gis.UserManager.invite">
-<code class="sig-name descname">invite</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">email</span></em>, <em class="sig-param"><span class="n">role</span><span class="o">=</span><span class="default_value">'org_user'</span></em>, <em class="sig-param"><span class="n">level</span><span class="o">=</span><span class="default_value">2</span></em>, <em class="sig-param"><span class="n">provider</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">must_approve</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">expiration</span><span class="o">=</span><span class="default_value">'1 Day'</span></em>, <em class="sig-param"><span class="n">validate_email</span><span class="o">=</span><span class="default_value">True</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.UserManager.invite" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">invite</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">email</span></em>, <em class="sig-param"><span class="n">role</span><span class="o">=</span><span class="default_value">'org_user'</span></em>, <em class="sig-param"><span class="n">level</span><span class="o">=</span><span class="default_value">2</span></em>, <em class="sig-param"><span class="n">provider</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">must_approve</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">expiration</span><span class="o">=</span><span class="default_value">'1 Day'</span></em>, <em class="sig-param"><span class="n">validate_email</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="n">message_text</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.UserManager.invite" title="Permalink to this definition">¶</a></dt>
 <dd><p>The <code class="docutils literal notranslate"><span class="pre">invite</span></code> method invites a <a class="reference internal" href="#arcgis.gis.User" title="arcgis.gis.User"><code class="xref py py-class docutils literal notranslate"><span class="pre">User</span></code></a> object to an organization by email.</p>
 <table class="docutils align-default">
 <colgroup>
@@ -6217,19 +6385,19 @@ user’s login name or the user’s ID.</p></td>
 <td><p><strong>Description</strong></p></td>
 </tr>
 <tr class="row-even"><td><p>email</p></td>
-<td><p>Required string. The user’s email that will be invited to the organization.</p></td>
+<td><p>Required String. The user’s email that will be invited to the organization.</p></td>
 </tr>
 <tr class="row-odd"><td><p>role</p></td>
-<td><p>Optional string. The role for the user account. The default value is org_user.
+<td><p>Optional String. The role for the user account. The default value is org_user.
 Other possible values are org_publisher, org_admin, org_viewer.</p></td>
 </tr>
 <tr class="row-even"><td><p>level</p></td>
-<td><p>Optional string. The account level. The default is 2.
+<td><p>Optional String. The account level. The default is 2.
 See <a class="reference external" href="http://server.arcgis.com/en/portal/latest/administer/linux/roles.htm">User types, roles, and privileges</a>
 for full details.</p></td>
 </tr>
 <tr class="row-odd"><td><p>provider</p></td>
-<td><p>Optional string. The provider for the account. The default value is arcgis.
+<td><p>Optional String. The provider for the account. The default value is arcgis.
 The other possible value is enterprise.</p></td>
 </tr>
 <tr class="row-even"><td><p>must_approve</p></td>
@@ -6237,13 +6405,17 @@ The other possible value is enterprise.</p></td>
 must approve of the individual joining the organization. The default is False.</p></td>
 </tr>
 <tr class="row-odd"><td><p>expiration</p></td>
-<td><p>Optional string.  The default is ‘1 Day’. This is the time the emailed user has
+<td><p>Optional String.  The default is ‘1 Day’. This is the time the emailed user has
 to accept the invitation request until it expires.
 The values are: 1 Day (default), 3 Days, 1 Week, or 2 Weeks.</p></td>
 </tr>
 <tr class="row-even"><td><p>validate_email</p></td>
 <td><p>Optional boolean. If True (default) the Enterprise will ensure that the email
 is properly formatted. If false, no check will occur</p></td>
+</tr>
+<tr class="row-odd"><td><p>message_text</p></td>
+<td><p>Optional String. Added to the message of the invitation and can provide further
+instructions, a welcome, or any other personalized text to the person invited.</p></td>
 </tr>
 </tbody>
 </table>
@@ -6280,6 +6452,41 @@ type. Additionally, the <code class="docutils literal notranslate"><span class="
 <dt id="arcgis.gis.UserManager.me">
 <em class="property">property </em><code class="sig-name descname">me</code><a class="headerlink" href="#arcgis.gis.UserManager.me" title="Permalink to this definition">¶</a></dt>
 <dd><p>The <code class="docutils literal notranslate"><span class="pre">me</span></code> property retrieves the information of the logged in <a class="reference internal" href="#arcgis.gis.User" title="arcgis.gis.User"><code class="xref py py-class docutils literal notranslate"><span class="pre">User</span></code></a> object.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.gis.UserManager.org_search">
+<code class="sig-name descname">org_search</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">query</span><span class="p">:</span> <span class="n">Optional<span class="p">[</span>str<span class="p">]</span></span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="n">sort_field</span><span class="p">:</span> <span class="n">Optional<span class="p">[</span>str<span class="p">]</span></span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="n">sort_order</span><span class="p">:</span> <span class="n">Optional<span class="p">[</span>str<span class="p">]</span></span> <span class="o">=</span> <span class="default_value">None</span></em><span class="sig-paren">)</span> &#x2192; tuple<a class="headerlink" href="#arcgis.gis.UserManager.org_search" title="Permalink to this definition">¶</a></dt>
+<dd><p>The <cite>org_search</cite> method allows users to find users within the organization only.
+Users can search for details such as <cite>provider</cite>, <cite>fullName</cite> and other user properties
+where the other user searches are limited.  This operation will not show any user outside
+the organization.</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 18%" />
+<col style="width: 82%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>Argument</strong></p></td>
+<td><p><strong>Description</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>query</p></td>
+<td><p>Optional string. The query string.  See notes above. Pass None
+to get list of all users in the organization.</p></td>
+</tr>
+<tr class="row-odd"><td><p>sort_field</p></td>
+<td><p>Optional string. Valid values can be username (the default) or created.</p></td>
+</tr>
+<tr class="row-even"><td><p>sort_order</p></td>
+<td><p>Optional string. Valid values are asc (the default) or desc.</p></td>
+</tr>
+</tbody>
+</table>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>List[User]</p>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="py method">
@@ -6368,7 +6575,7 @@ allows for the filting of the users based on a roleId.</p></td>
 </dl>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Usage Example</span>
 
-<span class="o">&gt;&gt;&gt;</span> <span class="n">gis</span><span class="o">.</span><span class="n">users</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="n">query</span> <span class="o">=</span><span class="s2">&quot;1234&quot;</span><span class="p">,</span> <span class="n">sort_order</span> <span class="o">=</span> <span class="s2">&quot;username&quot;</span><span class="p">,</span> <span class="n">max_users</span><span class="o">=</span><span class="mi">20</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">gis</span><span class="o">.</span><span class="n">users</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="n">query</span> <span class="o">=</span><span class="s2">&quot;1234&quot;</span><span class="p">,</span> <span class="n">sort_field</span> <span class="o">=</span> <span class="s2">&quot;username&quot;</span><span class="p">,</span> <span class="n">max_users</span><span class="o">=</span><span class="mi">20</span><span class="p">)</span>
 </pre></div>
 </div>
 </dd></dl>
@@ -6536,8 +6743,8 @@ Example: <cite>{“apps” :[{“itemId”: “f761dd0f298944dcab22d1e888c60293�
 
 </dd></dl>
 
-</div>
-<div class="section" id="groupmanager">
+</section>
+<section id="groupmanager">
 <h2>GroupManager<a class="headerlink" href="#groupmanager" title="Permalink to this headline">¶</a></h2>
 <dl class="py class">
 <dt id="arcgis.gis.GroupManager">
@@ -6782,8 +6989,8 @@ your org. Default is False, do not search ourside your org.</p></td>
 
 </dd></dl>
 
-</div>
-<div class="section" id="groupmigrationmanager">
+</section>
+<section id="groupmigrationmanager">
 <h2>GroupMigrationManager<a class="headerlink" href="#groupmigrationmanager" title="Permalink to this headline">¶</a></h2>
 <dl class="py class">
 <dt id="arcgis.gis.GroupMigrationManager">
@@ -6848,7 +7055,7 @@ epk_item          Required Item. A report on the content of the EPK Item.  This 
 
 <dl class="py method">
 <dt id="arcgis.gis.GroupMigrationManager.load">
-<code class="sig-name descname">load</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">epk_item</span></em>, <em class="sig-param"><span class="n">item_ids</span><span class="p">:</span> <span class="n">list</span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="n">overwrite</span><span class="p">:</span> <span class="n">bool</span> <span class="o">=</span> <span class="default_value">True</span></em>, <em class="sig-param"><span class="n">future</span><span class="p">:</span> <span class="n">bool</span> <span class="o">=</span> <span class="default_value">True</span></em>, <em class="sig-param"><span class="n">folder_id</span><span class="p">:</span> <span class="n">str</span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="n">folder_owner</span><span class="p">:</span> <span class="n">str</span> <span class="o">=</span> <span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.GroupMigrationManager.load" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">load</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">epk_item</span></em>, <em class="sig-param"><span class="n">item_ids</span><span class="p">:</span> <span class="n">Optional<span class="p">[</span>list<span class="p">]</span></span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="n">overwrite</span><span class="p">:</span> <span class="n">bool</span> <span class="o">=</span> <span class="default_value">True</span></em>, <em class="sig-param"><span class="n">future</span><span class="p">:</span> <span class="n">bool</span> <span class="o">=</span> <span class="default_value">True</span></em>, <em class="sig-param"><span class="n">folder_id</span><span class="p">:</span> <span class="n">Optional<span class="p">[</span>str<span class="p">]</span></span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="n">folder_owner</span><span class="p">:</span> <span class="n">Optional<span class="p">[</span>str<span class="p">]</span></span> <span class="o">=</span> <span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.GroupMigrationManager.load" title="Permalink to this definition">¶</a></dt>
 <dd><p>The <code class="docutils literal notranslate"><span class="pre">load</span></code> method imports the EPK content into the current <a class="reference internal" href="#arcgis.gis.Group" title="arcgis.gis.Group"><code class="xref py py-class docutils literal notranslate"><span class="pre">Group</span></code></a>.
 .. note:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Administrative</span> <span class="n">privileges</span> <span class="n">are</span> <span class="n">required</span> <span class="n">to</span> <span class="n">run</span> <span class="n">this</span> <span class="n">operation</span><span class="o">.</span>
@@ -6899,8 +7106,8 @@ future to <cite>True</cite> to reduce time.</p></td>
 
 </dd></dl>
 
-</div>
-<div class="section" id="datastoremanager">
+</section>
+<section id="datastoremanager">
 <h2>DatastoreManager<a class="headerlink" href="#datastoremanager" title="Permalink to this headline">¶</a></h2>
 <dl class="py class">
 <dt id="arcgis.gis.DatastoreManager">
@@ -7314,8 +7521,8 @@ at once, you can invoke this operation.</p>
 
 </dd></dl>
 
-</div>
-<div class="section" id="rolemanager">
+</section>
+<section id="rolemanager">
 <h2>RoleManager<a class="headerlink" href="#rolemanager" title="Permalink to this headline">¶</a></h2>
 <dl class="py class">
 <dt id="arcgis.gis.RoleManager">
@@ -7490,8 +7697,8 @@ page in the ArcGIS REST API documentation.</p></td>
 
 </dd></dl>
 
-</div>
-<div class="section" id="resourcemanager">
+</section>
+<section id="resourcemanager">
 <h2>ResourceManager<a class="headerlink" href="#resourcemanager" title="Permalink to this headline">¶</a></h2>
 <dl class="py class">
 <dt id="arcgis.gis.ResourceManager">
@@ -7508,7 +7715,7 @@ Users call methods on this <a class="reference internal" href="#arcgis.gis.Item.
 </div>
 <dl class="py method">
 <dt id="arcgis.gis.ResourceManager.add">
-<code class="sig-name descname">add</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">file</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">folder_name</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">file_name</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">text</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">archive</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">access</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.ResourceManager.add" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">add</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">file</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">folder_name</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">file_name</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">text</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">archive</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">access</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">properties</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.ResourceManager.add" title="Permalink to this definition">¶</a></dt>
 <dd><p>The <code class="docutils literal notranslate"><span class="pre">add</span></code> operation adds new file resources to an existing item. For example, an image that is
 used as custom logo for Report Template. All the files are added to ‘resources’ folder of the item. File
 resources use storage space from your quota and are scanned for viruses. The item size is updated to
@@ -7557,6 +7764,10 @@ the item access level, or revert it by setting it to <cite>inherit</cite>
 which makes the item resource have the same access as the item.</p>
 <p>Supported values: <cite>private</cite> or <cite>inherit</cite>.</p>
 </td>
+</tr>
+<tr class="row-even"><td><p>properties</p></td>
+<td><p>Optional Dictionary. Set the properties for the resources such
+as the <cite>editInfo</cite>.</p></td>
 </tr>
 </tbody>
 </table>
@@ -7817,8 +8028,8 @@ used together with file_name.</p></td>
 
 </dd></dl>
 
-</div>
-<div class="section" id="apikeymanager">
+</section>
+<section id="apikeymanager">
 <h2>APIKeyManager<a class="headerlink" href="#apikeymanager" title="Permalink to this headline">¶</a></h2>
 <dl class="py class">
 <dt id="arcgis.gis._impl.APIKeyManager">
@@ -7914,8 +8125,8 @@ a list of string values.</p></td>
 
 </dd></dl>
 
-</div>
-<div class="section" id="apikey">
+</section>
+<section id="apikey">
 <h2>APIKey<a class="headerlink" href="#apikey" title="Permalink to this headline">¶</a></h2>
 <dl class="py class">
 <dt id="arcgis.gis._impl.APIKey">
@@ -8047,8 +8258,8 @@ configured.</p>
 
 </dd></dl>
 
-</div>
-<div class="section" id="profilemanager">
+</section>
+<section id="profilemanager">
 <h2>ProfileManager<a class="headerlink" href="#profilemanager" title="Permalink to this headline">¶</a></h2>
 <dl class="py class">
 <dt id="arcgis.gis._impl._profile.ProfileManager">
@@ -8266,8 +8477,8 @@ profiles stored on the local operating system.</p>
 
 </dd></dl>
 
-</div>
-<div class="section" id="invitationmanager">
+</section>
+<section id="invitationmanager">
 <h2>InvitationManager<a class="headerlink" href="#invitationmanager" title="Permalink to this headline">¶</a></h2>
 <dl class="py class">
 <dt id="arcgis.gis._impl._invitations.InvitationManager">
@@ -8327,8 +8538,8 @@ invitation IDs.</p>
 
 </dd></dl>
 
-</div>
-<div class="section" id="certificatemanager">
+</section>
+<section id="certificatemanager">
 <h2>CertificateManager<a class="headerlink" href="#certificatemanager" title="Permalink to this headline">¶</a></h2>
 <dl class="py class">
 <dt id="arcgis.gis._impl.CertificateManager">
@@ -8544,8 +8755,8 @@ certificate.</p>
 
 </dd></dl>
 
-</div>
-<div class="section" id="portaldatastore">
+</section>
+<section id="portaldatastore">
 <h2>PortalDataStore<a class="headerlink" href="#portaldatastore" title="Permalink to this headline">¶</a></h2>
 <dl class="py class">
 <dt id="arcgis.gis._impl._datastores.PortalDataStore">
@@ -9003,8 +9214,8 @@ registered on multiple servers.</p></td>
 
 </dd></dl>
 
-</div>
-<div class="section" id="submodules">
+</section>
+<section id="submodules">
 <h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this headline">¶</a></h2>
 <div class="toctree-wrapper compound">
 <ul>
@@ -9024,7 +9235,9 @@ registered on multiple servers.</p></td>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.gis.admin.html#passwordpolicy">PasswordPolicy</a></li>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.gis.admin.html#portalresourcemanager">PortalResourceManager</a></li>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.gis.admin.html#ux">UX</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.gis.admin.html#emailmanager">EmailManager</a></li>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.gis.admin.html#federation">Federation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.gis.admin.html#indexer">Indexer</a></li>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.gis.admin.html#logs">Logs</a></li>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.gis.admin.html#machines">Machines</a></li>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.gis.admin.html#security">Security</a></li>
@@ -9075,6 +9288,12 @@ registered on multiple servers.</p></td>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.gis.server.html#mode">Mode</a></li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.gis.agoserver.html">arcgis.gis.agoserver module</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.gis.agoserver.html#agolservicesdirectory">AGOLServicesDirectory</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.gis.agoserver.html#agolserversmanager">AGOLServersManager</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.gis.agoserver.html#agolservermanager">AGOLServerManager</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="arcgis.gis.mission.html">arcgis.gis.mission module</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.gis.mission.html#missionserver">MissionServer</a></li>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.gis.mission.html#mission">Mission</a></li>
@@ -9111,6 +9330,8 @@ registered on multiple servers.</p></td>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.gis.nb.html#securitymanager">SecurityManager</a></li>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.gis.nb.html#notebookdataaccess">NotebookDataAccess</a></li>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.gis.nb.html#notebookfile">NotebookFile</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.gis.nb.html#nbservicesmanager">NBServicesManager</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.gis.nb.html#nbservice">NBService</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="arcgis.gis.workflowmanager.html">arcgis.gis.workflowmanager module</a><ul>
@@ -9123,6 +9344,7 @@ registered on multiple servers.</p></td>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.gis.workflowmanager.html#jobtemplate">JobTemplate</a></li>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.gis.workflowmanager.html#group">Group</a></li>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.gis.workflowmanager.html#savedsearchesmanager">SavedSearchesManager</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.gis.workflowmanager.html#lookuptable">LookUpTable</a></li>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.gis.workflowmanager.html#wmrole">WMRole</a></li>
 </ul>
 </li>
@@ -9134,8 +9356,8 @@ registered on multiple servers.</p></td>
 </li>
 </ul>
 </div>
-</div>
-</div>
+</section>
+</section>
 
 
 
@@ -9143,37 +9365,29 @@ registered on multiple servers.</p></td>
            
           </div>
           <footer>
-  
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-      
-        <a href="arcgis.gis.admin.html" class="btn btn-neutral float-right" title="arcgis.gis.admin module" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
-      
-      
-        <a href="index.html" class="btn btn-neutral float-left" title="API Reference for the ArcGIS API for Python" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
-      
+        <a href="arcgis.gis.admin.html" class="btn btn-neutral float-right" title="arcgis.gis.admin module" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="index.html" class="btn btn-neutral float-left" title="API Reference for the ArcGIS API for Python" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
     </div>
-  
 
   <hr/>
 
   <div role="contentinfo">
     <p>
-        
-        &copy; Copyright 2016-2021, Esri
+        &#169; Copyright 2016-2022, Esri.
 
     </p>
   </div>
     
     
     
-    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
     
-    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
     
     provided by <a href="https://readthedocs.org">Read the Docs</a>. 
 
 </footer>
-
         </div>
       </div>
 
@@ -9181,12 +9395,12 @@ registered on multiple servers.</p></td>
 
   </div>
   
-    Options v: 1.9.1
+    Options v: 2.0.0
 
   <div class="rst-versions" data-toggle="rst-versions" role="note" aria-label="versions">
     <span class="rst-current-version" data-toggle="rst-current-version">
       <span class="fa fa-book"> Pick an earlier version</span>
-      v: 1.9.1
+      v: 2.0.0
       <span class="fa fa-caret-down"></span>
     </span>
     <div class="rst-other-versions">
@@ -9194,6 +9408,10 @@ registered on multiple servers.</p></td>
       
       <dl>
         <dt>Versions</dt>
+        
+          
+          <dd><a href="1.9.1/">1.9.1</a></dd>
+          
         
           
           <dd><a href="1.9.0/">1.9.0</a></dd>
