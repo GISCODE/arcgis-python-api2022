@@ -14,7 +14,6 @@ You have multiple ways of executing these notebooks as listed below:
  - Execute locally on your computer by installing anaconda and the API. See help [here](https://developers.arcgis.com/python/guide/install-and-set-up/#Get-Conda-with-Anaconda-for-Python-Distribution)
  - Execute with ArcGIS Pro. See help [here](https://developers.arcgis.com/python/guide/install-and-set-up/#Get-Conda-with-ArcGIS-Pro)
  - Execute with ArcGIS Hosted Notebooks. See [here](https://www.esri.com/en-us/arcgis/products/arcgis-notebook-server)
- - Execute on a hosted sandbox environment. Go to [notebooks.esri.com](http://notebooks.esri.com/)
  - Execute in a Dockerised environment. See help [here](https://developers.arcgis.com/python/guide/install-and-set-up/#Install-as-a-Docker-image)
  - Execute with Binder. See help [here](https://mybinder.org/)
 
